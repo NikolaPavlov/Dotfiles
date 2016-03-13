@@ -33,6 +33,7 @@ youtube-dl / clipgrab
 xmind
 autojump
 corebird
+timeshift (rsync frontend)
 ===============================================================
 pacman -S tree
 pacman -S i3 
