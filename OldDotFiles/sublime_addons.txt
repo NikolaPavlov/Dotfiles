@@ -1,0 +1,14 @@
+AutoFileName ---> show the path in files
+BlockCursorEverywhere
+BracketHighlighter
+ColorPicker
+HtmlBeautify
+SublimeServer
+AngularJs
+SideBarEnhancments
+SublimeCodeIntel
+SublimeLinter
+SublimeLinter-jshint
+
+
+

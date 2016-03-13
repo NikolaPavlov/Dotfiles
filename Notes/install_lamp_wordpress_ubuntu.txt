@@ -1,0 +1,41 @@
+LAMP install on ubuntu
+
+#install lamp
+sudo apt-get install tasksel
+sudo tasksell
+---> add basic ubuntu server
+---> add openssh server
+---> add lamp server
+
+#install phpmyadmin
+sudo apt-get install phpmyadmin
+---> add new user in phpmyadmin
+
+#install ftp client
+sudo apt-get install vsftpd
+sudo apt-get install filezilla
+
+#setup permisions
+cd /var/www/html
+sudo chown -R [uname]:www-data /var/www/html
+sudo chmod 775 /var/www/html
+sudo chmod g+s /var/www/html
+
+#config vsftpd
+vim /etc/vsftpd.conf
+
+#restart vsftpd
+sudo service vsftpd restart
+
+#install wordpress
+cd ~/Downloads
+wget https://wordpress.org/latest.zip
+unzip latest.zip
+wget [webmin]
+sudo dpkg -i ./webmin...deb
+sudo apt-get -f upgrade #fix the errors in webmin install
+
+move wordpress to /var/www/html
+---> localhost/wordpress
+---> install wordpress
+

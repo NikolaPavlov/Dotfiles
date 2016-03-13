@@ -1,0 +1,53 @@
+===============================================================
+firefox
+git
+irssi
+tilda / gnome-terminal
+networkmanager and network-manager-applet
+gvim
+virtualbox
+redshift
+thunar and ranger 
+lxappearance
+gtk-chtheme ---> font change
+archey3
+truecrypt
+thunderbird
+vlc / smplayer
+gparted
+zathura / coolreader(epub)
+openssh
+nmap
+transmission-qt
+feh
+gpicview
+KeePassX
+openvpn
+pidgin
+yaourt
+sublime3
+darkroom
+spotify
+gufw
+youtube-dl / clipgrab
+xmind
+autojump
+corebird
+===============================================================
+pacman -S tree
+pacman -S i3 
+pacman -S dmenu 
+pacman -S xorg 
+pacman -S xorg-xinit
+pacman -S base-devel
+pacman -S bash-completion
+pacman -S mesa
+pacman -S alsa-utils
+pacman -S net-tools
+pacman -S nfs-utils
+pacman -S macchanger
+===============================================================
+xfce-dusk-theme + HighContrast-icons
+zen-gtk-theme 
+delorean-dark-theme
+===============================================================

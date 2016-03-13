@@ -1,0 +1,129 @@
+===============================================================================
+                 _       _ _                  
+                | |     | (_)                 
+   __ _ _ __ ___| |__   | |_ _ __  _   ___  __
+  / _` | '__/ __| '_ \  | | | '_ \| | | \ \/ /
+ | (_| | | | (__| | | | | | | | | | |_| |>  < 
+  \__,_|_|  \___|_| |_| |_|_|_| |_|\__,_/_/\_\  instalation
+===============================================================================
+1.Create arch linux usb
+===============================================================================
+---> check the integrity of the downloaded file (PGP sha-256sum)
+---> create the bootable USB
+dd if=<source> of=<source> bs=4M && sync
+===============================================================================
+2.Prepare the hard disk
+===============================================================================
+---> Wipe out the hard
+dd if=/dev/urandom of=<destination usb>
+shred --verbose --random-source=/dev/urandom --iterations=1 /dev/sda
+---> create GPT partition table and make needed partitions
+===============================================================================
+3.Encryption and LVM configuration
+===============================================================================
+mkfs.btrfs -L boot /dev/sda1
+cryptsetup luksFormat /dev/sda2
+cryptsetup luksOpen /dev/sda2 lvm
+
+pvcreate /dev/mapper/lvm
+vgcreate main /dev/mapper/lvm
+lvcreate -L 20GB -n root main
+lvcreate -L 4GB -n swap main
+lvcreate -l 100%FREE -n home main
+
+mkswap /dev/mapper/main-swap
+swapon /dev/mapper/main-swap
+mkfs.btrfs /dev/mapper/main-root
+mkfs.btrfs /dev/mapper/main-home
+===============================================================================
+4.Mount volumes install arch
+===============================================================================
+mount /dev/mapper/main-root /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+mkdir /mnt/home
+mount /dev/mapper/main-home /mnt/home
+
+---> Select the mirror
+vim /etc/pacman.d/mirrorlist
+---> Install
+pacstrap /mnt base base-devel
+===============================================================================
+5.Chroot and configuration the system
+===============================================================================
+---> Genereate and check fstab
+genfstab -p -U /mnt > /mnt/etc/fstab
+cat /mnt/etc/fstab
+
+arch-chroot /mnt /bin/bash
+
+---> Locale
+vim /etc/locale.gen ---> local setings listed
+echo en_US.UTF-8 UTF-8 > /etc/locale.gen
+locale-gen
+echo en_US.UTF-8 > /etc/locale.conf
+export LANG=en_US.UTF-8
+
+---> TimeZone
+cd /usr/share/zoneinfo ---> listed zoneinfos
+ln /usr/share/zoneifno/Europe/Sofia /etc/localtime
+hwclock --systohc --utc
+
+---> Add hostname
+echo <hostname> > /etc/hostname
+add <hostname> to /etc/hosts
+
+ip link ---> check
+systemctl enable dhcpcd@enp0s25.service
+systemctl enable netct-auto@wlpXXX.service
+
+pacman -S dialog wpa_supplicant wpa_actiond
+
+---> Add user and change the passwords
+passwd
+useradd -m -g users -s /bin/bash <username>
+passwd <username>
+vi /etc/sudoers ---> add user to sudo file
+
+---> Install the bootloader (syslinux)
+pacman -S gptfdisk syslinux
+syslinux-install_update -iam
+vi /boot/syslinux/syslinux.cfg
+        #keep default and label sections only
+        #change the label for working with encrypted device
+        DEFAULT
+        LABEL
+            APPEND cryptdevice=/dev/sda2:root root=/dev/mapper/root rw
+
+vi /etc/mkinitcpio.conf
+    #add encrypt after block and before filesystem
+    HOOKS block encrypt filesystem
+
+pacman -S btrfs-progs
+
+mkinitcpio -p linux
+===============================================================================
+login as <nickname>
+mkdir temp
+
+echo exec i3 > .xinitrc
+echo startx >> .bashrc
+
+
+
+
+macchanger on start up
+===============================================================================
+/etc/systemd/network/00-default.link
+
+[Match]
+MACAddress=permanent MAC
+
+[Link]
+MACAddressPolicy=random
+NamePolicy=kernel database onboard slot path
+
+openvpn
+===============================================================================
+sudo systemctl enable openvpn@client.service
+client.conf is config file in /etc/openvpn

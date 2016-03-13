@@ -1,0 +1,12 @@
+/etc/netctl ---> create [interface name] file there
+    Description='Anything you like'
+    Interface=eth0
+    Connection=ethernet
+    IP=static
+    Address=('192.168.1.36/24')
+    gateway=('192.168.1.1')
+    DNS=('8.8.8.8' '194.168.4.100' '194.168.8.100')
+
+#netctl start eth0
+#netctl enable eth0
+#netctl disable eth0

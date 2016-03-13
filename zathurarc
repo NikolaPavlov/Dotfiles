@@ -1,0 +1,34 @@
+# Why are these only defined for normal mode by default?
+map [fullscreen] a adjust_window best-fit
+map [fullscreen] s adjust_window width
+map [fullscreen] f follow
+map [fullscreen] d toggle_page_mode 2
+map [fullscreen] <Tab> toggle_index
+map [fullscreen] j scroll down
+map [fullscreen] k scroll up
+map [fullscreen] <C-d> scroll half-down
+map [fullscreen] <C-u> scroll half-up
+map [fullscreen] <C-o> jumplist backward
+map [fullscreen] <C-i> jumplist forward
+
+map [index] q quit
+
+# colors
+set statusbar-fg "#000000"
+set statusbar-bg "#C2BFA5"
+set inputbar-fg "#FFFFFF"
+set inputbar-bg "#333333"
+set completion-highlight-fg "#F0E68C"
+set completion-highlight-bg "#6B8E23"
+#
+# 
+set highlight-color "#CD853F"
+set highlight-active-color "#F0E68C"
+#
+#
+set notification-fg "#FFFFFF"
+set notification-bg "#333333"
+
+set recolor true
+> set recolor_darkcolor #BDE090
+> set recolor_lightcolor #000000

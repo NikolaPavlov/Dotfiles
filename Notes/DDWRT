@@ -1,0 +1,29 @@
+Alright, after a lot of research I finally figured out the best way to get the E1000 v2.1 running a good, working version of DD-WRT. Here's what I did:
+
+To install DD-WRT for the first time on your E1000 v2.1 over the stock Linksys firmware, download dd-wrt.v24-16968_NEWD-2_K2.6_mini_e1000v2.bin from here and use the installation guide for the E1000 v1 on the wiki which can be found here.
+
+Once you have DD-WRT installed on your E1000 v2.1, you should now use the following instructions from the Peacock thread to install build dd-wrt.v24-21676_NEWD-2_K2.6_std_nokaid_small.bin which can be downloaded here.
+
+Quote:	
+The proper process for flashing when upgrading EXISTING dd-wrt firmware is:
+
+1. Set your computer to a static IP of 192.168.1.8 Disable all firewalls and security. Disable wireless on your computer and only have the router connected to the flashing computer by the ethernet cable between the two.
+
+2. Hard reset prior to flashing. Wait. Check for password page on re-login and change password.
+
+3. Flash firmware using the dd-wrt webgui upgrade page
+
+4. Wait...at least three minutes. Lights should return to normal. See important2, below. Failing to wait is how most people brick their routers.
+
+5. Do a power cycle of the router. (Unplug the cord, count to 30 and plug it back in.)
+
+6. Wait for the lights to return to normal usually about 2 minutes.
+
+7. HARD reset again. Wait. Check for the password page and re-login to change the password. Then you can reconfigure your settings manually.
+
+8. Once configured set your computer back to autoIP and autoDNS.
+
+Important2: After you flash the firmware, and before you do the hard reset, the router will be building some nvram settings. YOU MUST WAIT FOR THIS TO FINISH PRIOR TO DOING ANYTHING WITH THE ROUTER INCLUDING A HARD RESET. Usually, you can tell when this process is completed by the WLAN light coming on, but it does take several minutes. Go have a beer. There are starting to be more and more people who BRICK their routers by not waiting until the nvram is rebuilt, PRIOR to doing a hard reset. YOU NEED TO WAIT!
+
+
+I hope I could help out someone who was confused. Smile
