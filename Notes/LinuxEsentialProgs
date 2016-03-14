@@ -2,38 +2,31 @@
 firefox
 git
 irssi
-tilda / gnome-terminal
+xfce4-terminal / gnome-terminal
 networkmanager and network-manager-applet
-gvim
+vim
 virtualbox
 redshift
 thunar and ranger 
 lxappearance
 gtk-chtheme ---> font change
-archey3
 truecrypt
 thunderbird
 vlc / smplayer
 gparted
-zathura / coolreader(epub)
+zathura
 openssh
 nmap
 transmission-qt
-feh
+#feh
 gpicview
 KeePassX
 openvpn
-pidgin
 yaourt
-sublime3
 darkroom
-spotify
-gufw
-youtube-dl / clipgrab
+youtube-dl
 xmind
 autojump
-corebird
-timeshift (rsync frontend)
 ===============================================================
 pacman -S tree
 pacman -S i3 
