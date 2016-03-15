@@ -178,8 +178,8 @@ set guifont=Inconsolata\ 13
 set showcmd "show command keys in the status line
 
 "13 selecting text
-"set clipboard=unnamed
-set clipboard=unnamedplus
+set clipboard=unnamed
+"set clipboard=unnamedplus
 
 "14 editing text
 set textwidth=80 "line length above which to break the line
