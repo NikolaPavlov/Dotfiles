@@ -170,14 +170,13 @@ client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
 # feh for set up wallpaper
-exec --no-startup-id feh --bg-fill /home/gogo/Pictures/vim.png
+exec --no-startup-id feh --bg-fill /home/gogo/Pictures/wallpaper.jpg
 
 # key bindings
 bindcode $mod+67 exec --no-startup-id firefox
 bindcode $mod+68 exec --no-startup-id thunar
 bindcode $mod+69 exec --no-startup-id virtualbox
 bindcode $mod+70 exec --no-startup-id thunderbird
-bindcode $mod+71 exec --no-startup-id spotify
 
 # volume control keys and mute
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
@@ -186,3 +185,12 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # disable title bar
 new_window pixel 5
+#
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# Media player controls (need to install playerctl)
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
