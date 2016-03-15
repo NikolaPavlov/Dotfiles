@@ -6,7 +6,6 @@ alias ..='cd ..'
 alias e='exit'
 alias c='clear'
 alias cl='clear'
-alias cle='clear'
 alias x='xbacklight -set'
 alias xshow='xbacklight'
 alias r='ranger'
@@ -27,15 +26,13 @@ alias free='free -m'                                         # show sizes in MB
 alias ports='netstat -tulanp'
 alias myip='curl http://ipecho.net/plain; echo'
 alias vboxshare='sudo mount -t vboxsf Share /mnt'
-alias ping8='ping 8.8.8.8'
 alias ping1='ping 192.168.1.1'
+alias ping8='ping 8.8.8.8'
 alias backup='rsync -aAXv --delete  /srv/nfs4//1Tb/
 /run/media/gogo/4b50b2f3-6cd7-4518-837e-cd2dc9e4adcb/'
 
 # Pacman
 alias update='sudo pacman -Syu'
-alias install='sudo pacman -S '
-alias uninstall='sudo pacman -Rs'
 # Python
 alias p='python3.5'
 alias pm='python manage.py'
@@ -121,11 +118,8 @@ man() {
 # Colorful user prompt in bash
 PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 
-# handle automount in thunar for usb devices
-#udiskie -2 &
-
 # autojump
 . /usr/share/autojump/autojump.bash
 
 # vi mode in terminal
-#set -o vi
+set -o vi
