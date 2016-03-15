@@ -1,15 +1,13 @@
 ===============================================================
 firefox
 git
-irssi
-xfce4-terminal / gnome-terminal
+xfce4-terminal
 networkmanager and network-manager-applet
 vim
 virtualbox
 redshift
 thunar and ranger 
 lxappearance
-gtk-chtheme ---> font change
 truecrypt
 thunderbird
 vlc / smplayer
@@ -18,12 +16,10 @@ zathura
 openssh
 nmap
 transmission-qt
-#feh
 gpicview
 KeePassX
 openvpn
 yaourt
-darkroom
 youtube-dl
 xmind
 autojump
@@ -41,7 +37,9 @@ pacman -S net-tools
 pacman -S nfs-utils
 pacman -S macchanger
 ===============================================================
-xfce-dusk-theme + HighContrast-icons
-zen-gtk-theme 
-delorean-dark-theme
+lxapperance themes and icons
+---------------------------------
+xfce-dusk-theme ---> .themes
+delorean-dark-theme ---> .themes
+HighContrast-icons ---> .icons
 ===============================================================
