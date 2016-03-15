@@ -144,8 +144,7 @@ new_window pixel 5
 
 # Start programs on startup
 exec --no-startup-id nm-applet
-exec --no-startup-id redshift-gtk
-exec --no-startup-id xfce4-panel --disable-wm-check
+exec --no-startup-id redshift
 
 # Window Colors
 client.focused #0088CC #0088CC #ffffff #dddddd
@@ -167,8 +166,8 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Media player controls (need to install playerctl)
 bindsym XF86AudioPlay exec playerctl play
