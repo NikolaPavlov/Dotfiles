@@ -16,7 +16,6 @@ def force_symlink(file1, file2):
             os.symlink(file1, file2)
             print('link replaced ' + file1)
 
-
 force_symlink(cwd + '/' + 'bashrc', home + '/' + '.bashrc')
 force_symlink(cwd + '/' + 'vimrc', home + '/' + '.vimrc')
 force_symlink(cwd + '/' + 'zathurarc', home + '/.config/zathura/' + 'zathurarc')
@@ -28,3 +27,6 @@ try:
     os.system('git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim')
 except:
     print('error installing vundle')
+
+
+#TODO: Fix error when .i3 folder doesn't exists
