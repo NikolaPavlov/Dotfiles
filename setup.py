@@ -1,11 +1,11 @@
 import os
-import glob
 import errno
 
 
 cwd = os.getcwd()
 home = os.path.expanduser('~')
-all_files_in_the_dir = glob.glob('./*')
+
+
 def force_symlink(file1, file2):
     try:
         os.symlink(file1, file2)
