@@ -125,7 +125,7 @@ PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 #udiskie -2 &
 
 # autojump
-#. /usr/share/autojump/autojump.bash
+. /usr/share/autojump/autojump.bash
 
 # vi mode in terminal
 #set -o vi

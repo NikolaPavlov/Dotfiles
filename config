@@ -161,6 +161,7 @@ bar {
 # Start programs on startup
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
+exec --no-startup-id xfce4-panel --disable-wm-check
 
 # Window Colors
 client.focused #0088CC #0088CC #ffffff #dddddd
