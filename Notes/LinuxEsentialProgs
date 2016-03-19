@@ -12,7 +12,7 @@ truecrypt
 thunderbird
 vlc / smplayer
 gparted
-zathura
+zathura / zathura-pdf-poppler
 openssh
 nmap
 transmission-qt
@@ -23,6 +23,8 @@ yaourt
 youtube-dl
 xmind
 autojump
+baobab
+wireshark
 ===============================================================
 pacman -S tree
 pacman -S i3 
@@ -36,6 +38,7 @@ pacman -S alsa-utils
 pacman -S net-tools
 pacman -S nfs-utils
 pacman -S macchanger
+pacman -S ipython
 ===============================================================
 lxapperance themes and icons
 ---------------------------------
