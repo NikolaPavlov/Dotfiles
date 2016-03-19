@@ -156,6 +156,7 @@ set scrolloff=2 "number of screen lines to show around the cursor
 
 "5 syntax, highlighting and spelling
 syntax on
+set pell "highlight spelling mistakes
 set hlsearch "highlight all matches for the last used search pattern
 set background=dark
 set cursorline "highlight the screen line of the cursor
@@ -245,6 +246,8 @@ map <c-h> <c-w>h
 "Keys maps---------------------------------------------------------------------
 nnoremap <leader><space> :noh<cr>
 nnoremap ; :
+"turn on off spell checking
+nmap <silent><leader>s :set spell!<CR> 
 "------------------------------------------------------------------------------
 "format html on read and write (remove spaces)
 autocmd BufRead,BufWritePre *.html normal gg=G 
