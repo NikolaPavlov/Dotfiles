@@ -12,7 +12,7 @@
 " http://www.vimbits.com/
 " http://bytefluent.com/vivify/ ---> color theme preview and creater
 "
-" http://vimdoc.sf.net (:help user-manual)
+" http://vimdoc.sf.net (this is :help as html)
 " =============================================================================
 " /\   /\_   _ _ __   __| | | ___ 
 " \ \ / / | | | '_ \ / _` | |/ _ \
@@ -149,8 +149,9 @@ set smartcase "override 'ignorecase' when pattern has upper chars
 "
 "4 displaying text
 "set number "show line nuber for each line
-set relativenumber "show line numbers relative to the current line
+set wrap "long lines wrap
 set linebreak "break long lines at char in 'breakat' (local to window)
+set relativenumber "show line numbers relative to the current line
 set scrolloff=2 "number of screen lines to show around the cursor
 
 "5 syntax, highlighting and spelling
@@ -254,3 +255,6 @@ noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 
 " Shortkeys notes
 " :! ---> run terminal commands from vim
+" == ---> auto indent of the current visual selected block
+" u ---> undo
+" Ctrp+r ---> redo
