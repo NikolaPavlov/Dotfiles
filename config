@@ -33,7 +33,8 @@ floating_modifier $mod
 bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+#bindsym $mod+Shift+q kill
+bindsym F4 kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -124,8 +125,8 @@ mode "resize" {
         #bindsym semicolon resize grow width 10 px or 10 ppt
 
         bindsym Left resize shrink width 1 px or 1 ppt
-        bindsym Up resize grow height 1 px or 1 ppt
-        bindsym Down resize shrink height 1 px or 1 ppt
+        bindsym Down resize grow height 1 px or 1 ppt
+        bindsym Up resize shrink height 1 px or 1 ppt
         bindsym Right resize grow width 1 px or 1 ppt
 
         bindsym h resize shrink width 1 px or 1 ppt
@@ -152,7 +153,7 @@ bar {
 # User Settings!!!
 # ############################################################################
 # disable title bar
-new_window pixel 5
+new_window pixel 7
 
 # Start programs on startup
 exec --no-startup-id nm-applet
@@ -163,6 +164,11 @@ client.focused #0088CC #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
+
+client.urgent           #f2c926 #f1c40f #ffffff #ffff00 
+client.focused          #a569bd #9b59b6 #ffffff #2e9ef4
+client.focused_inactive #b39cbd #AB92B6 #ffffff #484e50
+client.unfocused        #415161 #2c3e50 #ffffff #292d2e
 
 # feh for set up wallpaper (need to install feh)
 exec --no-startup-id feh --bg-fill /home/gogo/Pictures/wallpaper.jpg
