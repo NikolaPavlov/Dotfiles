@@ -276,3 +276,5 @@ noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 " Ctrp+r ---> redo
 " -10t. ---> copy relative line 10 lines above current to current
 " -10t+20 ---> copy relative line -10 to line +20
+"m[a] ---> mark current line as mark a
+"'a ---> go to mark a
