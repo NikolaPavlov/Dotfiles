@@ -8,9 +8,9 @@
 " |______|_|_| |_|_|\_\___/
 " =============================================================================
 " http://vimcasts.org/
-" http://vimawesome.com/
-" http://www.vimbits.com/
-" http://bytefluent.com/vivify/ ---> color theme preview and creater
+" http://vimawesome.com/ ---> vim plugins
+" http://www.vimbits.com/ ---> vim scripts
+" http://bytefluent.com/vivify/ ---> color theme preview and creator
 "
 " http://vimdoc.sf.net (this is :help as html)
 " =============================================================================
@@ -66,7 +66,7 @@ Plugin 'Valloric/YouCompleteMe'                             "Autocomplete addon
 Plugin 'kien/ctrlp.vim'                                           "Ctrl+P addon
 "------------------------------------------------------------------------------
 "UltiSnips---------------------------------------------------------------------
-Plugin 'SirVer/ultisnips'                                         "Snipet addon
+Plugin 'SirVer/ultisnips'                                        "Snippet addon
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsJumpForwardTrigger="<tab>"
     let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -156,7 +156,6 @@ set scrolloff=2 "number of screen lines to show around the cursor
 
 "5 syntax, highlighting and spelling
 syntax on
-set spell "highlight spelling mistakes
 set hlsearch "highlight all matches for the last used search pattern
 set background=dark
 set cursorline "highlight the screen line of the cursor
@@ -180,8 +179,8 @@ set guifont=Inconsolata\ 13
 set showcmd "show command keys in the status line
 
 "13 selecting text
-set clipboard=unnamed
-"set clipboard=unnamedplus
+"set clipboard=unnamed
+set clipboard=unnamedplus
 
 "14 editing text
 set textwidth=80 "line length above which to break the line
@@ -198,8 +197,6 @@ set shiftround "round to 'shiftwidth' for '<<' and '>>'
 "16 folding
 set foldmethod=indent
 set foldlevel=99
-"enable folding with tab
-" nnoremap <tab> za 
 
 "17 diff mode
 
@@ -244,11 +241,27 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 "Keys maps---------------------------------------------------------------------
-nnoremap <leader><space> :noh<cr>
+" no highlight
+nnoremap <leader> :noh<cr>
+" map ; to :
 nnoremap ; :
 "turn on off spell checking
 nmap <silent><leader>s :set spell!<CR> 
+"move current line up or down
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+"move multiple selected lines up or down
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+"folding and unfolding with Space
+nnoremap <Space> za
+
+
+
 "------------------------------------------------------------------------------
+"forcing saving files that require root permission
+cmap w!! %!sudo tee > /dev/null %
+
 "format html on read and write (remove spaces)
 autocmd BufRead,BufWritePre *.html normal gg=G 
 
@@ -261,3 +274,5 @@ noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 " == ---> auto indent of the current visual selected block
 " u ---> undo
 " Ctrp+r ---> redo
+" -10t. ---> copy relative line 10 lines above current to current
+" -10t+20 ---> copy relative line -10 to line +20
