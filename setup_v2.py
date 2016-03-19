@@ -5,20 +5,25 @@ CWD = os.getcwd()
 HOME_DIR = os.path.expanduser('~')
 VUNDLE_GIT_REPO = 'https://github.com/VundleVim/Vundle.vim.git'
 VUNDLE_DESTINATION = HOME_DIR + '/.vim/bundle/Vundle.vim'
-I3_DESTINATION_FOLDER = HOME_DIR + '/' + '.i3'
-ZATHURA_DESTINATION_FOLDER = HOME_DIR + '/' + '.config/zathura'
 BASHRC_FILE = CWD + '/' + 'bashrc'
 BASHRC_DESTINATION = HOME_DIR + '/' + '.bashrc'
 VIMRC_FILE = CWD + '/' + 'vimrc'
 VIMRC_DESTINATION = HOME_DIR + '/' + '.vimrc'
 I3_CONFIG_FILE = CWD + '/' + 'config'
 I3_DESTINATION = HOME_DIR + '/' + '.i3/config'
+I3_DESTINATION_FOLDER = HOME_DIR + '/' + '.i3'
 ZATHURA_FILE = CWD + '/' + 'zathurarc'
 ZATHURA_DESTINATION = HOME_DIR + '/' + '.config/zathura/zathurarc'
+ZATHURA_DESTINATION_FOLDER = HOME_DIR + '/' + '.config/zathura'
 
 
-def is_dirs_there(dirs):
-    pass
+def create_dirs_if_doesnt_exists():
+    if not os.path.exists(I3_DESTINATION_FOLDER):
+        os.mkdir(I3_DESTINATION_FOLDER)
+        print('created i3 destination folder')
+    if not os.path.exists(ZATHURA_DESTINATION_FOLDER):
+        os.mkdir(ZATHURA_DESTINATION_FOLDER)
+        print('created zathura destination folder')
 
 
 def create_symlink(from_file, to_file):
@@ -27,14 +32,11 @@ def create_symlink(from_file, to_file):
         os.symlink(from_file, to_file)
         print('replace file with symlink ' + to_file)
     else:
-        if not os.path.exists(I3_DESTINATION_FOLDER):
-            os.mkdir(I3_DESTINATION_FOLDER)
-        if not os.path.exists(ZATHURA_DESTINATION_FOLDER):
-            os.mkdir(ZATHURA_DESTINATION_FOLDER)
         os.symlink(from_file, to_file)
         print('created symlink ' + to_file)
 
-is_dirs_there()
+
+create_dirs_if_doesnt_exists()
 create_symlink(BASHRC_FILE, BASHRC_DESTINATION)
 create_symlink(VIMRC_FILE, VIMRC_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
