@@ -17,6 +17,10 @@ ZATHURA_FILE = CWD + '/' + 'zathurarc'
 ZATHURA_DESTINATION = HOME_DIR + '/' + '.config/zathura/zathurarc'
 
 
+def is_dirs_there(dirs):
+    pass
+
+
 def create_symlink(from_file, to_file):
     if os.path.exists(to_file):
         os.remove(to_file)
@@ -30,7 +34,7 @@ def create_symlink(from_file, to_file):
         os.symlink(from_file, to_file)
         print('created symlink ' + to_file)
 
-
+is_dirs_there()
 create_symlink(BASHRC_FILE, BASHRC_DESTINATION)
 create_symlink(VIMRC_FILE, VIMRC_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
@@ -39,4 +43,5 @@ create_symlink(ZATHURA_FILE, ZATHURA_DESTINATION)
 # install vundle if not present in the current system
 if os.path.exists(HOME_DIR + '/.vim/bundle/Vundle.vim'):
     print('vundle is already instaled!')
-else: os.system('git clone ' + VUNDLE_GIT_REPO + ' ' + VUNDLE_DESTINATION)
+else:
+    os.system('git clone ' + VUNDLE_GIT_REPO + ' ' + VUNDLE_DESTINATION)
