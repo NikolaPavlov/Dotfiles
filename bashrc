@@ -29,6 +29,8 @@ alias ping8='ping 8.8.8.8'
 
 # Pacman
 alias update='sudo pacman -Syu'
+alias install='sudo pacman -S '
+alias remove='sudo pacman -Rs '
 # Python
 alias p='python3.5'
 # Git
