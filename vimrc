@@ -230,6 +230,9 @@ set gdefault "use 'g' flag for ':substitute' ('g' - global)
 " =============================================================================
 " =============================================================================
 " =============================================================================
+" =============================================================================
+" =============================================================================
+" =============================================================================
 set t_Co=256
 colorscheme distinguished
 let mapleader=","
@@ -245,7 +248,7 @@ map <c-h> <c-w>h
 nnoremap <leader> :noh<cr>
 " map ; to :
 nnoremap ; :
-"turn on off spell checking
+"turn on off spell checking with ,s
 nmap <silent><leader>s :set spell!<CR> 
 "move current line up or down
 nmap <C-Up> ddkP
@@ -259,10 +262,6 @@ nnoremap <Space> za
 inoremap jj <Esc>
 "select all text
 map <leader>a ggVG
-
-
-
-
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 "cmap w!! %!sudo tee > /dev/null %
