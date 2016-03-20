@@ -175,9 +175,9 @@ client.unfocused        #415161 #2c3e50 #ffffff #292d2e
 exec --no-startup-id feh --bg-fill /home/gogo/Pictures/wallpaper.jpg
 
 # key bindings
-bindcode $mod+67 exec --no-startup-id firefox
-bindcode $mod+68 exec --no-startup-id thunar
-bindcode $mod+69 exec --no-startup-id thunderbird
+bindcode 67 exec --no-startup-id firefox
+bindcode 68 exec --no-startup-id thunar
+bindcode 69 exec --no-startup-id thunderbird
 
 # volume control keys and mute
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute

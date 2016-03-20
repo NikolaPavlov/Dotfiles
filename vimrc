@@ -255,18 +255,27 @@ vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 "folding and unfolding with Space
 nnoremap <Space> za
+"jj as Esc alternative
+inoremap jj <Esc>
+"select all text
+map <leader>a ggVG
+
 
 
 
 "------------------------------------------------------------------------------
-"forcing saving files that require root permission
-cmap w!! %!sudo tee > /dev/null %
+"forcing saving files that require root permission with :W
+"cmap w!! %!sudo tee > /dev/null %
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 "format html on read and write (remove spaces)
 autocmd BufRead,BufWritePre *.html normal gg=G 
 
 "run python code in vim <F5>
 noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
+
+"auto chmod +x if file begin with #! and contains /bin/
+au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
 
 
 " Shortkeys notes
