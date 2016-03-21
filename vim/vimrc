@@ -13,17 +13,9 @@
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
 "
 " http://vimdoc.sf.net (this is :help as html)
-
-
+" =============================================================================
 source $HOME/.vim/plugins.vim
 
-
-
-
-
-
-filetype plugin on
-filetype plugin indent on 
 
 " Brief vundle help
 " :PluginList       - lists configured plugins
@@ -39,6 +31,8 @@ filetype plugin indent on
 "/ /_\\  __/ | | |  __/ | | (_| | |
 "\____/\___|_| |_|\___|_|  \__,_|_|
 " =============================================================================
+filetype plugin on
+filetype plugin indent on 
 " :options
 
 "1 important
@@ -84,8 +78,8 @@ set guifont=Inconsolata\ 13
 set showcmd "show command keys in the status line
 
 "13 selecting text
-"set clipboard=unnamed
-set clipboard=unnamedplus
+set clipboard=unnamed
+"set clipboard=unnamedplus
 
 "14 editing text
 set textwidth=80 "line length above which to break the line
