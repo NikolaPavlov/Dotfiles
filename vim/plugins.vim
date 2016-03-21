@@ -101,3 +101,14 @@ Plugin 'jiangmiao/auto-pairs'                 "auto complete pairs aka brackets
 Plugin 'flazz/vim-colorschemes'                       "massive amount of themes
 "------------------------------------------------------------------------------
 call vundle#end()
+"------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
+
+" Brief vundle help
+" :PluginList       - lists configured plugins
+" :PluginUpdate     - update all plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" see :h vundle for more details or wiki for FAQ
