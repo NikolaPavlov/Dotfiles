@@ -39,6 +39,7 @@ pacman -S net-tools
 pacman -S nfs-utils
 pacman -S macchanger
 pacman -S ipython
+pacman -S python-pip
 ===============================================================
 lxapperance themes and icons
 ---------------------------------
