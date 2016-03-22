@@ -47,3 +47,5 @@ au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !ch
 " -10t+20 ---> copy relative line -10 to line +20
 "m[a] ---> mark current line as mark a
 "'a ---> go to mark a
+" ctrl+a ---> increase number under cursor
+" ctrl+x ---> decrease number under cursor
