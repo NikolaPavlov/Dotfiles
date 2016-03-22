@@ -1,6 +1,6 @@
 let mapleader=","
 "NerdTree bindings-------------------------------------------------------------
-map <F2> :NERDTreeToggle<CR>
+map <c-t> :NERDTreeToggle<CR>
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
