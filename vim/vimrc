@@ -34,7 +34,7 @@ set ignorecase "ignore case when using search pattern
 set smartcase "override 'ignorecase' when pattern has upper chars
 "3 tags
 "4 displaying text
-"set number "show line nuber for each line
+"set number "show line number for each line
 set wrap "long lines wrap
 set linebreak "break long lines at char in 'breakat' (local to window)
 set relativenumber "show line numbers relative to the current line
@@ -56,8 +56,8 @@ set guifont=Inconsolata\ 13
 "12 messages and info
 set showcmd "show command keys in the status line
 "13 selecting text
-"set clipboard=unnamed
-set clipboard=unnamedplus
+set clipboard=unnamed
+"set clipboard=unnamedplus
 "14 editing text
 set textwidth=80 "line length above which to break the line
 "15 tabs and indenting
@@ -94,3 +94,4 @@ set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
 colorscheme distinguished
 " =============================================================================
+set lazyredraw
