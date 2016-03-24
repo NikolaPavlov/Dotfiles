@@ -13,11 +13,11 @@ nnoremap ; :
 "turn on off spell checking with ,s
 nmap <silent><leader>s :set spell!<CR> 
 "move current line up or down
-"nmap <C-k> ddkP
-"nmap <C-j> ddp
+nmap <C-S-k> ddkP
+nmap <C-S-j> ddp
 "move multiple selected lines up or down
-"vmap <C-k> xkP`[V`]
-"vmap <C-j> xp`[V`]
+vmap <C-S-k> xkP`[V`]
+vmap <C-S-j> xp`[V`]
 "folding and unfolding with Space
 nnoremap <Space> za
 "jj as Esc alternative
