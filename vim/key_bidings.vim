@@ -42,15 +42,3 @@ noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 
 "auto chmod +x if file begin with #! and contains /bin/
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
-"
-" Shortkeys notes
-" :! ---> run terminal commands from vim
-" == ---> auto indent of the current visual selected block
-" u ---> undo
-" Ctrp+r ---> redo
-" -10t. ---> copy relative line 10 lines above current to current
-" -10t+20 ---> copy relative line -10 to line +20
-"m[a] ---> mark current line as mark a
-"'a ---> go to mark a
-" ctrl+a ---> increase number under cursor
-" ctrl+x ---> decrease number under cursor
