@@ -11,6 +11,14 @@ noremap <left> <nop>
 noremap <right> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
+"better regular expressions searching
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
+"move currsor with j and k on wrap lines too 
+nnoremap j gj
+nnoremap k gk
 " no highlight
 nnoremap <leader> :noh<cr>
 " map ; to :
@@ -27,6 +35,7 @@ vmap <C-S-j> xp`[V`]
 nnoremap <Space> za
 "jk as Esc alternative
 inoremap jk <Esc>
+inoremap kj <Esc>
 "select all text
 map <leader>a ggVG
 "------------------------------------------------------------------------------

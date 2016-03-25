@@ -12,3 +12,12 @@
 " ctrl+x ---> decrease number under cursor
 "<number><leade>cc  ---> comment number lines
 "<number><leader>uc ---> uncomment number lines
+":reg ---> open current registers
+""[num] ---> use num register
+
+":%s//bar ---> replace highlighted result from search with bar
+"zz ---> put current line in the middle of the window
+"* ---> search for the word under the currsor
+
+
+" TODO: Book: Learn vim script the hard way
