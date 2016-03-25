@@ -6,6 +6,11 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 "Keys maps---------------------------------------------------------------------
+"remap arrow keys to nothing
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
 " no highlight
 nnoremap <leader> :noh<cr>
 " map ; to :
@@ -13,15 +18,15 @@ nnoremap ; :
 "turn on off spell checking with ,s
 nmap <silent><leader>s :set spell!<CR> 
 "move current line up or down
-"nmap <C-k> ddkP
-"nmap <C-j> ddp
+nmap <C-S-k> ddkP
+nmap <C-S-j> ddp
 "move multiple selected lines up or down
-"vmap <C-k> xkP`[V`]
-"vmap <C-j> xp`[V`]
+vmap <C-S-k> xkP`[V`]
+vmap <C-S-j> xp`[V`]
 "folding and unfolding with Space
 nnoremap <Space> za
-"jj as Esc alternative
-inoremap jj <Esc>
+"jk as Esc alternative
+inoremap jk <Esc>
 "select all text
 map <leader>a ggVG
 "------------------------------------------------------------------------------
