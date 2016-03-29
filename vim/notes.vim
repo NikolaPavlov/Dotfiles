@@ -12,3 +12,4 @@
 " ctrl+x ---> decrease number under cursor
 "<number><leade>cc  ---> comment number lines
 "<number><leader>uc ---> uncomment number lines
+"<leader>s ---> sort in visual mode

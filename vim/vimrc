@@ -34,7 +34,6 @@ set ignorecase "ignore case when using search pattern
 set smartcase "override 'ignorecase' when pattern has upper chars
 "3 tags
 "4 displaying text
-"set number "show line number for each line
 set wrap "long lines wrap
 set linebreak "break long lines at char in 'breakat' (local to window)
 set relativenumber "show line numbers relative to the current line
@@ -80,7 +79,6 @@ set noswapfile
 "21 command line editing
 set wildmenu "comand line completion show a list of matches
 set wildmode=full "specifies how command line completion works
-"set undofile "automatically save and restore undo history
 "22 executing external commands
 "23 running make and jumping to errors
 "24 language specific
@@ -89,7 +87,6 @@ set fileencoding=utf-8
 set encoding=utf-8
 "26 various
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
-"set edcompatible "use 'g' and 'c' flags for ':substitute' ('c' - confirmaton)
 "
 set t_Co=256
 colorscheme distinguished

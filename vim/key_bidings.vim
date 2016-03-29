@@ -7,7 +7,7 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 "Keys maps---------------------------------------------------------------------
 " no highlight
-nnoremap <leader> :noh<cr>
+"nnoremap <leader> :noh<cr>
 " map ; to :
 nnoremap ; :
 "turn on off spell checking with ,s
@@ -24,6 +24,11 @@ nnoremap <Space> za
 inoremap jj <Esc>
 "select all text
 map <leader>a ggVG
+"sort selected text
+vnoremap <leader>s :sort<CR>
+"moving code blocks
+vnoremap < <gv
+vnoremap > >gv
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 "cmap w!! %!sudo tee > /dev/null %

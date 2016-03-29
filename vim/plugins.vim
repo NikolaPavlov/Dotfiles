@@ -35,6 +35,9 @@ Plugin 'klen/python-mode'
     let g:pymode_doc_bind = "<C-S-d>"
     " Disable rope enable left for jedi
     let g:pymode_rope = 0 
+    "keybidings
+    "<Shift>K ---> go to documentation
+    ":help pymode ---> pymode help
 "------------------------------------------------------------------------------
 "YouCompleteMe-----------------------------------------------------------------
 Plugin 'Valloric/YouCompleteMe'                             "Autocomplete addon
@@ -112,3 +115,5 @@ call vundle#end()
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 " see :h vundle for more details or wiki for FAQ
+"
+" TODO: check vim pasta plugin
