@@ -21,9 +21,8 @@ alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --colo
 alias grep='grep --color=tty -d skip'
 alias df='df -h'                                         # human-readable sizes
 alias free='free -m'                                         # show sizes in MB
-alias ports='netstat -tulanp'
 alias myip='curl http://ipecho.net/plain; echo'
-#alias vboxshare='sudo mount -t vboxsf Share /mnt'
+alias t='xfce4-terminal'
 alias ping1='ping 192.168.1.1'
 alias ping8='ping 8.8.8.8'
 

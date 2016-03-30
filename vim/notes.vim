@@ -18,6 +18,6 @@
 ":%s//bar ---> replace highlighted result from search with bar
 "zz ---> put current line in the middle of the window
 "* ---> search for the word under the currsor
-
+"<leader>s ---> sort in visual mode
 
 " TODO: Book: Learn vim script the hard way

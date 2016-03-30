@@ -20,7 +20,7 @@ vnoremap ? ?\v
 nnoremap j gj
 nnoremap k gk
 " no highlight
-nnoremap <leader> :noh<cr>
+"nnoremap <leader> :noh<cr>
 " map ; to :
 nnoremap ; :
 "turn on off spell checking with ,s
@@ -38,6 +38,11 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 "select all text
 map <leader>a ggVG
+"sort selected text
+vnoremap <leader>s :sort<CR>
+"moving code blocks
+vnoremap < <gv
+vnoremap > >gv
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 "cmap w!! %!sudo tee > /dev/null %

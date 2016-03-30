@@ -12,21 +12,21 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType    = '<C-n>'
 let g:SuperTabCrMapping                = 0
 "
 "GitGutter---------------------------------------------------------------------
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 "------------------------------------------------------------------------------
 "Aireline----------------------------------------------------------------------
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 "------------------------------------------------------------------------------
 "NerdTree----------------------------------------------------------------------
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 "------------------------------------------------------------------------------
 "Python-Mode-------------------------------------------------------------------
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
     " Override go-to.definition key shortcut to Ctrl-]
     let g:pymode_rope_goto_definition_bind = "<C-]>"
     " Override run current python file key shortcut to Ctrl-Shift-e
@@ -35,6 +35,9 @@ Plugin 'klen/python-mode'
     let g:pymode_doc_bind = "<C-S-d>"
     " Disable rope enable left for jedi
     let g:pymode_rope = 0 
+    "keybidings
+    "<Shift>K ---> go to documentation
+    ":help pymode ---> pymode help
 "------------------------------------------------------------------------------
 "YouCompleteMe-----------------------------------------------------------------
 Plugin 'Valloric/YouCompleteMe'                             "Autocomplete addon
@@ -48,16 +51,16 @@ Plugin 'Valloric/YouCompleteMe'                             "Autocomplete addon
     let g:ycm_complete_in_strings = 1 " Completion in string
 "------------------------------------------------------------------------------
 "CtrlP-------------------------------------------------------------------------
-Plugin 'kien/ctrlp.vim'                                           "Ctrl+P addon
+"Plugin 'kien/ctrlp.vim'                                           "Ctrl+P addon
 "------------------------------------------------------------------------------
 "UltiSnips---------------------------------------------------------------------
-Plugin 'SirVer/ultisnips'                                        "Snippet addon
+"Plugin 'SirVer/ultisnips'                                        "Snippet addon
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsJumpForwardTrigger="<tab>"
     let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "------------------------------------------------------------------------------
 "Snippets collection-----------------------------------------------------------
-Plugin 'honza/vim-snippets'                          "Default snipet collection
+"Plugin 'honza/vim-snippets'                          "Default snipet collection
     "auto load django and htmldjango on startup for snippets
 	autocmd FileType python set ft=python.django
 	autocmd FileType html set ft=htmldjango.html
@@ -74,28 +77,28 @@ Plugin 'scrooloose/syntastic'                            "syntax errors checker
     let g:syntastic_check_on_wq = 0
 "------------------------------------------------------------------------------
 "Nerdcommenter-----------------------------------------------------------------
-Plugin 'scrooloose/nerdcommenter'                            "comments provider
+"Plugin 'scrooloose/nerdcommenter'                            "comments provider
 "------------------------------------------------------------------------------
 "EasyMotion--------------------------------------------------------------------
-Plugin 'easymotion/vim-easymotion'                     "easy move between words
+"Plugin 'easymotion/vim-easymotion'                     "easy move between words
 "<leader><leader>w        ---> find words
 "<leader><leader>f<char>  ---> find chars
 "------------------------------------------------------------------------------
 "Surround----------------------------------------------------------------------
-Plugin 'tpope/vim-surround'                            "surround text with tags 
+"Plugin 'tpope/vim-surround'                            "surround text with tags 
 "yss[new one]             ---> insert surrounding
 "cs[current][new one]     ---> change surrounding
 "ds[current]              ---> delete surrounding
 "------------------------------------------------------------------------------
 "Sparkup-----------------------------------------------------------------------
-Plugin 'rstacruz/sparkup'                                   "fast html expander
+"Plugin 'rstacruz/sparkup'                                   "fast html expander
 "------------------------------------------------------------------------------
 "VimIndent---------------------------------------------------------------------
-Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
 "identation plugin <leader>ig for activating
 "------------------------------------------------------------------------------
 "AutoPairs---------------------------------------------------------------------
-Plugin 'jiangmiao/auto-pairs'                 "auto complete pairs aka brackets
+"Plugin 'jiangmiao/auto-pairs'                 "auto complete pairs aka brackets
 "------------------------------------------------------------------------------
 "ColorSchemes------------------------------------------------------------------
 Plugin 'flazz/vim-colorschemes'                       "massive amount of themes
@@ -112,3 +115,5 @@ call vundle#end()
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 " see :h vundle for more details or wiki for FAQ
+"
+" TODO: check vim pasta plugin
