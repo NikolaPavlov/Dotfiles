@@ -153,7 +153,7 @@ bar {
 # User Settings!!!
 # ############################################################################
 # disable title bar
-new_window pixel 1
+new_window pixel 2
 
 # Start programs on startup
 exec --no-startup-id nm-applet
