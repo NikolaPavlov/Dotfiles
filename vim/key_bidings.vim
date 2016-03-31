@@ -6,6 +6,19 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 "Keys maps---------------------------------------------------------------------
+"remap arrow keys to nothing
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+"better regular expressions searching
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
+"move currsor with j and k on wrap lines too 
+nnoremap j gj
+nnoremap k gk
 " no highlight
 nnoremap <leader> :noh<cr>
 " map ; to :
