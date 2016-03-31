@@ -1,5 +1,4 @@
 # dotfiles
-linux backup files
 
 setup.py ---> will setup all files in their places in my arch linux install
 

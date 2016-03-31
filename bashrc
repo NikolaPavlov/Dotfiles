@@ -97,3 +97,6 @@ set -o vi
 
 # change dirs withowth cd
 shopt -s autocd
+
+# disable <ctrl-s> in xfce4-terminal (legacy software control flow)
+stty -ixon

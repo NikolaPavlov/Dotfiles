@@ -7,19 +7,20 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 "Keys maps---------------------------------------------------------------------
 " no highlight
-"nnoremap <leader> :noh<cr>
+nnoremap <leader> :noh<cr>
 " map ; to :
 nnoremap ; :
 "turn on off spell checking with ,s
 nmap <silent><leader>s :set spell!<CR> 
-"move current line up or down
-nmap <C-S-k> ddkP
-nmap <C-S-j> ddp
-"move multiple selected lines up or down
-vmap <C-S-k> xkP`[V`]
-vmap <C-S-j> xp`[V`]
+"move current line up or down with arrows
+nmap <Up> ddkP
+nmap <Down> ddp
+"move multiple selected lines up or down with arrows
+vmap <Up> xkP`[V`]
+vmap <Down> xp`[V`]
 "folding and unfolding with Space
 nnoremap <Space> za
+vnoremap <Space> za
 "jj as Esc alternative
 inoremap jj <Esc>
 "select all text
@@ -29,6 +30,14 @@ vnoremap <leader>s :sort<CR>
 "moving code blocks
 vnoremap < <gv
 vnoremap > >gv
+"Substitute
+nnoremap <c-s> :%s/
+vnoremap <c-s> :s/
+"edit vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 "cmap w!! %!sudo tee > /dev/null %
@@ -42,3 +51,9 @@ noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 
 "auto chmod +x if file begin with #! and contains /bin/
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
+
+"syntastic check with F12
+noremap <F12> :SyntasticCheck<CR>
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'

@@ -36,6 +36,8 @@ set smartcase "override 'ignorecase' when pattern has upper chars
 "4 displaying text
 set wrap "long lines wrap
 set linebreak "break long lines at char in 'breakat' (local to window)
+set showbreak=▷ " string to put before wrapped screen lines
+set number "show current line number
 set relativenumber "show line numbers relative to the current line
 set scrolloff=2 "number of screen lines to show around the cursor
 "5 syntax, highlighting and spelling
@@ -46,6 +48,8 @@ set cursorline "highlight the screen line of the cursor
 set colorcolumn=80 "columns to highlight (local to window)
 "6 multiple windows
 set laststatus=2 "when to show status line (2 = always)
+set splitbelow  "a new window is put below the current one
+set splitright "a new window is put right of the current one
 "7 multiple tab pages
 "8 terminal
 "9 using the mouse
