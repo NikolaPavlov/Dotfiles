@@ -13,8 +13,10 @@
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
 " http://vimdoc.sf.net (this is :help as html)
 " =============================================================================
+filetype off
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/key_bidings.vim
+filetype plugin indent on 
 " =============================================================================
 "   ___                          _ 
 "  / _ \___ _ __   ___ _ __ __ _| |
@@ -22,8 +24,6 @@ source $HOME/.vim/key_bidings.vim
 "/ /_\\  __/ | | |  __/ | | (_| | |
 "\____/\___|_| |_|\___|_|  \__,_|_|
 " =============================================================================
-filetype plugin on
-filetype plugin indent on 
 " :options options
 "1 important
 set nocompatible "don't behave like vi

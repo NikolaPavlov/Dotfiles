@@ -41,15 +41,16 @@ Plugin 'scrooloose/nerdtree'
     ":help pymode ---> pymode help
 "------------------------------------------------------------------------------
 "YouCompleteMe-----------------------------------------------------------------
-"Plugin 'Valloric/YouCompleteMe'                             "Autocomplete addon
-    "let g:ycm_key_list_select_completion   = ['<C-j>', '<Down>']
-    "let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+"https://wiki.archlinux.org/index.php/YouCompleteMe%23C.23 Instalation guide
+Plugin 'Valloric/YouCompleteMe'                             "Autocomplete addon
+    let g:ycm_key_list_select_completion   = ['<C-j>', '<Down>']
+    let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 
-    "let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-    "let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-    "let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-    "let g:ycm_complete_in_comments = 1 " Completion in comments
-    "let g:ycm_complete_in_strings = 1 " Completion in string
+    let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+    let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+    let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+    let g:ycm_complete_in_comments = 1 " Completion in comments
+    let g:ycm_complete_in_strings = 1 " Completion in string
 "------------------------------------------------------------------------------
 "CtrlP-------------------------------------------------------------------------
 Plugin 'kien/ctrlp.vim'                                           "Ctrl+P addon
@@ -67,21 +68,21 @@ Plugin 'kien/ctrlp.vim'                                           "Ctrl+P addon
     "autocmd FileType html set ft=htmldjango.html
 "------------------------------------------------------------------------------
 "Syntastic----------------------------------------------------------------------
-Plugin 'scrooloose/syntastic'                            "syntax errors checker
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
+"Plugin 'scrooloose/syntastic'                            "syntax errors checker
+    "set statusline+=%#warningmsg#
+    "set statusline+=%{SyntasticStatuslineFlag()}
+    "set statusline+=%*
 
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1 "show the error list automaticaly
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
+    "let g:syntastic_always_populate_loc_list = 1
+    "let g:syntastic_auto_loc_list = 1 "show the error list automaticaly
+    "let g:syntastic_check_on_open = 1
+    "let g:syntastic_check_on_wq = 0
 
-    let g:syntastic_python_checkers = ['pep8'] 
-    let g:syntastic_echo_current_error = 1
-    let g:syntastic_enable_signs = 1 "mark syntax errors with :signs
-    let g:syntastic_auto_jump = 1
-    let g:syntastic_mode_map = {'mode': 'active'}
+    "let g:syntastic_python_checkers = ['pep8'] 
+    "let g:syntastic_echo_current_error = 1
+    "let g:syntastic_enable_signs = 1 "mark syntax errors with :signs
+    "let g:syntastic_auto_jump = 1
+    "let g:syntastic_mode_map = {'mode': 'active'}
 ""------------------------------------------------------------------------------
 ""Nerdcommenter-----------------------------------------------------------------
 Plugin 'scrooloose/nerdcommenter'                            "comments provider
