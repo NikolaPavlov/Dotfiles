@@ -5,7 +5,6 @@
 "   \_/  \__,_|_| |_|\__,_|_|\___|
 " =============================================================================
 set nocompatible
-filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -56,6 +55,7 @@ Plugin 'Valloric/YouCompleteMe'                             "Autocomplete addon
 Plugin 'kien/ctrlp.vim'                                           "Ctrl+P addon
 "------------------------------------------------------------------------------
 "UltiSnips---------------------------------------------------------------------
+"https://www.youtube.com/watch?v=f_WQxYgK0Pk
 "Plugin 'SirVer/ultisnips'                                        "Snippet addon
     "let g:UltiSnipsExpandTrigger="<tab>"
     "let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -68,20 +68,20 @@ Plugin 'kien/ctrlp.vim'                                           "Ctrl+P addon
     "autocmd FileType html set ft=htmldjango.html
 "------------------------------------------------------------------------------
 "Syntastic----------------------------------------------------------------------
-"Plugin 'scrooloose/syntastic'                            "syntax errors checker
-    "set statusline+=%#warningmsg#
-    "set statusline+=%{SyntasticStatuslineFlag()}
-    "set statusline+=%*
+Plugin 'scrooloose/syntastic'                            "syntax errors checker
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
 
-    "let g:syntastic_always_populate_loc_list = 1
-    "let g:syntastic_auto_loc_list = 1 "show the error list automaticaly
-    "let g:syntastic_check_on_open = 1
-    "let g:syntastic_check_on_wq = 0
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1 "show the error list automaticaly
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 1
 
-    "let g:syntastic_python_checkers = ['pep8'] 
-    "let g:syntastic_echo_current_error = 1
-    "let g:syntastic_enable_signs = 1 "mark syntax errors with :signs
-    "let g:syntastic_auto_jump = 1
+    let g:syntastic_python_checkers = ['pep8'] 
+    let g:syntastic_echo_current_error = 1
+    let g:syntastic_enable_signs = 1 "mark syntax errors with :signs
+    let g:syntastic_auto_jump = 1
     "let g:syntastic_mode_map = {'mode': 'active'}
 ""------------------------------------------------------------------------------
 ""Nerdcommenter-----------------------------------------------------------------
@@ -106,13 +106,14 @@ Plugin 'scrooloose/nerdcommenter'                            "comments provider
 ""identation plugin <leader>ig for activating
 ""------------------------------------------------------------------------------
 ""AutoPairs---------------------------------------------------------------------
-""Plugin 'jiangmiao/auto-pairs'                 "auto complete pairs aka brackets
+Plugin 'jiangmiao/auto-pairs'                 "auto complete pairs aka brackets
 ""------------------------------------------------------------------------------
 ""ColorSchemes------------------------------------------------------------------
 Plugin 'flazz/vim-colorschemes'                       "massive amount of themes
 ""------------------------------------------------------------------------------
 call vundle#end()
 "------------------------------------------------------------------------------
+"Plugin 'SirVer/ultisnips'                                        "Snippet addon
 "------------------------------------------------------------------------------
 "------------------------------------------------------------------------------
 

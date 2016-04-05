@@ -3,19 +3,27 @@ import os
 
 CWD = os.getcwd()
 HOME_DIR = os.path.expanduser('~')
+
 VUNDLE_GIT_REPO = 'https://github.com/VundleVim/Vundle.vim.git'
 VUNDLE_DESTINATION = HOME_DIR + '/.vim/bundle/Vundle.vim'
+
 BASHRC_FILE = CWD + '/bashrc'
 BASHRC_DESTINATION = HOME_DIR + '/.bashrc'
+
 VIMRC_FILE = CWD + '/vim/vimrc'
 VIMRC_DESTINATION = HOME_DIR + '/.vimrc'
 VIM_PLUGINS = CWD + '/vim/plugins.vim'
 VIM_PLUGINS_DESTINATION = HOME_DIR + '/.vim/plugins.vim'
 VIM_KEY_BIDINGS = CWD + '/vim/key_bidings.vim'
 VIM_KEY_BIDINGS_DESTINATION = HOME_DIR + '/.vim/key_bidings.vim'
+
+NEOVIM_NVIMRC_FILE = CWD + '/neovim/init.vim'
+NEOVIM_NVIMRC_DESTINATION = HOME_DIR + '/.config/nvim/init.vim'
+
 I3_CONFIG_FILE = CWD + '/config'
 I3_DESTINATION = HOME_DIR + '/.i3/config'
 I3_DESTINATION_FOLDER = HOME_DIR + '/.i3'
+
 ZATHURA_FILE = CWD + '/zathurarc'
 ZATHURA_DESTINATION = HOME_DIR + '/.config/zathura/zathurarc'
 ZATHURA_DESTINATION_FOLDER = HOME_DIR + '/.config/zathura'
@@ -49,6 +57,7 @@ def create_symlink(from_file, to_file):
 create_dirs_if_doesnt_exists()
 create_symlink(BASHRC_FILE, BASHRC_DESTINATION)
 create_symlink(VIMRC_FILE, VIMRC_DESTINATION)
+create_symlink(NEOVIM_NVIMRC_FILE, NEOVIM_NVIMRC_DESTINATION)
 create_symlink(VIM_PLUGINS, VIM_PLUGINS_DESTINATION)
 create_symlink(VIM_KEY_BIDINGS, VIM_KEY_BIDINGS_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
