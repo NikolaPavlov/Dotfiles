@@ -20,40 +20,42 @@ filetype off
     call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
     call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
   endif
-" Required:
   if &compatible
     set nocompatible
   endif
   set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
   call dein#begin(expand('~/.config/nvim'))
-" Required:
   call dein#add('Shougo/dein.vim')
+"start installing plugins
+  call dein#add('tmhedberg/SimpylFold') " fold improver for python code
+  call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
+  call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
+  call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
+    let g:neomake_python_enabled_makers = ['pep8']
+    autocmd! BufWritePost * Neomake
+  call dein#add('tpope/vim-surround') " change surroundings
+  call dein#add('tomtom/tcomment_vim') " comment plugin
+  call dein#add('Chiel92/vim-autoformat') " autoformat plugin (autopep8) need more setup for now didnt use autopep8
 
-
-  call dein#add('tpope/vim-fugitive')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('Xuyuanp/nerdtree-git-plugin')
+  call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
-  "call dein#add('tpope/vim-surround')
-  "call dein#add('mattn/emmet-vim', {'on_ft': 'html'})
-
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
-  "call dein#add('honza/vim-snippets')
+    let g:deoplete#enable_at_startup = 1
   call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
   call dein#add('ryanoasis/vim-devicons') " icons in vim
   call dein#add('flazz/vim-colorschemes') " many colorschemes
-  call dein#add('Valloric/MatchTagAlways')
-  call dein#add('scrooloose/nerdcommenter') " comment with <leader>cc <leader> cu
-  call dein#add('scrooloose/syntastic') " syntax checker for varius files
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1 "show the error list automaticaly
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 1
+  call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
+  call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
+  " call dein#add('scrooloose/nerdcommenter') " comment with <leader>cc <leader> cu
+  " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
+  "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
+  "call dein#add('tpope/vim-fugitive')
+  " call dein#add('Shougo/neosnippet.vim')
+  " call dein#add('Shougo/neosnippet-snippets')
+  "call dein#add('mattn/emmet-vim', {'on_ft': 'html'})
+"end installing plugins
 
   if dein#check_install()
     call dein#install()
@@ -120,6 +122,9 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
 nnoremap N Nzzzv
+" Comment Keys
+nnoremap <leader>c :TComment<cr>
+vnoremap <leader>c :TComment<cr>
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 "cmap w!! %!sudo tee > /dev/null %
@@ -133,6 +138,10 @@ noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 
 "auto chmod +x if file begin with #! and contains /bin/
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
+
+"this is nedded for simply fold to work correctly
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
 "syntastic check with F12
 noremap <F12> :SyntasticCheck<CR>
@@ -194,8 +203,8 @@ set softtabstop=4 "number of spaces to insert for a <Tab>
 set tabstop=4 "number of spaces a <Tab> in the text stands for
 set shiftround "round to 'shiftwidth' for '<<' and '>>'
 "16 folding
-set foldmethod=indent
-set foldlevel=99
+"set foldmethod=indent
+"set foldlevel=99
 "17 diff mode
 "18 mapping
 "19 reading and writing files
@@ -218,3 +227,6 @@ set t_Co=256
 colorscheme distinguished
 " =============================================================================
 "set lazyredraw
+"
+" NVIM specific settings
+set clipboard+=unnamedplus
