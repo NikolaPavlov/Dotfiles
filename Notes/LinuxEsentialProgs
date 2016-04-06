@@ -40,6 +40,10 @@ pacman -S nfs-utils
 pacman -S macchanger
 pacman -S ipython
 pacman -S python-pip
+nvim dependencies:
+pacman -S xclip
+pacman -S python-neovim
+pacman -S python2-neovim
 ===============================================================
 lxapperance themes and icons
 ---------------------------------

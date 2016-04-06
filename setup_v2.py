@@ -12,13 +12,10 @@ BASHRC_DESTINATION = HOME_DIR + '/.bashrc'
 
 VIMRC_FILE = CWD + '/vim/vimrc'
 VIMRC_DESTINATION = HOME_DIR + '/.vimrc'
-VIM_PLUGINS = CWD + '/vim/plugins.vim'
-VIM_PLUGINS_DESTINATION = HOME_DIR + '/.vim/plugins.vim'
-VIM_KEY_BIDINGS = CWD + '/vim/key_bidings.vim'
-VIM_KEY_BIDINGS_DESTINATION = HOME_DIR + '/.vim/key_bidings.vim'
 
 NEOVIM_NVIMRC_FILE = CWD + '/neovim/init.vim'
 NEOVIM_NVIMRC_DESTINATION = HOME_DIR + '/.config/nvim/init.vim'
+NEOVIM_NVIMRC_DESTINATION_FOLDER = HOME_DIR + '/.config/nvim'
 
 I3_CONFIG_FILE = CWD + '/config'
 I3_DESTINATION = HOME_DIR + '/.i3/config'
@@ -42,6 +39,9 @@ def create_dirs_if_doesnt_exists():
     if not os.path.exists(ZATHURA_DESTINATION_FOLDER):
         os.mkdir(ZATHURA_DESTINATION_FOLDER)
         print('created zathura destination folder')
+    if not os.path.exists(NEOVIM_NVIMRC_DESTINATION_FOLDER):
+        os.mkdir(NEOVIM_NVIMRC_DESTINATION_FOLDER)
+        print('testing printing')
 
 
 def create_symlink(from_file, to_file):
@@ -58,7 +58,5 @@ create_dirs_if_doesnt_exists()
 create_symlink(BASHRC_FILE, BASHRC_DESTINATION)
 create_symlink(VIMRC_FILE, VIMRC_DESTINATION)
 create_symlink(NEOVIM_NVIMRC_FILE, NEOVIM_NVIMRC_DESTINATION)
-create_symlink(VIM_PLUGINS, VIM_PLUGINS_DESTINATION)
-create_symlink(VIM_KEY_BIDINGS, VIM_KEY_BIDINGS_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
 create_symlink(ZATHURA_FILE, ZATHURA_DESTINATION)

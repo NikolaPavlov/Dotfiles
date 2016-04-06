@@ -1,5 +1,5 @@
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
 
 
 alias ..='cd ..'
@@ -8,7 +8,8 @@ alias c='clear'
 alias cl='clear'
 alias r='ranger'
 alias a='alsamixer'
-alias v='vim'
+alias v='nvim'
+alias vim='nvim'
 alias s='startx'
 alias rm='rm -Irv'
 alias off='poweroff'
