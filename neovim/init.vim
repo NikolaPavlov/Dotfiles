@@ -36,7 +36,6 @@ filetype off
   call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tomtom/tcomment_vim') " comment plugin
   call dein#add('Chiel92/vim-autoformat') " autoformat plugin (autopep8) need more setup for now didnt use autopep8
-
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
@@ -48,7 +47,7 @@ filetype off
   call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
-  " call dein#add('scrooloose/nerdcommenter') " comment with <leader>cc <leader> cu
+  call dein#add('ervandew/supertab') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
   " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
   "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
   "call dein#add('tpope/vim-fugitive')
