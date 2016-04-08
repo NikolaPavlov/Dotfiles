@@ -41,7 +41,7 @@ def create_dirs_if_doesnt_exists():
         print('created zathura destination folder')
     if not os.path.exists(NEOVIM_NVIMRC_DESTINATION_FOLDER):
         os.mkdir(NEOVIM_NVIMRC_DESTINATION_FOLDER)
-        print('testing printing')
+        print('created neovim destination folder')
 
 
 def create_symlink(from_file, to_file):

@@ -153,22 +153,16 @@ bar {
 # User Settings!!!
 # ############################################################################
 # disable title bar
-new_window pixel 2
+new_window pixel 3
 
 # Start programs on startup
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 
-# Window Colors
-client.focused #0088CC #0088CC #ffffff #dddddd
-client.focused_inactive #333333 #333333 #888888 #292d2e
-client.unfocused #333333 #333333 #888888 #292d2e
-client.urgent #2f343a #900000 #ffffff #900000
-
-client.urgent           #f2c926 #f1c40f #ffffff #ffff00 
-client.focused          #a569bd #00ff00 #ffffff #2e9ef4
-client.focused_inactive #b39cbd #AB92B6 #ffffff #484e50
-client.unfocused        #415161 #2c3e50 #ffffff #292d2e
+# class                 border  backgr. text    indicator child_border
+# client.focused          #4bc8ec #285577 #ffffff #2e9ef4   #285577
+client.focused          #a#ff4719 #aaaaaa #ffffff #ffffff 
+client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff 
 
 
 # feh for set up wallpaper (need to install feh)
