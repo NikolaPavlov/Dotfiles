@@ -6,6 +6,8 @@ bashrc ---> bash config file
 
 vimrc ---> vim config file
 
+init.vim ---> neovim config file
+
 zathurarc ---> zathura config file
 
 config ---> i3 config file
