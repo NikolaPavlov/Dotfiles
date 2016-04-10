@@ -25,6 +25,7 @@ ZATHURA_FILE = CWD + '/zathurarc'
 ZATHURA_DESTINATION = HOME_DIR + '/.config/zathura/zathurarc'
 ZATHURA_DESTINATION_FOLDER = HOME_DIR + '/.config/zathura'
 
+
 # install vundle if not present in the current system
 if os.path.exists(HOME_DIR + '/.vim/bundle/Vundle.vim'):
     print('vundle is already instaled!')
