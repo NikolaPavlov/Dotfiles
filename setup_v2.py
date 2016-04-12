@@ -25,6 +25,10 @@ ZATHURA_FILE = CWD + '/zathurarc'
 ZATHURA_DESTINATION = HOME_DIR + '/.config/zathura/zathurarc'
 ZATHURA_DESTINATION_FOLDER = HOME_DIR + '/.config/zathura'
 
+AUTOSTARTRC = CWD + '/autostartrc.sh'
+AUTOSTARTRC_DESTINATION = HOME_DIR + '/.autostartrc.sh'
+
+
 # install vundle if not present in the current system
 if os.path.exists(HOME_DIR + '/.vim/bundle/Vundle.vim'):
     print('vundle is already instaled!')
@@ -60,3 +64,4 @@ create_symlink(VIMRC_FILE, VIMRC_DESTINATION)
 create_symlink(NEOVIM_NVIMRC_FILE, NEOVIM_NVIMRC_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
 create_symlink(ZATHURA_FILE, ZATHURA_DESTINATION)
+create_symlink(AUTOSTARTRC, AUTOSTARTRC_DESTINATION)
