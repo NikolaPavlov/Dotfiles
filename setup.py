@@ -28,7 +28,6 @@ ZATHURA_DESTINATION_FOLDER = HOME_DIR + '/.config/zathura'
 AUTOSTARTRC = CWD + '/autostartrc.sh'
 AUTOSTARTRC_DESTINATION = HOME_DIR + '/.autostartrc.sh'
 
-
 # install vundle if not present in the current system
 if os.path.exists(HOME_DIR + '/.vim/bundle/Vundle.vim'):
     print('vundle is already instaled!')
