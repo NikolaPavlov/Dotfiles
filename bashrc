@@ -33,6 +33,7 @@ alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
 # Python
 alias p='python3.5'
+alias i='ipython'
 # Git
 alias gs='git status'
 alias gc='git commit'
