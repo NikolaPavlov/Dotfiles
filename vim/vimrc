@@ -295,4 +295,5 @@ set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
 colorscheme distinguished
 " =============================================================================
+"
 "set lazyredraw
