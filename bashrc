@@ -28,7 +28,7 @@ alias ping1='ping 192.168.0.1'
 alias ping8='ping 8.8.8.8'
 
 # Pacman
-alias update='sudo pacman -Syu'
+alias u='sudo pacman -Syu'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
 # Python
