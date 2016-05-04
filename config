@@ -161,8 +161,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 
 # class                 border  backgr. text    indicator child_border
-# client.focused          #4bc8ec #285577 #ffffff #2e9ef4   #285577
-client.focused          #a#ff4719 #aaaaaa #ffffff #ffffff 
+# client.focused          #a#ff4719 #aaaaaa #ffffff #ffffff 
+client.focused          #00ffff #00ffff #00ffff #00ffff #00ffff
 client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff 
 
 
