@@ -7,3 +7,4 @@
 # echo 'rsync [dir_for_backup] [dir to backup]'
 
 rsync -aAXv --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home/*/.gvfs"} $1 $2
+###
