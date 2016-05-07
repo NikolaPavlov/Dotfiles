@@ -161,10 +161,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 
 # class                 border  backgr. text    indicator child_border
-# client.focused          #a#ff4719 #aaaaaa #ffffff #ffffff 
 client.focused          #00ffff #00ffff #00ffff #00ffff #00ffff
 client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff 
-
 
 # feh for set up wallpaper (need to install feh)
 exec --no-startup-id feh --bg-fill /home/gogo/Pictures/wallpaper.jpg
