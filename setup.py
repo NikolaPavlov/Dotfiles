@@ -25,7 +25,7 @@ ZATHURA_FILE = CWD + '/zathurarc'
 ZATHURA_DESTINATION = HOME_DIR + '/.config/zathura/zathurarc'
 ZATHURA_DESTINATION_FOLDER = HOME_DIR + '/.config/zathura'
 
-AUTOSTARTRC = CWD + '/autostartrc.sh'
+AUTOSTARTRC = CWD + '/Scripts/autostartrc.sh'
 AUTOSTARTRC_DESTINATION = HOME_DIR + '/.autostartrc.sh'
 
 # install vundle if not present in the current system
