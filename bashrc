@@ -41,7 +41,7 @@ alias ga='git add'
 alias gpush='git push'
 alias gpull='git pull'
 # Encryption
-alias secret='sudo mount -t ecryptfs /media/1Tb/EncFolder
+alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/
 /media/1Tb/EncFolder'
 
 # ex - archive extractor
