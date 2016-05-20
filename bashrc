@@ -24,8 +24,8 @@ alias df='df -h'                                         # human-readable sizes
 alias free='free -m'                                         # show sizes in MB
 alias myip='curl http://ipecho.net/plain; echo'
 alias t='xfce4-terminal'
-alias ping1='ping 192.168.0.1'
-alias ping8='ping 8.8.8.8'
+alias p1='ping 192.168.0.1'
+alias p8='ping 8.8.8.8'
 
 # Pacman
 alias u='sudo pacman -Syu'
