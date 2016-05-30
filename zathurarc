@@ -32,3 +32,5 @@ set notification-bg "#333333"
 set recolor true
 > set recolor_darkcolor #BDE090
 > set recolor_lightcolor #000000
+
+# TODO: find swith key for black/light mode
