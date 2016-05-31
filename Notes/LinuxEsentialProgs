@@ -25,6 +25,7 @@ xmind
 autojump
 baobab
 wireshark
+fdupes
 ===============================================================================
 pacman -S tree
 pacman -S i3 
