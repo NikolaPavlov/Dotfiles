@@ -28,6 +28,7 @@ alias myip='curl http://ipecho.net/plain; echo'
 alias t='xfce4-terminal'
 alias p1='ping 192.168.0.1'
 alias p8='ping 8.8.8.8'
+#TODO: check netstat
 alias netstat='netstat -antp'
 
 # Pacman
