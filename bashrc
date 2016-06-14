@@ -47,6 +47,7 @@ alias gc='git commit'
 alias ga='git add'
 alias gpush='git push'
 alias gpull='git pull'
+alias glog='git log'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 
