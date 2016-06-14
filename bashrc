@@ -30,9 +30,10 @@ alias p1='ping 192.168.0.1'
 alias p8='ping 8.8.8.8'
 alias ping1='ping 192.168.0.1'
 alias ping8='ping 8.8.8.8'
-#TODO: check netstat
-#netstat work research more options
 alias netstat='netstat -antp'
+    # -a  display all sockets (default: connected)
+    # -n  don't resolve names
+    # -p  display PID/program name for sockets
 
 # Pacman
 alias u='sudo pacman -Syu'
