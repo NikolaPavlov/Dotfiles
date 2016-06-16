@@ -41,6 +41,9 @@ pacman -S nfs-utils
 pacman -S macchanger
 pacman -S ipython
 pacman -S python-pip
+pacman -S ncdu
+pacman -S pydf
+
 nvim dependencies:
 pacman -S xclip
 pacman -S python-neovim

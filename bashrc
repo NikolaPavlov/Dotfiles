@@ -17,6 +17,12 @@ alias rm='rm -Irv'
 alias off='poweroff'
 alias cp='cp -i'
 alias mv='mv -i'
+alias t='xfce4-terminal'
+alias ps='ps auxf'
+alias mkdir='mkdir -pv'
+alias wget='wget -c'
+alias du='ncdu'
+alias df='pydf'
 alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias l='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
@@ -25,7 +31,7 @@ alias grep='grep --color=tty -d skip'
 alias df='df -h'                                         # human-readable sizes
 alias free='free -m'                                         # show sizes in MB
 alias myip='curl http://ipecho.net/plain; echo'
-alias t='xfce4-terminal'
+
 alias p1='ping 192.168.0.1'
 alias p8='ping 8.8.8.8'
 alias ping1='ping 192.168.0.1'
@@ -50,7 +56,7 @@ alias gpull='git pull'
 alias glog='git log'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
-alias mp3='youtube-dl --extract-audio --audio-format mp3 '
+alias mp3='youtube-dl --extract-audio --audio-format mp3 $1'
 
 
 # ex - archive extractor
