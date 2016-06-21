@@ -56,7 +56,8 @@ alias gpull='git pull'
 alias glog='git log'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
-alias mp3='youtube-dl --extract-audio --audio-format mp3 $1'
+alias mp3='youtube-dl --extract-audio --audio-format mp3'
+alias playlist='youtube-dl -cit'
 
 
 # ex - archive extractor
