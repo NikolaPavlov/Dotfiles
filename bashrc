@@ -28,7 +28,6 @@ alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color
 alias l='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias grep='grep --color=tty -d skip'
-alias df='df -h'                                         # human-readable sizes
 alias free='free -m'                                         # show sizes in MB
 alias myip='curl http://ipecho.net/plain; echo'
 
