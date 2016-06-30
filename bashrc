@@ -36,6 +36,7 @@ alias p8='ping 8.8.8.8'
 alias ping1='ping 192.168.0.1'
 alias ping8='ping 8.8.8.8'
 alias netstat='netstat -antp'
+    # netstat options
     # -a  display all sockets (default: connected)
     # -n  don't resolve names
     # -p  display PID/program name for sockets
