@@ -31,38 +31,62 @@ filetype off
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
     inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#manual_complete()
+  " call dein#add('zchee/deoplete-jedi')
+
 
 
   " fix thish fucking snippets dude !!!!!!!!!!!!!!!!!
-  call dein#add('Shougo/neocomplete')
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
+  " call dein#add('Shougo/neocomplete')
+  " call dein#add('Shougo/neosnippet')
+  " call dein#add('Shougo/neosnippet-snippets')
+  " call dein#add('honza/vim-snippets')
+  " call dein#add('Shougo/neosnippet-snippets')
+  " call dein#add('SirVer/ultisnips')
+  " call dein#add('lambdalisue/vim-django-support')
 
-  " call dein#add('tmhedberg/SimpylFold') " fold improver for python code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
-  call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
-  call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
-    let g:neomake_python_enabled_makers = ['pep8']
-    autocmd! BufWritePost * Neomake
-  call dein#add('tpope/vim-surround') " change surroundings
+  " call dein#add('tmhedberg/SimpylFold') " fold improver for python code
+  " call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
+  " call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
+    " let g:neomake_python_enabled_makers = ['pep8']
+    " autocmd! BufWritePost * Neomake
+  " call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tomtom/tcomment_vim') " comment plugin
   " call dein#add('Chiel92/vim-autoformat') " autoformat plugin (autopep8) need more setup for now didnt use autopep8
     " let g:formatters_python = ['autopep8']
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
+  " call dein#add('scrooloose/nerdtree')
+  " call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
-  call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
-  call dein#add('ryanoasis/vim-devicons') " icons in vim
+  " call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
+  " call dein#add('ryanoasis/vim-devicons') " icons in vim
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
-  call dein#add('ctrlpvim/ctrlp.vim')
+  " call dein#add('ctrlpvim/ctrlp.vim')
   " call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
-  " call dein#add('ervandew/supertab') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
+  call dein#add('ervandew/supertab') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
   " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
   "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
   " call dein#add('tpope/vim-fugitive')
   call dein#end()
   filetype plugin indent on
+
+
 
 
 
@@ -227,3 +251,10 @@ colorscheme distinguished
 "
 " NVIM specific settings
 set clipboard+=unnamedplus
+
+
+
+
+
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
