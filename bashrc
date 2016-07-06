@@ -8,6 +8,10 @@ alias c='clear'
 alias cl='clear'
 alias r='ranger'
 alias a='alsamixer'
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias n='nvim'
 alias s='startx'
 alias rm='rm -Irv'
 alias off='poweroff'
@@ -55,8 +59,6 @@ alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
 alias mp3='youtube-dl --extract-audio --audio-format mp3'
 alias playlist='youtube-dl -cit'
-# Django
-alias pmr='python manage.py runserver'
 
 
 # ex - archive extractor
@@ -104,7 +106,7 @@ PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 # vi mode in terminal
 set -o vi
 
-# change dirs withowth cd
+# change dirs withowth cd instead with ..
 shopt -s autocd
 
 # disable <ctrl-s> in xfce4-terminal (legacy software control flow)

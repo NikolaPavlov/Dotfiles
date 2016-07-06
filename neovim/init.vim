@@ -14,61 +14,78 @@
 " http://vimdoc.sf.net (this is :help as html)
 " =============================================================================
 filetype off
-" Setup NeoBundle--------------------------------------------------------------
+"source $HOME/.vim/plugins.vim
+" Setup DeinVim  ----------------------------------------------------------{{{
+  if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
+    call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
+    call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
+  endif
+  if &compatible
+    set nocompatible
+  endif
+  set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
+  call dein#begin(expand('~/.config/nvim'))
+  call dein#add('Shougo/dein.vim')
+"start installing plugins
+  call dein#add('tmhedberg/SimpylFold') " fold improver for python code
+  call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
+  call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
+  call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
+    let g:neomake_python_enabled_makers = ['pep8']
+    autocmd! BufWritePost * Neomake
+  call dein#add('tpope/vim-surround') " change surroundings
+  call dein#add('tomtom/tcomment_vim') " comment plugin
+  call dein#add('Chiel92/vim-autoformat') " autoformat plugin (autopep8) need more setup for now didnt use autopep8
+    let g:formatters_python = ['autopep8']
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
+    let g:deoplete#enable_at_startup = 1
+  call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
+  call dein#add('ryanoasis/vim-devicons') " icons in vim
+  call dein#add('flazz/vim-colorschemes') " many colorschemes
+  call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
+  call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
+  call dein#add('ervandew/supertab') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
+  " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
+  "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+    " Plugin key-mappings.
+    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-j>     <Plug>(neosnippet_expand_target)
 
- " Note: Skip initialization for vim-tiny or vim-small.
- if 0 | endif
+    " SuperTab like snippets behavior.
+    " imap <expr><TAB>
+    " \ pumvisible() ? "\<C-n>" :
+    " \ neosnippet#expandable_or_jumpable() ?
+    " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
- if &compatible
-   set nocompatible               " Be iMproved
- endif
+    " For conceal markers.
+    if has('conceal')
+    set conceallevel=2 concealcursor=niv
+    endif
+  "call dein#add('mattn/emmet-vim', {'on_ft': 'html'})
+"end installing plugins
 
- " Required:
- set runtimepath^=~/.vim/bundle/neobundle.vim/
-
- " Required:
- call neobundle#begin(expand('~/.vim/bundle/'))
-
- " Let NeoBundle manage NeoBundle
- " Required:
- NeoBundleFetch 'Shougo/neobundle.vim'
-
- " My Bundles here:
- " Refer to |:NeoBundle-examples|.
- " Note: You don't set neobundle setting in .gvimrc!
-NeoBundle 'mattcaldwell/python-mode'
-NeoBundle 'tomtom/tcomment_vim' " comment plugin
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'benekastah/neomake'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'gorodinskiy/vim-coloresque'
-NeoBundle 'ryanoasis/vim-devicons'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'Valloric/MatchTagAlways'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'ervandew/supertab'
-
-
-
-
- call neobundle#end()
-
- " Required:
- filetype plugin indent on
-
- " If there are uninstalled bundles found on startup,
- " this will conveniently prompt you to install them.
- NeoBundleCheck
-
-
-
-
+  if dein#check_install()
+    call dein#install()
+  endif
+  call dein#end()
+  filetype plugin indent on
+ "}}}
+filetype plugin indent on
+" TODO: check vim pasta plugin
+"
+"
+"
+"source $HOME/.vim/key_bidings.vim
 let mapleader=","
 "NerdTree bindings-------------------------------------------------------------
 map <c-t> :NERDTreeToggle<CR>
@@ -229,10 +246,3 @@ colorscheme distinguished
 "
 " NVIM specific settings
 set clipboard+=unnamedplus
-
-
-
-
-
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
