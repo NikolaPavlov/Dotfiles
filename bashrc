@@ -104,7 +104,7 @@ PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 # vi mode in terminal
 set -o vi
 
-# change dirs withowth cd instead with ..
+# change dirs withowth cd
 shopt -s autocd
 
 # disable <ctrl-s> in xfce4-terminal (legacy software control flow)
