@@ -27,31 +27,30 @@ filetype off
   call dein#begin(expand('~/.config/nvim'))
   call dein#add('Shougo/dein.vim')
 "start installing plugins
-  call dein#add('tmhedberg/SimpylFold') " fold improver for python code
+  " call dein#add('tmhedberg/SimpylFold') " fold improver for python code
   call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
-  call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
-    let g:neomake_python_enabled_makers = ['pep8']
-    autocmd! BufWritePost * Neomake
-  call dein#add('tpope/vim-surround') " change surroundings
+  " call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
+    " let g:neomake_python_enabled_makers = ['pep8']
+    " autocmd! BufWritePost * Neomake
+  " call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tomtom/tcomment_vim') " comment plugin
-  call dein#add('Chiel92/vim-autoformat') " autoformat plugin (autopep8) need more setup for now didnt use autopep8
-    let g:formatters_python = ['autopep8']
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
+  " call dein#add('Chiel92/vim-autoformat') " autoformat plugin (autopep8) need more setup for now didnt use autopep8
+    " let g:formatters_python = ['autopep8']
+  " call dein#add('scrooloose/nerdtree')
+  " call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
-  call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
-  call dein#add('ryanoasis/vim-devicons') " icons in vim
+  " call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
+  " call dein#add('ryanoasis/vim-devicons') " icons in vim
   call dein#add('flazz/vim-colorschemes') " many colorschemes
-  call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
-  call dein#add('ctrlpvim/ctrlp.vim')
-  call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
+  " call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
+  " call dein#add('ctrlpvim/ctrlp.vim')
+  " call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
   call dein#add('ervandew/supertab') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
   " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
   "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
-  call dein#add('tpope/vim-fugitive')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
     " Plugin key-mappings.
@@ -71,7 +70,6 @@ filetype off
     if has('conceal')
     set conceallevel=2 concealcursor=niv
     endif
-  "call dein#add('mattn/emmet-vim', {'on_ft': 'html'})
 "end installing plugins
 
   if dein#check_install()
@@ -81,11 +79,10 @@ filetype off
   filetype plugin indent on
  "}}}
 filetype plugin indent on
-" TODO: check vim pasta plugin
-"
-"
-"
-"source $HOME/.vim/key_bidings.vim
+
+
+
+
 let mapleader=","
 "NerdTree bindings-------------------------------------------------------------
 map <c-t> :NERDTreeToggle<CR>
