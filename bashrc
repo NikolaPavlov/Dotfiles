@@ -2,6 +2,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 
+alias v='nvim'
 alias ..='cd ..'
 alias e='exit'
 alias c='clear'
