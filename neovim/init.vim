@@ -15,7 +15,7 @@
 " =============================================================================
 filetype off
 "source $HOME/.vim/plugins.vim
-" Setup DeinVim  ----------------------------------------------------------{{{
+" Setup DeinVim  --------------------------------------------------------------
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
     call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
     call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
@@ -27,21 +27,17 @@ filetype off
   call dein#begin(expand('~/.config/nvim'))
   call dein#add('Shougo/dein.vim')
 "start installing plugins
-  call dein#add('tmhedberg/SimpylFold') " fold improver for python code
-  call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
     let g:neomake_python_enabled_makers = ['pep8']
     autocmd! BufWritePost * Neomake
-  call dein#add('tpope/vim-surround') " change surroundings
+  " call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tomtom/tcomment_vim') " comment plugin
-  call dein#add('Chiel92/vim-autoformat') " autoformat plugin (autopep8) need more setup for now didnt use autopep8
-    let g:formatters_python = ['autopep8']
+  " call dein#add('Chiel92/vim-autoformat') " autoformat plugin (autopep8) need more setup for now didnt use autopep8
+  "   let g:formatters_python = ['autopep8']
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
-  call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
-    let g:deoplete#enable_at_startup = 1
   call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
   call dein#add('ryanoasis/vim-devicons') " icons in vim
   call dein#add('flazz/vim-colorschemes') " many colorschemes
@@ -49,9 +45,14 @@ filetype off
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
   call dein#add('ervandew/supertab') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
-  " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
-  "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
-  call dein#add('tpope/vim-fugitive')
+  call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
+  call dein#add('tmhedberg/SimpylFold') " fold improver for python code
+    "zM Close all folds
+    "zR Open all folds
+  call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
+    let g:deoplete#enable_at_startup = 1
+  call dein#add('zchee/deoplete-jedi')
+    let g:deoplete#sources#jedi#statement_length = 12
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
     " Plugin key-mappings.
@@ -79,13 +80,10 @@ filetype off
   endif
   call dein#end()
   filetype plugin indent on
- "}}}
-filetype plugin indent on
-" TODO: check vim pasta plugin
-"
-"
-"
-"source $HOME/.vim/key_bidings.vim
+
+
+
+
 let mapleader=","
 "NerdTree bindings-------------------------------------------------------------
 map <c-t> :NERDTreeToggle<CR>
@@ -122,6 +120,9 @@ vmap <Down> xp`[V`]
 "folding and unfolding with Space
 nnoremap <Space> za
 vnoremap <Space> za
+"foldin all and unfolding all with <leader>f <leader>ff
+nnoremap <leader>f zR
+nnoremap <leader>ff zM
 "jj as Esc alternative
 inoremap jj <Esc>
 "select all text
@@ -246,3 +247,17 @@ colorscheme distinguished
 "
 " NVIM specific settings
 set clipboard+=unnamedplus
+
+
+" autocmd FileType python set omnifunc=pythoncomplete#Complete
+" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+
+au BufNewFile,BufRead admin.py     setlocal filetype=python.django
+au BufNewFile,BufRead urls.py      setlocal filetype=python.django
+au BufNewFile,BufRead models.py    setlocal filetype=python.django
+au BufNewFile,BufRead views.py     setlocal filetype=python.django
+au BufNewFile,BufRead settings.py  setlocal filetype=python.django
+au BufNewFile,BufRead forms.py     setlocal filetype=python.django

@@ -2,6 +2,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 
+alias v='nvim'
 alias ..='cd ..'
 alias e='exit'
 alias c='clear'
@@ -55,6 +56,8 @@ alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
 alias mp3='youtube-dl --extract-audio --audio-format mp3'
 alias playlist='youtube-dl -cit'
+# Django
+alias pmr='python manage.py runserver'
 
 
 # ex - archive extractor
@@ -116,3 +119,6 @@ POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#add to $PATH
+export PATH=$PATH:~/.gem/ruby/2.3.0/bin
