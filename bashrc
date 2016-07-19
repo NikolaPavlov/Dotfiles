@@ -55,13 +55,9 @@ alias glog='git log'
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
 alias mp3='youtube-dl --extract-audio --audio-format mp3'
-<<<<<<< HEAD
-alias playlist='youtube-dl -cit'
 # Django
 alias pmr='python manage.py runserver'
-=======
 alias playlist='youtube-dl -cit' # download all from youtube playlist
->>>>>>> c8c24caea40ade4a827ed68e877711389b26a71b
 
 
 # ex - archive extractor
