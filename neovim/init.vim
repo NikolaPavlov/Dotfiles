@@ -27,7 +27,6 @@ filetype off
   call dein#begin(expand('~/.config/nvim'))
   call dein#add('Shougo/dein.vim')
 "start installing plugins
-<<<<<<< HEAD
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
     let g:neomake_python_enabled_makers = ['pep8']
@@ -41,7 +40,6 @@ filetype off
   call dein#add('vim-airline/vim-airline')
   call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
   call dein#add('ryanoasis/vim-devicons') " icons in vim
-=======
   " call dein#add('tmhedberg/SimpylFold') " fold improver for python code
   call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
@@ -59,13 +57,11 @@ filetype off
     let g:deoplete#enable_at_startup = 1
   " call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
   " call dein#add('ryanoasis/vim-devicons') " icons in vim
->>>>>>> c8c24caea40ade4a827ed68e877711389b26a71b
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   " call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   " call dein#add('ctrlpvim/ctrlp.vim')
   " call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
   call dein#add('ervandew/supertab') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
-<<<<<<< HEAD
   call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
   call dein#add('tmhedberg/SimpylFold') " fold improver for python code
     "zM Close all folds
@@ -74,10 +70,8 @@ filetype off
     let g:deoplete#enable_at_startup = 1
   call dein#add('zchee/deoplete-jedi')
     let g:deoplete#sources#jedi#statement_length = 12
-=======
   " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
   "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
->>>>>>> c8c24caea40ade4a827ed68e877711389b26a71b
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
     " Plugin key-mappings.
@@ -104,11 +98,8 @@ filetype off
   endif
   call dein#end()
   filetype plugin indent on
-<<<<<<< HEAD
-=======
  "}}}
 filetype plugin indent on
->>>>>>> c8c24caea40ade4a827ed68e877711389b26a71b
 
 
 
