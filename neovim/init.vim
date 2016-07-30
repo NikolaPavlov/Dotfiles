@@ -273,11 +273,3 @@ set clipboard+=unnamedplus
 " autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 " autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 " autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
-
-au BufNewFile,BufRead admin.py     setlocal filetype=python.django
-au BufNewFile,BufRead urls.py      setlocal filetype=python.django
-au BufNewFile,BufRead models.py    setlocal filetype=python.django
-au BufNewFile,BufRead views.py     setlocal filetype=python.django
-au BufNewFile,BufRead settings.py  setlocal filetype=python.django
-au BufNewFile,BufRead forms.py     setlocal filetype=python.django
