@@ -28,6 +28,9 @@ ZATHURA_DESTINATION_FOLDER = HOME_DIR + '/.config/zathura'
 PHONETIC = CWD + '/Scripts/phonetic_keys.sh'
 PHONETIC_DESTINATION = HOME_DIR + '/.phonetic_keys.sh'
 
+IRSSI_FOLDER = CWD + '/irssi/'
+IRSSI_DESTINATION_FOLDER = HOME_DIR + '/.irssi'
+
 # install vundle if not present in the current system
 # if os.path.exists(HOME_DIR + '/.vim/bundle/Vundle.vim'):
 #     print('vundle is already instaled!')
@@ -45,6 +48,9 @@ def create_dirs_if_doesnt_exists():
     if not os.path.exists(NEOVIM_NVIMRC_DESTINATION_FOLDER):
         os.mkdir(NEOVIM_NVIMRC_DESTINATION_FOLDER)
         print('created neovim destination folder')
+    if not os.path.exists(IRSSI_DESTINATION_FOLDER):
+        os.mkdir(IRSSI_DESTINATION_FOLDER)
+        print('created irssi destination folder')
 
 
 def create_symlink(from_file, to_file):
@@ -63,4 +69,5 @@ create_symlink(NEOVIM_NVIMRC_FILE, NEOVIM_NVIMRC_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
 create_symlink(ZATHURA_FILE, ZATHURA_DESTINATION)
 create_symlink(PHONETIC, PHONETIC_DESTINATION)
+create_symlink(IRSSI_FOLDER, IRSSI_DESTINATION_FOLDER)
 # create_symlink(VIMRC_FILE, VIMRC_DESTINATION)
