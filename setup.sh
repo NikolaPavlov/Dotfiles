@@ -1,14 +1,10 @@
+#!/bin/python3.5
 import os
+import shutil
 
 
 CWD = os.getcwd()
 HOME_DIR = os.path.expanduser('~')
-
-# VUNDLE_GIT_REPO = 'https://github.com/VundleVim/Vundle.vim.git'
-# VUNDLE_DESTINATION = HOME_DIR + '/.vim/bundle/Vundle.vim'
-
-# VIMRC_FILE = CWD + '/vim/vimrc'
-# VIMRC_DESTINATION = HOME_DIR + '/.vimrc'
 
 BASHRC_FILE = CWD + '/bashrc'
 BASHRC_DESTINATION = HOME_DIR + '/.bashrc'
@@ -30,12 +26,8 @@ PHONETIC_DESTINATION = HOME_DIR + '/.phonetic_keys.sh'
 
 IRSSI_FOLDER = CWD + '/irssi/'
 IRSSI_DESTINATION_FOLDER = HOME_DIR + '/.irssi'
-
-# install vundle if not present in the current system
-# if os.path.exists(HOME_DIR + '/.vim/bundle/Vundle.vim'):
-#     print('vundle is already instaled!')
-# else:
-#     os.system('git clone ' + VUNDLE_GIT_REPO + ' ' + VUNDLE_DESTINATION)
+# print(IRSSI_FOLDER)
+# print(IRSSI_DESTINATION_FOLDER)
 
 
 def create_dirs_if_doesnt_exists():
@@ -55,9 +47,16 @@ def create_dirs_if_doesnt_exists():
 
 def create_symlink(from_file, to_file):
     if os.path.exists(to_file):
-        os.remove(to_file)
-        os.symlink(from_file, to_file)
-        print('replace file with symlink ' + to_file)
+        # if destination is file remove it
+        if os.path.isfile(to_file):
+            os.remove(to_file)
+            os.symlink(from_file, to_file)
+            print('replace FILE with symlink ' + to_file)
+        else:
+        # if destination is folder remove it
+            shutil.rmtree(IRSSI_DESTINATION_FOLDER)
+            os.symlink(from_file, to_file)
+            print('replace FOLDER with symlink ' + to_file)
     else:
         os.symlink(from_file, to_file)
         print('created symlink ' + to_file)
@@ -70,4 +69,3 @@ create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
 create_symlink(ZATHURA_FILE, ZATHURA_DESTINATION)
 create_symlink(PHONETIC, PHONETIC_DESTINATION)
 create_symlink(IRSSI_FOLDER, IRSSI_DESTINATION_FOLDER)
-# create_symlink(VIMRC_FILE, VIMRC_DESTINATION)
