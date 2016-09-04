@@ -1,4 +1,5 @@
-#!/bin/python3.5
+#!/usr/bin/python3.5
+
 import os
 import shutil
 
@@ -26,46 +27,31 @@ PHONETIC_DESTINATION = HOME_DIR + '/.phonetic_keys.sh'
 
 IRSSI_FOLDER = CWD + '/irssi/'
 IRSSI_DESTINATION_FOLDER = HOME_DIR + '/.irssi'
-# print(IRSSI_FOLDER)
-# print(IRSSI_DESTINATION_FOLDER)
 
 
-def create_dirs_if_doesnt_exists():
-    if not os.path.exists(I3_DESTINATION_FOLDER):
-        os.mkdir(I3_DESTINATION_FOLDER)
-        print('created i3 destination folder')
-    if not os.path.exists(ZATHURA_DESTINATION_FOLDER):
-        os.mkdir(ZATHURA_DESTINATION_FOLDER)
-        print('created zathura destination folder')
-    if not os.path.exists(NEOVIM_NVIMRC_DESTINATION_FOLDER):
-        os.mkdir(NEOVIM_NVIMRC_DESTINATION_FOLDER)
-        print('created neovim destination folder')
-    if not os.path.exists(IRSSI_DESTINATION_FOLDER):
-        os.mkdir(IRSSI_DESTINATION_FOLDER)
-        print('created irssi destination folder')
-
+def create_dir_if_doesnt_exist(dir_to_check):
+    if not os.path.exists(dir_to_check):
+        os.mkdir(dir_to_check)
+        print('created ' + dir_to_check)
 
 def create_symlink(from_file, to_file):
-    if os.path.exists(to_file):
-        # if destination is file remove it
-        if os.path.isfile(to_file):
-            os.remove(to_file)
-            os.symlink(from_file, to_file)
-            print('replace FILE with symlink ' + to_file)
-        else:
-        # if destination is folder remove it
-            shutil.rmtree(IRSSI_DESTINATION_FOLDER)
-            os.symlink(from_file, to_file)
-            print('replace FOLDER with symlink ' + to_file)
-    else:
-        os.symlink(from_file, to_file)
-        print('created symlink ' + to_file)
+    try:
+        os.remove(to_file)
+    except:
+        pass
+    try:
+        shutil.rmtree(to_file)
+    except:
+        pass
+    os.symlink(from_file, to_file)
+    print('Created symlink from ' + from_file + 'to ' + to_file)
 
-
-create_dirs_if_doesnt_exists()
+create_dir_if_doesnt_exist(NEOVIM_NVIMRC_DESTINATION_FOLDER)
+create_dir_if_doesnt_exist(I3_DESTINATION_FOLDER)
+create_dir_if_doesnt_exist(ZATHURA_DESTINATION_FOLDER)
+create_dir_if_doesnt_exist(IRSSI_DESTINATION_FOLDER)
 create_symlink(BASHRC_FILE, BASHRC_DESTINATION)
 create_symlink(NEOVIM_NVIMRC_FILE, NEOVIM_NVIMRC_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
-create_symlink(ZATHURA_FILE, ZATHURA_DESTINATION)
 create_symlink(PHONETIC, PHONETIC_DESTINATION)
 create_symlink(IRSSI_FOLDER, IRSSI_DESTINATION_FOLDER)
