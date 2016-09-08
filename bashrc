@@ -33,10 +33,6 @@ alias p8='ping 8.8.8.8'
 alias ping1='ping 192.168.0.1'
 alias ping8='ping 8.8.8.8'
 alias netstat='netstat -antp'
-    # netstat options
-    # -a  display all sockets (default: connected)
-    # -n  don't resolve names
-    # -p  display PID/program name for sockets
 
 # Pacman
 alias u='sudo pacman -Syu'
@@ -55,6 +51,7 @@ alias glog='git log'
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
 alias mp3='youtube-dl --extract-audio --audio-format mp3'
+alias mp4='youtube-dl --extract-audio --audio-format mp4'
 # Django
 alias pmr='python manage.py runserver'
 alias playlist='youtube-dl -cit' # download all from youtube playlist
