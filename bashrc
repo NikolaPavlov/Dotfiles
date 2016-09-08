@@ -25,7 +25,7 @@ alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color
 alias l='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias grep='grep --color=tty -d skip'
-alias free='free -m'                                         # show sizes in MB
+alias free='free -m'
 alias myip='curl http://ipecho.net/plain; echo'
 
 alias p1='ping 192.168.0.1'
@@ -50,12 +50,11 @@ alias glog='git log'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
+alias playlist='youtube-dl -cit' # download all from youtube playlist
 alias mp3='youtube-dl --extract-audio --audio-format mp3'
 alias mp4='youtube-dl --extract-audio --audio-format mp4'
 # Django
 alias pmr='python manage.py runserver'
-alias playlist='youtube-dl -cit' # download all from youtube playlist
-
 
 # ex - archive extractor
 # usage: ex <file>
