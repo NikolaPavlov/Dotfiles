@@ -1,4 +1,4 @@
-# ***dotfiles***
+**dotfiles**
 
 
 *bashrc* ---> bash config file
