@@ -118,3 +118,6 @@ POWERLINE_BASH_SELECT=1
 
 #add to $PATH
 export PATH=$PATH:~/.gem/ruby/2.3.0/bin
+
+# Complete after sudo
+complete -cf sudo
