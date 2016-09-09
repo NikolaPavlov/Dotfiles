@@ -417,29 +417,9 @@ windows = {
       }
     );
   };
-  3 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#archlinux";
-        tag = "Freenode";
-      }
-    );
-  };
-  4 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#test";
-        tag = "Freenode";
-      }
-    );
-  };
-  5 = { name = "hilight"; sticky = "yes"; };
+  3 = { name = "hilight"; sticky = "yes"; };
 };
 mainwindows = {
-  2 = { first_line = "8"; lines = "65"; };
-  5 = { first_line = "1"; lines = "7"; };
+  1 = { first_line = "7"; lines = "65"; };
+  3 = { first_line = "1"; lines = "6"; };
 };
