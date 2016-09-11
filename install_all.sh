@@ -1,7 +1,5 @@
 #!/usr/bin/python3.5
-
 import os
-import shutil
 
 
 CWD = os.getcwd()
@@ -35,23 +33,24 @@ def create_dir_if_doesnt_exist(dir_to_check):
         print('created ' + dir_to_check)
 
 def create_symlink(from_file, to_file):
+    '''
+    remove file if already exists and replace it with link
+    '''
     try:
         os.remove(to_file)
-    except:
-        pass
-    try:
-        shutil.rmtree(to_file)
+        print('file removed ' + to_file)
     except:
         pass
     os.symlink(from_file, to_file)
-    print('Created symlink from ' + from_file + 'to ' + to_file)
+    print('Created symlink from ' + from_file + ' to ' + to_file + '\n')
 
 create_dir_if_doesnt_exist(NEOVIM_NVIMRC_DESTINATION_FOLDER)
 create_dir_if_doesnt_exist(I3_DESTINATION_FOLDER)
 create_dir_if_doesnt_exist(ZATHURA_DESTINATION_FOLDER)
-create_dir_if_doesnt_exist(IRSSI_DESTINATION_FOLDER)
 create_symlink(BASHRC_FILE, BASHRC_DESTINATION)
 create_symlink(NEOVIM_NVIMRC_FILE, NEOVIM_NVIMRC_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
 create_symlink(PHONETIC, PHONETIC_DESTINATION)
 create_symlink(IRSSI_FOLDER, IRSSI_DESTINATION_FOLDER)
+
+# TODO:add colors to output
