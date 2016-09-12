@@ -2,7 +2,6 @@
 **dotfiles**
 ============
 
-
 *bashrc* ---> bash config file
 
 *config* ---> i3 config file
