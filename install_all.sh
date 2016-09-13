@@ -1,5 +1,6 @@
 #!/usr/bin/python3.5
 import os
+from termcolor import colored
 
 
 CWD = os.getcwd()
@@ -27,6 +28,12 @@ IRSSI_FOLDER = CWD + '/irssi/'
 IRSSI_DESTINATION_FOLDER = HOME_DIR + '/.irssi'
 
 
+def printGreen(str_to_print):
+    print("\033[92m {}\033[00m" .format(str_to_print))
+
+def printRed(str_to_print):
+    print("\033[91m {}\033[00m" .format(str_to_print))
+
 def create_dir_if_doesnt_exist(dir_to_check):
     if not os.path.exists(dir_to_check):
         os.mkdir(dir_to_check)
@@ -38,11 +45,11 @@ def create_symlink(from_file, to_file):
     '''
     try:
         os.remove(to_file)
-        print('file removed ' + to_file)
+        printRed('file removed ' + to_file)
     except:
         pass
     os.symlink(from_file, to_file)
-    print('Created symlink from ' + from_file + ' to ' + to_file + '\n')
+    printGreen('Created symlink from ' + from_file + ' to ' + to_file + '\n')
 
 create_dir_if_doesnt_exist(NEOVIM_NVIMRC_DESTINATION_FOLDER)
 create_dir_if_doesnt_exist(I3_DESTINATION_FOLDER)
