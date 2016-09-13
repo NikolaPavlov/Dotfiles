@@ -29,9 +29,9 @@ alias free='free -m'
 alias myip='curl http://ipecho.net/plain; echo'
 
 alias p1='ping 192.168.0.1'
-alias p8='ping 8.8.8.8'
+alias p8='ping 8.8.8.8' -c 100
 alias ping1='ping 192.168.0.1'
-alias ping8='ping 8.8.8.8'
+alias ping8='ping 8.8.8.8' -c 100
 alias netstat='netstat -antp'
 
 # Pacman
