@@ -35,7 +35,7 @@ alias ping8='ping 8.8.8.8 -c 100'
 alias netstat='netstat -antp'
 
 # Pacman
-alias u='sudo pacman -Syu'
+alias u='sudo pacman -Syu --noconfirm'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
 # Python
