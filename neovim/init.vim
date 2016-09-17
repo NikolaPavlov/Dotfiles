@@ -24,7 +24,7 @@ filetype off
     set nocompatible
   endif
   set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
-  call dein#begin(expand('~/.config/nvim'))
+  call dein#begin(expand('~/.config/nvim/repos/github.com'))
   call dein#add('Shougo/dein.vim')
 "start installing plugins
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
@@ -59,17 +59,15 @@ filetype off
   " call dein#add('ryanoasis/vim-devicons') " icons in vim
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   " call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
-  " call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('ctrlpvim/ctrlp.vim')
   " call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
   call dein#add('ervandew/supertab') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
   call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
   call dein#add('tmhedberg/SimpylFold') " fold improver for python code
     "zM Close all folds
     "zR Open all folds
-  call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
-    let g:deoplete#enable_at_startup = 1
-  call dein#add('zchee/deoplete-jedi')
-    let g:deoplete#sources#jedi#statement_length = 12
+  " call dein#add('zchee/deoplete-jedi')
+  "   let g:deoplete#sources#jedi#statement_length = 12
   " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
   "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
   call dein#add('Shougo/neosnippet.vim')
