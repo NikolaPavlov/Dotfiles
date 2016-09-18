@@ -26,7 +26,10 @@ filetype off
   set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
   call dein#begin(expand('~/.config/nvim/repos/github.com'))
   call dein#add('Shougo/dein.vim')
-"----->start installing plugins<-----
+
+"------------------------>start installing plugins<----------------------------
+  call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
+    let g:deoplete#enable_at_startup = 1
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
     let g:neomake_python_enabled_makers = ['pep8']
@@ -39,10 +42,8 @@ filetype off
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
   call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
-  " call dein#add('ryanoasis/vim-devicons') " icons in vim
-  call dein#add('jiangmiao/auto-pairs') " match quotes brackets parenthesis
-  call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
-    let g:deoplete#enable_at_startup = 1
+  call dein#add('ryanoasis/vim-devicons') " icons in vim
+  call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   " call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
@@ -74,7 +75,7 @@ filetype off
     if has('conceal')
     set conceallevel=2 concealcursor=niv
     endif
-"----->end installing plugins<-----
+"--------------------------->finish installing plugins<---------------------------
 
   if dein#check_install()
     call dein#install()
