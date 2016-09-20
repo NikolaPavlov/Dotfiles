@@ -151,7 +151,6 @@ vnoremap <leader>c :TComment<cr>
 noremap <F12> :Autoformat<CR>
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
-"cmap w!! %!sudo tee > /dev/null %
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 "format html on read and write (remove spaces)
