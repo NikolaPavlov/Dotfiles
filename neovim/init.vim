@@ -33,11 +33,9 @@ filetype off
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
     let g:neomake_python_enabled_makers = ['pep8']
-    autocmd! BufWritePost * Neomake
+    " autocmd! BufWritePost * Neomake
   " call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tomtom/tcomment_vim') " comment plugin
-  " call dein#add('Chiel92/vim-autoformat') " autoformat plugin (autopep8) need more setup for now didnt use autopep8
-  "   let g:formatters_python = ['autopep8']
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
@@ -45,23 +43,24 @@ filetype off
   call dein#add('ryanoasis/vim-devicons') " icons in vim
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
-  " call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
+  call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
   " call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
   " call dein#add('ervandew/supertab')
   " call dein#add('tmhedberg/SimpylFold') " fold improver for python code
     "zM Close all folds
     "zR Open all folds
-  " call dein#add('zchee/deoplete-jedi')
-  "   let g:deoplete#sources#jedi#statement_length = 12
+  call dein#add('zchee/deoplete-jedi')
+    let g:deoplete#sources#jedi#statement_length = 12
   " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
   "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
-  " call dein#add('Shougo/neosnippet.vim')
-  " call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+    let g:neosnippet#snippets_directory="/home/gogo/Downloads/snippets/neosnippets/" "my custom snippets directory
     " Plugin key-mappings.
-    " imap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    " smap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    " xmap <C-j>     <Plug>(neosnippet_expand_target)
+    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-j>     <Plug>(neosnippet_expand_target)
 
     " SuperTab like snippets behavior.
     imap <expr><TAB>
@@ -154,7 +153,7 @@ noremap <F12> :Autoformat<CR>
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 "format html on read and write (remove spaces)
-autocmd BufRead,BufWritePre *.html normal gg=G 
+" autocmd BufRead,BufWritePre *.html normal gg=G 
 
 "run python code in vim <F5>
 noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
