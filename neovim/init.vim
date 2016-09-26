@@ -30,6 +30,10 @@ filetype off
 "------------------------>start installing plugins<----------------------------
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
+  call dein#add('zchee/deoplete-jedi')
+    let g:deoplete#sources#jedi#statement_length = 12
+
+
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
     let g:neomake_python_enabled_makers = ['pep8']
@@ -40,7 +44,7 @@ filetype off
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
   call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
-  call dein#add('ryanoasis/vim-devicons') " icons in vim
+  " call dein#add('ryanoasis/vim-devicons') " icons in vim
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
@@ -50,10 +54,7 @@ filetype off
   " call dein#add('tmhedberg/SimpylFold') " fold improver for python code
     "zM Close all folds
     "zR Open all folds
-  call dein#add('zchee/deoplete-jedi')
-    let g:deoplete#sources#jedi#statement_length = 12
   " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
-  "call dein#add('dhruvasagar/vim-table-mode') " table creator in vim
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
     let g:neosnippet#snippets_directory="/home/gogo/Downloads/snippets/neosnippets/" "my custom snippets directory
@@ -74,7 +75,7 @@ filetype off
     if has('conceal')
     set conceallevel=2 concealcursor=niv
     endif
-"--------------------------->finish installing plugins<---------------------------
+" "--------------------------->finish installing plugins<---------------------------
 
   if dein#check_install()
     call dein#install()
@@ -148,6 +149,8 @@ nnoremap <leader>c :TComment<cr>
 vnoremap <leader>c :TComment<cr>
 ":Autoformat
 noremap <F12> :Autoformat<CR>
+" Alias to open vimrc (init.vim)
+noremap <leader>e :e $MYVIMRC<CR>
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
