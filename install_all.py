@@ -1,6 +1,5 @@
-#!/usr/bin/python3.5
 import os
-from termcolor import colored
+# from termcolor import colored
 
 
 CWD = os.getcwd()
