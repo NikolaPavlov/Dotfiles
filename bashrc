@@ -52,7 +52,7 @@ alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
 alias playlist='youtube-dl -cit' # download all from youtube playlist
 alias mp3='youtube-dl --extract-audio --audio-format mp3'
-alias mp4='youtube-dl --extract-audio --audio-format mp4'
+alias mp4='youtube-dl -f 22 '
 # Django
 alias pmr='python manage.py runserver'
 
