@@ -8,7 +8,8 @@
 " |______|_|_| |_|_|\_\___/
 " =============================================================================
 " http://vimcasts.org/
-" http://vimawesome.com/ ---> vim plugins
+" http://usevim.com
+" http://vimawesome.com/ ---> vim plugins ratings
 " http://www.vimbits.com/ ---> vim scripts
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
 " http://vimdoc.sf.net (this is :help as html)
@@ -30,21 +31,20 @@ filetype off
 "------------------------>start installing plugins<----------------------------
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
-  call dein#add('zchee/deoplete-jedi')
-    let g:deoplete#sources#jedi#statement_length = 12
-
-
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
-  call dein#add('benekastah/neomake') " asynchronus :make using Neovim job-control functionality
+  call dein#add('benekastah/neomake') " syntastic alternative
     let g:neomake_python_enabled_makers = ['pep8']
-    " autocmd! BufWritePost * Neomake
-  " call dein#add('tpope/vim-surround') " change surroundings
+    let g:neomake_javascript_enabled_makers = ['eslint']
+    " run neomake on load file and save file
+    autocmd! BufReadPost * Neomake " doesn't work
+    autocmd! BufWritePost * Neomake
+  call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tomtom/tcomment_vim') " comment plugin
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
   call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
-  " call dein#add('ryanoasis/vim-devicons') " icons in vim
+  call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
@@ -54,7 +54,6 @@ filetype off
   " call dein#add('tmhedberg/SimpylFold') " fold improver for python code
     "zM Close all folds
     "zR Open all folds
-  " call dein#add('terryma/vim-multiple-cursors') " multiple currsors in vim
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
     let g:neosnippet#snippets_directory="/home/gogo/Downloads/snippets/neosnippets/" "my custom snippets directory
@@ -71,10 +70,11 @@ filetype off
     smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
     \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-    " For conceal markers.
-    if has('conceal')
-    set conceallevel=2 concealcursor=niv
-    endif
+    " " For conceal markers.
+    " if has('conceal')
+    " set conceallevel=2 concealcursor=niv
+    " endif
+  call dein#add('othree/html5.vim')
 " "--------------------------->finish installing plugins<---------------------------
 
   if dein#check_install()
@@ -82,8 +82,6 @@ filetype off
   endif
   call dein#end()
   filetype plugin indent on
- "}}}
-filetype plugin indent on
 
 
 
@@ -107,10 +105,12 @@ vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
 "move currsor with j and k on wrap lines too 
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
+nnoremap j j^
+nnoremap k k^
 " no highlight
-nnoremap <leader> :noh<cr>
+nnoremap <leader><leader> :noh<cr>
 " map ; to :
 nnoremap ; :
 "turn on off spell checking with ,s
@@ -139,7 +139,9 @@ vnoremap > >gv
 "Substitute
 nnoremap <c-s> :%s/
 vnoremap <c-s> :s/
-"edit vimrc
+"edit vimrc in the current window
+noremap <leader>e :e $MYVIMRC<CR>
+"edit vimrc in vertical split window
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
@@ -149,8 +151,6 @@ nnoremap <leader>c :TComment<cr>
 vnoremap <leader>c :TComment<cr>
 ":Autoformat
 noremap <F12> :Autoformat<CR>
-" Alias to open vimrc (init.vim)
-noremap <leader>e :e $MYVIMRC<CR>
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -215,7 +215,7 @@ set showcmd "show command keys in the status line
 set clipboard=unnamed
 "set clipboard=unnamedplus
 "14 editing text
-set textwidth=80 "line length above which to break the line
+set textwidth=79 "line length above which to break the line
 "15 tabs and indenting
 set autoindent "automatically set the indent of a new line
 set smartindent "do clever autoindenting
@@ -256,4 +256,6 @@ set clipboard+=unnamedplus
 
 
 
+" WTF is this
 set path+=**
+set formatoptions=qrn1

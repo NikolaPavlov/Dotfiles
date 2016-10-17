@@ -109,6 +109,9 @@
 -------------------------------------------------------------------------------
 * Macros
 -------------------------------------------------------------------------------
+q[x] ---> start recording macro x
+q ---> stop recording
+@x ---> play back macro x
 
 -------------------------------------------------------------------------------
 * Splitting Windows
@@ -117,6 +120,23 @@
 -------------------------------------------------------------------------------
 * Text objects
 -------------------------------------------------------------------------------
+    iw ---> inside word
+    aw ---> around word
+
+    is ---> inside sentence
+    as ---> around sentence
+
+    ip ---> inside a paragraph
+    ap ---> around paragraph
+
+    i' ---> inside '
+    a' ---> around '
+
+    i" ---> inside "
+    a' ---> around '
+
+    it ---> inside tag
+    at ---> around tag
 
 
 
@@ -152,3 +172,15 @@ Nouns (съществителни)
     } : paragraph
     t : tag(HTML)
     b : block(programming block)
+
+-------------------------------------------------------------------------------
+Surround Plugin
+-------------------------------------------------------------------------------
+    cs"' ---> change surrounding quotes from " to '
+    cs'<q> ---> change ' to <q>
+    ds" ---> delete " around something
+    ysiw<em> ---> emphasize the current word (dot repeatable)
+
+    Visual Mode: select anything, and then type S. You'll be brought to the
+    bottom of the window. Now type in what you want to wrap that with, such as
+    <div id='someid'> and then press enter.
