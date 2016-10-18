@@ -1,3 +1,28 @@
+Verbs
+    d : delete
+    c : change
+    y : yank
+    v : visually select
+
+Modifiers
+    i : inside
+    a : around
+    NUM : number(1,2,3,4)
+    t : searches for something and stop before it
+    f : searches for something and lands on it
+    / : find a string (literal or regex)
+
+Nouns (съществителни)
+    w : word
+    s : sentence
+    ) : sentence
+    p : paragraph
+    } : paragraph
+    t : tag(HTML)
+    b : block(programming block)
+
+
+
 -------------------------------------------------------------------------------
 * Moving
 -------------------------------------------------------------------------------
@@ -144,35 +169,6 @@ q ---> stop recording
 
 
 
-
-
-
-
-
-
-Verbs
-    d : delete
-    c : change
-    y : yank
-    v : visually select
-
-Modifiers
-    i : inside
-    a : around
-    NUM : number(1,2,3,4)
-    t : searches for something and stop before it
-    f : searches for something and lands on it
-    / : find a string (literal or regex)
-
-Nouns (съществителни)
-    w : word
-    s : sentence
-    ) : sentence
-    p : paragraph
-    } : paragraph
-    t : tag(HTML)
-    b : block(programming block)
-
 -------------------------------------------------------------------------------
 Surround Plugin
 -------------------------------------------------------------------------------
@@ -184,3 +180,9 @@ Surround Plugin
     Visual Mode: select anything, and then type S. You'll be brought to the
     bottom of the window. Now type in what you want to wrap that with, such as
     <div id='someid'> and then press enter.
+
+
+IDE like
+--------
+Ctrl+] ---> jump to definition
+Ctrl+t Ctrl+o ---> jump back

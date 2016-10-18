@@ -27,16 +27,23 @@ filetype off
   set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
   call dein#begin(expand('~/.config/nvim/repos/github.com'))
   call dein#add('Shougo/dein.vim')
-
+  "
 "------------------------>start installing plugins<----------------------------
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
-  call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
+
+  call dein#add('SirVer/ultisnips') 
+  call dein#add('honza/vim-snippets')
+    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
   call dein#add('benekastah/neomake') " syntastic alternative
+  call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
     let g:neomake_python_enabled_makers = ['pep8']
-    let g:neomake_javascript_enabled_makers = ['eslint']
-    " run neomake on load file and save file
-    autocmd! BufReadPost * Neomake " doesn't work
+    " npm install -g jshint (install globally jshint)
+    let g:neomake_javascript_enabled_makers = ['jshint']
     autocmd! BufWritePost * Neomake
   call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tomtom/tcomment_vim') " comment plugin
@@ -49,32 +56,19 @@ filetype off
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
-  " call dein#add('easymotion/vim-easymotion') " easy jump for vim <leader><leader>[w] / <leader><leader>f[char]
-  " call dein#add('ervandew/supertab')
-  " call dein#add('tmhedberg/SimpylFold') " fold improver for python code
-    "zM Close all folds
-    "zR Open all folds
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-    let g:neosnippet#snippets_directory="/home/gogo/Downloads/snippets/neosnippets/" "my custom snippets directory
-    " Plugin key-mappings.
-    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-j>     <Plug>(neosnippet_expand_target)
+  call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
+  call dein#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context (usefull for HTML)
+
 
     " SuperTab like snippets behavior.
-    imap <expr><TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ neosnippet#expandable_or_jumpable() ?
-    \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    " imap <expr><TAB>
+    " \ pumvisible() ? "\<C-n>" :
+    " \ neosnippet#expandable_or_jumpable() ?
+    " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    " smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    " \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-    " " For conceal markers.
-    " if has('conceal')
-    " set conceallevel=2 concealcursor=niv
-    " endif
-  call dein#add('othree/html5.vim')
+
 " "--------------------------->finish installing plugins<---------------------------
 
   if dein#check_install()

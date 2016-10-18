@@ -168,6 +168,8 @@ client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff
 
 # feh for set up wallpaper (need to install feh)
 exec --no-startup-id feh --bg-fill /home/gogo/Pictures/wallpaper.jpg
+exec --no-startup-id xmodmap -e 'clear Lock' #ensures you're not stuck in CAPS on mode
+exec --no-startup-id xmodmap -e 'keycode 0x42=Escape' #remaps the keyboard so CAPS LOCK=ESC
 
 # key bindings
 bindcode 67 exec --no-startup-id firefox
