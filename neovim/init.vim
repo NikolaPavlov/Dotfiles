@@ -16,7 +16,7 @@
 " =============================================================================
 filetype off
 "source $HOME/.vim/plugins.vim
-" Setup DeinVim  --------------------------------------------------------------
+" Setup DeinVim PluginManager -------------------------------------------------
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
     call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
     call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
@@ -29,15 +29,19 @@ filetype off
   call dein#add('Shougo/dein.vim')
   "
 "------------------------>start installing plugins<----------------------------
+"
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
+    let g:deoplete#auto_complete_start_length = 2
+  " call dein#add('ervandew/supertab')
+
 
   call dein#add('SirVer/ultisnips') 
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
   call dein#add('benekastah/neomake') " syntastic alternative
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
@@ -58,6 +62,16 @@ filetype off
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context (usefull for HTML)
+  call dein#add('maksimr/vim-jsbeautify')
+    autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+    " for json
+    autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+    " for jsx
+    autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+    " for html
+    autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+    " for css or scss
+    autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 
     " SuperTab like snippets behavior.
@@ -145,6 +159,8 @@ nnoremap <leader>c :TComment<cr>
 vnoremap <leader>c :TComment<cr>
 ":Autoformat
 noremap <F12> :Autoformat<CR>
+
+nnoremap <Tab> za
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -253,3 +269,4 @@ set clipboard+=unnamedplus
 " WTF is this
 set path+=**
 set formatoptions=qrn1
+set foldmethod=indent
