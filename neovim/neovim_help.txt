@@ -186,3 +186,9 @@ IDE like
 --------
 Ctrl+] ---> jump to definition
 Ctrl+t Ctrl+o ---> jump back
+
+
+
+
+zR ---> open all folds
+zM ---> close all folds

@@ -39,9 +39,11 @@ filetype off
   call dein#add('SirVer/ultisnips') 
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<c-j>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+    let g:UltiSnipsExpandTrigger="<Tab>"
+    " let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    let g:UltiSnipsJumpForwardTrigger="<Tab>"
+    " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+    let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
   call dein#add('benekastah/neomake') " syntastic alternative
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
@@ -62,6 +64,7 @@ filetype off
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context (usefull for HTML)
+  call dein#add('chrisgillis/vim-bootstrap3-snippets')
   call dein#add('maksimr/vim-jsbeautify')
     autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
     " for json
