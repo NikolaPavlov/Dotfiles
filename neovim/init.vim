@@ -205,7 +205,7 @@ set linebreak "break long lines at char in 'breakat' (local to window)
 let &showbreak = '↳ ' " string to put before wrapped screen lines
 set number "show current line number
 set relativenumber "show line numbers relative to the current line
-set scrolloff=2 "number of screen lines to show around the cursor
+set scrolloff=5 "number of screen lines to show around the cursor
 "5 syntax, highlighting and spelling
 syntax on
 set hlsearch "highlight all matches for the last used search pattern

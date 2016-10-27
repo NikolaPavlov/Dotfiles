@@ -72,12 +72,12 @@ Nouns (съществителни)
     ct[x] ---> change until the x
     ~ ---> capitalize under the currsor
 
-
 -------------------------------------------------------------------------------
 * Deleting
 -------------------------------------------------------------------------------
     x ---> delete under the currsor
-    dd ---> delete current line 
+    dd ---> delete current line
+    dw ---> delete word
     D ---> delete current line
     dt[x] ---> delete until x
     J ---> join the current line with the next one
@@ -113,8 +113,6 @@ Nouns (съществителни)
     * ---> search for other instances of the word under the cursor
     n ---> go to the next instance when you've searched for a str
     N ---> go to prev instance when you've searched for a str
-    ; ---> go to next instance when you've jumped to a char
-    , ---> go to prev instance when you've jumped to a char
 
 -------------------------------------------------------------------------------
 * Marks
@@ -131,9 +129,9 @@ Nouns (съществителни)
 -------------------------------------------------------------------------------
 * Macros
 -------------------------------------------------------------------------------
-q[x] ---> start recording macro x
-q ---> stop recording
-@x ---> play back macro x
+    q[x] ---> start recording macro x
+    q ---> stop recording
+    @x ---> play back macro x
 
 -------------------------------------------------------------------------------
 * Splitting Windows
@@ -142,8 +140,8 @@ q ---> stop recording
 -------------------------------------------------------------------------------
 * Folds
 -------------------------------------------------------------------------------
-zR ---> open all folds
-zM ---> close all folds
+    zR ---> open all folds
+    zM ---> close all folds
 
 -------------------------------------------------------------------------------
 * Text objects
@@ -178,11 +176,10 @@ Surround Plugin
     <div id='someid'> and then press enter.
 
 
+
+
 IDE like
---------
+-------------------------------------------------------------------------------
 Ctrl+] ---> jump to definition
 Ctrl+t Ctrl+o ---> jump back
-
-
-
 
