@@ -12,6 +12,6 @@
 
 *neovim/init.vim* ---> neovimrc file
 
-*Scripts* ---> backup and phonetic scripts
-
 *vim* ---> old vimrc
+
+*Scripts* ---> backup and phonetic scripts

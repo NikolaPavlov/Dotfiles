@@ -6,7 +6,7 @@ networkmanager and network-manager-applet
 vim
 virtualbox
 redshift
-thunar and ranger 
+thunar and ranger
 lxappearance
 truecrypt
 thunderbird
@@ -28,9 +28,9 @@ wireshark
 fdupes / fslint
 ===============================================================================
 pacman -S tree
-pacman -S i3 
-pacman -S dmenu 
-pacman -S xorg 
+pacman -S i3
+pacman -S dmenu
+pacman -S xorg
 pacman -S xorg-xinit
 pacman -S base-devel
 pacman -S bash-completion
