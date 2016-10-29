@@ -116,10 +116,8 @@ vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
 "move currsor with j and k on wrap lines too 
-" nnoremap j gj
-" nnoremap k gk
-nnoremap j j^
-nnoremap k k^
+nnoremap j gj
+nnoremap k gk
 " no highlight
 nnoremap <leader><leader> :noh<cr>
 " map ; to :
