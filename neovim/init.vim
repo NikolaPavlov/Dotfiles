@@ -60,6 +60,7 @@ filetype off
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
+  call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
   call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
