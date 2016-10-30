@@ -237,8 +237,9 @@ set softtabstop=4 "number of spaces to insert for a <Tab>
 set tabstop=4 "number of spaces a <Tab> in the text stands for
 set shiftround "round to 'shiftwidth' for '<<' and '>>'
 "16 folding
-"set foldmethod=indent
-"set foldlevel=99
+set foldmethod=indent
+set foldlevel=99
+set foldlevelstart=10 "fold level when open file
 "17 diff mode
 "18 mapping
 "19 reading and writing files
@@ -269,6 +270,8 @@ set clipboard+=unnamedplus
 
 
 " WTF is this
-set path+=**
-set formatoptions=qrn1
-set foldmethod=indent
+" set path+=**
+" set formatoptions=qrn1
+"
+" highlight last inserted text
+nnoremap gV `[v`]
