@@ -1,8 +1,8 @@
 " show me the hjkl bitch!
 " =============================================================================
-"  _      _       _        
-" | |    (_)     | |       
-" | |     _ _ __ | | _____ 
+"  _      _       _
+" | |    (_)     | |
+" | |     _ _ __ | |
 " | |    | | '_ \| |/ / __|
 " | |____| | | | |   <\__ \
 " |______|_|_| |_|_|\_\___/
@@ -15,7 +15,6 @@
 " http://vimdoc.sf.net (this is :help as html)
 " =============================================================================
 filetype off
-"source $HOME/.vim/plugins.vim
 " Setup DeinVim PluginManager -------------------------------------------------
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
     call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
@@ -27,22 +26,19 @@ filetype off
   set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
   call dein#begin(expand('~/.config/nvim/repos/github.com'))
   call dein#add('Shougo/dein.vim')
-  "
+
 "------------------------>start installing plugins<----------------------------
-"
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#auto_complete_start_length = 2
   " call dein#add('ervandew/supertab')
 
 
-  call dein#add('SirVer/ultisnips') 
+  call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     let g:UltiSnipsExpandTrigger="<Tab>"
-    " let g:UltiSnipsJumpForwardTrigger="<c-j>"
     let g:UltiSnipsJumpForwardTrigger="<Tab>"
-    " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
     let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
   call dein#add('benekastah/neomake') " syntastic alternative
@@ -60,7 +56,7 @@ filetype off
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
-  call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
+  " call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
   call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
@@ -76,19 +72,7 @@ filetype off
     autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
     " for css or scss
     autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-
-
-    " SuperTab like snippets behavior.
-    " imap <expr><TAB>
-    " \ pumvisible() ? "\<C-n>" :
-    " \ neosnippet#expandable_or_jumpable() ?
-    " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    " smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    " \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-
 " "--------------------------->finish installing plugins<---------------------------
-
   if dein#check_install()
     call dein#install()
   endif
@@ -116,7 +100,7 @@ nnoremap / /\v
 vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
-"move currsor with j and k on wrap lines too 
+"move currsor with j and k on wrap lines too
 nnoremap j gj
 nnoremap k gk
 " no highlight
@@ -124,7 +108,7 @@ nnoremap <leader><leader> :noh<cr>
 " map ; to :
 nnoremap ; :
 "turn on off spell checking with ,s
-nmap <silent><leader>s :set spell!<CR> 
+nmap <silent><leader>s :set spell!<CR>
 "move current line up or down with arrows
 nmap <Up> ddkP
 nmap <Down> ddp
@@ -161,14 +145,17 @@ nnoremap <leader>c :TComment<cr>
 vnoremap <leader>c :TComment<cr>
 ":Autoformat
 noremap <F12> :Autoformat<CR>
-
+" tab for fold and unfold
 nnoremap <Tab> za
+
+" highlight last inserted text
+nnoremap gV `[v`]
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 "format html on read and write (remove spaces)
-" autocmd BufRead,BufWritePre *.html normal gg=G 
+" autocmd BufRead,BufWritePre *.html normal gg=G
 
 "run python code in vim <F5>
 noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
@@ -183,7 +170,7 @@ autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " =============================================================================
-"   ___                          _ 
+"   ___                          _
 "  / _ \___ _ __   ___ _ __ __ _| |
 " / /_\/ _ \ '_ \ / _ \ '__/ _` | |
 "/ /_\\  __/ | | |  __/ | | (_| | |
@@ -269,9 +256,3 @@ set clipboard+=unnamedplus
 
 
 
-" WTF is this
-" set path+=**
-" set formatoptions=qrn1
-"
-" highlight last inserted text
-nnoremap gV `[v`]
