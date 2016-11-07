@@ -31,7 +31,6 @@ filetype off
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#auto_complete_start_length = 2
-  " call dein#add('ervandew/supertab')
 
 
   call dein#add('SirVer/ultisnips')
@@ -78,8 +77,6 @@ filetype off
   endif
   call dein#end()
   filetype plugin indent on
-
-
 
 
 let mapleader=","
@@ -248,11 +245,5 @@ set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
 colorscheme distinguished
 " =============================================================================
-"set lazyredraw
-"
 " NVIM specific settings
 set clipboard+=unnamedplus
-
-
-
-
