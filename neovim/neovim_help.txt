@@ -55,8 +55,23 @@ Nouns (съществителни)
     Ctrl+o ---> jump back to where you were
 
     :[line num] ---> jump to line number [line num]
+
+    H ---> move to the top of the screen
     M ---> move to the middle of the screen
     L ---> jump to the bott
+
+    zz ---> move current line on the middle of the screen
+    zt ---> move current line on the top of the screen
+
+    Ctrl+D ---> move half screen down
+    Ctrl+F ---> move full screen down
+    Ctrl+U ---> move half screen up
+    Ctrl+B ---> move full screen up
+
+    m[x] ---> make a mark
+    m[X] ---> make a mark in the current file (can go back from another file)
+    '[x] ---> goto x
+    '[X] ---> goto X (go to another file)
 
 -------------------------------------------------------------------------------
 * Change insert options
@@ -113,14 +128,6 @@ Nouns (съществителни)
     * ---> search for other instances of the word under the cursor
     n ---> go to the next instance when you've searched for a str
     N ---> go to prev instance when you've searched for a str
-
--------------------------------------------------------------------------------
-* Marks
--------------------------------------------------------------------------------
-    m[x] ---> make a mark
-    m[X] ---> make a mark in the current file (can go back from another file)
-    '[x] ---> goto x
-    '[X] ---> goto X (go to another file)
 
 -------------------------------------------------------------------------------
 * Registers

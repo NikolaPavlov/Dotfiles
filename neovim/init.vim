@@ -33,24 +33,19 @@ filetype off
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#auto_complete_start_length = 2
-  " call dein#add('ervandew/supertab')
-
-
   call dein#add('SirVer/ultisnips') 
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     let g:UltiSnipsExpandTrigger="<Tab>"
-    " let g:UltiSnipsJumpForwardTrigger="<c-j>"
     let g:UltiSnipsJumpForwardTrigger="<Tab>"
-    " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
     let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
   call dein#add('benekastah/neomake') " syntastic alternative
-  call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
     let g:neomake_python_enabled_makers = ['pep8']
     " npm install -g jshint (install globally jshint)
     let g:neomake_javascript_enabled_makers = ['jshint']
     autocmd! BufWritePost * Neomake
+  call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tomtom/tcomment_vim') " comment plugin
   call dein#add('scrooloose/nerdtree')
@@ -60,7 +55,7 @@ filetype off
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
-  call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
+  " call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
   call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
@@ -78,15 +73,8 @@ filetype off
     autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 
-    " SuperTab like snippets behavior.
-    " imap <expr><TAB>
-    " \ pumvisible() ? "\<C-n>" :
-    " \ neosnippet#expandable_or_jumpable() ?
-    " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    " smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    " \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-
+  call dein#add("pangloss/vim-javascript") " javascript indentation 
+  call dein#add("othree/javascript-libraries-syntax.vim") " autocomplete js libraries
 " "--------------------------->finish installing plugins<---------------------------
 
   if dein#check_install()
@@ -266,12 +254,5 @@ colorscheme distinguished
 " NVIM specific settings
 set clipboard+=unnamedplus
 
-
-
-
-" WTF is this
-" set path+=**
-" set formatoptions=qrn1
-"
 " highlight last inserted text
 nnoremap gV `[v`]
