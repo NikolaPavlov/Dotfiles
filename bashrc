@@ -1,7 +1,6 @@
 export VISUAL=nvim
 export EDITOR=nvim
 
-
 alias v='nvim'
 alias ..='cd ..'
 alias e='exit'
@@ -29,7 +28,7 @@ alias free='free -m'
 alias myip='curl http://ipecho.net/plain; echo'
 
 alias p1='ping 192.168.1.1'
-alias p8='ping 8.8.8.8 -c 100' 
+alias p8='ping 8.8.8.8 -c 100'
 alias ping1='ping 192.168.1.1'
 alias ping8='ping 8.8.8.8 -c 100'
 alias netstat='netstat -antp'
