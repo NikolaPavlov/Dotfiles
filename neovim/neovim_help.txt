@@ -205,3 +205,8 @@ IDE like
 Ctrl+] ---> jump to definition
 Ctrl+t Ctrl+o ---> jump back
 
+
+
+
+UltiSnips location:
+/home/gogo/.config/nvim/repos/github.com/.dein/UltiSnips/
