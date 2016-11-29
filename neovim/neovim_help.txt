@@ -180,7 +180,7 @@ Substitute
 -------------------------------------------------------------------------------
 Formating
 -------------------------------------------------------------------------------
-    ,a= ---> select all text (,a) and formated it 
+    ,a= ---> select all text (,a) and formated it
     >> ---> indent currently marked text
     << ---> unindent currently marked text
 
