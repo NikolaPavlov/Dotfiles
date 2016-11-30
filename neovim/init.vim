@@ -30,7 +30,7 @@ filetype off
 "------------------------>start installing plugins<----------------------------
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
-    let g:deoplete#auto_complete_start_length = 2
+    " let g:deoplete#auto_complete_start_length = 2
   call dein#add('SirVer/ultisnips') 
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
