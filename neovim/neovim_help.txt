@@ -21,8 +21,6 @@ Nouns (съществителни)
     t : tag(HTML)
     b : block(programming block)
 
-
-
 -------------------------------------------------------------------------------
 * Moving
 -------------------------------------------------------------------------------
@@ -184,7 +182,6 @@ Formating
     >> ---> indent currently marked text
     << ---> unindent currently marked text
 
-
 -------------------------------------------------------------------------------
 Surround Plugin
 -------------------------------------------------------------------------------
@@ -197,13 +194,12 @@ Surround Plugin
     bottom of the window. Now type in what you want to wrap that with, such as
     <div id='someid'> and then press enter.
 
-
-
-
+-------------------------------------------------------------------------------
 IDE like
 -------------------------------------------------------------------------------
 Ctrl+] ---> jump to definition
 Ctrl+t Ctrl+o ---> jump back
+
 
 
 
