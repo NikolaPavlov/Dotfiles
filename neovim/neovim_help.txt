@@ -206,3 +206,6 @@ Ctrl+t Ctrl+o ---> jump back
 
 UltiSnips location:
 /home/gogo/.config/nvim/repos/github.com/.dein/UltiSnips/
+
+NeoVim commands:
+CheckHealth ---> check the current installation
