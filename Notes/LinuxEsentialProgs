@@ -3,12 +3,11 @@ firefox
 git
 xfce4-terminal
 networkmanager and network-manager-applet
-vim
+neovim
 virtualbox
 redshift
 thunar and ranger
 lxappearance
-truecrypt
 thunderbird
 smplayer
 gparted
@@ -16,16 +15,17 @@ zathura / zathura-pdf-poppler
 openssh
 nmap
 transmission-qt
-gpicview
 KeePassX
-openvpn
 yaourt
 youtube-dl
-xmind
 autojump
 baobab
 wireshark
+xmind
 fdupes / fslint
+gpicview
+openvpn
+truecrypt
 ===============================================================================
 pacman -S tree
 pacman -S i3

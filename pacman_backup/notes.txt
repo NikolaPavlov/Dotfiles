@@ -1,2 +1,0 @@
-# execute on the fresh machine
-xargs -a Packages pacman -S --noconfirm --needed
