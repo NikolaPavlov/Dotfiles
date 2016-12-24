@@ -127,3 +127,31 @@ openvpn
 ===============================================================================
 sudo systemctl enable openvpn@client.service
 client.conf is config file in /etc/openvpn
+
+
+
+Install yaourt
+===============================================================================
+[Install required dependencies]
+$ sudo pacman -S --needed base-devel git wget
+
+[Query alpm database and AUR]
+$ git clone https://aur.archlinux.org/package-query.git
+
+[Navigate to package-query directory]
+$ cd package-query
+
+[Compile the package]
+$ makepkg -si
+$ cd ..
+
+[Download the latest Yaourt package]
+$ git clone https://aur.archlinux.org/yaourt.git
+$ cd yaourt
+
+[Compile the package]
+$ makepkg -si
+$ cd ..
+
+[Remove the folder]
+$ sudo rm -Rf yaourt package-query
