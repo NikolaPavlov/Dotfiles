@@ -73,6 +73,7 @@ filetype off
   call dein#add("pangloss/vim-javascript") " javascript indentation 
   call dein#add("othree/javascript-libraries-syntax.vim") " autocomplete js libraries
   call dein#add("tweekmonster/django-plus.vim")
+  call dein#add("vim-scripts/loremipsum")
 " "--------------------------->finish installing plugins<---------------------------
   if dein#check_install()
     call dein#install()
