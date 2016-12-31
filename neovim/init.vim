@@ -31,7 +31,7 @@ filetype off
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#auto_complete_start_length = 2
-  call dein#add('SirVer/ultisnips') 
+  call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     let g:UltiSnipsExpandTrigger="<Tab>"
@@ -53,27 +53,16 @@ filetype off
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
-  " call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
-  call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
+  " call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
-  call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-  call dein#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context (usefull for HTML)
-  call dein#add('chrisgillis/vim-bootstrap3-snippets')
-  call dein#add('maksimr/vim-jsbeautify')
-    autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-    " for json
-    autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-    " for jsx
-    autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-    " for html
-    autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-    " for css or scss
-    autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-
-  call dein#add("pangloss/vim-javascript") " javascript indentation 
-  call dein#add("othree/javascript-libraries-syntax.vim") " autocomplete js libraries
-  call dein#add("tweekmonster/django-plus.vim")
-  call dein#add("vim-scripts/loremipsum")
+  " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
+  " call dein#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context (usefull for HTML)
+  " call dein#add('chrisgillis/vim-bootstrap3-snippets')
+  " call dein#add("pangloss/vim-javascript") " javascript indentation
+  " call dein#add("othree/javascript-libraries-syntax.vim") " autocomplete js libraries
+  " call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
+  " call dein#add("tweekmonster/django-plus.vim")
+  " call dein#add("vim-scripts/loremipsum")
 " "--------------------------->finish installing plugins<---------------------------
   if dein#check_install()
     call dein#install()
