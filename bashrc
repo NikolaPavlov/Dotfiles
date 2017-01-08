@@ -38,7 +38,7 @@ alias u='sudo pacman -Syu --noconfirm'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
 # Python
-alias p='python3.5'
+alias p='python3.6'
 # Git
 alias gs='git status'
 alias gc='git commit'
@@ -114,7 +114,7 @@ export TERM='screen-256color'
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #add to $PATH
