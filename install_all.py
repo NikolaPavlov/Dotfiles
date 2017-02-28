@@ -52,7 +52,6 @@ def create_symlink(from_file, to_file):
     os.symlink(from_file, to_file)
     printGreen('Created symlink from ' + from_file + ' to ' + to_file + '\n')
 
-
 create_dir_if_doesnt_exist(NEOVIM_NVIMRC_DESTINATION_FOLDER)
 create_dir_if_doesnt_exist(I3_DESTINATION_FOLDER)
 create_dir_if_doesnt_exist(ZATHURA_DESTINATION_FOLDER)

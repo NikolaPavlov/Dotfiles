@@ -70,7 +70,7 @@ ex ()
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
+      *.tgz)       tar xvf $1   ;;
       *.zip)       unzip $1     ;;
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
@@ -122,3 +122,6 @@ export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
 # Complete after sudo
 complete -cf sudo
+
+#ruby
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
