@@ -147,9 +147,6 @@ nnoremap <Tab> za
 " highlight last inserted text
 nnoremap gV `[v`]
 
-nnoremap ipdb import ipdb; ipdb.set_trace()
-
-
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
