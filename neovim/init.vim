@@ -38,9 +38,10 @@ filetype off
     let g:UltiSnipsJumpForwardTrigger="<Tab>"
     let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
-  call dein#add('benekastah/neomake') " syntastic alternative
+  call dein#add('neomake/neomake') " syntastic alternative
     " $ sudo pip2/pip3 install flake8 -U
     " $ sudo pip2/pip3 install vulture -U
+    " vulture finds unused code aka functions in your code
     let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'vulture']
     let g:neomake_python_enabled_makers = ['flake8', 'pep8']
     " E501 is line length of 80 characters
@@ -63,12 +64,12 @@ filetype off
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('davidhalter/jedi-vim')
+  call dein#add('tmhedberg/SimpylFold') "fold manager for python
   " call dein#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context (usefull for HTML)
   " call dein#add('chrisgillis/vim-bootstrap3-snippets')
   " call dein#add("pangloss/vim-javascript") " javascript indentation
   " call dein#add("othree/javascript-libraries-syntax.vim") " autocomplete js libraries
   " call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
-  " call dein#add("tweekmonster/django-plus.vim")
   " call dein#add("vim-scripts/loremipsum")
 " "--------------------------->finish installing plugins<---------------------------
   if dein#check_install()
@@ -160,12 +161,18 @@ noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 "auto chmod +x if file begin with #! and contains /bin/
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
 
-"this is nedded for simply fold to work correctly
-autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
-
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+" Also don't do it when the mark is in the first line, that is the default
+" position when opening a file.
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+\ endif
 " =============================================================================
 "   ___                          _
 "  / _ \___ _ __   ___ _ __ __ _| |
@@ -250,3 +257,6 @@ set clipboard+=unnamedplus
 
 " highlight last inserted text
 nnoremap gV `[v`]
+
+
+
