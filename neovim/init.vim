@@ -39,10 +39,16 @@ filetype off
     let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
   call dein#add('benekastah/neomake') " syntastic alternative
-    let g:neomake_python_enabled_makers = ['pep8']
-    " npm install -g jshint (install globally jshint)
-    let g:neomake_javascript_enabled_makers = ['jshint']
+    " $ sudo pip2/pip3 install flake8 -U
+    " $ sudo pip2/pip3 install vulture -U
+    let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'vulture']
+    let g:neomake_python_enabled_makers = ['flake8', 'pep8']
+    " E501 is line length of 80 characters
+    let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
+    let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=100', '--ignore=E115,E266'], }
+    " run neomake on the current file on every write:
     autocmd! BufWritePost * Neomake
+
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tomtom/tcomment_vim') " comment plugin
