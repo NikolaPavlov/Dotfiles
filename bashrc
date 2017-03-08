@@ -125,3 +125,7 @@ complete -cf sudo
 
 #ruby
 # PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
+#virtualenvwrapper dir
+export WORKON_HOME="$HOME/virtualenvs"
+source /usr/bin/virtualenvwrapper.sh
