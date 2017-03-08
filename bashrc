@@ -54,8 +54,8 @@ alias mp3='youtube-dl --extract-audio --audio-format mp3'
 alias mp4='youtube-dl -f 22 '
 # Django
 alias pmr='python manage.py runserver'
-alias pmm='python manage.py makemigrations'
-alias pm='python manage.py migrate'
+alias pmmm='python manage.py makemigrations'
+alias pmm='python manage.py migrate'
 
 # ex - archive extractor
 # usage: ex <file>
