@@ -147,6 +147,8 @@ nnoremap <Tab> za
 
 " highlight last inserted text
 nnoremap gV `[v`]
+" ipdb alias
+nnoremap ipdb import ipdb; ipdb.set_trace()
 
 "------------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
@@ -173,6 +175,9 @@ autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
 \ endif
+
+" auto html filetype do htmldjango
+au BufNewFile,BufRead *.html set filetype=htmldjango
 " =============================================================================
 "   ___                          _
 "  / _ \___ _ __   ___ _ __ __ _| |
