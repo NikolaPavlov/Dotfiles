@@ -63,11 +63,10 @@ filetype off
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
-  " call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
+  call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
-    let g:ctrlp_match_window = 'bottom,order:ttb'
+    let g:ctrlp_match_window = 'bottom,order:ttb' " reverse suggestion order
     let g:ctrlp_switch_buffer = 0
-    let g:ctrlp_working_path_mode = 0
 
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('davidhalter/jedi-vim')
@@ -93,6 +92,8 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+" autoclose vim if only open window is NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "Keys maps---------------------------------------------------------------------
 "remap arrow keys to nothing
 noremap <left> <nop>
