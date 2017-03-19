@@ -1,4 +1,5 @@
 " show me the hjkl bitch!
+" {{{ Links
 " =============================================================================
 "  _      _       _
 " | |    (_)     | |
@@ -14,6 +15,8 @@
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
 " http://vimdoc.sf.net (this is :help as html)
 " =============================================================================
+" }}}
+" {{{ Plugins
 filetype off
 " Setup DeinVim PluginManager -------------------------------------------------
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
@@ -62,6 +65,10 @@ filetype off
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   " call dein#add('Valloric/MatchTagAlways') " always highlight enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
+    let g:ctrlp_match_window = 'bottom,order:ttb'
+    let g:ctrlp_switch_buffer = 0
+    let g:ctrlp_working_path_mode = 0
+
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('davidhalter/jedi-vim')
   call dein#add('tmhedberg/SimpylFold') "fold manager for python
@@ -77,8 +84,8 @@ filetype off
   endif
   call dein#end()
   filetype plugin indent on
-
-
+" }}}
+" {{{ Remaps
 let mapleader=","
 "NerdTree bindings-------------------------------------------------------------
 map <c-t> :NERDTreeToggle<CR>
@@ -149,8 +156,7 @@ nnoremap <Tab> za
 nnoremap gV `[v`]
 " ipdb alias
 nnoremap ipdb import ipdb; ipdb.set_trace()
-
-"------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
@@ -178,6 +184,8 @@ autocmd BufReadPost *
 
 " auto html filetype do htmldjango
 au BufNewFile,BufRead *.html set filetype=htmldjango
+" }}}
+" {{{ General
 " =============================================================================
 "   ___                          _
 "  / _ \___ _ __   ___ _ __ __ _| |
@@ -198,6 +206,7 @@ set smartcase "override 'ignorecase' when pattern has upper chars
 set wrap "long lines wrap
 set linebreak "break long lines at char in 'breakat' (local to window)
 let &showbreak = '↳ ' " string to put before wrapped screen lines
+set lazyredraw "don't redraw while executing macros
 set number "show current line number
 set relativenumber "show line numbers relative to the current line
 set scrolloff=5 "number of screen lines to show around the cursor
@@ -235,7 +244,7 @@ set shiftround "round to 'shiftwidth' for '<<' and '>>'
 "16 folding
 set foldmethod=indent
 set foldlevel=99
-set foldlevelstart=10 "fold level when open file
+set foldlevelstart=10 "open most folds by default
 "17 diff mode
 "18 mapping
 "19 reading and writing files
@@ -262,6 +271,5 @@ set clipboard+=unnamedplus
 
 " highlight last inserted text
 nnoremap gV `[v`]
-
-
-
+" }}}
+vim:foldmethod=marker:foldlevel=0
