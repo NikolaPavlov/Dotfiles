@@ -184,8 +184,10 @@ autocmd BufReadPost *
 
 " auto html filetype do htmldjango
 au BufNewFile,BufRead *.html set filetype=htmldjango
+" foldmethod=marker for .vim files
+au BufNewFile,BufRead,BufNewFile *.vim set foldmethod=marker
 " }}}
-" {{{ General
+" {{{}
 " =============================================================================
 "   ___                          _
 "  / _ \___ _ __   ___ _ __ __ _| |
@@ -272,4 +274,3 @@ set clipboard+=unnamedplus
 " highlight last inserted text
 nnoremap gV `[v`]
 " }}}
-vim:foldmethod=marker:foldlevel=0
