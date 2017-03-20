@@ -99,7 +99,7 @@ Nouns (съществителни)
 * Undo and redo
 -------------------------------------------------------------------------------
     u ---> undo
-    Ctrl - r ---> redo
+    Ctrl-r ---> redo
 
 -------------------------------------------------------------------------------
 * Copy paste
@@ -201,6 +201,14 @@ Surround Plugin
     Visual Mode: select anything, and then type S. You'll be brought to the
     bottom of the window. Now type in what you want to wrap that with, such as
     <div id='someid'> and then press enter.
+
+-------------------------------------------------------------------------------
+CtrlP Plugin
+-------------------------------------------------------------------------------
+Ctrl+P ---> [newfolder]/[newfile] Ctrl+Y ---> create newfolder/newfile
+Ctrl+P ---> [file] Ctrl+V ---> vertical split the file
+Ctrl+P ---> [file] Ctrl+S ---> horizontal slit the file
+Ctrl+P ---> [file] Ctrl+T ---> new tab with the file
 
 -------------------------------------------------------------------------------
 IDE like

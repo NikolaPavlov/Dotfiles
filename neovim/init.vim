@@ -66,6 +66,7 @@ filetype off
   call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
   call dein#add('ctrlpvim/ctrlp.vim')
     let g:ctrlp_match_window = 'bottom,order:ttb' " reverse suggestion order
+    let g:ctrlp_show_hidden = 0 " don't show hidden files
     let g:ctrlp_switch_buffer = 0
 
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
@@ -94,8 +95,8 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 " Use tab to move forward to window and backspace to move backwards
-nnoremap <Tab> <c-w>w
-nnoremap <bs> <c-w>W
+nmap <Tab> <c-w>w
+nmap <bs> <c-w>W
 " autoclose vim if only open window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "Keys maps---------------------------------------------------------------------
@@ -186,6 +187,8 @@ autocmd BufReadPost *
 
 " auto html filetype do htmldjango
 au BufNewFile,BufRead *.html set filetype=htmldjango
+" no line wrap for html files
+au BufNewFile,BufRead *.html set nowrap
 " foldmethod=marker for .vim files
 au BufNewFile,BufRead,BufNewFile *.vim set foldmethod=marker
 " }}}
