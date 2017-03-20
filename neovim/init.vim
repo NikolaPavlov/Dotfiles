@@ -87,11 +87,15 @@ filetype off
 " {{{ Remaps
 let mapleader=","
 "NerdTree bindings-------------------------------------------------------------
-map <c-t> :NERDTreeToggle<CR>
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+map <C-t> :NERDTreeToggle<CR>
+" Use ctrl-[hjkl] to select the active split
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+" Use tab to move forward to window and backspace to move backwards
+nnoremap <Tab> <c-w>w
+nnoremap <bs> <c-w>W
 " autoclose vim if only open window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "Keys maps---------------------------------------------------------------------
@@ -150,9 +154,6 @@ nnoremap <leader>c :TComment<cr>
 vnoremap <leader>c :TComment<cr>
 ":Autoformat
 noremap <F12> :Autoformat<CR>
-" tab for fold and unfold
-nnoremap <Tab> za
-
 " highlight last inserted text
 nnoremap gV `[v`]
 " ipdb alias
