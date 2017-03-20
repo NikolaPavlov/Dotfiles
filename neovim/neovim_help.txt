@@ -176,6 +176,14 @@ Substitute
     :s/old/new/g ---> replace all occurances of old with new in current line
 
 -------------------------------------------------------------------------------
+Buffers
+-------------------------------------------------------------------------------
+:buffers ---> display all buffers
+:b [number] ---> go to [number] buffer
+:bp ---> previous buffer
+:bn ---> next buffer
+
+-------------------------------------------------------------------------------
 Formating
 -------------------------------------------------------------------------------
     ,a= ---> select all text (,a) and formated it
