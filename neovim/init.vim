@@ -60,7 +60,6 @@ filetype off
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('vim-airline/vim-airline')
   call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
-  call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
@@ -72,6 +71,7 @@ filetype off
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('davidhalter/jedi-vim')
   call dein#add('tmhedberg/SimpylFold') "fold manager for python
+  call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
   " call dein#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context (usefull for HTML)
   " call dein#add('chrisgillis/vim-bootstrap3-snippets')
   " call dein#add("pangloss/vim-javascript") " javascript indentation
@@ -190,7 +190,9 @@ au BufNewFile,BufRead *.html set filetype=htmldjango
 " no line wrap for html files
 au BufNewFile,BufRead *.html set nowrap
 " foldmethod=marker for .vim files
-au BufNewFile,BufRead,BufNewFile *.vim set foldmethod=marker
+au BufNewFile,BufRead *.vim set foldmethod=marker
+" autoclose folds when open .vim file
+au BufNewFile,BufRead *.vim normal zM
 " }}}
 " {{{}
 " =============================================================================
@@ -231,7 +233,8 @@ set splitright "a new window is put right of the current one
 "8 terminal
 "9 using the mouse
 "10 GUI
-set guifont=Inconsolata\ 13
+" set guifont=Inconsolata\ 13
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 "11 printing
 "12 messages and info
 set showcmd "show command keys in the status line
