@@ -117,14 +117,8 @@ POWERLINE_BASH_SELECT=1
 . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-#add to $PATH
-# export PATH=$PATH:~/.gem/ruby/2.3.0/bin
-
 # Complete after sudo
 complete -cf sudo
-
-#ruby
-# PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 #virtualenvwrapper dir
 export WORKON_HOME="$HOME/virtualenvs"
