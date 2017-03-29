@@ -157,6 +157,8 @@ vnoremap <leader>c :TComment<cr>
 noremap <F12> :Autoformat<CR>
 " highlight last inserted text
 nnoremap gV `[v`]
+" replace visualy selected text with the what is in the paste register
+vnoremap pp "+p
 " ipdb alias
 nnoremap ipdb import ipdb; ipdb.set_trace()
 " -----------------------------------------------------------------------------
@@ -189,6 +191,7 @@ autocmd BufReadPost *
 au BufNewFile,BufRead *.html set filetype=htmldjango
 " no line wrap for html files
 au BufNewFile,BufRead *.html set nowrap
+au BufNewFile,BufRead *.htmldjango set nowrap
 " foldmethod=marker for .vim files
 au BufNewFile,BufRead *.vim set foldmethod=marker
 " autoclose folds when open .vim file
