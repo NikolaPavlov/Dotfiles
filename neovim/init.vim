@@ -159,8 +159,6 @@ noremap <F12> :Autoformat<CR>
 nnoremap gV `[v`]
 " replace visualy selected text with the what is in the paste register
 vnoremap pp "+p
-" ipdb alias
-nnoremap ipdb import ipdb; ipdb.set_trace()
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -191,7 +189,7 @@ autocmd BufReadPost *
 au BufNewFile,BufRead *.html set filetype=htmldjango
 " no line wrap for html files
 au BufNewFile,BufRead *.html set nowrap
-au BufNewFile,BufRead *.htmldjango set nowrap
+au BufNewFile,BufRead *.htmldjango set nowrap textwidth=0
 " foldmethod=marker for .vim files
 au BufNewFile,BufRead *.vim set foldmethod=marker
 " autoclose folds when open .vim file
