@@ -13,7 +13,7 @@ alias rm='rm -Irv'
 alias off='poweroff'
 alias cp='cp -i'
 alias mv='mv -i'
-alias t='xfce4-terminal'
+alias tt='xfce4-terminal'
 alias ps='ps auxf'
 alias mkdir='mkdir -pv'
 alias wget='wget -c'
@@ -56,6 +56,7 @@ alias mp4='youtube-dl -f 22 '
 alias pmr='python manage.py runserver'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
+alias t='python manage.py test'
 
 # ex - archive extractor
 # usage: ex <file>
