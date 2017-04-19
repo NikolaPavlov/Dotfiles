@@ -46,7 +46,6 @@ filetype off
     " $ sudo pip2/pip3 install vulture -U
     " vulture finds unused code aka functions in your code
     let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'vulture']
-    let g:neomake_python_enabled_makers = ['flake8', 'pep8']
     " E501 is line length of 80 characters
     let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
     let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=100', '--ignore=E115,E266'], }
@@ -75,7 +74,6 @@ filetype off
   " call dein#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context (usefull for HTML)
   " call dein#add('chrisgillis/vim-bootstrap3-snippets')
   " call dein#add("pangloss/vim-javascript") " javascript indentation
-  " call dein#add("othree/javascript-libraries-syntax.vim") " autocomplete js libraries
   " call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
   " call dein#add("vim-scripts/loremipsum")
 " "--------------------------->finish installing plugins<---------------------------
