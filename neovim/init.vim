@@ -43,9 +43,7 @@ filetype off
 
   call dein#add('neomake/neomake') " syntastic alternative
     " $ sudo pip2/pip3 install flake8 -U
-    " $ sudo pip2/pip3 install vulture -U
-    " vulture finds unused code aka functions in your code
-    let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'vulture']
+    let g:neomake_python_enabled_makers = ['flake8', 'pep8']
     " E501 is line length of 80 characters
     let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
     let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=100', '--ignore=E115,E266'], }
@@ -69,13 +67,19 @@ filetype off
 
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('davidhalter/jedi-vim')
-  call dein#add('tmhedberg/SimpylFold') "fold manager for python
+  call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
+    let g:SimpylFold_docstring_preview=1 "display docstrings in folds
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
-  " call dein#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context (usefull for HTML)
   " call dein#add('chrisgillis/vim-bootstrap3-snippets')
-  " call dein#add("pangloss/vim-javascript") " javascript indentation
-  " call dein#add('easymotion/vim-easymotion') " vim easymotion plugin
-  " call dein#add("vim-scripts/loremipsum")
+  "
+  "
+  "
+  "
+  call dein#add('tweekmonster/impsort.vim') "import sorting
+    " nnoremap <leader>is :<c-u>ImpSort!<cr>
+  call dein#add('majutsushi/tagbar')
+    nmap <F8> :TagbarToggle<CR>
+  call dein#add('Vimjas/vim-python-pep8-indent')
 " "--------------------------->finish installing plugins<---------------------------
   if dein#check_install()
     call dein#install()
@@ -193,7 +197,7 @@ au BufNewFile,BufRead *.vim set foldmethod=marker
 " autoclose folds when open .vim file
 au BufNewFile,BufRead *.vim normal zM
 " }}}
-" {{{}
+" {{{
 " =============================================================================
 "   ___                          _
 "  / _ \___ _ __   ___ _ __ __ _| |
@@ -244,7 +248,7 @@ set clipboard=unnamed
 set textwidth=79 "line length above which to break the line
 "15 tabs and indenting
 set autoindent "automatically set the indent of a new line
-set smartindent "do clever autoindenting
+set smartindent "do clever autoindenting for next line (after if for etc.)
 set expandtab "expand tab to spaces in insert mode
 set shiftwidth=4 "number of spaces used for each step of (auto)indent
 set softtabstop=4 "number of spaces to insert for a <Tab>
@@ -280,4 +284,5 @@ set clipboard+=unnamedplus
 
 " highlight last inserted text
 nnoremap gV `[v`]
+nnoremap <leader>is :<c-u>ImpSort!<cr>
 " }}}
