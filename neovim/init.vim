@@ -74,6 +74,10 @@ filetype off
   call dein#add('majutsushi/tagbar')
     nmap <F8> :TagbarToggle<CR>
   call dein#add('Vimjas/vim-python-pep8-indent')
+  call dein#add('mhinz/vim-startify')
+  call dein#add('zchee/deoplete-jedi')
+  " :h startify
+  " :h startify-faq
 " "--------------------------->finish installing plugins<---------------------------
   if dein#check_install()
     call dein#install()
@@ -164,6 +168,9 @@ au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !ch
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+ " Source vimrc after saving it
+autocmd BufWritePost .vimrc,vimrc source $MYVIMRC
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
