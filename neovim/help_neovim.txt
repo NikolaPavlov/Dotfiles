@@ -1,59 +1,14 @@
-Verbs
-    d : delete
-    c : change
-    y : yank
-    v : visually select
-
-Modifiers
-    i : inside
-    a : around
-    NUM : number(1,2,3,4)
-    t : searches for something and stop before it
-    f : searches for something and lands on it
-    / : find a string (literal or regex)
-
-Nouns (съществителни)
-    w : word
-    s : sentence
-    ) : sentence
-    p : paragraph
-    } : paragraph
-    t : tag(HTML)
-    b : block(programming block)
-
 -------------------------------------------------------------------------------
 * Moving
 -------------------------------------------------------------------------------
-    0 ---> move to the beginning of the line
-    $ ---> move th the end of the line
-    ^ ---> move for the first non blank char in the line
-    t" ---> jump right before next "
-    f" ---> jump and land on the next "
-
-    w ---> move forward one word
-    b ---> move backward one word back
-    e ---> move to the end of word
-    W ---> move forward one big word
-    B ---> move backward one big word
-
     ) ---> move forward one sentence
     } ---> move forward one paragraph
-
-    H ---> move to the top of the screen
-    M ---> move to the middle of the screen
-    L ---> move to the bottom of the screen
-    gg ---> go to the top of the file
-    G ---> go to bottom of the file
-    ^U ---> move up half screen
-    ^D ---> move down half screen
-    ^F ---> page down
-    ^B ---> page up
 
     Ctrl+i ---> jump to your previous location
     Ctrl+o ---> jump back to where you were
 
-    :[line num] ---> jump to line number [line num]
 
+    ---HML---
     H ---> move to the top of the screen
     M ---> move to the middle of the screen
     L ---> jump to the bott
@@ -61,53 +16,13 @@ Nouns (съществителни)
     zz ---> move current line on the middle of the screen
     zt ---> move current line on the top of the screen
 
-    Ctrl+D ---> move half screen down
-    Ctrl+F ---> move full screen down
     Ctrl+U ---> move half screen up
-    Ctrl+B ---> move full screen up
+    Ctrl+D ---> move half screen down
 
     m[x] ---> make a mark
     m[X] ---> make a mark in the current file (can go back from another file)
     '[x] ---> goto x
     '[X] ---> goto X (go to another file)
-
--------------------------------------------------------------------------------
-* Change insert options
--------------------------------------------------------------------------------
-    i ---> insert
-    a ---> append
-    I ---> insert in the beginning of the line
-    A ---> append at the end of the line
-    o ---> open new line below the current one
-    O ---> open new line above current one
-    r ---> replace the one char under the cursor
-    C ---> change the current line from where you're at
-    ct[x] ---> change until the x
-    ~ ---> capitalize under the currsor
-
--------------------------------------------------------------------------------
-* Deleting
--------------------------------------------------------------------------------
-    x ---> delete under the currsor
-    dd ---> delete current line
-    dw ---> delete word
-    D ---> delete current line
-    dt[x] ---> delete until x
-    J ---> join the current line with the next one
-
--------------------------------------------------------------------------------
-* Undo and redo
--------------------------------------------------------------------------------
-    u ---> undo
-    Ctrl-r ---> redo
-
--------------------------------------------------------------------------------
-* Copy paste
--------------------------------------------------------------------------------
-    y ---> copy (noun)
-    yy ---> copy the current line
-    p ---> paste the copied (or deleted) text after the cursor
-    P ---> paste the copied (or deleted) text before the cursor
 
 -------------------------------------------------------------------------------
 * Spellchecking
@@ -123,9 +38,12 @@ Nouns (съществителни)
     f[char] ---> find char and land on it
     t[char] ---> find char and land before it
     /[str] ---> search for str
-    * ---> search for other instances of the word under the cursor
-    n ---> go to the next instance when you've searched for a str
-    N ---> go to prev instance when you've searched for a str
+    % ---> go to match bracket
+-------------------------------------------------------------------------------
+* Marks
+-------------------------------------------------------------------------------
+:marks ---> show marks
+'' ---> last place you where
 
 -------------------------------------------------------------------------------
 * Registers

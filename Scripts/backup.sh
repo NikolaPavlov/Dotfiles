@@ -2,7 +2,7 @@
 
 # $1 directory to backup
 # $2 backup destination directory
-# notes: 
+# notes:
 # run it with sudo
 # rsync  / user@backup-server:/path/to/backups
 # echo 'rsync [dir_for_backup] [dir to backup]'

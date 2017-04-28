@@ -1,4 +1,3 @@
-" show me the hjkl bitch!
 " {{{ Links
 " =============================================================================
 "  _      _       _
@@ -52,6 +51,7 @@ filetype off
 
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('tpope/vim-surround') " change surroundings
+  call dein#add('tpope/vim-repeat') " repeat surround commands
   call dein#add('tomtom/tcomment_vim') " comment plugin
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
@@ -70,13 +70,7 @@ filetype off
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
-  " call dein#add('chrisgillis/vim-bootstrap3-snippets')
-  "
-  "
-  "
-  "
   call dein#add('tweekmonster/impsort.vim') "import sorting
-    " nnoremap <leader>is :<c-u>ImpSort!<cr>
   call dein#add('majutsushi/tagbar')
     nmap <F8> :TagbarToggle<CR>
   call dein#add('Vimjas/vim-python-pep8-indent')
@@ -121,12 +115,6 @@ nnoremap <leader><leader> :noh<cr>
 nnoremap ; :
 "turn on off spell checking with ,s
 nmap <silent><leader>s :set spell!<CR>
-"move current line up or down with arrows
-nmap <Up> ddkP
-nmap <Down> ddp
-"move multiple selected lines up or down with arrows
-vmap <Up> xkP`[V`]
-vmap <Down> xp`[V`]
 "folding and unfolding with Space
 nnoremap <Space> za
 vnoremap <Space> za
@@ -157,19 +145,19 @@ nnoremap <leader>c :TComment<cr>
 vnoremap <leader>c :TComment<cr>
 ":Autoformat
 noremap <F12> :Autoformat<CR>
-" highlight last inserted text
-nnoremap gV `[v`]
+" sorting the python imports
+nnoremap <leader>is :<c-u>ImpSort!<cr>
 " replace visualy selected text with the what is in the paste register
 vnoremap pp "+p
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
-"format html on read and write (remove spaces)
-" autocmd BufRead,BufWritePre *.html normal gg=G
-
 "run python code in vim <F5>
 noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
+
+"run django tests with <leader>t
+noremap <leader>t :execute "!python manage.py test"<CR>
 
 "auto chmod +x if file begin with #! and contains /bin/
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
@@ -197,7 +185,7 @@ au BufNewFile,BufRead *.vim set foldmethod=marker
 " autoclose folds when open .vim file
 au BufNewFile,BufRead *.vim normal zM
 " }}}
-" {{{
+" {{{ General
 " =============================================================================
 "   ___                          _
 "  / _ \___ _ __   ___ _ __ __ _| |
@@ -282,7 +270,6 @@ colorscheme distinguished
 " NVIM specific settings
 set clipboard+=unnamedplus
 
-" highlight last inserted text
-nnoremap gV `[v`]
-nnoremap <leader>is :<c-u>ImpSort!<cr>
+" $ mark when you change word
+set cpoptions+=$
 " }}}
