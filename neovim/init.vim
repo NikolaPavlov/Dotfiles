@@ -33,8 +33,8 @@ filetype off
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
   " :help deoplete
     let g:deoplete#enable_at_startup = 1
-    let g:deoplete#auto_complete_start_length = 2
     let g:deoplete#enable_smart_case = 1
+    let g:deoplete#auto_complete_start_length = 2
     " let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
 
   call dein#add('SirVer/ultisnips')
