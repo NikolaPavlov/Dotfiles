@@ -31,14 +31,21 @@ filetype off
 
 "------------------------>start installing plugins<----------------------------
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
+  " :help deoplete
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#auto_complete_start_length = 2
+    let g:deoplete#enable_smart_case = 1
+    " let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
+
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     let g:UltiSnipsExpandTrigger="<Tab>"
     let g:UltiSnipsJumpForwardTrigger="<Tab>"
     let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+    " let g:UltiSnipsListSnippets = "<C-g><Tab>"
+    let g:UltiSnipsSnippetsDir = split(&runtimepath, ',')[0] . '/snips'
+    let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
 
   call dein#add('neomake/neomake') " syntastic alternative
     " $ sudo pip2/pip3 install flake8 -U
@@ -67,6 +74,7 @@ filetype off
 
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('davidhalter/jedi-vim')
+  call dein#add('zchee/deoplete-jedi')
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
@@ -75,9 +83,10 @@ filetype off
     nmap <F8> :TagbarToggle<CR>
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-startify')
-  call dein#add('zchee/deoplete-jedi')
   " :h startify
   " :h startify-faq
+  call dein#add('ervandew/supertab')
+    let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
 " "--------------------------->finish installing plugins<---------------------------
   if dein#check_install()
     call dein#install()
@@ -95,8 +104,8 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 " Use tab to move forward to window and backspace to move backwards
-nmap <Tab> <c-w>w
-nmap <bs> <c-w>W
+" nmap <Tab> <c-w>w
+" nmap <bs> <c-w>W
 " autoclose vim if only open window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "Keys maps---------------------------------------------------------------------
