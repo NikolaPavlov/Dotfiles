@@ -28,32 +28,28 @@ filetype off
   set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
   call dein#begin(expand('~/.config/nvim/repos/github.com'))
   call dein#add('Shougo/dein.vim')
-
 "------------------------>start installing plugins<----------------------------
-  call dein#add('Shougo/deoplete.nvim') " autocomplete plugin like YouCompleteMe
-  " :help deoplete
+  call dein#add('Shougo/deoplete.nvim') " autocomplete plugn
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
-    let g:deoplete#auto_complete_start_length = 2
+    let g:deoplete#auto_complete_start_length = 2 "2 is default value
     " let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
-
+  call dein#add('davidhalter/jedi-vim')
+  call dein#add('zchee/deoplete-jedi') "jedi vim omnicompletion for deoplete
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     let g:UltiSnipsExpandTrigger="<Tab>"
+    let g:UltiSnipsListSnippets="<c-Tab>" "list the snippets
     let g:UltiSnipsJumpForwardTrigger="<Tab>"
     let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-    " let g:UltiSnipsListSnippets = "<C-g><Tab>"
     let g:UltiSnipsSnippetsDir = split(&runtimepath, ',')[0] . '/snips'
     let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
 
-  call dein#add('neomake/neomake') " syntastic alternative
-    " $ sudo pip2/pip3 install flake8 -U
+  call dein#add('neomake/neomake')
     let g:neomake_python_enabled_makers = ['flake8', 'pep8']
-    " E501 is line length of 80 characters
     let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
     let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=100', '--ignore=E115,E266'], }
-    " run neomake on the current file on every write:
     autocmd! BufWritePost * Neomake
 
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
@@ -73,8 +69,6 @@ filetype off
     let g:ctrlp_switch_buffer = 0
 
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-  call dein#add('davidhalter/jedi-vim')
-  call dein#add('zchee/deoplete-jedi')
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
@@ -83,8 +77,6 @@ filetype off
     nmap <F8> :TagbarToggle<CR>
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-startify')
-  " :h startify
-  " :h startify-faq
   call dein#add('ervandew/supertab')
     let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
 " "--------------------------->finish installing plugins<---------------------------
@@ -103,9 +95,6 @@ nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
-" Use tab to move forward to window and backspace to move backwards
-" nmap <Tab> <c-w>w
-" nmap <bs> <c-w>W
 " autoclose vim if only open window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "Keys maps---------------------------------------------------------------------
@@ -123,7 +112,8 @@ vnoremap ? ?\v
 nnoremap j gj
 nnoremap k gk
 " no highlight
-nnoremap <leader><leader> :noh<cr>
+" nnoremap <leader><leader> :noh<cr>
+nnoremap <space> :noh<cr>
 " map ; to :
 nnoremap ; :
 "turn on off spell checking with ,s
@@ -148,16 +138,12 @@ nnoremap <c-s> :%s/
 vnoremap <c-s> :s/
 "edit vimrc in the current window
 noremap <leader>e :e $MYVIMRC<CR>
-"edit vimrc in vertical split window
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
 nnoremap N Nzzzv
 " Comment Keys
 nnoremap <leader>c :TComment<cr>
 vnoremap <leader>c :TComment<cr>
-":Autoformat
-noremap <F12> :Autoformat<CR>
 " sorting the python imports
 nnoremap <leader>is :<c-u>ImpSort!<cr>
 " replace visualy selected text with the what is in the paste register
@@ -285,7 +271,12 @@ colorscheme distinguished
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
-
-" $ mark when you change word
-set cpoptions+=$
 " }}}
+"
+"
+"
+"
+"If you are using virtualenv, it is recommended that you create environments specifically for Neovim. This way, you will not need to install the neovim package in each virtualenv. Once you have created them, add the following to your vimrc file:
+
+" let g:python_host_prog = '/full/path/to/neovim2/bin/python'
+" let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
