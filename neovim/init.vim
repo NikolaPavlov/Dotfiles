@@ -33,9 +33,14 @@ filetype off
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
     let g:deoplete#auto_complete_start_length = 2 "2 is default value
-    " let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
-  call dein#add('davidhalter/jedi-vim')
+    let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
+  " call dein#add('davidhalter/jedi-vim')
   call dein#add('zchee/deoplete-jedi') "jedi vim omnicompletion for deoplete
+
+  " call dein#add('Shougo/neocomplete.vim')
+  " call dein#add('Shougo/neosnippet.vim')
+  " call dein#add('Shougo/neosnippet-snippets.vim')
+
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -50,8 +55,9 @@ filetype off
     let g:neomake_python_enabled_makers = ['flake8', 'pep8']
     let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
     let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=100', '--ignore=E115,E266'], }
-    autocmd! BufWritePost * Neomake
+    autocmd! BufReadPost, BufWritePost * Neomake
 
+  call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tpope/vim-repeat') " repeat surround commands
@@ -63,11 +69,8 @@ filetype off
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
-  call dein#add('ctrlpvim/ctrlp.vim')
-    let g:ctrlp_match_window = 'bottom,order:ttb' " reverse suggestion order
-    let g:ctrlp_show_hidden = 0 " don't show hidden files
-    let g:ctrlp_switch_buffer = 0
-
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
@@ -75,10 +78,13 @@ filetype off
   call dein#add('tweekmonster/impsort.vim') "import sorting
   call dein#add('majutsushi/tagbar')
     nmap <F8> :TagbarToggle<CR>
-  call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-startify')
   call dein#add('ervandew/supertab')
     let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
+  call dein#add('hkupty/iron.nvim') "open ipython in nvim :IronRepl
+
+  " call dein#add('ternjs/tern_for_vim'), {'for':['javascript','javascript.jsx']}
+  " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
 " "--------------------------->finish installing plugins<---------------------------
   if dein#check_install()
     call dein#install()
@@ -105,14 +111,12 @@ noremap <up> <nop>
 noremap <down> <nop>
 "better regular expressions searching
 nnoremap / /\v
-vnoremap / /\v
 nnoremap ? ?\v
-vnoremap ? ?\v
 "move currsor with j and k on wrap lines too
 nnoremap j gj
 nnoremap k gk
 " no highlight
-" nnoremap <leader><leader> :noh<cr>
+nnoremap <leader><leader> :noh<cr>
 nnoremap <space> :noh<cr>
 " map ; to :
 nnoremap ; :
@@ -180,8 +184,8 @@ autocmd BufReadPost *
 " auto html filetype do htmldjango
 au BufNewFile,BufRead *.html set filetype=htmldjango
 " no line wrap for html files
-au BufNewFile,BufRead *.html set nowrap
-au BufNewFile,BufRead *.htmldjango set nowrap textwidth=0
+au BufNewFile,BufRead *.html set nowrap textwidth=120
+au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
 " foldmethod=marker for .vim files
 au BufNewFile,BufRead *.vim set foldmethod=marker
 " autoclose folds when open .vim file
@@ -280,3 +284,4 @@ set clipboard+=unnamedplus
 
 " let g:python_host_prog = '/full/path/to/neovim2/bin/python'
 " let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
+let g:python3_host_prog = '/home/gogo/virtualenvs/neovim/bin/python3.6'

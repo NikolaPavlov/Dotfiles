@@ -142,3 +142,5 @@ UltiSnips location:
 
 NeoVim commands:
 CheckHealth ---> check the current installation
+
+:terminal or :te ---> open terminal in vim
