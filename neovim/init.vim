@@ -8,7 +8,6 @@
 " |______|_|_| |_|_|\_\___/
 " =============================================================================
 " http://vimcasts.org/
-" http://usevim.com
 " http://vimawesome.com/ ---> vim plugins ratings
 " http://www.vimbits.com/ ---> vim scripts
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
