@@ -8,13 +8,19 @@
 " |______|_|_| |_|_|\_\___/
 " =============================================================================
 " http://vimcasts.org/
-" http://usevim.com
 " http://vimawesome.com/ ---> vim plugins ratings
 " http://www.vimbits.com/ ---> vim scripts
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
 " http://vimdoc.sf.net (this is :help as html)
 " =============================================================================
 " }}}
+" {{{ Virtualenv fixer
+"If you are using virtualenv, it is recommended that you create environments specifically for Neovim. This way, you will not need to install the neovim package in each virtualenv. Once you have created them, add the following to your vimrc file:
+"
+" let g:python_host_prog = '/full/path/to/neovim2/bin/python'
+" let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
+let g:python3_host_prog = '/home/gogo/virtualenvs/neovim/bin/python3.6'
+"}}}
 " {{{ Plugins
 filetype off
 " Setup DeinVim PluginManager -------------------------------------------------
@@ -35,7 +41,7 @@ filetype off
     let g:deoplete#auto_complete_start_length = 2 "2 is default value
     " let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
   call dein#add('davidhalter/jedi-vim')
-  " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+  call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
 
   " call dein#add('Shougo/neocomplete.vim')
   " call dein#add('Shougo/neosnippet.vim')
@@ -152,7 +158,8 @@ vnoremap <leader>c :TComment<cr>
 nnoremap <leader>is :<c-u>ImpSort!<cr>
 " replace visualy selected text with the what is in the paste register
 vnoremap pp "+p
-noremap <c-p> :Files<CR>
+" remap ctrl+p to launch fzf search
+nmap <c-p> :Files<CR>
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -183,7 +190,8 @@ autocmd BufReadPost *
 \ endif
 
 " auto html filetype do htmldjango
-au BufNewFile,BufRead *.html set filetype=htmldjango
+" au BufNewFile,BufRead *.html set filetype=htmldjango
+au BufNewFile,BufRead *.html setlocal filetype=htmldjango
 " no line wrap for html files
 au BufNewFile,BufRead *.html set nowrap textwidth=120
 au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
@@ -191,6 +199,43 @@ au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
 au BufNewFile,BufRead *.vim set foldmethod=marker
 " autoclose folds when open .vim file
 au BufNewFile,BufRead *.vim normal zM
+
+" Django shortcuts ------------------------------------------------------------
+let g:last_relative_dir = ''
+nnoremap g1 :call RelatedFile ("models.py")<cr>
+nnoremap g2 :call RelatedFile ("views.py")<cr>
+nnoremap g3 :call RelatedFile ("urls.py")<cr>
+nnoremap g4 :call RelatedFile ("admin.py")<cr>
+nnoremap g5 :call RelatedFile ("tests.py")<cr>
+nnoremap g6 :call RelatedFile ( "templates/" )<cr>
+nnoremap g7 :call RelatedFile ( "templatetags/" )<cr>
+nnoremap g8 :call RelatedFile ( "management/" )<cr>
+nnoremap g0 :e settings.py<cr>
+nnoremap g9 :e urls.py<cr>
+
+fun! RelatedFile(file)
+    #This is to check that the directory looks djangoish
+    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
+        exec "edit %:h/" . a:file
+        let g:last_relative_dir = expand("%:h") . '/'
+        return ''
+    endif
+    if g:last_relative_dir != ''
+        exec "edit " . g:last_relative_dir . a:file
+        return ''
+    endif
+    echo "Cant determine where relative file is : " . a:file
+    return ''
+endfun
+
+fun SetAppDir()
+    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
+        let g:last_relative_dir = expand("%:h") . '/'
+        return ''
+    endif
+endfun
+autocmd BufEnter *.py call SetAppDir()
+"------------------------------------------------------------------------------
 " }}}
 " {{{ General
 " =============================================================================
@@ -281,8 +326,3 @@ set clipboard+=unnamedplus
 "
 "
 "
-"If you are using virtualenv, it is recommended that you create environments specifically for Neovim. This way, you will not need to install the neovim package in each virtualenv. Once you have created them, add the following to your vimrc file:
-
-" let g:python_host_prog = '/full/path/to/neovim2/bin/python'
-" let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
-let g:python3_host_prog = '/home/gogo/virtualenvs/neovim/bin/python3.6'
