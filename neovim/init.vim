@@ -33,9 +33,9 @@ filetype off
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
     let g:deoplete#auto_complete_start_length = 2 "2 is default value
-    let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
-  " call dein#add('davidhalter/jedi-vim')
-  call dein#add('zchee/deoplete-jedi') "jedi vim omnicompletion for deoplete
+    " let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
+  call dein#add('davidhalter/jedi-vim')
+  " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
 
   " call dein#add('Shougo/neocomplete.vim')
   " call dein#add('Shougo/neosnippet.vim')
@@ -152,6 +152,7 @@ vnoremap <leader>c :TComment<cr>
 nnoremap <leader>is :<c-u>ImpSort!<cr>
 " replace visualy selected text with the what is in the paste register
 vnoremap pp "+p
+noremap <c-p> :Files<CR>
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
