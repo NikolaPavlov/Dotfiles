@@ -58,6 +58,11 @@ alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias t='python manage.py test'
 
+alias dl=download_github_folder
+function download_github_folder(){
+    svn checkout $(echo $1 | sed "s/\/tree\/[a-zA-Z]\+/\/trunk/")
+}
+
 # ex - archive extractor
 # usage: ex <file>
 ex ()
