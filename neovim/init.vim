@@ -11,7 +11,6 @@
 " http://vimawesome.com/ ---> vim plugins ratings
 " http://www.vimbits.com/ ---> vim scripts
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
-" http://vimdoc.sf.net (this is :help as html)
 " =============================================================================
 " }}}
 " {{{ Virtualenv fixer
@@ -160,6 +159,7 @@ nnoremap <leader>is :<c-u>ImpSort!<cr>
 vnoremap pp "+p
 " remap ctrl+p to launch fzf search
 nmap <c-p> :Files<CR>
+"TODO: add buffer aliases
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -199,6 +199,8 @@ au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
 au BufNewFile,BufRead *.vim set foldmethod=marker
 " autoclose folds when open .vim file
 au BufNewFile,BufRead *.vim normal zM
+" Remove spaces at end of lines in file before save
+autocmd BufWritePre * %s/\s\+$//e
 
 " Django shortcuts ------------------------------------------------------------
 let g:last_relative_dir = ''
