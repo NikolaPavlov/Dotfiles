@@ -53,6 +53,7 @@ alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --au
 alias mp3='youtube-dl --extract-audio --audio-format mp3'
 alias mp4='youtube-dl -f 22 '
 # Django
+alias cookie='cookiecutter https://github.com/pydanny/cookiecutter-django'
 alias pmr='python manage.py runserver'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'

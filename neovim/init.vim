@@ -322,7 +322,3 @@ colorscheme distinguished
 " NVIM specific settings
 set clipboard+=unnamedplus
 " }}}
-"
-"
-"
-"

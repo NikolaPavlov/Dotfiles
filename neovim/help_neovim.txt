@@ -87,6 +87,7 @@
 
     it ---> inside tag
     at ---> around tag
+
 -------------------------------------------------------------------------------
 Substitute
 -------------------------------------------------------------------------------
@@ -100,6 +101,7 @@ Buffers
 :b [number] ---> go to [number] buffer
 :bp ---> previous buffer
 :bn ---> next buffer
+:b# ---> go to where you been
 
 -------------------------------------------------------------------------------
 Formating
@@ -121,14 +123,6 @@ Surround Plugin
     <div id='someid'> and then press enter.
 
 -------------------------------------------------------------------------------
-CtrlP Plugin
--------------------------------------------------------------------------------
-Ctrl+P ---> [newfolder]/[newfile] Ctrl+Y ---> create newfolder/newfile
-Ctrl+P ---> [file] Ctrl+V ---> vertical split the file
-Ctrl+P ---> [file] Ctrl+S ---> horizontal slit the file
-Ctrl+P ---> [file] Ctrl+T ---> new tab with the file
-
--------------------------------------------------------------------------------
 IDE like
 -------------------------------------------------------------------------------
     <leader>g ---> jump to definition
@@ -137,9 +131,6 @@ IDE like
 -------------------------------------------------------------------------------
 Other
 -------------------------------------------------------------------------------
-UltiSnips location:
-/home/gogo/.config/nvim/repos/github.com/.dein/UltiSnips/
-
 NeoVim commands:
 CheckHealth ---> check the current installation
 
