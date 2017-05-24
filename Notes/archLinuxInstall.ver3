@@ -17,7 +17,7 @@ dd if=<source> of=<source> bs=4M && sync
 ---> Wipe out the hard
 dd if=/dev/urandom of=<destination usb>
 shred --verbose --random-source=/dev/urandom --iterations=1 /dev/sda
----> create GPT partition table and make needed partitions
+---> create GPT partition table and make needed partitions (fdisk)
 ===============================================================================
 3.Encryption and LVM configuration
 ===============================================================================
