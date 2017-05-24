@@ -106,6 +106,7 @@ mkinitcpio -p linux
 login as <nickname>
 
 sudo pacman -S xorg i3-wm xorg-xinit
+sudo pacman -S dmenu xfce4-terminal
 echo exec i3 > .xinitrc
 echo startx >> .bashrc
 
