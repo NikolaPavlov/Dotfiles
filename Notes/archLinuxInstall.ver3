@@ -104,8 +104,8 @@ pacman -S btrfs-progs
 mkinitcpio -p linux
 ===============================================================================
 login as <nickname>
-mkdir temp
 
+sudo pacman -S xorg i3-wm xorg-xinit
 echo exec i3 > .xinitrc
 echo startx >> .bashrc
 
