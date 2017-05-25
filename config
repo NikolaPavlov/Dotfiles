@@ -158,7 +158,7 @@ new_window pixel 3
 
 # Start programs on startup
 exec --no-startup-id nm-applet
-exec --no-startup-id redshift
+exec --no-startup-id redshift -l 42.6977:23.3219
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #00ffff #00ffff #00ffff #00ffff #00ffff
