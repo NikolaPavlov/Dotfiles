@@ -2,7 +2,7 @@
 # Loading the new arch install
 
 echo "****************************************************************"
-echo "Installing"
+echo "Installing Updating Pacman for first time"
 echo "****************************************************************"
 
 sudo pacman --noconfirm -Syu
@@ -46,7 +46,8 @@ sudo pacman --noconfirm -S tree
 sudo pacman --noconfirm -S rsync
 sudo pacman --noconfirm -S xclip
 sudo pacman --noconfirm -S openssh
+sudo pacman --noconfirm -S macchanger
+sudo pacman --noconfirm -S ipython
 # VirtualBox
 sudo pacman --noconfirm -S virtualbox virtualbox-guest-utils
 sudo tee /etc/modules-load.d/virtualbox-vboxdrv.conf <<< "vboxdrv"
-
