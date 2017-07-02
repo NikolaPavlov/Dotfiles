@@ -131,3 +131,5 @@ complete -cf sudo
 #virtualenvwrapper dir
 export WORKON_HOME="$HOME/virtualenvs"
 source /usr/bin/virtualenvwrapper.sh
+
+alias backup='sudo rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /media/1Tb/BACKUPS/LinuxBackup/fresh_arch'

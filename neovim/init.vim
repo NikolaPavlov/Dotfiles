@@ -30,6 +30,7 @@ filetype off
   if &compatible
     set nocompatible
   endif
+
   set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
   call dein#begin(expand('~/.config/nvim/repos/github.com'))
   call dein#add('Shougo/dein.vim')
@@ -91,10 +92,11 @@ filetype off
   " call dein#add('ternjs/tern_for_vim'), {'for':['javascript','javascript.jsx']}
   " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
 " "--------------------------->finish installing plugins<---------------------------
+  call dein#end()
+  call dein#save_state()
   if dein#check_install()
     call dein#install()
   endif
-  call dein#end()
   filetype plugin indent on
 " }}}
 " {{{ Remaps

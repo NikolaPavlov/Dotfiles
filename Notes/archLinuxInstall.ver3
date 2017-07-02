@@ -105,8 +105,6 @@ mkinitcpio -p linux
 ===============================================================================
 login as <nickname>
 
-sudo pacman -S xorg i3-wm xorg-xinit
-sudo pacman -S dmenu xfce4-terminal
 echo exec i3 > .xinitrc
 echo startx >> .bashrc
 ===============================================================================
@@ -169,3 +167,9 @@ $ cd ..
 
 [Remove the folder]
 $ sudo rm -Rf yaourt package-query
+
+
+
+
+Install VGA
+https://www.youtube.com/watch?v=5FkIPYQMTsQ

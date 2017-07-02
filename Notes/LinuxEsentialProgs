@@ -45,13 +45,16 @@ pacman -S ipython
 pacman -S python-pip
 pacman -S ncdu
 pacman -S pydf
+pacman -S hardinfo
+pacman -S p7zip p7zip-plugins unrar tar rsync
+pacman --noconfirm -S virtualbox virtualbox-guest-utils
 
 nvim dependencies:
 pacman -S xclip
 pacman -S python-neovim
 pacman -S python2-neovim
 ===============================================================================
-lxapperance themes and icons
+lxapperance themes and icons from yaourt
 ---------------------------------------
 xfce-dusk-theme ---> .themes
 delorean-dark-theme ---> .themes
