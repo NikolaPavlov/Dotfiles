@@ -49,8 +49,8 @@ alias gpull='git pull'
 alias glog='git log'
 # Docker
 alias d='docker'
-alias drmc='docker rm $(docker ps -a -q)'
-alias drmi='docker rmi $(docker images -q)'
+alias drmc='docker rm -f $(docker ps -a -q)'
+alias drmi='docker rmi -f $(docker images -q)'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
