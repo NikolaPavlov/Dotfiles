@@ -37,6 +37,7 @@ alias netstat='netstat -antp'
 alias u='sudo pacman -Syu --noconfirm'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
+alias y='yaourt --sort w'
 # Python
 alias p='python3.6'
 alias i='ipython'
@@ -49,6 +50,7 @@ alias gpull='git pull'
 alias glog='git log'
 # Docker
 alias d='docker'
+alias di='docker images'
 alias drmc='docker rm -f $(docker ps -a -q)'
 alias drmi='docker rmi -f $(docker images -q)'
 # Encryption
@@ -137,3 +139,4 @@ export WORKON_HOME="$HOME/virtualenvs"
 source /usr/bin/virtualenvwrapper.sh
 
 alias backup='sudo rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /media/1Tb/BACKUPS/LinuxBackup/fresh_arch'
+alias slack='scudcloud'
