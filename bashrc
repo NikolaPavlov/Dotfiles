@@ -37,6 +37,7 @@ alias netstat='netstat -antp'
 alias u='sudo pacman -Syu --noconfirm'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
+alias search='sudo  pacman -Ss '
 alias y='yaourt --sort w'
 # Python
 alias p='python3.6'
@@ -140,3 +141,4 @@ source /usr/bin/virtualenvwrapper.sh
 
 alias backup='sudo rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /media/1Tb/BACKUPS/LinuxBackup/fresh_arch'
 alias slack='scudcloud'
+alias keys='keepassx2 ~/db.kdbx'
