@@ -156,7 +156,8 @@ nnoremap N Nzzzv
 nnoremap <leader>c :TComment<cr>
 vnoremap <leader>c :TComment<cr>
 " sorting the python imports
-nnoremap <leader>is :<c-u>ImpSort!<cr>
+nnoremap <leader>is :ImpSort!<cr>
+vnoremap <leader>is :ImpSort!<cr>
 " replace visualy selected text with the what is in the paste register
 vnoremap pp "+p
 " remap ctrl+p to launch fzf search
