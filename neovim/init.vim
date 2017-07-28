@@ -58,10 +58,9 @@ filetype off
     let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
 
   call dein#add('neomake/neomake')
-    let g:neomake_python_enabled_makers = ['flake8', 'pep8']
-    let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
-    let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=100', '--ignore=E115,E266'], }
-    autocmd! BufReadPost, BufWritePost * Neomake
+    let g:neomake_python_enabled_makers = ['flake8']
+    " let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
+    autocmd! BufWritePost * Neomake
 
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
