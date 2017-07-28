@@ -49,6 +49,7 @@ alias ga='git add'
 alias gpush='git push'
 alias gpull='git pull'
 alias glog='git log'
+alias gitreset='git reset --hard HEAD'
 # Docker
 alias d='docker'
 alias di='docker images'
@@ -125,11 +126,11 @@ stty -ixon
 
 #add powerline to terminal
 #http://www.tecmint.com/powerline-adds-powerful-statuslines-and-prompts-to-vim-and-bash/
-# export TERM='screen-256color'
-# powerline-daemon -q
-# POWERLINE_BASH_CONTINUATION=1
-# POWERLINE_BASH_SELECT=1
-# . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+export TERM='screen-256color'
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Complete after sudo

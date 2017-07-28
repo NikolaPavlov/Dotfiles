@@ -80,7 +80,7 @@ filetype off
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
-  call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
+  call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
   call dein#add('tweekmonster/impsort.vim') "import sorting
   call dein#add('majutsushi/tagbar')
     nmap <F8> :TagbarToggle<CR>
