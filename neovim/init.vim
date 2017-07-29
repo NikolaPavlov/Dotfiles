@@ -18,7 +18,7 @@
 "
 " let g:python_host_prog = '/full/path/to/neovim2/bin/python'
 " let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
-let g:python3_host_prog = '/home/gogo/virtualenvs/neovim/bin/python3.6'
+let g:python3_host_prog = '/home/gogo/.virtualenvs/neovim/bin/python3.6'
 "}}}
 " {{{ Plugins
 filetype off
