@@ -131,7 +131,6 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Complete after sudo
 complete -cf sudo
@@ -141,6 +140,4 @@ export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/projects"
 source /usr/bin/virtualenvwrapper.sh
 
-alias backup='sudo rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /media/1Tb/BACKUPS/LinuxBackup/fresh_arch'
 alias slack='scudcloud'
-alias keys='keepassx2 ~/db.kdbx'

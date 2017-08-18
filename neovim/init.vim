@@ -39,14 +39,8 @@ filetype off
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
     let g:deoplete#auto_complete_start_length = 2 "2 is default value
-    " let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
   call dein#add('davidhalter/jedi-vim')
   call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
-
-  " call dein#add('Shougo/neocomplete.vim')
-  " call dein#add('Shougo/neosnippet.vim')
-  " call dein#add('Shougo/neosnippet-snippets.vim')
-
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -59,7 +53,6 @@ filetype off
 
   call dein#add('neomake/neomake')
     let g:neomake_python_enabled_makers = ['flake8']
-    " let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
     autocmd! BufWritePost * Neomake
 
   call dein#add('Vimjas/vim-python-pep8-indent')
