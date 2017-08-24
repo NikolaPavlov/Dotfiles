@@ -185,7 +185,6 @@ autocmd BufReadPost *
 \ endif
 
 " auto html filetype do htmldjango
-" au BufNewFile,BufRead *.html set filetype=htmldjango
 au BufNewFile,BufRead *.html setlocal filetype=htmldjango
 " no line wrap for html files
 au BufNewFile,BufRead *.html set nowrap textwidth=120
