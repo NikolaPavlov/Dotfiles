@@ -67,6 +67,8 @@ alias pmr='python manage.py runserver'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias t='python manage.py test'
+# MPSYouTube
+alias yt='mpsyt'
 
 alias dl=download_github_folder
 function download_github_folder(){
