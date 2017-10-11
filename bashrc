@@ -49,6 +49,7 @@ alias ga='git add'
 alias gpush='git push'
 alias gpull='git pull'
 alias glog='git log'
+alias gitreset='git reset --hard HEAD'
 # Docker
 alias d='docker'
 alias di='docker images'
@@ -67,6 +68,8 @@ alias pmr='python manage.py runserver'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias t='python manage.py test'
+# MPSYouTube
+alias yt='mpsyt'
 
 alias dl=download_github_folder
 function download_github_folder(){
@@ -126,20 +129,23 @@ stty -ixon
 
 #add powerline to terminal
 #http://www.tecmint.com/powerline-adds-powerful-statuslines-and-prompts-to-vim-and-bash/
-# export TERM='screen-256color'
-# powerline-daemon -q
-# POWERLINE_BASH_CONTINUATION=1
-# POWERLINE_BASH_SELECT=1
-# . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export TERM='screen-256color'
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 
 # Complete after sudo
 complete -cf sudo
 
 #virtualenvwrapper dir
-export WORKON_HOME="$HOME/virtualenvs"
+export WORKON_HOME="$HOME/.virtualenvs"
+export PROJECT_HOME="$HOME/projects"
 source /usr/bin/virtualenvwrapper.sh
 
-alias backup='sudo rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /media/1Tb/BACKUPS/LinuxBackup/fresh_arch'
 alias slack='scudcloud'
-alias keys='keepassx2 ~/db.kdbx'
+
+
+
+# Links
+# http://bropages.org/ ---> command line examples

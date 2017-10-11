@@ -18,7 +18,7 @@
 "
 " let g:python_host_prog = '/full/path/to/neovim2/bin/python'
 " let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
-let g:python3_host_prog = '/home/gogo/virtualenvs/neovim/bin/python3.6'
+let g:python3_host_prog = '/home/gogo/.virtualenvs/neovim/bin/python3.6'
 "}}}
 " {{{ Plugins
 filetype off
@@ -39,14 +39,8 @@ filetype off
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
     let g:deoplete#auto_complete_start_length = 2 "2 is default value
-    " let g:deoplete#disable_auto_complete = 1 "you need manual activation(like ctrl+n)
   call dein#add('davidhalter/jedi-vim')
   call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
-
-  " call dein#add('Shougo/neocomplete.vim')
-  " call dein#add('Shougo/neosnippet.vim')
-  " call dein#add('Shougo/neosnippet-snippets.vim')
-
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -58,10 +52,8 @@ filetype off
     let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
 
   call dein#add('neomake/neomake')
-    let g:neomake_python_enabled_makers = ['flake8', 'pep8']
-    let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
-    let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=100', '--ignore=E115,E266'], }
-    autocmd! BufReadPost, BufWritePost * Neomake
+    let g:neomake_python_enabled_makers = ['flake8']
+    autocmd! BufWritePost * Neomake
 
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
@@ -80,7 +72,7 @@ filetype off
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
-  call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
+  call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
   call dein#add('tweekmonster/impsort.vim') "import sorting
   call dein#add('majutsushi/tagbar')
     nmap <F8> :TagbarToggle<CR>
@@ -193,7 +185,6 @@ autocmd BufReadPost *
 \ endif
 
 " auto html filetype do htmldjango
-" au BufNewFile,BufRead *.html set filetype=htmldjango
 au BufNewFile,BufRead *.html setlocal filetype=htmldjango
 " no line wrap for html files
 au BufNewFile,BufRead *.html set nowrap textwidth=120
