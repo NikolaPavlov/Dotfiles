@@ -21,7 +21,7 @@ set inputbar-bg "#333333"
 set completion-highlight-fg "#F0E68C"
 set completion-highlight-bg "#6B8E23"
 #
-# 
+#
 set highlight-color "#CD853F"
 set highlight-active-color "#F0E68C"
 #
@@ -29,10 +29,13 @@ set highlight-active-color "#F0E68C"
 set notification-fg "#FFFFFF"
 set notification-bg "#333333"
 
-# set recolor true
-> set recolor_darkcolor #BDE090
-> set recolor_lightcolor #000000
+# CTRL + R for changing dark/light mode
+set recolor true
+# > set recolor_darkcolor #BDE090
+# > set recolor_lightcolor #000000
+set recolor_darkcolor '#FFFFFF'
+set recolor_lightcolor '#000000'
 
-# TODO: find swith key for black/light mode
-# temp fix: 
-#   If you comment recolor: true background goes default white
+#
+set window-title-basename "true"
+set selection-clipboard "clipboard"
