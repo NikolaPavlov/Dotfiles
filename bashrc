@@ -55,6 +55,7 @@ alias d='docker'
 alias di='docker images'
 alias drmc='docker rm -f $(docker ps -a -q)'
 alias drmi='docker rmi -f $(docker images -q)'
+alias dc='docker-compose'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
