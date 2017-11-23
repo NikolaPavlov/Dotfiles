@@ -53,8 +53,8 @@ alias gitreset='git reset --hard HEAD'
 # Docker
 alias d='docker'
 alias di='docker images'
-alias drmc='docker rm -f $(docker ps -a -q)'
-alias drmi='docker rmi -f $(docker images -q)'
+alias drmc='docker rm -f $(docker ps -a -q)' # remove all images
+alias drmi='docker rmi -f $(docker images -q)' # remove image
 alias dc='docker-compose'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
