@@ -7,7 +7,7 @@ HOME_DIR = os.path.expanduser('~')
 BASHRC_FILE = CWD + '/bashrc'
 BASHRC_DESTINATION = HOME_DIR + '/.bashrc'
 
-NEOVIM_NVIMRC_FILE = CWD + '/neovim/init.vim'
+NEOVIM_NVIMRC_FILE = CWD + '/Neovim/init.vim'
 NEOVIM_NVIMRC_DESTINATION = HOME_DIR + '/.config/nvim/init.vim'
 NEOVIM_NVIMRC_DESTINATION_FOLDER = HOME_DIR + '/.config/nvim'
 

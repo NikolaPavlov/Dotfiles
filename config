@@ -173,6 +173,7 @@ exec --no-startup-id feh --bg-fill /home/gogo/Pictures/wallpaper.jpg
 # key bindings
 bindcode 67 exec --no-startup-id firefox
 bindcode 68 exec --no-startup-id thunar
+bindcode 69 exec --no-startup-id thunderbird
 
 # volume control keys and mute
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
