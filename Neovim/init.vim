@@ -77,6 +77,7 @@ filetype off
   call dein#add('majutsushi/tagbar')
     nmap <F8> :TagbarToggle<CR>
   call dein#add('mhinz/vim-startify')
+  call dein#add('rhysd/vim-grammarous')
   call dein#add('ervandew/supertab')
     let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
   call dein#add('hkupty/iron.nvim') "open ipython in nvim :IronRepl
@@ -317,4 +318,14 @@ colorscheme distinguished
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
+"
+"
+"
+" other temp (spellchecking temp)
+" http://thejakeharding.com/tutorial/2012/06/13/using-spell-check-in-vim.html
+set spelllang=en
+" set spell " ---> ;w
+" turn spell checking on by default
+"help spell ---> spell help
+" ]s [s ---> move between spellchecking words
 " }}}
