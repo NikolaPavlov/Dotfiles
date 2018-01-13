@@ -329,3 +329,9 @@ set spelllang=en
 "help spell ---> spell help
 " ]s [s ---> move between spellchecking words
 " }}}
+
+
+
+
+
+au BufNewFile,BufRead *.txt set nowrap textwidth=120
