@@ -144,9 +144,8 @@ export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/projects"
 source /usr/bin/virtualenvwrapper.sh
 
-alias slack='scudcloud'
-
-
-
 # Links
 # http://bropages.org/ ---> command line examples
+
+# Others
+# alias slack='scudcloud'
