@@ -160,6 +160,8 @@ new_window pixel 3
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift -l 42.6977:23.3219
 exec --no-startup-id telegram-desktop
+exec --no-startup-id ./.phonetic_keys.sh
+
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #00ffff #00ffff #00ffff #00ffff #00ffff

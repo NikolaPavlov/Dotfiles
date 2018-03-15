@@ -147,5 +147,4 @@ source /usr/bin/virtualenvwrapper.sh
 # Links
 # http://bropages.org/ ---> command line examples
 
-# Others
-# alias slack='scudcloud'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
