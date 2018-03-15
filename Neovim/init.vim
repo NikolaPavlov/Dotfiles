@@ -155,6 +155,8 @@ vnoremap <leader>is :ImpSort!<cr>
 vnoremap pp "+p
 " remap ctrl+p to launch fzf search
 nmap <c-p> :Files<CR>
+" draw line separator
+nnoremap <leader>l <ESC>79i-<ESC>
 "TODO: add buffer aliases
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
@@ -190,6 +192,8 @@ au BufNewFile,BufRead *.html setlocal filetype=htmldjango
 " no line wrap for html files
 au BufNewFile,BufRead *.html set nowrap textwidth=120
 au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
+" no line wrap for txt files
+au BufNewFile,BufRead *.txt set nowrap textwidth=120
 " foldmethod=marker for .vim files
 au BufNewFile,BufRead *.vim set foldmethod=marker
 " autoclose folds when open .vim file
@@ -329,9 +333,3 @@ set spelllang=en
 "help spell ---> spell help
 " ]s [s ---> move between spellchecking words
 " }}}
-
-
-
-
-
-au BufNewFile,BufRead *.txt set nowrap textwidth=120
