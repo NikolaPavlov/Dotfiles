@@ -81,6 +81,15 @@ filetype off
   call dein#add('ervandew/supertab')
     let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
   call dein#add('hkupty/iron.nvim') "open ipython in nvim :IronRepl
+  "----------"
+  "----------"
+  "----------"
+  call dein#add('tomlion/vim-solidity')
+  call dein#add('dmdque/solidity.vim')
+  " call dein#add('sheerun/vim-polyglot')
+  "----------"
+  "----------"
+  "----------"
 
   " call dein#add('ternjs/tern_for_vim'), {'for':['javascript','javascript.jsx']}
   " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
@@ -333,3 +342,9 @@ set spelllang=en
 "help spell ---> spell help
 " ]s [s ---> move between spellchecking words
 " }}}
+"
+" Test Temp QuickFix:
+augroup quickfix
+  autocmd!
+  autocmd QuickFixCmdPost make nested copen
+augroup END
