@@ -1,6 +1,7 @@
 export VISUAL=nvim
 export EDITOR=nvim
 
+alias w='whois'
 alias v='nvim'
 alias ..='cd ..'
 alias e='exit'
@@ -40,7 +41,7 @@ alias remove='sudo pacman -Rs '
 alias search='sudo  pacman -Ss '
 alias y='yaourt --sort w'
 # Python
-alias p='python3.6'
+alias p='python3.7'
 alias i='ipython'
 # Git
 alias gs='git status'
@@ -137,7 +138,7 @@ export TERM='screen-256color'
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+. /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 
 # Complete after sudo
 complete -cf sudo
