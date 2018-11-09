@@ -151,7 +151,7 @@ bar {
 }
 
 
-# User Settings!!!
+# ---> User Settings <---
 # ############################################################################
 # disable title bar
 new_window pixel 3
@@ -193,4 +193,3 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-# ############################################################################

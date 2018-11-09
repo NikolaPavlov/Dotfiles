@@ -15,7 +15,7 @@ NEOVIM_SNIPPETS_FOLDER = HOME_DIR + '/.config/nvim/snips'
 NEOVIM_SNIPPETS_REPO_FOLDER = CWD + '/neovim/snips'
 
 I3_CONFIG_FILE = CWD + '/config'
-I3_DESTINATION = HOME_DIR + '/.i3/config'
+I3_DESTINATION = HOME_DIR + '/.config/i3/config'
 I3_DESTINATION_FOLDER = HOME_DIR + '/.i3'
 
 ZATHURA_FILE = CWD + '/zathurarc'
