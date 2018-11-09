@@ -1,21 +1,36 @@
 servers = (
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { address = "irc.esper.net"; chatnet = "EsperNet"; port = "6667"; },
+  {
+    address = "ssl.efnet.org";
+    chatnet = "EFNet";
+    port = "9999";
+    use_tls = "yes";
+  },
+  {
+    address = "irc.esper.net";
+    chatnet = "EsperNet";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
   {
     address = "chat.freenode.net";
     chatnet = "Freenode";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
-    autoconnect = "yes";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
   },
   {
     address = "irc.gamesurge.net";
     chatnet = "GameSurge";
     port = "6667";
   },
-  { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
+  {
+    address = "eu.irc6.net";
+    chatnet = "IRCnet";
+    port = "6667";
+    use_tls = "yes";
+  },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   {
     address = "irc.ircsource.net";
@@ -23,35 +38,30 @@ servers = (
     port = "6667";
   },
   { address = "irc.netfuze.net"; chatnet = "NetFuze"; port = "6667"; },
-  { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
+  {
+    address = "irc.oftc.net";
+    chatnet = "OFTC";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
   { 
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
   },
-  { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
+  {
+    address = "irc.rizon.net";
+    chatnet = "Rizon";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
   { 
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
-  },
-  {
-    address = "chat.freenode.net";
-    chatnet = "Freenode";
-    port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "yes";
-    ssl_capath = "/etc/ssl/certs";
-    autoconnect = "yes";
-  },
-  {
-    address = "irc.freenode.net";
-    chatnet = "Freenode";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
-    autoconnect = "yes";
   }
 );
 
@@ -76,8 +86,6 @@ chatnets = {
   };
   Freenode = {
     type = "IRC";
-    nick = "anunaki";
-    autosendcmd = "/msg nickserv identify dragoman; ;wait 2000";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
@@ -137,8 +145,7 @@ channels = (
   { name = "#ircsource"; chatnet = "IRCSource"; autojoin = "No"; },
   { name = "#netfuze"; chatnet = "NetFuze"; autojoin = "No"; },
   { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
-  { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
-  { name = "#vulnhub"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "silc"; chatnet = "SILC"; autojoin = "No"; }
 );
 
 aliases = {
@@ -341,6 +348,7 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
+        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
       };
@@ -390,36 +398,10 @@ statusbar = {
         topicbarend = { priority = "100"; alignment = "right"; };
       };
     };
-    awl_0 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_0 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
   };
 };
 settings = {
-  core = { real_name = "Unknown"; user_name = "gogo"; nick = "anunaki"; };
+  core = { real_name = "Unknown"; user_name = "gogo"; nick = "gogo"; };
   "fe-text" = { actlist_sort = "refnum"; };
-  "perl/core/scripts" = { awl_shared_sbar = "OFF"; };
-};
-hilights = ( { text = "anunaki"; nick = "yes"; word = "yes"; } );
-windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#vulnhub";
-        tag = "Freenode";
-      }
-    );
-  };
-  3 = { name = "hilight"; sticky = "yes"; };
-};
-mainwindows = {
-  1 = { first_line = "7"; lines = "65"; };
-  3 = { first_line = "1"; lines = "6"; };
+  "irc/dcc" = { dcc_autoget = "yes"; dcc_autoget_masks = "Mysfyt"; };
 };

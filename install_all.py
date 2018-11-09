@@ -14,18 +14,21 @@ NEOVIM_NVIMRC_DESTINATION_FOLDER = HOME_DIR + '/.config/nvim'
 NEOVIM_SNIPPETS_FOLDER = HOME_DIR + '/.config/nvim/snips'
 NEOVIM_SNIPPETS_REPO_FOLDER = CWD + '/neovim/snips'
 
-I3_CONFIG_FILE = CWD + '/config'
+I3_CONFIG_FILE = CWD + '/i3/config'
 I3_DESTINATION = HOME_DIR + '/.config/i3/config'
 I3_DESTINATION_FOLDER = HOME_DIR + '/.i3'
 
-ZATHURA_FILE = CWD + '/zathurarc'
+POLYBAR_CONFIG = CWD + '/Polybar/config'
+POLYBAR_CONFIG_DESTINATION = HOME_DIR + '/.config/polybar/config'
+
+ZATHURA_FILE = CWD + '/Zathura/zathurarc'
 ZATHURA_DESTINATION = HOME_DIR + '/.config/zathura/zathurarc'
 ZATHURA_DESTINATION_FOLDER = HOME_DIR + '/.config/zathura'
 
 PHONETIC = CWD + '/Scripts/phonetic_keys.sh'
 PHONETIC_DESTINATION = HOME_DIR + '/.phonetic_keys.sh'
 
-IRSSI_FOLDER = CWD + '/irssi/'
+IRSSI_FOLDER = CWD + '/Irssi/'
 IRSSI_DESTINATION_FOLDER = HOME_DIR + '/.irssi'
 
 
@@ -61,6 +64,8 @@ create_dir_if_doesnt_exist(ZATHURA_DESTINATION_FOLDER)
 create_symlink(BASHRC_FILE, BASHRC_DESTINATION)
 create_symlink(NEOVIM_NVIMRC_FILE, NEOVIM_NVIMRC_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
+create_symlink(POLYBAR_CONFIG, POLYBAR_CONFIG_DESTINATION)
 create_symlink(PHONETIC, PHONETIC_DESTINATION)
 create_symlink(IRSSI_FOLDER, IRSSI_DESTINATION_FOLDER)
 create_symlink(NEOVIM_SNIPPETS_REPO_FOLDER, NEOVIM_SNIPPETS_FOLDER)
+create_symlink(ZATHURA_FILE, ZATHURA_DESTINATION)
