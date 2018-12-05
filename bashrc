@@ -27,6 +27,7 @@ alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --colo
 alias grep='grep --color=tty -d skip'
 alias free='free -m'
 alias myip='curl http://ipecho.net/plain; echo'
+alias hardware='sudo lshw -short'
 
 alias p1='ping 192.168.1.1'
 alias p8='ping 8.8.8.8 -c 100'
