@@ -20,6 +20,7 @@ I3_DESTINATION_FOLDER = HOME_DIR + '/.i3'
 
 POLYBAR_CONFIG = CWD + '/Polybar/config'
 POLYBAR_CONFIG_DESTINATION = HOME_DIR + '/.config/polybar/config'
+POLYBAR_DESTINATION_FOLDER = HOME_DIR + '/.config/polybar/'
 
 ZATHURA_FILE = CWD + '/Zathura/zathurarc'
 ZATHURA_DESTINATION = HOME_DIR + '/.config/zathura/zathurarc'
@@ -61,6 +62,7 @@ def create_symlink(from_file, to_file):
 create_dir_if_doesnt_exist(NEOVIM_NVIMRC_DESTINATION_FOLDER)
 create_dir_if_doesnt_exist(I3_DESTINATION_FOLDER)
 create_dir_if_doesnt_exist(ZATHURA_DESTINATION_FOLDER)
+create_dir_if_doesnt_exist(POLYBAR_DESTINATION_FOLDER)
 create_symlink(BASHRC_FILE, BASHRC_DESTINATION)
 create_symlink(NEOVIM_NVIMRC_FILE, NEOVIM_NVIMRC_DESTINATION)
 create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
