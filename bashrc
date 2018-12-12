@@ -149,7 +149,13 @@ export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/projects"
 source /usr/bin/virtualenvwrapper.sh
 
+# pyenv loaded when open terminal
+eval "$(pyenv init -)"
+
 # Links
 # http://bropages.org/ ---> command line examples
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+
