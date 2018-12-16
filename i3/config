@@ -161,7 +161,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift -l 42.6977:23.3219
 exec --no-startup-id telegram-desktop
 exec --no-startup-id ./.phonetic_keys.sh
-exec_always --no-startup-id ~/Documents/Dotfiles_b/Scripts/polybar_start.sh
+exec_always --no-startup-id ~/Documents/Repos/Dotfiles_b/Scripts/polybar_start.sh
 
 
 # class                 border  backgr. text    indicator child_border

@@ -31,16 +31,12 @@ alias hardware='sudo lshw -short'
 
 alias p1='ping 192.168.1.1'
 alias p8='ping 8.8.8.8 -c 100'
-alias ping1='ping 192.168.1.1'
-alias ping8='ping 8.8.8.8 -c 100'
 alias netstat='netstat -antp'
 
 # Pacman
-alias u='sudo pacman -Syu --noconfirm'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
 alias search='sudo  pacman -Ss '
-alias y='yaourt --sort w'
 # Python
 alias p='python3.7'
 alias i='ipython'
@@ -73,17 +69,8 @@ alias pmm='python manage.py migrate'
 alias t='python manage.py test'
 # MPSYouTube
 alias yt='mpsyt'
-# Truffle
-alias t='truffle'
-alias tt='truffle test'
-
-alias dl=download_github_folder
-function download_github_folder(){
-    svn checkout $(echo $1 | sed "s/\/tree\/[a-zA-Z]\+/\/trunk/")
-}
 
 # ex - archive extractor
-# usage: ex <file>
 ex ()
 {
   if [ -f $1 ] ; then
@@ -149,13 +136,13 @@ export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/projects"
 source /usr/bin/virtualenvwrapper.sh
 
-# pyenv loaded when open terminal
+# pyenv-virtualenvwrapper loaded when open terminal
 eval "$(pyenv init -)"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export WORKON_HOME=$HOME/.virtualenvs
+pyenv virtualenvwrapper_lazy
 
 # Links
 # http://bropages.org/ ---> command line examples
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-
-
