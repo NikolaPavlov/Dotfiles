@@ -137,11 +137,6 @@ export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/projects"
 source /usr/bin/virtualenvwrapper.sh
 
-# pyenv-virtualenvwrapper loaded when open terminal
-eval "$(pyenv init -)"
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-export WORKON_HOME=$HOME/.virtualenvs
-pyenv virtualenvwrapper_lazy
 
 # Links
 # http://bropages.org/ ---> command line examples
