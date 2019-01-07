@@ -37,6 +37,7 @@ alias netstat='netstat -antp'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
 alias search='sudo  pacman -Ss '
+alias u='yay'
 # Python
 alias p='python3.7'
 alias i='ipython'
