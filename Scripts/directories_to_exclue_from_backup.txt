@@ -1,0 +1,12 @@
+/dev/*
+/proc/*
+/sys/*
+/tmp/*
+/run/*
+/mnt/*
+/media/*
+/home/*/.gvfs
+/home/*/VirtualBoxVMs/*
+/home/*/.cache/*
+/swapfile
+/lost+found
