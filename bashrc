@@ -33,6 +33,7 @@ alias p1='ping 192.168.1.1'
 alias p8='ping 8.8.8.8 -c 100'
 alias netstat='netstat -antp'
 
+alias todo='v ~/todo.vim'
 # Pacman
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '

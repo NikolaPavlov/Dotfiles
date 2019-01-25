@@ -8,5 +8,6 @@
 /home/*/.gvfs
 /home/*/VirtualBoxVMs/*
 /home/*/.cache/*
+/home/*/.local/share/Trash/files/
 /swapfile
 /lost+found
