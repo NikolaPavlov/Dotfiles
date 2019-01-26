@@ -144,3 +144,6 @@ source /usr/bin/virtualenvwrapper.sh
 # http://bropages.org/ ---> command line examples
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Ruby gems added to $PATH
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
