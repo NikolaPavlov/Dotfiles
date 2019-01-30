@@ -54,7 +54,6 @@ filetype off
   call dein#add('neomake/neomake')
     let g:neomake_python_enabled_makers = ['flake8']
     autocmd! BufWritePost * Neomake
-
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('tpope/vim-surround') " change surroundings
@@ -80,7 +79,6 @@ filetype off
   call dein#add('rhysd/vim-grammarous')
   call dein#add('ervandew/supertab')
     let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
-  call dein#add('hkupty/iron.nvim') "open ipython in nvim :IronRepl
   "----------"
   "----------"
   "----------"
