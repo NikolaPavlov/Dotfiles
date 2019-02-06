@@ -134,12 +134,6 @@ POWERLINE_BASH_SELECT=1
 # Complete after sudo
 complete -cf sudo
 
-#virtualenvwrapper dir
-export WORKON_HOME="$HOME/.virtualenvs"
-export PROJECT_HOME="$HOME/projects"
-source /usr/bin/virtualenvwrapper.sh
-
-
 # Links
 # http://bropages.org/ ---> command line examples
 
