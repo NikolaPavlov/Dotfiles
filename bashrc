@@ -34,6 +34,7 @@ alias p8='ping 8.8.8.8 -c 100'
 alias netstat='netstat -antp'
 
 alias todo='v $HOME/Documents/Repos/ToDo/todo.vim'
+alias journal='v $HOME/Documents/Repos/Journal/journal.vim'
 # Pacman
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
