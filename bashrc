@@ -60,9 +60,8 @@ alias dc='docker-compose'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
-alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0 ' # download all from youtube playlist
-alias mp3='youtube-dl --extract-audio --audio-format mp3'
-alias mp4='youtube-dl -f 22 '
+alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0'
+alias mp3='youtube-dl -i -f bestaudio --extract-audio --audio-format mp3 --no-check-certificate'
 alias dl='~/.local/bin/spotdl --song'
 # Django
 alias cookie='cookiecutter https://github.com/pydanny/cookiecutter-django'
