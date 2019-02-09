@@ -108,8 +108,21 @@ man() {
     man "$@"
 }
 
-# Colorful user prompt in bash
-PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
+# powerline-go
+function _update_ps1() {
+    PS1="$($GOPATH/bin/powerline-go  \
+        -shell bash \
+        -newline \
+        -mode patched \
+        -modules venv,user,host,cwd,git \
+        -modules-right docker,dotenv \
+        -condensed \
+        -error $?)"
+}
+
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 # autojump
 . /usr/share/autojump/autojump.bash
@@ -122,14 +135,6 @@ shopt -s autocd
 
 # disable <ctrl-s> in xfce4-terminal (legacy software control flow)
 stty -ixon
-
-#add powerline to terminal
-#http://www.tecmint.com/powerline-adds-powerful-statuslines-and-prompts-to-vim-and-bash/
-export TERM='screen-256color'
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 
 # Complete after sudo
 complete -cf sudo
