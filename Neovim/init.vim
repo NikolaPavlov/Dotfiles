@@ -84,6 +84,7 @@ filetype off
   "----------"
   call dein#add('tomlion/vim-solidity')
   call dein#add('dmdque/solidity.vim')
+  call dein#add('vimwiki/vimwiki')
   " call dein#add('sheerun/vim-polyglot')
   "----------"
   "----------"
@@ -341,7 +342,7 @@ set spelllang=en
 " ]s [s ---> move between spellchecking words
 " }}}
 "
-" Test Temp QuickFix:
+" QuickFix:
 augroup quickfix
   autocmd!
   autocmd QuickFixCmdPost make nested copen

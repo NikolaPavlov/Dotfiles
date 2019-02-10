@@ -34,6 +34,7 @@ alias p8='ping 8.8.8.8 -c 100'
 alias netstat='netstat -antp'
 
 alias todo='v $HOME/Documents/Repos/ToDo/todo.vim'
+alias journal='v $HOME/Documents/Repos/Journal/journal.vim'
 # Pacman
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
@@ -59,9 +60,8 @@ alias dc='docker-compose'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
-alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0 ' # download all from youtube playlist
-alias mp3='youtube-dl --extract-audio --audio-format mp3'
-alias mp4='youtube-dl -f 22 '
+alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0'
+alias mp3='youtube-dl -i -f bestaudio --extract-audio --audio-format mp3 --no-check-certificate'
 alias dl='~/.local/bin/spotdl --song'
 # Django
 alias cookie='cookiecutter https://github.com/pydanny/cookiecutter-django'
@@ -108,8 +108,21 @@ man() {
     man "$@"
 }
 
-# Colorful user prompt in bash
-PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
+# powerline-go https://github.com/justjanne/powerline-go
+function _update_ps1() {
+    PS1="$($GOPATH/bin/powerline-go  \
+        -shell bash \
+        -newline \
+        -mode patched \
+        -modules venv,user,host,cwd,git \
+        -modules-right docker,dotenv \
+        -condensed \
+        -error $?)"
+}
+
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 # autojump
 . /usr/share/autojump/autojump.bash
@@ -123,22 +136,8 @@ shopt -s autocd
 # disable <ctrl-s> in xfce4-terminal (legacy software control flow)
 stty -ixon
 
-#add powerline to terminal
-#http://www.tecmint.com/powerline-adds-powerful-statuslines-and-prompts-to-vim-and-bash/
-export TERM='screen-256color'
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
-
 # Complete after sudo
 complete -cf sudo
-
-#virtualenvwrapper dir
-export WORKON_HOME="$HOME/.virtualenvs"
-export PROJECT_HOME="$HOME/projects"
-source /usr/bin/virtualenvwrapper.sh
-
 
 # Links
 # http://bropages.org/ ---> command line examples
