@@ -108,7 +108,7 @@ man() {
     man "$@"
 }
 
-# powerline-go
+# powerline-go https://github.com/justjanne/powerline-go
 function _update_ps1() {
     PS1="$($GOPATH/bin/powerline-go  \
         -shell bash \
