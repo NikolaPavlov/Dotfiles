@@ -43,6 +43,8 @@ alias u='yay'
 # Python
 alias p='python3.7'
 alias i='ipython'
+# PipEnv
+alias pe='pipenv'
 # Git
 alias gs='git status'
 alias gc='git commit'

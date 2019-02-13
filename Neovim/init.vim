@@ -82,14 +82,21 @@ filetype off
   "----------"
   "----------"
   "----------"
-  call dein#add('tomlion/vim-solidity')
-  call dein#add('dmdque/solidity.vim')
+  " call dein#add('tomlion/vim-solidity')
+  " call dein#add('dmdque/solidity.vim')
   call dein#add('vimwiki/vimwiki')
-  " call dein#add('sheerun/vim-polyglot')
+    let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+  call dein#add('iamcco/markdown-preview.nvim')
+    " NOTES:
+    " 1. add this to ~/.profile
+        " PATH="$HOME/.node_modules/bin:$PATH"
+        " export npm_config_prefix=~/.node_modules
+    " 2. cd to plugin dir and follow the instructions from https://github.com/iamcco/markdown-preview.nvim
   "----------"
   "----------"
   "----------"
 
+  " call dein#add('sheerun/vim-polyglot')
   " call dein#add('ternjs/tern_for_vim'), {'for':['javascript','javascript.jsx']}
   " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
 " "--------------------------->finish installing plugins<---------------------------
@@ -102,6 +109,8 @@ filetype off
 " }}}
 " {{{ Remaps
 let mapleader=","
+"Markdown preview
+map <leader>md :MarkdownPreview<CR>
 "NerdTree bindings-------------------------------------------------------------
 map <C-t> :NERDTreeToggle<CR>
 " Use ctrl-[hjkl] to select the active split
@@ -166,6 +175,7 @@ nmap <c-p> :Files<CR>
 " draw line separator
 nnoremap <leader>l <ESC>79i-<ESC>
 "TODO: add buffer aliases
+nnoremap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
