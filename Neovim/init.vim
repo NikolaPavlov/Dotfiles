@@ -88,7 +88,7 @@ filetype off
     let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
   call dein#add('iamcco/markdown-preview.nvim')
     " NOTES:
-    " 1. add this to ~/.profile
+    " 1. add this to ~/.profile (Allow user-wide npm installations)
         " PATH="$HOME/.node_modules/bin:$PATH"
         " export npm_config_prefix=~/.node_modules
     " 2. cd to plugin dir and follow the instructions from https://github.com/iamcco/markdown-preview.nvim

@@ -1,5 +1,0 @@
-1. Chrome ---> Settings ---> 'Manage search engines'
-2. Add new search engine
-3. Search engine name: 'Google NCR', keyword type: 'Google NCR_'
-3.1 Url ---> https://www.google.com/search?q=%s&pws=0&gl=us&gws_rd=cr
-4. Make Google NCR Default search engine
