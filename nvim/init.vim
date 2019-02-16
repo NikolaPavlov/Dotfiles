@@ -13,12 +13,11 @@
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
 " =============================================================================
 " }}}
-" {{{ Virtualenv fixer
+" {{{ Virtualenv fixer for neovim
 "If you are using virtualenv, it is recommended that you create environments specifically for Neovim. This way, you will not need to install the neovim package in each virtualenv. Once you have created them, add the following to your vimrc file:
 "
 " let g:python_host_prog = '/full/path/to/neovim2/bin/python'
-" let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
-let g:python3_host_prog = '/home/gogo/.virtualenvs/neovim/bin/python3.7'
+let g:python3_host_prog = '/home/gogo/.local/share/virtualenvs/neovim-t0jrAy8k/bin/python3.7'
 "}}}
 " {{{ Plugins
 filetype off
@@ -38,12 +37,10 @@ filetype off
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugn
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
-    let g:deoplete#auto_complete_start_length = 2 "2 is default value
   call dein#add('davidhalter/jedi-vim')
-  call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+  " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
-    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     let g:UltiSnipsExpandTrigger="<Tab>"
     let g:UltiSnipsListSnippets="<c-Tab>" "list the snippets
     let g:UltiSnipsJumpForwardTrigger="<Tab>"
@@ -56,8 +53,9 @@ filetype off
     autocmd! BufWritePost * Neomake
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
+  call dein#add('tpope/vim-fugitive') " git wrapper
   call dein#add('tpope/vim-surround') " change surroundings
-  call dein#add('tpope/vim-repeat') " repeat surround commands
+  " call dein#add('tpope/vim-repeat') " repeat surround commands
   call dein#add('tomtom/tcomment_vim') " comment plugin
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
@@ -73,31 +71,21 @@ filetype off
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
   call dein#add('tweekmonster/impsort.vim') "import sorting
-  call dein#add('majutsushi/tagbar')
-    nmap <F8> :TagbarToggle<CR>
-  call dein#add('mhinz/vim-startify')
   call dein#add('rhysd/vim-grammarous')
   call dein#add('ervandew/supertab')
     let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
-  "----------"
-  "----------"
-  "----------"
-  " call dein#add('tomlion/vim-solidity')
-  " call dein#add('dmdque/solidity.vim')
   call dein#add('vimwiki/vimwiki')
     let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
   call dein#add('iamcco/markdown-preview.nvim')
     " NOTES:
-    " 1. add this to ~/.profile
+    " 1. add this to ~/.profile (Allow user-wide npm installations)
         " PATH="$HOME/.node_modules/bin:$PATH"
         " export npm_config_prefix=~/.node_modules
-    " 2. cd to plugin dir and follow the instructions from https://github.com/iamcco/markdown-preview.nvim
-  "----------"
-  "----------"
-  "----------"
-
+    " 2. go to plugin location and run 'npm install -g'
+    " 3. npm install -g instant-markdown-d
+    " 4. cd to plugin dir and follow the instructions from https://github.com/iamcco/markdown-preview.nvim
+  "---------------------------------------------------------------------------"
   " call dein#add('sheerun/vim-polyglot')
-  " call dein#add('ternjs/tern_for_vim'), {'for':['javascript','javascript.jsx']}
   " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
 " "--------------------------->finish installing plugins<---------------------------
   call dein#end()

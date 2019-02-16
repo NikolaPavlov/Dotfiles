@@ -7,14 +7,12 @@ alias ..='cd ..'
 alias e='exit'
 alias c='clear'
 alias cl='clear'
-alias r='ranger'
 alias a='alsamixer'
 alias s='startx'
 alias rm='rm -Irv'
 alias off='poweroff'
 alias cp='cp -i'
 alias mv='mv -i'
-alias tt='xfce4-terminal'
 alias ps='ps auxf'
 alias mkdir='mkdir -pv'
 alias wget='wget -c'
@@ -27,11 +25,9 @@ alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --colo
 alias grep='grep --color=tty -d skip'
 alias free='free -m'
 alias myip='curl http://ipecho.net/plain; echo'
-alias hardware='sudo lshw -short'
 
 alias p1='ping 192.168.1.1'
 alias p8='ping 8.8.8.8 -c 100'
-alias netstat='netstat -antp'
 
 alias todo='v $HOME/Documents/Repos/ToDo/todo.vim'
 alias journal='v $HOME/Documents/Repos/Journal/journal.vim'
@@ -39,7 +35,6 @@ alias journal='v $HOME/Documents/Repos/Journal/journal.vim'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
 alias search='sudo  pacman -Ss '
-alias u='yay'
 # Python
 alias p='python3.7'
 alias i='ipython'
@@ -52,7 +47,6 @@ alias ga='git add'
 alias gpush='git push'
 alias gpull='git pull'
 alias glog='git log'
-alias gitreset='git reset --hard HEAD'
 # Docker
 alias d='docker'
 alias di='docker images'
@@ -62,18 +56,16 @@ alias dc='docker-compose'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
+# YouTube + Spotify
 alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0'
 alias mp3='youtube-dl -i -f bestaudio --extract-audio --audio-format mp3 --no-check-certificate'
 alias dl='~/.local/bin/spotdl --song'
 # Django
-alias cookie='cookiecutter https://github.com/pydanny/cookiecutter-django'
 alias pm='python manage.py'
 alias pmr='python manage.py runserver'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias t='python manage.py test'
-# MPSYouTube
-alias yt='mpsyt'
 
 # ex - archive extractor
 ex ()
@@ -135,16 +127,5 @@ set -o vi
 # change dirs withowth cd instead with ..
 shopt -s autocd
 
-# disable <ctrl-s> in xfce4-terminal (legacy software control flow)
-stty -ixon
-
 # Complete after sudo
 complete -cf sudo
-
-# Links
-# http://bropages.org/ ---> command line examples
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Ruby gems added to $PATH
-PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"

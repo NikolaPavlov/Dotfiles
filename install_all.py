@@ -4,15 +4,12 @@ import os
 CWD = os.getcwd()
 HOME_DIR = os.path.expanduser('~')
 
-BASHRC_FILE = CWD + '/bashrc'
+BASHRC_FILE = CWD + '/.bashrc'
 BASHRC_DESTINATION = HOME_DIR + '/.bashrc'
 
 NEOVIM_NVIMRC_FILE = CWD + '/Neovim/init.vim'
 NEOVIM_NVIMRC_DESTINATION = HOME_DIR + '/.config/nvim/init.vim'
 NEOVIM_NVIMRC_DESTINATION_FOLDER = HOME_DIR + '/.config/nvim'
-
-NEOVIM_SNIPPETS_FOLDER = HOME_DIR + '/.config/nvim/snips'
-NEOVIM_SNIPPETS_REPO_FOLDER = CWD + '/neovim/snips'
 
 I3_CONFIG_FILE = CWD + '/i3/config'
 I3_DESTINATION = HOME_DIR + '/.config/i3/config'
@@ -69,5 +66,4 @@ create_symlink(I3_CONFIG_FILE, I3_DESTINATION)
 create_symlink(POLYBAR_CONFIG, POLYBAR_CONFIG_DESTINATION)
 create_symlink(PHONETIC, PHONETIC_DESTINATION)
 create_symlink(IRSSI_FOLDER, IRSSI_DESTINATION_FOLDER)
-create_symlink(NEOVIM_SNIPPETS_REPO_FOLDER, NEOVIM_SNIPPETS_FOLDER)
 create_symlink(ZATHURA_FILE, ZATHURA_DESTINATION)
