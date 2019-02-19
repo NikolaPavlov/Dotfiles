@@ -37,8 +37,9 @@ filetype off
   call dein#add('Shougo/deoplete.nvim') " autocomplete plugn
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
-  call dein#add('davidhalter/jedi-vim')
-  " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+  call dein#add('Shougo/context_filetype.vim') " completion from other opened files
+  " call dein#add('davidhalter/jedi-vim')
+  call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
     let g:UltiSnipsExpandTrigger="<Tab>"
@@ -48,12 +49,13 @@ filetype off
     let g:UltiSnipsSnippetsDir = split(&runtimepath, ',')[0] . '/snips'
     let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
 
-  call dein#add('neomake/neomake')
-    let g:neomake_python_enabled_makers = ['flake8']
-    autocmd! BufWritePost * Neomake
+  call dein#add('w0rp/ale') " linter on the fly
+  " call dein#add('neomake/neomake')
+    " let g:neomake_python_enabled_makers = ['flake8']
+    " autocmd! BufWritePost * Neomake
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
-  call dein#add('tpope/vim-fugitive') " git wrapper
+  call dein#add('tpope/vim-fugitive') " git wrapper (integration)
   call dein#add('tpope/vim-surround') " change surroundings
   " call dein#add('tpope/vim-repeat') " repeat surround commands
   call dein#add('tomtom/tcomment_vim') " comment plugin
@@ -87,6 +89,9 @@ filetype off
   "---------------------------------------------------------------------------"
   " call dein#add('sheerun/vim-polyglot')
   " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
+
+  call dein#add('janko-m/vim-test')
+
 " "--------------------------->finish installing plugins<---------------------------
   call dein#end()
   call dein#save_state()
@@ -101,11 +106,9 @@ let mapleader=","
 map <leader>md :MarkdownPreview<CR>
 "NerdTree bindings-------------------------------------------------------------
 map <C-t> :NERDTreeToggle<CR>
-" Use ctrl-[hjkl] to select the active split
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
+"Tab for navigating between split screens
+nnoremap <tab> <c-w>
+nnoremap <tab><tab> <c-w><c-w>
 " autoclose vim if only open window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "Keys maps---------------------------------------------------------------------
@@ -282,6 +285,7 @@ set splitright "a new window is put right of the current one
 "7 multiple tab pages
 "8 terminal
 "9 using the mouse
+set mouse=a " scroll in files and resize windows
 "10 GUI
 " set guifont=Inconsolata\ 13
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
