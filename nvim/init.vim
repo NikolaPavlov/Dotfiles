@@ -38,7 +38,7 @@ filetype off
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
   call dein#add('Shougo/context_filetype.vim') " completion from other opened files
-  " call dein#add('davidhalter/jedi-vim')
+  call dein#add('davidhalter/jedi-vim') " need for go to definitions
   call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
@@ -50,11 +50,13 @@ filetype off
     let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
 
   call dein#add('w0rp/ale') " linter on the fly
+  call dein#add('sbdchd/neoformat') " formater
   " call dein#add('neomake/neomake')
     " let g:neomake_python_enabled_makers = ['flake8']
     " autocmd! BufWritePost * Neomake
   call dein#add('Vimjas/vim-python-pep8-indent')
-  call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
+  " call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
+  call dein#add('mhinz/vim-signify')
   call dein#add('tpope/vim-fugitive') " git wrapper (integration)
   call dein#add('tpope/vim-surround') " change surroundings
   " call dein#add('tpope/vim-repeat') " repeat surround commands

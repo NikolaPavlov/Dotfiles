@@ -39,6 +39,7 @@ alias search='sudo  pacman -Ss '
 # Python
 alias p='python3.7'
 alias i='ipython'
+alias t='python -m unittest discover'
 # PipEnv
 alias pe='pipenv'
 # Git
@@ -66,7 +67,7 @@ alias pm='python manage.py'
 alias pmr='python manage.py runserver'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
-alias t='python manage.py test'
+alias tt='python manage.py test'
 
 # ex - archive extractor
 ex ()
@@ -130,3 +131,8 @@ shopt -s autocd
 
 # Complete after sudo
 complete -cf sudo
+
+# add ruby to $PATH
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+fi
