@@ -40,6 +40,7 @@ alias search='sudo  pacman -Ss '
 alias p='python3.7'
 alias i='ipython'
 alias t='python -m unittest discover'
+alias pt='pytest'
 # PipEnv
 alias pe='pipenv'
 # Git

@@ -51,22 +51,25 @@ filetype off
 
   call dein#add('w0rp/ale') " linter on the fly
   call dein#add('sbdchd/neoformat') " formater
-  " call dein#add('neomake/neomake')
-    " let g:neomake_python_enabled_makers = ['flake8']
-    " autocmd! BufWritePost * Neomake
+    " let g:neoformat_enabled_python = ['autopep8']
+    let g:neoformat_enabled_python = ['black']
+    " let g:neoformat_run_all_formatters = 1
+    " let g:neoformat_verbose = 1 " debug setting
+    " let &verbose            = 1 " debug setting
+
+
   call dein#add('Vimjas/vim-python-pep8-indent')
-  " call dein#add('airblade/vim-gitgutter') " show which line is delete,modified,edited
   call dein#add('mhinz/vim-signify')
   call dein#add('tpope/vim-fugitive') " git wrapper (integration)
   call dein#add('tpope/vim-surround') " change surroundings
-  " call dein#add('tpope/vim-repeat') " repeat surround commands
+  call dein#add('tpope/vim-repeat') " repeat surround commands
   call dein#add('tomtom/tcomment_vim') " comment plugin
+  call dein#add('janko-m/vim-test')
+    let test#strategy = "neovim"
+    let test#python#runner = 'pytest'
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
-  call dein#add('flazz/vim-colorschemes') " many colorschemes
   call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
@@ -75,11 +78,13 @@ filetype off
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
   call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
   call dein#add('tweekmonster/impsort.vim') "import sorting
-  call dein#add('rhysd/vim-grammarous')
   call dein#add('ervandew/supertab')
     let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
   call dein#add('vimwiki/vimwiki')
     let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+  call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
+  call dein#add('flazz/vim-colorschemes') " many colorschemes
+  call dein#add('vim-airline/vim-airline')
   call dein#add('iamcco/markdown-preview.nvim')
     " NOTES:
     " 1. add this to ~/.profile (Allow user-wide npm installations)
@@ -91,9 +96,6 @@ filetype off
   "---------------------------------------------------------------------------"
   " call dein#add('sheerun/vim-polyglot')
   " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
-
-  call dein#add('janko-m/vim-test')
-
 " "--------------------------->finish installing plugins<---------------------------
   call dein#end()
   call dein#save_state()
@@ -176,8 +178,11 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 "run python code in vim <F5>
 noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 
-"run django tests with <leader>t
-noremap <leader>t :execute "!python manage.py test"<CR>
+" test mappings
+nmap <silent> <leader>tt :TestSuite<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>tl :TestLast<CR>
 
 "auto chmod +x if file begin with #! and contains /bin/
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
