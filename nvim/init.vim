@@ -18,6 +18,10 @@
 let g:python_host_prog = '$HOME/.virtualenvs/neovim/bin/python'
 let g:python3_host_prog = '$HOME/.virtualenvs/neovim/bin/python3.7'
 
+" }}}
+" {{{ Virtualenv fixer for neovim
+let g:python_host_prog = expand('~/.virtualenvs/neovim/bin/python')
+let g:python3_host_prog = expand('~/.virtualenvs/neovim/bin/python3.7')
 "}}}
 "{{{ Plugins
 
@@ -62,23 +66,23 @@ filetype off
     let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
   call dein#add('w0rp/ale') " linter on the fly
   call dein#add('sbdchd/neoformat') " formater
-    " let g:neoformat_enabled_python = ['autopep8']
     let g:neoformat_enabled_python = ['black', 'autopep8']
-    " let g:neoformat_run_all_formatters = 1
-    " let g:neoformat_verbose = 1 " debug setting
-    " let &verbose            = 1 " debug setting
+    let g:neoformat_run_all_formatters = 1
+    " let g:neoformat_verbose = 1 " debug setting for neoformat
+    " let &verbose            = 1 " debug setting for neoformat
   call dein#add('Vimjas/vim-python-pep8-indent')
-  call dein#add('mhinz/vim-signify')
+  call dein#add('mhinz/vim-signify') " show git diff in the left bar
   call dein#add('tpope/vim-fugitive') " git wrapper (integration)
   call dein#add('wellle/targets.vim') " add 'ci(' command
   call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tpope/vim-repeat') " repeat surround commands
   call dein#add('tomtom/tcomment_vim') " comment plugin
-  call dein#add('janko-m/vim-test')
+  call dein#add('janko-m/vim-test') " run tests from vim
     let test#strategy = "neovim"
     let test#python#runner = 'pytest'
   call dein#add('907th/vim-auto-save') " auto save when exit normal mode
     let g:auto_save = 1  " enable AutoSave on Vim startup
+    let g:auto_save_silent = 1  " do not display the auto-save notification
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
@@ -155,7 +159,6 @@ nnoremap j gj
 nnoremap k gk
 " no highlight
 nnoremap <leader><leader> :noh<cr>
-nnoremap <space> :noh<cr>
 " map ; to :
 nnoremap ; :
 "turn on off spell checking with ,s
@@ -197,8 +200,9 @@ vnoremap pp "+p
 nmap <c-p> :Files<CR>
 " draw line separator
 nnoremap <leader>l <ESC>79i-<ESC>
-"TODO: add buffer aliases
+" get current date
 nnoremap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"
+"TODO: add buffer aliases
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -210,13 +214,9 @@ noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 nmap <silent> <leader>tt :TestSuite<CR>
 nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
-nmap <silent> <leader>tl :TestLast<CR>
 
 "auto chmod +x if file begin with #! and contains /bin/
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
-
-" Highlight VCS conflict markers
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
  " Source vimrc after saving it
 autocmd BufWritePost .vimrc,vimrc source $MYVIMRC
@@ -254,6 +254,22 @@ augroup ft_django
     au BufNewFile,BufRead common_settings.py  setlocal filetype=python.django
     au BufNewFile,BufRead common_settings.py  setlocal foldmethod=marker
 augroup END
+
+" auto html filetype do htmldjango
+" au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+"
+" no line wrap for html files
+au BufNewFile,BufRead *.html set nowrap textwidth=120
+au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
+" no line wrap for txt files
+au BufNewFile,BufRead *.txt set nowrap textwidth=120
+" foldmethod=marker for .vim files
+au BufNewFile,BufRead *.vim set foldmethod=marker
+" autoclose folds when open .vim file
+au BufNewFile,BufRead *.vim normal zM
+" Remove spaces at end of lines in file before save
+autocmd BufWritePre * %s/\s\+$//e
+
 
 let g:last_relative_dir = ''
 nnoremap g1 :call RelatedFile ("models.py")<cr>
@@ -397,6 +413,8 @@ set showcmd "show command keys in the status line
 set clipboard=unnamed
 "set clipboard=unnamedplus
 "14 editing text
+set undofile " activate persistent undo
+set undodir=~/.config/nvim/undo_dir " dir for saving persistent undo files
 set textwidth=79 "line length above which to break the line
 "15 tabs and indenting
 set autoindent "automatically set the indent of a new line

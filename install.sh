@@ -6,11 +6,12 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 EXTRA_DIR="$HOME/.extra"
 
 
+mkdir -p $HOME/.config/polybar
+mkdir -p $HOME/.config/nvim/undo_dir
+
 ln -sfv "$DOTFILES_DIR/bashrc" ~/.bashrc
-# create /.config/nvim
 ln -sfv "$DOTFILES_DIR/nvim/init.vim" ~/.config/nvim/init.vim
 ln -sfv "$DOTFILES_DIR/i3" ~/.config/
-# create ~/.config/polybar
 ln -sfv "$DOTFILES_DIR/Polybar/config" ~/.config/polybar/config
 ln -sfv "$DOTFILES_DIR/Zathura" ~/.config/zathura
 ln -sfv "$DOTFILES_DIR/Git/.gitconfig" ~/
