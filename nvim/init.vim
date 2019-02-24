@@ -17,7 +17,7 @@
 "If you are using virtualenv, it is recommended that you create environments specifically for Neovim. This way, you will not need to install the neovim package in each virtualenv. Once you have created them, add the following to your vimrc file:
 "
 " let g:python_host_prog = '/full/path/to/neovim2/bin/python'
-let g:python3_host_prog = '/home/gogo/.local/share/virtualenvs/neovim-t0jrAy8k/bin/python3.7'
+let g:python3_host_prog = '/home/gogo/.virtualenv/neovim/bin/python3.7'
 "}}}
 " {{{ Plugins
 filetype off
