@@ -14,10 +14,8 @@
 " =============================================================================
 " }}}
 " {{{ Virtualenv fixer for neovim
-"If you are using virtualenv, it is recommended that you create environments specifically for Neovim. This way, you will not need to install the neovim package in each virtualenv. Once you have created them, add the following to your vimrc file:
-"
-" let g:python_host_prog = '/full/path/to/neovim2/bin/python'
-let g:python3_host_prog = '/home/gogo/.virtualenv/neovim/bin/python3.7'
+let g:python_host_prog = '$HOME/.virtualenvs/neovim/bin/python'
+let g:python3_host_prog = '$HOME/.virtualenvs/neovim/bin/python3.7'
 "}}}
 " {{{ Plugins
 " =============================================================================
@@ -58,27 +56,18 @@ filetype off
     let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
     let g:UltiSnipsSnippetsDir = split(&runtimepath, ',')[0] . '/snips'
     let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
-
   call dein#add('w0rp/ale') " linter on the fly
   call dein#add('sbdchd/neoformat') " formater
     " let g:neoformat_enabled_python = ['autopep8']
-    let g:neoformat_enabled_python = ['black']
+    let g:neoformat_enabled_python = ['black', 'autopep8']
     " let g:neoformat_run_all_formatters = 1
     " let g:neoformat_verbose = 1 " debug setting
     " let &verbose            = 1 " debug setting
-
-
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify')
   call dein#add('tpope/vim-fugitive') " git wrapper (integration)
-
-
-
-  call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('wellle/targets.vim') " add 'ci(' command
-
-
-
+  call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tpope/vim-repeat') " repeat surround commands
   call dein#add('tomtom/tcomment_vim') " comment plugin
   call dein#add('janko-m/vim-test')
@@ -104,6 +93,8 @@ filetype off
   call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
   call dein#add('flazz/vim-colorschemes') " many colorschemes
   call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+    let g:airline_theme='minimalist'
   call dein#add('iamcco/markdown-preview.nvim')
     " NOTES:
     " 1. add this to ~/.profile (Allow user-wide npm installations)
