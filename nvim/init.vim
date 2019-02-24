@@ -332,6 +332,8 @@ set showcmd "show command keys in the status line
 set clipboard=unnamed
 "set clipboard=unnamedplus
 "14 editing text
+set undofile " activate persistent undo
+set undodir=~/.config/nvim/undo_dir " dir for saving persistent undo files
 set textwidth=79 "line length above which to break the line
 "15 tabs and indenting
 set autoindent "automatically set the indent of a new line
