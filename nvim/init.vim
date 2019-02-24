@@ -20,6 +20,16 @@
 let g:python3_host_prog = '/home/gogo/.virtualenv/neovim/bin/python3.7'
 "}}}
 " {{{ Plugins
+" =============================================================================
+"  _____  _             _
+" |  __ \| |           (_)
+" | |__) | |_   _  __ _ _ _ __  ___
+" |  ___/| | | | |/ _` | | '_ \/ __|
+" | |    | | |_| | (_| | | | | \__ \
+" |_|    |_|\__,_|\__, |_|_| |_|___/
+"                  __/ |
+"                 |___/
+" =============================================================================
 filetype off
 " Setup DeinVim PluginManager -------------------------------------------------
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
@@ -61,12 +71,21 @@ filetype off
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify')
   call dein#add('tpope/vim-fugitive') " git wrapper (integration)
+
+
+
   call dein#add('tpope/vim-surround') " change surroundings
+  call dein#add('wellle/targets.vim') " add 'ci(' command
+
+
+
   call dein#add('tpope/vim-repeat') " repeat surround commands
   call dein#add('tomtom/tcomment_vim') " comment plugin
   call dein#add('janko-m/vim-test')
     let test#strategy = "neovim"
     let test#python#runner = 'pytest'
+  call dein#add('907th/vim-auto-save') " auto save when exit normal mode
+    let g:auto_save = 1  " enable AutoSave on Vim startup
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
@@ -105,6 +124,16 @@ filetype off
   filetype plugin indent on
 " }}}
 " {{{ Remaps
+" =============================================================================
+"  _____
+" |  __ \
+" | |__) |___ _ __ ___   __ _ _ __  ___
+" |  _  // _ \ '_ ` _ \ / _` | '_ \/ __|
+" | | \ \  __/ | | | | | (_| | |_) \__ \
+" |_|  \_\___|_| |_| |_|\__,_| .__/|___/
+"                            | |
+"                            |_|
+" =============================================================================
 let mapleader=","
 "Markdown preview
 map <leader>md :MarkdownPreview<CR>
@@ -352,7 +381,7 @@ set spelllang=en
 " }}}
 "
 " QuickFix:
-augroup quickfix
-  autocmd!
-  autocmd QuickFixCmdPost make nested copen
-augroup END
+" augroup quickfix
+"   autocmd!
+"   autocmd QuickFixCmdPost make nested copen
+" augroup END
