@@ -1,4 +1,4 @@
-" {{{ Links
+"{{{ Links
 " =============================================================================
 "  _      _       _
 " | |    (_)     | |
@@ -13,12 +13,19 @@
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
 " http://learnvimscriptthehardway.stevelosh.com/
 " =============================================================================
+"}}}
+"{{{ Virtualenv fixer for neovim
+
+let g:python_host_prog = '$HOME/.virtualenvs/neovim/bin/python'
+let g:python3_host_prog = '$HOME/.virtualenvs/neovim/bin/python3.7'
+
 " }}}
 " {{{ Virtualenv fixer for neovim
 let g:python_host_prog = expand('~/.virtualenvs/neovim/bin/python')
 let g:python3_host_prog = expand('~/.virtualenvs/neovim/bin/python3.7')
 "}}}
-" {{{ Plugins
+"{{{ Plugins
+
 " =============================================================================
 "  _____  _             _
 " |  __ \| |           (_)
@@ -29,6 +36,7 @@ let g:python3_host_prog = expand('~/.virtualenvs/neovim/bin/python3.7')
 "                  __/ |
 "                 |___/
 " =============================================================================
+
 filetype off
 " Setup DeinVim PluginManager -------------------------------------------------
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
@@ -114,8 +122,9 @@ filetype off
     call dein#install()
   endif
   filetype plugin indent on
-" }}}
-" {{{ Remaps
+"}}}
+"{{{ Remaps
+
 " =============================================================================
 "  _____
 " |  __ \
@@ -126,6 +135,7 @@ filetype off
 "                            | |
 "                            |_|
 " =============================================================================
+
 let mapleader=","
 "Markdown preview
 map <leader>md :MarkdownPreview<CR>
@@ -162,7 +172,7 @@ inoremap jj <Esc>
 "select all text
 map <leader>a ggVG
 "sort selected text
-vnoremap <leader>s :sort<CR>
+vnoremap <leader>ss :sort<CR>
 "moving code blocks
 vnoremap < <gv
 vnoremap > >gv
@@ -171,6 +181,8 @@ nnoremap <c-s> :%s/
 vnoremap <c-s> :s/
 "edit vimrc in the current window
 noremap <leader>e :e $MYVIMRC<CR>
+"edit bashrc in the current window
+noremap <leader>b :e ~/Documents/Repos/Dotfiles/bashrc<CR>
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -219,9 +231,29 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
 \ endif
 
+"------------------------------------------------------------------------------
+"}}}
+"{{{ Filetype specific
+"{{{ Django
 
+augroup ft_django
+    au!
 
+    au BufNewFile,BufRead urls.py           setlocal nowrap
+    au BufNewFile,BufRead urls.py           normal! zR
+    au BufNewFile,BufRead dashboard.py      normal! zR
+    au BufNewFile,BufRead local_settings.py normal! zR
 
+    au BufNewFile,BufRead admin.py     setlocal filetype=python.django
+    au BufNewFile,BufRead urls.py      setlocal filetype=python.django
+    au BufNewFile,BufRead models.py    setlocal filetype=python.django
+    au BufNewFile,BufRead views.py     setlocal filetype=python.django
+    au BufNewFile,BufRead settings.py  setlocal filetype=python.django
+    au BufNewFile,BufRead settings.py  setlocal foldmethod=marker
+    au BufNewFile,BufRead forms.py     setlocal filetype=python.django
+    au BufNewFile,BufRead common_settings.py  setlocal filetype=python.django
+    au BufNewFile,BufRead common_settings.py  setlocal foldmethod=marker
+augroup END
 
 " auto html filetype do htmldjango
 " au BufNewFile,BufRead *.html setlocal filetype=htmldjango
@@ -239,10 +271,6 @@ au BufNewFile,BufRead *.vim normal zM
 autocmd BufWritePre * %s/\s\+$//e
 
 
-
-
-
-" Django shortcuts ------------------------------------------------------------
 let g:last_relative_dir = ''
 nnoremap g1 :call RelatedFile ("models.py")<cr>
 nnoremap g2 :call RelatedFile ("views.py")<cr>
@@ -277,9 +305,65 @@ fun SetAppDir()
     endif
 endfun
 autocmd BufEnter *.py call SetAppDir()
-"------------------------------------------------------------------------------
 " }}}
-" {{{ General
+"{{{ Html Django
+
+" no line wrap for html files
+augroup ft_html
+    au!
+
+    au BufNewFile,BufRead *.html set nowrap textwidth=120
+    au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+    au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
+    au BufNewFile,BufRead *.dram setlocal filetype=htmldjango
+
+    au FileType html,jinja,htmldjango setlocal foldmethod=manual
+
+    " Use <localleader>f to fold the current tag.
+    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>f Vatzf
+
+    " Use <localleader>t to fold the current templatetag.
+    au FileType html,jinja,htmldjango nmap <buffer> <localleader>t viikojozf
+
+    " Indent tag
+    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>= Vat=
+
+    " Django tags
+    au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
+
+"}}}
+"{{{ Vagrant
+
+augroup ft_vagrant
+    au!
+    au BufRead,BufNewFile Vagrantfile set ft=ruby
+augroup END
+
+"}}}
+"{{{ Vim
+
+augroup ft_vim
+    au!
+
+    au FileType vim setlocal foldmethod=marker
+    au FileType help setlocal textwidth=78
+    au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+
+    " autoclose folds when open .vim file
+    au BufNewFile,BufRead *.vim normal zM
+
+augroup END
+
+"}}}
+"{{{ Text
+
+" no line wrap for txt files
+au BufNewFile,BufRead *.txt set nowrap textwidth=120
+
+"}}}
+"}}}
+"{{{ General
+
 " =============================================================================
 "   ___                          _
 "  / _ \___ _ __   ___ _ __ __ _| |
@@ -287,6 +371,7 @@ autocmd BufEnter *.py call SetAppDir()
 "/ /_\\  __/ | | |  __/ | | (_| | |
 "\____/\___|_| |_|\___|_|  \__,_|_|
 " =============================================================================
+
 " :options options
 "1 important
 set nocompatible "don't behave like vi
@@ -376,10 +461,65 @@ set spelllang=en
 " turn spell checking on by default
 "help spell ---> spell help
 " ]s [s ---> move between spellchecking words
-" }}}
+"}}}
+"{{{ Abbreviations
+
+iabbrev todo TODO
+iabbrev pritn print
+
+"}}}
+"{{{ Garbage
+
+set showmode
+set visualbell
+set nonumber
+set autowrite
+set autoread
+set linebreak
+set colorcolumn=+1
+" set dict=
+"
+" Save when losing focus
+au FocusLost * :silent! wall
+"
+
+nnoremap <leader>W :set wrap!<cr>
+
+" Yank to end of line
+nnoremap Y y$
+
+" I constantly hit "u" in visual mode when I mean to "y". Use "gu" for those rare occasions.
+" From https://github.com/henrik/dotfiles/blob/master/vim/config/mappings.vim
+vnoremap u <nop>
+vnoremap gu u
+
+" Panic Button
+nnoremap <f9> mzggg?G`z
+
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
+
+" Typos
+command! -bang E e<bang>
+command! -bang Q q<bang>
+command! -bang W w<bang>
+command! -bang QA qa<bang>
+command! -bang Qa qa<bang>
+command! -bang Wa wa<bang>
+command! -bang WA wa<bang>
+command! -bang Wq wq<bang>
+command! -bang WQ wq<bang>
+command! -bang Wqa wqa<bang>
+
+"}}}
 "
 " QuickFix:
 " augroup quickfix
 "   autocmd!
 "   autocmd QuickFixCmdPost make nested copen
 " augroup END
+"
+
+
+
+"
