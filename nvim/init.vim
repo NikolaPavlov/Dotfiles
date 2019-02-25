@@ -31,7 +31,7 @@ filetype off
   call dein#begin(expand('~/.config/nvim/repos/github.com'))
   call dein#add('Shougo/dein.vim')
 "------------------------>start installing plugins<----------------------------
-  call dein#add('Shougo/deoplete.nvim') " autocomplete plugn
+  call dein#add('Shougo/deoplete.nvim') " autocomplete engine
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
   call dein#add('Shougo/context_filetype.vim') " completion from other opened files
@@ -68,8 +68,6 @@ filetype off
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
   call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
-  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
@@ -92,9 +90,16 @@ filetype off
     " 2. go to plugin location and run 'npm install -g'
     " 3. npm install -g instant-markdown-d
     " 4. cd to plugin dir and follow the instructions from https://github.com/iamcco/markdown-preview.nvim
+  call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
+  call dein#add('junegunn/limelight.vim')
+  call dein#add('junegunn/goyo.vim')
+  call dein#add('mbbill/undotree')
   "---------------------------------------------------------------------------"
   " call dein#add('sheerun/vim-polyglot')
   " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
+
+
+
 " "--------------------------->finish installing plugins<---------------------------
   call dein#end()
   call dein#save_state()
@@ -174,8 +179,8 @@ nnoremap <leader>is :ImpSort!<cr>
 vnoremap <leader>is :ImpSort!<cr>
 " replace visualy selected text with the what is in the paste register
 vnoremap pp "+p
-" remap ctrl+p to launch fzf search
-nmap <c-p> :Files<CR>
+" remap ctrl+p to launch fzy search
+nnoremap <c-p> :FuzzyOpen<CR>
 " draw line separator
 nnoremap <leader>l <ESC>79i-<ESC>
 " get current date
@@ -201,7 +206,9 @@ nmap <silent> <leader>tf :TestFile<CR>
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
 
  " Source vimrc after saving it
-autocmd BufWritePost .vimrc,vimrc source $MYVIMRC
+" autocmd BufWritePost .vimrc,vimrc source $MYVIMRC
+autocmd BufWritePost .vim source $MYVIMRC
+
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -429,7 +436,10 @@ set encoding=utf-8
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 "
 set t_Co=256
-colorscheme distinguished
+" colorscheme distinguished
+" colorscheme goodwolf
+" colorscheme mustang
+colorscheme jellybeans
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
