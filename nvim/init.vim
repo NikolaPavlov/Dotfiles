@@ -1,29 +1,9 @@
-"{{{ Links
-" =============================================================================
-"  _      _       _
-" | |    (_)     | |
-" | |     _ _ __ | |
-" | |    | | '_ \| |/ / __|
-" | |____| | | | |   <\__ \
-" |______|_|_| |_|_|\_\___/
-" =============================================================================
-" http://vimcasts.org/
-" http://vimawesome.com/ ---> vim plugins ratings
-" http://www.vimbits.com/ ---> vim scripts
-" http://bytefluent.com/vivify/ ---> color theme preview and creator
-" http://learnvimscriptthehardway.stevelosh.com/
-" =============================================================================
-"}}}
 "{{{ Virtualenv fixer for neovim
 
-let g:python_host_prog = '$HOME/.virtualenvs/neovim/bin/python'
-let g:python3_host_prog = '$HOME/.virtualenvs/neovim/bin/python3.7'
+let g:python_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
+let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.7')
 
 " }}}
-" {{{ Virtualenv fixer for neovim
-let g:python_host_prog = expand('~/.virtualenvs/neovim/bin/python')
-let g:python3_host_prog = expand('~/.virtualenvs/neovim/bin/python3.7')
-"}}}
 "{{{ Plugins
 
 " =============================================================================
@@ -202,6 +182,8 @@ nnoremap <leader>l <ESC>79i-<ESC>
 nnoremap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"
 " formating the file
 nnoremap <leader>f :Neoformat<cr>
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
 "TODO: add buffer aliases
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
@@ -362,7 +344,7 @@ au BufNewFile,BufRead *.txt set nowrap textwidth=120
 
 "}}}
 "}}}
-"{{{ General
+"{{{ General :options
 
 " =============================================================================
 "   ___                          _
@@ -452,74 +434,37 @@ colorscheme distinguished
 " NVIM specific settings
 set clipboard+=unnamedplus
 "
-"
-"
-" other temp (spellchecking temp)
-" http://thejakeharding.com/tutorial/2012/06/13/using-spell-check-in-vim.html
-set spelllang=en
-" set spell " ---> ;w
-" turn spell checking on by default
-"help spell ---> spell help
-" ]s [s ---> move between spellchecking words
 "}}}
 "{{{ Abbreviations
 
-iabbrev todo TODO
+iabbrev todo TODO:
+iabbrev todo: TODO:
+iabbrev TODO TODO:
 iabbrev pritn print
 
 "}}}
+"{{{ Links
+" =============================================================================
+"  _      _       _
+" | |    (_)     | |
+" | |     _ _ __ | |
+" | |    | | '_ \| |/ / __|
+" | |____| | | | |   <\__ \
+" |______|_|_| |_|_|\_\___/
+" =============================================================================
+" http://vimcasts.org/
+" http://vimawesome.com/ ---> vim plugins ratings
+" http://www.vimbits.com/ ---> vim scripts
+" http://bytefluent.com/vivify/ ---> color theme preview and creator
+" http://learnvimscriptthehardway.stevelosh.com/
+" =============================================================================
+"}}}
 "{{{ Garbage
 
-set showmode
-set visualbell
-set nonumber
-set autowrite
-set autoread
-set linebreak
-set colorcolumn=+1
-" set dict=
-"
-" Save when losing focus
-au FocusLost * :silent! wall
-"
-
-nnoremap <leader>W :set wrap!<cr>
-
-" Yank to end of line
-nnoremap Y y$
-
-" I constantly hit "u" in visual mode when I mean to "y". Use "gu" for those rare occasions.
-" From https://github.com/henrik/dotfiles/blob/master/vim/config/mappings.vim
-vnoremap u <nop>
-vnoremap gu u
-
-" Panic Button
-nnoremap <f9> mzggg?G`z
-
-" Keep the cursor in place while joining lines
-nnoremap J mzJ`z
-
-" Typos
-command! -bang E e<bang>
-command! -bang Q q<bang>
-command! -bang W w<bang>
-command! -bang QA qa<bang>
-command! -bang Qa qa<bang>
-command! -bang Wa wa<bang>
-command! -bang WA wa<bang>
-command! -bang Wq wq<bang>
-command! -bang WQ wq<bang>
-command! -bang Wqa wqa<bang>
-
-"}}}
-"
 " QuickFix:
 " augroup quickfix
 "   autocmd!
 "   autocmd QuickFixCmdPost make nested copen
 " augroup END
-"
 
-
-
-"
+"}}}
