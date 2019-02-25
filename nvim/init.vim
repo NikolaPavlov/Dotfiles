@@ -93,7 +93,8 @@ filetype off
   call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
   call dein#add('junegunn/limelight.vim')
   call dein#add('junegunn/goyo.vim')
-  call dein#add('mbbill/undotree')
+  " call dein#add('mbbill/undotree')
+  call dein#add('simnalamburt/vim-mundo')
   "---------------------------------------------------------------------------"
   " call dein#add('sheerun/vim-polyglot')
   " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
@@ -127,99 +128,77 @@ map <leader>md :MarkdownPreview<CR>
 "NerdTree bindings-------------------------------------------------------------
 map <C-t> :NERDTreeToggle<CR>
 "Tab for navigating between split screens
-nnoremap <tab> <c-w>
-nnoremap <tab><tab> <c-w><c-w>
+nmap <tab> <c-w>
+nmap <tab><tab> <c-w><c-w>
 " autoclose vim if only open window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "Keys maps---------------------------------------------------------------------
-"remap arrow keys to nothing
-noremap <left> <nop>
-noremap <right> <nop>
-noremap <up> <nop>
-noremap <down> <nop>
 "better regular expressions searching
-nnoremap / /\v
-nnoremap ? ?\v
+nmap / /\v
+nmap ? ?\v
 "move currsor with j and k on wrap lines too
-nnoremap j gj
-nnoremap k gk
+nmap j gj
+nmap k gk
 " no highlight
-nnoremap <leader><leader> :noh<cr>
+nmap <leader><leader> :noh<cr>
 " map ; to :
-nnoremap ; :
+nmap ; :
 "turn on off spell checking with ,s
 nmap <silent><leader>s :set spell!<CR>
 "folding and unfolding with Space
-nnoremap <Space> za
-vnoremap <Space> za
+nmap <Space> za
 "jj as Esc alternative
 inoremap jj <Esc>
 "select all text
 map <leader>a ggVG
 "sort selected text
-vnoremap <leader>ss :sort<CR>
+vmap <leader>ss :sort<CR>
 "moving code blocks
-vnoremap < <gv
-vnoremap > >gv
-"Substitute
-nnoremap <c-s> :%s/
-vnoremap <c-s> :s/
+vmap < <gv
+vmap > >gv
+"substitute with ctrl + s
+nmap <c-s> :%s/
+vmap <c-s> :s/
 "edit vimrc in the current window
-noremap <leader>e :e $MYVIMRC<CR>
+nmap <leader>e :e $MYVIMRC<CR>
 "edit bashrc in the current window
-noremap <leader>b :e ~/Documents/Repos/Dotfiles/bashrc<CR>
-" Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
-" Comment Keys
-nnoremap <leader>c :TComment<cr>
-vnoremap <leader>c :TComment<cr>
-" sorting the python imports
-nnoremap <leader>is :ImpSort!<cr>
-vnoremap <leader>is :ImpSort!<cr>
-" replace visualy selected text with the what is in the paste register
-vnoremap pp "+p
-" remap ctrl+p to launch fzy search
-nnoremap <c-p> :FuzzyOpen<CR>
-" draw line separator
-nnoremap <leader>l <ESC>79i-<ESC>
-" get current date
-nnoremap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"
-" formating the file
-nnoremap <leader>f :Neoformat<cr>
-" Keep the cursor in place while joining lines
-nnoremap J mzJ`z
+nmap <leader>b :e ~/Documents/Repos/Dotfiles/bashrc<CR>
+"keep search matches in the middle of the window.
+nmap n nzzzv
+nmap N Nzzzv
+"comment <leader>c
+map <leader>c :TComment<cr>
+"sorting the python imports
+map <leader>is :ImpSort!<cr>
+"replace visualy selected text with the what is in the paste register
+vmap pp "+p
+"remap ctrl+p to launch fzy search
+nmap <c-p> :FuzzyOpen<CR>
+"draw line separator
+nmap <leader>l <ESC>79i-<ESC>
+"get current date
+nmap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"
+"formating the file
+nmap <leader>f :Neoformat<cr>
+"keep the cursor in place while joining lines
+nmap J mzJ`z
 "TODO: add buffer aliases
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-
 "run python code in vim <F5>
-noremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
-
+nmap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 " test mappings
 nmap <silent> <leader>tt :TestSuite<CR>
 nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
-
 "auto chmod +x if file begin with #! and contains /bin/
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
-
- " Source vimrc after saving it
-" autocmd BufWritePost .vimrc,vimrc source $MYVIMRC
-autocmd BufWritePost .vim source $MYVIMRC
-
-
 " When editing a file, always jump to the last known cursor position.
-" Don't do it when the position is invalid or when inside an event handler
-" (happens when dropping a file on gvim).
-" Also don't do it when the mark is in the first line, that is the default
-" position when opening a file.
 autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
 \ endif
-
 "------------------------------------------------------------------------------
 "}}}
 "{{{ Filetype specific
@@ -261,16 +240,16 @@ autocmd BufWritePre * %s/\s\+$//e
 
 
 let g:last_relative_dir = ''
-nnoremap g1 :call RelatedFile ("models.py")<cr>
-nnoremap g2 :call RelatedFile ("views.py")<cr>
-nnoremap g3 :call RelatedFile ("urls.py")<cr>
-nnoremap g4 :call RelatedFile ("admin.py")<cr>
-nnoremap g5 :call RelatedFile ("tests.py")<cr>
-nnoremap g6 :call RelatedFile ( "templates/" )<cr>
-nnoremap g7 :call RelatedFile ( "templatetags/" )<cr>
-nnoremap g8 :call RelatedFile ( "management/" )<cr>
-nnoremap g0 :e settings.py<cr>
-nnoremap g9 :e urls.py<cr>
+nmap g1 :call RelatedFile ("models.py")<cr>
+nmap g2 :call RelatedFile ("views.py")<cr>
+nmap g3 :call RelatedFile ("urls.py")<cr>
+nmap g4 :call RelatedFile ("admin.py")<cr>
+nmap g5 :call RelatedFile ("tests.py")<cr>
+nmap g6 :call RelatedFile ( "templates/" )<cr>
+nmap g7 :call RelatedFile ( "templatetags/" )<cr>
+nmap g8 :call RelatedFile ( "management/" )<cr>
+nmap g0 :e settings.py<cr>
+nmap g9 :e urls.py<cr>
 
 fun! RelatedFile(file)
     #This is to check that the directory looks djangoish
@@ -309,13 +288,13 @@ augroup ft_html
     au FileType html,jinja,htmldjango setlocal foldmethod=manual
 
     " Use <localleader>f to fold the current tag.
-    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>f Vatzf
+    au FileType html,jinja,htmldjango nmap <buffer> <localleader>f Vatzf
 
     " Use <localleader>t to fold the current templatetag.
     au FileType html,jinja,htmldjango nmap <buffer> <localleader>t viikojozf
 
     " Indent tag
-    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>= Vat=
+    au FileType html,jinja,htmldjango nmap <buffer> <localleader>= Vat=
 
     " Django tags
     au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
@@ -438,8 +417,8 @@ set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
 " colorscheme distinguished
 " colorscheme goodwolf
-" colorscheme mustang
-colorscheme jellybeans
+colorscheme mustang
+" colorscheme jellybeans
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
@@ -462,6 +441,7 @@ iabbrev pritn print
 " | |____| | | | |   <\__ \
 " |______|_|_| |_|_|\_\___/
 " =============================================================================
+" vim.org
 " http://vimcasts.org/
 " http://vimawesome.com/ ---> vim plugins ratings
 " http://www.vimbits.com/ ---> vim scripts
