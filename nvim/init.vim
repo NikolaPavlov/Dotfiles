@@ -11,6 +11,7 @@
 " http://vimawesome.com/ ---> vim plugins ratings
 " http://www.vimbits.com/ ---> vim scripts
 " http://bytefluent.com/vivify/ ---> color theme preview and creator
+" http://learnvimscriptthehardway.stevelosh.com/
 " =============================================================================
 " }}}
 " {{{ Virtualenv fixer for neovim
@@ -156,9 +157,6 @@ nmap <silent><leader>s :set spell!<CR>
 "folding and unfolding with Space
 nnoremap <Space> za
 vnoremap <Space> za
-"foldin all and unfolding all with <leader>f <leader>ff
-nnoremap <leader>f zR
-nnoremap <leader>ff zM
 "jj as Esc alternative
 inoremap jj <Esc>
 "select all text
@@ -190,6 +188,8 @@ nmap <c-p> :Files<CR>
 nnoremap <leader>l <ESC>79i-<ESC>
 " get current date
 nnoremap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"
+" formating the file
+nnoremap <leader>f :Neoformat<cr>
 "TODO: add buffer aliases
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
