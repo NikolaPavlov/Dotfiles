@@ -416,7 +416,10 @@ set t_Co=256
 colorscheme badwolf
 " colorscheme distinguished
 " colorscheme jellybeans
-"" =============================================================================
+" colorscheme goodwolf
+" colorscheme mustang
+" colorscheme jellybeans
+" =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
 "
