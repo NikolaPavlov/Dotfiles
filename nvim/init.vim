@@ -54,6 +54,9 @@ filetype off
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify') " show git diff in the left bar
   call dein#add('tpope/vim-fugitive') " git wrapper (integration)
+
+  call dein#add('junegunn/gv.vim') " git log viewer
+
   call dein#add('wellle/targets.vim') " add 'ci(' command
   call dein#add('tpope/vim-surround') " change surroundings
   call dein#add('tpope/vim-repeat') " repeat surround commands
@@ -95,6 +98,9 @@ filetype off
   call dein#add('junegunn/goyo.vim')
   " call dein#add('mbbill/undotree')
   call dein#add('simnalamburt/vim-mundo')
+  call dein#add('ivanov/vim-ipython')
+  call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
+  call dein#add('kshenoy/vim-signature') "display the marks in the side line
   "---------------------------------------------------------------------------"
   " call dein#add('sheerun/vim-polyglot')
   " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
@@ -417,8 +423,8 @@ set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
 " colorscheme distinguished
 " colorscheme goodwolf
-colorscheme mustang
-" colorscheme jellybeans
+" colorscheme mustang
+colorscheme jellybeans
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
