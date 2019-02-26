@@ -34,8 +34,8 @@ filetype off
   call dein#add('Shougo/deoplete.nvim') " autocomplete engine
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
-  call dein#add('Shougo/context_filetype.vim') " completion from other opened files
-  call dein#add('davidhalter/jedi-vim') " need for go to definitions
+  call dein#add('Shougo/context_filetype.vim') "completion from other opened files
+  call dein#add('davidhalter/jedi-vim') "need for go to definitions
   call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
@@ -49,36 +49,36 @@ filetype off
   call dein#add('sbdchd/neoformat') " formater
     let g:neoformat_enabled_python = ['black', 'autopep8']
     let g:neoformat_run_all_formatters = 1
-    " let g:neoformat_verbose = 1 " debug setting for neoformat
-    " let &verbose            = 1 " debug setting for neoformat
+    " let g:neoformat_verbose = 1 "debug setting for neoformat
+    " let &verbose            = 1 "debug setting for neoformat
   call dein#add('Vimjas/vim-python-pep8-indent')
-  call dein#add('mhinz/vim-signify') " show git diff in the left bar
-  call dein#add('tpope/vim-fugitive') " git wrapper (integration)
-  call dein#add('wellle/targets.vim') " add 'ci(' command
-  call dein#add('tpope/vim-surround') " change surroundings
-  call dein#add('tpope/vim-repeat') " repeat surround commands
-  call dein#add('tomtom/tcomment_vim') " comment plugin
-  call dein#add('janko-m/vim-test') " run tests from vim
+  call dein#add('mhinz/vim-signify') "show git diff in the left bar
+  call dein#add('tpope/vim-fugitive') "git wrapper (integration)
+  call dein#add('wellle/targets.vim') "add 'ci(' command
+  call dein#add('tpope/vim-surround') "change surroundings
+  call dein#add('tpope/vim-repeat') "repeat surround commands
+  call dein#add('tomtom/tcomment_vim') "comment plugin
+  call dein#add('janko-m/vim-test') "run tests from vim
     let test#strategy = "neovim"
     let test#python#runner = 'pytest'
   call dein#add('907th/vim-auto-save') " auto save when exit normal mode
-    let g:auto_save = 1  " enable AutoSave on Vim startup
-    let g:auto_save_silent = 1  " do not display the auto-save notification
+    let g:auto_save = 1  "enable AutoSave on Vim startup
+    let g:auto_save_silent = 1  "do not display the auto-save notification
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
   call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
-  call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
+  call dein#add('Valloric/MatchTagAlways') "always highlight html enclosing tags
   call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
-  call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
+  call dein#add('ryanoasis/vim-devicons') "icons in vim (nerdtree, airline, ctrlP)
   call dein#add('tweekmonster/impsort.vim') "import sorting
   call dein#add('ervandew/supertab')
     let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
   call dein#add('vimwiki/vimwiki')
     let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-  call dein#add('gorodinskiy/vim-coloresque') " css,html,sass,less color prewiev
-  call dein#add('flazz/vim-colorschemes') " many colorschemes
+  call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
+  call dein#add('flazz/vim-colorschemes') "many colorschemes
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
     let g:airline_theme='minimalist'
@@ -91,16 +91,9 @@ filetype off
     " 3. npm install -g instant-markdown-d
     " 4. cd to plugin dir and follow the instructions from https://github.com/iamcco/markdown-preview.nvim
   call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
-  call dein#add('junegunn/limelight.vim')
-  call dein#add('junegunn/goyo.vim')
-  " call dein#add('mbbill/undotree')
-  call dein#add('simnalamburt/vim-mundo')
-  "---------------------------------------------------------------------------"
-  " call dein#add('sheerun/vim-polyglot')
-  " call dein#add( 'carlitux/deoplete-ternjs' ), {'for':['javascript','javascript.jsx']}
-
-
-
+  call dein#add('junegunn/limelight.vim') "lime line focus rice
+  call dein#add('junegunn/goyo.vim') "focus mode
+  call dein#add('mbbill/undotree') "undo history
 " "--------------------------->finish installing plugins<---------------------------
   call dein#end()
   call dein#save_state()
@@ -126,10 +119,9 @@ let mapleader=","
 "Markdown preview
 map <leader>md :MarkdownPreview<CR>
 "NerdTree bindings-------------------------------------------------------------
-map <C-t> :NERDTreeToggle<CR>
+nmap nt :NERDTreeToggle<CR>
 "Tab for navigating between split screens
-nmap <tab> <c-w>
-nmap <tab><tab> <c-w><c-w>
+nmap <tab> <c-w><c-w>
 " autoclose vim if only open window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "Keys maps---------------------------------------------------------------------
@@ -163,6 +155,8 @@ vmap <c-s> :s/
 nmap <leader>e :e $MYVIMRC<CR>
 "edit bashrc in the current window
 nmap <leader>b :e ~/Documents/Repos/Dotfiles/bashrc<CR>
+" open vimwiki index
+nmap <leader>v :e ~/Documents/Repos/VimWiki/index.md<CR>
 "keep search matches in the middle of the window.
 nmap n nzzzv
 nmap N Nzzzv
@@ -417,7 +411,8 @@ set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
 " colorscheme distinguished
 " colorscheme goodwolf
-colorscheme mustang
+colorscheme badwolf
+" colorscheme mustang
 " colorscheme jellybeans
 " =============================================================================
 " NVIM specific settings
@@ -443,9 +438,7 @@ iabbrev pritn print
 " =============================================================================
 " vim.org
 " http://vimcasts.org/
-" http://vimawesome.com/ ---> vim plugins ratings
-" http://www.vimbits.com/ ---> vim scripts
-" http://bytefluent.com/vivify/ ---> color theme preview and creator
+" http://vimawesome.com/
 " http://learnvimscriptthehardway.stevelosh.com/
 " =============================================================================
 "}}}
@@ -456,5 +449,4 @@ iabbrev pritn print
 "   autocmd!
 "   autocmd QuickFixCmdPost make nested copen
 " augroup END
-
 "}}}
