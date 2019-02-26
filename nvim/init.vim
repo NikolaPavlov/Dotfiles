@@ -59,6 +59,7 @@ filetype off
   call dein#add('tpope/vim-repeat') "repeat surround commands
   call dein#add('tomtom/tcomment_vim') "comment plugin
   call dein#add('janko-m/vim-test') "run tests from vim
+  call dein#add('junegunn/gv.vim') "git log viewer
     let test#strategy = "neovim"
     let test#python#runner = 'pytest'
   call dein#add('907th/vim-auto-save') " auto save when exit normal mode
@@ -94,6 +95,9 @@ filetype off
   call dein#add('junegunn/limelight.vim') "lime line focus rice
   call dein#add('junegunn/goyo.vim') "focus mode
   call dein#add('mbbill/undotree') "undo history
+  call dein#add('ivanov/vim-ipython')
+  call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
+  call dein#add('kshenoy/vim-signature') "display the marks in the side line
 " "--------------------------->finish installing plugins<---------------------------
   call dein#end()
   call dein#save_state()
@@ -409,12 +413,10 @@ set encoding=utf-8
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 "
 set t_Co=256
-" colorscheme distinguished
-" colorscheme goodwolf
 colorscheme badwolf
-" colorscheme mustang
+" colorscheme distinguished
 " colorscheme jellybeans
-" =============================================================================
+"" =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
 "
@@ -449,4 +451,5 @@ iabbrev pritn print
 "   autocmd!
 "   autocmd QuickFixCmdPost make nested copen
 " augroup END
+
 "}}}
