@@ -98,6 +98,7 @@ filetype off
   call dein#add('ivanov/vim-ipython')
   call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
   call dein#add('kshenoy/vim-signature') "display the marks in the side line
+  "https://github.com/tweekmonster/django-plus.vim
 " "--------------------------->finish installing plugins<---------------------------
   call dein#end()
   call dein#save_state()
@@ -207,50 +208,35 @@ augroup ft_django
 
     au BufNewFile,BufRead urls.py           setlocal nowrap
     au BufNewFile,BufRead urls.py           normal! zR
-    au BufNewFile,BufRead dashboard.py      normal! zR
-    au BufNewFile,BufRead local_settings.py normal! zR
 
-    au BufNewFile,BufRead admin.py     setlocal filetype=python.django
-    au BufNewFile,BufRead urls.py      setlocal filetype=python.django
-    au BufNewFile,BufRead models.py    setlocal filetype=python.django
-    au BufNewFile,BufRead views.py     setlocal filetype=python.django
-    au BufNewFile,BufRead settings.py  setlocal filetype=python.django
-    au BufNewFile,BufRead settings.py  setlocal foldmethod=marker
-    au BufNewFile,BufRead forms.py     setlocal filetype=python.django
-    au BufNewFile,BufRead common_settings.py  setlocal filetype=python.django
-    au BufNewFile,BufRead common_settings.py  setlocal foldmethod=marker
+    au BufNewFile,BufRead admin.py setlocal filetype=python.django
+    au BufNewFile,BufRead urls.py setlocal filetype=python.django
+    au BufNewFile,BufRead models.py setlocal filetype=python.django
+    au BufNewFile,BufRead views.py setlocal filetype=python.django
+    au BufNewFile,BufRead forms.py setlocal filetype=python.django
+
+    au BufNewFile,BufRead base.py setlocal filetype=python.django
+    au BufNewFile,BufRead base.py setlocal foldmethod=marker
+    au BufNewFile,BufRead dev.py setlocal filetype=python.django
+    au BufNewFile,BufRead dev.py setlocal foldmethod=marker
+    au BufNewFile,BufRead prod.py setlocal filetype=python.django
+    au BufNewFile,BufRead prod.py setlocal foldmethod=marker
 augroup END
 
-" auto html filetype do htmldjango
-" au BufNewFile,BufRead *.html setlocal filetype=htmldjango
-"
-" no line wrap for html files
-au BufNewFile,BufRead *.html set nowrap textwidth=120
-au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
-" no line wrap for txt files
-au BufNewFile,BufRead *.txt set nowrap textwidth=120
-" foldmethod=marker for .vim files
-au BufNewFile,BufRead *.vim set foldmethod=marker
-" autoclose folds when open .vim file
-au BufNewFile,BufRead *.vim normal zM
-" Remove spaces at end of lines in file before save
-autocmd BufWritePre * %s/\s\+$//e
-
-
 let g:last_relative_dir = ''
-nmap g1 :call RelatedFile ("models.py")<cr>
-nmap g2 :call RelatedFile ("views.py")<cr>
-nmap g3 :call RelatedFile ("urls.py")<cr>
-nmap g4 :call RelatedFile ("admin.py")<cr>
-nmap g5 :call RelatedFile ("tests.py")<cr>
-nmap g6 :call RelatedFile ( "templates/" )<cr>
-nmap g7 :call RelatedFile ( "templatetags/" )<cr>
-nmap g8 :call RelatedFile ( "management/" )<cr>
-nmap g0 :e settings.py<cr>
-nmap g9 :e urls.py<cr>
+nnoremap \1 :call RelatedFile ("models.py")<cr>
+nnoremap \2 :call RelatedFile ("views.py")<cr>
+nnoremap \3 :call RelatedFile ("urls.py")<cr>
+nnoremap \4 :call RelatedFile ("admin.py")<cr>
+nnoremap \5 :call RelatedFile ("tests.py")<cr>
+nnoremap \6 :call RelatedFile ( "templates/" )<cr>
+nnoremap \7 :call RelatedFile ( "templatetags/" )<cr>
+nnoremap \8 :call RelatedFile ( "management/" )<cr>
+nnoremap \0 :e settings.py<cr>
+nnoremap \9 :e urls.py<cr>
 
 fun! RelatedFile(file)
-    #This is to check that the directory looks djangoish
+    " #This is to check that the directory looks djangoish
     if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
         exec "edit %:h/" . a:file
         let g:last_relative_dir = expand("%:h") . '/'
@@ -312,8 +298,7 @@ augroup ft_vim
     au!
 
     au FileType vim setlocal foldmethod=marker
-    au FileType help setlocal textwidth=78
-    au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+    au FileType help setlocal textwidth=79
 
     " autoclose folds when open .vim file
     au BufNewFile,BufRead *.vim normal zM
@@ -324,7 +309,7 @@ augroup END
 "{{{ Text
 
 " no line wrap for txt files
-au BufNewFile,BufRead *.txt set nowrap textwidth=120
+au BufNewFile,BufRead *.txt set nowrap textwidth=80
 
 "}}}
 "}}}
@@ -447,12 +432,4 @@ iabbrev pritn print
 " http://learnvimscriptthehardway.stevelosh.com/
 " =============================================================================
 "}}}
-"{{{ Garbage
 
-" QuickFix:
-" augroup quickfix
-"   autocmd!
-"   autocmd QuickFixCmdPost make nested copen
-" augroup END
-
-"}}}

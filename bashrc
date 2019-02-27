@@ -3,7 +3,6 @@ export EDITOR=nvim
 
 alias w='whois'
 alias v='nvim'
-alias ..='cd ..'
 alias e='exit'
 alias c='clear'
 alias cl='clear'
