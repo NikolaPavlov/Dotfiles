@@ -95,7 +95,6 @@ filetype off
   call dein#add('junegunn/limelight.vim') "lime line focus rice
   call dein#add('junegunn/goyo.vim') "focus mode
   call dein#add('mbbill/undotree') "undo history
-  call dein#add('ivanov/vim-ipython')
   call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
   call dein#add('kshenoy/vim-signature') "display the marks in the side line
 " "--------------------------->finish installing plugins<---------------------------
@@ -123,7 +122,7 @@ let mapleader=","
 "Markdown preview
 map <leader>md :MarkdownPreview<CR>
 "NerdTree bindings-------------------------------------------------------------
-nmap nt :NERDTreeToggle<CR>
+nmap t :NERDTreeToggle<CR>
 "Tab for navigating between split screens
 nmap <tab> <c-w><c-w>
 " autoclose vim if only open window is NerdTree
@@ -177,7 +176,7 @@ nmap <leader>l <ESC>79i-<ESC>
 "get current date
 nmap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"
 "formating the file
-nmap <leader>f :Neoformat<cr>
+nmap <leader>nf :Neoformat<cr>
 "keep the cursor in place while joining lines
 nmap J mzJ`z
 "TODO: add buffer aliases
