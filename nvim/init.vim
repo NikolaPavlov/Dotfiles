@@ -97,6 +97,14 @@ filetype off
   call dein#add('mbbill/undotree') "undo history
   call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
   call dein#add('kshenoy/vim-signature') "display the marks in the side line
+
+  call dein#add('umutcoskun/vim-mule')
+    " Selected interpreter to run commands.
+    let g:mule_python_command = 'python3'
+    " Auto enable virtual environment.
+    " If you don't want, set it to 0 (zero).
+    let g:mule_auto_env = 1
+
   "https://github.com/tweekmonster/django-plus.vim
 " "--------------------------->finish installing plugins<---------------------------
   call dein#end()
@@ -431,4 +439,3 @@ iabbrev pritn print
 " http://learnvimscriptthehardway.stevelosh.com/
 " =============================================================================
 "}}}
-
