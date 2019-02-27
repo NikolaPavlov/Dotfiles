@@ -42,6 +42,7 @@ alias t='python -m unittest discover'
 alias pt='pytest'
 # PipEnv
 alias pe='pipenv'
+alias pes='pipenv shell'
 # Git
 alias gs='git status'
 alias gc='git commit'
