@@ -179,9 +179,12 @@ nmap <leader>e :e $MYVIMRC<CR>
 nmap <leader>b :e ~/Documents/Repos/Dotfiles/bashrc<CR>
 " open vimwiki index
 nmap <leader>v :e ~/Documents/Repos/VimWiki/index.md<CR>
-"keep search matches in the middle of the window.
+"keep search matches in the middle of the window
 nmap n nzzzv
 nmap N Nzzzv
+"keep jumping results in the middle of the window
+nnoremap g; g;zz
+nnoremap g, g,zz
 "comment <leader>c
 map <leader>c :TComment<cr>
 "sorting the python imports
@@ -196,11 +199,10 @@ nmap <leader>l <ESC>79i-<ESC>
 nmap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"<CR>
 "formating the file
 nmap <leader>nf :Neoformat<cr>
-"keep the cursor in place while joining lines
-nmap J mzJ`z
 "Django remaps (<C-H> == <BS> == Backspace)
 nmap <CR> :DjangoSwitch<CR>
-
+" Split line (sister to [J]oin lines)
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 "TODO: add buffer aliases
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
@@ -243,40 +245,6 @@ augroup ft_django
     au BufNewFile,BufRead prod.py setlocal foldmethod=marker
 augroup END
 
-let g:last_relative_dir = ''
-nnoremap \1 :call RelatedFile ("models.py")<cr>
-nnoremap \2 :call RelatedFile ("views.py")<cr>
-nnoremap \3 :call RelatedFile ("urls.py")<cr>
-nnoremap \4 :call RelatedFile ("admin.py")<cr>
-nnoremap \5 :call RelatedFile ("tests.py")<cr>
-nnoremap \6 :call RelatedFile ( "templates/" )<cr>
-nnoremap \7 :call RelatedFile ( "templatetags/" )<cr>
-nnoremap \8 :call RelatedFile ( "management/" )<cr>
-nnoremap \0 :e settings.py<cr>
-nnoremap \9 :e urls.py<cr>
-
-fun! RelatedFile(file)
-    " #This is to check that the directory looks djangoish
-    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
-        exec "edit %:h/" . a:file
-        let g:last_relative_dir = expand("%:h") . '/'
-        return ''
-    endif
-    if g:last_relative_dir != ''
-        exec "edit " . g:last_relative_dir . a:file
-        return ''
-    endif
-    echo "Cant determine where relative file is : " . a:file
-    return ''
-endfun
-
-fun SetAppDir()
-    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
-        let g:last_relative_dir = expand("%:h") . '/'
-        return ''
-    endif
-endfun
-autocmd BufEnter *.py call SetAppDir()
 " }}}
 "{{{ Html Django
 
@@ -329,7 +297,7 @@ augroup END
 "{{{ Text
 
 " no line wrap for txt files
-au BufNewFile,BufRead *.txt set nowrap textwidth=80
+au BufNewFile,BufRead *.txt set wrap textwidth=80
 
 "}}}
 "}}}
