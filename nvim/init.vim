@@ -18,7 +18,7 @@ let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.7')
 " =============================================================================
 
 filetype off
-" Setup DeinVim PluginManager -------------------------------------------------
+"Setup DeinVim PluginManager -------------------------------------------------
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
     call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
     call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
@@ -31,7 +31,7 @@ filetype off
   call dein#begin(expand('~/.config/nvim/repos/github.com'))
   call dein#add('Shougo/dein.vim')
 "------------------------>start installing plugins<----------------------------
-  call dein#add('Shougo/deoplete.nvim') " autocomplete engine
+  call dein#add('Shougo/deoplete.nvim') "autocomplete engine
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
   call dein#add('Shougo/context_filetype.vim') "completion from other opened files
@@ -45,12 +45,13 @@ filetype off
     let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
     let g:UltiSnipsSnippetsDir = split(&runtimepath, ',')[0] . '/snips'
     let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
-  call dein#add('w0rp/ale') " linter on the fly
-  call dein#add('sbdchd/neoformat') " formater
-    let g:neoformat_enabled_python = ['black', 'autopep8']
+  call dein#add('w0rp/ale') "linter on the fly
+  call dein#add('sbdchd/neoformat') "formater
+    " let g:neoformat_enabled_python = ['black', 'autopep8']
+    let g:neoformat_enabled_python = ['autopep8']
     let g:neoformat_run_all_formatters = 1
-    " let g:neoformat_verbose = 1 "debug setting for neoformat
-    " let &verbose            = 1 "debug setting for neoformat
+    "let g:neoformat_verbose = 1 "debug setting for neoformat
+    "let &verbose            = 1 "debug setting for neoformat
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify') "show git diff in the left bar
   call dein#add('tpope/vim-fugitive') "git wrapper (integration)
@@ -62,14 +63,15 @@ filetype off
   call dein#add('junegunn/gv.vim') "git log viewer
     let test#strategy = "neovim"
     let test#python#runner = 'pytest'
-  call dein#add('907th/vim-auto-save') " auto save when exit normal mode
+  call dein#add('907th/vim-auto-save') "auto save when exit normal mode
     let g:auto_save = 1  "enable AutoSave on Vim startup
     let g:auto_save_silent = 1  "do not display the auto-save notification
   call dein#add('scrooloose/nerdtree')
-  call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
-  call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
+    let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
+  call dein#add('Xuyuanp/nerdtree-git-plugin') "showing git status flags in nerdtree
+  call dein#add('jiangmiao/auto-pairs') "match quotes, brackets, parenthesis
   call dein#add('Valloric/MatchTagAlways') "always highlight html enclosing tags
-  call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
+  call dein#add('bronson/vim-trailing-whitespace') "colorize red trailing whitspaces
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
   call dein#add('ryanoasis/vim-devicons') "icons in vim (nerdtree, airline, ctrlP)
@@ -99,14 +101,22 @@ filetype off
   call dein#add('kshenoy/vim-signature') "display the marks in the side line
 
   call dein#add('umutcoskun/vim-mule')
-    " Selected interpreter to run commands.
+    "Selected interpreter to run commands.
     let g:mule_python_command = 'python3'
-    " Auto enable virtual environment.
-    " If you don't want, set it to 0 (zero).
+    "Auto enable virtual environment.
     let g:mule_auto_env = 1
+    "No default mule hotkeys
+    let g:mule_no_hotkeys = 1
+
+  call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
+  call dein#add('junegunn/vim-slash') " improve highlight search
+  if has('timers')
+    " Blink 2 times with 50ms interval
+   noremap <expr> <plug>(slash-after) slash#blink(2, 50)
+  endif
 
   "https://github.com/tweekmonster/django-plus.vim
-" "--------------------------->finish installing plugins<---------------------------
+"--------------------------->finish installing plugins<---------------------------
   call dein#end()
   call dein#save_state()
   if dein#check_install()
@@ -183,11 +193,14 @@ nmap <c-p> :FuzzyOpen<CR>
 "draw line separator
 nmap <leader>l <ESC>79i-<ESC>
 "get current date
-nmap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"
+nmap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"<CR>
 "formating the file
 nmap <leader>nf :Neoformat<cr>
 "keep the cursor in place while joining lines
 nmap J mzJ`z
+"Django remaps (<C-H> == <BS> == Backspace)
+nmap <CR> :DjangoSwitch<CR>
+
 "TODO: add buffer aliases
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
@@ -438,4 +451,6 @@ iabbrev pritn print
 " http://vimawesome.com/
 " http://learnvimscriptthehardway.stevelosh.com/
 " =============================================================================
+"}}}
+"{{{ Garbage
 "}}}
