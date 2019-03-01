@@ -1,4 +1,4 @@
-"{{{ Virtualenv fixer for neovim
+e{{{ Virtualenv fixer for neovim
 
 let g:python_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
 let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.7')
@@ -87,10 +87,6 @@ filetype off
     " let g:airline_theme='badwolf'
     " let g:airline_theme='bubblegum'
 
-  call dein#add('itchyny/lightline.vim')
-    let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ }
   call dein#add('iamcco/markdown-preview.nvim')
     " NOTES:
     " 1. add this to ~/.profile (Allow user-wide npm installations)
@@ -99,10 +95,10 @@ filetype off
     " 2. go to plugin location and run 'npm install -g'
     " 3. npm install -g instant-markdown-d
     " 4. cd to plugin dir and follow the instructions from https://github.com/iamcco/markdown-preview.nvim
-  call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
-  call dein#add('junegunn/limelight.vim') "lime line focus rice
-  call dein#add('junegunn/goyo.vim') "focus mode
-  call dein#add('mbbill/undotree') "undo history
+  call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
+  call dein#add('junegunn/limelight.vim') "lime line focus rice <leader>l
+  call dein#add('junegunn/goyo.vim') "focus mode :Goyo
+  call dein#add('mbbill/undotree') "undo history :UndotreeShow
   call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
   call dein#add('kshenoy/vim-signature') "display the marks in the side line
 
@@ -115,6 +111,7 @@ filetype off
     let g:mule_no_hotkeys = 1
 
   call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
+
   call dein#add('junegunn/vim-slash') " improve highlight search
   if has('timers')
     " Blink 2 times with 50ms interval
@@ -122,6 +119,18 @@ filetype off
   endif
 
   call dein#add('vim-scripts/bufexplorer.zip') " :BufExplorer
+
+  call dein#add('itchyny/lightline.vim')
+    let g:lightline = {
+        \ 'colorscheme': 'jellybeans',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'fugitive#head'
+        \ },
+        \ }
 
   "https://github.com/tweekmonster/django-plus.vim
 "--------------------------->finish installing plugins<---------------------------
@@ -188,9 +197,12 @@ nmap <leader>e :e $MYVIMRC<CR>
 nmap <leader>b :e ~/Documents/Repos/Dotfiles/bashrc<CR>
 " open vimwiki index
 nmap <leader>v :e ~/Documents/Repos/VimWiki/index.md<CR>
-"keep search matches in the middle of the window.
+"keep search matches in the middle of the window
 nmap n nzzzv
 nmap N Nzzzv
+"keep jumping results in the middle of the window
+nnoremap g; g;zz
+nnoremap g, g,zz
 "comment <leader>c
 map <leader>c :TComment<cr>
 "sorting the python imports
@@ -199,20 +211,20 @@ map <leader>is :ImpSort!<cr>
 vmap pp "+p
 "remap ctrl+p to launch fzy search
 nmap <c-p> :FuzzyOpen<CR>
-"draw line separator
-nmap <leader>l <ESC>79i-<ESC>
 "get current date
 nmap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"<CR>
 "formating the file
 nmap <leader>nf :Neoformat<cr>
-"keep the cursor in place while joining lines
-nmap J mzJ`z
 "Django remaps (<C-H> == <BS> == Backspace)
 nmap <CR> :DjangoSwitch<CR>
 "Goyo
 nmap <leader>g :Goyo
+"Split line (sister to [J]oin lines)
+nmap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+"limelight
+nmap <leader>l :Limelight
 
-"TODO: add buffer aliases
+" TODO: add buffer aliases
 " -----------------------------------------------------------------------------
 "forcing saving files that require root permission with :W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -254,40 +266,6 @@ augroup ft_django
     au BufNewFile,BufRead prod.py setlocal foldmethod=marker
 augroup END
 
-let g:last_relative_dir = ''
-nnoremap \1 :call RelatedFile ("models.py")<cr>
-nnoremap \2 :call RelatedFile ("views.py")<cr>
-nnoremap \3 :call RelatedFile ("urls.py")<cr>
-nnoremap \4 :call RelatedFile ("admin.py")<cr>
-nnoremap \5 :call RelatedFile ("tests.py")<cr>
-nnoremap \6 :call RelatedFile ( "templates/" )<cr>
-nnoremap \7 :call RelatedFile ( "templatetags/" )<cr>
-nnoremap \8 :call RelatedFile ( "management/" )<cr>
-nnoremap \0 :e settings.py<cr>
-nnoremap \9 :e urls.py<cr>
-
-fun! RelatedFile(file)
-    " #This is to check that the directory looks djangoish
-    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
-        exec "edit %:h/" . a:file
-        let g:last_relative_dir = expand("%:h") . '/'
-        return ''
-    endif
-    if g:last_relative_dir != ''
-        exec "edit " . g:last_relative_dir . a:file
-        return ''
-    endif
-    echo "Cant determine where relative file is : " . a:file
-    return ''
-endfun
-
-fun SetAppDir()
-    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
-        let g:last_relative_dir = expand("%:h") . '/'
-        return ''
-    endif
-endfun
-autocmd BufEnter *.py call SetAppDir()
 " }}}
 "{{{ Html Django
 
@@ -340,7 +318,7 @@ augroup END
 "{{{ Text
 
 " no line wrap for txt files
-au BufNewFile,BufRead *.txt set nowrap textwidth=80
+au BufNewFile,BufRead *.txt set wrap textwidth=80
 
 "}}}
 "}}}
