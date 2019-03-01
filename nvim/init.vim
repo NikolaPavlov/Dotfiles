@@ -82,9 +82,15 @@ filetype off
     let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
   call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
   call dein#add('flazz/vim-colorschemes') "many colorschemes
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
-    let g:airline_theme='minimalist'
+  " call dein#add('vim-airline/vim-airline')
+  " call dein#add('vim-airline/vim-airline-themes')
+    " let g:airline_theme='badwolf'
+    " let g:airline_theme='bubblegum'
+
+  call dein#add('itchyny/lightline.vim')
+    let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ }
   call dein#add('iamcco/markdown-preview.nvim')
     " NOTES:
     " 1. add this to ~/.profile (Allow user-wide npm installations)
@@ -115,6 +121,8 @@ filetype off
    noremap <expr> <plug>(slash-after) slash#blink(2, 50)
   endif
 
+  call dein#add('vim-scripts/bufexplorer.zip') " :BufExplorer
+
   "https://github.com/tweekmonster/django-plus.vim
 "--------------------------->finish installing plugins<---------------------------
   call dein#end()
@@ -142,6 +150,7 @@ let mapleader=","
 map <leader>md :MarkdownPreview<CR>
 "NerdTree bindings-------------------------------------------------------------
 nmap t :NERDTreeToggle<CR>
+nmap tb :NERDTreeFromBookmark 
 "Tab for navigating between split screens
 nmap <tab> <c-w><c-w>
 " autoclose vim if only open window is NerdTree
@@ -200,6 +209,8 @@ nmap <leader>nf :Neoformat<cr>
 nmap J mzJ`z
 "Django remaps (<C-H> == <BS> == Backspace)
 nmap <CR> :DjangoSwitch<CR>
+"Goyo
+nmap <leader>g :Goyo
 
 "TODO: add buffer aliases
 " -----------------------------------------------------------------------------
@@ -416,14 +427,11 @@ set fileencoding=utf-8
 set encoding=utf-8
 "26 various
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
-"
 set t_Co=256
 colorscheme badwolf
 " colorscheme distinguished
 " colorscheme jellybeans
 " colorscheme goodwolf
-" colorscheme mustang
-" colorscheme jellybeans
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
@@ -453,4 +461,6 @@ iabbrev pritn print
 " =============================================================================
 "}}}
 "{{{ Garbage
+set noshowmode
 "}}}
+
