@@ -1,4 +1,4 @@
-e{{{ Virtualenv fixer for neovim
+"{{{ Virtualenv fixer for neovim
 
 let g:python_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
 let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.7')
@@ -78,23 +78,12 @@ filetype off
   call dein#add('tweekmonster/impsort.vim') "import sorting
   call dein#add('ervandew/supertab')
     let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
-  call dein#add('vimwiki/vimwiki')
-    let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
   call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
   call dein#add('flazz/vim-colorschemes') "many colorschemes
   " call dein#add('vim-airline/vim-airline')
   " call dein#add('vim-airline/vim-airline-themes')
     " let g:airline_theme='badwolf'
     " let g:airline_theme='bubblegum'
-
-  call dein#add('iamcco/markdown-preview.nvim')
-    " NOTES:
-    " 1. add this to ~/.profile (Allow user-wide npm installations)
-        " PATH="$HOME/.node_modules/bin:$PATH"
-        " export npm_config_prefix=~/.node_modules
-    " 2. go to plugin location and run 'npm install -g'
-    " 3. npm install -g instant-markdown-d
-    " 4. cd to plugin dir and follow the instructions from https://github.com/iamcco/markdown-preview.nvim
   call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
   call dein#add('junegunn/limelight.vim') "lime line focus rice <leader>l
   call dein#add('junegunn/goyo.vim') "focus mode :Goyo
@@ -132,6 +121,11 @@ filetype off
         \ },
         \ }
 
+
+  call dein#add('Rykka/riv.vim')
+  call dein#add('gu-fan/InstantRst') " rst instant preview
+    let g:instant_rst_localhost_only = 1
+
   "https://github.com/tweekmonster/django-plus.vim
 "--------------------------->finish installing plugins<---------------------------
   call dein#end()
@@ -159,7 +153,7 @@ let mapleader=","
 map <leader>md :MarkdownPreview<CR>
 "NerdTree bindings-------------------------------------------------------------
 nmap t :NERDTreeToggle<CR>
-nmap tb :NERDTreeFromBookmark 
+" nmap tb :NERDTreeFromBookmark 
 "Tab for navigating between split screens
 nmap <tab> <c-w><c-w>
 " autoclose vim if only open window is NerdTree
@@ -195,9 +189,11 @@ vmap <c-s> :s/
 nmap <leader>e :e $MYVIMRC<CR>
 "edit bashrc in the current window
 nmap <leader>b :e ~/Documents/Repos/Dotfiles/bashrc<CR>
-" open vimwiki index
-nmap <leader>v :e ~/Documents/Repos/VimWiki/index.md<CR>
+" open riv wiki index.rst
+nmap <leader>w :e ~/Documents/Riv/index.rst<CR>
+nmap <leader>ir :InstantRst<CR>
 "keep search matches in the middle of the window
+nmap <leader>j :e ~/Documents/Riv/JOURNAL.rst<CR>
 nmap n nzzzv
 nmap N Nzzzv
 "keep jumping results in the middle of the window
@@ -212,11 +208,11 @@ vmap pp "+p
 "remap ctrl+p to launch fzy search
 nmap <c-p> :FuzzyOpen<CR>
 "get current date
-nmap <leader>d :r! date "+[\%Y-\%m-\%d \%H:\%M:\%S]"<CR>
+nmap <leader>d "=strftime("%d/%m/%y %H:%M:%S")<CR>P
 "formating the file
 nmap <leader>nf :Neoformat<cr>
 "Django remaps (<C-H> == <BS> == Backspace)
-nmap <CR> :DjangoSwitch<CR>
+" nmap <CR> :DjangoSwitch<CR>
 "Goyo
 nmap <leader>g :Goyo
 "Split line (sister to [J]oin lines)
@@ -369,6 +365,7 @@ set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 "11 printing
 "12 messages and info
 set showcmd "show command keys in the status line
+set noshowmode "don't display the current mode in the status line
 "13 selecting text
 set clipboard=unnamed
 "set clipboard=unnamedplus
@@ -439,6 +436,31 @@ iabbrev pritn print
 " =============================================================================
 "}}}
 "{{{ Garbage
-set noshowmode
-"}}}
 
+" viewing python documentation on the word under the cursor with 'K'
+function! ShowPydoc(what)
+  let bufname = a:what . ".pydoc"
+  " check if the buffer exists already
+  if bufexists(bufname)
+    let winnr = bufwinnr(bufname)
+    if winnr != -1
+      " if the buffer is already displayed, switch to that window
+      execute winnr "wincmd w"
+    else
+      " otherwise, open the buffer in a split
+      execute "sbuffer" bufname
+    endif
+  else
+    " create a new buffer, set the nofile buftype and don't display it in the
+    " buffer list
+    execute "split" fnameescape(bufname)
+    setlocal buftype=nofile
+    setlocal nobuflisted
+    " read the output from pydoc
+    execute "r !" . shellescape(s:pydoc_path, 1) . " " . shellescape(a:what, 1)
+  endif
+  " go to the first line of the document
+  1
+endfunction
+
+"}}}

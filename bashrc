@@ -28,9 +28,6 @@ alias myip='curl http://ipecho.net/plain; echo'
 alias p1='ping 192.168.1.1'
 alias p8='ping 8.8.8.8 -c 100'
 
-alias todo='v $HOME/Documents/Repos/VimWiki/TODO.md'
-alias vimwiki='v $HOME/Documents/Repos/VimWiki/index.md'
-alias journal='v $HOME/Documents/Repos/VimWiki/JOURNAL.md'
 # Pacman
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rs '
@@ -69,6 +66,8 @@ alias pmr='python manage.py runserver'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias tt='python manage.py test'
+
+alias f='firefox'
 
 # ex - archive extractor
 ex ()
