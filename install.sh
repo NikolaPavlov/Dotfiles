@@ -17,3 +17,4 @@ ln -sfv "$DOTFILES_DIR/Zathura" ~/.config/zathura
 ln -sfv "$DOTFILES_DIR/Git/.gitconfig" ~/
 ln -sfv "$DOTFILES_DIR/Irssi" ~/.irssi
 ln -sfv "$DOTFILES_DIR/Scripts/phonetic_keys.sh" ~/.phonetic_keys
+ln -sfv "$DOTFILES_DIR/.Xresources" ~/
