@@ -2,16 +2,6 @@
 **dotfiles**
 ============
 
-*bashrc* ---> bash config file
+.. note:: install.sh will setup all my dotfiles in place
 
-*config* ---> i3 config file
 
-*setup.py* ---> will setup all files in their places in my arch linux install
-
-*zathurarc* ---> zathura config file
-
-*neovim/init.vim* ---> neovimrc file
-
-*vim* ---> old vimrc
-
-*Scripts* ---> backup and phonetic scripts
