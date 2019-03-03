@@ -1,35 +1,65 @@
 ! fonts: /usr/share/fonts
-URxvt.font: xft:Hack-Regular:size=12
+! URxvt.font: xft:Hack-Regular:size=12
+URxvt.font: xft:Terminus (TTF):size=12
+URxvt.letterSpace: -1
+
+
+
+
+
+
+
+
+
+
+
+
+
 URxvt.scrollBar: false
 
-! Colors
+
+! Start badwolf
+
 URxvt*background: #000000
-URxvt*foreground: #B2B2B2
+URxvt*foreground: #f8f6f2
 ! black
-URxvt*color0:  #000000
-URxvt*color8:  #686868
+URxvt*color0:  #141413
+URxvt*color8:  #000000
 ! red
-URxvt*color1:  #B21818
-URxvt*color9:  #FF5454
+URxvt*color1:  #ff2c4b
+URxvt*color9:  #B21818
 ! green
-URxvt*color2:  #18B218
-URxvt*color10: #54FF54
+URxvt*color2:  #aeee00
+URxvt*color10: #18B218
 ! yellow
-URxvt*color3:  #B26818
-URxvt*color11: #FFFF54
+URxvt*color3:  #fade3e
+URxvt*color11: #ffa724
 ! blue
-URxvt*color4:  #1818B2
-URxvt*color12: #5454FF
+URxvt*color4:  #0a9dff
+URxvt*color12: #1818B2
 ! purple
-URxvt*color5:  #B218B2
-URxvt*color13: #FF54FF
+URxvt*color5:  #ff9eb8
+URxvt*color13: #ff9eb8
 ! cyan
-URxvt*color6:  #18B2B2
-URxvt*color14: #54FFFF
+URxvt*color6:  #8cffba
+URxvt*color14: #8cffba
 ! white
-URxvt*color7:  #B2B2B2
-URxvt*color15: #FFFFFF
+URxvt*color7:  #d9cec3
+URxvt*color15: #d9cec3
 
+URxvt*cursorColor: #aeee00
+URxvt*fadeColor: #ffffff
 
+! Fade when window loose focus
+URxvt*fading: 5
 
-URxvt*cursorColor:    #FF69B4
+! Do not scroll to bottom when urxvt recieves output
+URxvt*scrollTtyOutput:  false
+URxvt*scrollWithBuffer:  false
+
+! VisualBell
+URxvt*visualBell:  true
+
+! Use the specified colour to disp1ay underlined characters when the foreground colour is the default. Makes it easier to notice, rxvt-unicode authors choice as well.
+URxvt*colorUL:  yellow
+
