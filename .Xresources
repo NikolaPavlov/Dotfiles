@@ -1,14 +1,20 @@
 ! fonts: /usr/share/fonts
 ! URxvt.font: xft:Hack-Regular:size=12
-URxvt.font: xft:Terminus (TTF):size=12
-URxvt.letterSpace: -1
+! URxvt.font: xft:Terminus (TTF):size=12
+! URxvt.font: xft:Hack:size=12
 
 
 
 
+URxvt*font: xft:Terminus (TTF):pixelsize=14:minspace=False, xft:Inconsolata Nerd Font Mono:pixelsize=14
+URxvt*boldFont: xft:Terminus (TTF):pixelsize=16:minspace=False, xft:Inconsolata Nerd Font Mono:pixelsize=16
+URxvt*letterSpace: 0
 
 
-
+! hotfix for the missing icons
+! URxvt*font:                 xft:Inconsolata Nerd Font Mono:pixelsize=27:minspace=False, xft:DejaVu Sans:pixelsize=18
+! URxvt*boldFont:             xft:Inconsolata Nerd Font Mono:pixelsize=27:minspace=False, xft:DejaVu Sans:pixelsize=18
+! URxvt*letterSpace: 0
 
 
 
@@ -16,6 +22,7 @@ URxvt.letterSpace: -1
 
 
 URxvt.scrollBar: false
+
 
 
 ! Start badwolf
@@ -62,4 +69,3 @@ URxvt*visualBell:  true
 
 ! Use the specified colour to disp1ay underlined characters when the foreground colour is the default. Makes it easier to notice, rxvt-unicode authors choice as well.
 URxvt*colorUL:  yellow
-
