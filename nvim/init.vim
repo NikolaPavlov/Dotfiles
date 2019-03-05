@@ -91,13 +91,13 @@ filetype off
   call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
   call dein#add('kshenoy/vim-signature') "display the marks in the side line
 
-  call dein#add('umutcoskun/vim-mule')
-    "Selected interpreter to run commands.
-    let g:mule_python_command = 'python3'
-    "Auto enable virtual environment.
-    let g:mule_auto_env = 1
-    "No default mule hotkeys
-    let g:mule_no_hotkeys = 1
+  " call dein#add('umutcoskun/vim-mule')
+  "   "Selected interpreter to run commands.
+  "   let g:mule_python_command = 'python3'
+  "   "Auto enable virtual environment.
+  "   let g:mule_auto_env = 1
+  "   "No default mule hotkeys
+  "   let g:mule_no_hotkeys = 1
 
   call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
 
@@ -462,5 +462,10 @@ function! ShowPydoc(what)
   " go to the first line of the document
   1
 endfunction
+
+
+
+:set shada='20,<50,s10 "reduce shada file size
+
 
 "}}}
