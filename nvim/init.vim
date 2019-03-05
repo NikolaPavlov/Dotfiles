@@ -19,36 +19,47 @@ let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.7')
 
 filetype off
 "Setup DeinVim PluginManager -------------------------------------------------
-  if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
+if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
     call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
     call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
-  endif
-  if &compatible
-    set nocompatible
-  endif
+endif
 
-  set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
-  call dein#begin(expand('~/.config/nvim/repos/github.com'))
-  call dein#add('Shougo/dein.vim')
+if &compatible
+    set nocompatible
+endif
+
+set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
+call dein#begin(expand('~/.config/nvim/repos/github.com'))
+call dein#add('Shougo/dein.vim')
+
 "------------------------>start installing plugins<----------------------------
   call dein#add('Shougo/deoplete.nvim') "autocomplete engine
   call dein#add('Shougo/context_filetype.vim') "completion from other opened files
-  call dein#add('davidhalter/jedi-vim') "need for go to definitions
+  " call dein#add('davidhalter/jedi-vim') "need for go to definitions
   call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
-  call dein#add('SirVer/ultisnips')
-  call dein#add('honza/vim-snippets')
+  "
+  " call dein#add('SirVer/ultisnips')
+  " call dein#add('honza/vim-snippets')
+
+
+
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
+
+
   call dein#add('w0rp/ale') "linter on the fly
   call dein#add('sbdchd/neoformat') "formater
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify') "show git diff in the left bar
   call dein#add('tpope/vim-fugitive') "git wrapper (integration)
-  call dein#add('wellle/targets.vim') "add 'ci(' command
-  call dein#add('tpope/vim-surround') "change surroundings
-  call dein#add('tpope/vim-repeat') "repeat surround commands
-  call dein#add('tomtom/tcomment_vim') "comment plugin
+   call dein#add('wellle/targets.vim') "add 'ci(' command
+   call dein#add('tpope/vim-surround') "change surroundings
+   call dein#add('tpope/vim-repeat') "repeat surround commands
+   call dein#add('tomtom/tcomment_vim') "comment plugin
   call dein#add('janko-m/vim-test') "run tests from vim
   call dein#add('junegunn/gv.vim') "git log viewer
-  call dein#add('907th/vim-auto-save') "auto save when exit normal mode
+  " TODO:" call dein#add('907th/vim-auto-save') "auto save when exit normal mode
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') "showing git status flags in nerdtree
   call dein#add('jiangmiao/auto-pairs') "match quotes, brackets, parenthesis
@@ -57,7 +68,7 @@ filetype off
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
   call dein#add('ryanoasis/vim-devicons') "icons in vim (nerdtree, airline, ctrlP)
   call dein#add('tweekmonster/impsort.vim') "import sorting
-  call dein#add('ervandew/supertab')
+  " call dein#add('ervandew/supertab')
   call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
   call dein#add('flazz/vim-colorschemes') "many colorschemes
   call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
@@ -73,44 +84,64 @@ filetype off
   call dein#add('Rykka/riv.vim')
   call dein#add('gu-fan/InstantRst') " rst instant preview
 
-  " call dein#add('umutcoskun/vim-mule')
-  "   "Selected interpreter to run commands.
-  "   let g:mule_python_command = 'python3'
-  "   "Auto enable virtual environment.
-  "   let g:mule_auto_env = 1
-  "   "No default mule hotkeys
-  "   let g:mule_no_hotkeys = 1
 
 
-  "https://github.com/tweekmonster/django-plus.vim
+
+
+
+  call dein#add('liuchengxu/vim-which-key')
+  let g:mapleader=','
+  let g:maplocalleader='/'
+  nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
+  nnoremap <silent> <localleader> :<c-u>WhichKey  '/'<CR>
+
+  " call dein#add('Shougo/deol.nvim') "nvim terminal
+  " call dein#add('Shougo/deoppet.nvim') "snippets plugin
+  " call dein#add('Shougo/defx.nvim') "dark NerdTree
+  
+  " https://github.com/tweekmonster/django-plus.vim
 "--------------------------->finish installing plugins<---------------------------
+
   call dein#end()
   call dein#save_state()
+
   if dein#check_install()
     call dein#install()
   endif
+
   filetype plugin indent on
+
 "}}}
 " {{{ Plugin Options
 " {{{ Deoplete
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#enable_smart_case = 1
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+let g:AutoPairsMapCR=0
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+
+
+
+
 " }}}
-" {{{ Honza/vim-snippets
+" {{{  UltiSnips + Honza/vim-snippets
     let g:UltiSnipsExpandTrigger="<Tab>"
     let g:UltiSnipsListSnippets="<c-Tab>" "list the snippets
     let g:UltiSnipsJumpForwardTrigger="<Tab>"
     let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
     let g:UltiSnipsSnippetsDir = split(&runtimepath, ',')[0] . '/snips'
-    let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
 " }}}
 " {{{ Neoformat
     let g:neoformat_enabled_python = ['autopep8']
-    " let g:neoformat_enabled_python = ['black', 'autopep8']
+    " let g:neoformat_enabled_python = ['black']
     let g:neoformat_run_all_formatters = 1
-    "
-    "let g:neoformat_verbose = 1 "debug setting for neoformat
-    "let &verbose            = 1 "debug setting for neoformat
 " }}}
 " {{{ GV
     let test#strategy = "neovim"
@@ -127,7 +158,7 @@ filetype off
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
 " }}}
 " {{{ SuperTab
-    let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
+    " let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
 " }}}
 " {{{ VimSlash
   if has('timers')
@@ -151,112 +182,6 @@ filetype off
     let g:instant_rst_localhost_only = 1
 " }}}
 " }}}
-"{{{ Remaps
-
-" =============================================================================
-"  _____
-" |  __ \
-" | |__) |___ _ __ ___   __ _ _ __  ___
-" |  _  // _ \ '_ ` _ \ / _` | '_ \/ __|
-" | | \ \  __/ | | | | | (_| | |_) \__ \
-" |_|  \_\___|_| |_| |_|\__,_| .__/|___/
-"                            | |
-"                            |_|
-" =============================================================================
-
-let mapleader=","
-"Markdown preview
-map <leader>md :MarkdownPreview<CR>
-"NerdTree bindings-------------------------------------------------------------
-nmap t :NERDTreeToggle<CR>
-" nmap tb :NERDTreeFromBookmark 
-"Tab for navigating between split screens
-nmap <tab> <c-w><c-w>
-" autoclose vim if only open window is NerdTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"Keys maps---------------------------------------------------------------------
-"better regular expressions searching
-nmap / /\v
-nmap ? ?\v
-"move currsor with j and k on wrap lines too
-nmap j gj
-nmap k gk
-" no highlight
-nmap <leader><leader> :noh<cr>
-" map ; to :
-nmap ; :
-"turn on off spell checking with ,s
-nmap <silent><leader>s :set spell!<CR>
-"folding and unfolding with Space
-nmap <Space> za
-"jj as Esc alternative
-inoremap jj <Esc>
-"select all text
-map <leader>a ggVG
-"sort selected text
-vmap <leader>ss :sort<CR>
-"moving code blocks
-vmap < <gv
-vmap > >gv
-"substitute with ctrl + s
-nmap <c-s> :%s/
-vmap <c-s> :s/
-"edit vimrc in the current window
-nmap <leader>e :e $MYVIMRC<CR>
-"edit bashrc in the current window
-nmap <leader>b :e ~/Documents/Repos/Dotfiles/bashrc<CR>
-" open riv wiki index.rst
-nmap <leader>w :e ~/Documents/Riv/index.rst<CR>
-nmap <leader>ir :InstantRst<CR>
-" open TODO.rst
-nmap <leader>t :e ~/Documents/Riv/TODO.rst<CR>
-"keep search matches in the middle of the window
-nmap <leader>j :e ~/Documents/Riv/JOURNAL.rst<CR>
-nmap n nzzzv
-nmap N Nzzzv
-"keep jumping results in the middle of the window
-nmap g; g;zz
-nmap g, g,zz
-"comment <leader>c
-map <leader>c :TComment<cr>
-"sorting the python imports
-map <leader>is :ImpSort!<cr>
-"replace visualy selected text with the what is in the paste register
-vmap pp "+p
-"remap ctrl+p to launch fzy search
-nmap <c-p> :FuzzyOpen<CR>
-"get current date
-nmap <leader>d "=strftime("%d/%m/%y %H:%M:%S")<CR>P
-"formating the file
-nmap <leader>nf :Neoformat<cr>
-"Django remaps (<C-H> == <BS> == Backspace)
-" nmap <CR> :DjangoSwitch<CR>
-"Goyo
-nmap <leader>g :Goyo
-"Split line (sister to [J]oin lines)
-nmap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
-"limelight
-nmap <leader>l :Limelight
-
-" TODO: add buffer aliases
-" -----------------------------------------------------------------------------
-"forcing saving files that require root permission with :W
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-"run python code in vim <F5>
-nmap <F5> <ESC>:w<CR>:execute "!python %"<CR>
-" test mappings
-nmap <silent> <leader>tt :TestSuite<CR>
-nmap <silent> <leader>tn :TestNearest<CR>
-nmap <silent> <leader>tf :TestFile<CR>
-"auto chmod +x if file begin with #! and contains /bin/
-au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
-" When editing a file, always jump to the last known cursor position.
-autocmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-\ endif
-"------------------------------------------------------------------------------
-"}}}
 "{{{ Filetype specific
 "{{{ Django
 
@@ -430,6 +355,157 @@ colorscheme badwolf
 set clipboard+=unnamedplus
 "
 "}}}
+"{{{ Remaps
+
+" =============================================================================
+"  _____
+" |  __ \
+" | |__) |___ _ __ ___   __ _ _ __  ___
+" |  _  // _ \ '_ ` _ \ / _` | '_ \/ __|
+" | | \ \  __/ | | | | | (_| | |_) \__ \
+" |_|  \_\___|_| |_| |_|\__,_| .__/|___/
+"                            | |
+"                            |_|
+" =============================================================================
+let mapleader=','
+let maplocalleader='//'
+" {{{ Open files
+
+    "edit init.vim in the current window
+    nmap <leader>ev :e $MYVIMRC<CR>
+    "edit bashrc in the current window
+    nmap <leader>eb :e ~/Documents/Repos/Dotfiles/bashrc<CR>
+    " open riv wiki index.rst
+    nmap <leader>ew :e ~/Documents/Riv/index.rst<CR>
+    " open TODO.rst
+    nmap <leader>et :e ~/Documents/Riv/TODO.rst<CR>
+    "keep search matches in the middle of the window
+    nmap <leader>ej :e ~/Documents/Riv/JOURNAL.rst<CR>
+
+" }}}
+" {{{ Test mappings
+
+    nmap <silent> <leader>tt :TestSuite<CR>
+    nmap <silent> <leader>tn :TestNearest<CR>
+    nmap <silent> <leader>tf :TestFile<CR>
+
+" }}}
+" {{{ Other
+
+    "Tab for navigating between split screens
+    nmap <tab> <c-w><c-w>
+    " autoclose vim if only open window is NerdTree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    "better regular expressions searching
+    nmap / /\v
+    nmap ? ?\v
+    "move currsor with j and k on wrap lines too
+    nmap j gj
+    nmap k gk
+    " no highlight
+    nmap <leader><leader> :noh<cr>
+    " map ; to :
+    nmap ; :
+    "turn on off spell checking with ,s
+    nmap <silent><leader>s :set spell!<CR>
+    "folding and unfolding with Space
+    nmap <Space> za
+    "jj as Esc alternative
+    inoremap jj <Esc>
+    "select all text
+    map <leader>a ggVG
+    "sort selected text
+    vmap <leader>ss :sort<CR>
+    "moving code blocks
+    vmap < <gv
+    vmap > >gv
+    "substitute with ctrl + s
+    nmap <c-s> :%s/
+    vmap <c-s> :s/
+    nmap n nzzzv
+    nmap N Nzzzv
+    "keep jumping results in the middle of the window
+    nmap g; g;zz
+    nmap g, g,zz
+    "sorting the python imports
+    map <leader>is :ImpSort!<cr>
+    "replace visualy selected text with the what is in the paste register
+    vmap pp "+p
+    "get current date
+    nmap <leader>d "=strftime("%d/%m/%y %H:%M:%S")<CR>P
+    "Split line (sister to [J]oin lines)
+    nmap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+
+
+    "run python code in vim <F5>
+    nmap <F5> <ESC>:w<CR>:execute "!python %"<CR>
+
+    "forcing saving files that require root permission with :W
+    command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
+    "auto chmod +x if file begin with #! and contains /bin/
+    au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
+
+    " When editing a file, always jump to the last known cursor position.
+    autocmd BufReadPost *
+                \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                \   exe "normal! g`\"" |
+                \ endif
+
+" }}}
+" {{{ Plugin based remaps
+"
+    " rst preview
+    nmap <leader>ir :InstantRst<CR>
+    " open/close NerdTree
+    nmap t :NERDTreeToggle<CR>
+
+    "comment <leader>c
+    map <leader>c :TComment<cr>
+
+    "limelight on/off
+    nmap <leader>l :Limelight<CR>
+
+    "Goyo on/off
+    nmap <leader>g :Goyo<CR>
+
+    "formating the file
+    nmap <leader>nf :Neoformat<cr>
+
+    "ctrl+p to launch fzy search
+    nmap <c-p> :FuzzyOpen<CR>
+
+    " UndoTree on/off
+    nmap <leader>u :UndotreeToggle<CR>
+
+" }}}
+" {{{ Windows moving
+
+    " nnoremap <C-h> <C-w>h
+    " nnoremap <C-j> <C-w>j
+    " nnoremap <C-k> <C-w>k
+    " nnoremap <C-l> <C-w>l
+
+    " Move between windows.
+    " xnoremap <C-h> <C-w>h
+    " xnoremap <C-j> <C-w>j
+    " xnoremap <C-k> <C-w>k
+    " xnoremap <C-l> <C-w>l
+
+    " nmap <silent> <Up> xxx<CR>
+    " nmap <silent> <Down> xxx<CR>
+    " nmap <silent> <Left> xxx<CR>
+    " nmap <silent> <Right> xxx<CR>
+
+
+    " nmap <silent> <S-Up> xxx<CR>
+    " nmap <silent> <S-Down> xxx<CR>
+    " nmap <silent> <S-Left> xxx<CR>
+    " nmap <silent> <S-Right> :xx<CR>
+
+" }}}
+
+"}}}
 "{{{ Abbreviations
 
 iabbrev todo TODO:
@@ -469,7 +545,7 @@ function! ShowPydoc(what)
       execute "sbuffer" bufname
     endif
   else
-    " create a new buffer, set the nofile buftype and don't display it in the
+      " create a new buffer, set the nofile buftype and don't display it in the
     " buffer list
     execute "split" fnameescape(bufname)
     setlocal buftype=nofile
@@ -483,7 +559,24 @@ endfunction
 
 
 
-:set shada='20,<50,s10 "reduce shada file size
 
+  " call dein#add('umutcoskun/vim-mule')
+  "   "Selected interpreter to run commands.
+  "   let g:mule_python_command = 'python3'
+  "   "Auto enable virtual environment.
+  "   let g:mule_auto_env = 1
+  "   "No default mule hotkeys
+  "   let g:mule_no_hotkeys = 1
+
+
+
+
+highlight Comment cterm=italic
+
+" TODO: check vim buffers
+" open  last buffer
+nmap <leader>X <C-^>
+
+nmap <leader>q :quit<CR>
 
 "}}}

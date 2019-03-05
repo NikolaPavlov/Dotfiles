@@ -136,3 +136,5 @@ complete -cf sudo
 if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
