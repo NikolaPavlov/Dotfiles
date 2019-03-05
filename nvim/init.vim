@@ -19,121 +19,122 @@ let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.7')
 
 filetype off
 "Setup DeinVim PluginManager -------------------------------------------------
-  if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
+if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
     call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
     call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
-  endif
-  if &compatible
+endif
+if &compatible
     set nocompatible
-  endif
+endif
 
-  set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
-  call dein#begin(expand('~/.config/nvim/repos/github.com'))
-  call dein#add('Shougo/dein.vim')
+set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
+call dein#begin(expand('~/.config/nvim/repos/github.com'))
+call dein#add('Shougo/dein.vim')
 "------------------------>start installing plugins<----------------------------
-  call dein#add('Shougo/deoplete.nvim') "autocomplete engine
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#enable_smart_case = 1
-  call dein#add('Shougo/context_filetype.vim') "completion from other opened files
-  call dein#add('davidhalter/jedi-vim') "need for go to definitions
-  call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
-  call dein#add('SirVer/ultisnips')
-  call dein#add('honza/vim-snippets')
-    let g:UltiSnipsExpandTrigger="<Tab>"
-    let g:UltiSnipsListSnippets="<c-Tab>" "list the snippets
-    let g:UltiSnipsJumpForwardTrigger="<Tab>"
-    let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-    let g:UltiSnipsSnippetsDir = split(&runtimepath, ',')[0] . '/snips'
-    let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
-  call dein#add('w0rp/ale') "linter on the fly
-  call dein#add('sbdchd/neoformat') "formater
-    " let g:neoformat_enabled_python = ['black', 'autopep8']
-    let g:neoformat_enabled_python = ['autopep8']
-    let g:neoformat_run_all_formatters = 1
-    "let g:neoformat_verbose = 1 "debug setting for neoformat
-    "let &verbose            = 1 "debug setting for neoformat
-  call dein#add('Vimjas/vim-python-pep8-indent')
-  call dein#add('mhinz/vim-signify') "show git diff in the left bar
-  call dein#add('tpope/vim-fugitive') "git wrapper (integration)
-  call dein#add('wellle/targets.vim') "add 'ci(' command
-  call dein#add('tpope/vim-surround') "change surroundings
-  call dein#add('tpope/vim-repeat') "repeat surround commands
-  call dein#add('tomtom/tcomment_vim') "comment plugin
-  call dein#add('janko-m/vim-test') "run tests from vim
-  call dein#add('junegunn/gv.vim') "git log viewer
-    let test#strategy = "neovim"
-    let test#python#runner = 'pytest'
-  call dein#add('907th/vim-auto-save') "auto save when exit normal mode
-    let g:auto_save = 1  "enable AutoSave on Vim startup
-    let g:auto_save_silent = 1  "do not display the auto-save notification
-  call dein#add('scrooloose/nerdtree')
-    let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
-  call dein#add('Xuyuanp/nerdtree-git-plugin') "showing git status flags in nerdtree
-  call dein#add('jiangmiao/auto-pairs') "match quotes, brackets, parenthesis
-  call dein#add('Valloric/MatchTagAlways') "always highlight html enclosing tags
-  call dein#add('bronson/vim-trailing-whitespace') "colorize red trailing whitspaces
-  call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
-    let g:SimpylFold_docstring_preview=1 "display docstrings in folds
-  call dein#add('ryanoasis/vim-devicons') "icons in vim (nerdtree, airline, ctrlP)
-  call dein#add('tweekmonster/impsort.vim') "import sorting
-  call dein#add('ervandew/supertab')
-    let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
-  call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-  call dein#add('flazz/vim-colorschemes') "many colorschemes
-  " call dein#add('vim-airline/vim-airline')
-  " call dein#add('vim-airline/vim-airline-themes')
-    " let g:airline_theme='badwolf'
-    " let g:airline_theme='bubblegum'
-  call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
-  call dein#add('junegunn/limelight.vim') "lime line focus rice <leader>l
-  call dein#add('junegunn/goyo.vim') "focus mode :Goyo
-  call dein#add('mbbill/undotree') "undo history :UndotreeShow
-  call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
-  call dein#add('kshenoy/vim-signature') "display the marks in the side line
+call dein#add('Shougo/deoplete.nvim') "autocomplete engine (as YouCompleteMe)
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+call dein#add('Shougo/context_filetype.vim') "completion from other opened files
+call dein#add('davidhalter/jedi-vim') "need for go to definitions
+call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+call dein#add('SirVer/ultisnips')
+call dein#add('honza/vim-snippets')
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsListSnippets="<c-Tab>" "list the snippets
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+let g:UltiSnipsSnippetsDir = split(&runtimepath, ',')[0] . '/snips'
+let g:UltiSnipsSnippetDirectories = [g:UltiSnipsSnippetsDir]
+call dein#add('w0rp/ale') "linter on the fly
+call dein#add('sbdchd/neoformat') "formater
+" let g:neoformat_enabled_python = ['black', 'autopep8']
+let g:neoformat_enabled_python = ['autopep8']
+let g:neoformat_run_all_formatters = 1
+"let g:neoformat_verbose = 1 "debug setting for neoformat
+"let &verbose            = 1 "debug setting for neoformat
+call dein#add('Vimjas/vim-python-pep8-indent')
+call dein#add('mhinz/vim-signify') "show git diff in the left bar
+call dein#add('tpope/vim-fugitive') "git wrapper (integration)
+call dein#add('wellle/targets.vim') "add 'ci(' command
+call dein#add('tpope/vim-surround') "change surroundings
+call dein#add('tpope/vim-repeat') "repeat surround commands
+call dein#add('tomtom/tcomment_vim') "comment plugin
+call dein#add('janko-m/vim-test') "run tests from vim
+call dein#add('junegunn/gv.vim') "git log viewer
+let test#strategy = "neovim"
+let test#python#runner = 'pytest'
+call dein#add('907th/vim-auto-save') "auto save when exit normal mode
+let g:auto_save = 1  "enable AutoSave on Vim startup
+let g:auto_save_silent = 1  "do not display the auto-save notification
+call dein#add('scrooloose/nerdtree')
+let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
+call dein#add('Xuyuanp/nerdtree-git-plugin') "showing git status flags in nerdtree
+call dein#add('jiangmiao/auto-pairs') "match quotes, brackets, parenthesis
+call dein#add('Valloric/MatchTagAlways') "always highlight html enclosing tags
+call dein#add('bronson/vim-trailing-whitespace') "colorize red trailing whitspaces
+call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
+let g:SimpylFold_docstring_preview=1 "display docstrings in folds
+call dein#add('ryanoasis/vim-devicons') "icons in vim (nerdtree, airline, ctrlP)
+call dein#add('tweekmonster/impsort.vim') "import sorting
+call dein#add('ervandew/supertab')
+let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
+call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
+call dein#add('flazz/vim-colorschemes') "many colorschemes
+" call dein#add('vim-airline/vim-airline')
+" call dein#add('vim-airline/vim-airline-themes')
+" let g:airline_theme='badwolf'
+" let g:airline_theme='bubblegum'
+call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
+call dein#add('junegunn/limelight.vim') "lime line focus rice <leader>l
+call dein#add('junegunn/goyo.vim') "focus mode :Goyo
+call dein#add('mbbill/undotree') "undo history :UndotreeShow
+call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
+call dein#add('kshenoy/vim-signature') "display the marks in the side line
 
-  " call dein#add('umutcoskun/vim-mule')
-  "   "Selected interpreter to run commands.
-  "   let g:mule_python_command = 'python3'
-  "   "Auto enable virtual environment.
-  "   let g:mule_auto_env = 1
-  "   "No default mule hotkeys
-  "   let g:mule_no_hotkeys = 1
+" call dein#add('umutcoskun/vim-mule')
+"   "Selected interpreter to run commands.
+"   let g:mule_python_command = 'python3'
+"   "Auto enable virtual environment.
+"   let g:mule_auto_env = 1
+"   "No default mule hotkeys
+"   let g:mule_no_hotkeys = 1
 
-  call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
+call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
 
-  call dein#add('junegunn/vim-slash') " improve highlight search
-  if has('timers')
+call dein#add('junegunn/vim-slash') " improve highlight search
+if has('timers')
     " Blink 2 times with 50ms interval
-   noremap <expr> <plug>(slash-after) slash#blink(2, 50)
-  endif
+    noremap <expr> <plug>(slash-after) slash#blink(2, 50)
+endif
 
-  call dein#add('vim-scripts/bufexplorer.zip') " :BufExplorer
+call dein#add('vim-scripts/bufexplorer.zip') " :BufExplorer
 
-  call dein#add('itchyny/lightline.vim')
-    let g:lightline = {
-        \ 'colorscheme': 'jellybeans',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'fugitive#head'
-        \ },
-        \ }
+call dein#add('itchyny/lightline.vim')
+let g:lightline = {
+            \ 'colorscheme': 'jellybeans',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'fugitive#head'
+            \ },
+            \ }
 
 
-  call dein#add('Rykka/riv.vim')
-  call dein#add('gu-fan/InstantRst') " rst instant preview
-    let g:instant_rst_localhost_only = 1
+call dein#add('Rykka/riv.vim')
+call dein#add('gu-fan/InstantRst') " rst instant preview
+let g:instant_rst_localhost_only = 1
+call dein#add('tpope/vim-vinegar') " '-' for tree navigation
 
-  "https://github.com/tweekmonster/django-plus.vim
+"https://github.com/tweekmonster/django-plus.vim
 "--------------------------->finish installing plugins<---------------------------
-  call dein#end()
-  call dein#save_state()
-  if dein#check_install()
+call dein#end()
+call dein#save_state()
+if dein#check_install()
     call dein#install()
-  endif
-  filetype plugin indent on
+endif
+filetype plugin indent on
 "}}}
 "{{{ Remaps
 
@@ -234,9 +235,9 @@ nmap <silent> <leader>tf :TestFile<CR>
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-\ endif
+            \ if line("'\"") > 1 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
 "------------------------------------------------------------------------------
 "}}}
 "{{{ Filetype specific
@@ -451,7 +452,7 @@ function! ShowPydoc(what)
       execute "sbuffer" bufname
     endif
   else
-    " create a new buffer, set the nofile buftype and don't display it in the
+      " create a new buffer, set the nofile buftype and don't display it in the
     " buffer list
     execute "split" fnameescape(bufname)
     setlocal buftype=nofile
@@ -467,5 +468,15 @@ endfunction
 
 :set shada='20,<50,s10 "reduce shada file size
 
+" :help folding
+" :help buffers
+"
+" - Vinegear
+"
+" :help only ---> pop up from split windows
+"
+" c-j c-w c-k c-l ---> navigation between splits
+"
+" <C-i> == <TAB>
 
 "}}}
