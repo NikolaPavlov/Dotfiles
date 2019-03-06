@@ -1,7 +1,7 @@
 "{{{ Virtualenv fixer for neovim
 
-let g:python_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
-let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.7')
+    let g:python_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
+    let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.7')
 
 " }}}
 "{{{ Plugins
@@ -35,32 +35,21 @@ call dein#add('Shougo/dein.vim')
 "------------------------>start installing plugins<----------------------------
   call dein#add('Shougo/deoplete.nvim') "autocomplete engine
   call dein#add('Shougo/context_filetype.vim') "completion from other opened files
-  " call dein#add('davidhalter/jedi-vim') "need for go to definitions
+  call dein#add('davidhalter/jedi-vim') "need for go to definitions
   call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
-  "
-  " call dein#add('SirVer/ultisnips')
-  " call dein#add('honza/vim-snippets')
-
-
-
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  " call dein#add('honza/vim-snippets')
-  let g:neosnippet#snippets_directory="/home/gogo/Documents/Repos/Dotfiles/NeoSnippets"
-" *g:neosnippet#enable_snipmate_compatibility*
-
   call dein#add('w0rp/ale') "linter on the fly
   call dein#add('sbdchd/neoformat') "formater
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify') "show git diff in the left bar
   call dein#add('tpope/vim-fugitive') "git wrapper (integration)
-   call dein#add('wellle/targets.vim') "add 'ci(' command
-   call dein#add('tpope/vim-surround') "change surroundings
-   call dein#add('tpope/vim-repeat') "repeat surround commands
-   call dein#add('tomtom/tcomment_vim') "comment plugin
+  call dein#add('wellle/targets.vim') "add 'ci(' command
+  call dein#add('tpope/vim-surround') "change surroundings
+  call dein#add('tpope/vim-repeat') "repeat surround commands
+  call dein#add('tomtom/tcomment_vim') "comment plugin
   call dein#add('janko-m/vim-test') "run tests from vim
   call dein#add('junegunn/gv.vim') "git log viewer
-  " TODO:" call dein#add('907th/vim-auto-save') "auto save when exit normal mode
   call dein#add('scrooloose/nerdtree')
   call dein#add('Xuyuanp/nerdtree-git-plugin') "showing git status flags in nerdtree
   call dein#add('jiangmiao/auto-pairs') "match quotes, brackets, parenthesis
@@ -69,7 +58,6 @@ call dein#add('Shougo/dein.vim')
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
   call dein#add('ryanoasis/vim-devicons') "icons in vim (nerdtree, airline, ctrlP)
   call dein#add('tweekmonster/impsort.vim') "import sorting
-  " call dein#add('ervandew/supertab')
   call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
   call dein#add('flazz/vim-colorschemes') "many colorschemes
   call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
@@ -80,26 +68,17 @@ call dein#add('Shougo/dein.vim')
   call dein#add('kshenoy/vim-signature') "display the marks in the side line
   call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
   call dein#add('junegunn/vim-slash') " improve highlight search
-  call dein#add('vim-scripts/bufexplorer.zip') " :BufExplorer
   call dein#add('itchyny/lightline.vim')
+  call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
   call dein#add('Rykka/riv.vim')
   call dein#add('gu-fan/InstantRst') " rst instant preview
-
-
-
-
-
-
   call dein#add('liuchengxu/vim-which-key')
-  let g:mapleader=','
-  let g:maplocalleader='/'
-  nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
-  nnoremap <silent> <localleader> :<c-u>WhichKey  '/'<CR>
 
+
+  " call dein#add('honza/vim-snippets')
   " call dein#add('Shougo/deol.nvim') "nvim terminal
   " call dein#add('Shougo/deoppet.nvim') "snippets plugin
   " call dein#add('Shougo/defx.nvim') "dark NerdTree
-  
   " https://github.com/tweekmonster/django-plus.vim
 "--------------------------->finish installing plugins<---------------------------
 
@@ -116,50 +95,45 @@ call dein#add('Shougo/dein.vim')
 " {{{ Plugin Options
 " {{{ Deoplete
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-j>     <Plug>(neosnippet_expand_target)
 
-let g:AutoPairsMapCR=0
-let g:deoplete#auto_complete_start_length = 1
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
-imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+    let g:AutoPairsMapCR=0
+    let g:deoplete#auto_complete_start_length = 1
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_smart_case = 1
 
-
-
+    imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
+    imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+    imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 
 " }}}
-" {{{  UltiSnips + Honza/vim-snippets
-    let g:UltiSnipsExpandTrigger="<Tab>"
-    let g:UltiSnipsListSnippets="<c-Tab>" "list the snippets
-    let g:UltiSnipsJumpForwardTrigger="<Tab>"
-    let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-    let g:UltiSnipsSnippetsDir = split(&runtimepath, ',')[0] . '/snips'
+" {{{ Jedi-vim
+    " jedi vim is used for GO TO definitions
+    let g:jedi#completions_enabled = 0 " disable jedi-vim autocompletion, we use deoplete-jedi for that
 " }}}
 " {{{ Neoformat
+
     let g:neoformat_enabled_python = ['autopep8']
     " let g:neoformat_enabled_python = ['black']
     let g:neoformat_run_all_formatters = 1
+
+" }}}
+" {{{ NeoSnippet-snippets
+
+    let g:neosnippet#snippets_directory="$HOME/Documents/Repos/Dotfiles/NeoSnippets"
+
 " }}}
 " {{{ GV
     let test#strategy = "neovim"
     let test#python#runner = 'pytest'
-" }}}
-" {{{ Vimauto-save
-    let g:auto_save = 1  "enable AutoSave on Vim startup
-    let g:auto_save_silent = 1  "do not display the auto-save notification
 " }}}
 " {{{ NerdTree
     let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
 " }}}
 " {{{ SimpylFold
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
-" }}}
-" {{{ SuperTab
-    " let g:SuperTabDefaultCompletionType = "<c-n>" "complete from top to bottom
 " }}}
 " {{{ VimSlash
   if has('timers')
@@ -181,6 +155,14 @@ imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>Au
 " }}}
 " {{{ InstantRst
     let g:instant_rst_localhost_only = 1
+" }}}
+" {{{ VimWhichKey
+
+  let g:mapleader=','
+  let g:maplocalleader='\'
+  nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
+  nnoremap <silent> <localleader> :<c-u>WhichKey  '/'<CR>
+
 " }}}
 " }}}
 "{{{ Filetype specific
@@ -295,6 +277,7 @@ set hlsearch "highlight all matches for the last used search pattern
 set background=dark
 set cursorline "highlight the screen line of the cursor
 set colorcolumn=80 "columns to highlight (local to window)
+highlight Comment cterm=italic
 "6 multiple windows
 set laststatus=2 "when to show status line (2 = always)
 set splitbelow  "a new window is put below the current one
@@ -333,6 +316,7 @@ set foldlevelstart=10 "open most folds by default
 "18 mapping
 "19 reading and writing files
 set autoread "auto read file when it was modified outside of vim
+set autowriteall " automatically write file when leaving modified buffer
 "20 the swap file
 set noswapfile
 "21 command line editing
@@ -369,7 +353,13 @@ set clipboard+=unnamedplus
 "                            |_|
 " =============================================================================
 let mapleader=','
-let maplocalleader='//'
+let maplocalleader='\'
+" {{{ Open/Closing
+
+    nmap <leader>q :quit<CR>
+    nmap <leader>w :w <CR>
+
+" }}}
 " {{{ Open files
 
     "edit init.vim in the current window
@@ -456,8 +446,30 @@ let maplocalleader='//'
 " }}}
 " {{{ Plugin based remaps
 "
+    " {{{ Buftabline
+
+        nmap <leader>1 <Plug>BufTabLine.Go(1)
+        nmap <leader>2 <Plug>BufTabLine.Go(2)
+        nmap <leader>3 <Plug>BufTabLine.Go(3)
+        nmap <leader>4 <Plug>BufTabLine.Go(4)
+        nmap <leader>5 <Plug>BufTabLine.Go(5)
+        nmap <leader>6 <Plug>BufTabLine.Go(6)
+        nmap <leader>7 <Plug>BufTabLine.Go(7)
+        nmap <leader>8 <Plug>BufTabLine.Go(8)
+        nmap <leader>9 <Plug>BufTabLine.Go(9)
+        nmap <leader>0 <Plug>BufTabLine.Go(10)
+
+        " go between buffers
+        " nmap <leader>x <C-^>
+        nmap <up> <C-^>
+        nmap <left> :bprev<CR>
+        nmap <right> :bnext<CR>
+
+    " }}}
+
     " rst preview
     nmap <leader>ir :InstantRst<CR>
+
     " open/close NerdTree
     nmap t :NERDTreeToggle<CR>
 
@@ -569,23 +581,6 @@ endfunction
   "   "No default mule hotkeys
   "   let g:mule_no_hotkeys = 1
 
-
-
-
-highlight Comment cterm=italic
-
-" TODO: check vim buffers
-" open  last buffer
-nmap <leader>X <C-^>
-
-nmap <leader>q :quit<CR>
-nmap <leader>w :w <CR>
-
-
-" :only 
-
-
-
-
+" :only
 
 "}}}
