@@ -45,8 +45,9 @@ call dein#add('Shougo/dein.vim')
 
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-
-
+  " call dein#add('honza/vim-snippets')
+  let g:neosnippet#snippets_directory="/home/gogo/Documents/Repos/Dotfiles/NeoSnippets"
+" *g:neosnippet#enable_snipmate_compatibility*
 
   call dein#add('w0rp/ale') "linter on the fly
   call dein#add('sbdchd/neoformat') "formater
@@ -578,5 +579,13 @@ highlight Comment cterm=italic
 nmap <leader>X <C-^>
 
 nmap <leader>q :quit<CR>
+nmap <leader>w :w <CR>
+
+
+" :only 
+
+
+
+
 
 "}}}
