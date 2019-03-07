@@ -521,9 +521,7 @@ let maplocalleader='\'
 "}}}
 "{{{ Abbreviations
 
-iabbrev todo TODO:
 iabbrev todo: TODO:
-iabbrev TODO TODO:
 iabbrev pritn print
 
 "}}}
@@ -573,14 +571,7 @@ endfunction
 
 
 
-  " call dein#add('umutcoskun/vim-mule')
-  "   "Selected interpreter to run commands.
-  "   let g:mule_python_command = 'python3'
-  "   "Auto enable virtual environment.
-  "   let g:mule_auto_env = 1
-  "   "No default mule hotkeys
-  "   let g:mule_no_hotkeys = 1
 
-" :only
+" :only ?
 
 "}}}
