@@ -369,7 +369,7 @@ let mapleader=','
 let maplocalleader='\'
 " {{{ Open/Closing
 
-    nmap <leader>q :quit<CR>
+    nmap <leader>q :bd<CR>
     nmap <leader>w :w <CR>
 
 " }}}
@@ -534,8 +534,8 @@ let maplocalleader='\'
 "}}}
 "{{{ Abbreviations
 
-iabbrev todo: TODO:
-iabbrev pritn print
+    iabbrev todo: TODO:
+    iabbrev pritn print
 
 "}}}
 "{{{ Links
@@ -586,5 +586,15 @@ endfunction
 
 
 " :only
+
+" available keys in normal mode
+" leader<BS>
+
+
+
+" neovim terminal
+tnoremap <Esc> <C-\><C-n>
+
+
 
 "}}}
