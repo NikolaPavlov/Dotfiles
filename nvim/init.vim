@@ -44,6 +44,9 @@ call dein#add('Shougo/dein.vim')
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify') "show git diff in the left bar
   call dein#add('tpope/vim-fugitive') "git wrapper (integration)
+    " :Gstatus   :Gcommit :Gpush
+    " :Gdiff     :Gmerge  :Glog
+    " :Gblame    :Gpull
   call dein#add('wellle/targets.vim') "add 'ci(' command
   call dein#add('tpope/vim-surround') "change surroundings
   call dein#add('tpope/vim-repeat') "repeat surround commands
@@ -75,6 +78,7 @@ call dein#add('Shougo/dein.vim')
   call dein#add('liuchengxu/vim-which-key')
 
 
+  " call dein#add('sjl/splice.vim') " Vim diff tool
   " call dein#add('honza/vim-snippets')
   " call dein#add('Shougo/deol.nvim') "nvim terminal
   " call dein#add('Shougo/deoppet.nvim') "snippets plugin
@@ -572,6 +576,6 @@ endfunction
 
 
 
-" :only ?
+" :only
 
 "}}}
