@@ -1,0 +1,21 @@
+[user]
+	email = nikola.pavlov1955@gmail.com
+	name = Nikola Pavlov
+[diff]
+  external = ~/Documents/Repos/Dotfiles/Git/git_diff_wrapper.sh
+[pager]
+  diff =
+[color]
+  ui = auto
+[alias]
+  st = status -a
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
+  ch = checkout -
+  wslog = log --ignore-space-at-eol -p -w -b
+  wsdiff = diff --ignore-space-at-eol -w -b --no-ext-diff
+[merge]
+    tool = threesome
+[mergetool "threesome"]
+    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+    trustExitCode = true
+# vim: set et :
