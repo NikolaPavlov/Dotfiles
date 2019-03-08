@@ -44,9 +44,18 @@ call dein#add('Shougo/dein.vim')
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify') "show git diff in the left bar
   call dein#add('tpope/vim-fugitive') "git wrapper (integration)
-    " :Gstatus   :Gcommit :Gpush
-    " :Gdiff     :Gmerge  :Glog
-    " :Gblame    :Gpull
+    " :Gstatus
+    " :Gpush
+    " :Gpull
+    " :Gcommit
+    " :Gwrite
+    " :Gdiff
+    " :Gmerge
+    " :Glog
+    " :Gblame
+    "
+    "https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
+    "
   call dein#add('wellle/targets.vim') "add 'ci(' command
   call dein#add('tpope/vim-surround') "change surroundings
   call dein#add('tpope/vim-repeat') "repeat surround commands
