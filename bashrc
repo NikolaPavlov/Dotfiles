@@ -139,7 +139,6 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-
 # ssh agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
