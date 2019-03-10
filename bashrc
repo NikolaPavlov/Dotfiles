@@ -17,12 +17,16 @@ alias mkdir='mkdir -pv'
 alias wget='wget -c'
 alias du='ncdu'
 alias df='pydf'
+
+# ls aliases
 alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 # alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 # alias l='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 # alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias l='lsd -l'
 alias ll='lsd -l'
 alias la='lsd -la'
+
 alias grep='grep --color=tty -d skip'
 alias free='free -m'
 alias myip='curl http://ipecho.net/plain; echo'
@@ -32,7 +36,7 @@ alias p8='ping 8.8.8.8 -c 100'
 
 # Pacman
 alias install='sudo pacman -S '
-alias remove='sudo pacman -Rs '
+alias remove='sudo pacman -Rns '
 alias search='sudo  pacman -Ss '
 # Python
 alias p='python3.7'

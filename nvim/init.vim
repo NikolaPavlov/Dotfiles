@@ -435,8 +435,10 @@ let maplocalleader='\'
     map <leader>is :ImpSort!<cr>
     "replace visualy selected text with the what is in the paste register
     vmap pp "+p
+
     "get current date
-    nmap <leader>d "=strftime("%d/%m/%y %H:%M:%S")<CR>P
+    " nmap <leader>d "=strftime("%d/%m/%y %H:%M:%S")<CR>P
+
     "Split line (sister to [J]oin lines)
     nmap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
@@ -595,6 +597,6 @@ endfunction
 " neovim terminal
 tnoremap <Esc> <C-\><C-n>
 
-
+nmap <leader>d :bd<CR>
 
 "}}}
