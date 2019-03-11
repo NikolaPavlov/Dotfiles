@@ -584,14 +584,10 @@ function! ShowPydoc(what)
 endfunction
 
 
-
-
-
 " :only
 
 " available keys in normal mode
 " leader<BS>
-
 
 
 " neovim terminal
