@@ -135,7 +135,24 @@ call dein#add('Shougo/dein.vim')
 
     let g:neoformat_enabled_python = ['autopep8']
     " let g:neoformat_enabled_python = ['black']
-    let g:neoformat_run_all_formatters = 1
+    " let g:neoformat_run_all_formatters = 1
+
+    " let g:neoformat_javascript_prettier = {
+    "         \ 'exe': 'prettier',
+    "         \ 'args': ['--stdin',
+    "                 \'--no-bracket-spacing',
+    "                 \'--single-quote',
+    "                 \'--trailing-comma', 'all',
+    "                 \'--print-width', '90',
+    "                 \'--jsx-bracket-same-line'],
+    "         \ 'stdin': 1,
+    "         \ }
+    "
+    " let g:neoformat_enabled_javascript = ['prettier']
+
+    let g:neoformat_try_formatprg = 1
+
+
 
 " }}}
 " {{{ NeoSnippet-snippets
@@ -240,6 +257,18 @@ augroup ft_html
     " Django tags
     au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
 
+
+
+
+
+    autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
+    autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
+    autocmd FileType htmldjango inoremap {# {# #}<left><left><left>
+
 "}}}
 "{{{ Vagrant
 
@@ -272,6 +301,7 @@ augroup END
     au BufNewFile,BufRead *.txt set wrap textwidth=80
 
 "}}}
+"
 "}}}
 "{{{ General :options
 
@@ -611,5 +641,12 @@ tnoremap <Esc> <C-\><C-n>
 
 " jedi goto keybinding conflict
 nmap <leader>d :bd<CR>
+
+" TODO:
+" <C-e> remaps
+" <C-y> remaps
+"
+" :earlier 2m
+" :later 2m
 
 "}}}
