@@ -73,7 +73,9 @@ alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias tt='python manage.py test'
 
+# Programs
 alias f='firefox'
+alias r='ranger'
 
 # ex - archive extractor
 ex ()
@@ -152,3 +154,6 @@ fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
+
+# nvim as a manpage viewr
+export MANPAGER="nvim +set\ filetype=man -"

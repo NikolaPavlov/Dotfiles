@@ -88,6 +88,9 @@ call dein#add('Shougo/dein.vim')
   call dein#add('liuchengxu/vim-which-key')
 
 
+  call dein#add('jmcomets/vim-pony')
+  call dein#add('francoiscabrol/ranger.vim')
+    let g:pony_prefix='D'
   " call dein#add('sjl/splice.vim') " Vim diff tool
   " call dein#add('honza/vim-snippets')
   " call dein#add('Shougo/deol.nvim') "nvim terminal
@@ -126,6 +129,7 @@ call dein#add('Shougo/dein.vim')
 " {{{ Jedi-vim
     " jedi vim is used for GO TO definitions
     let g:jedi#completions_enabled = 0 " disable jedi-vim autocompletion, we use deoplete-jedi for that
+    let g:jedi#goto_command = "<leader>G"
 " }}}
 " {{{ Neoformat
 
@@ -176,6 +180,14 @@ call dein#add('Shougo/dein.vim')
   let g:maplocalleader='\'
   nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
   nnoremap <silent> <localleader> :<c-u>WhichKey  '/'<CR>
+
+" }}}
+" {{{ Ranger
+
+    " add this line if you use NERDTree
+    let g:NERDTreeHijackNetrw = 0
+    " open ranger when vim open a directory
+    let g:ranger_replace_netrw = 1
 
 " }}}
 " }}}
@@ -251,10 +263,13 @@ augroup ft_vim
 augroup END
 
 "}}}
+"{{{ NeoSnippets
+    au FileType neosnippet set noexpandtab
+"}}}
 "{{{ Text
 
-" no line wrap for txt files
-au BufNewFile,BufRead *.txt set wrap textwidth=80
+    " no line wrap for txt files
+    au BufNewFile,BufRead *.txt set wrap textwidth=80
 
 "}}}
 "}}}
@@ -379,7 +394,7 @@ let maplocalleader='\'
     "edit init.vim in the current window
     nmap <leader>ev :e $MYVIMRC<CR>
     "edit bashrc in the current window
-    nmap <leader>eb :e ~/Documents/Repos/Dotfiles/bashrc<CR>
+    nmap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
     " open riv wiki index.rst
     nmap <leader>ew :e ~/Documents/Riv/index.rst<CR>
     " open TODO.rst
@@ -594,6 +609,7 @@ endfunction
 " neovim terminal
 tnoremap <Esc> <C-\><C-n>
 
+" jedi goto keybinding conflict
 nmap <leader>d :bd<CR>
 
 "}}}
