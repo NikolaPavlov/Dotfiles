@@ -154,3 +154,6 @@ fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
+
+# nvim as a manpage viewr
+export MANPAGER="nvim +set\ filetype=man -"
