@@ -73,7 +73,9 @@ alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias tt='python manage.py test'
 
+# Programs
 alias f='firefox'
+alias r='ranger'
 
 # ex - archive extractor
 ex ()

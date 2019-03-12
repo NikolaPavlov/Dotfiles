@@ -34,7 +34,7 @@ snippet block
 
 
 snippet extends
-    {% extends ${1:base.html} %}${2}
+    {% extends "${1:base.html}" %}${2}
 
 
 snippet for
@@ -65,4 +65,4 @@ abbr if else Django
 
 snippet url
 abbr url Django
-	{% url ${1} as ${2} %}
+	{% url "${1}" %}
