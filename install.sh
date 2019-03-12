@@ -19,3 +19,4 @@ ln -sfv "$DOTFILES_DIR/Git/.gitconfig" $HOME
 ln -sfv "$DOTFILES_DIR/Irssi" ~/.irssi
 ln -sfv "$DOTFILES_DIR/Scripts" $HOME
 ln -sfv "$DOTFILES_DIR/Ranger/rc.conf" ~/.config/ranger/
+ln -sfv "$DOTFILES_DIR/Ranger/commands.py" ~/.config/ranger/
