@@ -8,6 +8,7 @@ EXTRA_DIR="$HOME/.extra"
 
 mkdir -p $HOME/.config/polybar
 mkdir -p $HOME/.config/nvim/undo_dir
+mkdir -p $HOME/.config/ranger
 
 ln -sfv "$DOTFILES_DIR/.bashrc" $HOME
 ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME

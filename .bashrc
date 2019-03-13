@@ -38,6 +38,7 @@ alias p8='ping 8.8.8.8 -c 100'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rns '
 alias search='sudo  pacman -Ss '
+alias y='yay'
 # Python
 alias p='python3.7'
 alias i='ipython'
@@ -157,3 +158,7 @@ fi
 
 # nvim as a manpage viewr
 export MANPAGER="nvim +set\ filetype=man -"
+
+# virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh

@@ -41,6 +41,12 @@ call dein#add('Shougo/dein.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('w0rp/ale') "linter on the fly
   call dein#add('sbdchd/neoformat') "formater
+  call dein#add('Chiel92/vim-autoformat') " formatter pretifier
+    let g:autoformat_autoindent = 0
+    let g:autoformat_retab = 0
+    let g:autoformat_remove_trailing_spaces = 0
+    " for debugging
+    let g:autoformat_verbosemode=1
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify') "show git diff in the left bar
   call dein#add('tpope/vim-fugitive') "git wrapper (integration)
@@ -87,8 +93,9 @@ call dein#add('Shougo/dein.vim')
   call dein#add('liuchengxu/vim-which-key')
 
 
-  call dein#add('jmcomets/vim-pony')
-  call dein#add('francoiscabrol/ranger.vim')
+  call dein#add('yuttie/comfortable-motion.vim') "scroll effect
+  call dein#add('jmcomets/vim-pony') "django goodies
+  call dein#add('francoiscabrol/ranger.vim') "ranger in vim
     let g:pony_prefix='D'
   " call dein#add('sjl/splice.vim') " Vim diff tool
   " call dein#add('honza/vim-snippets')
@@ -131,10 +138,27 @@ call dein#add('Shougo/dein.vim')
     let g:jedi#goto_command = "<leader>G"
 " }}}
 " {{{ Neoformat
+    " increase verbosity for debugging
+    let g:neoformat_verbose = 1
 
-    let g:neoformat_enabled_python = ['autopep8']
-    " let g:neoformat_enabled_python = ['black']
-    let g:neoformat_run_all_formatters = 1
+    " let g:neoformat_run_all_formatters = 1
+    " let g:neoformat_enabled_python = ['autopep8']
+    " let g:neoformat_enabled_python = ['autopep8', 'isort']
+    " let g:neoformat_enabled_javascript = ['js-beautify']
+
+    " Enable alignment
+    " let g:neoformat_basic_format_align = 1
+    " Enable tab to spaces conversion
+    " let g:neoformat_basic_format_retab = 1
+    " Enable trimmming of trailing whitespace
+    " let g:neoformat_basic_format_trim = 1
+
+
+    " Have Neoformat use &formatprg as a formatter
+    " let g:neoformat_try_formatprg = 1
+
+
+
 
 " }}}
 " {{{ NeoSnippet-snippets
@@ -147,7 +171,10 @@ call dein#add('Shougo/dein.vim')
     let test#python#runner = 'pytest'
 " }}}
 " {{{ NerdTree
+
+    let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
     let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
+
 " }}}
 " {{{ SimpylFold
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
@@ -187,6 +214,8 @@ call dein#add('Shougo/dein.vim')
     let g:NERDTreeHijackNetrw = 0
     " open ranger when vim open a directory
     let g:ranger_replace_netrw = 1
+    " disable the default key binding for calling ranger
+    let g:ranger_map_keys = 0
 
 " }}}
 " }}}
@@ -521,6 +550,9 @@ let maplocalleader='\'
     " UndoTree on/off
     nmap <leader>u :UndotreeToggle<CR>
 
+    " launch Ranger
+    map <leader>r :Ranger<CR>
+
 " }}}
 " {{{ Windows moving
 
@@ -610,5 +642,9 @@ tnoremap <Esc> <C-\><C-n>
 
 " jedi goto keybinding conflict
 nmap <leader>d :bd<CR>
+
+" auto formating the file and return where you've been
+map <F12> gg=G<C-o><C-o>
+
 
 "}}}
