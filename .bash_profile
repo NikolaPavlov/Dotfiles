@@ -2,5 +2,5 @@
 
 export PATH=$PATH:$HOME/.scripts
 export EDITOR="nvim"
-export TERMINAL="sacura"
+export TERMINAL="sakura"
 export BROWSER="firefox"

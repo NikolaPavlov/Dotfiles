@@ -457,11 +457,11 @@ let maplocalleader='\'
     "edit bashrc in the current window
     nmap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
     " open riv wiki index.rst
-    nmap <leader>ew :e ~/Documents/Riv/index.rst<CR>
+    nmap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
     " open TODO.rst
-    nmap <leader>et :e ~/Documents/Riv/TODO.rst<CR>
+    nmap <leader>et :e ~/Documents/Repos/Wiki/TODO.rst<CR>
     "keep search matches in the middle of the window
-    nmap <leader>ej :e ~/Documents/Riv/JOURNAL.rst<CR>
+    nmap <leader>ej :e ~/Documents/Repos/Wiki/JOURNAL.rst<CR>
 
 " }}}
 " {{{ Test mappings
@@ -525,7 +525,6 @@ let maplocalleader='\'
 
     "forcing saving files that require root permission with :W
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-
     "auto chmod +x if file begin with #! and contains /bin/
     au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
 
