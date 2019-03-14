@@ -13,7 +13,7 @@ mkdir -p $HOME/.config/ranger
 ln -sfv "$DOTFILES_DIR/.bashrc" $HOME
 ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME
 ln -sfv "$DOTFILES_DIR/nvim/init.vim" ~/.config/nvim/init.vim
-ln -sfv "$DOTFILES_DIR/i3" ~/.config/
+ln -sfv "$DOTFILES_DIR/i3/config" ~/.config/i3/
 ln -sfv "$DOTFILES_DIR/Polybar/config" ~/.config/polybar/config
 ln -sfv "$DOTFILES_DIR/Zathura" ~/.config/zathura
 ln -sfv "$DOTFILES_DIR/Git/.gitconfig" $HOME

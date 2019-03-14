@@ -149,12 +149,12 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # ssh agent
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<~/.ssh-agent-thing)"
-fi
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#     ssh-agent > ~/.ssh-agent-thing
+# fi
+# if [[ ! "$SSH_AUTH_SOCK" ]]; then
+#     eval "$(<~/.ssh-agent-thing)"
+# fi
 
 # nvim as a manpage viewr
 export MANPAGER="nvim +set\ filetype=man -"
