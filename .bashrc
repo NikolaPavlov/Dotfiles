@@ -134,7 +134,7 @@ fi
 . /usr/share/autojump/autojump.bash
 
 # vi mode in terminal
-set -o vi
+# set -o vi
 
 # change dirs withowth cd instead with ..
 shopt -s autocd
@@ -147,15 +147,7 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# ssh agent
-# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-#     ssh-agent > ~/.ssh-agent-thing
-# fi
-# if [[ ! "$SSH_AUTH_SOCK" ]]; then
-#     eval "$(<~/.ssh-agent-thing)"
-# fi
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # nvim as a manpage viewr
 export MANPAGER="nvim +set\ filetype=man -"
