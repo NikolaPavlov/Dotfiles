@@ -76,7 +76,8 @@ alias tt='python manage.py test'
 
 # Programs
 alias f='firefox'
-alias r='ranger'
+alias n='nnn -l'
+
 
 # ex - archive extractor
 ex ()

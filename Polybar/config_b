@@ -110,14 +110,9 @@ font-0 = "Misc Termsyn:size=12;2"
 font-1 = "Wuncon Siji:size=12;2"
 font-2 = Iosevka Nerd Font:style=Medium:size=18;3
 
-
-/* TODO: mark */
-/* modules-left = launcher left1 title left2 */
-/* modules-center = workspaces */
-modules-left = left1 title left2
-modules-center = i3
+modules-left = launcher left1 title left2
+modules-center = workspaces
 modules-right = right7 colors right6 alsa right5 battery right4 backlight right3 network right2 date right1 powermenu
-
 
 separator =
 spacing = 0
@@ -125,7 +120,7 @@ dim-value = 1.0
 wm-name = 
 locale = 
 
-tray-position = right
+tray-position = none
 tray-detached = false
 tray-maxsize = 16
 tray-transparent = false
@@ -143,7 +138,7 @@ throttle-output = 5
 throttle-output-for = 10
 throttle-input-for = 30
 
-screenchange-reload = true
+screenchange-reload = false
 
 compositing-background = source
 compositing-foreground = over
@@ -449,51 +444,8 @@ content-background = ${color.shade7}
 content-foreground = ${color.modulefg}
 content-padding = 1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* TODO: added by me */
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = true
-
-strip-wsnumbers = true
-pin-workspaces = true
-
-label-mode-padding = 2
-label-mode-foreground = ${color.pink}
-
-label-unfocused-foreground = ${color.green}
-label-unfocused-padding = 1
-
-label-visible-foregroud = ${color.pink}
-label-visible-padding = 1
-
-label-focused-foreground = ${color.red}
-label-focused-padding = 1
-
-label-urgent-padding = 1
-
-label-dimmed-underline = ${BAR.background}
-label-focused-underline = #0088CC
-
-
-
+click-left = ~/.config/polybar/scripts/color-switch.sh &
+click-right = ~/.config/polybar/scripts/type-switch.sh &
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;	    __________  ______

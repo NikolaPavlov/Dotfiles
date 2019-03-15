@@ -165,7 +165,8 @@ exec_always --no-startup-id ~/Documents/Repos/Dotfiles/Scripts/polybar_start.sh
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #00ffff #00ffff #00ffff #00ffff #00ffff
+# client.focused          #00ffff #00ffff #00ffff #00ffff #00ffff
+client.focused          #ff0000 #ff0000 #ff0000 #ff0000 #ff0000
 client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff
 
 # feh for set up wallpaper (need to install feh)

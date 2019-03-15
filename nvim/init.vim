@@ -93,10 +93,11 @@ call dein#add('Shougo/dein.vim')
   call dein#add('liuchengxu/vim-which-key')
 
 
+  call dein#add('mcchrish/nnn.vim') "nnn for nvim
   call dein#add('yuttie/comfortable-motion.vim') "scroll effect
   call dein#add('jmcomets/vim-pony') "django goodies
-  call dein#add('francoiscabrol/ranger.vim') "ranger in vim
     let g:pony_prefix='D'
+  " call dein#add('francoiscabrol/ranger.vim') "ranger in vim
   " call dein#add('sjl/splice.vim') " Vim diff tool
   " call dein#add('honza/vim-snippets')
   " call dein#add('Shougo/deol.nvim') "nvim terminal
@@ -226,16 +227,6 @@ call dein#add('Shougo/dein.vim')
   let g:maplocalleader='\'
   nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
   nnoremap <silent> <localleader> :<c-u>WhichKey  '/'<CR>
-
-" }}}
-" {{{ Ranger
-
-    " add this line if you use NERDTree
-    let g:NERDTreeHijackNetrw = 0
-    " open ranger when vim open a directory
-    let g:ranger_replace_netrw = 1
-    " disable the default key binding for calling ranger
-    let g:ranger_map_keys = 0
 
 " }}}
 " }}}
