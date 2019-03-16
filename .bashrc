@@ -79,6 +79,9 @@ alias f='firefox'
 alias n='nnn -l'
 alias clock='tty-clock -c'
 
+# Dir change
+alias cdd='cd ~/Documents'
+
 
 # ex - archive extractor
 ex ()
