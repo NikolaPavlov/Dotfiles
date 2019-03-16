@@ -1,15 +1,19 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-export PATH=$PATH:$HOME/.scripts
+export PATH=$PATH:$HOME/Scripts
+
 export EDITOR="nvim"
 export TERMINAL="sakura"
 export BROWSER="firefox"
+export READER="zathura"
+export IMAGEVIEWER='sxiv'
 
-# nnn env vars
-export NNN_OPENER=nvim
+# nnn
+export NNN_OPENER=xdg-open
+export NNN_FALLBACK_OPENER=nvim
 export NNN_USE_EDITOR=1
-export NNN_RESTRICT_0B=1
 export NNN_OPS_PROG=1
-# export NNN_SHOW_HIDDEN=1
-export NNN_BMS='d:~/Documents'
-export NNN_BMS='r:~/Documents/Repos'
+export NNN_SCRIPT="$HOME/Scripts/nnn"
+
+# nnn bookmarks
+export NNN_BMS="d:~/Documents;w:/media/400Gb/Wallpapers/;r:~/Documents/Repos;p:~/Projects;"

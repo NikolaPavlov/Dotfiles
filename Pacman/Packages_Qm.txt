@@ -1,0 +1,10 @@
+htop-vim-git 1077.402e46b-1
+nerd-fonts-iosevka 2.0.0-2
+package-query 1.9-3
+polybar 3.3.0-1
+popular-packages 0.5.0-1
+siji-git r23.c691f20-1
+tty-clock 2.3-1
+vidir 1.0.0-2
+xcursor-breeze 1:5.15.0-1
+yay 9.1.0-1
