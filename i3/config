@@ -161,7 +161,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift -l 42.6977:23.3219
 exec --no-startup-id telegram-desktop
 exec --no-startup-id ./.phonetic_keys.sh
-exec_always --no-startup-id ~/Documents/Repos/Dotfiles/Scripts/polybar_start.sh
+# exec_always --no-startup-id ~/Documents/Repos/Dotfiles/Scripts/polybar_start.sh
 
 
 # class                 border  backgr. text    indicator child_border
@@ -205,8 +205,8 @@ bindsym XF86AudioPrev exec playerctl previous
 #Needed for i3-gaps
 #hide_edge_borders both
 for_window [class="^.*"] border pixel 2
-gaps inner 15
-gaps outer 15
+gaps inner 10
+gaps outer 0
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5

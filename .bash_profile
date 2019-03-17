@@ -1,5 +1,6 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
+# add Scripts to PATH
 export PATH=$PATH:$HOME/Scripts
 
 export EDITOR="nvim"
@@ -16,4 +17,4 @@ export NNN_OPS_PROG=1
 export NNN_SCRIPT="$HOME/Scripts/nnn"
 
 # nnn bookmarks
-export NNN_BMS="d:~/Documents;w:/media/400Gb/Wallpapers/;r:~/Documents/Repos;p:~/Projects;"
+export NNN_BMS="d:~/Documents;w:/media/400Gb/Wallpapers/;r:~/Documents/Repos;p:~/Projects;l:~/media/400Gb/la"
