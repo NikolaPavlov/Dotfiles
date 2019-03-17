@@ -78,7 +78,8 @@ alias tt='python manage.py test'
 alias f='firefox'
 alias n='nnn -l'
 alias clock='tty-clock -c'
-alias reflect='pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))'
+# TODO: quickfix
+alias reflect='sudo pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))'
 
 
 
