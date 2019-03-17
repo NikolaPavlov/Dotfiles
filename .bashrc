@@ -80,7 +80,7 @@ alias f='firefox'
 alias n='nnn -l'
 alias clock='tty-clock -c'
 # TODO: quickfix
-alias reflect='sudo pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))'
+alias reflect='reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 
 
 
