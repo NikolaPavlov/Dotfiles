@@ -6,11 +6,16 @@
 #
 
 
+set $mod Mod1
+
+set $KILL_KEY F4
+set $BORDER_TICKNES 5
+set $GAPS_INNER_SIZE 30r
+
 
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -35,7 +40,7 @@ bindsym $mod+Return exec sakura
 
 # kill focused window
 #bindsym $mod+Shift+q kill
-bindsym F4 kill
+bindsym $KILL_KEY kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -160,24 +165,30 @@ new_window pixel 3
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift -l 42.6977:23.3219
 exec --no-startup-id telegram-desktop
-exec --no-startup-id ./.phonetic_keys.sh
+exec --no-startup-id ./Scripts/phonetic_keys.sh
 # exec_always --no-startup-id ~/Documents/Repos/Dotfiles/Scripts/polybar_start.sh
 
 
 # class                 border  backgr. text    indicator child_border
 # client.focused          #00ffff #00ffff #00ffff #00ffff #00ffff
-client.focused          #ff0000 #ff0000 #ff0000 #ff0000 #ff0000
+#
+# red
+# client.focused          #ff0000 #ff0000 #ff0000 #ff0000 #ff0000
+
+# green
+client.focused          #006400 #006400 #006400 #006400 #006400
+
 client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff
 
 # feh for set up wallpaper (need to install feh)
-exec --no-startup-id feh --bg-fill /home/gogo/Pictures/wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/.config/wall.png
 
 # exec --no-startup-id xmodmap -e 'clear Lock' #ensures you're not stuck in CAPS on mode
 # exec --no-startup-id xmodmap -e 'keycode 0x42=Escape' #remaps the keyboard so CAPS LOCK=ESC
 
 # key bindings
 bindcode 67 exec --no-startup-id firefox
-bindcode 68 exec --no-startup-id thunar
+# bindcode 68 exec --no-startup-id thunar
 bindcode 69 exec --no-startup-id thunderbird
 bindcode 73 exec --no-startup-id cherrytree
 bindcode 74 exec --no-startup-id chromium
@@ -197,15 +208,10 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-
-
-
-
-
-#Needed for i3-gaps
+# i3 Gaps
 #hide_edge_borders both
-for_window [class="^.*"] border pixel 2
-gaps inner 10
+for_window [class="^.*"] border pixel $BORDER_TICKNES
+gaps inner $GAPS_INNER_SIZE
 gaps outer 0
 
 bindsym $mod+z		gaps outer current plus 5

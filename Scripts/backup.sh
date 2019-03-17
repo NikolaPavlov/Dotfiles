@@ -3,7 +3,8 @@
 # $1 directory to backup (if=)
 # $2 destination directory of the backup (of=)
 
-exclude_file=./directories_to_exclue_from_backup.txt
+# exclude_file=./directories_to_exclue_from_backup.txt
+exclude_file=~/Documents/Repos/Dotfiles/Scripts/directories_to_exclue_from_backup.txt
 
 sudo rsync -aAXv --progress --delete --exclude-from=$exclude_file $1 $2
 
