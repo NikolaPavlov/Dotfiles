@@ -1,23 +1,10 @@
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-;;
-;;	    ____        __      __              
-;;	   / __ \____  / /_  __/ /_  ____ ______
-;;	  / /_/ / __ \/ / / / / __ \/ __ `/ ___/
-;;	 / ____/ /_/ / / /_/ / /_/ / /_/ / /    
-;;	/_/    \____/_/\__, /_.___/\__,_/_/     
-;;	              /____/                    
-;;
-;; Created By Aditya Shakya @adi1090x
-;;
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;; COLORS
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [color]
 
-; Active Shade 
+; Active Shade
 shade1 = #B71C1C
 shade2 = #C62828
 shade3 = #D32F2F
@@ -93,8 +80,8 @@ offset-y = 0%
 background = ${color.bground}
 foreground = ${color.fground}
 
-radius-top = 0.0
-radius-bottom = 0.0
+radius-top = 0
+radius-bottom = 0
 
 overline-size = 2
 overline-color = ${color.accent}
@@ -111,19 +98,16 @@ font-1 = "Wuncon Siji:size=12;2"
 font-2 = Iosevka Nerd Font:style=Medium:size=18;3
 
 
-/* TODO: mark */
-/* modules-left = launcher left1 title left2 */
-/* modules-center = workspaces */
-modules-left = left1 title left2
+modules-left = left1 launcher left2
 modules-center = i3
-modules-right = right7 colors right6 alsa right5 battery right4 backlight right3 network right2 date right1 powermenu
+modules-right = right7 colors right6 alsa right5 battery right4 backlight right3 network right2 date right1 
 
 
 separator =
 spacing = 0
 dim-value = 1.0
-wm-name = 
-locale = 
+wm-name =
+locale =
 
 tray-position = right
 tray-detached = false
@@ -217,14 +201,11 @@ content = "%{T3}%{T-}"
 
 [module/launcher]
 type = custom/text
-content = 
+/* content =  */
 
 content-background = ${color.shade1}
 content-foreground = ${color.modulefg}
 content-padding = 1
-
-;click-left = dmenu_run -b -l 5 -p Search -fn "Misc Termsyn" -nb "#1D1F28" -nf "#f7f7f7" -sb "#1E88E5" -sf "#202020"
-click-left = rofi -show run -fullscreen True -lines 5 -line-margin 5 -padding 300 -bw 0
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -241,33 +222,6 @@ label-maxlen = 30
 
 ;;label-empty = Arch Linux
 ;;label-empty-foreground = #707880
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/workspaces]
-type = internal/xworkspaces
-
-pin-workspaces = true
-enable-click = true
-enable-scroll = true
-
-label-active = 
-label-occupied = 
-label-urgent = 
-label-empty = 
-
-format = <label-state>
-
-label-monitor = %name%
-label-active-foreground = ${color.accent}
-label-occupied-foreground = ${color.yellow}
-label-urgent-foreground = ${color.red}
-label-empty-foreground = ${color.modulefg-alt}
-
-label-active-padding = 1
-label-urgent-padding = 1
-label-occupied-padding = 1
-label-empty-padding = 1
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -383,37 +337,6 @@ label = %time%
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = shutdown
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = back
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = systemctl reboot
-
-menu-2-0 = shutdown
-menu-2-0-exec = systemctl poweroff
-menu-2-1 = back
-menu-2-1-exec = menu-open-0
-
-format-spacing = 1 
-format-background = ${color.shade1}
-format-foreground = ${color.modulefg}
-format-padding = 1
-
-label-open = 
-label-close = 
-label-separator = |
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 [module/network]
 type = internal/network
 interface = wlp3s0
@@ -449,21 +372,7 @@ content-background = ${color.shade7}
 content-foreground = ${color.modulefg}
 content-padding = 1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 /* TODO: added by me */
 [module/i3]
@@ -478,7 +387,7 @@ pin-workspaces = true
 label-mode-padding = 2
 label-mode-foreground = ${color.pink}
 
-label-unfocused-foreground = ${color.green}
+label-unfocused-foreground = ${color.indigo}
 label-unfocused-padding = 1
 
 label-visible-foregroud = ${color.pink}
@@ -492,15 +401,6 @@ label-urgent-padding = 1
 label-dimmed-underline = ${BAR.background}
 label-focused-underline = #0088CC
 
-
-
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-;;	    __________  ______
-;;	   / ____/ __ \/ ____/
-;;	  / __/ / / / / /_    
-;;	 / /___/ /_/ / __/    
-;;	/_____/\____/_/       
-;;
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #ffb52a
