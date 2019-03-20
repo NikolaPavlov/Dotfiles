@@ -10,7 +10,7 @@ set $mod Mod1
 
 set $KILL_KEY F4
 set $BORDER_TICKNES 5
-set $GAPS_INNER_SIZE 30r
+set $GAPS_INNER_SIZE 15
 
 
 #
@@ -193,9 +193,9 @@ bindcode 69 exec --no-startup-id thunderbird
 bindcode 73 exec --no-startup-id cherrytree
 bindcode 74 exec --no-startup-id chromium
 
-# volume control keys and mute
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+# ALSA
+# bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+# bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Sreen brightness controls
@@ -216,3 +216,8 @@ gaps outer 0
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
+
+
+#PULSEAUDIO
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%

@@ -9,5 +9,7 @@
 /home/*/VirtualBoxVMs/*
 /home/*/.cache/*
 /home/*/.local/share/Trash/files/
+/home/Downloads/*
 /swapfile
 /lost+found
+

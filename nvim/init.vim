@@ -93,6 +93,7 @@ call dein#add('Shougo/dein.vim')
   call dein#add('liuchengxu/vim-which-key')
 
 
+  call dein#add('mrk21/yaml-vim')
   call dein#add('mcchrish/nnn.vim') "nnn for nvim
   call dein#add('yuttie/comfortable-motion.vim') "scroll effect
   call dein#add('jmcomets/vim-pony') "django goodies
@@ -321,6 +322,12 @@ augroup END
 
     " no line wrap for txt files
     au BufNewFile,BufRead *.txt set wrap textwidth=80
+
+"}}}
+"{{{ Yaml
+
+    au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 "}}}
 "

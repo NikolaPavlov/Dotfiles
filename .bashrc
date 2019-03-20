@@ -79,8 +79,8 @@ alias tt='python manage.py test'
 alias f='firefox'
 alias n='nnn -l'
 alias clock='tty-clock -c'
-# TODO: quickfix
 alias reflect='reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias vis='vis -s'
 
 
 
