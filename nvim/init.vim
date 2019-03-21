@@ -683,4 +683,8 @@ map <F12> gg=G<C-o><C-o>
 " :earlier 2m
 " :later 2m
 
+
+set termguicolors " enable true colors for colorschemes
+
+
 "}}}

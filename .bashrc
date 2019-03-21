@@ -76,6 +76,8 @@ alias pmm='python manage.py migrate'
 alias tt='python manage.py test'
 
 # Programs
+alias vifm='vifmrun'
+alias va='vagrant'
 alias f='firefox'
 alias n='nnn -l'
 alias clock='tty-clock -c'
@@ -143,7 +145,7 @@ fi
 . /usr/share/autojump/autojump.bash
 
 # vi mode in terminal
-# set -o vi
+set -o vi
 
 # change dirs withowth cd instead with ..
 shopt -s autocd

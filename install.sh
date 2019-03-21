@@ -24,3 +24,4 @@ ln -sfv "$DOTFILES_DIR/Irssi/config" ~/.irssi/config
 ln -sfv "$DOTFILES_DIR/Scripts" $HOME
 ln -sfv "$DOTFILES_DIR/Ranger/rc.conf" ~/.config/ranger/rc.conf
 ln -sfv "$DOTFILES_DIR/Ranger/commands.py" ~/.config/ranger/commands.py
+ln -sfv "$DOTFILES_DIR/vifm" ~/.config/

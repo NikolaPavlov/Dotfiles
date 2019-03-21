@@ -1,0 +1,431 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/gogo/
+	..
+1553007846
+'b
+	/home/gogo/bin/
+	..
+1553007847
+'d
+	/home/gogo/Documents/Repos/Dotfiles
+	..
+1553203018
+'h
+	/home/gogo/
+	..
+1553007847
+'l
+	/media/400Gb/la
+	..
+1553202812
+'m
+	/home/gogo/Music
+	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
+1553201322
+'p
+	/home/gogo/Projects
+	..
+1553202812
+'w
+	/media/400Gb/Wallpapers
+	..
+1553202812
+'z
+	/home/gogo/.config/vifm
+	..
+1553007846
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/media
+	400Gb
+2
+d/
+	mnt
+9
+d/mnt
+	..
+0
+d/
+	mnt
+9
+d/mnt
+	..
+0
+d/
+	mnt
+9
+d/mnt
+	..
+0
+d/
+	mnt
+9
+d/mnt
+	..
+0
+d/
+	media
+8
+d/media
+	400Gb
+2
+d/media/400Gb
+	la
+13
+d/media/400Gb/la
+	Aletta Black - Aletta, 22ans, A La Rescousse 022519.mp4
+12
+d/media/400Gb
+	la
+13
+d/media
+	400Gb
+2
+d/
+	media
+8
+d/media
+	400Gb
+2
+d/media/400Gb
+	la
+13
+d/media/400Gb/la
+	Aletta Black - Aletta, 22ans, A La Rescousse 022519.mp4
+12
+d/media/400Gb
+	la
+13
+d/media
+	400Gb
+2
+d/media/400Gb
+	Wallpapers
+11
+d/media/400Gb/Wallpapers
+	Linux
+8
+d/media/400Gb/Wallpapers/Linux
+	1_120216100458_1.jpg
+1
+d/media/400Gb/Wallpapers
+	Abstract
+1
+d/home/gogo
+	Downloads
+4
+d/home/gogo/Downloads
+	manjaro-openbox-18.0.2-2018520-stable-x86_64.iso
+6
+d/home/gogo
+	Downloads
+4
+d/home
+	gogo
+1
+d/home/gogo
+	Documents
+3
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo/Documents/Repos
+	Dotfiles
+1
+d/home/gogo/Documents/Repos/Dotfiles
+	vifm
+11
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	scripts
+2
+d/home/gogo/Documents/Repos/Dotfiles/vifm/scripts
+	README
+1
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	colors
+1
+d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
+	..
+0
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	colors
+1
+d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
+	..
+0
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	scripts
+2
+d/home/gogo/Documents/Repos/Dotfiles/vifm/scripts
+	README
+1
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	colors
+1
+d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
+	..
+0
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	scripts
+2
+d/home/gogo/Documents/Repos/Dotfiles/vifm/scripts
+	README
+1
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	colors
+1
+d/home/gogo/Documents/Repos/Dotfiles
+	vifm
+11
+d/home/gogo/Music
+	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
+1
+d/home/gogo
+	Vagrant
+8
+d/home/gogo/Vagrant
+	..
+0
+d/home/gogo
+	Documents
+3
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo/Documents/Repos
+	Dotfiles
+1
+d/home/gogo/Documents/Repos/Dotfiles
+	vifm
+11
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	colors
+1
+d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
+	iceberg.vifm
+2
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	vifmrc
+5
+d/media/400Gb/la
+	Aletta Black - Aletta, 22ans, A La Rescousse 022519.mp4
+12
+d/media/400Gb/Wallpapers
+	Abstract
+1
+d/media/400Gb/la
+	Aletta Black - Aletta, 22ans, A La Rescousse 022519.mp4
+12
+d/home/gogo
+	Documents
+3
+d/media/400Gb/Wallpapers
+	Abstract
+1
+d/media/400Gb/la
+	pup_alyssia_kent_mb091418_480p_1000.mp4
+30
+d/media/400Gb
+	la
+13
+d/media
+	400Gb
+2
+d/
+	home
+4
+d/home
+	gogo
+1
+d/home/gogo
+	Documents
+3
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo/Documents/Repos
+	Dotfiles
+1
+d/home/gogo/Documents/Repos/Dotfiles
+	vifm
+11
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	scripts
+2
+d/home/gogo/Documents/Repos/Dotfiles/vifm/scripts
+	..
+0
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	colors
+1
+d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
+	iceberg.vifm
+2
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	vifmrc
+5
+d/home/gogo
+	Ansible
+1
+d/home/gogo/Ansible
+	..
+0
+d/home/gogo
+	Ansible
+1
+d/home/gogo/Ansible
+	..
+0
+d/home/gogo
+	Ansible
+1
+d/home/gogo/Ansible
+	..
+0
+d/home/gogo
+	Ansible
+1
+d/home/gogo/Ansible
+	..
+0
+d/home/gogo
+	Ansible
+1
+d/home/gogo/Ansible
+	..
+0
+d/media/400Gb/la
+	pup_alyssia_kent_mb091418_480p_1000.mp4
+30
+d/media/400Gb/Wallpapers
+	Abstract
+1
+d/media/400Gb/la
+	pup_alyssia_kent_mb091418_480p_1000.mp4
+30
+d/media/400Gb/Wallpapers
+	Abstract
+1
+d/home/gogo/Documents/Repos/Dotfiles
+	vifm
+11
+d/home/gogo
+	Ansible
+1
+d/home/gogo/Documents/Repos/Dotfiles
+	vifm
+11
+d/home/gogo/Music
+	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
+1
+d/media/400Gb/la
+	Zach Douglas, Sarah Sunday - Hot Guys Fuck.711x400.mp4
+26
+d/media/400Gb/Wallpapers
+	Anarhy
+2
+d/media/400Gb/Wallpapers/Anarhy
+	298566.png
+6
+d/media/400Gb/Wallpapers
+	Anime Manga
+3
+d/media/400Gb/Wallpapers/Anime Manga
+	DeathNote
+1
+d/media/400Gb/Wallpapers/Anime Manga/DeathNote
+	thumb-1920-4919.jpg
+15
+d
+
+# Right window history (oldest to newest):
+D/home/gogo
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:'
+:vs
+:.!
+:shell
+:delete
+:help
+:?
+:redraw
+:sp
+:only
+:colorscheme zenburn
+:colorscheme zenburn1
+:colorscheme desert
+:colorscheme g80
+:colorscheme iceberg
+:colorscheme molokai
+:colorscheme ph
+:colorscheme Default
+:colorscheme
+:colorscheme dracula
+:l
+:marks
+:q
+
+# Search history (oldest to newest):
+//
+/autum
+/nikki
+/bcb
+/sen
+
+# Prompt history (oldest to newest):
+pvifmrc_new
+ppup_alyssia_kent_mb091418_480p_1000.mp4
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/gogo/.local/share/vifm/Trash/000_Default.vifm
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/media/400Gb/.vifm-Trash-1000/000_Autumn Falls - Naughty Little Sister 2  031919.mp4
+	/media/400Gb/la/Autumn Falls - Naughty Little Sister 2  031919.mp4
+t/home/gogo/.local/share/vifm/Trash/000_zenburn.vifm
+	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/zenburn.vifm
+t/home/gogo/.local/share/vifm/Trash/000_zenburn1.vifm
+	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/zenburn1.vifm
+t/home/gogo/.local/share/vifm/Trash/000_desert.vifm
+	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/desert.vifm
+t/home/gogo/.local/share/vifm/Trash/000_g80.vifm
+	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/g80.vifm
+t/home/gogo/.local/share/vifm/Trash/000_molokai.vifm
+	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/molokai.vifm
+t/home/gogo/.local/share/vifm/Trash/000_ph.vifm
+	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/ph.vifm
+t/home/gogo/.local/share/vifm/Trash/000_Default.vifm
+	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/Default.vifm
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0
