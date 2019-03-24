@@ -313,7 +313,8 @@ augroup ft_vim
     au BufNewFile,BufRead *.vim normal zM
 
     " autocommit to git
-    autocmd BufWritePost * execute '!git add % && git commit -m % && git push'
+    " autocmd BufWritePost * execute '!git add % && git commit -m % && git push'
+    au BufWritePost * execute '!git add % && git commit -m % && git push'
 
 augroup END
 
