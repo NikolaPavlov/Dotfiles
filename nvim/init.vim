@@ -309,8 +309,13 @@ augroup ft_vim
     au FileType vim setlocal foldmethod=marker
     au FileType help setlocal textwidth=79
 
+
     " autoclose folds when open .vim file
     au BufNewFile,BufRead *.vim normal zM
+
+
+    " autocommit to git
+    autocmd BufWritePost * execute '!git add % && git commit -m %'
 
 augroup END
 
