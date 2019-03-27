@@ -83,6 +83,7 @@ alias n='nnn -l'
 alias clock='tty-clock -c'
 alias reflect='reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias vis='vis -s'
+alias radio='curseradio'
 
 
 

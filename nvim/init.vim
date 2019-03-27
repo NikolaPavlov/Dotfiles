@@ -314,7 +314,7 @@ augroup ft_vim
 
     " autocommit to git
     " autocmd BufWritePost * execute '!git add % && git commit -m % && git push'
-    au BufWritePost * execute '!git add % && git commit -m % && git push'
+    au BufWritePost *.vim execute '!git add % && git commit -m % && git push'
 
 augroup END
 
@@ -332,6 +332,17 @@ augroup END
 
     au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+"}}}
+"{{{ Todo File
+
+    augroup todo_file
+        au!
+
+        " autocommit to git
+        au BufWritePost TODO.rst execute '!git add % && git commit -m % && git push'
+
+    augroup END
 
 "}}}
 "

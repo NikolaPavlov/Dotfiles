@@ -1,6 +1,14 @@
 # You can edit this file by hand, but it's recommended not to do that.
 
 # Marks:
+'1
+	/media/1Tb
+	..
+1553373079
+'4
+	/media/400Gb
+	..
+1553373079
 'H
 	/home/gogo/
 	..
@@ -32,7 +40,7 @@
 'w
 	/media/400Gb/Wallpapers
 	..
-1553202812
+1553251037
 'z
 	/home/gogo/.config/vifm
 	..
@@ -42,7 +50,7 @@
 
 # TUI:
 al
-q1
+q0
 v2
 ov
 m-1
@@ -50,36 +58,9 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/media
-	400Gb
-2
-d/
-	mnt
-9
-d/mnt
-	..
-0
-d/
-	mnt
-9
-d/mnt
-	..
-0
-d/
-	mnt
-9
-d/mnt
-	..
-0
-d/
-	mnt
-9
-d/mnt
-	..
-0
-d/
-	media
-8
+d/media/400Gb
+	la
+13
 d/media
 	400Gb
 2
@@ -87,112 +68,28 @@ d/media/400Gb
 	la
 13
 d/media/400Gb/la
-	Aletta Black - Aletta, 22ans, A La Rescousse 022519.mp4
-12
-d/media/400Gb
-	la
-13
-d/media
-	400Gb
-2
-d/
-	media
-8
-d/media
-	400Gb
-2
-d/media/400Gb
-	la
-13
-d/media/400Gb/la
-	Aletta Black - Aletta, 22ans, A La Rescousse 022519.mp4
-12
-d/media/400Gb
-	la
-13
-d/media
-	400Gb
-2
-d/media/400Gb
-	Wallpapers
-11
-d/media/400Gb/Wallpapers
-	Linux
-8
-d/media/400Gb/Wallpapers/Linux
-	1_120216100458_1.jpg
-1
-d/media/400Gb/Wallpapers
-	Abstract
-1
-d/home/gogo
-	Downloads
-4
-d/home/gogo/Downloads
-	manjaro-openbox-18.0.2-2018520-stable-x86_64.iso
-6
-d/home/gogo
-	Downloads
-4
-d/home
-	gogo
-1
-d/home/gogo
-	Documents
+	5308NaomiBennetDirtyCzechGypsyslutNaomiBennet
 3
-d/home/gogo/Documents
-	Repos
+d/media/400Gb/la/5308NaomiBennetDirtyCzechGypsyslutNaomiBennet
+	5308NaomiBennetDirtyCzechGypsyslutNaomiBennet.mp4
 1
-d/home/gogo/Documents/Repos
-	Dotfiles
+d/media/400Gb/la
+	6562JennyGlamKathiaNobiliKcumintomymouth3PartB
+4
+d/media/400Gb/la/6562JennyGlamKathiaNobiliKcumintomymouth3PartB
+	6562JennyGlamKathiaNobiliKcumintomymouth3PartB.mp4
 1
-d/home/gogo/Documents/Repos/Dotfiles
-	vifm
-11
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	scripts
-2
-d/home/gogo/Documents/Repos/Dotfiles/vifm/scripts
-	README
-1
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	colors
-1
-d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
-	..
-0
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	colors
-1
-d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
-	..
-0
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	scripts
-2
-d/home/gogo/Documents/Repos/Dotfiles/vifm/scripts
-	README
-1
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	colors
-1
-d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
-	..
-0
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	scripts
-2
-d/home/gogo/Documents/Repos/Dotfiles/vifm/scripts
-	README
-1
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	colors
-1
-d/home/gogo/Documents/Repos/Dotfiles
-	vifm
-11
+d/home/gogo
+	Music
+5
 d/home/gogo/Music
 	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
+1
+d/home/gogo
+	Music
+5
+d/home
+	gogo
 1
 d/home/gogo
 	Vagrant
@@ -201,164 +98,300 @@ d/home/gogo/Vagrant
 	..
 0
 d/home/gogo
-	Documents
-3
-d/home/gogo/Documents
-	Repos
-1
-d/home/gogo/Documents/Repos
-	Dotfiles
-1
-d/home/gogo/Documents/Repos/Dotfiles
-	vifm
-11
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	colors
-1
-d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
-	iceberg.vifm
-2
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	vifmrc
-5
-d/media/400Gb/la
-	Aletta Black - Aletta, 22ans, A La Rescousse 022519.mp4
-12
-d/media/400Gb/Wallpapers
-	Abstract
-1
-d/media/400Gb/la
-	Aletta Black - Aletta, 22ans, A La Rescousse 022519.mp4
-12
+	VirtualBox VMs
+9
+d/home/gogo/VirtualBox VMs
+	..
+0
 d/home/gogo
-	Documents
-3
-d/media/400Gb/Wallpapers
-	Abstract
-1
-d/media/400Gb/la
-	pup_alyssia_kent_mb091418_480p_1000.mp4
-30
-d/media/400Gb
-	la
-13
-d/media
-	400Gb
+	mnt
+10
+d/home/gogo/mnt
+	..
+0
+d/home/gogo
+	Projects
+6
+d/home/gogo/Projects
+	VagrantAnsibleArch_OfficialArch
 2
-d/
-	home
+d/home/gogo/Projects/VagrantAnsibleArch_OfficialArch
+	..
+0
+d/home/gogo/Projects
+	VagrantAnsibleArch_OfficialArch
+2
+d/home/gogo
+	Downloads
+3
+d/home/gogo/Downloads
+	LinuxISOs
+2
+d/home/gogo/Downloads/LinuxISOs
+	arcolinux-v19.03.3.iso
+1
+d/home/gogo/Downloads
+	LinuxISOs
+2
+d/home/gogo
+	Downloads
+3
+d/home
+	gogo
+1
+d/home/gogo/Music
+	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
+1
+d/home/gogo
+	Music
 4
 d/home
 	gogo
 1
-d/home/gogo
-	Documents
-3
-d/home/gogo/Documents
-	Repos
+d/
+	mnt
+9
+d/mnt
+	..
+0
+d/
+	media
+8
+d/media
+	1Tb
 1
-d/home/gogo/Documents/Repos
-	Dotfiles
+d/media/1Tb
+	BACKUPS
 1
-d/home/gogo/Documents/Repos/Dotfiles
-	vifm
-11
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	scripts
+d/media
+	400Gb
 2
-d/home/gogo/Documents/Repos/Dotfiles/vifm/scripts
-	..
-0
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	colors
-1
-d/home/gogo/Documents/Repos/Dotfiles/vifm/colors
-	iceberg.vifm
-2
-d/home/gogo/Documents/Repos/Dotfiles/vifm
-	vifmrc
-5
-d/home/gogo
-	Ansible
-1
-d/home/gogo/Ansible
-	..
-0
-d/home/gogo
-	Ansible
-1
-d/home/gogo/Ansible
-	..
-0
-d/home/gogo
-	Ansible
-1
-d/home/gogo/Ansible
-	..
-0
-d/home/gogo
-	Ansible
-1
-d/home/gogo/Ansible
-	..
-0
-d/home/gogo
-	Ansible
-1
-d/home/gogo/Ansible
-	..
-0
-d/media/400Gb/la
-	pup_alyssia_kent_mb091418_480p_1000.mp4
-30
-d/media/400Gb/Wallpapers
-	Abstract
-1
-d/media/400Gb/la
-	pup_alyssia_kent_mb091418_480p_1000.mp4
-30
-d/media/400Gb/Wallpapers
-	Abstract
-1
-d/home/gogo/Documents/Repos/Dotfiles
-	vifm
+d/media/400Gb
+	Music
+7
+d/media/400Gb/Music
+	HackingMusic
 11
-d/home/gogo
-	Ansible
+d/media/400Gb/Music/HackingMusic
+	..
+0
+d/media/400Gb/Music
+	Hardcore
+12
+d/media/400Gb
+	Music
+7
+d/media/400Gb/Music
+	SPOTIFY
+23
+d/media/400Gb/Music/SPOTIFY
+	..
+0
+d/media/400Gb/Music
+	musicForProgramming 1-52
+27
+d/media/400Gb/Music/musicForProgramming 1-52
+	..
+0
+d/media/400Gb/Music
+	OTHER
+19
+d/media/400Gb/Music/OTHER
+	FilipFarkas
 1
-d/home/gogo/Documents/Repos/Dotfiles
-	vifm
+d/media/400Gb/Music/OTHER/FilipFarkas
+	..
+0
+d/media/400Gb/Music/OTHER
+	FilipFarkas
+1
+d/media/400Gb/Music
+	Narodna
+18
+d/media/400Gb/Music/Narodna
+	..
+0
+d/media/400Gb/Music
+	Music
+17
+d/media/400Gb/Music/Music
+	..
+0
+d/media/400Gb/Music
+	HackingMusic
 11
-d/home/gogo/Music
-	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
-1
-d/media/400Gb/la
-	Zach Douglas, Sarah Sunday - Hot Guys Fuck.711x400.mp4
-26
-d/media/400Gb/Wallpapers
-	Anarhy
-2
-d/media/400Gb/Wallpapers/Anarhy
-	298566.png
+d/media/400Gb/Music/HackingMusic
+	..
+0
+d/media/400Gb/Music
+	CodingBitchez
 6
-d/media/400Gb/Wallpapers
-	Anime Manga
-3
-d/media/400Gb/Wallpapers/Anime Manga
-	DeathNote
+d/media/400Gb/Music/CodingBitchez
+	long_mixes
 1
-d/media/400Gb/Wallpapers/Anime Manga/DeathNote
-	thumb-1920-4919.jpg
-15
+d/media/400Gb/Music/CodingBitchez/long_mixes
+	JimTv
+1
+d/media/400Gb/Music/CodingBitchez
+	long_mixes
+1
+d/media/400Gb/Music
+	BgRap
+3
+d/home/gogo
+	Downloads
+3
+d/home/gogo/Downloads
+	LinuxISOs
+2
+d/home/gogo/Downloads/LinuxISOs
+	arcolinuxb-xfce-v19.03.3.iso
+1
+d/home/gogo/Downloads
+	LinuxISOs
+2
+d/home/gogo/Downloads/LinuxISOs
+	arcolinuxb-xfce-v19.03.3.iso
+1
+d/media/1Tb
+	BACKUPS
+1
+d/media/400Gb
+	Music
+7
+d/media/1Tb
+	BACKUPS
+1
+d/media/400Gb
+	Music
+7
+d/home/gogo
+	Downloads
+3
+d/home/gogo/Documents/Repos/Dotfiles
+	vifm
+11
+d/media/1Tb
+	_Coding
+5
+d/media/400Gb
+	Music
+7
+d/media/1Tb
+	Books
+2
+d/media/1Tb/Books
+	Startups
+24
+d/media/1Tb/Books/Startups
+	Startup checklist (4).pdf
+1
+d/media/1Tb/Books
+	TravelGuides
+26
+d/media/1Tb/Books/TravelGuides
+	CHEAP_TRAVEL
+2
+d/media/1Tb/Books/TravelGuides/CHEAP_TRAVEL
+	..
+0
+d/media/1Tb/Books/TravelGuides
+	Crete
+3
+d/media/1Tb/Books/TravelGuides/Crete
+	..
+0
+d/media/1Tb/Books/TravelGuides
+	LONELY_PLANET
+4
+d/media/1Tb/Books/TravelGuides/LONELY_PLANET
+	..
+0
+d/media/1Tb/Books/TravelGuides
+	LONELY_PLANET
+4
+d/media/1Tb/Books/TravelGuides/LONELY_PLANET
+	2012 Vietnam 11th
+1
+d/media/1Tb/Books/TravelGuides
+	LONELY_PLANET
+4
+d/media/1Tb/Books/TravelGuides/LONELY_PLANET
+	LP Romania & Bulgaria (6th Edition).epub
+64
+d/home/gogo
+	Downloads
+3
+d/home/gogo/Downloads
+	Romania
+3
+d/home/gogo/Downloads/Romania
+	The-Rough-Guide-to-Romania-Rough-Guide-Romania-.pdf
+2
+d/media/400Gb
+	Music
+7
+d/media/400Gb/Music
+	CodingBitchez
+6
+d/media/400Gb/Music/CodingBitchez
+	long_mixes
+1
+d/media/400Gb/Music/CodingBitchez/long_mixes
+	JimTv
+1
+d/media/400Gb/Music/CodingBitchez/long_mixes/JimTv
+	Programming _ Coding _ Hacking music vol.13 (AFTER REPAIR)-46VPN677cLI.webm
+6
+d/home/gogo
+	Downloads
+3
+d/media/1Tb
+	Books
+2
+d/media/400Gb
+	Music
+7
+d/media/1Tb
+	Other
+3
+d/media/400Gb
+	Snimki_Primary
+9
 d
 
 # Right window history (oldest to newest):
 D/home/gogo
-	..
-0
+	_db.kdbx
+10
 D
 
 # Command line history (oldest to newest):
+:mkdir JimTv
+:command echo %d
+:%d
+:%f
+:%i
+:~/Scripts/phonetic_keys.shjjkjkj
+:~/Scripts/phonetic_keys.sh
+:~/Scripts/make_wall.sh
+:media
+:~/Scripts/make_wall.sh %i
+:~/Scripts/make_wall.sh %d
+:~/Scripts/make_wall.sh -n %c
+:execute ~/Scripts/make_wall.sh -n %c
+:execute ~/Scripts/make_wall.sh colorful-1237242.svg
+:new
+:edit
+:edit lib
+:edit library
+:mkdir lib
+:exit
+:command ex ansi
+:rename lib library
+:rename lib
+:rename lib libs
+:mkdir templates
 :'
 :vs
 :.!
@@ -381,6 +414,8 @@ D
 :colorscheme dracula
 :l
 :marks
+:open 
+:mkdir LinuxISOs
 :q
 
 # Search history (oldest to newest):
@@ -389,15 +424,21 @@ D
 /nikki
 /bcb
 /sen
+/youtu
+/buc
+/bu
+/buchares
+/romania
 
 # Prompt history (oldest to newest):
+pmark-finn-540442-unsplash.jpg
 pvifmrc_new
 ppup_alyssia_kent_mb091418_480p_1000.mp4
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/gogo/.local/share/vifm/Trash/000_Default.vifm
+""/home/gogo/.local/share/vifm/Trash/000_In Your Pocket Ltd - Bucharest in your pocket, mini-guide includes Old Town  _ map, hotels, restaurants, bars, sights (2011, IYP Romania Srl).pdf
 
 # Directory stack (oldest to newest):
 
@@ -418,6 +459,152 @@ t/home/gogo/.local/share/vifm/Trash/000_ph.vifm
 	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/ph.vifm
 t/home/gogo/.local/share/vifm/Trash/000_Default.vifm
 	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/Default.vifm
+t/home/gogo/.local/share/vifm/Trash/000_library
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/library
+t/home/gogo/.local/share/vifm/Trash/000_2019-03-21-21-46-17.013-VBoxSVC-8602.log
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/2019-03-21-21-46-17.013-VBoxSVC-8602.log
+t/home/gogo/.local/share/vifm/Trash/000_ansible-aur-master.zip
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/lib/ansible-aur-master.zip
+t/home/gogo/.local/share/vifm/Trash/000_ansible-aur-master
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/lib/ansible-aur-master
+t/home/gogo/.local/share/vifm/Trash/000_defaults
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/defaults
+t/home/gogo/.local/share/vifm/Trash/000_handlers
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/handlers
+t/home/gogo/.local/share/vifm/Trash/000_meta
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/meta
+t/home/gogo/.local/share/vifm/Trash/000_templates
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/templates
+t/home/gogo/.local/share/vifm/Trash/000_vars
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/vars
+t/home/gogo/.local/share/vifm/Trash/001_defaults
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/defaults
+t/home/gogo/.local/share/vifm/Trash/000_files
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/files
+t/home/gogo/.local/share/vifm/Trash/001_handlers
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/handlers
+t/home/gogo/.local/share/vifm/Trash/001_meta
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/meta
+t/home/gogo/.local/share/vifm/Trash/001_templates
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/templates
+t/home/gogo/.local/share/vifm/Trash/001_vars
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/vars
+t/home/gogo/.local/share/vifm/Trash/002_defaults
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/defaults
+t/home/gogo/.local/share/vifm/Trash/001_files
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/files
+t/home/gogo/.local/share/vifm/Trash/002_handlers
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/handlers
+t/home/gogo/.local/share/vifm/Trash/002_meta
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/meta
+t/home/gogo/.local/share/vifm/Trash/002_templates
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/templates
+t/home/gogo/.local/share/vifm/Trash/002_vars
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/vars
+t/home/gogo/.local/share/vifm/Trash/003_defaults
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/defaults
+t/home/gogo/.local/share/vifm/Trash/003_handlers
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/handlers
+t/home/gogo/.local/share/vifm/Trash/003_meta
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/meta
+t/home/gogo/.local/share/vifm/Trash/003_vars
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/vars
+t/home/gogo/.local/share/vifm/Trash/004_defaults
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/defaults
+t/home/gogo/.local/share/vifm/Trash/002_files
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/files
+t/home/gogo/.local/share/vifm/Trash/004_handlers
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/handlers
+t/home/gogo/.local/share/vifm/Trash/004_meta
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/meta
+t/home/gogo/.local/share/vifm/Trash/003_templates
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/templates
+t/home/gogo/.local/share/vifm/Trash/004_vars
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/vars
+t/home/gogo/.local/share/vifm/Trash/005_defaults
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/defaults
+t/home/gogo/.local/share/vifm/Trash/003_files
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/files
+t/home/gogo/.local/share/vifm/Trash/005_handlers
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/handlers
+t/home/gogo/.local/share/vifm/Trash/005_meta
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/meta
+t/home/gogo/.local/share/vifm/Trash/004_templates
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/templates
+t/home/gogo/.local/share/vifm/Trash/005_vars
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/vars
+t/home/gogo/.local/share/vifm/Trash/006_defaults
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/defaults
+t/home/gogo/.local/share/vifm/Trash/004_files
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/files
+t/home/gogo/.local/share/vifm/Trash/006_handlers
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/handlers
+t/home/gogo/.local/share/vifm/Trash/006_meta
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/meta
+t/home/gogo/.local/share/vifm/Trash/005_templates
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/templates
+t/home/gogo/.local/share/vifm/Trash/006_vars
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/vars
+t/home/gogo/.local/share/vifm/Trash/007_defaults
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/defaults
+t/home/gogo/.local/share/vifm/Trash/005_files
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/files
+t/home/gogo/.local/share/vifm/Trash/007_handlers
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/handlers
+t/home/gogo/.local/share/vifm/Trash/007_meta
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/meta
+t/home/gogo/.local/share/vifm/Trash/006_templates
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/templates
+t/home/gogo/.local/share/vifm/Trash/007_vars
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/vars
+t/home/gogo/.local/share/vifm/Trash/000_README.md
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/aur/README.md
+t/home/gogo/.local/share/vifm/Trash/000_tests
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/tests
+t/home/gogo/.local/share/vifm/Trash/001_README.md
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/README.md
+t/home/gogo/.local/share/vifm/Trash/002_README.md
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/README.md
+t/home/gogo/.local/share/vifm/Trash/001_tests
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/tests
+t/home/gogo/.local/share/vifm/Trash/003_README.md
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pacman/README.md
+t/home/gogo/.local/share/vifm/Trash/002_tests
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pacman/tests
+t/home/gogo/.local/share/vifm/Trash/004_README.md
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/README.md
+t/home/gogo/.local/share/vifm/Trash/003_tests
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/tests
+t/home/gogo/.local/share/vifm/Trash/005_README.md
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector/README.md
+t/home/gogo/.local/share/vifm/Trash/004_tests
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector/tests
+t/home/gogo/.local/share/vifm/Trash/006_README.md
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/README.md
+t/home/gogo/.local/share/vifm/Trash/005_tests
+	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/tests
+t/home/gogo/.local/share/vifm/Trash/000_manjaro-openbox-18.0.2-2018520-stable-x86_64.iso
+	/home/gogo/Downloads/manjaro-openbox-18.0.2-2018520-stable-x86_64.iso
+t/home/gogo/.local/share/vifm/Trash/000_temp_spotdl
+	/home/gogo/Desktop/temp_spotdl
+t/home/gogo/.local/share/vifm/Trash/000_64bit
+	/home/gogo/Downloads/64bit
+t/home/gogo/.local/share/vifm/Trash/000_Cypress Hill - Elephants on Acid (2018) [320]
+	/home/gogo/Downloads/Cypress Hill - Elephants on Acid (2018) [320]
+t/media/400Gb/.vifm-Trash-1000/000_Programming _ Coding _ Hacking music vol.14 (CYBORG PRODUCTION)-09j1wYdNfVQ.mp3
+	/media/400Gb/Music/CodingBitchez/long_mixes/Programming _ Coding _ Hacking music vol.14 (CYBORG PRODUCTION)-09j1wYdNfVQ.mp3
+t/media/400Gb/.vifm-Trash-1000/000_Programming _ Coding _ Hacking music vol.14 (CYBORG PRODUCTION)-09j1wYdNfVQ.webm
+	/media/400Gb/Music/CodingBitchez/long_mixes/Programming _ Coding _ Hacking music vol.14 (CYBORG PRODUCTION)-09j1wYdNfVQ.webm
+t/media/400Gb/.vifm-Trash-1000/000_Programming _ Coding _ Hacking music vol.18 (ANONYMOUS HEADQUARTERS)-Z-VfaG9ZN_U.mp3
+	/media/400Gb/Music/CodingBitchez/long_mixes/Programming _ Coding _ Hacking music vol.18 (ANONYMOUS HEADQUARTERS)-Z-VfaG9ZN_U.mp3
+t/home/gogo/.local/share/vifm/Trash/000_arcolinux-v19.03.3.iso
+	/home/gogo/Downloads/LinuxISOs/arcolinux-v19.03.3.iso
+t/home/gogo/.local/share/vifm/Trash/000_arcolinuxb-bspwm-v19.03.3.iso
+	/home/gogo/Downloads/LinuxISOs/arcolinuxb-bspwm-v19.03.3.iso
+t/home/gogo/.local/share/vifm/Trash/000_bucharest_en.pdf
+	/home/gogo/Downloads/Romania/bucharest_en.pdf
+t/home/gogo/.local/share/vifm/Trash/000_In Your Pocket Ltd - Bucharest in your pocket, mini-guide includes Old Town  _ map, hotels, restaurants, bars, sights (2011, IYP Romania Srl).pdf
+	/home/gogo/Downloads/Romania/In Your Pocket Ltd - Bucharest in your pocket, mini-guide includes Old Town  _ map, hotels, restaurants, bars, sights (2011, IYP Romania Srl).pdf
 
 # State:
 f

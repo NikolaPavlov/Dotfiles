@@ -188,7 +188,7 @@ exec --no-startup-id feh --bg-fill ~/.config/wall.png
 
 # key bindings
 bindcode 67 exec --no-startup-id firefox
-# bindcode 68 exec --no-startup-id thunar
+bindcode 68 exec --no-startup-id thunar
 bindcode 69 exec --no-startup-id thunderbird
 bindcode 73 exec --no-startup-id cherrytree
 bindcode 74 exec --no-startup-id chromium
