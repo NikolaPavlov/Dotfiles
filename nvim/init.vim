@@ -80,25 +80,23 @@ call dein#add('Shougo/dein.vim')
   call dein#add('flazz/vim-colorschemes') "many colorschemes
   call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
   call dein#add('junegunn/limelight.vim') "lime line focus rice <leader>l
+  call dein#add('itchyny/lightline.vim')
   call dein#add('junegunn/goyo.vim') "focus mode :Goyo
   call dein#add('mbbill/undotree') "undo history :UndotreeShow
   call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
   call dein#add('kshenoy/vim-signature') "display the marks in the side line
   call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
   call dein#add('junegunn/vim-slash') " improve highlight search
-  call dein#add('itchyny/lightline.vim')
   call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
   call dein#add('Rykka/riv.vim')
   call dein#add('gu-fan/InstantRst') " rst instant preview
-  call dein#add('liuchengxu/vim-which-key')
 
 
   call dein#add('mrk21/yaml-vim')
-  call dein#add('mcchrish/nnn.vim') "nnn for nvim
   call dein#add('yuttie/comfortable-motion.vim') "scroll effect
   call dein#add('jmcomets/vim-pony') "django goodies
     let g:pony_prefix='D'
-  " call dein#add('francoiscabrol/ranger.vim') "ranger in vim
+  " call dein#add('liuchengxu/vim-which-key')
   " call dein#add('sjl/splice.vim') " Vim diff tool
   " call dein#add('honza/vim-snippets')
   " call dein#add('Shougo/deol.nvim') "nvim terminal
@@ -301,24 +299,6 @@ augroup ft_vagrant
 augroup END
 
 "}}}
-"{{{ Vim
-
-augroup ft_vim
-    au!
-
-    au FileType vim setlocal foldmethod=marker
-    au FileType help setlocal textwidth=79
-
-    " autoclose folds when open .vim file
-    au BufNewFile,BufRead *.vim normal zM
-
-    " autocommit to git
-    " autocmd BufWritePost * execute '!git add % && git commit -m % && git push'
-    au BufWritePost *.vim execute '!git add % && git commit -m % && git push'
-
-augroup END
-
-"}}}
 "{{{ NeoSnippets
     au FileType neosnippet set noexpandtab
 "}}}
@@ -334,12 +314,27 @@ augroup END
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 "}}}
+"{{{ Vim
+
+    augroup ft_vim
+        au!
+
+        au FileType vim setlocal foldmethod=marker
+        au FileType help setlocal textwidth=79
+
+        " autoclose folds when open .vim file
+        au BufNewFile,BufRead *.vim normal zM
+
+    augroup END
+
+"}}}
 "{{{ Todo File
 
     augroup todo_file
         au!
 
         " autocommit to git
+        execute 'cd $HOME/Documents/Repos/Wiki'
         au BufWritePost TODO.rst execute '!git add % && git commit -m % && git push'
 
     augroup END
