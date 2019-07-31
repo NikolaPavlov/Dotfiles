@@ -58,15 +58,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/media/400Gb
-	la
-13
-d/media
-	400Gb
-2
-d/media/400Gb
-	la
-13
 d/media/400Gb/la
 	5308NaomiBennetDirtyCzechGypsyslutNaomiBennet
 3
@@ -358,12 +349,21 @@ d/media/1Tb
 d/media/400Gb
 	Snimki_Primary
 9
+d/media
+	400Gb
+2
+d/media/400Gb
+	Snimki_Primary
+9
+d/media/400Gb/Snimki_Primary
+	..
+0
 d
 
 # Right window history (oldest to newest):
 D/home/gogo
 	_db.kdbx
-10
+12
 D
 
 # Command line history (oldest to newest):

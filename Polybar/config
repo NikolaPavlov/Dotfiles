@@ -73,7 +73,7 @@ fixed-center = true
 ;offset-x = 1%
 ;offset-y = 2%
 width = 100%
-height = 22
+height = 17
 offset-x = 0%
 offset-y = 0%
 
@@ -93,9 +93,9 @@ padding = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "Misc Termsyn:size=12;2"
-font-1 = "Wuncon Siji:size=12;2"
-font-2 = Iosevka Nerd Font:style=Medium:size=18;3
+font-0 = "Misc Termsyn:size=10;2"
+font-1 = "Wuncon Siji:size=10;2"
+font-2 = Iosevka Nerd Font:style=Medium:size=10;3
 
 
 modules-left = left1 launcher left2

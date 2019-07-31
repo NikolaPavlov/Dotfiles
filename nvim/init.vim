@@ -698,3 +698,12 @@ set termguicolors " enable true colors for colorschemes
 
 
 "}}}
+"{{{ Functions
+    function! SortLines() range
+        " visual select the lines which should be sorted
+        " :call SortLines() for sorting lines
+        execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+        execute a:firstline . "," . a:lastline . 'sort n'
+        execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+    endfunction
+"}}}
