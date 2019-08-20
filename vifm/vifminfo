@@ -58,189 +58,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/media/400Gb/la
-	5308NaomiBennetDirtyCzechGypsyslutNaomiBennet
-3
-d/media/400Gb/la/5308NaomiBennetDirtyCzechGypsyslutNaomiBennet
-	5308NaomiBennetDirtyCzechGypsyslutNaomiBennet.mp4
-1
-d/media/400Gb/la
-	6562JennyGlamKathiaNobiliKcumintomymouth3PartB
-4
-d/media/400Gb/la/6562JennyGlamKathiaNobiliKcumintomymouth3PartB
-	6562JennyGlamKathiaNobiliKcumintomymouth3PartB.mp4
-1
-d/home/gogo
-	Music
-5
-d/home/gogo/Music
-	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
-1
-d/home/gogo
-	Music
-5
-d/home
-	gogo
-1
-d/home/gogo
-	Vagrant
-8
-d/home/gogo/Vagrant
-	..
-0
-d/home/gogo
-	VirtualBox VMs
-9
-d/home/gogo/VirtualBox VMs
-	..
-0
-d/home/gogo
-	mnt
-10
-d/home/gogo/mnt
-	..
-0
-d/home/gogo
-	Projects
-6
-d/home/gogo/Projects
-	VagrantAnsibleArch_OfficialArch
-2
-d/home/gogo/Projects/VagrantAnsibleArch_OfficialArch
-	..
-0
-d/home/gogo/Projects
-	VagrantAnsibleArch_OfficialArch
-2
-d/home/gogo
-	Downloads
-3
-d/home/gogo/Downloads
-	LinuxISOs
-2
-d/home/gogo/Downloads/LinuxISOs
-	arcolinux-v19.03.3.iso
-1
-d/home/gogo/Downloads
-	LinuxISOs
-2
-d/home/gogo
-	Downloads
-3
-d/home
-	gogo
-1
-d/home/gogo/Music
-	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
-1
-d/home/gogo
-	Music
-4
-d/home
-	gogo
-1
-d/
-	mnt
-9
-d/mnt
-	..
-0
-d/
-	media
-8
-d/media
-	1Tb
-1
-d/media/1Tb
-	BACKUPS
-1
-d/media
-	400Gb
-2
-d/media/400Gb
-	Music
-7
-d/media/400Gb/Music
-	HackingMusic
-11
-d/media/400Gb/Music/HackingMusic
-	..
-0
-d/media/400Gb/Music
-	Hardcore
-12
-d/media/400Gb
-	Music
-7
-d/media/400Gb/Music
-	SPOTIFY
-23
-d/media/400Gb/Music/SPOTIFY
-	..
-0
-d/media/400Gb/Music
-	musicForProgramming 1-52
-27
-d/media/400Gb/Music/musicForProgramming 1-52
-	..
-0
-d/media/400Gb/Music
-	OTHER
-19
-d/media/400Gb/Music/OTHER
-	FilipFarkas
-1
-d/media/400Gb/Music/OTHER/FilipFarkas
-	..
-0
-d/media/400Gb/Music/OTHER
-	FilipFarkas
-1
-d/media/400Gb/Music
-	Narodna
-18
-d/media/400Gb/Music/Narodna
-	..
-0
-d/media/400Gb/Music
-	Music
-17
-d/media/400Gb/Music/Music
-	..
-0
-d/media/400Gb/Music
-	HackingMusic
-11
-d/media/400Gb/Music/HackingMusic
-	..
-0
-d/media/400Gb/Music
-	CodingBitchez
-6
-d/media/400Gb/Music/CodingBitchez
-	long_mixes
-1
-d/media/400Gb/Music/CodingBitchez/long_mixes
-	JimTv
-1
-d/media/400Gb/Music/CodingBitchez
-	long_mixes
-1
-d/media/400Gb/Music
-	BgRap
-3
-d/home/gogo
-	Downloads
-3
-d/home/gogo/Downloads
-	LinuxISOs
-2
-d/home/gogo/Downloads/LinuxISOs
-	arcolinuxb-xfce-v19.03.3.iso
-1
-d/home/gogo/Downloads
-	LinuxISOs
-2
 d/home/gogo/Downloads/LinuxISOs
 	arcolinuxb-xfce-v19.03.3.iso
 1
@@ -358,12 +175,195 @@ d/media/400Gb
 d/media/400Gb/Snimki_Primary
 	..
 0
+d/media/400Gb
+	Snimki_Primary
+7
+d/media
+	..
+0
+d/
+	home
+4
+d/home
+	gogo
+1
+d/home/gogo
+	Documents
+3
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo/Documents/Repos
+	WpDev
+4
+d/home/gogo/Documents/Repos/WpDev
+	cruisebell
+1
+d/home/gogo/Documents/Repos/WpDev/cruisebell
+	..
+0
+d/home/gogo/Documents/Repos/WpDev
+	vccw
+2
+d/home/gogo/Documents/Repos/WpDev/vccw
+	provision
+1
+d/home/gogo/Documents/Repos/WpDev
+	cruisebell
+2
+d/home/gogo/Documents/Repos/WpDev/cruisebell
+	wordpress
+2
+d/home/gogo/Documents/Repos/WpDev
+	EXTERNAL
+1
+d/home/gogo/Documents/Repos
+	WpDev
+4
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	TempCreds
+1
+d/home/gogo/Desktop/TempCreds
+	private_key
+6
+d/home/gogo/Desktop
+	TempExports
+2
+d/home/gogo/Desktop/TempExports
+	..
+0
+d/home/gogo/Desktop
+	temp
+3
+d/home/gogo/Desktop/temp
+	..
+0
+d/home/gogo/Desktop
+	TempCreds
+1
+d/home/gogo
+	Downloads
+4
+d/home/gogo/Downloads
+	Creative Solutions - Logos - Making a Strong Mark - 150 Strategies for Logos That Last
+1
+d/home/gogo/Downloads/Creative Solutions - Logos - Making a Strong Mark - 150 Strategies for Logos That Last
+	Creative Solutions - Logos - Making a Strong Mark.pdf
+1
+d/home/gogo/Downloads
+	Creative Solutions - Logos - Making a Strong Mark - 150 Strategies for Logos That Last
+1
+d/home/gogo/Downloads/Creative Solutions - Logos - Making a Strong Mark - 150 Strategies for Logos That Last
+	Creative Solutions - Logos - Making a Strong Mark.pdf
+1
+d/home/gogo/Downloads
+	Django_books
+2
+d/home/gogo/Downloads/Django_books
+	..
+0
+d/home/gogo/Downloads
+	Insight Guides Caribbean Cruises (Travel Guide eBook) (Insight Guides), 11th Edition
+2
+d/home/gogo/Downloads/Insight Guides Caribbean Cruises (Travel Guide eBook) (Insight Guides), 11th Edition
+	..
+0
+d/home/gogo/Downloads
+	Telegram Desktop
+3
+d/home/gogo/Downloads/Telegram Desktop
+	..
+0
+d/home/gogo/Downloads
+	The Build a SAAS App with Flask Course
+4
+d/home/gogo/Downloads/The Build a SAAS App with Flask Course
+	..
+0
+d/home/gogo/Downloads
+	The Build a SAAS App with Flask Course
+4
+d/home/gogo/Downloads/The Build a SAAS App with Flask Course
+	The Build a SAAS App with Flask Course.zip
+2
+d/home/gogo/Downloads
+	The Build a SAAS App with Flask Course
+4
+d/home/gogo/Downloads/The Build a SAAS App with Flask Course
+	TutsGalaxy.com.txt
+4
+d/home/gogo/Downloads
+	TravelCruiseGuides
+5
+d/home/gogo/Downloads/TravelCruiseGuides
+	..
+0
+d/home/gogo/Downloads
+	WordpressPirate
+6
+d/home/gogo/Downloads/WordpressPirate
+	..
+0
+d/home/gogo/Downloads
+	[CourseClub.NET] Lynda - Logo Design Techniques
+7
+d/home/gogo/Downloads/[CourseClub.NET] Lynda - Logo Design Techniques
+	[FreeCourseSite.com].url
+17
+d/home/gogo/Downloads
+	vccw-3.21.1.zip
+10
+d/home/gogo
+	Pictures
+5
+d/home/gogo/Pictures
+	thumbnails-digikam.db
+4
+d/home/gogo
+	Projects
+6
+d/home/gogo/Projects
+	..
+0
+d/home/gogo
+	Scripts
+7
+d/home/gogo/Scripts
+	..
+0
+d/home/gogo
+	Vagrant
+8
+d/home/gogo/Vagrant
+	..
+0
+d/home/gogo
+	VirtualBox VMs
+9
+d/home/gogo/VirtualBox VMs
+	..
+0
+d/home/gogo
+	go
+10
+d/home/gogo/go
+	..
+0
+d/home/gogo
+	_db.kdbx
+11
 d
 
 # Right window history (oldest to newest):
 D/home/gogo
 	_db.kdbx
-12
+11
 D
 
 # Command line history (oldest to newest):
@@ -396,7 +396,6 @@ D
 :vs
 :.!
 :shell
-:delete
 :help
 :?
 :redraw
@@ -416,7 +415,12 @@ D
 :marks
 :open 
 :mkdir LinuxISOs
+:execute
+:a
 :q
+:delete
+:open
+:edit 
 
 # Search history (oldest to newest):
 //
@@ -438,7 +442,7 @@ ppup_alyssia_kent_mb091418_480p_1000.mp4
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/gogo/.local/share/vifm/Trash/000_In Your Pocket Ltd - Bucharest in your pocket, mini-guide includes Old Town  _ map, hotels, restaurants, bars, sights (2011, IYP Romania Srl).pdf
+""/home/gogo/.local/share/vifm/Trash/000_test_ssd2_temp
 
 # Directory stack (oldest to newest):
 
@@ -605,6 +609,34 @@ t/home/gogo/.local/share/vifm/Trash/000_bucharest_en.pdf
 	/home/gogo/Downloads/Romania/bucharest_en.pdf
 t/home/gogo/.local/share/vifm/Trash/000_In Your Pocket Ltd - Bucharest in your pocket, mini-guide includes Old Town  _ map, hotels, restaurants, bars, sights (2011, IYP Romania Srl).pdf
 	/home/gogo/Downloads/Romania/In Your Pocket Ltd - Bucharest in your pocket, mini-guide includes Old Town  _ map, hotels, restaurants, bars, sights (2011, IYP Romania Srl).pdf
+t/home/gogo/.local/share/vifm/Trash/000_provision
+	/home/gogo/Documents/Repos/WpDev/cruisebell/provision
+t/home/gogo/.local/share/vifm/Trash/000_wordpress
+	/home/gogo/Documents/Repos/WpDev/cruisebell/wordpress
+t/home/gogo/.local/share/vifm/Trash/000_wp-cli
+	/home/gogo/Documents/Repos/WpDev/cruisebell/wp-cli
+t/home/gogo/.local/share/vifm/Trash/000_LICENSE
+	/home/gogo/Documents/Repos/WpDev/cruisebell/LICENSE
+t/home/gogo/.local/share/vifm/Trash/000_Movefile.yml
+	/home/gogo/Documents/Repos/WpDev/cruisebell/Movefile.yml
+t/home/gogo/.local/share/vifm/Trash/007_README.md
+	/home/gogo/Documents/Repos/WpDev/cruisebell/README.md
+t/home/gogo/.local/share/vifm/Trash/000_Vagrantfile
+	/home/gogo/Documents/Repos/WpDev/cruisebell/Vagrantfile
+t/home/gogo/.local/share/vifm/Trash/000_ansible.cfg
+	/home/gogo/Documents/Repos/WpDev/cruisebell/ansible.cfg
+t/home/gogo/.local/share/vifm/Trash/000_site.yml
+	/home/gogo/Documents/Repos/WpDev/cruisebell/site.yml
+t/home/gogo/.local/share/vifm/Trash/000_wp-cli.yml
+	/home/gogo/Documents/Repos/WpDev/cruisebell/wp-cli.yml
+t/home/gogo/.local/share/vifm/Trash/000_temp
+	/home/gogo/Desktop/temp
+t/home/gogo/.local/share/vifm/Trash/000_Django_books
+	/home/gogo/Downloads/Django_books
+t/home/gogo/.local/share/vifm/Trash/000_[CourseClub.NET] Lynda - Logo Design Techniques
+	/home/gogo/Downloads/[CourseClub.NET] Lynda - Logo Design Techniques
+t/home/gogo/.local/share/vifm/Trash/000_test_ssd2_temp
+	/home/gogo/Downloads/test_ssd2_temp
 
 # State:
 f
