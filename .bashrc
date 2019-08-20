@@ -87,10 +87,6 @@ alias radio='curseradio'
 
 
 
-# Dir change
-alias cdd='cd ~/Documents'
-
-
 # ex - archive extractor
 ex ()
 {
@@ -165,5 +161,5 @@ fi
 export MANPAGER="nvim +set\ filetype=man -"
 
 # virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+# export WORKON_HOME=~/.virtualenvs
+# source /usr/bin/virtualenvwrapper.sh
