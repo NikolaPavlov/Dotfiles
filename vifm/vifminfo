@@ -58,15 +58,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/gogo/Downloads/LinuxISOs
-	arcolinuxb-xfce-v19.03.3.iso
-1
-d/media/1Tb
-	BACKUPS
-1
-d/media/400Gb
-	Music
-7
 d/media/1Tb
 	BACKUPS
 1
@@ -356,14 +347,23 @@ d/home/gogo/go
 	..
 0
 d/home/gogo
-	_db.kdbx
-11
+	Documents
+2
+d/home
+	gogo
+1
+d/home/gogo
+	Documents
+2
+d/home/gogo/Documents
+	Repos
+1
 d
 
 # Right window history (oldest to newest):
 D/home/gogo
 	_db.kdbx
-11
+6
 D
 
 # Command line history (oldest to newest):
@@ -417,10 +417,10 @@ D
 :mkdir LinuxISOs
 :execute
 :a
-:q
 :delete
 :open
 :edit 
+:q
 
 # Search history (oldest to newest):
 //
