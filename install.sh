@@ -11,7 +11,6 @@ mkdir -p $HOME/.config/i3
 mkdir -p $HOME/.config/polybar
 mkdir -p $HOME/.config/zathura
 mkdir -p $HOME/.irssi
-mkdir -p $HOME/.config/ranger
 
 ln -sfv "$DOTFILES_DIR/.bashrc" $HOME
 ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME
@@ -22,6 +21,4 @@ ln -sfv "$DOTFILES_DIR/Zathura/zathurarc" ~/.config/zathura/zathurarc
 ln -sfv "$DOTFILES_DIR/Git/.gitconfig" $HOME
 ln -sfv "$DOTFILES_DIR/Irssi/config" ~/.irssi/config
 ln -sfv "$DOTFILES_DIR/Scripts" $HOME
-ln -sfv "$DOTFILES_DIR/Ranger/rc.conf" ~/.config/ranger/rc.conf
-ln -sfv "$DOTFILES_DIR/Ranger/commands.py" ~/.config/ranger/commands.py
 ln -sfv "$DOTFILES_DIR/vifm" ~/.config/

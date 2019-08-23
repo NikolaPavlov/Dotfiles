@@ -58,21 +58,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/media/1Tb
-	BACKUPS
-1
-d/media/400Gb
-	Music
-7
-d/home/gogo
-	Downloads
-3
-d/home/gogo/Documents/Repos/Dotfiles
-	vifm
-11
-d/media/1Tb
-	_Coding
-5
 d/media/400Gb
 	Music
 7
@@ -358,6 +343,21 @@ d/home/gogo
 d/home/gogo/Documents
 	Repos
 1
+d/home/gogo/Documents/Repos
+	Wiki
+3
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo
+	Desktop
+1
+d/home/gogo/Desktop
+	imgs
+1
+d/home/gogo/Desktop/imgs
+	valentin-petkov-uKS_wcTAMZU-unsplash.jpg
+7
 d
 
 # Right window history (oldest to newest):

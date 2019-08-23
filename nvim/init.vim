@@ -195,6 +195,9 @@ call dein#add('Shougo/dein.vim')
     let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
     let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
 
+    " synchronize NerdTree to the current dir
+    autocmd BufEnter * lcd %:p:h
+
 " }}}
 " {{{ SimpylFold
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
@@ -260,9 +263,9 @@ augroup ft_html
     au!
 
     au BufNewFile,BufRead *.html set nowrap textwidth=120
-    au BufNewFile,BufRead *.html setlocal filetype=htmldjango
-    au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
-    au BufNewFile,BufRead *.dram setlocal filetype=htmldjango
+    " au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+    " au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
+    " au BufNewFile,BufRead *.dram setlocal filetype=htmldjango
 
     au FileType html,jinja,htmldjango setlocal foldmethod=manual
 
