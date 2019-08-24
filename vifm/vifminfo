@@ -58,9 +58,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/media/400Gb
-	Music
-7
 d/media/1Tb
 	Books
 2
@@ -358,12 +355,15 @@ d/home/gogo/Desktop
 d/home/gogo/Desktop/imgs
 	valentin-petkov-uKS_wcTAMZU-unsplash.jpg
 7
+d/home/gogo/Desktop
+	..
+0
 d
 
 # Right window history (oldest to newest):
 D/home/gogo
 	_db.kdbx
-6
+7
 D
 
 # Command line history (oldest to newest):
