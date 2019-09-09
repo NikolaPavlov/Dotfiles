@@ -189,5 +189,8 @@ gaps outer $GAPS_OUTER_SIZE
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
 
-# pass
+# Pass
 bindsym $mod+p exec --no-startup-id passmenu
+
+# Albert
+exec --no-startup-id albert
