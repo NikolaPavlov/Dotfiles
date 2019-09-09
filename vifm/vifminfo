@@ -58,60 +58,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/media/1Tb
-	Books
-2
-d/media/1Tb/Books
-	Startups
-24
-d/media/1Tb/Books/Startups
-	Startup checklist (4).pdf
-1
-d/media/1Tb/Books
-	TravelGuides
-26
-d/media/1Tb/Books/TravelGuides
-	CHEAP_TRAVEL
-2
-d/media/1Tb/Books/TravelGuides/CHEAP_TRAVEL
-	..
-0
-d/media/1Tb/Books/TravelGuides
-	Crete
-3
-d/media/1Tb/Books/TravelGuides/Crete
-	..
-0
-d/media/1Tb/Books/TravelGuides
-	LONELY_PLANET
-4
-d/media/1Tb/Books/TravelGuides/LONELY_PLANET
-	..
-0
-d/media/1Tb/Books/TravelGuides
-	LONELY_PLANET
-4
-d/media/1Tb/Books/TravelGuides/LONELY_PLANET
-	2012 Vietnam 11th
-1
-d/media/1Tb/Books/TravelGuides
-	LONELY_PLANET
-4
-d/media/1Tb/Books/TravelGuides/LONELY_PLANET
-	LP Romania & Bulgaria (6th Edition).epub
-64
-d/home/gogo
-	Downloads
-3
-d/home/gogo/Downloads
-	Romania
-3
-d/home/gogo/Downloads/Romania
-	The-Rough-Guide-to-Romania-Rough-Guide-Romania-.pdf
-2
-d/media/400Gb
-	Music
-7
 d/media/400Gb/Music
 	CodingBitchez
 6
@@ -358,12 +304,66 @@ d/home/gogo/Desktop/imgs
 d/home/gogo/Desktop
 	..
 0
+d/home/gogo
+	Documents
+1
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo
+	Downloads
+2
+d/home/gogo/Downloads
+	..
+0
+d/home/gogo
+	Downloads
+2
+d/home
+	gogo
+1
+d/home/gogo
+	Downloads
+2
+d/home/gogo/Downloads
+	..
+0
+d/home/gogo
+	Documents
+1
+d/home/gogo/Documents
+	..
+0
+d/home/gogo
+	_db.kdbx
+4
+d/home
+	gogo
+1
+d/
+	home
+4
+d/home/gogo/Documents/Repos/Dotfiles
+	..
+0
+d/home/gogo
+	..
+0
+d/home
+	..
+0
+d/
+	media
+8
+d/media
+	la
+13
 d
 
 # Right window history (oldest to newest):
 D/home/gogo
 	_db.kdbx
-7
+4
 D
 
 # Command line history (oldest to newest):
@@ -405,12 +405,10 @@ D
 :colorscheme zenburn1
 :colorscheme desert
 :colorscheme g80
-:colorscheme iceberg
 :colorscheme molokai
 :colorscheme ph
 :colorscheme Default
 :colorscheme
-:colorscheme dracula
 :l
 :marks
 :open 
@@ -420,6 +418,10 @@ D
 :delete
 :open
 :edit 
+:colorscheme dracula
+:set
+:colorscheme iceberg
+:colorscheme default
 :q
 
 # Search history (oldest to newest):
