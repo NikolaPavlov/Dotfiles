@@ -58,39 +58,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/media/400Gb/Music
-	CodingBitchez
-6
-d/media/400Gb/Music/CodingBitchez
-	long_mixes
-1
-d/media/400Gb/Music/CodingBitchez/long_mixes
-	JimTv
-1
-d/media/400Gb/Music/CodingBitchez/long_mixes/JimTv
-	Programming _ Coding _ Hacking music vol.13 (AFTER REPAIR)-46VPN677cLI.webm
-6
-d/home/gogo
-	Downloads
-3
-d/media/1Tb
-	Books
-2
-d/media/400Gb
-	Music
-7
-d/media/1Tb
-	Other
-3
-d/media/400Gb
-	Snimki_Primary
-9
-d/media
-	400Gb
-2
-d/media/400Gb
-	Snimki_Primary
-9
 d/media/400Gb/Snimki_Primary
 	..
 0
@@ -356,8 +323,41 @@ d/
 	media
 8
 d/media
-	la
-13
+	400Gb
+2
+d/media/400Gb
+	Snimki_Primary
+8
+d/media
+	1Tb
+1
+d/media/1Tb
+	BACKUPS
+1
+d/media/1Tb/BACKUPS
+	LinuxBackup
+5
+d/media/1Tb/BACKUPS/LinuxBackup
+	Slim_Arch
+1
+d/media/1Tb/BACKUPS/LinuxBackup/Slim_Arch
+	..
+0
+d/media/1Tb/BACKUPS/LinuxBackup
+	Slim_Arch
+1
+d/media/1Tb/BACKUPS
+	LinuxBackup
+5
+d/media/1Tb/BACKUPS/LinuxBackup
+	Slim_Arch
+1
+d/media/1Tb/BACKUPS/LinuxBackup/Slim_Arch
+	..
+0
+d/media/1Tb/BACKUPS/LinuxBackup
+	Slim_Arch
+1
 d
 
 # Right window history (oldest to newest):
@@ -422,6 +422,7 @@ D
 :set
 :colorscheme iceberg
 :colorscheme default
+:rename
 :q
 
 # Search history (oldest to newest):

@@ -12,4 +12,3 @@
 /home/Downloads/*
 /swapfile
 /lost+found
-
