@@ -1,0 +1,306 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'1
+	/media/1Tb
+	..
+1553373079
+'4
+	/media/400Gb
+	..
+1553373079
+'H
+	/home/gogo/
+	..
+1553007846
+'b
+	/home/gogo/bin/
+	..
+1553007847
+'d
+	/home/gogo/Documents/Repos/Dotfiles
+	..
+1553203018
+'h
+	/home/gogo/
+	..
+1553007847
+'l
+	/media/400Gb/la
+	..
+1553202812
+'m
+	/home/gogo/Music
+	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
+1553201322
+'p
+	/home/gogo/Projects
+	..
+1553202812
+'w
+	/media/400Gb/Wallpapers
+	..
+1553251037
+'z
+	/home/gogo/.config/vifm
+	..
+1553007846
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/gogo/Documents/Repos/WpDev
+	EXTERNAL
+1
+d/home/gogo/Documents/Repos
+	WpDev
+4
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	TempCreds
+1
+d/home/gogo/Desktop/TempCreds
+	private_key
+6
+d/home/gogo/Desktop
+	TempExports
+2
+d/home/gogo/Desktop/TempExports
+	..
+0
+d/home/gogo/Desktop
+	temp
+3
+d/home/gogo/Desktop/temp
+	..
+0
+d/home/gogo/Desktop
+	TempCreds
+1
+d/home/gogo
+	Downloads
+4
+d/home/gogo/Downloads
+	Creative Solutions - Logos - Making a Strong Mark - 150 Strategies for Logos That Last
+1
+d/home/gogo/Downloads/Creative Solutions - Logos - Making a Strong Mark - 150 Strategies for Logos That Last
+	Creative Solutions - Logos - Making a Strong Mark.pdf
+1
+d/home/gogo/Downloads
+	Creative Solutions - Logos - Making a Strong Mark - 150 Strategies for Logos That Last
+1
+d/home/gogo/Downloads/Creative Solutions - Logos - Making a Strong Mark - 150 Strategies for Logos That Last
+	Creative Solutions - Logos - Making a Strong Mark.pdf
+1
+d/home/gogo/Downloads
+	Django_books
+2
+d/home/gogo/Downloads/Django_books
+	..
+0
+d/home/gogo/Downloads
+	Insight Guides Caribbean Cruises (Travel Guide eBook) (Insight Guides), 11th Edition
+2
+d/home/gogo/Downloads/Insight Guides Caribbean Cruises (Travel Guide eBook) (Insight Guides), 11th Edition
+	..
+0
+d/home/gogo/Downloads
+	Telegram Desktop
+3
+d/home/gogo/Downloads/Telegram Desktop
+	..
+0
+d/home/gogo/Downloads
+	The Build a SAAS App with Flask Course
+4
+d/home/gogo/Downloads/The Build a SAAS App with Flask Course
+	..
+0
+d/home/gogo/Downloads
+	The Build a SAAS App with Flask Course
+4
+d/home/gogo/Downloads/The Build a SAAS App with Flask Course
+	The Build a SAAS App with Flask Course.zip
+2
+d/home/gogo/Downloads
+	The Build a SAAS App with Flask Course
+4
+d/home/gogo/Downloads/The Build a SAAS App with Flask Course
+	TutsGalaxy.com.txt
+4
+d/home/gogo/Downloads
+	TravelCruiseGuides
+5
+d/home/gogo/Downloads/TravelCruiseGuides
+	..
+0
+d/home/gogo/Downloads
+	WordpressPirate
+6
+d/home/gogo/Downloads/WordpressPirate
+	..
+0
+d/home/gogo/Downloads
+	[CourseClub.NET] Lynda - Logo Design Techniques
+7
+d/home/gogo/Downloads/[CourseClub.NET] Lynda - Logo Design Techniques
+	[FreeCourseSite.com].url
+17
+d/home/gogo/Downloads
+	vccw-3.21.1.zip
+10
+d/home/gogo
+	Pictures
+5
+d/home/gogo/Pictures
+	thumbnails-digikam.db
+4
+d/home/gogo
+	Projects
+6
+d/home/gogo/Projects
+	..
+0
+d/home/gogo
+	Scripts
+7
+d/home/gogo/Scripts
+	..
+0
+d/home/gogo
+	Vagrant
+8
+d/home/gogo/Vagrant
+	..
+0
+d/home/gogo
+	VirtualBox VMs
+9
+d/home/gogo/VirtualBox VMs
+	..
+0
+d/home/gogo
+	go
+10
+d/home/gogo/go
+	..
+0
+d/home/gogo
+	Documents
+2
+d/home
+	gogo
+1
+d/home/gogo
+	Documents
+2
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo/Documents/Repos
+	Wiki
+3
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo
+	Desktop
+1
+d/home/gogo/Desktop
+	imgs
+1
+d/home/gogo/Desktop/imgs
+	valentin-petkov-uKS_wcTAMZU-unsplash.jpg
+7
+d/home/gogo/Desktop
+	..
+0
+d/home/gogo
+	Documents
+1
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo
+	Downloads
+2
+d/home/gogo/Downloads
+	..
+0
+d/home/gogo
+	Downloads
+2
+d/home
+	gogo
+1
+d/home/gogo
+	Downloads
+2
+d/home/gogo/Downloads
+	..
+0
+d/home/gogo
+	Documents
+1
+d/home/gogo/Documents
+	..
+0
+d/home/gogo
+	_db.kdbx
+4
+d/home
+	gogo
+1
+d/
+	home
+4
+d/home/gogo/Documents/Repos/Dotfiles
+	..
+0
+d/home/gogo
+	..
+0
+d/home
+	..
+0
+d/
+	media
+8
+d/media
+	400Gb
+2
+d/media/400Gb
+	Snimki_Primary
+8
+d/media
+	1Tb
+1
+d/media/1Tb
+	BACKUPS
+1
+d/media/1Tb/BACKUPS
+	LinuxBackup
+5
+d/media/1Tb/BACKUPS/LinuxBackup
+	Slim_Arch
+1
+d/media/1Tb/BACKUPS/LinuxBackup/Slim_Arch
+	..
+0
+d/media/1Tb/BACKUPS/LinuxBackup
+	Slim_Arch
+1
