@@ -54,7 +54,7 @@ alias gc='git commit'
 alias ga='git add'
 alias gpush='git push'
 alias gpull='git pull'
-alias glog='git log'
+alias glog='git log --oneline'
 alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull'
 # Docker
 alias d='docker'
