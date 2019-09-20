@@ -56,6 +56,9 @@ alias gpush='git push'
 alias gpull='git pull'
 alias glog='git log --oneline'
 alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull'
+# git reset to previous commit (hard)
+# git reset --hard <commitId> && git clean -f
+
 # Docker
 alias d='docker'
 alias di='docker images'
