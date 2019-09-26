@@ -82,6 +82,7 @@ alias tt='python manage.py test'
 # Programs
 alias vifm='vifmrun'
 alias va='vagrant'
+alias vs='vagrant status'
 alias f='firefox'
 alias n='nnn -l'
 alias clock='tty-clock -c'
