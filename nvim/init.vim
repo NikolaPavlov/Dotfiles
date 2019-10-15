@@ -710,3 +710,6 @@ set termguicolors " enable true colors for colorschemes
         execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
     endfunction
 "}}}
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
+

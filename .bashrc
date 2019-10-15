@@ -65,6 +65,12 @@ alias di='docker images'
 alias drmc='docker rm -f $(docker ps -a -q)' # remove all images
 alias drmi='docker rmi -f $(docker images -q)' # remove image
 alias dc='docker-compose'
+# Vagrant
+alias va='vagrant'
+alias vs='vagrant status'
+alias vup='vagrant up'
+alias vgs='vagrant global status'
+alias vssh='vagrant ssh'
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
 #TODO: Update secret alias with full parameters
@@ -81,9 +87,6 @@ alias tt='python manage.py test'
 
 # Programs
 alias vifm='vifmrun'
-alias va='vagrant'
-alias vs='vagrant status'
-alias vgs='vagrant global status'
 alias f='firefox'
 alias n='nnn -l'
 alias clock='tty-clock -c'
