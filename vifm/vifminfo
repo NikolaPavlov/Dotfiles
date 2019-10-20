@@ -4,15 +4,15 @@
 '1
 	/media/1Tb
 	..
-1553373079
+1571469638
 '4
 	/media/400Gb
 	..
 1553373079
 'H
-	/home/gogo/
-	..
-1553007846
+	/
+	bin
+1571469435
 'b
 	/home/gogo/bin/
 	..
@@ -24,15 +24,15 @@
 'h
 	/home/gogo/
 	..
-1553007847
+1571469638
 'l
 	/media/400Gb/la
 	..
 1553202812
 'm
-	/home/gogo/Music
-	2Pac - Changes - 1998 Greatest Hits (Explicit).mp3
-1553201322
+	/
+	bin
+1571469428
 'p
 	/home/gogo/Projects
 	..
@@ -41,10 +41,6 @@
 	/media/400Gb/Wallpapers
 	..
 1553251037
-'z
-	/home/gogo/.config/vifm
-	..
-1553007846
 
 # Bookmarks:
 
@@ -58,401 +54,386 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/gogo
-	Pictures
-5
-d/home/gogo/Pictures
-	thumbnails-digikam.db
-4
-d/home/gogo
-	Projects
-6
-d/home/gogo/Projects
-	..
-0
-d/home/gogo
-	Scripts
-7
-d/home/gogo/Scripts
-	..
-0
-d/home/gogo
-	Vagrant
-8
-d/home/gogo/Vagrant
-	..
-0
-d/home/gogo
-	VirtualBox VMs
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -
+	4. Hello World Scrapy.mp4
 9
-d/home/gogo/VirtualBox VMs
-	..
-0
-d/home/gogo
-	go
-10
-d/home/gogo/go
-	..
-0
-d/home/gogo
-	Documents
-2
-d/home
-	gogo
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	1. Introduction - UPDATED -
 1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -
+	7. Where to find all the code !.mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	2. XPath Selectors
+2
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors
+	4. XPath Predicates.mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	3. Build a Complete Spider from A to Z
+3
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z
+	5. Feed Exporters.mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	5. Scraping Javascript Websites using Splash
+5
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash
+	5. Dealing with Pagination.mp4
+5
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	6. The Crawl Spider
+6
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
+	4. Challenge Solution(Building the Parse Method).mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	8. Scraping APIs(REST API) - Infinite Scroll Pagination
+8
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination
+	10.1 demo_airbnb_new.zip.zip
+14
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	12. The Media Pipeline
+12
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline
+	..
+0
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	12. The Media Pipeline
+12
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline
+	6. Project source code.html
+5
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	14. BONUS
+14
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/14. BONUS
+	1. Files Pipeline.html
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	1. Introduction - UPDATED -
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -
+	7. Where to find all the code !.mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	2. XPath Selectors
+2
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors
+	1. XPath Terminology.mp4
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	3. Build a Complete Spider from A to Z
+3
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z
+	9. FInal Touches.mp4
+7
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	4. Writing a Custom Pipeline - Store the Data in MongoDb
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb
+	4. Writing the MongoDb Pipeline (UPDATED).mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	5. Scraping Javascript Websites using Splash
+5
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash
+	5. Dealing with Pagination.mp4
+5
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	6. The Crawl Spider
+6
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
+	4. Challenge Solution(Building the Parse Method).mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	7. Avoid Getting Banned
+7
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/7. Avoid Getting Banned
+	3.1 User Agents List.pdf.pdf
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	8. Scraping APIs(REST API) - Infinite Scroll Pagination
+8
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination
+	8. Infinite Scroll Pagination.mp4
+11
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	8. Scraping APIs(REST API) - Infinite Scroll Pagination
+8
+d/home/gogo/Downloads/SCRAPY
+	Web Scraping for Beginners with Python Scrapy BS4
+2
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
+	1. Getting Started
+1
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/1. Getting Started
+	3. Tools for web scraping.vtt
+6
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
+	2. Installing required software
+2
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/2. Installing required software
+	6. Installing Scrapy.mp4
+11
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
+	3. Basic Web Scraping  using BeautifulSoup and Python
+3
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/3. Basic Web Scraping  using BeautifulSoup and Python
+	3. Prototyping the script  part 1.mp4
+5
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
+	4. Basic Web Scraping using Scrapy and Python
+4
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/4. Basic Web Scraping using Scrapy and Python
+	1. Creating a Scrapy project.vtt
+2
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
+	5. HTML  Quick Refresher
+5
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/5. HTML  Quick Refresher
+	..
+0
+d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
+	5. HTML  Quick Refresher
+5
+d/home/gogo/Downloads/SCRAPY
+	[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
+2
+d/home/gogo/Downloads/SCRAPY/[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
+	01 Scrapy vs_ Other Python Web Scraping Frameworks
+1
+d/home/gogo/Downloads/SCRAPY
+	[Tutorialsplanet.NET] Udemy - Modern Web Scraping with Python using Scrapy Splash Selenium
+3
+d/home/gogo/Downloads/SCRAPY/[Tutorialsplanet.NET] Udemy - Modern Web Scraping with Python using Scrapy Splash Selenium
+	2. Scrapy Fundamentals
+2
+d/home/gogo/Downloads/SCRAPY
+	[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
+2
+d/home/gogo/Downloads/SCRAPY/[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
+	01 Scrapy vs_ Other Python Web Scraping Frameworks
+1
+d/home/gogo/Downloads/SCRAPY
+	Modern Web Scraping with Python using Scrapy and Splash
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	8. Scraping APIs(REST API) - Infinite Scroll Pagination
+8
+d/home/gogo/Downloads/SCRAPY
+	[Tutorialsplanet.NET] Udemy - Modern Web Scraping with Python using Scrapy Splash Selenium
+3
+d/home/gogo/Downloads
+	SCRAPY
+7
+d/home/gogo/Downloads/SCRAPY
+	Modern Web Scraping with Python using Scrapy and Splash
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	14. BONUS
+14
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/14. BONUS
+	1. Files Pipeline.html
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	14. BONUS
+14
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/14. BONUS
+	1. Files Pipeline.html
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	13. Paid and Free proxies with ScrapySplash
+13
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/13. Paid and Free proxies with ScrapySplash
+	..
+0
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	1. Introduction - UPDATED -
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -
+	7. Where to find all the code !.mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	2. XPath Selectors
+2
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors
+	1. XPath Terminology.mp4
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	5. Scraping Javascript Websites using Splash
+5
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash
+	5. Dealing with Pagination.mp4
+5
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	6. The Crawl Spider
+6
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
+	4. Challenge Solution(Building the Parse Method).mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	6. The Crawl Spider
+6
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
+	4. Challenge Solution(Building the Parse Method).mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	6. The Crawl Spider
+6
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
+	3. Setting up the Rules.mp4
+3
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	12. The Media Pipeline
+12
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline
+	3. Extending The Images Pipeline (Store images with custom names).mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	12. The Media Pipeline
+12
+d/home/gogo/Downloads/SCRAPY
+	[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
+2
+d/home/gogo/Downloads/SCRAPY/[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
+	01 Scrapy vs_ Other Python Web Scraping Frameworks
+1
+d/home/gogo/Downloads/SCRAPY
+	[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
+2
+d/home/gogo/Downloads
+	SCRAPY
+7
+d/home/gogo/Downloads/SCRAPY
+	Modern Web Scraping with Python using Scrapy and Splash
+1
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	3. Build a Complete Spider from A to Z
+3
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z
+	9. FInal Touches.mp4
+7
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	4. Writing a Custom Pipeline - Store the Data in MongoDb
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb
+	4. Writing the MongoDb Pipeline (UPDATED).mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	4. Writing a Custom Pipeline - Store the Data in MongoDb
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb
+	4. Writing the MongoDb Pipeline (UPDATED).mp4
+4
+d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
+	4. Writing a Custom Pipeline - Store the Data in MongoDb
+4
+d/home/gogo/Downloads/SCRAPY
+	Modern Web Scraping with Python using Scrapy and Splash
+1
+d/home/gogo/Downloads
+	SCRAPY
+7
 d/home/gogo
 	Documents
-2
+3
 d/home/gogo/Documents
 	Repos
 1
 d/home/gogo/Documents/Repos
-	Wiki
-3
-d/home/gogo/Documents
-	Repos
+	BrowsWaveTask
 1
-d/home/gogo
-	Desktop
+d/home/gogo/Documents/Repos/BrowsWaveTask
+	SamsClub
 1
-d/home/gogo/Desktop
+d/home/gogo/Documents/Repos/BrowsWaveTask/SamsClub
 	imgs
-1
-d/home/gogo/Desktop/imgs
-	valentin-petkov-uKS_wcTAMZU-unsplash.jpg
-7
-d/home/gogo/Desktop
-	..
-0
-d/home/gogo
-	Documents
-1
-d/home/gogo/Documents
-	Repos
-1
-d/home/gogo
-	Downloads
 2
-d/home/gogo/Downloads
-	..
-0
-d/home/gogo
-	Downloads
-2
-d/home
-	gogo
-1
-d/home/gogo
-	Downloads
-2
-d/home/gogo/Downloads
-	..
-0
-d/home/gogo
-	Documents
-1
-d/home/gogo/Documents
-	..
-0
-d/home/gogo
-	_db.kdbx
-4
-d/home
-	gogo
-1
-d/
-	home
-4
-d/home/gogo/Documents/Repos/Dotfiles
-	..
-0
-d/home/gogo
-	..
-0
-d/home
-	..
-0
-d/
-	media
-8
-d/media
-	400Gb
-2
-d/media/400Gb
-	Snimki_Primary
-8
-d/media
-	1Tb
-1
-d/media/1Tb
-	BACKUPS
-1
-d/media/1Tb/BACKUPS
-	LinuxBackup
-5
-d/media/1Tb/BACKUPS/LinuxBackup
-	Slim_Arch
-1
-d/media/1Tb/BACKUPS/LinuxBackup/Slim_Arch
-	..
-0
-d/media/1Tb/BACKUPS/LinuxBackup
-	Slim_Arch
-1
-d/media/1Tb/BACKUPS
-	LinuxBackup
-5
-d/media/1Tb/BACKUPS/LinuxBackup
-	Slim_Arch
-1
-d/media/1Tb/BACKUPS/LinuxBackup/Slim_Arch
-	..
-0
-d/media/1Tb/BACKUPS/LinuxBackup
-	Slim_Arch
-1
-d/media/400Gb
-	la
-13
-d/media/400Gb/la
-	4 On 1  O My God  4 (Legal Porno) [2019] [WEB-DL] (Split Scenes)
-1
-d/media/400Gb/la/4 On 1  O My God  4 (Legal Porno) [2019] [WEB-DL] (Split Scenes)
-	Silvia Dellai.mp4
-1
-d/media/400Gb/la
-	3805JulietaHotyoungamateurcouplefucking
-2
-d/media/400Gb/la/3805JulietaHotyoungamateurcouplefucking
-	3805JulietaHotyoungamateurcouplefucking.mp4
-1
-d/media/400Gb/la
-	5308NaomiBennetDirtyCzechGypsyslutNaomiBennet
-3
-d/media/400Gb/la/5308NaomiBennetDirtyCzechGypsyslutNaomiBennet
-	5308NaomiBennetDirtyCzechGypsyslutNaomiBennet.mp4
-1
-d/media/400Gb/la
-	6562JennyGlamKathiaNobiliKcumintomymouth3PartB
-4
-d/media/400Gb/la/6562JennyGlamKathiaNobiliKcumintomymouth3PartB
-	6562JennyGlamKathiaNobiliKcumintomymouth3PartB.mp4
-1
-d/media/400Gb/la
-	[AnalIntroductions  Private] Cindy Shine & Lady Bug - Debuts In Threesom (24.05.2019) [2019 г., Anal, Threesome, Blonde, Blowjob, Brunette, European, Facial, FFM, First Time at Private, Massage, Shaved Puss
-11
-d/media/400Gb/la/[AnalIntroductions  Private] Cindy Shine & Lady Bug - Debuts In Threesom (24.05.2019) [2019 г., Anal, Threesome, Blonde, Blowjob, Brunette, European, Facial, FFM, First Time at Private, Massage, Shaved Puss
-	..
-0
-d/media/400Gb/la
-	[AnalIntroductions  Private] Cindy Shine & Lady Bug - Debuts In Threesom (24.05.2019) [2019 г., Anal, Threesome, Blonde, Blowjob, Brunette, European, Facial, FFM, First Time at Private, Massage, Shaved Puss
-11
-d/media/400Gb/la/[AnalIntroductions  Private] Cindy Shine & Lady Bug - Debuts In Threesom (24.05.2019) [2019 г., Anal, Threesome, Blonde, Blowjob, Brunette, European, Facial, FFM, First Time at Private, Massage, Shaved Puss
-	Cindy Shine & Lady Bug - Debuts In Threesom (24.05.2019).mp4
-1
-d/media/400Gb/la
-	6562JennyGlamKathiaNobiliKcumintomymouth3PartB
-4
-d/media/400Gb/la/6562JennyGlamKathiaNobiliKcumintomymouth3PartB
-	6562JennyGlamKathiaNobiliKcumintomymouth3PartB.mp4
-1
-d/media/400Gb/la
-	DWDL
-7
-d/media/400Gb/la/DWDL
-	DWDL.mp4
-1
-d/media/400Gb/la
-	Evil Angel (Nacho Vidal Productions) - Nacho's MILF Mayhem (2016) WEB-DL (Split Scenes)
-7
-d/media/400Gb/la/Evil Angel (Nacho Vidal Productions) - Nacho's MILF Mayhem (2016) WEB-DL (Split Scenes)
-	50471_05_hd.mp4
-1
-d/media/400Gb/la
-	HUB
-8
-d/media/400Gb/la/HUB
-	pornhub
-1
-d/media/400Gb/la/HUB/pornhub
-	perfect Bulgarian teen-ph5d63951369a9f.mp4
-2
-d/media/400Gb/la/HUB
-	pornhub
-1
-d/media/400Gb/la/HUB/pornhub
-	perfect Bulgarian teen-ph5d63951369a9f.mp4
-2
-d/media/400Gb/la/HUB
-	APARTMENT TOUR & MEETING MYSWEETAPPLE - The Sex Diaries 11 (LUNAxJAMES)-ph5bb230babd11b.mp4
-5
-d/media/400Gb/la
-	Sex Dance
-10
-d/media/400Gb/la/Sex Dance
-	Sex Dance (2019).mp4.part
-1
-d/home/gogo
-	..
-0
-d/media/400Gb
-	la
-13
-d/media/400Gb/la
-	Sex Dance
-10
-d/media/400Gb/la/Sex Dance
-	Sex Dance (2019).mp4.part
-1
-d/media/400Gb/la
-	6562JennyGlamKathiaNobiliKcumintomymouth3PartB
-4
-d/media/400Gb/la/6562JennyGlamKathiaNobiliKcumintomymouth3PartB
-	6562JennyGlamKathiaNobiliKcumintomymouth3PartB.mp4
-1
-d/media/400Gb/la
-	7689LilliVanilliIchsteheaufHardCoreSexDuauch
-5
-d/media/400Gb/la/7689LilliVanilliIchsteheaufHardCoreSexDuauch
-	7689LilliVanilliIchsteheaufHardCoreSexDuauch.mp4
-1
-d/media/400Gb/la
-	Evil Angel (Nacho Vidal Productions) - Nacho's MILF Mayhem (2016) WEB-DL (Split Scenes)
-7
-d/media/400Gb/la/Evil Angel (Nacho Vidal Productions) - Nacho's MILF Mayhem (2016) WEB-DL (Split Scenes)
-	50471_05_hd.mp4
-1
-d/media/400Gb/la
-	Evil Angel (Nacho Vidal Productions) - Nacho's MILF Mayhem (2016) WEB-DL (Split Scenes)
-7
-d/media/400Gb
-	la
-13
-d/media/400Gb/la
-	HUB
-8
-d/media/400Gb/la/HUB
-	pornhub
-1
-d/media/400Gb/la/HUB/pornhub
-	perfect Bulgarian teen-ph5d63951369a9f.mp4
-2
-d/media/400Gb/la/HUB
-	pornhub
-1
-d/media/400Gb/la
-	HUB
-8
-d/media/400Gb
-	Snimki_Primary
-8
-d/media/400Gb/Snimki_Primary
-	2007
-2
-d/media/400Gb
-	Wallpapers
-10
-d/media/400Gb/Wallpapers
-	Anarhy
-2
-d/media/400Gb/Wallpapers/Anarhy
-	4d39e18aa14ee85265385755a66697be.jpg
+d/home/gogo/Documents/Repos/BrowsWaveTask/SamsClub/imgs
+	5-hour-energy-berry-24pk-1-93oz-sam-s-clubhttps-scene7-samsclub-com-is-image-samsclub-0071941050024-b.jpg
 2
 d
 
 # Right window history (oldest to newest):
 D/home/gogo
-	_db.kdbx
-6
+	Downloads
+4
+D/home/gogo/Downloads
+	..
+0
+D/home/gogo
+	Documents
+3
+D/home/gogo/Documents
+	Repos
+1
+D/home/gogo/Documents/Repos
+	Dotfiles
+2
+D/home/gogo/Documents/Repos/Dotfiles
+	vifm
+10
+D/home/gogo/Documents/Repos/Dotfiles/vifm
+	..
+0
+D/home/gogo/Documents/Repos/Dotfiles
+	vifm
+10
+D/home/gogo/Documents/Repos
+	..
+0
+D/home/gogo/Documents
+	Repos
+1
+D/home/gogo/Documents/Repos
+	..
+0
+D/home/gogo/Documents
+	Repos
+1
+D/home/gogo/Documents/Repos
+	..
+0
 D
 
 # Command line history (oldest to newest):
-:mkdir JimTv
-:command echo %d
-:%d
-:%f
-:%i
-:~/Scripts/phonetic_keys.shjjkjkj
-:~/Scripts/phonetic_keys.sh
-:~/Scripts/make_wall.sh
-:media
-:~/Scripts/make_wall.sh %i
-:~/Scripts/make_wall.sh %d
-:~/Scripts/make_wall.sh -n %c
-:execute ~/Scripts/make_wall.sh -n %c
-:execute ~/Scripts/make_wall.sh colorful-1237242.svg
-:new
-:edit
-:edit lib
-:edit library
-:mkdir lib
-:exit
-:command ex ansi
-:rename lib library
-:rename lib
-:rename lib libs
-:mkdir templates
-:'
-:vs
-:.!
-:shell
-:help
-:?
-:redraw
-:sp
-:only
-:colorscheme zenburn
-:colorscheme zenburn1
-:colorscheme desert
-:colorscheme g80
-:colorscheme molokai
-:colorscheme ph
+:colorscheme SolarizedDark
+:colorscheme ZenBurn
+:colorscheme ZenBurn1
+:colorscheme Dracula
 :colorscheme Default
-:colorscheme
-:l
-:marks
-:open 
-:mkdir LinuxISOs
-:execute
-:a
-:delete
-:open
-:edit 
-:colorscheme dracula
-:set
-:colorscheme iceberg
-:colorscheme default
-:rename
+:help
+:smplayer %f
 :q
-:cd
-:cunabbrev
 
 # Search history (oldest to newest):
-//
-/autum
-/nikki
-/bcb
-/sen
-/youtu
-/buc
-/bu
-/buchares
-/romania
-/sex
 
 # Prompt history (oldest to newest):
-pmark-finn-540442-unsplash.jpg
-pvifmrc_new
-ppup_alyssia_kent_mb091418_480p_1000.mp4
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/media/400Gb/.vifm-Trash-1000/000_DWDL
+""/home/gogo/.local/share/vifm/Trash/000_Web Scraping for Beginners with Python Scrapy BS4
 
 # Directory stack (oldest to newest):
 
 # Trash content:
+t/home/gogo/.local/share/vifm/Trash/000_Download more courses.url
+	/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/Download more courses.url
+t/home/gogo/.local/share/vifm/Trash/000_Downloaded from TutsGalaxy.com.txt
+	/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/Downloaded from TutsGalaxy.com.txt
+t/home/gogo/.local/share/vifm/Trash/000_TutsGalaxy.com.txt
+	/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/TutsGalaxy.com.txt
+t/home/gogo/.local/share/vifm/Trash/001_Download more courses.url
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/Download more courses.url
+t/home/gogo/.local/share/vifm/Trash/000_Downloaded from TutsGalaxy.com(1).txt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/Downloaded from TutsGalaxy.com(1).txt
+t/home/gogo/.local/share/vifm/Trash/001_Downloaded from TutsGalaxy.com.txt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/Downloaded from TutsGalaxy.com.txt
+t/home/gogo/.local/share/vifm/Trash/001_TutsGalaxy.com.txt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/TutsGalaxy.com.txt
 t/media/400Gb/.vifm-Trash-1000/000_Autumn Falls - Naughty Little Sister 2  031919.mp4
 	/media/400Gb/la/Autumn Falls - Naughty Little Sister 2  031919.mp4
 t/home/gogo/.local/share/vifm/Trash/000_zenburn.vifm
@@ -659,6 +640,138 @@ t/media/400Gb/.vifm-Trash-1000/000_Veronica Leal - Girlfriend Loves Anal  (06.08
 	/media/400Gb/la/Veronica Leal - Girlfriend Loves Anal  (06.08.19).mp4
 t/media/400Gb/.vifm-Trash-1000/000_DWDL
 	/media/400Gb/la/DWDL
+t/home/gogo/.local/share/vifm/Trash/000_1. Intro to Web Scraping & Scrapy.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/1. Intro to Web Scraping & Scrapy.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2. Setting up the Development Environment - Linux Users.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/2. Setting up the Development Environment - Linux Users.vtt
+t/home/gogo/.local/share/vifm/Trash/000_3. Setting up the Development Environment - Windows Users.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/3. Setting up the Development Environment - Windows Users.vtt
+t/home/gogo/.local/share/vifm/Trash/000_4. Hello World Scrapy.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/4. Hello World Scrapy.vtt
+t/home/gogo/.local/share/vifm/Trash/000_5. Frequently Asked Questions (Common errors).vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/5. Frequently Asked Questions (Common errors).vtt
+t/home/gogo/.local/share/vifm/Trash/000_7. Where to find all the code !.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/7. Where to find all the code !.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2.1 Python version 3.6.5 download link.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/2.1 Python version 3.6.5 download link.html
+t/home/gogo/.local/share/vifm/Trash/000_3. Setting up the Development Environment - Windows Users.mp4
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/3. Setting up the Development Environment - Windows Users.mp4
+t/home/gogo/.local/share/vifm/Trash/000_3.1 Python version 3.6.5 download link.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/3.1 Python version 3.6.5 download link.html
+t/home/gogo/.local/share/vifm/Trash/000_4.1 Goodreads website.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/4.1 Goodreads website.html
+t/home/gogo/.local/share/vifm/Trash/000_5. Frequently Asked Questions (Common errors).mp4
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/5. Frequently Asked Questions (Common errors).mp4
+t/home/gogo/.local/share/vifm/Trash/000_6. First section assignment.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/6. First section assignment.html
+t/home/gogo/.local/share/vifm/Trash/000_1. XPath Terminology.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/1. XPath Terminology.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2. XPath Syntax.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/2. XPath Syntax.vtt
+t/home/gogo/.local/share/vifm/Trash/000_3. XPath Axes.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/3. XPath Axes.vtt
+t/home/gogo/.local/share/vifm/Trash/000_4. XPath Predicates.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/4. XPath Predicates.vtt
+t/home/gogo/.local/share/vifm/Trash/000_5. Second section assignment.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/5. Second section assignment.html
+t/home/gogo/.local/share/vifm/Trash/000_4.1 Cheat Sheet.pdf.pdf
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/4.1 Cheat Sheet.pdf.pdf
+t/home/gogo/.local/share/vifm/Trash/000_1. Locating, Quotes, Authors and Tags.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/1. Locating, Quotes, Authors and Tags.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2. Update Author is not loading .html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/2. Update Author is not loading .html
+t/home/gogo/.local/share/vifm/Trash/000_3. Scrapy XPath Selectors.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/3. Scrapy XPath Selectors.vtt
+t/home/gogo/.local/share/vifm/Trash/000_4. Pagination.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/4. Pagination.vtt
+t/home/gogo/.local/share/vifm/Trash/000_5. Feed Exporters.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/5. Feed Exporters.vtt
+t/home/gogo/.local/share/vifm/Trash/000_6. Items and Item Loader.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/6. Items and Item Loader.vtt
+t/home/gogo/.local/share/vifm/Trash/000_7. Input and Output Processors.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/7. Input and Output Processors.vtt
+t/home/gogo/.local/share/vifm/Trash/000_9. FInal Touches.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/9. FInal Touches.vtt
+t/home/gogo/.local/share/vifm/Trash/000_10. Third section assignment.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/10. Third section assignment.html
+t/home/gogo/.local/share/vifm/Trash/000_8. Output isn't showing correctly.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/8. Output isn't showing correctly.html
+t/home/gogo/.local/share/vifm/Trash/000_1. Why using Splash.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/1. Why using Splash.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2. Setting up Splash on Linux.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/2. Setting up Splash on Linux.vtt
+t/home/gogo/.local/share/vifm/Trash/000_3. Writing Lua Scripts.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/3. Writing Lua Scripts.vtt
+t/home/gogo/.local/share/vifm/Trash/000_4. Splash Request.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/4. Splash Request.vtt
+t/home/gogo/.local/share/vifm/Trash/000_5. Dealing with Pagination.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/5. Dealing with Pagination.vtt
+t/home/gogo/.local/share/vifm/Trash/000_6. Sixth section Assignment.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/6. Sixth section Assignment.html
+t/home/gogo/.local/share/vifm/Trash/000_1. The Crawling Behaviour.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/1. The Crawling Behaviour.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2. The Crawl Spider Simplified.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/2. The Crawl Spider Simplified.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2.1 The Link Extractor Object.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/2.1 The Link Extractor Object.html
+t/home/gogo/.local/share/vifm/Trash/000_2.2 The Rule Object.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/2.2 The Rule Object.html
+t/home/gogo/.local/share/vifm/Trash/000_3. Setting up the Rules.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/3. Setting up the Rules.vtt
+t/home/gogo/.local/share/vifm/Trash/000_4. Challenge Solution(Building the Parse Method).vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/4. Challenge Solution(Building the Parse Method).vtt
+t/home/gogo/.local/share/vifm/Trash/000_5. Seventh section assignment.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/5. Seventh section assignment.html
+t/home/gogo/.local/share/vifm/Trash/000_1. Introduction.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/1. Introduction.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2. REST API.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/2. REST API.vtt
+t/home/gogo/.local/share/vifm/Trash/000_3. Working With JSON Objects.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/3. Working With JSON Objects.vtt
+t/home/gogo/.local/share/vifm/Trash/000_4. The Airbnb JSON Object.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/4. The Airbnb JSON Object.vtt
+t/home/gogo/.local/share/vifm/Trash/000_6. Airbnb Spider.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/6. Airbnb Spider.vtt
+t/home/gogo/.local/share/vifm/Trash/000_8. Infinite Scroll Pagination.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/8. Infinite Scroll Pagination.vtt
+t/home/gogo/.local/share/vifm/Trash/000_9. Spider Arguments.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/9. Spider Arguments.vtt
+t/home/gogo/.local/share/vifm/Trash/000_10. Airbnb code UPDATE (Request Cookies) NEW.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/10. Airbnb code UPDATE (Request Cookies) NEW.vtt
+t/home/gogo/.local/share/vifm/Trash/000_11. Another way to scrape Airbnb restaurant detail page.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/11. Another way to scrape Airbnb restaurant detail page.html
+t/home/gogo/.local/share/vifm/Trash/000_1. Media Pipelines.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/1. Media Pipelines.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2. The Images Pipeline.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/2. The Images Pipeline.vtt
+t/home/gogo/.local/share/vifm/Trash/000_1.1 Media Pipeline documentation.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/1.1 Media Pipeline documentation.html
+t/home/gogo/.local/share/vifm/Trash/000_3. Extending The Images Pipeline (Store images with custom names).vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/3. Extending The Images Pipeline (Store images with custom names).vtt
+t/home/gogo/.local/share/vifm/Trash/000_4. Files Pipeline (Article).html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/4. Files Pipeline (Article).html
+t/home/gogo/.local/share/vifm/Trash/000_5. Challenge (Files Pipeline).html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/5. Challenge (Files Pipeline).html
+t/home/gogo/.local/share/vifm/Trash/000_2. Crawlera GIFT.html
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/14. BONUS/2. Crawlera GIFT.html
+t/home/gogo/.local/share/vifm/Trash/000_2. Setting Up MongoDb on Linux.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb/2. Setting Up MongoDb on Linux.vtt
+t/home/gogo/.local/share/vifm/Trash/000_3. Setting Up MongoDb on Windows.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb/3. Setting Up MongoDb on Windows.vtt
+t/home/gogo/.local/share/vifm/Trash/000_1. MongoDb Terminology.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb/1. MongoDb Terminology.vtt
+t/home/gogo/.local/share/vifm/Trash/000_4. Writing the MongoDb Pipeline (UPDATED).vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb/4. Writing the MongoDb Pipeline (UPDATED).vtt
+t/home/gogo/.local/share/vifm/Trash/000_1. Technics Used by Websites Administrators to Prevent Web Scraping.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/7. Avoid Getting Banned/1. Technics Used by Websites Administrators to Prevent Web Scraping.vtt
+t/home/gogo/.local/share/vifm/Trash/000_2. Web CrawlingScraping Best Practices.vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/7. Avoid Getting Banned/2. Web CrawlingScraping Best Practices.vtt
+t/home/gogo/.local/share/vifm/Trash/000_3. Custom Middleware (User Agent Rotator Middleware).vtt
+	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/7. Avoid Getting Banned/3. Custom Middleware (User Agent Rotator Middleware).vtt
+t/home/gogo/.local/share/vifm/Trash/000_Web Scraping for Beginners with Python Scrapy BS4
+	/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
+t/home/gogo/.local/share/vifm/Trash/000_tester
+	/home/gogo/Documents/Repos/BrowsWaveTask/SamsClub/tester
 
 # State:
 f

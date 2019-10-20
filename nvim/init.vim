@@ -545,6 +545,9 @@ let maplocalleader='\'
                 \   exe "normal! g`\"" |
                 \ endif
 
+    " Formating json
+    command J :execute ":%!jq '.'"
+
 " }}}
 " {{{ Plugin based remaps
 "
