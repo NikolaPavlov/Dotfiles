@@ -716,3 +716,37 @@ set termguicolors " enable true colors for colorschemes
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+
+
+
+
+
+" TODO:
+" [ ] terminal in nvim
+
+" tnoremap <ESC> <C-\><C-n><C-w><C-p>
+tnoremap <Esc> <C-\><C-n>
+
+autocmd BufWinEnter,WinEnter term://* startinsert
+autocmd BufLeave term://* stopinsert
+
+
+" tnoremap <C-h> <C-\><C-n><C-w>h
+" tnoremap <C-j> <C-\><C-n><C-w>j
+" tnoremap <C-k> <C-\><C-n><C-w>k
+" tnoremap <C-l> <C-\><C-n><C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
+
+
+" think about replace Ctrl wiht 'm' or 'M' for moving between windows ???
+tnoremap <M-h> <M-\><M-n><M-w>h
+tnoremap <M-j> <M-\><M-n><M-w>j
+tnoremap <M-k> <M-\><M-n><M-w>k
+tnoremap <M-l> <M-\><M-n><M-w>l
+nnoremap <M-h> <C-w>h
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
+nnoremap <M-l> <C-w>l

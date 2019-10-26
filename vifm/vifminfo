@@ -4,49 +4,41 @@
 '1
 	/media/1Tb
 	..
-1571469638
+1571750141
 '4
 	/media/400Gb
 	..
-1553373079
-'H
-	/
-	bin
-1571469435
-'b
-	/home/gogo/bin/
+1571750141
+'D
+	/home/gogo/Downloads
 	..
-1553007847
+1571818793
 'd
 	/home/gogo/Documents/Repos/Dotfiles
 	..
-1553203018
+1571833878
 'h
 	/home/gogo/
 	..
-1571469638
+1571750141
 'l
 	/media/400Gb/la
 	..
-1553202812
-'m
-	/
-	bin
-1571469428
+1571750141
 'p
 	/home/gogo/Projects
 	..
-1553202812
+1571820834
 'w
 	/media/400Gb/Wallpapers
 	..
-1553251037
+1571820834
 
 # Bookmarks:
 
 # TUI:
 al
-q1
+q0
 v2
 ov
 m-1
@@ -54,327 +46,309 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -
-	4. Hello World Scrapy.mp4
-9
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	1. Introduction - UPDATED -
-1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -
-	7. Where to find all the code !.mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	2. XPath Selectors
-2
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors
-	4. XPath Predicates.mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	3. Build a Complete Spider from A to Z
-3
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z
-	5. Feed Exporters.mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	5. Scraping Javascript Websites using Splash
-5
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash
-	5. Dealing with Pagination.mp4
-5
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	6. The Crawl Spider
-6
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
-	4. Challenge Solution(Building the Parse Method).mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	8. Scraping APIs(REST API) - Infinite Scroll Pagination
-8
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination
-	10.1 demo_airbnb_new.zip.zip
-14
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	12. The Media Pipeline
+d/media/400Gb/la
+	[AnalIntroductions  Private] Cindy Shine & Lady Bug - Debuts In Threesom (24.05.2019) [2019 г., Anal, Threesome, Blonde, Blowjob, Brunette, European, Facial, FFM, First Time at Private, Massage, Shaved Puss
 12
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline
-	..
-0
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	12. The Media Pipeline
-12
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline
-	6. Project source code.html
-5
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	14. BONUS
-14
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/14. BONUS
-	1. Files Pipeline.html
+d/media/400Gb/la/[AnalIntroductions  Private] Cindy Shine & Lady Bug - Debuts In Threesom (24.05.2019) [2019 г., Anal, Threesome, Blonde, Blowjob, Brunette, European, Facial, FFM, First Time at Private, Massage, Shaved Puss
+	Cindy Shine & Lady Bug - Debuts In Threesom (24.05.2019).mp4
 1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	1. Introduction - UPDATED -
-1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -
-	7. Where to find all the code !.mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	2. XPath Selectors
-2
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors
-	1. XPath Terminology.mp4
-1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	3. Build a Complete Spider from A to Z
-3
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z
-	9. FInal Touches.mp4
-7
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	4. Writing a Custom Pipeline - Store the Data in MongoDb
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb
-	4. Writing the MongoDb Pipeline (UPDATED).mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	5. Scraping Javascript Websites using Splash
-5
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash
-	5. Dealing with Pagination.mp4
-5
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	6. The Crawl Spider
-6
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
-	4. Challenge Solution(Building the Parse Method).mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	7. Avoid Getting Banned
-7
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/7. Avoid Getting Banned
-	3.1 User Agents List.pdf.pdf
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	8. Scraping APIs(REST API) - Infinite Scroll Pagination
-8
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination
-	8. Infinite Scroll Pagination.mp4
-11
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	8. Scraping APIs(REST API) - Infinite Scroll Pagination
-8
-d/home/gogo/Downloads/SCRAPY
-	Web Scraping for Beginners with Python Scrapy BS4
-2
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
-	1. Getting Started
-1
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/1. Getting Started
-	3. Tools for web scraping.vtt
-6
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
-	2. Installing required software
-2
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/2. Installing required software
-	6. Installing Scrapy.mp4
-11
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
-	3. Basic Web Scraping  using BeautifulSoup and Python
-3
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/3. Basic Web Scraping  using BeautifulSoup and Python
-	3. Prototyping the script  part 1.mp4
-5
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
-	4. Basic Web Scraping using Scrapy and Python
-4
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/4. Basic Web Scraping using Scrapy and Python
-	1. Creating a Scrapy project.vtt
-2
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
-	5. HTML  Quick Refresher
-5
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/5. HTML  Quick Refresher
-	..
-0
-d/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
-	5. HTML  Quick Refresher
-5
-d/home/gogo/Downloads/SCRAPY
-	[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
-2
-d/home/gogo/Downloads/SCRAPY/[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
-	01 Scrapy vs_ Other Python Web Scraping Frameworks
-1
-d/home/gogo/Downloads/SCRAPY
-	[Tutorialsplanet.NET] Udemy - Modern Web Scraping with Python using Scrapy Splash Selenium
-3
-d/home/gogo/Downloads/SCRAPY/[Tutorialsplanet.NET] Udemy - Modern Web Scraping with Python using Scrapy Splash Selenium
-	2. Scrapy Fundamentals
-2
-d/home/gogo/Downloads/SCRAPY
-	[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
-2
-d/home/gogo/Downloads/SCRAPY/[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
-	01 Scrapy vs_ Other Python Web Scraping Frameworks
-1
-d/home/gogo/Downloads/SCRAPY
-	Modern Web Scraping with Python using Scrapy and Splash
-1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	8. Scraping APIs(REST API) - Infinite Scroll Pagination
-8
-d/home/gogo/Downloads/SCRAPY
-	[Tutorialsplanet.NET] Udemy - Modern Web Scraping with Python using Scrapy Splash Selenium
-3
-d/home/gogo/Downloads
-	SCRAPY
-7
-d/home/gogo/Downloads/SCRAPY
-	Modern Web Scraping with Python using Scrapy and Splash
-1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	14. BONUS
-14
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/14. BONUS
-	1. Files Pipeline.html
-1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	14. BONUS
-14
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/14. BONUS
-	1. Files Pipeline.html
-1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	13. Paid and Free proxies with ScrapySplash
+d/media/400Gb/la
+	[Bangbros] Veronica Leal-Fucking Veronica’s Ass On A Highway Bridge 18.11.11
 13
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/13. Paid and Free proxies with ScrapySplash
+d/media/400Gb/la/[Bangbros] Veronica Leal-Fucking Veronica’s Ass On A Highway Bridge 18.11.11
+	PublicBang.18.11.11.Veronica.Leal.XXX.SD.mp4
+1
+d/media/400Gb/la
+	[CzechCasting] Martina [2018-08-26, Amateur, Casting, Hardcore, Oral, Anal Sex]
+14
+d/media/400Gb/la/[CzechCasting] Martina [2018-08-26, Amateur, Casting, Hardcore, Oral, Anal Sex]
+	czech-casting-martina-4493-960x540.mp4
+1
+d/media/400Gb/la
+	[OnlyBlowJob  DDFNetwork] Cindy Shine - Blowjob With A View [23.01.2019]
+15
+d/media/400Gb/la/[OnlyBlowJob  DDFNetwork] Cindy Shine - Blowjob With A View [23.01.2019]
+	941bjd1_540_4500_Michael+Fly+and+Cindy+Shine_-_Blowjob+With+A+View.mp4
+1
+d/media/400Gb/la
+	[WoodmanCastingX] Claudia Jamsson and Suzanna Wienold - BTS - Double DP for 2 bombastics girls [2019]
+16
+d/media/400Gb/la/[WoodmanCastingX] Claudia Jamsson and Suzanna Wienold - BTS - Double DP for 2 bombastics girls [2019]
 	..
 0
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	1. Introduction - UPDATED -
+d/media/400Gb/la
+	[WoodmanCastingX] Claudia Jamsson and Suzanna Wienold - BTS - Double DP for 2 bombastics girls [2019]
+16
+d/media/400Gb/la/[WoodmanCastingX] Claudia Jamsson and Suzanna Wienold - BTS - Double DP for 2 bombastics girls [2019]
+	woodmancastingx.Claudia Jamsson and Suzanna Wienold - BTS - Double DP for 2 bombastics girls.mp4
 1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -
-	7. Where to find all the code !.mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	2. XPath Selectors
+d/media/1Tb
+	Books
 2
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors
-	1. XPath Terminology.mp4
-1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	5. Scraping Javascript Websites using Splash
-5
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash
-	5. Dealing with Pagination.mp4
-5
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	6. The Crawl Spider
-6
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
-	4. Challenge Solution(Building the Parse Method).mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	6. The Crawl Spider
-6
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
-	4. Challenge Solution(Building the Parse Method).mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	6. The Crawl Spider
-6
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider
-	3. Setting up the Rules.mp4
+d/media/1Tb/Books
+	CompetitiveAnalysiss
 3
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	12. The Media Pipeline
-12
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline
-	3. Extending The Images Pipeline (Store images with custom names).mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	12. The Media Pipeline
-12
-d/home/gogo/Downloads/SCRAPY
-	[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
-2
-d/home/gogo/Downloads/SCRAPY/[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
-	01 Scrapy vs_ Other Python Web Scraping Frameworks
+d/media/1Tb
+	_Coding
+5
+d/media/1Tb/_Coding
+	Books
 1
-d/home/gogo/Downloads/SCRAPY
-	[DesireCourse.Com] Udemy - Scrapy Powerful Web Scraping & Crawling with Python
-2
-d/home/gogo/Downloads
-	SCRAPY
-7
-d/home/gogo/Downloads/SCRAPY
-	Modern Web Scraping with Python using Scrapy and Splash
-1
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	3. Build a Complete Spider from A to Z
+d/media/1Tb/_Coding/Books
+	Interviews
 3
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z
-	9. FInal Touches.mp4
-7
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	4. Writing a Custom Pipeline - Store the Data in MongoDb
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb
-	4. Writing the MongoDb Pipeline (UPDATED).mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	4. Writing a Custom Pipeline - Store the Data in MongoDb
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb
-	4. Writing the MongoDb Pipeline (UPDATED).mp4
-4
-d/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash
-	4. Writing a Custom Pipeline - Store the Data in MongoDb
-4
-d/home/gogo/Downloads/SCRAPY
-	Modern Web Scraping with Python using Scrapy and Splash
+d/media/1Tb/_Coding/Books/Interviews
+	Programming Interviews Exposed, 3rd Edition.pdf
+3
+d/media/1Tb/_Coding/Books
+	Interviews
+3
+d/media/1Tb/_Coding
+	Books
 1
-d/home/gogo/Downloads
-	SCRAPY
+d/media/1Tb/_Coding/Books
+	Python
+3
+d/media/1Tb/_Coding
+	Books
+1
+d/media/1Tb
+	_Coding
+5
+d/media
+	1Tb
+1
+d/media/1Tb
+	Books
+2
+d/media/1Tb/Books
+	Interviews
+17
+d/media/1Tb/Books/Interviews
+	Cracking the Coding Interview, 6th Edition
+1
+d/media/1Tb/Books/Interviews/Cracking the Coding Interview, 6th Edition
+	Cracking the Coding Interview, 6th Edition
+1
+d/media/1Tb/Books/Interviews/Cracking the Coding Interview, 6th Edition/Cracking the Coding Interview, 6th Edition
+	Visit For More Books.url
+3
+d/media/1Tb/Books/Interviews/Cracking the Coding Interview, 6th Edition
+	Cracking the Coding Interview, 6th Edition
+1
+d/media/1Tb/Books/Interviews
+	Cracking the Coding Interview, 6th Edition
+1
+d/media/1Tb/Books/Interviews/Cracking the Coding Interview, 6th Edition
+	Cracking the Coding Interview, 6th Edition
+1
+d/media/1Tb/Books/Interviews
+	Cracking the Coding Interview, 6th Edition
+1
+d/media/1Tb/Books/Interviews/Cracking the Coding Interview, 6th Edition
+	Cracking the Coding Interview, 6th Edition
+1
+d/media/1Tb/Books/Interviews/Cracking the Coding Interview, 6th Edition/Cracking the Coding Interview, 6th Edition
+	Visit For More Books.url
+3
+d/media/1Tb/Books/Interviews/Cracking the Coding Interview, 6th Edition
+	Cracking the Coding Interview, 6th Edition
+1
+d/media/1Tb/Books/Interviews
+	How To Answer Interview Questions + Cracking the Coding Interview 150 Programming Questions and Solutions - Mantesh
+1
+d/media/1Tb/Books/Interviews/How To Answer Interview Questions + Cracking the Coding Interview 150 Programming Questions and Solutions - Mantesh
+	How To Answer Interview Questions - Peggy McKee.pdf
+11
+d/media/1Tb/Books/Interviews
+	How To Answer Interview Questions + Cracking the Coding Interview 150 Programming Questions and Solutions - Mantesh
+2
+d/media/1Tb/Books
+	Marketing
+18
+d/media/1Tb/Books/Marketing
+	..
+0
+d/media/1Tb/Books
+	PILOT_BOOKS
+20
+d/media/1Tb/Books/PILOT_BOOKS
+	Adriatic_West.pdf
+1
+d/media/1Tb/Books
+	TravelCruises
+30
+d/media/1Tb/Books/TravelCruises
+	..
+0
+d/media/1Tb/Books
+	TravelGuides
+31
+d/media/1Tb/Books/TravelGuides
+	..
+0
+d/media/1Tb/Books
+	UserManuals
+32
+d/media/1Tb/Books/UserManuals
+	..
+0
+d/media/1Tb/Books
+	UserManuals
+32
+d/media/1Tb
+	Books
+2
+d/media
+	1Tb
+1
+d/
+	mnt
+8
+d/mnt
+	..
+0
+d/
+	mnt
+8
+d/mnt
+	..
+0
+d/
+	media
 7
+d/media
+	400Gb
+2
+d/media/400Gb
+	Wallpapers
+10
+d/media/400Gb/Wallpapers
+	Abstract
+1
+d/media/400Gb/Wallpapers/Abstract
+	..
+0
+d/media/400Gb/Wallpapers
+	AnimeManga
+3
+d/media/400Gb/Wallpapers/AnimeManga
+	i3rkq8sa1n8n9jb5l66ubp81l0535b78482dfgdfgdfgdfg9c58.jpeg
+33
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	vifminfo
+4
+d/home/gogo/Documents/Repos/Dotfiles
+	install.sh
+13
+d/home/gogo/Documents/Repos
+	Dotfiles
+2
+d/home/gogo/Documents/Repos/Dotfiles
+	install.sh
+13
 d/home/gogo
-	Documents
+	Desktop
+2
+d/home/gogo/Desktop
+	TestVifm
 3
+d/home/gogo/Desktop/TestVifm
+	..
+0
+d/home/gogo/Desktop
+	TestVifm
+3
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	TestVifm
+3
+d/home/gogo/Desktop/TestVifm
+	..
+0
+d/home/gogo/Desktop
+	thank_you_email.txt
+3
+d/home/gogo/Documents/Repos/Dotfiles
+	install.sh
+13
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	..
+0
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	TEMP
+1
+d/home/gogo/Desktop/TEMP
+	CV.pdf
+1
+d/home/gogo/Desktop
+	TEMP
+1
+d/home/gogo/Desktop/TEMP
+	jobs.bg - developer_ София_ обява за работа от Браузуейв АД.pdf
+3
+d/home/gogo/Desktop
+	TempImgs
+1
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	vifmrc
+6
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	vifmrc
+6
+d/home/gogo/Documents/Repos/Dotfiles
+	vifm
+10
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	vifmrc
+6
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Documents/Repos/Dotfiles/vifm
+	vifmrc
+6
+d/home/gogo/Documents/Repos
+	Dotfiles
+2
 d/home/gogo/Documents
 	Repos
 1
+d/home/gogo
+	Documents
+3
+d/home
+	gogo
+1
+d/
+	home
+4
+d/home
+	gogo
+1
 d/home/gogo/Documents/Repos
-	BrowsWaveTask
-1
-d/home/gogo/Documents/Repos/BrowsWaveTask
-	SamsClub
-1
-d/home/gogo/Documents/Repos/BrowsWaveTask/SamsClub
-	imgs
+	Dotfiles
 2
-d/home/gogo/Documents/Repos/BrowsWaveTask/SamsClub/imgs
-	5-hour-energy-berry-24pk-1-93oz-sam-s-clubhttps-scene7-samsclub-com-is-image-samsclub-0071941050024-b.jpg
-2
+d/home/gogo/Documents/Repos/Dotfiles
+	vifm
+10
 d
 
 # Right window history (oldest to newest):
-D/home/gogo
-	Downloads
-4
-D/home/gogo/Downloads
-	..
-0
-D/home/gogo
-	Documents
-3
-D/home/gogo/Documents
-	Repos
-1
-D/home/gogo/Documents/Repos
-	Dotfiles
-2
-D/home/gogo/Documents/Repos/Dotfiles
-	vifm
-10
 D/home/gogo/Documents/Repos/Dotfiles/vifm
 	..
 0
@@ -382,396 +356,558 @@ D/home/gogo/Documents/Repos/Dotfiles
 	vifm
 10
 D/home/gogo/Documents/Repos
-	..
-0
+	Dotfiles
+2
 D/home/gogo/Documents
 	Repos
 1
-D/home/gogo/Documents/Repos
-	..
-0
-D/home/gogo/Documents
-	Repos
+D/home/gogo
+	Documents
+3
+D/home
+	gogo
 1
-D/home/gogo/Documents/Repos
+D/
+	media
+7
+D/media
+	1Tb
+1
+D/media/1Tb
+	Books
+2
+D/media/1Tb/Books
+	TravelGuides
+23
+D/media/1Tb/Books/TravelGuides
+	Lonely_Planet_Best_of_Barcelona_2020,_4th_Edition_by_Lonely_Planet.epub
+10
+D/home/gogo
+	Documents
+3
+D/media/1Tb
 	..
 0
+D/home/gogo/Documents/Repos/Dotfiles
+	vifm
+10
+D/home/gogo/Documents/Repos/Dotfiles/vifm
+	vifmrc
+6
+D/media/1Tb
+	Books
+2
+D/media/1Tb/Books
+	UserManuals
+30
+D/media/1Tb/Books/UserManuals
+	..
+0
+D/media/1Tb/Books
+	Cv
+8
+D/media/1Tb/Books/Cv
+	..
+0
+D/media/1Tb/Books
+	Cv
+8
+D/media/1Tb/Books/Cv
+	hes-resume-cover-letter-guide.pdf
+1
+D/media/1Tb/Books
+	Cv
+8
+D/media/1Tb
+	Books
+2
+D/media/1Tb/Books
+	Woodworking
+32
+D/media/1Tb/Books/Woodworking
+	Woodworking Books
+1
+D/media/1Tb/Books/Woodworking/Woodworking Books
+	..
+0
+D/media/1Tb/Books/Woodworking
+	Woodworking Books
+1
+D/media/1Tb/Books
+	ElonMuskReadingList
+10
 D
 
 # Command line history (oldest to newest):
-:colorscheme SolarizedDark
-:colorscheme ZenBurn
-:colorscheme ZenBurn1
+:grep vifmrc
+:loacte 
+:help marks
+:help 
+:vsplit
+:execute ex()
+:extract
+:ter
+:execute
+:execute ex
+:execute ping 8.8.8.8
+:copy
+:e zathura
+:open
+:h
+:marks
 :colorscheme Dracula
-:colorscheme Default
+:sp
+:colorscheme
+:classify
+:shell 
+:shell
+:extractfiles
+:e 
+:e Cv
 :help
-:smplayer %f
+:mkdir Cv
+:mkdir NBA
+:only
+:! ping 8.8.8.8
+:! df -h
+:! df
+:locate vifmrc
+:df
+:diff
+:zip
+:mk
+:mkcd TestVifm
+:vs
+:q!
 :q
 
 # Search history (oldest to newest):
+/other
+/best
+/barcelo
+/?
+/travel
+/desk
+/How To Ans
 
 # Prompt history (oldest to newest):
+pOther
+pAnon
+pAnimeManga
+pRepos1
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/gogo/.local/share/vifm/Trash/000_Web Scraping for Beginners with Python Scrapy BS4
+""/home/gogo/.local/share/vifm/Trash/000_TEMP
 
 # Directory stack (oldest to newest):
 
 # Trash content:
-t/home/gogo/.local/share/vifm/Trash/000_Download more courses.url
-	/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/Download more courses.url
-t/home/gogo/.local/share/vifm/Trash/000_Downloaded from TutsGalaxy.com.txt
-	/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/Downloaded from TutsGalaxy.com.txt
-t/home/gogo/.local/share/vifm/Trash/000_TutsGalaxy.com.txt
-	/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4/TutsGalaxy.com.txt
-t/home/gogo/.local/share/vifm/Trash/001_Download more courses.url
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/Download more courses.url
-t/home/gogo/.local/share/vifm/Trash/000_Downloaded from TutsGalaxy.com(1).txt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/Downloaded from TutsGalaxy.com(1).txt
-t/home/gogo/.local/share/vifm/Trash/001_Downloaded from TutsGalaxy.com.txt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/Downloaded from TutsGalaxy.com.txt
-t/home/gogo/.local/share/vifm/Trash/001_TutsGalaxy.com.txt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/TutsGalaxy.com.txt
-t/media/400Gb/.vifm-Trash-1000/000_Autumn Falls - Naughty Little Sister 2  031919.mp4
-	/media/400Gb/la/Autumn Falls - Naughty Little Sister 2  031919.mp4
-t/home/gogo/.local/share/vifm/Trash/000_zenburn.vifm
-	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/zenburn.vifm
-t/home/gogo/.local/share/vifm/Trash/000_zenburn1.vifm
-	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/zenburn1.vifm
-t/home/gogo/.local/share/vifm/Trash/000_desert.vifm
-	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/desert.vifm
-t/home/gogo/.local/share/vifm/Trash/000_g80.vifm
-	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/g80.vifm
-t/home/gogo/.local/share/vifm/Trash/000_molokai.vifm
-	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/molokai.vifm
-t/home/gogo/.local/share/vifm/Trash/000_ph.vifm
-	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/ph.vifm
-t/home/gogo/.local/share/vifm/Trash/000_Default.vifm
-	/home/gogo/Documents/Repos/Dotfiles/vifm/colors/Default.vifm
-t/home/gogo/.local/share/vifm/Trash/000_library
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/library
-t/home/gogo/.local/share/vifm/Trash/000_2019-03-21-21-46-17.013-VBoxSVC-8602.log
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/2019-03-21-21-46-17.013-VBoxSVC-8602.log
-t/home/gogo/.local/share/vifm/Trash/000_ansible-aur-master.zip
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/lib/ansible-aur-master.zip
-t/home/gogo/.local/share/vifm/Trash/000_ansible-aur-master
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/lib/ansible-aur-master
-t/home/gogo/.local/share/vifm/Trash/000_defaults
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/defaults
-t/home/gogo/.local/share/vifm/Trash/000_handlers
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/handlers
-t/home/gogo/.local/share/vifm/Trash/000_meta
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/meta
-t/home/gogo/.local/share/vifm/Trash/000_templates
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/templates
-t/home/gogo/.local/share/vifm/Trash/000_vars
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/base_pkgs_install/vars
-t/home/gogo/.local/share/vifm/Trash/001_defaults
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/defaults
-t/home/gogo/.local/share/vifm/Trash/000_files
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/files
-t/home/gogo/.local/share/vifm/Trash/001_handlers
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/handlers
-t/home/gogo/.local/share/vifm/Trash/001_meta
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/meta
-t/home/gogo/.local/share/vifm/Trash/001_templates
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/templates
-t/home/gogo/.local/share/vifm/Trash/001_vars
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/vars
-t/home/gogo/.local/share/vifm/Trash/002_defaults
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/defaults
-t/home/gogo/.local/share/vifm/Trash/001_files
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/files
-t/home/gogo/.local/share/vifm/Trash/002_handlers
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/handlers
-t/home/gogo/.local/share/vifm/Trash/002_meta
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/meta
-t/home/gogo/.local/share/vifm/Trash/002_templates
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/templates
-t/home/gogo/.local/share/vifm/Trash/002_vars
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/vars
-t/home/gogo/.local/share/vifm/Trash/003_defaults
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/defaults
-t/home/gogo/.local/share/vifm/Trash/003_handlers
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/handlers
-t/home/gogo/.local/share/vifm/Trash/003_meta
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/meta
-t/home/gogo/.local/share/vifm/Trash/003_vars
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/vars
-t/home/gogo/.local/share/vifm/Trash/004_defaults
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/defaults
-t/home/gogo/.local/share/vifm/Trash/002_files
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/files
-t/home/gogo/.local/share/vifm/Trash/004_handlers
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/handlers
-t/home/gogo/.local/share/vifm/Trash/004_meta
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/meta
-t/home/gogo/.local/share/vifm/Trash/003_templates
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/templates
-t/home/gogo/.local/share/vifm/Trash/004_vars
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector_rank_mirrors/vars
-t/home/gogo/.local/share/vifm/Trash/005_defaults
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/defaults
-t/home/gogo/.local/share/vifm/Trash/003_files
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/files
-t/home/gogo/.local/share/vifm/Trash/005_handlers
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/handlers
-t/home/gogo/.local/share/vifm/Trash/005_meta
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/meta
-t/home/gogo/.local/share/vifm/Trash/004_templates
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/templates
-t/home/gogo/.local/share/vifm/Trash/005_vars
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/update_upgrade/vars
-t/home/gogo/.local/share/vifm/Trash/006_defaults
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/defaults
-t/home/gogo/.local/share/vifm/Trash/004_files
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/files
-t/home/gogo/.local/share/vifm/Trash/006_handlers
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/handlers
-t/home/gogo/.local/share/vifm/Trash/006_meta
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/meta
-t/home/gogo/.local/share/vifm/Trash/005_templates
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/templates
-t/home/gogo/.local/share/vifm/Trash/006_vars
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/vars
-t/home/gogo/.local/share/vifm/Trash/007_defaults
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/defaults
-t/home/gogo/.local/share/vifm/Trash/005_files
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/files
-t/home/gogo/.local/share/vifm/Trash/007_handlers
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/handlers
-t/home/gogo/.local/share/vifm/Trash/007_meta
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/meta
-t/home/gogo/.local/share/vifm/Trash/006_templates
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/templates
-t/home/gogo/.local/share/vifm/Trash/007_vars
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user_pkgs_install/vars
-t/home/gogo/.local/share/vifm/Trash/000_README.md
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/aur/README.md
-t/home/gogo/.local/share/vifm/Trash/000_tests
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/tests
-t/home/gogo/.local/share/vifm/Trash/001_README.md
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dns_setup/README.md
-t/home/gogo/.local/share/vifm/Trash/002_README.md
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/README.md
-t/home/gogo/.local/share/vifm/Trash/001_tests
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/dotfiles/tests
-t/home/gogo/.local/share/vifm/Trash/003_README.md
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pacman/README.md
-t/home/gogo/.local/share/vifm/Trash/002_tests
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pacman/tests
-t/home/gogo/.local/share/vifm/Trash/004_README.md
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/README.md
-t/home/gogo/.local/share/vifm/Trash/003_tests
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/pip/tests
-t/home/gogo/.local/share/vifm/Trash/005_README.md
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector/README.md
-t/home/gogo/.local/share/vifm/Trash/004_tests
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/reflector/tests
-t/home/gogo/.local/share/vifm/Trash/006_README.md
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/README.md
-t/home/gogo/.local/share/vifm/Trash/005_tests
-	/home/gogo/Projects/VagrantAnsibleArch_OfficialArch/provision/roles/user/tests
-t/home/gogo/.local/share/vifm/Trash/000_manjaro-openbox-18.0.2-2018520-stable-x86_64.iso
-	/home/gogo/Downloads/manjaro-openbox-18.0.2-2018520-stable-x86_64.iso
-t/home/gogo/.local/share/vifm/Trash/000_temp_spotdl
-	/home/gogo/Desktop/temp_spotdl
-t/home/gogo/.local/share/vifm/Trash/000_64bit
-	/home/gogo/Downloads/64bit
-t/home/gogo/.local/share/vifm/Trash/000_Cypress Hill - Elephants on Acid (2018) [320]
-	/home/gogo/Downloads/Cypress Hill - Elephants on Acid (2018) [320]
-t/media/400Gb/.vifm-Trash-1000/000_Programming _ Coding _ Hacking music vol.14 (CYBORG PRODUCTION)-09j1wYdNfVQ.mp3
-	/media/400Gb/Music/CodingBitchez/long_mixes/Programming _ Coding _ Hacking music vol.14 (CYBORG PRODUCTION)-09j1wYdNfVQ.mp3
-t/media/400Gb/.vifm-Trash-1000/000_Programming _ Coding _ Hacking music vol.14 (CYBORG PRODUCTION)-09j1wYdNfVQ.webm
-	/media/400Gb/Music/CodingBitchez/long_mixes/Programming _ Coding _ Hacking music vol.14 (CYBORG PRODUCTION)-09j1wYdNfVQ.webm
-t/media/400Gb/.vifm-Trash-1000/000_Programming _ Coding _ Hacking music vol.18 (ANONYMOUS HEADQUARTERS)-Z-VfaG9ZN_U.mp3
-	/media/400Gb/Music/CodingBitchez/long_mixes/Programming _ Coding _ Hacking music vol.18 (ANONYMOUS HEADQUARTERS)-Z-VfaG9ZN_U.mp3
-t/home/gogo/.local/share/vifm/Trash/000_arcolinux-v19.03.3.iso
-	/home/gogo/Downloads/LinuxISOs/arcolinux-v19.03.3.iso
-t/home/gogo/.local/share/vifm/Trash/000_arcolinuxb-bspwm-v19.03.3.iso
-	/home/gogo/Downloads/LinuxISOs/arcolinuxb-bspwm-v19.03.3.iso
-t/home/gogo/.local/share/vifm/Trash/000_bucharest_en.pdf
-	/home/gogo/Downloads/Romania/bucharest_en.pdf
-t/home/gogo/.local/share/vifm/Trash/000_In Your Pocket Ltd - Bucharest in your pocket, mini-guide includes Old Town  _ map, hotels, restaurants, bars, sights (2011, IYP Romania Srl).pdf
-	/home/gogo/Downloads/Romania/In Your Pocket Ltd - Bucharest in your pocket, mini-guide includes Old Town  _ map, hotels, restaurants, bars, sights (2011, IYP Romania Srl).pdf
-t/home/gogo/.local/share/vifm/Trash/000_provision
-	/home/gogo/Documents/Repos/WpDev/cruisebell/provision
-t/home/gogo/.local/share/vifm/Trash/000_wordpress
-	/home/gogo/Documents/Repos/WpDev/cruisebell/wordpress
-t/home/gogo/.local/share/vifm/Trash/000_wp-cli
-	/home/gogo/Documents/Repos/WpDev/cruisebell/wp-cli
-t/home/gogo/.local/share/vifm/Trash/000_LICENSE
-	/home/gogo/Documents/Repos/WpDev/cruisebell/LICENSE
-t/home/gogo/.local/share/vifm/Trash/000_Movefile.yml
-	/home/gogo/Documents/Repos/WpDev/cruisebell/Movefile.yml
-t/home/gogo/.local/share/vifm/Trash/007_README.md
-	/home/gogo/Documents/Repos/WpDev/cruisebell/README.md
-t/home/gogo/.local/share/vifm/Trash/000_Vagrantfile
-	/home/gogo/Documents/Repos/WpDev/cruisebell/Vagrantfile
-t/home/gogo/.local/share/vifm/Trash/000_ansible.cfg
-	/home/gogo/Documents/Repos/WpDev/cruisebell/ansible.cfg
-t/home/gogo/.local/share/vifm/Trash/000_site.yml
-	/home/gogo/Documents/Repos/WpDev/cruisebell/site.yml
-t/home/gogo/.local/share/vifm/Trash/000_wp-cli.yml
-	/home/gogo/Documents/Repos/WpDev/cruisebell/wp-cli.yml
+t/home/gogo/.local/share/vifm/Trash/000_rst2pdf
+	/home/gogo/Desktop/rst2pdf
 t/home/gogo/.local/share/vifm/Trash/000_temp
 	/home/gogo/Desktop/temp
-t/home/gogo/.local/share/vifm/Trash/000_Django_books
-	/home/gogo/Downloads/Django_books
-t/home/gogo/.local/share/vifm/Trash/000_[CourseClub.NET] Lynda - Logo Design Techniques
-	/home/gogo/Downloads/[CourseClub.NET] Lynda - Logo Design Techniques
-t/home/gogo/.local/share/vifm/Trash/000_test_ssd2_temp
-	/home/gogo/Downloads/test_ssd2_temp
-t/media/400Gb/.vifm-Trash-1000/000_Gabbie Carter - My Sisters Hot Friend  (06.15.19).mp4
-	/media/400Gb/la/Gabbie Carter - My Sisters Hot Friend  (06.15.19).mp4
-t/media/400Gb/.vifm-Trash-1000/000_Georgie Lyall - Pounding The Problem Son 08.23.19.mp4
-	/media/400Gb/la/Georgie Lyall - Pounding The Problem Son 08.23.19.mp4
-t/media/400Gb/.vifm-Trash-1000/000_Summer Saunders amp Riley Holt - SugarDaddyPorn 08.05.19.mp4
-	/media/400Gb/la/Summer Saunders amp Riley Holt - SugarDaddyPorn 08.05.19.mp4
-t/media/400Gb/.vifm-Trash-1000/000_Syren De Mer - Episode 120 [Czechstreets.com].mp4
-	/media/400Gb/la/Syren De Mer - Episode 120 [Czechstreets.com].mp4
-t/media/400Gb/.vifm-Trash-1000/000_Talia Mint - Tight horny babe loves big cock - 090919.mp4
-	/media/400Gb/la/Talia Mint - Tight horny babe loves big cock - 090919.mp4
-t/media/400Gb/.vifm-Trash-1000/000_Trinity St. Clair - My Wifes Hot Friend 08.26.19.mp4
-	/media/400Gb/la/Trinity St. Clair - My Wifes Hot Friend 08.26.19.mp4
-t/media/400Gb/.vifm-Trash-1000/000_Veronica Leal - Girlfriend Loves Anal  (06.08.19).mp4
-	/media/400Gb/la/Veronica Leal - Girlfriend Loves Anal  (06.08.19).mp4
-t/media/400Gb/.vifm-Trash-1000/000_DWDL
-	/media/400Gb/la/DWDL
-t/home/gogo/.local/share/vifm/Trash/000_1. Intro to Web Scraping & Scrapy.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/1. Intro to Web Scraping & Scrapy.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2. Setting up the Development Environment - Linux Users.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/2. Setting up the Development Environment - Linux Users.vtt
-t/home/gogo/.local/share/vifm/Trash/000_3. Setting up the Development Environment - Windows Users.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/3. Setting up the Development Environment - Windows Users.vtt
-t/home/gogo/.local/share/vifm/Trash/000_4. Hello World Scrapy.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/4. Hello World Scrapy.vtt
-t/home/gogo/.local/share/vifm/Trash/000_5. Frequently Asked Questions (Common errors).vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/5. Frequently Asked Questions (Common errors).vtt
-t/home/gogo/.local/share/vifm/Trash/000_7. Where to find all the code !.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/7. Where to find all the code !.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2.1 Python version 3.6.5 download link.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/2.1 Python version 3.6.5 download link.html
-t/home/gogo/.local/share/vifm/Trash/000_3. Setting up the Development Environment - Windows Users.mp4
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/3. Setting up the Development Environment - Windows Users.mp4
-t/home/gogo/.local/share/vifm/Trash/000_3.1 Python version 3.6.5 download link.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/3.1 Python version 3.6.5 download link.html
-t/home/gogo/.local/share/vifm/Trash/000_4.1 Goodreads website.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/4.1 Goodreads website.html
-t/home/gogo/.local/share/vifm/Trash/000_5. Frequently Asked Questions (Common errors).mp4
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/5. Frequently Asked Questions (Common errors).mp4
-t/home/gogo/.local/share/vifm/Trash/000_6. First section assignment.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/1. Introduction - UPDATED -/6. First section assignment.html
-t/home/gogo/.local/share/vifm/Trash/000_1. XPath Terminology.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/1. XPath Terminology.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2. XPath Syntax.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/2. XPath Syntax.vtt
-t/home/gogo/.local/share/vifm/Trash/000_3. XPath Axes.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/3. XPath Axes.vtt
-t/home/gogo/.local/share/vifm/Trash/000_4. XPath Predicates.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/4. XPath Predicates.vtt
-t/home/gogo/.local/share/vifm/Trash/000_5. Second section assignment.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/5. Second section assignment.html
-t/home/gogo/.local/share/vifm/Trash/000_4.1 Cheat Sheet.pdf.pdf
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/2. XPath Selectors/4.1 Cheat Sheet.pdf.pdf
-t/home/gogo/.local/share/vifm/Trash/000_1. Locating, Quotes, Authors and Tags.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/1. Locating, Quotes, Authors and Tags.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2. Update Author is not loading .html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/2. Update Author is not loading .html
-t/home/gogo/.local/share/vifm/Trash/000_3. Scrapy XPath Selectors.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/3. Scrapy XPath Selectors.vtt
-t/home/gogo/.local/share/vifm/Trash/000_4. Pagination.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/4. Pagination.vtt
-t/home/gogo/.local/share/vifm/Trash/000_5. Feed Exporters.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/5. Feed Exporters.vtt
-t/home/gogo/.local/share/vifm/Trash/000_6. Items and Item Loader.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/6. Items and Item Loader.vtt
-t/home/gogo/.local/share/vifm/Trash/000_7. Input and Output Processors.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/7. Input and Output Processors.vtt
-t/home/gogo/.local/share/vifm/Trash/000_9. FInal Touches.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/9. FInal Touches.vtt
-t/home/gogo/.local/share/vifm/Trash/000_10. Third section assignment.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/10. Third section assignment.html
-t/home/gogo/.local/share/vifm/Trash/000_8. Output isn't showing correctly.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/3. Build a Complete Spider from A to Z/8. Output isn't showing correctly.html
-t/home/gogo/.local/share/vifm/Trash/000_1. Why using Splash.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/1. Why using Splash.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2. Setting up Splash on Linux.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/2. Setting up Splash on Linux.vtt
-t/home/gogo/.local/share/vifm/Trash/000_3. Writing Lua Scripts.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/3. Writing Lua Scripts.vtt
-t/home/gogo/.local/share/vifm/Trash/000_4. Splash Request.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/4. Splash Request.vtt
-t/home/gogo/.local/share/vifm/Trash/000_5. Dealing with Pagination.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/5. Dealing with Pagination.vtt
-t/home/gogo/.local/share/vifm/Trash/000_6. Sixth section Assignment.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/5. Scraping Javascript Websites using Splash/6. Sixth section Assignment.html
-t/home/gogo/.local/share/vifm/Trash/000_1. The Crawling Behaviour.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/1. The Crawling Behaviour.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2. The Crawl Spider Simplified.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/2. The Crawl Spider Simplified.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2.1 The Link Extractor Object.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/2.1 The Link Extractor Object.html
-t/home/gogo/.local/share/vifm/Trash/000_2.2 The Rule Object.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/2.2 The Rule Object.html
-t/home/gogo/.local/share/vifm/Trash/000_3. Setting up the Rules.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/3. Setting up the Rules.vtt
-t/home/gogo/.local/share/vifm/Trash/000_4. Challenge Solution(Building the Parse Method).vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/4. Challenge Solution(Building the Parse Method).vtt
-t/home/gogo/.local/share/vifm/Trash/000_5. Seventh section assignment.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/6. The Crawl Spider/5. Seventh section assignment.html
-t/home/gogo/.local/share/vifm/Trash/000_1. Introduction.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/1. Introduction.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2. REST API.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/2. REST API.vtt
-t/home/gogo/.local/share/vifm/Trash/000_3. Working With JSON Objects.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/3. Working With JSON Objects.vtt
-t/home/gogo/.local/share/vifm/Trash/000_4. The Airbnb JSON Object.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/4. The Airbnb JSON Object.vtt
-t/home/gogo/.local/share/vifm/Trash/000_6. Airbnb Spider.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/6. Airbnb Spider.vtt
-t/home/gogo/.local/share/vifm/Trash/000_8. Infinite Scroll Pagination.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/8. Infinite Scroll Pagination.vtt
-t/home/gogo/.local/share/vifm/Trash/000_9. Spider Arguments.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/9. Spider Arguments.vtt
-t/home/gogo/.local/share/vifm/Trash/000_10. Airbnb code UPDATE (Request Cookies) NEW.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/10. Airbnb code UPDATE (Request Cookies) NEW.vtt
-t/home/gogo/.local/share/vifm/Trash/000_11. Another way to scrape Airbnb restaurant detail page.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/8. Scraping APIs(REST API) - Infinite Scroll Pagination/11. Another way to scrape Airbnb restaurant detail page.html
-t/home/gogo/.local/share/vifm/Trash/000_1. Media Pipelines.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/1. Media Pipelines.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2. The Images Pipeline.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/2. The Images Pipeline.vtt
-t/home/gogo/.local/share/vifm/Trash/000_1.1 Media Pipeline documentation.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/1.1 Media Pipeline documentation.html
-t/home/gogo/.local/share/vifm/Trash/000_3. Extending The Images Pipeline (Store images with custom names).vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/3. Extending The Images Pipeline (Store images with custom names).vtt
-t/home/gogo/.local/share/vifm/Trash/000_4. Files Pipeline (Article).html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/4. Files Pipeline (Article).html
-t/home/gogo/.local/share/vifm/Trash/000_5. Challenge (Files Pipeline).html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/12. The Media Pipeline/5. Challenge (Files Pipeline).html
-t/home/gogo/.local/share/vifm/Trash/000_2. Crawlera GIFT.html
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/14. BONUS/2. Crawlera GIFT.html
-t/home/gogo/.local/share/vifm/Trash/000_2. Setting Up MongoDb on Linux.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb/2. Setting Up MongoDb on Linux.vtt
-t/home/gogo/.local/share/vifm/Trash/000_3. Setting Up MongoDb on Windows.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb/3. Setting Up MongoDb on Windows.vtt
-t/home/gogo/.local/share/vifm/Trash/000_1. MongoDb Terminology.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb/1. MongoDb Terminology.vtt
-t/home/gogo/.local/share/vifm/Trash/000_4. Writing the MongoDb Pipeline (UPDATED).vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/4. Writing a Custom Pipeline - Store the Data in MongoDb/4. Writing the MongoDb Pipeline (UPDATED).vtt
-t/home/gogo/.local/share/vifm/Trash/000_1. Technics Used by Websites Administrators to Prevent Web Scraping.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/7. Avoid Getting Banned/1. Technics Used by Websites Administrators to Prevent Web Scraping.vtt
-t/home/gogo/.local/share/vifm/Trash/000_2. Web CrawlingScraping Best Practices.vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/7. Avoid Getting Banned/2. Web CrawlingScraping Best Practices.vtt
-t/home/gogo/.local/share/vifm/Trash/000_3. Custom Middleware (User Agent Rotator Middleware).vtt
-	/home/gogo/Downloads/SCRAPY/Modern Web Scraping with Python using Scrapy and Splash/7. Avoid Getting Banned/3. Custom Middleware (User Agent Rotator Middleware).vtt
-t/home/gogo/.local/share/vifm/Trash/000_Web Scraping for Beginners with Python Scrapy BS4
-	/home/gogo/Downloads/SCRAPY/Web Scraping for Beginners with Python Scrapy BS4
-t/home/gogo/.local/share/vifm/Trash/000_tester
-	/home/gogo/Documents/Repos/BrowsWaveTask/SamsClub/tester
+t/home/gogo/.local/share/vifm/Trash/000_temp_shenkela_task
+	/home/gogo/Desktop/temp_shenkela_task
+t/home/gogo/.local/share/vifm/Trash/000_WordOps.rst
+	/home/gogo/Desktop/WordOps.rst
+t/home/gogo/.local/share/vifm/Trash/000_eVignette Receipt - 397234.pdf
+	/home/gogo/Desktop/eVignette Receipt - 397234.pdf
+t/home/gogo/.local/share/vifm/Trash/000_email_templates.rst
+	/home/gogo/Desktop/email_templates.rst
+t/home/gogo/.local/share/vifm/Trash/000_google_cloud_wp.rst
+	/home/gogo/Desktop/google_cloud_wp.rst
+t/home/gogo/.local/share/vifm/Trash/000_nice_cruise_offers.rst
+	/home/gogo/Desktop/nice_cruise_offers.rst
+t/home/gogo/.local/share/vifm/Trash/000_temp_nvim_training.rst
+	/home/gogo/Desktop/temp_nvim_training.rst
+t/home/gogo/.local/share/vifm/Trash/000_wp.pass
+	/home/gogo/Desktop/wp.pass
+t/home/gogo/.local/share/vifm/Trash/000_Her3
+	/home/gogo/Desktop/Her3
+t/home/gogo/.local/share/vifm/Trash/000_Riv
+	/home/gogo/Documents/Riv
+t/home/gogo/.local/share/vifm/Trash/000_SCRAPY
+	/home/gogo/Documents/Repos/SCRAPY
+t/home/gogo/.local/share/vifm/Trash/000_Pipfile
+	/home/gogo/Pipfile
+t/home/gogo/.local/share/vifm/Trash/000_miqlna.rst
+	/home/gogo/miqlna.rst
+t/home/gogo/.local/share/vifm/Trash/000_vit_audit.log
+	/home/gogo/vit_audit.log
+t/home/gogo/.local/share/vifm/Trash/000_BOOKS
+	/home/gogo/Downloads/BOOKS
+t/home/gogo/.local/share/vifm/Trash/000_IMPORTANT README.txt
+	/home/gogo/Downloads/DesignPatterns/Mastering Python Design Patterns/IMPORTANT README.txt
+t/home/gogo/.local/share/vifm/Trash/000_Torrent Downloaded from 1337x.to.txt
+	/home/gogo/Downloads/DesignPatterns/Mastering Python Design Patterns/Torrent Downloaded from 1337x.to.txt
+t/home/gogo/.local/share/vifm/Trash/000_Torrent Downloaded from Katcr.co.txt
+	/home/gogo/Downloads/DesignPatterns/Mastering Python Design Patterns/Torrent Downloaded from Katcr.co.txt
+t/home/gogo/.local/share/vifm/Trash/000_Torrent downloaded from TPB.txt
+	/home/gogo/Downloads/DesignPatterns/Mastering Python Design Patterns/Torrent downloaded from TPB.txt
+t/home/gogo/.local/share/vifm/Trash/000_[TGx]Downloaded from torrentgalaxy.to .txt
+	/home/gogo/Downloads/DesignPatterns/Mastering Python Design Patterns/[TGx]Downloaded from torrentgalaxy.to .txt
+t/home/gogo/.local/share/vifm/Trash/000_Search Patterns - Design For Discovery
+	/home/gogo/Downloads/DesignPatterns/Search Patterns - Design For Discovery
+t/home/gogo/.local/share/vifm/Trash/000_Mastering Python Design Patterns
+	/home/gogo/Downloads/DesignPatterns/Mastering Python Design Patterns
+t/home/gogo/.local/share/vifm/Trash/000_Read Me.txt
+	/home/gogo/Downloads/DevOps/DevOps Automate your infrastructure using Ansible and IaC/Read Me.txt
+t/home/gogo/.local/share/vifm/Trash/000_Torrent_downloaded_from_Demonoid_-_www.demonoid.pw_.txt
+	/home/gogo/Downloads/DevOps/DevOps Automate your infrastructure using Ansible and IaC/Torrent_downloaded_from_Demonoid_-_www.demonoid.pw_.txt
+t/home/gogo/.local/share/vifm/Trash/002_TutsGalaxy.com.txt
+	/home/gogo/Downloads/DevOps/DevOps Automate your infrastructure using Ansible and IaC/TutsGalaxy.com.txt
+t/media/1Tb/.vifm-Trash-1000/000_DevOps Automate your infrastructure using Ansible and IaC.zip
+	/media/1Tb/Books/TravelGuides/DevOps Automate your infrastructure using Ansible and IaC.zip
+t/home/gogo/.local/share/vifm/Trash/000_Bookflare.net.txt
+	/home/gogo/Downloads/Modern Vim Craft Your Development Environment with Vim 8 and Neovim (EPUB)/Bookflare.net.txt
+t/home/gogo/.local/share/vifm/Trash/001_Torrent_downloaded_from_Demonoid_-_www.demonoid.pw_.txt
+	/home/gogo/Downloads/Modern Vim Craft Your Development Environment with Vim 8 and Neovim (EPUB)/Torrent_downloaded_from_Demonoid_-_www.demonoid.pw_.txt
+t/home/gogo/.local/share/vifm/Trash/000_test.sh
+	/home/gogo/Documents/Repos/Dotfiles/vifm/test.sh
+t/media/400Gb/.vifm-Trash-1000/000_200521-21381.jpg
+	/media/400Gb/Wallpapers/Anarhy/200521-21381.jpg
+t/media/400Gb/.vifm-Trash-1000/000_234501.jpg
+	/media/400Gb/Wallpapers/Anarhy/234501.jpg
+t/media/400Gb/.vifm-Trash-1000/000_322394.jpg
+	/media/400Gb/Wallpapers/Anarhy/322394.jpg
+t/media/400Gb/.vifm-Trash-1000/000_Anarchy_Wallpaper_by_Aapis.jpg
+	/media/400Gb/Wallpapers/Anarhy/Anarchy_Wallpaper_by_Aapis.jpg
+t/media/400Gb/.vifm-Trash-1000/000_anarchy-vector-hd-wallpaper-1920x1080-7065.jpg
+	/media/400Gb/Wallpapers/Anarhy/anarchy-vector-hd-wallpaper-1920x1080-7065.jpg
+t/media/400Gb/.vifm-Trash-1000/000_anarchy_hd_wallpaper__by_kubus1462-d3d4pkr.jpg
+	/media/400Gb/Wallpapers/Anarhy/anarchy_hd_wallpaper__by_kubus1462-d3d4pkr.jpg
+t/media/400Gb/.vifm-Trash-1000/000_anarchy_wallpaper_by_meteor88-d5o9lcn.jpg
+	/media/400Gb/Wallpapers/Anarhy/anarchy_wallpaper_by_meteor88-d5o9lcn.jpg
+t/media/400Gb/.vifm-Trash-1000/000_4d39e18aa14ee85265385755a66697be.jpg
+	/media/400Gb/Wallpapers/Anarhy/4d39e18aa14ee85265385755a66697be.jpg
+t/media/400Gb/.vifm-Trash-1000/000_2dF7MTm.jpg
+	/media/400Gb/Wallpapers/Anarhy/2dF7MTm.jpg
+t/media/400Gb/.vifm-Trash-1000/000_Blackboards
+	/media/400Gb/Wallpapers/Blackboards
+t/media/400Gb/.vifm-Trash-1000/000_CryptoPics
+	/media/400Gb/Wallpapers/CryptoPics
+t/media/400Gb/.vifm-Trash-1000/000_anonymous-blackhat_00329630.png
+	/media/400Gb/Wallpapers/Hk/anonymous-blackhat_00329630.png
+t/media/400Gb/.vifm-Trash-1000/000_kali_linux_wallpaper_by_blur212-d6szsz7.png.jpeg
+	/media/400Gb/Wallpapers/Hk/kali_linux_wallpaper_by_blur212-d6szsz7.png.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_sit_there-1006404.jpg
+	/media/400Gb/Wallpapers/Hk/sit_there-1006404.jpg
+t/media/400Gb/.vifm-Trash-1000/000_skull.jpg
+	/media/400Gb/Wallpapers/Hk/skull.jpg
+t/media/400Gb/.vifm-Trash-1000/000_2014_11_Linux-Wallpaper-29.jpg
+	/media/400Gb/Wallpapers/Linux/2014_11_Linux-Wallpaper-29.jpg
+t/media/400Gb/.vifm-Trash-1000/000_91415-1.jpg
+	/media/400Gb/Wallpapers/Linux/91415-1.jpg
+t/media/400Gb/.vifm-Trash-1000/000_94018-debian.jpg
+	/media/400Gb/Wallpapers/Linux/94018-debian.jpg
+t/media/400Gb/.vifm-Trash-1000/000_94019-debian.jpg
+	/media/400Gb/Wallpapers/Linux/94019-debian.jpg
+t/media/400Gb/.vifm-Trash-1000/000_105204-Archiepaint.jpg
+	/media/400Gb/Wallpapers/Linux/105204-Archiepaint.jpg
+t/media/400Gb/.vifm-Trash-1000/000_105650-1.jpg
+	/media/400Gb/Wallpapers/Linux/105650-1.jpg
+t/media/400Gb/.vifm-Trash-1000/000_140939-Arch_Linux_Communitarian.jpg
+	/media/400Gb/Wallpapers/Linux/140939-Arch_Linux_Communitarian.jpg
+t/media/400Gb/.vifm-Trash-1000/000_145051-1.jpg
+	/media/400Gb/Wallpapers/Linux/145051-1.jpg
+t/media/400Gb/.vifm-Trash-1000/000_1613386.jpg
+	/media/400Gb/Wallpapers/Linux/1613386.jpg
+t/media/400Gb/.vifm-Trash-1000/000_Linus_Torvalds_Flipping_NVIDIA_Off_Wide.jpg
+	/media/400Gb/Wallpapers/Linux/Linus_Torvalds_Flipping_NVIDIA_Off_Wide.jpg
+t/media/400Gb/.vifm-Trash-1000/000_Linux-wallpapers-24.jpg
+	/media/400Gb/Wallpapers/Linux/Linux-wallpapers-24.jpg
+t/media/400Gb/.vifm-Trash-1000/000_Think_correctly___Debian_by_cyric80.jpg
+	/media/400Gb/Wallpapers/Linux/Think_correctly___Debian_by_cyric80.jpg
+t/media/400Gb/.vifm-Trash-1000/000_arch-linux-3896-1920x1200.jpg
+	/media/400Gb/Wallpapers/Linux/arch-linux-3896-1920x1200.jpg
+t/media/400Gb/.vifm-Trash-1000/000_arch_linux_wallpaper_by_wavering_radiant-d6ivbsy.png
+	/media/400Gb/Wallpapers/Linux/arch_linux_wallpaper_by_wavering_radiant-d6ivbsy.png
+t/media/400Gb/.vifm-Trash-1000/000_big_6d8641ba069aeef765afb2d409f545390e5cdd57.png
+	/media/400Gb/Wallpapers/Linux/big_6d8641ba069aeef765afb2d409f545390e5cdd57.png
+t/media/400Gb/.vifm-Trash-1000/000_big_38f04af20e99325e8333505a92013b0d6552cde2.png
+	/media/400Gb/Wallpapers/Linux/big_38f04af20e99325e8333505a92013b0d6552cde2.png
+t/media/400Gb/.vifm-Trash-1000/000_big_aa96fefbcffd4420e3a98785e28f058cb707b8d9.jpg
+	/media/400Gb/Wallpapers/Linux/big_aa96fefbcffd4420e3a98785e28f058cb707b8d9.jpg
+t/media/400Gb/.vifm-Trash-1000/000_che_tux__linux___communism_by_yashton.jpg
+	/media/400Gb/Wallpapers/Linux/che_tux__linux___communism_by_yashton.jpg
+t/media/400Gb/.vifm-Trash-1000/000_cloud_debian_wallpaper_by_vagdish-d6ijdwc.png
+	/media/400Gb/Wallpapers/Linux/cloud_debian_wallpaper_by_vagdish-d6ijdwc.png
+t/media/400Gb/.vifm-Trash-1000/000_discovering-linux-wallpapers-fender-guitars-wallpaper-iphone-for-android-stratocaster-1920x1080-ipad-widescreen-bass-5-mac.jpg
+	/media/400Gb/Wallpapers/Linux/discovering-linux-wallpapers-fender-guitars-wallpaper-iphone-for-android-stratocaster-1920x1080-ipad-widescreen-bass-5-mac.jpg
+t/media/400Gb/.vifm-Trash-1000/000_hooligans.jpg
+	/media/400Gb/Wallpapers/Linux/hooligans.jpg
+t/media/400Gb/.vifm-Trash-1000/000_kali-linux-wallpaper_654878113.jpg
+	/media/400Gb/Wallpapers/Linux/kali-linux-wallpaper_654878113.jpg
+t/media/400Gb/.vifm-Trash-1000/000_kali_by_typograflaw-d6n6m8l.png
+	/media/400Gb/Wallpapers/Linux/kali_by_typograflaw-d6n6m8l.png
+t/media/400Gb/.vifm-Trash-1000/000_linuxrevolutionsun107.png
+	/media/400Gb/Wallpapers/Linux/linuxrevolutionsun107.png
+t/media/400Gb/.vifm-Trash-1000/000_all.zip
+	/media/400Gb/Wallpapers/Nasa/all.zip
+t/media/400Gb/.vifm-Trash-1000/000_Nasa
+	/media/400Gb/Wallpapers/NASA/Nasa
+t/media/400Gb/.vifm-Trash-1000/000_Orca_Wallpapers
+	/media/400Gb/Wallpapers/Orca_Wallpapers
+t/media/400Gb/.vifm-Trash-1000/000_PresentationBackgrounds
+	/media/400Gb/Wallpapers/PresentationBackgrounds
+t/media/400Gb/.vifm-Trash-1000/000_computer_engineering_science_tech_1920x1080.jpg
+	/media/400Gb/Wallpapers/Web_dev/computer_engineering_science_tech_1920x1080.jpg
+t/media/400Gb/.vifm-Trash-1000/000_Images-texture-pictures-HD-wallpapers.jpg
+	/media/400Gb/Wallpapers/Web_dev/Images-texture-pictures-HD-wallpapers.jpg
+t/media/400Gb/.vifm-Trash-1000/000_IUrhpDI.png
+	/media/400Gb/Wallpapers/Web_dev/IUrhpDI.png
+t/media/400Gb/.vifm-Trash-1000/000_background.jpg
+	/media/400Gb/Wallpapers/Web_dev/background.jpg
+t/media/400Gb/.vifm-Trash-1000/000_texture-glass-window-blue-dirty-wallpaper-textured-wallpapers.jpg
+	/media/400Gb/Wallpapers/Web_dev/texture-glass-window-blue-dirty-wallpaper-textured-wallpapers.jpg
+t/media/400Gb/.vifm-Trash-1000/000_350095.jpg
+	/media/400Gb/Wallpapers/anon/350095.jpg
+t/media/400Gb/.vifm-Trash-1000/000_1712270.jpg
+	/media/400Gb/Wallpapers/anon/1712270.jpg
+t/media/400Gb/.vifm-Trash-1000/000_L1nux3rr0r And Phpbugz.png
+	/media/400Gb/Wallpapers/anon/L1nux3rr0r And Phpbugz.png
+t/media/400Gb/.vifm-Trash-1000/000_anonymous Wallpaper By Pcbots.blogspot.com.jpg
+	/media/400Gb/Wallpapers/anon/anonymous Wallpaper By Pcbots.blogspot.com.jpg
+t/media/400Gb/.vifm-Trash-1000/000_anonymous-wallpaper.jpg
+	/media/400Gb/Wallpapers/anon/anonymous-wallpaper.jpg
+t/media/400Gb/.vifm-Trash-1000/000_big_0ff0c1301c0144f23f096c802a76f8f71bceffbf.jpg
+	/media/400Gb/Wallpapers/anon/big_0ff0c1301c0144f23f096c802a76f8f71bceffbf.jpg
+t/media/400Gb/.vifm-Trash-1000/000_big_ce01c1c5455e605e00957f1008c8b19be57a92d0.jpg
+	/media/400Gb/Wallpapers/anon/big_ce01c1c5455e605e00957f1008c8b19be57a92d0.jpg
+t/media/400Gb/.vifm-Trash-1000/000_hoodies-in-the-rain-photography-hd-wallpaper-1920x1200-2546.png
+	/media/400Gb/Wallpapers/anon/hoodies-in-the-rain-photography-hd-wallpaper-1920x1200-2546.png
+t/media/400Gb/.vifm-Trash-1000/000_Web_dev
+	/media/400Gb/Wallpapers/Web_dev
+t/media/400Gb/.vifm-Trash-1000/000_10. Eagle Wallpaper.png
+	/media/400Gb/Wallpapers/wallpaper/10. Eagle Wallpaper.png
+t/media/400Gb/.vifm-Trash-1000/000_Firefox_wallpaper.png
+	/media/400Gb/Wallpapers/wallpaper/Firefox_wallpaper.png
+t/media/400Gb/.vifm-Trash-1000/000_animals_6134.jpg
+	/media/400Gb/Wallpapers/wallpaper/animals_6134.jpg
+t/media/400Gb/.vifm-Trash-1000/000_big_0aaede951f04ff23ae83f2297ffdf409fcc2e07f.jpg
+	/media/400Gb/Wallpapers/wallpaper/big_0aaede951f04ff23ae83f2297ffdf409fcc2e07f.jpg
+t/media/400Gb/.vifm-Trash-1000/000_big_1aee0e219f9b4725059f7ae7d0fbb1b2a93c2ed3.jpg
+	/media/400Gb/Wallpapers/wallpaper/big_1aee0e219f9b4725059f7ae7d0fbb1b2a93c2ed3.jpg
+t/media/400Gb/.vifm-Trash-1000/000_big_3eed32bb6e3a4cfe9f8f04ad8931e5d21f813d5a.jpg
+	/media/400Gb/Wallpapers/wallpaper/big_3eed32bb6e3a4cfe9f8f04ad8931e5d21f813d5a.jpg
+t/media/400Gb/.vifm-Trash-1000/000_big_683e9fa0e3e673225001cd80ace7ce218a5d1178.jpg
+	/media/400Gb/Wallpapers/wallpaper/big_683e9fa0e3e673225001cd80ace7ce218a5d1178.jpg
+t/media/400Gb/.vifm-Trash-1000/000_big_a890254aaaa8b0951edce11a6160c785a4946349.jpg
+	/media/400Gb/Wallpapers/wallpaper/big_a890254aaaa8b0951edce11a6160c785a4946349.jpg
+t/media/400Gb/.vifm-Trash-1000/000_1513.jpg
+	/media/400Gb/Wallpapers/anon/1513.jpg
+t/media/400Gb/.vifm-Trash-1000/000_55142.jpg
+	/media/400Gb/Wallpapers/anon/55142.jpg
+t/media/400Gb/.vifm-Trash-1000/000_62307.jpg
+	/media/400Gb/Wallpapers/anon/62307.jpg
+t/media/400Gb/.vifm-Trash-1000/000_9b31dc7fcc158e44576f305de4bdfdbe.jpg
+	/media/400Gb/Wallpapers/AnimeManga/DeathNote/9b31dc7fcc158e44576f305de4bdfdbe.jpg
+t/media/400Gb/.vifm-Trash-1000/000_1600x1200_collection048.jpg
+	/media/400Gb/Wallpapers/AnimeManga/1600x1200_collection048.jpg
+t/media/400Gb/.vifm-Trash-1000/000_1600x1200_collection051.jpg
+	/media/400Gb/Wallpapers/AnimeManga/1600x1200_collection051.jpg
+t/media/400Gb/.vifm-Trash-1000/000_1600x1200_collection068.jpg
+	/media/400Gb/Wallpapers/AnimeManga/1600x1200_collection068.jpg
+t/media/400Gb/.vifm-Trash-1000/000_1920-1200-anime-wallpaper-hd-background-manga-full-japanese-cute11.jpg
+	/media/400Gb/Wallpapers/AnimeManga/1920-1200-anime-wallpaper-hd-background-manga-full-japanese-cute11.jpg
+t/media/400Gb/.vifm-Trash-1000/000_122468.jpg
+	/media/400Gb/Wallpapers/AnimeManga/122468.jpg
+t/media/400Gb/.vifm-Trash-1000/000_124458.jpg
+	/media/400Gb/Wallpapers/AnimeManga/124458.jpg
+t/media/400Gb/.vifm-Trash-1000/000_126994.jpg
+	/media/400Gb/Wallpapers/AnimeManga/126994.jpg
+t/media/400Gb/.vifm-Trash-1000/000_198940.png
+	/media/400Gb/Wallpapers/AnimeManga/198940.png
+t/media/400Gb/.vifm-Trash-1000/000_232030_bleach_sword_waterist_weapon_zaraki-kenpachi_1500x938.jpg
+	/media/400Gb/Wallpapers/AnimeManga/232030_bleach_sword_waterist_weapon_zaraki-kenpachi_1500x938.jpg
+t/media/400Gb/.vifm-Trash-1000/000_232395_pixiv-fantasia_1500x778.jpg
+	/media/400Gb/Wallpapers/AnimeManga/232395_pixiv-fantasia_1500x778.jpg
+t/media/400Gb/.vifm-Trash-1000/000_232630_9ji-pixiv_green-hair_hat_shikieiki_1157x818.jpg
+	/media/400Gb/Wallpapers/AnimeManga/232630_9ji-pixiv_green-hair_hat_shikieiki_1157x818.jpg
+t/media/400Gb/.vifm-Trash-1000/000_WP0031-02-1920x1200.jpg
+	/media/400Gb/Wallpapers/AnimeManga/WP0031-02-1920x1200.jpg
+t/media/400Gb/.vifm-Trash-1000/000_WP0032-03-1920x1200.jpg
+	/media/400Gb/Wallpapers/AnimeManga/WP0032-03-1920x1200.jpg
+t/media/400Gb/.vifm-Trash-1000/000_anime-manga_00414507.jpg
+	/media/400Gb/Wallpapers/AnimeManga/anime-manga_00414507.jpg
+t/media/400Gb/.vifm-Trash-1000/000_anime_wallpaper_silent_night.jpg
+	/media/400Gb/Wallpapers/AnimeManga/anime_wallpaper_silent_night.jpg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmua4edak4tn20n2ab5k4535d2d644bd5b.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmua4edak4tn20n2ab5k4535d2d644bd5b.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d2d644bd5b.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d2d644bd5b.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d2d6444bd5b.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d2d6444bd5b.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d2d64744bd5b.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d2d64744bd5b.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d2e4cc16235.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d2e4cc16235.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d2ecc16235.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d2ecc16235.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d29h37becec.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d29h37becec.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d33b9ac762.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d33b9ac762.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d33b9eRWERac762.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d33b9eRWERac762.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d368dfd0e6537.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d368dfd0e6537.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d3526dfgd6ab5e.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d3526dfgd6ab5e.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d3680e65fgdgsd37.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d3680e65fgdgsd37.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d3680e65s37.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d3680e65s37.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d35266DSFHSDFHab5e.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d35266DSFHSDFHab5e.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535d280961d9e.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535d280961d9e.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535ds3680e6537.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535ds3680e6537.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535dsdas3680e6537.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535dsdas3680e6537.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k4535gd2937becec.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k4535gd2937becec.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5k45345d2937becec.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5k45345d2937becec.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2ab5ksdfsdf4535d3053be04d.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2ab5ksdfsdf4535d3053be04d.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n2vfab5k4535d318144f3a.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n2vfab5k4535d318144f3a.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n24ab5k4535d2ecc16235.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n24ab5k4535d2ecc16235.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20n42ab5k4535d2ecc16235.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20n42ab5k4535d2ecc16235.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn250n2ab5k4535d2c0964284.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn250n2ab5k4535d2c0964284.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn420n2ab5k4535d2c0964284.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn420n2ab5k4535d2c0964284.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn620n2ab5k4535d2c0964284.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn620n2ab5k4535d2c0964284.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktn20444n2ab5k4535d2d644bd5b.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktn20444n2ab5k4535d2d644bd5b.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_f4b0hk7tmuaedaktnfgdfg20n2ab5k4535d3053be04d.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/f4b0hk7tmuaedaktnfgdfg20n2ab5k4535d3053be04d.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qddf76p5fah5sepo7uvb27535b5b454e693.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qddf76p5fah5sepo7uvb27535b5b454e693.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qddf76p5fdah5sepo7uvb27535b5d457f034.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qddf76p5fdah5sepo7uvb27535b5d457f034.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sddepo7uvb27d535b5d457f011134.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sddepo7uvb27d535b5d457f011134.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5ab454e693.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5ab454e693.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5b454e693.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5b454e693.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5b454e6911113.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5b454e6911113.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5b2454e693.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5b2454e693.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5b44454e693.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5b44454e693.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5d457af034.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5d457af034.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5d45777f034.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5d45777f034.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5ea9b1e19.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5ea9b1e19.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5ea9b1111e19.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5ea9b1111e19.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_haeo8qdf76p5fah5sepo7uvb27535b5ea9b1471e19.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/haeo8qdf76p5fah5sepo7uvb27535b5ea9b1471e19.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_heismymaster_1_1024.jpg
+	/media/400Gb/Wallpapers/AnimeManga/heismymaster_1_1024.jpg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l05135b6cc6df910.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l05135b6cc6df910.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l05345b6b36ba4e4.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l05345b6b36ba4e4.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l0535b6b36ba47e4.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l0535b6b36ba47e4.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l0535b6b36ba74e4.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l0535b6b36ba74e4.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l0535b6b367ba4e4.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l0535b6b367ba4e4.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l0535b67e754897a8a8.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l0535b67e754897a8a8.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l0535b76daa32cf41.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l0535b76daa32cf41.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l0535b714ae6a04.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l0535b714ae6a04.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l0535b3742be0ee3.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l0535b3742be0ee3.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_i3rkq8sa1n8n9jb5l66ubp81l0535b614777769c1bf5e.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/i3rkq8sa1n8n9jb5l66ubp81l0535b614777769c1bf5e.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_manga_02.jpg
+	/media/400Gb/Wallpapers/AnimeManga/manga_02.jpg
+t/media/400Gb/.vifm-Trash-1000/000_misc_5_1024.jpg
+	/media/400Gb/Wallpapers/AnimeManga/misc_5_1024.jpg
+t/media/400Gb/.vifm-Trash-1000/000_misc_42_1024.jpg
+	/media/400Gb/Wallpapers/AnimeManga/misc_42_1024.jpg
+t/media/400Gb/.vifm-Trash-1000/000_misc_103_1024.jpg
+	/media/400Gb/Wallpapers/AnimeManga/misc_103_1024.jpg
+t/media/400Gb/.vifm-Trash-1000/000_misc_124_1920.jpg
+	/media/400Gb/Wallpapers/AnimeManga/misc_124_1920.jpg
+t/media/400Gb/.vifm-Trash-1000/000_misc_141_1024.jpg
+	/media/400Gb/Wallpapers/AnimeManga/misc_141_1024.jpg
+t/media/400Gb/.vifm-Trash-1000/000_sdfgdfgfi3rkq8sa1n8n9jb5l66ubp81l0535b784829c58.jpeg
+	/media/400Gb/Wallpapers/AnimeManga/sdfgdfgfi3rkq8sa1n8n9jb5l66ubp81l0535b784829c58.jpeg
+t/media/400Gb/.vifm-Trash-1000/000_sexy-girl-manga-wallpaper.jpg
+	/media/400Gb/Wallpapers/AnimeManga/sexy-girl-manga-wallpaper.jpg
+t/media/400Gb/.vifm-Trash-1000/000_shakugannoshana_2_1024.jpg
+	/media/400Gb/Wallpapers/AnimeManga/shakugannoshana_2_1024.jpg
+t/media/400Gb/.vifm-Trash-1000/000_the_gazette___ruki_wallpaper__wings_version__by_me_the_manga_fan101-d64evdf.jpg
+	/media/400Gb/Wallpapers/AnimeManga/the_gazette___ruki_wallpaper__wings_version__by_me_the_manga_fan101-d64evdf.jpg
+t/home/gogo/.local/share/vifm/Trash/000_Modern Vim Craft Your Development Environment with Vim 8 and Neovim (EPUB)
+	/home/gogo/Downloads/Modern Vim Craft Your Development Environment with Vim 8 and Neovim (EPUB)
+t/home/gogo/.local/share/vifm/Trash/000_temp_nvim
+	/home/gogo/Desktop/temp_nvim
+t/media/400Gb/.vifm-Trash-1000/000_Wiki
+	/media/400Gb/BKP/Repos/Wiki
+t/media/400Gb/.vifm-Trash-1000/000_her3.rst
+	/media/400Gb/BKP/her3.rst
+t/media/400Gb/.vifm-Trash-1000/000_pfSense-CE-memstick-2.4.4-RELEASE-p3-amd64.img
+	/media/400Gb/BKP/pfSense-CE-memstick-2.4.4-RELEASE-p3-amd64.img
+t/media/400Gb/.vifm-Trash-1000/000_publickey.asc
+	/media/400Gb/BKP/publickey.asc
+t/media/400Gb/.vifm-Trash-1000/000_videos.rst
+	/media/400Gb/BKP/videos.rst
+t/media/400Gb/.vifm-Trash-1000/000_Chasing Bubbles - Documentary-184028703.mp4
+	/media/400Gb/Filmi/Chasing Bubbles - Documentary-184028703.mp4
+t/media/400Gb/.vifm-Trash-1000/000_Ideahome
+	/media/400Gb/WebsiteProjects/Ideahome
+t/media/400Gb/.vifm-Trash-1000/000_TEMP
+	/media/400Gb/TEMP
+t/media/400Gb/.vifm-Trash-1000/000_TempExports
+	/media/400Gb/BKP/TempExports
+t/media/400Gb/.vifm-Trash-1000/000_21FootArt.19.10.22.Nata.Ocean.Those.Dancing.Feet.XXX.SD.MP4-KLEENEX
+	/media/400Gb/la/21FootArt.19.10.22.Nata.Ocean.Those.Dancing.Feet.XXX.SD.MP4-KLEENEX
+t/media/400Gb/.vifm-Trash-1000/000_Anal Temptation
+	/media/400Gb/la/Anal Temptation
+t/media/400Gb/.vifm-Trash-1000/000_Hot Spanish Chick Venus Afrodita Gets Fucked By Ricky Rascal
+	/media/400Gb/la/Hot Spanish Chick Venus Afrodita Gets Fucked By Ricky Rascal
+t/media/400Gb/.vifm-Trash-1000/000_Julie Kay Gets Her Black Ass Plowed
+	/media/400Gb/la/Julie Kay Gets Her Black Ass Plowed
+t/media/400Gb/.vifm-Trash-1000/000_Krissy Lynn  [Hardcore, Oral]
+	/media/400Gb/la/Krissy Lynn  [Hardcore, Oral]
+t/media/400Gb/.vifm-Trash-1000/000_Lulu Chu - Lulu Goes Coo-Coo for Cock
+	/media/400Gb/la/Lulu Chu - Lulu Goes Coo-Coo for Cock
+t/media/400Gb/.vifm-Trash-1000/000_Private Specials 9 German MILFs  (Private) (2008) Split Scenes
+	/media/400Gb/la/Private Specials 9 German MILFs  (Private) (2008) Split Scenes
+t/media/1Tb/.vifm-Trash-1000/000_Cracking the Coding Interview, 6th Edition
+	/media/1Tb/Books/Interviews/Cracking the Coding Interview, 6th Edition
+t/media/1Tb/.vifm-Trash-1000/000_Torrent downloaded from demonoid.ph.txt
+	/media/1Tb/Books/Interviews/How To Answer Interview Questions + Cracking the Coding Interview 150 Programming Questions and Solutions - Mantesh/Torrent downloaded from demonoid.ph.txt
+t/media/1Tb/.vifm-Trash-1000/000_Torrent downloaded from AhaShare.com.txt
+	/media/1Tb/Books/Interviews/How To Answer Interview Questions + Cracking the Coding Interview 150 Programming Questions and Solutions - Mantesh/Torrent downloaded from AhaShare.com.txt
+t/home/gogo/.local/share/vifm/Trash/000_vifmrc.zip
+	/home/gogo/Documents/Repos/Dotfiles/vifm/vifmrc.zip
+t/home/gogo/.local/share/vifm/Trash/000_TestVifm
+	/home/gogo/Desktop/TestVifm
+t/home/gogo/.local/share/vifm/Trash/000_thank_you_email.txt
+	/home/gogo/Desktop/thank_you_email.txt
+t/home/gogo/.local/share/vifm/Trash/000_TEMP
+	/home/gogo/Desktop/TEMP
 
 # State:
 f

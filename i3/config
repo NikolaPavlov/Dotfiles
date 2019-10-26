@@ -152,7 +152,7 @@ client.focused          #C71585 #C71585 #C71585 #C71585 #C71585
 client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff
 
 # feh for set up wallpaper (need to install feh)
-exec --no-startup-id feh --bg-fill ~/.config/wall.png
+# exec --no-startup-id feh --bg-fill ~/.config/wall.png
 
 # key bindings
 bindcode 67 exec --no-startup-id firefox
