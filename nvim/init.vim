@@ -741,7 +741,7 @@ autocmd BufLeave term://* stopinsert
 " nnoremap <C-l> <C-w>l
 
 
-" think about replace Ctrl wiht 'm' or 'M' for moving between windows ???
+" think about replace Ctrl wiht 'm' or 'M' for moving between windows
 tnoremap <M-h> <M-\><M-n><M-w>h
 tnoremap <M-j> <M-\><M-n><M-w>j
 tnoremap <M-k> <M-\><M-n><M-w>k
