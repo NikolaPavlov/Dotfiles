@@ -34,7 +34,7 @@
 
 # TUI:
 al
-q0
+q1
 v2
 ov
 m-1
@@ -49,8 +49,68 @@ d/home
 	gogo
 1
 d/media/1Tb
-	Other
-3
+	Books
+2
+d/media
+	1Tb
+1
+d/home/gogo
+	Downloads
+2
+d/home/gogo/Downloads
+	Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]
+1
+d/home/gogo/Downloads/Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]
+	Lana Del Rey - NFR! Norman Fucking Rockwell (2019)
+1
+d/home/gogo/Downloads/Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]/Lana Del Rey - NFR! Norman Fucking Rockwell (2019)
+	05. Doin’ Time.flac
+6
+d/home/gogo/Downloads/Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]
+	Lana Del Rey - NFR! Norman Fucking Rockwell (2019)
+1
+d/home/gogo/Downloads
+	Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]
+1
+d/media/400Gb
+	Wallpapers
+10
+d/media/400Gb/Wallpapers
+	Abstract
+1
+d/media/400Gb/Wallpapers/Abstract
+	women-abstract-dark-black-eyes-Alien-_11834-50.jpg
+9
+d/home/gogo
+	Desktop
+1
+d/home/gogo/Desktop
+	..
+0
+d/home/gogo
+	Desktop
+1
+d/home
+	gogo
+1
+d/home/gogo
+	Desktop
+1
+d/home/gogo/Desktop
+	..
+0
+d/home/gogo
+	Desktop
+1
+d/home/gogo/Desktop
+	..
+0
+d/home/gogo
+	Desktop
+1
+d/home/gogo/Desktop
+	..
+0
 d
 
 # Right window history (oldest to newest):
@@ -61,6 +121,8 @@ D
 
 # Command line history (oldest to newest):
 :q
+:mkcd Desktop
+:mkdir Desktop
 
 # Search history (oldest to newest):
 
@@ -69,10 +131,13 @@ D
 # Local filter history (oldest to newest):
 
 # Registers:
+""/home/gogo/.local/share/vifm/Trash/000_install_host_app.sh
 
 # Directory stack (oldest to newest):
 
 # Trash content:
+t/home/gogo/.local/share/vifm/Trash/000_install_host_app.sh
+	/home/gogo/Downloads/install_host_app.sh
 
 # State:
 f
