@@ -19,10 +19,6 @@ alias du='ncdu'
 alias df='pydf'
 
 # ls aliases
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-# alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-# alias l='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-# alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias l='lsd -l'
 alias ll='lsd -l'
 alias la='lsd -la'
@@ -39,7 +35,6 @@ alias pg='ping google.com'
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rns '
 alias search='sudo  pacman -Ss '
-alias y='yay'
 # Python
 alias p='python3.7'
 alias i='ipython'
@@ -89,14 +84,11 @@ alias tt='python manage.py test'
 # Programs
 alias vifm='vifmrun'
 alias f='firefox'
-alias n='nnn -l'
 alias clock='tty-clock -c'
 alias reflect='sudo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
-alias vis='vis -s'
 alias radio='curseradio'
 alias z='zathura'
 alias todo='vit'
-
 
 
 # ex - archive extractor
@@ -156,7 +148,7 @@ fi
 # vi mode in terminal
 set -o vi
 
-# change dirs withowth cd instead with ..
+# change dirs withowth cd
 shopt -s autocd
 
 # Complete after sudo
