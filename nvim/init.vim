@@ -80,7 +80,6 @@ call dein#add('Shougo/dein.vim')
   call dein#add('flazz/vim-colorschemes') "many colorschemes
   call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
   call dein#add('junegunn/limelight.vim') "lime line focus rice <leader>l
-  call dein#add('itchyny/lightline.vim')
   call dein#add('junegunn/goyo.vim') "focus mode :Goyo
   call dein#add('mbbill/undotree') "undo history :UndotreeShow
   call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
@@ -90,19 +89,23 @@ call dein#add('Shougo/dein.vim')
   call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
   call dein#add('Rykka/riv.vim')
   call dein#add('gu-fan/InstantRst') " rst instant preview
-
-
-  call dein#add('mrk21/yaml-vim')
   call dein#add('yuttie/comfortable-motion.vim') "scroll effect
-  call dein#add('jmcomets/vim-pony') "django goodies
-    let g:pony_prefix='D'
-  " call dein#add('liuchengxu/vim-which-key')
+  call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
+  call dein#add('liuchengxu/vim-which-key') " help with the next key available
+
+  call dein#add('alvan/vim-closetag') " close tags for html
+
+
+  "
+  " call dein#add('jmcomets/vim-pony') "django goodies
+  "   let g:pony_prefix='D'
+  " https://github.com/tweekmonster/django-plus.vim
+  " call dein#add('mrk21/yaml-vim') " Yaml syntax/indent plugin
   " call dein#add('sjl/splice.vim') " Vim diff tool
   " call dein#add('honza/vim-snippets')
-  " call dein#add('Shougo/deol.nvim') "nvim terminal
   " call dein#add('Shougo/deoppet.nvim') "snippets plugin
-  " call dein#add('Shougo/defx.nvim') "dark NerdTree
-  " https://github.com/tweekmonster/django-plus.vim
+  call dein#add('Shougo/defx.nvim') "dark NerdTree
+  "
 "--------------------------->finish installing plugins<---------------------------
 
   call dein#end()
@@ -207,18 +210,6 @@ call dein#add('Shougo/dein.vim')
     " Blink 2 times with 50ms interval
    noremap <expr> <plug>(slash-after) slash#blink(2, 50)
   endif
-" }}}
-" {{{ Lightline
-    let g:lightline = {
-        \ 'colorscheme': 'jellybeans',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'fugitive#head'
-        \ },
-        \ }
 " }}}
 " {{{ InstantRst
     let g:instant_rst_localhost_only = 1
@@ -642,6 +633,7 @@ let maplocalleader='\'
 " | |____| | | | |   <\__ \
 " |______|_|_| |_|_|\_\___/
 " =============================================================================
+" :h nvim
 " vim.org
 " http://vimcasts.org/
 " http://vimawesome.com/
@@ -719,34 +711,20 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 
 
-
-
 " TODO:
 " [ ] terminal in nvim
 
 " tnoremap <ESC> <C-\><C-n><C-w><C-p>
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 
-autocmd BufWinEnter,WinEnter term://* startinsert
-autocmd BufLeave term://* stopinsert
-
-
-" tnoremap <C-h> <C-\><C-n><C-w>h
-" tnoremap <C-j> <C-\><C-n><C-w>j
-" tnoremap <C-k> <C-\><C-n><C-w>k
-" tnoremap <C-l> <C-\><C-n><C-w>l
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>l
+" autocmd BufWinEnter,WinEnter term://* startinsert autocmd BufLeave term://* stopinsert
 
 
-" think about replace Ctrl wiht 'm' or 'M' for moving between windows
-tnoremap <M-h> <M-\><M-n><M-w>h
-tnoremap <M-j> <M-\><M-n><M-w>j
-tnoremap <M-k> <M-\><M-n><M-w>k
-tnoremap <M-l> <M-\><M-n><M-w>l
-nnoremap <M-h> <C-w>h
-nnoremap <M-j> <C-w>j
-nnoremap <M-k> <C-w>k
-nnoremap <M-l> <C-w>l
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
