@@ -35,124 +35,13 @@
 # TUI:
 al
 q1
-v2
+v1
 ov
 m-1
 l2
 r2
 
 # Left window history (oldest to newest):
-d/media/1Tb/Tutorials/GrowthHacking/Startup Growth Strategies - Simple Approaches for Fast Growth
-	01 - Roadmap of this course.mp4
-1
-d/media/1Tb/Tutorials/GrowthHacking/UDEMY GROWTH HACKING HOW TO GROW YOUR COMPANY FAST TUTORIAL
-	2_-_Growth_Hacking_-_An_Introduction
-1
-d/home/gogo
-	Scripts
-3
-d/home
-	gogo
-1
-d/media/1Tb
-	Books
-2
-d/media
-	1Tb
-1
-d/home/gogo
-	Downloads
-2
-d/home/gogo/Downloads
-	Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]
-1
-d/home/gogo/Downloads/Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]
-	Lana Del Rey - NFR! Norman Fucking Rockwell (2019)
-1
-d/home/gogo/Downloads/Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]/Lana Del Rey - NFR! Norman Fucking Rockwell (2019)
-	05. Doin’ Time.flac
-6
-d/home/gogo/Downloads/Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]
-	Lana Del Rey - NFR! Norman Fucking Rockwell (2019)
-1
-d/home/gogo/Downloads
-	Lana Del Rey - NFR! Norman Fucking Rockwell (2019) [FLAC, CD]
-1
-d/media/400Gb
-	Wallpapers
-10
-d/media/400Gb/Wallpapers
-	Abstract
-1
-d/media/400Gb/Wallpapers/Abstract
-	women-abstract-dark-black-eyes-Alien-_11834-50.jpg
-9
-d/home/gogo
-	Desktop
-1
-d/home/gogo/Desktop
-	..
-0
-d/home/gogo
-	Desktop
-1
-d/home
-	gogo
-1
-d/home/gogo
-	Desktop
-1
-d/home/gogo/Desktop
-	..
-0
-d/home/gogo
-	Desktop
-1
-d/home/gogo/Desktop
-	..
-0
-d/home/gogo
-	Desktop
-1
-d/home/gogo/Desktop
-	..
-0
-d/home/gogo
-	Desktop
-2
-d/home
-	gogo
-1
-d/
-	home
-4
-d/home
-	gogo
-1
-d/home/gogo
-	Downloads
-4
-d/home/gogo/Downloads
-	install_host_app.sh
-4
-d/home/gogo
-	Downloads
-4
-d/home
-	gogo
-1
-d/home/gogo
-	Desktop
-2
-d/home/gogo/Desktop
-	cheap-cruise-finder
-1
-d/home/gogo/Desktop/cheap-cruise-finder
-	src
-2
-d/home/gogo/Desktop/cheap-cruise-finder/src
-	cruise.py
-5
 d/home/gogo/Desktop/cheap-cruise-finder
 	src
 2
@@ -333,6 +222,126 @@ d/home/gogo/Downloads
 d/home/gogo/Downloads/la
 	Missy Luv - Intense Orgasm - 110819.mp4
 4
+d/home/gogo/Downloads
+	la
+4
+d/home/gogo
+	.cache
+1
+d/home/gogo/.cache
+	..
+0
+d/home/gogo
+	.config
+2
+d/home/gogo/.config
+	..
+0
+d/home/gogo
+	VirtualBox VMs
+23
+d/home/gogo/VirtualBox VMs
+	cruisebell.mylocal
+1
+d/home/gogo
+	Scripts
+22
+d/home/gogo/Scripts
+	..
+0
+d/home/gogo
+	Downloads
+21
+d/home/gogo/Downloads
+	la
+4
+d/home/gogo/Downloads/la
+	Missy Luv - Intense Orgasm - 110819.mp4
+4
+d/home/gogo/Downloads
+	la
+4
+d/home/gogo
+	Documents
+20
+d/home/gogo/Documents
+	Mindmaps
+1
+d/home/gogo
+	Desktop
+19
+d/home/gogo/Desktop
+	todo.rst
+2
+d/home/gogo
+	Calibre Library
+18
+d/home/gogo/Calibre Library
+	..
+0
+d/home/gogo
+	.virtualenvs
+17
+d/home/gogo/.virtualenvs
+	..
+0
+d/home/gogo
+	..
+0
+d/home
+	gogo
+1
+d/
+	media
+8
+d/media
+	1Tb
+1
+d/media/1Tb
+	.vifm-Trash-1000
+2
+d/media/1Tb/.vifm-Trash-1000
+	..
+0
+d/media/1Tb
+	BACKUPS
+3
+d/media/1Tb/BACKUPS
+	..
+0
+d/media/1Tb
+	_Hack_and_Linux
+8
+d/media
+	1Tb
+1
+d/
+	mnt
+9
+d/mnt
+	3Tb
+1
+d/mnt/3Tb
+	lost+found
+1
+d/mnt
+	3Tb
+1
+d/
+	media
+8
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	side-project-sales
+1
+d/home/gogo/Desktop/side-project-sales
+	..
+0
+d/home/gogo/Desktop
+	sales-checklist.md
+3
 d
 
 # Right window history (oldest to newest):
@@ -344,6 +353,7 @@ D
 # Command line history (oldest to newest):
 :mkcd Desktop
 :mkdir Desktop
+:only
 :q
 
 # Search history (oldest to newest):
@@ -353,7 +363,6 @@ D
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/gogo/.local/share/vifm/Trash/000_install_host_app.sh
 
 # Directory stack (oldest to newest):
 
