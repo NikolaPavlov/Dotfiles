@@ -54,6 +54,7 @@ alias glog='git log --oneline'
 alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull'
 # git reset to previous commit (hard)
 # git reset --hard <commitId> && git clean -f
+alias push='git add . && git commit -m "up" && git push'
 
 # Docker
 alias d='docker'
@@ -80,7 +81,13 @@ alias pmr='python manage.py runserver'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias tt='python manage.py test'
-
+# TaskWarrior
+alias tl='task list'
+alias ta='task add $1'
+alias tdel='task $1 delete'
+alias tdone='task $1 done'
+alias te='task $1 edit'
+alias tannotete='task $1 annotate $2'
 # Programs
 alias vifm='vifmrun'
 alias f='firefox'
