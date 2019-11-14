@@ -174,3 +174,7 @@ export MANPAGER="nvim +set\ filetype=man -"
 # virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
+
+
+# autocomplete for gopass
+source <(gopass completion bash)
