@@ -34,26 +34,14 @@
 
 # TUI:
 al
-q1
-v2
+q0
+v1
 ov
 m-1
 l2
 r2
 
 # Left window history (oldest to newest):
-d/mnt/3Tb
-	recup_dir.10
-12
-d/mnt/3Tb/recup_dir.10
-	f227637544.jpg
-4
-d/mnt/3Tb
-	recup_dir.11
-13
-d/mnt/3Tb/recup_dir.11
-	..
-0
 d/mnt/3Tb
 	recup_dir.12
 14
@@ -342,6 +330,18 @@ d/home/gogo/Desktop
 d/home/gogo
 	Calibre Library
 1
+d/home
+	gogo
+1
+d/home/gogo
+	Downloads
+4
+d/home/gogo/Downloads
+	Cv+MotivationLetters
+1
+d/home/gogo/Downloads/Cv+MotivationLetters
+	..
+0
 d
 
 # Right window history (oldest to newest):
@@ -356,13 +356,13 @@ D
 # Command line history (oldest to newest):
 :mkcd Desktop
 :mkdir Desktop
-:only
 :mkdir SideProjectChecklist
 :nvim list_of_competitors.rst
 :edit comp.rst
 :mkcd RescuedFrom400Gb
-:q
 :mkcd freecinc
+:only
+:q
 
 # Search history (oldest to newest):
 
