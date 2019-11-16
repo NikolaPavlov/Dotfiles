@@ -38,7 +38,6 @@ alias search='sudo  pacman -Ss '
 # Python
 alias p='python3.7'
 alias i='ipython'
-alias t='python -m unittest discover'
 alias pt='pytest'
 # PipEnv
 alias pe='pipenv'
@@ -82,11 +81,13 @@ alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias tt='python manage.py test'
 # TaskWarrior
+alias t='task'
 alias tl='task list'
 alias ta='task add $1'
 alias tdel='task $1 delete'
 alias tdone='task $1 done'
 alias te='task $1 edit'
+alias tn='task next'
 alias tannotete='task $1 annotate $2'
 # Programs
 alias vifm='vifmrun'

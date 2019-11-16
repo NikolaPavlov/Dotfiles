@@ -34,7 +34,7 @@
 
 # TUI:
 al
-q0
+q1
 v2
 ov
 m-1
@@ -42,129 +42,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/gogo/Desktop
-	SideProjectChecklist
-1
-d/home/gogo
-	Desktop
-2
-d/home
-	gogo
-1
-d/
-	media
-8
-d/media
-	1Tb
-1
-d/media/1Tb
-	..
-0
-d/media
-	1Tb
-1
-d/
-	mnt
-9
-d/mnt
-	3Tb
-1
-d/mnt/3Tb
-	1Tb
-1
-d/mnt/3Tb/1Tb
-	..
-0
-d/mnt/3Tb
-	recup_dir.1
-3
-d/mnt/3Tb/recup_dir.1
-	report.xml
-1
-d/mnt
-	3Tb
-1
-d/home/gogo/Desktop
-	SideProjectChecklist
-1
-d/home/gogo
-	Desktop
-2
-d/home
-	gogo
-1
-d/
-	mnt
-9
-d/mnt
-	3Tb
-1
-d/mnt/3Tb
-	recup_dir.1
-3
-d/mnt/3Tb/recup_dir.1
-	report.xml
-1
-d/mnt/3Tb
-	recup_dir.1
-3
-d/mnt/3Tb/recup_dir.1
-	report.xml
-1
-d/mnt/3Tb
-	recup_dir.2
-4
-d/mnt/3Tb/recup_dir.2
-	f0655360.orf
-6
-d/mnt/3Tb
-	recup_dir.3
-5
-d/mnt/3Tb/recup_dir.3
-	..
-0
-d/mnt/3Tb
-	recup_dir.4
-6
-d/mnt/3Tb/recup_dir.4
-	..
-0
-d/mnt/3Tb
-	recup_dir.5
-7
-d/mnt/3Tb/recup_dir.5
-	..
-0
-d/mnt/3Tb
-	recup_dir.5
-7
-d/mnt/3Tb/recup_dir.5
-	f137099848.jpg
-22
-d/mnt/3Tb
-	recup_dir.6
-8
-d/mnt/3Tb/recup_dir.6
-	t142313608.jpg
-59
-d/mnt/3Tb
-	recup_dir.7
-9
-d/mnt/3Tb/recup_dir.7
-	f185917320.mp3
-56
-d/mnt/3Tb
-	recup_dir.8
-10
-d/mnt/3Tb/recup_dir.8
-	..
-0
-d/mnt/3Tb
-	recup_dir.9
-11
-d/mnt/3Tb/recup_dir.9
-	t227438672.jpg
-51
 d/mnt/3Tb
 	recup_dir.10
 12
@@ -312,36 +189,159 @@ d/home/gogo/Desktop/Cruisebell
 d/home/gogo/Desktop
 	Cruisebell
 1
+d/home/gogo/Desktop/Cruisebell
+	Competitors.rst
+1
+d/home/gogo/Desktop
+	Cruisebell
+1
 d/home/gogo
-	Desktop
+	Downloads
+4
+d/home/gogo/Downloads
+	Music
+1
+d/home/gogo
+	Documents
+3
+d/home/gogo/Documents
+	BACKUPS
+1
+d/home/gogo/Documents/BACKUPS
+	freecinc
+1
+d/home/gogo/Documents/BACKUPS/freecinc
+	freecinc_093110d0_instructions_files
+1
+d/home/gogo/Documents/BACKUPS
+	freecinc
+1
+d/home/gogo/Documents
+	BACKUPS
+1
+d/home/gogo/Documents/BACKUPS
+	freecinc
+1
+d/home/gogo/Documents/BACKUPS/freecinc
+	freecinc_093110d0_instructions_files
+1
+d/home/gogo/Documents/BACKUPS/freecinc/freecinc_093110d0_instructions_files
+	..
+0
+d/home/gogo/Documents/BACKUPS/freecinc
+	freecinc_093110d0_instructions_files
+1
+d/home/gogo/Documents/BACKUPS
+	freecinc
+1
+d/home/gogo/Documents/BACKUPS/freecinc
+	freecinc_093110d0_instructions.html
 2
+d/home/gogo/Documents/BACKUPS
+	freecinc
+1
+d/home/gogo/Documents
+	BACKUPS
+1
+d/home/gogo
+	Documents
+3
 d/home
 	gogo
 1
 d/
-	mnt
-9
-d/mnt
-	3Tb
+	home
+4
+d/home
+	gogo
 1
-d/mnt/3Tb
-	1Tb
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	Cruisebell
 1
-d/mnt/3Tb/1Tb
+d/home/gogo/Desktop/Cruisebell
+	Competitors.rst
+1
+d/home/gogo/Desktop
+	SideProjectChecklist
+2
+d/home/gogo/Desktop/SideProjectChecklist
+	..
+0
+d/home/gogo/Desktop
+	todo.rst
+5
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	todo.rst
+5
+d/home/gogo
+	Documents
+3
+d/home/gogo/Documents
 	BACKUPS
 1
-d/mnt/3Tb/1Tb/BACKUPS
-	CRYPTO
+d/home/gogo/Documents/BACKUPS
+	freecinc
 1
-d/mnt/3Tb/1Tb/BACKUPS/CRYPTO
-	metamask.txt
-7
-d/mnt/3Tb/1Tb/BACKUPS
-	PGP
-7
-d/mnt/3Tb/1Tb/BACKUPS/PGP
-	pgp-private-keys.asc
+d/home/gogo/Documents/BACKUPS/freecinc
+	freecinc_093110d0_instructions.html
 2
+d/home/gogo/Documents/BACKUPS
+	freecinc
+1
+d/home/gogo/Documents
+	Mindmaps
+2
+d/home/gogo/Documents/Mindmaps
+	ThingsToOutsourcing.vym
+4
+d/home/gogo/Documents
+	Mindmaps
+2
+d/home/gogo
+	Downloads
+4
+d/home/gogo/Downloads
+	wordpress.png
+12
+d/home/gogo
+	Scripts
+5
+d/home/gogo/Scripts
+	..
+0
+d/home/gogo
+	VirtualBox VMs
+6
+d/home/gogo/VirtualBox VMs
+	..
+0
+d/home/gogo
+	Downloads
+4
+d/home/gogo/Downloads
+	..
+0
+d/home/gogo
+	Documents
+3
+d/home/gogo/Documents
+	BACKUPS
+1
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	jobs_send_cv.rst
+4
+d/home/gogo
+	Calibre Library
+1
 d
 
 # Right window history (oldest to newest):
@@ -362,6 +362,7 @@ D
 :edit comp.rst
 :mkcd RescuedFrom400Gb
 :q
+:mkcd freecinc
 
 # Search history (oldest to newest):
 
