@@ -42,51 +42,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/mnt/3Tb
-	recup_dir.12
-14
-d/mnt/3Tb/recup_dir.12
-	..
-0
-d/mnt/3Tb
-	recup_dir.13
-15
-d/mnt/3Tb/recup_dir.13
-	..
-0
-d/mnt/3Tb
-	recup_dir.14
-16
-d/mnt/3Tb/recup_dir.14
-	..
-0
-d/mnt/3Tb
-	recup_dir.15
-17
-d/mnt/3Tb/recup_dir.15
-	..
-0
-d/mnt/3Tb
-	recup_dir.16
-18
-d/mnt/3Tb/recup_dir.16
-	..
-0
-d/mnt/3Tb
-	recup_dir.17
-19
-d/mnt/3Tb/recup_dir.17
-	..
-0
-d/mnt/3Tb
-	recup_dir.18
-20
-d/mnt/3Tb/recup_dir.18
-	..
-0
-d/mnt/3Tb
-	recup_dir.19
-21
 d/mnt/3Tb/recup_dir.19
 	..
 0
@@ -340,8 +295,53 @@ d/home/gogo/Downloads
 	Cv+MotivationLetters
 1
 d/home/gogo/Downloads/Cv+MotivationLetters
+	new_motivation_letter
+1
+d/home/gogo/Downloads/Cv+MotivationLetters/new_motivation_letter
 	..
 0
+d/home/gogo/Downloads/Cv+MotivationLetters
+	new_motivation_letter
+1
+d/home/gogo/Downloads/Cv+MotivationLetters/new_motivation_letter
+	motivation_letter.rst
+2
+d/home/gogo/Downloads/Cv+MotivationLetters
+	new_motivation_letter
+1
+d/home/gogo/Downloads
+	Cv+MotivationLetters
+1
+d/home/gogo/Downloads/Cv+MotivationLetters
+	NikolaCV.pdf
+3
+d/home/gogo/Downloads
+	Cv+MotivationLetters
+1
+d/home/gogo/Downloads/Cv+MotivationLetters
+	new_motivation_letter
+1
+d/home/gogo/Downloads/Cv+MotivationLetters/new_motivation_letter
+	motivation_letter.rst
+2
+d/home/gogo/Downloads/Cv+MotivationLetters
+	new_motivation_letter_and_CV
+1
+d/home/gogo/Downloads/Cv+MotivationLetters/new_motivation_letter_and_CV
+	Motivation_letter.rst
+2
+d/home/gogo/Downloads/Cv+MotivationLetters
+	new_motivation_letter_and_CV
+1
+d/home/gogo/Downloads
+	task-2.3.0.ref.pdf
+14
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	todo.rst
+6
 d
 
 # Right window history (oldest to newest):
@@ -354,6 +354,7 @@ D/mnt
 D
 
 # Command line history (oldest to newest):
+:mkcd new_motivation_letter
 :mkcd Desktop
 :mkdir Desktop
 :mkdir SideProjectChecklist
@@ -369,10 +370,12 @@ D
 # Prompt history (oldest to newest):
 pcompetitors.rst
 pimage_temp.dd
+pnew_motivation_letter_and_CV
 
 # Local filter history (oldest to newest):
 
 # Registers:
+""/home/gogo/.local/share/vifm/Trash/001_motivation_letter.pdf
 
 # Directory stack (oldest to newest):
 
@@ -437,6 +440,10 @@ t/mnt/3Tb/.vifm-Trash-1000/000_recup_dir.28
 	/mnt/3Tb/recup_dir.28
 t/mnt/3Tb/.vifm-Trash-1000/000_recup_dir.29
 	/mnt/3Tb/recup_dir.29
+t/home/gogo/.local/share/vifm/Trash/000_motivation_letter.pdf
+	/home/gogo/Downloads/Cv+MotivationLetters/new_motivation_letter/motivation_letter.pdf
+t/home/gogo/.local/share/vifm/Trash/001_motivation_letter.pdf
+	/home/gogo/Downloads/Cv+MotivationLetters/new_motivation_letter_and_CV/motivation_letter.pdf
 
 # State:
 f

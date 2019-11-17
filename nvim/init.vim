@@ -88,24 +88,13 @@ call dein#add('Shougo/dein.vim')
   call dein#add('junegunn/vim-slash') " improve highlight search
   call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
   call dein#add('Rykka/riv.vim')
-  call dein#add('gu-fan/InstantRst') " rst instant preview
+  " call dein#add('gu-fan/InstantRst') " rst instant preview
+  call dein#add('Rykka/InstantRst')
   call dein#add('yuttie/comfortable-motion.vim') "scroll effect
   call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
   call dein#add('liuchengxu/vim-which-key') " help with the next key available
-
   call dein#add('alvan/vim-closetag') " close tags for html
 
-
-  "
-  " call dein#add('jmcomets/vim-pony') "django goodies
-  "   let g:pony_prefix='D'
-  " https://github.com/tweekmonster/django-plus.vim
-  " call dein#add('mrk21/yaml-vim') " Yaml syntax/indent plugin
-  " call dein#add('sjl/splice.vim') " Vim diff tool
-  " call dein#add('honza/vim-snippets')
-  " call dein#add('Shougo/deoppet.nvim') "snippets plugin
-  call dein#add('Shougo/defx.nvim') "dark NerdTree
-  "
 "--------------------------->finish installing plugins<---------------------------
 
   call dein#end()
@@ -224,82 +213,103 @@ call dein#add('Shougo/dein.vim')
 " }}}
 " }}}
 "{{{ Filetype specific
+"{{{ Python
+
+    augroup ft_python
+        au!
+        au BufNewFile,BufRead *.py set wrap textwidth=120
+        au BufNewFile,BufRead *.py set colorcolumn=120
+    augroup END
+
+" }}}
 "{{{ Django
 
-augroup ft_django
-    au!
+    augroup ft_django
+        au!
 
-    au BufNewFile,BufRead urls.py           setlocal nowrap
-    au BufNewFile,BufRead urls.py           normal! zR
+        au BufNewFile,BufRead urls.py           setlocal nowrap
+        au BufNewFile,BufRead urls.py           normal! zR
 
-    au BufNewFile,BufRead admin.py setlocal filetype=python.django
-    au BufNewFile,BufRead urls.py setlocal filetype=python.django
-    au BufNewFile,BufRead models.py setlocal filetype=python.django
-    au BufNewFile,BufRead views.py setlocal filetype=python.django
-    au BufNewFile,BufRead forms.py setlocal filetype=python.django
+        au BufNewFile,BufRead admin.py setlocal filetype=python.django
+        au BufNewFile,BufRead urls.py setlocal filetype=python.django
+        au BufNewFile,BufRead models.py setlocal filetype=python.django
+        au BufNewFile,BufRead views.py setlocal filetype=python.django
+        au BufNewFile,BufRead forms.py setlocal filetype=python.django
 
-    au BufNewFile,BufRead base.py setlocal filetype=python.django
-    au BufNewFile,BufRead base.py setlocal foldmethod=marker
-    au BufNewFile,BufRead dev.py setlocal filetype=python.django
-    au BufNewFile,BufRead dev.py setlocal foldmethod=marker
-    au BufNewFile,BufRead prod.py setlocal filetype=python.django
-    au BufNewFile,BufRead prod.py setlocal foldmethod=marker
-augroup END
+        au BufNewFile,BufRead base.py setlocal filetype=python.django
+        au BufNewFile,BufRead base.py setlocal foldmethod=marker
+        au BufNewFile,BufRead dev.py setlocal filetype=python.django
+        au BufNewFile,BufRead dev.py setlocal foldmethod=marker
+        au BufNewFile,BufRead prod.py setlocal filetype=python.django
+        au BufNewFile,BufRead prod.py setlocal foldmethod=marker
+    augroup END
 
 " }}}
 "{{{ Html Django
 
-" no line wrap for html files
-augroup ft_html
-    au!
+    " no line wrap for html files
+    augroup ft_html
+        au!
 
-    au BufNewFile,BufRead *.html set nowrap textwidth=120
-    " au BufNewFile,BufRead *.html setlocal filetype=htmldjango
-    " au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
-    " au BufNewFile,BufRead *.dram setlocal filetype=htmldjango
+        au BufNewFile,BufRead *.html set nowrap textwidth=120
+        " au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+        " au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
+        " au BufNewFile,BufRead *.dram setlocal filetype=htmldjango
 
-    au FileType html,jinja,htmldjango setlocal foldmethod=manual
+        au FileType html,jinja,htmldjango setlocal foldmethod=manual
 
-    " Use <localleader>f to fold the current tag.
-    au FileType html,jinja,htmldjango nmap <buffer> <localleader>f Vatzf
+        " Use <localleader>f to fold the current tag.
+        au FileType html,jinja,htmldjango nmap <buffer> <localleader>f Vatzf
 
-    " Use <localleader>t to fold the current templatetag.
-    au FileType html,jinja,htmldjango nmap <buffer> <localleader>t viikojozf
+        " Use <localleader>t to fold the current templatetag.
+        au FileType html,jinja,htmldjango nmap <buffer> <localleader>t viikojozf
 
-    " Indent tag
-    au FileType html,jinja,htmldjango nmap <buffer> <localleader>= Vat=
+        " Indent tag
+        au FileType html,jinja,htmldjango nmap <buffer> <localleader>= Vat=
 
-    " Django tags
-    au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
-
-
+        " Django tags
+        au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
 
 
+        autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
+        autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
+        autocmd FileType htmldjango inoremap {# {# #}<left><left><left>
 
-    autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
-    autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
-    autocmd FileType htmldjango inoremap {# {# #}<left><left><left>
+    augroup END
+
+
+
+
+
 
 "}}}
 "{{{ Vagrant
 
-augroup ft_vagrant
-    au!
-    au BufRead,BufNewFile Vagrantfile set ft=ruby
-augroup END
+    augroup ft_vagrant
+        au!
+        au BufRead,BufNewFile Vagrantfile set ft=ruby
+    augroup END
 
 "}}}
 "{{{ NeoSnippets
     au FileType neosnippet set noexpandtab
 "}}}
-"{{{ Text
+"{{{ Text + rst + md
 
-    " no line wrap for txt files
-    au BufNewFile,BufRead *.txt set wrap textwidth=80
+    " Line wrap at 120
+    augroup text_rst_md
+        au!
+        au BufNewFile,BufRead *.txt set wrap textwidth=120
+        au BufNewFile,BufRead *.txt set colorcolumn=120
+        au BufNewFile,BufRead *.rst set wrap textwidth=120
+        au BufNewFile,BufRead *.rst set colorcolumn=120
+        au BufNewFile,BufRead *.md set wrap textwidth=120
+        au BufNewFile,BufRead *.md set colorcolumn=120
+    augroup END
 
 "}}}
 "{{{ Yaml
@@ -312,13 +322,10 @@ augroup END
 
     augroup ft_vim
         au!
-
         au FileType vim setlocal foldmethod=marker
-        au FileType help setlocal textwidth=79
-
-        " autoclose folds when open .vim file
-        au BufNewFile,BufRead *.vim normal zM
-
+        au BufNewFile,BufRead *.vim setlocal nowrap
+        au BufNewFile,BufRead *.vim setlocal colorcolumn=120
+        au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
     augroup END
 
 "}}}
