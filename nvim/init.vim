@@ -1,7 +1,7 @@
 "{{{ Virtualenv fixer for neovim
 
-    let g:python_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
-    let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.8')
+    " let g:python_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
+    " let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.8')
 
 " }}}
 "{{{ Plugins
@@ -87,14 +87,16 @@ call dein#add('Shougo/dein.vim')
   call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
   call dein#add('junegunn/vim-slash') " improve highlight search
   call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
-  call dein#add('Rykka/riv.vim')
-  " call dein#add('gu-fan/InstantRst') " rst instant preview
-  call dein#add('Rykka/InstantRst')
+  call dein#add('gu-fan/riv.vim') " note taking in vim
+  call dein#add('gu-fan/InstantRst') " rst instant preview
+  " call dein#add('Rykka/InstantRst')
   call dein#add('yuttie/comfortable-motion.vim') "scroll effect
   call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
   call dein#add('liuchengxu/vim-which-key') " help with the next key available
   call dein#add('alvan/vim-closetag') " close tags for html
 
+
+  call dein#add('jceb/vim-orgmode')
 "--------------------------->finish installing plugins<---------------------------
 
   call dein#end()
@@ -202,6 +204,7 @@ call dein#add('Shougo/dein.vim')
 " }}}
 " {{{ InstantRst
     let g:instant_rst_localhost_only = 1
+    let g:instant_rst_browser='google-chrome-stable'
 " }}}
 " {{{ VimWhichKey
 

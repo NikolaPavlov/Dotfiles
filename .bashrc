@@ -97,6 +97,7 @@ alias reflect='sudo reflector --latest 200 --protocol http --protocol https --so
 alias radio='curseradio'
 alias z='zathura'
 alias todo='vit'
+alias cal='calcurse'
 
 
 # ex - archive extractor
