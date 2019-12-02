@@ -58,8 +58,8 @@ alias push='git add . && git commit -m "up" && git push'
 # Docker
 alias d='docker'
 alias di='docker images'
-alias drmc='docker rm -f $(docker ps -a -q)' # remove all images
 alias drmi='docker rmi -f $(docker images -q)' # remove image
+alias drmc='docker rm -f $(docker ps -a -q)' # remove all images
 alias dc='docker-compose'
 # Vagrant
 alias va='vagrant'

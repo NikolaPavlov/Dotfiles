@@ -34,68 +34,14 @@
 
 # TUI:
 al
-q0
-v1
+q1
+v2
 ov
 m-1
 l2
 r2
 
 # Left window history (oldest to newest):
-d/home/gogo/Downloads/AWS
-	Amazon Web Services (AWS) Certified 2019 - 4 Certifications!
-4
-d/home/gogo/Downloads
-	la
-13
-d/home/gogo/Downloads/la
-	Kiki Minaj - Nude To The Neighborhood 2019
-1
-d/home/gogo/Downloads/la/Kiki Minaj - Nude To The Neighborhood 2019
-	..
-0
-d/home/gogo/Downloads/la
-	Kiki Minaj - Nude To The Neighborhood 2019
-1
-d/home/gogo/Downloads/la/Kiki Minaj - Nude To The Neighborhood 2019
-	..
-0
-d/home/gogo/Downloads/la
-	Lexi Luna - What Are You Doing To My Friend! 2019
-1
-d/home/gogo/Downloads/la/Lexi Luna - What Are You Doing To My Friend! 2019
-	..
-0
-d/home/gogo/Downloads/la
-	Riley Reid & Gabbie Carter( Below The Belt) 2019
-1
-d/home/gogo/Downloads/la/Riley Reid & Gabbie Carter( Below The Belt) 2019
-	..
-0
-d/home/gogo/Downloads/la
-	Riley Reid & Gabbie Carter( Below The Belt) 2019
-1
-d/home/gogo/Downloads/la/Riley Reid & Gabbie Carter( Below The Belt) 2019
-	..
-0
-d/home/gogo/Downloads/la
-	Rita Faltoyano & Claudia Ricci - Private Black Label 20 Brides & Bitches (2001) DVDRip
-1
-d/home/gogo/Downloads/la/Rita Faltoyano & Claudia Ricci - Private Black Label 20 Brides & Bitches (2001) DVDRip
-	..
-0
-d/home/gogo/Downloads/la
-	Rita Faltoyano & Claudia Ricci - Private Black Label 20 Brides & Bitches (2001) DVDRip
-1
-d/home/gogo/Downloads/la/Rita Faltoyano & Claudia Ricci - Private Black Label 20 Brides & Bitches (2001) DVDRip
-	..
-0
-d/home/gogo/Downloads/la
-	Sara Bell - Rocco'S Intimate Castings 28 , 2019
-1
-d/home/gogo/Downloads/la/Sara Bell - Rocco'S Intimate Castings 28 , 2019
-	..
-0
 d/home/gogo/Downloads/la
 	Sasha Sparrow - Brunette In Knee Socks Wants Anal Sex 2019
 1
@@ -342,6 +288,60 @@ d/home/gogo/Documents/Repos/Blog_backup/nikolapavlov.github.io-src/pelican-bluei
 d/home/gogo/Documents/Repos/Blog_backup/nikolapavlov.github.io-src
 	pelicanconf.py
 9
+d/home/gogo/Documents/Repos/Blog_backup
+	nikolapavlov.github.io-src
+2
+d/home/gogo/Documents/Repos
+	Blog_backup
+2
+d/home/gogo/Documents
+	Repos
+3
+d/home/gogo
+	Desktop
+2
+d/home/gogo/Desktop
+	Job
+3
+d/home/gogo/Desktop/Job
+	Cv+MotivationLetters
+1
+d/home/gogo/Desktop/Job/Cv+MotivationLetters
+	new_motivation_letter_and_CV
+1
+d/home/gogo/Desktop/Job/Cv+MotivationLetters/new_motivation_letter_and_CV
+	..
+0
+d/home/gogo/Desktop/Job/Cv+MotivationLetters
+	Motivation_letter.rst
+2
+d/home/gogo/Desktop/Job
+	Cv+MotivationLetters
+1
+d/home/gogo/Desktop
+	Job
+3
+d/home/gogo
+	Desktop
+2
+d/home
+	gogo
+1
+d/
+	media
+10
+d/media
+	4Tb
+2
+d/media/4Tb
+	400Gb_recovered
+1
+d/media/4Tb/400Gb_recovered
+	recup_dir.1
+1
+d/media/4Tb/400Gb_recovered/recup_dir.1
+	f0293248.png
+2
 d
 
 # Right window history (oldest to newest):
@@ -667,11 +667,13 @@ D
 :tree
 :mkcd Industria
 :q
+:vs
 
 # Search history (oldest to newest):
 /la
 
 # Prompt history (oldest to newest):
+pCV.pdf
 pcompetitors.rst
 pimage_temp.dd
 pnew_motivation_letter_and_CV
@@ -824,6 +826,10 @@ t/run/media/gogo/459096973303697F/.vifm-Trash-1000/000_Breaking Bad - 2x13 - ABQ
 	/run/media/gogo/459096973303697F/Breaking_Bad - season 2.en/Breaking Bad - 2x13 - ABQ.HDTV.0TV.en.srt
 t/run/media/gogo/459096973303697F/.vifm-Trash-1000/000_Breaking Bad - 2x11 - Mandala.HDTV.0TV.en.srt
 	/run/media/gogo/459096973303697F/Breaking_Bad - season 2.en/Breaking Bad - 2x11 - Mandala.HDTV.0TV.en.srt
+t/home/gogo/.local/share/vifm/Trash/000_MotivationLetter.pdf
+	/home/gogo/Desktop/Job/Cv+MotivationLetters/MotivationLetter.pdf
+t/home/gogo/.local/share/vifm/Trash/000_NikolaCV.pdf
+	/home/gogo/Desktop/Job/Cv+MotivationLetters/NikolaCV.pdf
 
 # State:
 f

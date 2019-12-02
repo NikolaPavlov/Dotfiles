@@ -88,8 +88,11 @@ call dein#add('Shougo/dein.vim')
   call dein#add('junegunn/vim-slash') " improve highlight search
   call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
   call dein#add('gu-fan/riv.vim') " note taking in vim
+
+  " :rivquickstart for help
   call dein#add('gu-fan/InstantRst') " rst instant preview
   " call dein#add('Rykka/InstantRst')
+
   call dein#add('yuttie/comfortable-motion.vim') "scroll effect
   call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
   call dein#add('liuchengxu/vim-which-key') " help with the next key available
