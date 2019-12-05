@@ -36,7 +36,7 @@ alias install='sudo pacman -S '
 alias remove='sudo pacman -Rns '
 alias search='sudo  pacman -Ss '
 # Python
-alias p='python3.7'
+alias p='python3.8'
 alias i='ipython'
 alias pt='pytest'
 # PipEnv
@@ -77,6 +77,7 @@ alias dl='~/.local/bin/spotdl --song'
 # Django
 alias pm='python manage.py'
 alias pmr='python manage.py runserver'
+alias pms='python manage.py shell'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
 alias tt='python manage.py test'

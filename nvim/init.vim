@@ -1,7 +1,9 @@
 "{{{ Virtualenv fixer for neovim
 
     " let g:python_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
+    let g:python_host_prog = expand('/usr/bin/python')
     " let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.8')
+    let g:python3_host_prog = expand('/usr/bin/python3.8')
 
 " }}}
 "{{{ Plugins
@@ -100,6 +102,7 @@ call dein#add('Shougo/dein.vim')
 
 
   call dein#add('jceb/vim-orgmode')
+
 "--------------------------->finish installing plugins<---------------------------
 
   call dein#end()
@@ -230,25 +233,25 @@ call dein#add('Shougo/dein.vim')
 " }}}
 "{{{ Django
 
-    augroup ft_django
-        au!
-
-        au BufNewFile,BufRead urls.py           setlocal nowrap
-        au BufNewFile,BufRead urls.py           normal! zR
-
-        au BufNewFile,BufRead admin.py setlocal filetype=python.django
-        au BufNewFile,BufRead urls.py setlocal filetype=python.django
-        au BufNewFile,BufRead models.py setlocal filetype=python.django
-        au BufNewFile,BufRead views.py setlocal filetype=python.django
-        au BufNewFile,BufRead forms.py setlocal filetype=python.django
-
-        au BufNewFile,BufRead base.py setlocal filetype=python.django
-        au BufNewFile,BufRead base.py setlocal foldmethod=marker
-        au BufNewFile,BufRead dev.py setlocal filetype=python.django
-        au BufNewFile,BufRead dev.py setlocal foldmethod=marker
-        au BufNewFile,BufRead prod.py setlocal filetype=python.django
-        au BufNewFile,BufRead prod.py setlocal foldmethod=marker
-    augroup END
+    " augroup ft_django
+    "     au!
+    "
+    "     au BufNewFile,BufRead urls.py           setlocal nowrap
+    "     au BufNewFile,BufRead urls.py           normal! zR
+    "
+    "     au BufNewFile,BufRead admin.py setlocal filetype=python.django
+    "     au BufNewFile,BufRead urls.py setlocal filetype=python.django
+    "     au BufNewFile,BufRead models.py setlocal filetype=python.django
+    "     au BufNewFile,BufRead views.py setlocal filetype=python.django
+    "     au BufNewFile,BufRead forms.py setlocal filetype=python.django
+    "
+    "     au BufNewFile,BufRead base.py setlocal filetype=python.django
+    "     au BufNewFile,BufRead base.py setlocal foldmethod=marker
+    "     au BufNewFile,BufRead dev.py setlocal filetype=python.django
+    "     au BufNewFile,BufRead dev.py setlocal foldmethod=marker
+    "     au BufNewFile,BufRead prod.py setlocal filetype=python.django
+    "     au BufNewFile,BufRead prod.py setlocal foldmethod=marker
+    " augroup END
 
 " }}}
 "{{{ Html Django
