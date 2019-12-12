@@ -49,7 +49,6 @@ call dein#add('Shougo/dein.vim')
     let g:autoformat_remove_trailing_spaces = 0
     " for debugging
     let g:autoformat_verbosemode=1
-  call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('mhinz/vim-signify') "show git diff in the left bar
   call dein#add('tpope/vim-fugitive') "git wrapper (integration)
     " :Gstatus
@@ -75,9 +74,11 @@ call dein#add('Shougo/dein.vim')
   call dein#add('jiangmiao/auto-pairs') "match quotes, brackets, parenthesis
   call dein#add('Valloric/MatchTagAlways') "always highlight html enclosing tags
   call dein#add('bronson/vim-trailing-whitespace') "colorize red trailing whitspaces
-  call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
   call dein#add('ryanoasis/vim-devicons') "icons in vim (nerdtree, airline, ctrlP)
-  call dein#add('tweekmonster/impsort.vim') "import sorting
+  call dein#add('nvie/vim-flake8') " flake8
+  call dein#add('tweekmonster/impsort.vim') " import sorting python
+  call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
+  call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
   call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
   call dein#add('flazz/vim-colorschemes') "many colorschemes
   call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
@@ -91,18 +92,14 @@ call dein#add('Shougo/dein.vim')
   call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
   call dein#add('gu-fan/riv.vim') " note taking in vim
 
-  " :rivquickstart for help
-  call dein#add('gu-fan/InstantRst') " rst instant preview
+
+  call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
   " call dein#add('Rykka/InstantRst')
 
   call dein#add('yuttie/comfortable-motion.vim') "scroll effect
   call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
   call dein#add('liuchengxu/vim-which-key') " help with the next key available
   call dein#add('alvan/vim-closetag') " close tags for html
-
-
-  call dein#add('jceb/vim-orgmode')
-
 "--------------------------->finish installing plugins<---------------------------
 
   call dein#end()

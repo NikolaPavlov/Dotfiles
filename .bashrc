@@ -80,7 +80,7 @@ alias pmr='python manage.py runserver'
 alias pms='python manage.py shell'
 alias pmmm='python manage.py makemigrations'
 alias pmm='python manage.py migrate'
-alias tt='python manage.py test'
+alias pmt='python manage.py test'
 # TaskWarrior
 alias t='task'
 alias tl='task list'
