@@ -6,100 +6,74 @@
     let g:python3_host_prog = expand('/usr/bin/python3.8')
 
 " }}}
-"{{{ Plugins
-
-" =============================================================================
-"  _____  _             _
-" |  __ \| |           (_)
-" | |__) | |_   _  __ _ _ _ __  ___
-" |  ___/| | | | |/ _` | | '_ \/ __|
-" | |    | | |_| | (_| | | | | \__ \
-" |_|    |_|\__,_|\__, |_|_| |_|___/
-"                  __/ |
-"                 |___/
-" =============================================================================
-
-filetype off
-"Setup DeinVim PluginManager -------------------------------------------------
-if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
-    call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
-    call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
-endif
-
+"{{{ Plugins new Dein
 if &compatible
-    set nocompatible
+  set nocompatible
 endif
 
-set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
-call dein#begin(expand('~/.config/nvim/repos/github.com'))
-call dein#add('Shougo/dein.vim') " plugin manager
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-"------------------------>start installing plugins<----------------------------
-  call dein#add('Shougo/deoplete.nvim') " autocomplete engine
-  " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
-  call dein#add('davidhalter/jedi-vim') "need for go to definitions
-  call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-  " call dein#add('w0rp/ale') "linter on the fly
-  call dein#add('sbdchd/neoformat') " formater (black + isort for python)
-  call dein#add('mhinz/vim-signify') " show git diff in the left bar
-  call dein#add('tpope/vim-fugitive') "git wrapper (integration)
-    " :Gstatus
-    " :Gpush
-    " :Gpull
-    " :Gcommit
-    " :Gwrite
-    " :Gdiff
-    " :Gmerge
-    " :Glog
-    " :Gblame
-    "
-    "https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
-    "
-  call dein#add('wellle/targets.vim') " add 'ci(' command
-  call dein#add('tpope/vim-surround') " change surroundings
-  call dein#add('tpope/vim-repeat') " repeat surround commands
-  call dein#add('tomtom/tcomment_vim') " comment plugin
-  call dein#add('junegunn/gv.vim') " git log viewer :GV
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
-  call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
-  call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
-  call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-  " call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
-  " call dein#add('nvie/vim-flake8') " flake8
-  call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
-  call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
-  call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-  call dein#add('flazz/vim-colorschemes') "many colorschemes currently using badwolf
-  call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
-  call dein#add('junegunn/goyo.vim') "focus mode :Goyo
-  call dein#add('mbbill/undotree') "undo history :UndotreeShow
-  call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
-  call dein#add('kshenoy/vim-signature') "display the marks in the side line
-  call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
-  call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
-  call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
-  call dein#add('yuttie/comfortable-motion.vim') "scroll effect
-  call dein#add('gu-fan/riv.vim') " note taking in vim with .rst
+if dein#load_state('~/.cache/dein')
+    call dein#begin('~/.cache/dein')
+    call dein#add('Shougo/deoplete.nvim') " autocomplete engine
+    " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
+    call dein#add('davidhalter/jedi-vim') "need for go to definitions
+    call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+    call dein#add('Shougo/neosnippet.vim')
+    call dein#add('Shougo/neosnippet-snippets')
+    " call dein#add('w0rp/ale') "linter on the fly
+    call dein#add('sbdchd/neoformat') " formater (black + isort for python)
+    call dein#add('mhinz/vim-signify') " show git diff in the left bar
+    call dein#add('tpope/vim-fugitive') "git wrapper (integration)
+        " :Gstatus
+        " :Gpush
+        " :Gpull
+        " :Gcommit
+        " :Gwrite
+        " :Gdiff
+        " :Gmerge
+        " :Glog
+        " :Gblame
+        "
+        "https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
+        "
+    call dein#add('wellle/targets.vim') " add 'ci(' command
+    call dein#add('tpope/vim-surround') " change surroundings
+    call dein#add('tpope/vim-repeat') " repeat surround commands
+    call dein#add('tomtom/tcomment_vim') " comment plugin
+    call dein#add('junegunn/gv.vim') " git log viewer :GV
+    call dein#add('scrooloose/nerdtree')
+    call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
+    call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
+    call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
+    call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
+    " call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
+    " call dein#add('nvie/vim-flake8') " flake8
+    call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
+    call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
+    call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
+    call dein#add('flazz/vim-colorschemes') "many colorschemes currently using badwolf
+    call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
+    call dein#add('junegunn/goyo.vim') "focus mode :Goyo
+    call dein#add('mbbill/undotree') "undo history :UndotreeShow
+    call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
+    call dein#add('kshenoy/vim-signature') "display the marks in the side line
+    call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
+    call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
+    call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
+    call dein#add('yuttie/comfortable-motion.vim') "scroll effect
+    call dein#add('gu-fan/riv.vim') " note taking in vim with .rst
+    call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
+    " call dein#add('Rykka/InstantRst')
+    call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
+    " call dein#add('liuchengxu/vim-which-key') " help with the next key available
+    call dein#end()
+    call dein#save_state()
+endif
 
-
-  call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
-  " call dein#add('Rykka/InstantRst')
-
-  call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
-  " call dein#add('liuchengxu/vim-which-key') " help with the next key available
-"--------------------------->finish installing plugins<---------------------------
-
-  call dein#end()
-  call dein#save_state()
-
-  if dein#check_install()
-    call dein#install()
-  endif
-
-  filetype plugin indent on
+filetype plugin indent on
+syntax enable
 
 "}}}
 " {{{ Plugin Options
