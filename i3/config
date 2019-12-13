@@ -9,7 +9,7 @@
 set $mod Mod1
 
 set $KILL_KEY F4
-set $BORDER_TICKNES 2
+set $BORDER_TICKNES 5
 set $GAPS_INNER_SIZE 7
 set $GAPS_OUTER_SIZE 15
 
@@ -148,7 +148,7 @@ exec_always --no-startup-id ~/Documents/Repos/Dotfiles/Scripts/polybar_start.sh
 # green
 # client.focused          #006400 #006400 #006400 #006400 #006400
 # pink
-client.focused          #C71585 #C71585 #C71585 #C71585 #C71585 
+client.focused          #C71585 #C71585 #C71585 #C71585 #C71585
 
 client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff
 

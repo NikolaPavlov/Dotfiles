@@ -11,16 +11,14 @@
 
 
 snippet %
-    {% ${1} %}${2}
+    {% ${1} %}
+	${2}
 
 snippet load
     {% load ${1} %}${2}
 
 snippet include
 	{% include "${1}" %}${2}
-
-snippet {
-    {{ ${1} }}${2}
 
 
 # Template tags:
@@ -70,3 +68,7 @@ abbr url Django
 
 snippet h1
 	<h1>${1}</h1>
+
+
+snippet h2
+	<h2>${1}</h2>

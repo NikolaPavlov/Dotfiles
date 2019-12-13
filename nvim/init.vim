@@ -32,24 +32,18 @@ endif
 
 set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
 call dein#begin(expand('~/.config/nvim/repos/github.com'))
-call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/dein.vim') " plugin manager
 
 "------------------------>start installing plugins<----------------------------
-  call dein#add('Shougo/deoplete.nvim') "autocomplete engine
-  call dein#add('Shougo/context_filetype.vim') "completion from other opened files
+  call dein#add('Shougo/deoplete.nvim') " autocomplete engine
+  " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
   call dein#add('davidhalter/jedi-vim') "need for go to definitions
   call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('w0rp/ale') "linter on the fly
-  call dein#add('sbdchd/neoformat') "formater
-  call dein#add('Chiel92/vim-autoformat') " formatter pretifier
-    let g:autoformat_autoindent = 0
-    let g:autoformat_retab = 0
-    let g:autoformat_remove_trailing_spaces = 0
-    " for debugging
-    let g:autoformat_verbosemode=1
-  call dein#add('mhinz/vim-signify') "show git diff in the left bar
+  " call dein#add('w0rp/ale') "linter on the fly
+  call dein#add('sbdchd/neoformat') " formater (black + isort for python)
+  call dein#add('mhinz/vim-signify') " show git diff in the left bar
   call dein#add('tpope/vim-fugitive') "git wrapper (integration)
     " :Gstatus
     " :Gpush
@@ -63,43 +57,39 @@ call dein#add('Shougo/dein.vim')
     "
     "https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
     "
-  call dein#add('wellle/targets.vim') "add 'ci(' command
-  call dein#add('tpope/vim-surround') "change surroundings
-  call dein#add('tpope/vim-repeat') "repeat surround commands
-  call dein#add('tomtom/tcomment_vim') "comment plugin
-  call dein#add('janko-m/vim-test') "run tests from vim
-  call dein#add('junegunn/gv.vim') "git log viewer
+  call dein#add('wellle/targets.vim') " add 'ci(' command
+  call dein#add('tpope/vim-surround') " change surroundings
+  call dein#add('tpope/vim-repeat') " repeat surround commands
+  call dein#add('tomtom/tcomment_vim') " comment plugin
+  call dein#add('junegunn/gv.vim') " git log viewer :GV
   call dein#add('scrooloose/nerdtree')
-  call dein#add('Xuyuanp/nerdtree-git-plugin') "showing git status flags in nerdtree
-  call dein#add('jiangmiao/auto-pairs') "match quotes, brackets, parenthesis
-  call dein#add('Valloric/MatchTagAlways') "always highlight html enclosing tags
-  call dein#add('bronson/vim-trailing-whitespace') "colorize red trailing whitspaces
-  call dein#add('ryanoasis/vim-devicons') "icons in vim (nerdtree, airline, ctrlP)
-  call dein#add('nvie/vim-flake8') " flake8
-  call dein#add('tweekmonster/impsort.vim') " import sorting python
+  call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
+  call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
+  call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
+  call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
+  " call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
+  " call dein#add('nvie/vim-flake8') " flake8
   call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
   call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
   call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-  call dein#add('flazz/vim-colorschemes') "many colorschemes
-  call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim :Goyo
-  call dein#add('junegunn/limelight.vim') "lime line focus rice <leader>l
+  call dein#add('flazz/vim-colorschemes') "many colorschemes currently using badwolf
+  call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
   call dein#add('junegunn/goyo.vim') "focus mode :Goyo
   call dein#add('mbbill/undotree') "undo history :UndotreeShow
   call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
   call dein#add('kshenoy/vim-signature') "display the marks in the side line
   call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
-  call dein#add('junegunn/vim-slash') " improve highlight search
+  call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
   call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
-  call dein#add('gu-fan/riv.vim') " note taking in vim
+  call dein#add('yuttie/comfortable-motion.vim') "scroll effect
+  call dein#add('gu-fan/riv.vim') " note taking in vim with .rst
 
 
   call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
   " call dein#add('Rykka/InstantRst')
 
-  call dein#add('yuttie/comfortable-motion.vim') "scroll effect
   call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
-  call dein#add('liuchengxu/vim-which-key') " help with the next key available
-  call dein#add('alvan/vim-closetag') " close tags for html
+  " call dein#add('liuchengxu/vim-which-key') " help with the next key available
 "--------------------------->finish installing plugins<---------------------------
 
   call dein#end()
@@ -115,13 +105,9 @@ call dein#add('Shougo/dein.vim')
 " {{{ Plugin Options
 " {{{ Deoplete
 
-    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-j>     <Plug>(neosnippet_expand_target)
-
+    let g:deoplete#enable_at_startup = 1
     let g:AutoPairsMapCR=0
     let g:deoplete#auto_complete_start_length = 1
-    let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_smart_case = 1
 
     imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
@@ -133,54 +119,31 @@ call dein#add('Shougo/dein.vim')
     " jedi vim is used for GO TO definitions
     let g:jedi#completions_enabled = 0 " disable jedi-vim autocompletion, we use deoplete-jedi for that
     let g:jedi#goto_command = "<leader>G"
+    " let g:jedi#goto_assignments_command = "<leader>g"
+    " let g:jedi#goto_definitions_command = ""
+    let g:jedi#documentation_command = "K"
+    let g:jedi#usages_command = "<leader>n"
+    let g:jedi#rename_command = "<leader>r"
 " }}}
 " {{{ Neoformat
-    " increase verbosity for debugging
-    let g:neoformat_verbose = 1
-
-    " let g:neoformat_run_all_formatters = 1
+    let g:neoformat_run_all_formatters = 1
     " let g:neoformat_enabled_python = ['autopep8']
-    " let g:neoformat_enabled_python = ['autopep8', 'isort']
-    " let g:neoformat_enabled_javascript = ['js-beautify']
-
+    let g:neoformat_enabled_python = ['black', 'isort']
+    let g:neoformat_enabled_javascript = ['js-beautify']
     " Enable alignment
-    " let g:neoformat_basic_format_align = 1
+    let g:neoformat_basic_format_align = 1
     " Enable tab to spaces conversion
-    " let g:neoformat_basic_format_retab = 1
+    let g:neoformat_basic_format_retab = 1
     " Enable trimmming of trailing whitespace
-    " let g:neoformat_basic_format_trim = 1
-
-
-    " Have Neoformat use &formatprg as a formatter
-    " let g:neoformat_try_formatprg = 1
-
-
-
-    let g:neoformat_enabled_python = ['autopep8']
-    " let g:neoformat_enabled_python = ['black']
-    " let g:neoformat_run_all_formatters = 1
-
-    " let g:neoformat_javascript_prettier = {
-    "         \ 'exe': 'prettier',
-    "         \ 'args': ['--stdin',
-    "                 \'--no-bracket-spacing',
-    "                 \'--single-quote',
-    "                 \'--trailing-comma', 'all',
-    "                 \'--print-width', '90',
-    "                 \'--jsx-bracket-same-line'],
-    "         \ 'stdin': 1,
-    "         \ }
-    "
-    " let g:neoformat_enabled_javascript = ['prettier']
-
-    let g:neoformat_try_formatprg = 1
-
-
-
+    let g:neoformat_basic_format_trim = 1
 " }}}
 " {{{ NeoSnippet-snippets
 
     let g:neosnippet#snippets_directory="$HOME/Documents/Repos/Dotfiles/NeoSnippets"
+
+    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-j>     <Plug>(neosnippet_expand_target)
 
 " }}}
 " {{{ GV
@@ -523,8 +486,6 @@ let maplocalleader='\'
     "keep jumping results in the middle of the window
     nmap g; g;zz
     nmap g, g,zz
-    "sorting the python imports
-    map <leader>is :ImpSort!<cr>
     "replace visualy selected text with the what is in the paste register
     vmap pp "+p
 
@@ -584,9 +545,6 @@ let maplocalleader='\'
 
     "comment <leader>c
     map <leader>c :TComment<cr>
-
-    "limelight on/off
-    nmap <leader>l :Limelight<CR>
 
     "Goyo on/off
     nmap <leader>g :Goyo<CR>
