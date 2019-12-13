@@ -1,12 +1,8 @@
 "{{{ Virtualenv fixer for neovim
-
-    " let g:python_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
     let g:python_host_prog = expand('/usr/bin/python')
-    " let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python3.8')
     let g:python3_host_prog = expand('/usr/bin/python3.8')
-
 " }}}
-"{{{ Plugins new Dein
+"{{{ Plugins
 if &compatible
   set nocompatible
 endif
@@ -22,33 +18,20 @@ if dein#load_state('~/.cache/dein')
     call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
-    " call dein#add('w0rp/ale') "linter on the fly
-    call dein#add('sbdchd/neoformat') " formater (black + isort for python)
+    call dein#add('w0rp/ale') " linter on the fly
+    call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
     call dein#add('mhinz/vim-signify') " show git diff in the left bar
     call dein#add('tpope/vim-fugitive') "git wrapper (integration)
-        " :Gstatus
-        " :Gpush
-        " :Gpull
-        " :Gcommit
-        " :Gwrite
-        " :Gdiff
-        " :Gmerge
-        " :Glog
-        " :Gblame
-        "
-        "https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
-        "
     call dein#add('wellle/targets.vim') " add 'ci(' command
     call dein#add('tpope/vim-surround') " change surroundings
     call dein#add('tpope/vim-repeat') " repeat surround commands
     call dein#add('tomtom/tcomment_vim') " comment plugin
-    call dein#add('junegunn/gv.vim') " git log viewer :GV
     call dein#add('scrooloose/nerdtree')
     call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
     call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
     call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
     call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-    " call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
+    call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
     " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
     call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
@@ -67,9 +50,14 @@ if dein#load_state('~/.cache/dein')
     call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
     " call dein#add('Rykka/InstantRst')
     call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
-    " call dein#add('liuchengxu/vim-which-key') " help with the next key available
+    call dein#add('vifm/vifm.vim') " :Vifm :help vifm
     call dein#end()
     call dein#save_state()
+endif
+
+" instll plugins on nvim launch
+if dein#check_install()
+ call dein#install()
 endif
 
 filetype plugin indent on
@@ -78,7 +66,6 @@ syntax enable
 "}}}
 " {{{ Plugin Options
 " {{{ Deoplete
-
     let g:deoplete#enable_at_startup = 1
     let g:AutoPairsMapCR=0
     let g:deoplete#auto_complete_start_length = 1
@@ -87,7 +74,13 @@ syntax enable
     imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
     imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
     imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+" }}}
+" {{{ NeoSnippet-snippets
+    let g:neosnippet#snippets_directory="$HOME/Documents/Repos/Dotfiles/NeoSnippets"
 
+    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-j>     <Plug>(neosnippet_expand_target)
 " }}}
 " {{{ Jedi-vim
     " jedi vim is used for GO TO definitions
@@ -101,40 +94,35 @@ syntax enable
 " }}}
 " {{{ Neoformat
     let g:neoformat_run_all_formatters = 1
-    " let g:neoformat_enabled_python = ['autopep8']
     let g:neoformat_enabled_python = ['black', 'isort']
     let g:neoformat_enabled_javascript = ['js-beautify']
-    " Enable alignment
-    let g:neoformat_basic_format_align = 1
-    " Enable tab to spaces conversion
-    let g:neoformat_basic_format_retab = 1
-    " Enable trimmming of trailing whitespace
-    let g:neoformat_basic_format_trim = 1
-" }}}
-" {{{ NeoSnippet-snippets
-
-    let g:neosnippet#snippets_directory="$HOME/Documents/Repos/Dotfiles/NeoSnippets"
-
-    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-j>     <Plug>(neosnippet_expand_target)
-
-" }}}
-" {{{ GV
-    let test#strategy = "neovim"
-    let test#python#runner = 'pytest'
+    let g:neoformat_basic_format_align = 1 " Enable alignment
+    let g:neoformat_basic_format_retab = 1 " Enable tab to spaces conversion
+    let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
 " }}}
 " {{{ NerdTree
 
     let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
     let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
 
-    " synchronize NerdTree to the current dir
-    autocmd BufEnter * lcd %:p:h
+    autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir
 
 " }}}
 " {{{ SimpylFold
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
+" }}}
+" {{{ Fugitive
+    " :Gstatus
+    " :Gpush
+    " :Gpull
+    " :Gcommit
+    " :Gwrite
+    " :Gdiff
+    " :Gmerge
+    " :Glog
+    " :Gblame
+    "
+    "https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
 " }}}
 " {{{ VimSlash
   if has('timers')
@@ -144,15 +132,9 @@ syntax enable
 " }}}
 " {{{ InstantRst
     let g:instant_rst_localhost_only = 1
-    let g:instant_rst_browser='google-chrome-stable'
 " }}}
-" {{{ VimWhichKey
-
-  let g:mapleader=','
-  let g:maplocalleader='\'
-  nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
-  nnoremap <silent> <localleader> :<c-u>WhichKey  '/'<CR>
-
+" {{{ Goyo
+    let g:goyo_width=120
 " }}}
 " }}}
 "{{{ Filetype specific
@@ -167,25 +149,25 @@ syntax enable
 " }}}
 "{{{ Django
 
-    " augroup ft_django
-    "     au!
-    "
-    "     au BufNewFile,BufRead urls.py           setlocal nowrap
-    "     au BufNewFile,BufRead urls.py           normal! zR
-    "
-    "     au BufNewFile,BufRead admin.py setlocal filetype=python.django
-    "     au BufNewFile,BufRead urls.py setlocal filetype=python.django
-    "     au BufNewFile,BufRead models.py setlocal filetype=python.django
-    "     au BufNewFile,BufRead views.py setlocal filetype=python.django
-    "     au BufNewFile,BufRead forms.py setlocal filetype=python.django
-    "
-    "     au BufNewFile,BufRead base.py setlocal filetype=python.django
-    "     au BufNewFile,BufRead base.py setlocal foldmethod=marker
-    "     au BufNewFile,BufRead dev.py setlocal filetype=python.django
-    "     au BufNewFile,BufRead dev.py setlocal foldmethod=marker
-    "     au BufNewFile,BufRead prod.py setlocal filetype=python.django
-    "     au BufNewFile,BufRead prod.py setlocal foldmethod=marker
-    " augroup END
+    augroup ft_django
+        au!
+
+        au BufNewFile,BufRead urls.py           setlocal nowrap
+        au BufNewFile,BufRead urls.py           normal! zR
+
+        au BufNewFile,BufRead admin.py setlocal filetype=python.django
+        au BufNewFile,BufRead urls.py setlocal filetype=python.django
+        au BufNewFile,BufRead models.py setlocal filetype=python.django
+        au BufNewFile,BufRead views.py setlocal filetype=python.django
+        au BufNewFile,BufRead forms.py setlocal filetype=python.django
+
+        au BufNewFile,BufRead base.py setlocal filetype=python.django
+        au BufNewFile,BufRead base.py setlocal foldmethod=marker
+        au BufNewFile,BufRead dev.py setlocal filetype=python.django
+        au BufNewFile,BufRead dev.py setlocal foldmethod=marker
+        au BufNewFile,BufRead prod.py setlocal filetype=python.django
+        au BufNewFile,BufRead prod.py setlocal foldmethod=marker
+    augroup END
 
 " }}}
 "{{{ Html Django
@@ -223,12 +205,6 @@ syntax enable
         autocmd FileType htmldjango inoremap {# {# #}<left><left><left>
 
     augroup END
-
-
-
-
-
-
 "}}}
 "{{{ Vagrant
 
@@ -242,7 +218,6 @@ syntax enable
     au FileType neosnippet set noexpandtab
 "}}}
 "{{{ Text + rst + md
-
     " Line wrap at 120
     augroup text_rst_md
         au!
@@ -253,16 +228,12 @@ syntax enable
         au BufNewFile,BufRead *.md set wrap textwidth=120
         au BufNewFile,BufRead *.md set colorcolumn=120
     augroup END
-
 "}}}
 "{{{ Yaml
-
     au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 "}}}
 "{{{ Vim
-
     augroup ft_vim
         au!
         au FileType vim setlocal foldmethod=marker
@@ -270,19 +241,14 @@ syntax enable
         au BufNewFile,BufRead *.vim setlocal colorcolumn=120
         au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
     augroup END
-
 "}}}
 "{{{ Todo File
-
     augroup todo_file
         au!
-
         " autocommit to git
         execute 'cd $HOME/Documents/Repos/Wiki'
         au BufWritePost TODO.rst execute '!git add % && git commit -m % && git push'
-
     augroup END
-
 "}}}
 "
 "}}}
@@ -396,12 +362,6 @@ set clipboard+=unnamedplus
 " =============================================================================
 let mapleader=','
 let maplocalleader='\'
-" {{{ Open/Closing
-
-    nmap <leader>q :bd<CR>
-    nmap <leader>w :w <CR>
-
-" }}}
 " {{{ Open files
 
     "edit init.vim in the current window
@@ -410,21 +370,14 @@ let maplocalleader='\'
     nmap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
     " open riv wiki index.rst
     nmap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
-    " open TODO.rst
-    nmap <leader>et :e ~/Documents/Repos/Wiki/TODO.rst<CR>
-    "keep search matches in the middle of the window
-    nmap <leader>ej :e ~/Documents/Repos/Wiki/JOURNAL.rst<CR>
 
 " }}}
 " {{{ Test mappings
-
     nmap <silent> <leader>tt :TestSuite<CR>
     nmap <silent> <leader>tn :TestNearest<CR>
     nmap <silent> <leader>tf :TestFile<CR>
-
 " }}}
 " {{{ Other
-
     "Tab for navigating between split screens
     nmap <tab> <c-w><c-w>
     " autoclose vim if only open window is NerdTree
@@ -463,18 +416,15 @@ let maplocalleader='\'
     "replace visualy selected text with the what is in the paste register
     vmap pp "+p
 
-    "get current date
-    " nmap <leader>d "=strftime("%d/%m/%y %H:%M:%S")<CR>P
-
     "Split line (sister to [J]oin lines)
     nmap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
-
 
     "run python code in vim <F5>
     nmap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 
     "forcing saving files that require root permission with :W
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
     "auto chmod +x if file begin with #! and contains /bin/
     au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
 
@@ -483,15 +433,10 @@ let maplocalleader='\'
                 \ if line("'\"") > 1 && line("'\"") <= line("$") |
                 \   exe "normal! g`\"" |
                 \ endif
-
-    " Formating json
-    command J :execute ":%!jq '.'"
-
 " }}}
 " {{{ Plugin based remaps
 "
     " {{{ Buftabline
-
         nmap <leader>1 <Plug>BufTabLine.Go(1)
         nmap <leader>2 <Plug>BufTabLine.Go(2)
         nmap <leader>3 <Plug>BufTabLine.Go(3)
@@ -504,11 +449,9 @@ let maplocalleader='\'
         nmap <leader>0 <Plug>BufTabLine.Go(10)
 
         " go between buffers
-        " nmap <leader>x <C-^>
         nmap <up> <C-^>
         nmap <left> :bprev<CR>
         nmap <right> :bnext<CR>
-
     " }}}
 
     " rst preview
@@ -537,7 +480,6 @@ let maplocalleader='\'
 
 " }}}
 " {{{ Windows moving
-
     " nnoremap <C-h> <C-w>h
     " nnoremap <C-j> <C-w>j
     " nnoremap <C-k> <C-w>k
@@ -560,14 +502,20 @@ let maplocalleader='\'
     " nmap <silent> <S-Left> xxx<CR>
     " nmap <silent> <S-Right> :xx<CR>
 
+    nnoremap <C-h> <C-w>h
+    nnoremap <C-j> <C-w>j
+    nnoremap <C-k> <C-w>k
+    nnoremap <C-l> <C-w>l
+    tnoremap <C-h> <C-\><C-n><C-w>h
+    tnoremap <C-j> <C-\><C-n><C-w>j
+    tnoremap <C-k> <C-\><C-n><C-w>k
+    tnoremap <C-l> <C-\><C-n><C-w>l
 " }}}
 
 "}}}
 "{{{ Abbreviations
-
     iabbrev todo: TODO:
     iabbrev pritn print
-
 "}}}
 "{{{ Links
 " =============================================================================
@@ -587,59 +535,31 @@ let maplocalleader='\'
 "}}}
 "{{{ Garbage
 
-" viewing python documentation on the word under the cursor with 'K'
-function! ShowPydoc(what)
-  let bufname = a:what . ".pydoc"
-  " check if the buffer exists already
-  if bufexists(bufname)
-    let winnr = bufwinnr(bufname)
-    if winnr != -1
-      " if the buffer is already displayed, switch to that window
-      execute winnr "wincmd w"
-    else
-      " otherwise, open the buffer in a split
-      execute "sbuffer" bufname
-    endif
-  else
-      " create a new buffer, set the nofile buftype and don't display it in the
-    " buffer list
-    execute "split" fnameescape(bufname)
-    setlocal buftype=nofile
-    setlocal nobuflisted
-    " read the output from pydoc
-    execute "r !" . shellescape(s:pydoc_path, 1) . " " . shellescape(a:what, 1)
-  endif
-  " go to the first line of the document
-  1
-endfunction
-
-
-" :only
-
-" available keys in normal mode
-" leader<BS>
-
-
-" neovim terminal
-tnoremap <Esc> <C-\><C-n>
-
-" jedi goto keybinding conflict
-nmap <leader>d :bd<CR>
-
-" auto formating the file and return where you've been
-map <F12> gg=G<C-o><C-o>
-
-" TODO:
-" <C-e> remaps
-" <C-y> remaps
-"
-" :earlier 2m
-" :later 2m
-
-
-set termguicolors " enable true colors for colorschemes
-
-
+" " viewing python documentation on the word under the cursor with 'K'
+" function! ShowPydoc(what)
+"   let bufname = a:what . ".pydoc"
+"   " check if the buffer exists already
+"   if bufexists(bufname)
+"     let winnr = bufwinnr(bufname)
+"     if winnr != -1
+"       " if the buffer is already displayed, switch to that window
+"       execute winnr "wincmd w"
+"     else
+"       " otherwise, open the buffer in a split
+"       execute "sbuffer" bufname
+"     endif
+"   else
+"       " create a new buffer, set the nofile buftype and don't display it in the
+"     " buffer list
+"     execute "split" fnameescape(bufname)
+"     setlocal buftype=nofile
+"     setlocal nobuflisted
+"     " read the output from pydoc
+"     execute "r !" . shellescape(s:pydoc_path, 1) . " " . shellescape(a:what, 1)
+"   endif
+"   " go to the first line of the document
+"   1
+" endfunction
 "}}}
 "{{{ Functions
     function! SortLines() range
@@ -652,24 +572,7 @@ set termguicolors " enable true colors for colorschemes
 "}}}
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
-
-
-
-
-" TODO:
-" [ ] terminal in nvim
-
-" tnoremap <ESC> <C-\><C-n><C-w><C-p>
-" tnoremap <Esc> <C-\><C-n>
-
-" autocmd BufWinEnter,WinEnter term://* startinsert autocmd BufLeave term://* stopinsert
-
-
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" jedi goto keybinding conflict
+nmap <leader>d :bd<CR>
+" neovim terminal
+tnoremap <Esc> <C-\><C-n>
