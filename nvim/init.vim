@@ -571,8 +571,6 @@ let maplocalleader='\'
     endfunction
 "}}}
 
-let g:SuperTabDefaultCompletionType = "<c-n>"
-" jedi goto keybinding conflict
-nmap <leader>d :bd<CR>
-" neovim terminal
-tnoremap <Esc> <C-\><C-n>
+" let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
