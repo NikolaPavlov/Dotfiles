@@ -10,21 +10,21 @@
 	..
 1572371468
 'd
-	/home/gogo/Documents/Repos/Dotfiles
+	/home/vagrant/Documents/Repos/Dotfiles
 	..
-1572371468
+1576276690
 'h
-	/home/gogo/
+	/home/vagrant/
 	..
-1572371468
+1576276690
 'l
 	/media/400Gb/la
 	..
 1572371468
 'p
-	/home/gogo/Projects
+	/home/vagrant/Projects
 	..
-1572371468
+1576276690
 'w
 	/media/400Gb/Wallpapers
 	..
@@ -42,27 +42,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/gogo/Desktop
-	scrapinghub.com
-10
-d/home/gogo
-	Documents
-4
-d/home/gogo/Documents
-	Repos
-3
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents/Repos/Blog
-	nikolapavlov.github.io
-1
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io
-	content
-2
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io/content
-	images
-1
 d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io/content/images
 	pelican.jpg
 1
@@ -342,12 +321,30 @@ d/home/gogo/Documents/Repos
 d/home/gogo/Documents/Repos/ExchangeProject
 	Pipfile
 2
+d/home/vagrant/Documents/Repos/Dotfiles
+	NeoSnippets
+3
+d/home/vagrant/Documents/Repos
+	Dotfiles
+2
+d/home/vagrant/Documents
+	Repos
+2
+d/home/vagrant/Documents/Repos/Dotfiles
+	Pacman
+4
+d/home/vagrant/Documents/Repos
+	Dotfiles
+2
+d/home/vagrant/Documents
+	Repos
+2
+d/home/vagrant
+	Documents
+1
 d
 
 # Right window history (oldest to newest):
-D/home/gogo/Downloads/AWS
-	AWS Administration - The Definitive Guide
-1
 D/home/gogo/Downloads
 	DevOps
 4
@@ -645,6 +642,9 @@ D/home/gogo/Downloads/AWS/Amazon Web Services (AWS) Certified 2019 - 4 Certifica
 D/home/gogo/Downloads
 	
 0
+D/home
+	
+0
 D
 
 # Command line history (oldest to newest):
@@ -667,6 +667,9 @@ D
 :tree
 :mkcd Industria
 :vs
+:colorscheme Dracula
+:colorscheme SemiDarkDesert
+:colorscheme ZenBurn
 :q
 
 # Search history (oldest to newest):

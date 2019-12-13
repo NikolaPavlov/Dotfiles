@@ -32,7 +32,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
     call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
-    " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
     call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
@@ -51,6 +50,7 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('Rykka/InstantRst')
     call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
     call dein#add('vifm/vifm.vim') " :Vifm :help vifm
+    " call dein#add('nvie/vim-flake8') " flake8
     call dein#end()
     call dein#save_state()
 endif
@@ -101,12 +101,10 @@ syntax enable
     let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
 " }}}
 " {{{ NerdTree
-
     let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
     let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
 
     autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir
-
 " }}}
 " {{{ SimpylFold
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
@@ -139,16 +137,13 @@ syntax enable
 " }}}
 "{{{ Filetype specific
 "{{{ Python
-
     augroup ft_python
         au!
         au BufNewFile,BufRead *.py set wrap textwidth=120
         au BufNewFile,BufRead *.py set colorcolumn=120
     augroup END
-
 " }}}
 "{{{ Django
-
     augroup ft_django
         au!
 
@@ -168,10 +163,8 @@ syntax enable
         au BufNewFile,BufRead prod.py setlocal filetype=python.django
         au BufNewFile,BufRead prod.py setlocal foldmethod=marker
     augroup END
-
 " }}}
 "{{{ Html Django
-
     " no line wrap for html files
     augroup ft_html
         au!
@@ -207,12 +200,10 @@ syntax enable
     augroup END
 "}}}
 "{{{ Vagrant
-
     augroup ft_vagrant
         au!
         au BufRead,BufNewFile Vagrantfile set ft=ruby
     augroup END
-
 "}}}
 "{{{ NeoSnippets
     au FileType neosnippet set noexpandtab
@@ -242,15 +233,6 @@ syntax enable
         au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
     augroup END
 "}}}
-"{{{ Todo File
-    augroup todo_file
-        au!
-        " autocommit to git
-        execute 'cd $HOME/Documents/Repos/Wiki'
-        au BufWritePost TODO.rst execute '!git add % && git commit -m % && git push'
-    augroup END
-"}}}
-"
 "}}}
 "{{{ General :options
 
