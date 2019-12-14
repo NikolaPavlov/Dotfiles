@@ -110,6 +110,9 @@ syntax enable
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
 " }}}
 " {{{ Fugitive
+    " https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
+    "
+    "
     " :Gstatus
     " :Gpush
     " :Gpull
@@ -120,8 +123,6 @@ syntax enable
     " :Gblame
     " :Gread (gir reset --hard HEAD)
     " :Gwrite
-    "
-    "https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
 " }}}
 " {{{ VimSlash
   if has('timers')
@@ -463,32 +464,11 @@ let maplocalleader='\'
 
 " }}}
 " {{{ Windows moving
-    " nnoremap <C-h> <C-w>h
-    " nnoremap <C-j> <C-w>j
-    " nnoremap <C-k> <C-w>k
-    " nnoremap <C-l> <C-w>l
-
-    " Move between windows.
-    " xnoremap <C-h> <C-w>h
-    " xnoremap <C-j> <C-w>j
-    " xnoremap <C-k> <C-w>k
-    " xnoremap <C-l> <C-w>l
-
-    " nmap <silent> <Up> xxx<CR>
-    " nmap <silent> <Down> xxx<CR>
-    " nmap <silent> <Left> xxx<CR>
-    " nmap <silent> <Right> xxx<CR>
-
-
-    " nmap <silent> <S-Up> xxx<CR>
-    " nmap <silent> <S-Down> xxx<CR>
-    " nmap <silent> <S-Left> xxx<CR>
-    " nmap <silent> <S-Right> :xx<CR>
-
     nnoremap <C-h> <C-w>h
     nnoremap <C-j> <C-w>j
     nnoremap <C-k> <C-w>k
     nnoremap <C-l> <C-w>l
+
     tnoremap <C-h> <C-\><C-n><C-w>h
     tnoremap <C-j> <C-\><C-n><C-w>j
     tnoremap <C-k> <C-\><C-n><C-w>k
@@ -517,32 +497,9 @@ let maplocalleader='\'
 " =============================================================================
 "}}}
 "{{{ Garbage
-
-" " viewing python documentation on the word under the cursor with 'K'
-" function! ShowPydoc(what)
-"   let bufname = a:what . ".pydoc"
-"   " check if the buffer exists already
-"   if bufexists(bufname)
-"     let winnr = bufwinnr(bufname)
-"     if winnr != -1
-"       " if the buffer is already displayed, switch to that window
-"       execute winnr "wincmd w"
-"     else
-"       " otherwise, open the buffer in a split
-"       execute "sbuffer" bufname
-"     endif
-"   else
-"       " create a new buffer, set the nofile buftype and don't display it in the
-"     " buffer list
-"     execute "split" fnameescape(bufname)
-"     setlocal buftype=nofile
-"     setlocal nobuflisted
-"     " read the output from pydoc
-"     execute "r !" . shellescape(s:pydoc_path, 1) . " " . shellescape(a:what, 1)
-"   endif
-"   " go to the first line of the document
-"   1
-" endfunction
+    " let g:SuperTabDefaultCompletionType = "<c-n>"
+    let g:SuperTabDefaultCompletionType = "context"
+    " let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 "}}}
 "{{{ Functions
     function! SortLines() range
@@ -553,7 +510,3 @@ let maplocalleader='\'
         execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
     endfunction
 "}}}
-
-" let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:SuperTabDefaultCompletionType = "context"
-" let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
