@@ -114,11 +114,12 @@ syntax enable
     " :Gpush
     " :Gpull
     " :Gcommit
-    " :Gwrite
     " :Gdiff
     " :Gmerge
     " :Glog
     " :Gblame
+    " :Gread (gir reset --hard HEAD)
+    " :Gwrite
     "
     "https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
 " }}}
