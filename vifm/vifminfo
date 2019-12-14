@@ -42,96 +42,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/gogo/Desktop
-	scrapinghub.com
-10
-d/home/gogo
-	Documents
-4
-d/home/gogo/Documents
-	Repos
-3
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents/Repos/Blog
-	nikolapavlov.github.io
-1
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io
-	content
-2
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io/content
-	images
-1
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io/content/images
-	pelican.jpg
-1
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io/content
-	images
-1
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io
-	content
-2
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io/content
-	test_2.md
-2
-d/home/gogo/Documents/Repos/Blog
-	source
-2
-d/home/gogo/Documents/Repos/Blog/source
-	content
-2
-d/home/gogo/Documents/Repos/Blog/source/content
-	pages
-3
-d/home/gogo/Documents/Repos/Blog/source/content/pages
-	..
-0
-d/home/gogo/Documents/Repos/Blog/source/content
-	pages
-3
-d/home/gogo/Documents/Repos/Blog/source
-	content
-2
-d/home/gogo/Documents/Repos/Blog
-	source
-2
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents
-	Repos
-3
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents/Repos/Blog
-	source
-2
-d/home/gogo/Documents/Repos/Blog/source
-	theme
-3
-d/home/gogo/Documents/Repos/Blog
-	source
-2
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents
-	Repos
-3
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents
-	Repos
-3
-d/home/gogo
-	Desktop
-3
-d/home/gogo/Desktop
-	Job
-2
 d/home/gogo/Desktop/Job
 	TechPods
 1
@@ -342,6 +252,96 @@ d/home/gogo/Documents/Repos
 d/home/gogo/Documents/Repos/ExchangeProject
 	Pipfile
 2
+d/home/gogo/Documents/Repos
+	Wiki
+2
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo/Documents/Repos
+	Wiki
+2
+d/home/gogo/Desktop/PayE_Task
+	README.rst
+4
+d/home/gogo/Desktop
+	PayE_Task
+1
+d/home/gogo
+	Desktop
+1
+d/home
+	gogo
+1
+d/home/gogo
+	Desktop
+1
+d/home/gogo/Desktop
+	PayE_Task
+1
+d/home/gogo/Desktop/PayE_Task
+	README.rst
+4
+d/home/gogo/Documents/Repos/Wiki
+	DevNotes_Vagrant.rst
+13
+d/home/gogo/Documents/Repos
+	Wiki
+2
+d/home/gogo/Documents/Repos/Wiki
+	DevNotes_Vagrant.rst
+13
+d/home/gogo/Documents/Repos
+	Wiki
+2
+d/home/gogo/Documents
+	Repos
+1
+d/home/gogo
+	Documents
+2
+d/home
+	gogo
+1
+d/
+	home
+4
+d/home
+	gogo
+1
+d/home/gogo
+	Desktop
+1
+d/home/gogo/Desktop
+	PayE_Task
+1
+d/home/gogo/Desktop/PayE_Task
+	TaskProject
+1
+d/home/gogo/Desktop/PayE_Task/TaskProject
+	user_reg
+2
+d/home/gogo/Desktop/PayE_Task/TaskProject/user_reg
+	templates
+2
+d/home/gogo/Desktop/PayE_Task/TaskProject/user_reg/templates
+	user_reg
+1
+d/home/gogo/Desktop/PayE_Task/TaskProject/user_reg/templates/user_reg
+	index.html
+1
+d/home/gogo/Desktop/PayE_Task/TaskProject/user_reg/templates
+	user_reg
+1
+d/home/gogo/Desktop/PayE_Task/TaskProject/user_reg
+	admin.py
+4
+d/home/gogo/Desktop/PayE_Task/TaskProject
+	user_reg
+2
+d/home/gogo/Desktop/PayE_Task/TaskProject/user_reg
+	models.py
+7
 d
 
 # Right window history (oldest to newest):

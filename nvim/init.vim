@@ -13,12 +13,11 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim') " autocomplete engine
-    " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
     call dein#add('davidhalter/jedi-vim') "need for go to definitions
     call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('w0rp/ale') " linter on the fly
+    call dein#add('w0rp/ale') " linter on the fly (flake8 should be installed locally)
     call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
     call dein#add('mhinz/vim-signify') " show git diff in the left bar
     call dein#add('tpope/vim-fugitive') "git wrapper (integration)
@@ -32,7 +31,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
     call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
-    " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
     call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
@@ -51,6 +49,8 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('Rykka/InstantRst')
     call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
     call dein#add('vifm/vifm.vim') " :Vifm :help vifm
+    " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
+    " call dein#add('nvie/vim-flake8') " flake8
     call dein#end()
     call dein#save_state()
 endif
@@ -148,7 +148,6 @@ syntax enable
 
 " }}}
 "{{{ Django
-
     augroup ft_django
         au!
 
@@ -171,15 +170,12 @@ syntax enable
 
 " }}}
 "{{{ Html Django
-
     " no line wrap for html files
     augroup ft_html
         au!
 
         au BufNewFile,BufRead *.html set nowrap textwidth=120
-        " au BufNewFile,BufRead *.html setlocal filetype=htmldjango
-        " au BufNewFile,BufRead *.htmldjango set nowrap textwidth=120
-        " au BufNewFile,BufRead *.dram setlocal filetype=htmldjango
+        au BufNewFile,BufRead *.html setlocal filetype=htmldjango
 
         au FileType html,jinja,htmldjango setlocal foldmethod=manual
 
@@ -415,6 +411,8 @@ let maplocalleader='\'
     nmap g, g,zz
     "replace visualy selected text with the what is in the paste register
     vmap pp "+p
+    " close current buffer
+    nmap <leader>d :bd<CR>
 
     "Split line (sister to [J]oin lines)
     nmap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
