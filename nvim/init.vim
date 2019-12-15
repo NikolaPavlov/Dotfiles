@@ -27,10 +27,10 @@ if dein#load_state('~/.cache/dein')
     call dein#add('tomtom/tcomment_vim') " comment plugin
     call dein#add('scrooloose/nerdtree')
     call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
+    call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
     call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
     call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
     call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-    call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
     call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
     call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
@@ -363,7 +363,7 @@ let maplocalleader='\'
     "Tab for navigating between split screens
     nmap <tab> <c-w><c-w>
     " autoclose vim if only open window is NerdTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     "better regular expressions searching
     nmap / /\v
     nmap ? ?\v
@@ -408,9 +408,6 @@ let maplocalleader='\'
 
     "forcing saving files that require root permission with :W
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-
-    "auto chmod +x if file begin with #! and contains /bin/
-    au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
 
     " When editing a file, always jump to the last known cursor position.
     autocmd BufReadPost *
@@ -500,6 +497,10 @@ let maplocalleader='\'
     " let g:SuperTabDefaultCompletionType = "<c-n>"
     let g:SuperTabDefaultCompletionType = "context"
     " let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+    "
+    "auto chmod +x if file begin with #! and contains /bin/
+    " au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
+
 "}}}
 "{{{ Functions
     function! SortLines() range

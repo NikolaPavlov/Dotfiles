@@ -10,21 +10,21 @@
 	..
 1572371468
 'd
-	/home/vagrant/Documents/Repos/Dotfiles
+	/home/gogo/Documents/Repos/Dotfiles
 	..
-1576276690
+1576396322
 'h
-	/home/vagrant/
+	/home/gogo/
 	..
-1576276690
+1576396322
 'l
 	/media/400Gb/la
 	..
 1572371468
 'p
-	/home/vagrant/Projects
+	/home/gogo/Projects
 	..
-1576276690
+1576396322
 'w
 	/media/400Gb/Wallpapers
 	..
@@ -34,7 +34,7 @@
 
 # TUI:
 al
-q1
+q0
 v2
 ov
 m-1
@@ -42,102 +42,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io/content/images
-	pelican.jpg
-1
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io/content
-	images
-1
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io
-	content
-2
-d/home/gogo/Documents/Repos/Blog/nikolapavlov.github.io/content
-	test_2.md
-2
-d/home/gogo/Documents/Repos/Blog
-	source
-2
-d/home/gogo/Documents/Repos/Blog/source
-	content
-2
-d/home/gogo/Documents/Repos/Blog/source/content
-	pages
-3
-d/home/gogo/Documents/Repos/Blog/source/content/pages
-	..
-0
-d/home/gogo/Documents/Repos/Blog/source/content
-	pages
-3
-d/home/gogo/Documents/Repos/Blog/source
-	content
-2
-d/home/gogo/Documents/Repos/Blog
-	source
-2
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents
-	Repos
-3
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents/Repos/Blog
-	source
-2
-d/home/gogo/Documents/Repos/Blog/source
-	theme
-3
-d/home/gogo/Documents/Repos/Blog
-	source
-2
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents
-	Repos
-3
-d/home/gogo/Documents/Repos
-	Blog
-1
-d/home/gogo/Documents
-	Repos
-3
-d/home/gogo
-	Desktop
-3
-d/home/gogo/Desktop
-	Job
-2
-d/home/gogo/Desktop/Job
-	TechPods
-1
-d/home/gogo/Desktop/Job/TechPods
-	..
-0
-d/home/gogo/Desktop/Job
-	Industria
-1
-d/home/gogo/Desktop/Job/Industria
-	..
-0
-d/home/gogo/Desktop/Job
-	Industria
-1
-d/home/gogo/Desktop
-	Job
-2
-d/home/gogo
-	Documents
-4
-d/home/gogo/Documents
-	Repos
-3
-d/home/gogo/Documents/Repos
-	Blog_backup
-1
 d/home/gogo/Documents/Repos/Blog_backup
 	nikolapavlov.github.io
 1
@@ -411,7 +315,6 @@ d/home/gogo/Desktop/PayE_Task/TaskProject
 d/home/gogo/Desktop/PayE_Task/TaskProject/user_reg
 	models.py
 7
-=======
 d/home/vagrant/Documents/Repos/Dotfiles
 	NeoSnippets
 3
@@ -433,7 +336,12 @@ d/home/vagrant/Documents
 d/home/vagrant
 	Documents
 1
->>>>>>> abe4c2cd0d9281f4e0fdd89eb050d10b8ce2d5a6
+d/home
+	gogo
+1
+d/
+	home
+4
 d
 
 # Right window history (oldest to newest):
@@ -735,7 +643,7 @@ D/home/gogo/Downloads
 	
 0
 D/home
-	
+	..
 0
 D
 
