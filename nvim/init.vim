@@ -44,9 +44,9 @@ if dein#load_state('~/.cache/dein')
     call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
     call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
     call dein#add('yuttie/comfortable-motion.vim') "scroll effect
-    call dein#add('gu-fan/riv.vim') " note taking in vim with .rst
-    call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
-    " call dein#add('Rykka/InstantRst')
+    " call dein#add('gu-fan/riv.vim') " note taking in vim with .rst
+    " call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
+    call dein#add('Rykka/InstantRst')
     call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
     call dein#add('vifm/vifm.vim') " :Vifm :help vifm
     " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
@@ -104,7 +104,12 @@ syntax enable
     let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
     let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
 
-    autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir
+    autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .'
+
+    " autoclose vim if only open window is NerdTree
+    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+    autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " }}}
 " {{{ SimpylFold
     let g:SimpylFold_docstring_preview=1 "display docstrings in folds
@@ -235,7 +240,6 @@ syntax enable
 "}}}
 "}}}
 "{{{ General :options
-
 " =============================================================================
 "   ___                          _
 "  / _ \___ _ __   ___ _ __ __ _| |
@@ -243,7 +247,6 @@ syntax enable
 "/ /_\\  __/ | | |  __/ | | (_| | |
 "\____/\___|_| |_|\___|_|  \__,_|_|
 " =============================================================================
-
 " :options options
 "1 important
 set nocompatible "don't behave like vi
@@ -328,10 +331,8 @@ colorscheme badwolf
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
-"
 "}}}
 "{{{ Remaps
-
 " =============================================================================
 "  _____
 " |  __ \
@@ -362,8 +363,6 @@ let maplocalleader='\'
 " {{{ Other
     "Tab for navigating between split screens
     nmap <tab> <c-w><c-w>
-    " autoclose vim if only open window is NerdTree
-    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     "better regular expressions searching
     nmap / /\v
     nmap ? ?\v
@@ -471,7 +470,6 @@ let maplocalleader='\'
     tnoremap <C-k> <C-\><C-n><C-w>k
     tnoremap <C-l> <C-\><C-n><C-w>l
 " }}}
-
 "}}}
 "{{{ Abbreviations
     iabbrev todo: TODO:
@@ -497,10 +495,6 @@ let maplocalleader='\'
     " let g:SuperTabDefaultCompletionType = "<c-n>"
     let g:SuperTabDefaultCompletionType = "context"
     " let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-    "
-    "auto chmod +x if file begin with #! and contains /bin/
-    " au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
-
 "}}}
 "{{{ Functions
     function! SortLines() range
@@ -509,5 +503,18 @@ let maplocalleader='\'
         execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
         execute a:firstline . "," . a:lastline . 'sort n'
         execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+    endfunction
+
+
+    " Close all open buffers on entering a window if the only
+    " buffer that's left is the NERDTree buffer
+    function! s:CloseIfOnlyNerdTreeLeft()
+    if exists("t:NERDTreeBufName")
+        if bufwinnr(t:NERDTreeBufName) != -1
+        if winnr("$") == 1
+            q
+        endif
+        endif
+    endif
     endfunction
 "}}}
