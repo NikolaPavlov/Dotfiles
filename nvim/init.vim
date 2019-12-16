@@ -233,6 +233,9 @@ syntax enable
         au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
     augroup END
 "}}}
+"{{{ Gopass Files
+    au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+"}}}
 "}}}
 "{{{ General :options
 
