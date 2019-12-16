@@ -42,21 +42,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/gogo/Documents/Repos/Blog_backup
-	nikolapavlov.github.io
-1
-d/home/gogo/Documents/Repos/Blog_backup/nikolapavlov.github.io
-	..
-0
-d/home/gogo/Documents/Repos/Blog_backup
-	nikolapavlov.github.io-src
-2
-d/home/gogo/Documents/Repos/Blog_backup/nikolapavlov.github.io-src
-	output
-2
-d/home/gogo/Documents/Repos/Blog_backup/nikolapavlov.github.io-src/output
-	..
-0
 d/home/gogo/Documents/Repos/Blog_backup/nikolapavlov.github.io-src
 	content
 1
@@ -342,6 +327,21 @@ d/home
 d/
 	home
 4
+d/media/4Tb
+	BACKUPS
+4
+d/media/4Tb/BACKUPS
+	taskwarrior
+10
+d/media/4Tb/BACKUPS/taskwarrior
+	..
+0
+d/media/4Tb/BACKUPS
+	taskwarrior
+10
+d/media/4Tb/BACKUPS/taskwarrior
+	freecinc_093110d0_instructions.html
+3
 d
 
 # Right window history (oldest to newest):
@@ -671,9 +671,11 @@ D
 :colorscheme SemiDarkDesert
 :colorscheme ZenBurn
 :q
+:cd /media/4Tb/
 
 # Search history (oldest to newest):
 /la
+/task
 
 # Prompt history (oldest to newest):
 pCV.pdf
