@@ -239,6 +239,8 @@ syntax enable
     augroup END
 "}}}
 "{{{ Gopass Files
+" https://woile.github.io/gopass-cheat-sheet/
+" https://woile.github.io/gopass-presentation/
     au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
 "}}}
 "}}}
