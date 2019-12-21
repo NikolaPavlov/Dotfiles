@@ -460,9 +460,6 @@ let maplocalleader='\'
     " UndoTree on/off
     nmap <leader>u :UndotreeToggle<CR>
 
-    " launch Ranger
-    map <leader>r :Ranger<CR>
-
 " }}}
 " {{{ Windows moving
     nnoremap <C-h> <C-w>h
@@ -494,6 +491,7 @@ let maplocalleader='\'
 " http://vimcasts.org/
 " http://vimawesome.com/
 " http://learnvimscriptthehardway.stevelosh.com/
+"
 " =============================================================================
 "}}}
 "{{{ Garbage
@@ -523,3 +521,7 @@ let maplocalleader='\'
     endif
     endfunction
 "}}}
+
+
+" replace the name of variable in current file
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/
