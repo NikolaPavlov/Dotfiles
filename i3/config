@@ -167,8 +167,8 @@ bindcode 74 exec --no-startup-id google-chrome-stable
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 #PULSEAUDIO
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 8 +2%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 8 -2%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +2%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -2%
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
