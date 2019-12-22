@@ -491,7 +491,7 @@ let maplocalleader='\'
 " http://vimcasts.org/
 " http://vimawesome.com/
 " http://learnvimscriptthehardway.stevelosh.com/
-"
+" https://vim.fandom.com/wiki/Category:VimTip ---> VimTips
 " =============================================================================
 "}}}
 "{{{ Garbage
@@ -507,6 +507,17 @@ let maplocalleader='\'
         execute a:firstline . "," . a:lastline . 'sort n'
         execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
     endfunction
+
+
+    " :DiffSaved to see the diff between current buffer and file on disk
+    function! s:DiffWithSaved()
+        let filetype=&ft
+        diffthis
+        vnew | r # | normal! 1Gdd
+        diffthis
+        exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+    endfunction
+    com! DiffSaved call s:DiffWithSaved()
 
 
     " Close all open buffers on entering a window if the only
