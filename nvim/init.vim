@@ -394,8 +394,12 @@ let maplocalleader='\'
     "substitute with ctrl + s
     nmap <c-s> :%s/
     vmap <c-s> :s/
+    " replace the name of variable in current file
+    nnoremap cv :%s/\<<C-r><C-w>\>/
+
     nmap n nzzzv
     nmap N Nzzzv
+
     "keep jumping results in the middle of the window
     nmap g; g;zz
     nmap g, g,zz
@@ -498,6 +502,11 @@ let maplocalleader='\'
     " let g:SuperTabDefaultCompletionType = "<c-n>"
     let g:SuperTabDefaultCompletionType = "context"
     " let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+
+    " jump to the end of pasted txt
+    vnoremap <silent> y y`]
+    vnoremap <silent> p p`]
+    nnoremap <silent> p p`]
 "}}}
 "{{{ Functions
     function! SortLines() range
@@ -532,7 +541,3 @@ let maplocalleader='\'
     endif
     endfunction
 "}}}
-
-
-" replace the name of variable in current file
-nnoremap <leader>s :%s/\<<C-r><C-w>\>/
