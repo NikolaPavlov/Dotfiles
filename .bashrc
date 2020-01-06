@@ -19,9 +19,12 @@ alias du='ncdu'
 alias df='pydf'
 
 # ls aliases
-alias l='lsd -l --group-dirs first'
-alias ll='lsd -l --group-dirs first'
-alias la='lsd -la --group-dirs first'
+#alias l='lsd -l --group-dirs first'
+#alias ll='lsd -l --group-dirs first'
+#alias la='lsd -la --group-dirs first'
+alias l='ls -l'
+alias ll='ls -l'
+alias la='ls -la'
 
 alias grep='grep --color=tty -d skip'
 alias free='free -m'
@@ -176,8 +179,13 @@ export MANPAGER="nvim +set\ filetype=man -"
 
 # virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
-
+# source /usr/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/home/npavlov/.local/bin/virtualenv
+source ~/.local/bin/virtualenvwrapper.sh
 
 # autocomplete for gopass
 source <(gopass completion bash)
+
+# Temp
+export PERL5LIB=./lib:$PERL5LIB
