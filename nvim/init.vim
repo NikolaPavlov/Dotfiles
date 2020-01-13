@@ -545,4 +545,10 @@ let maplocalleader='\'
 "{{{ Perl temp
     map <F5> :w<CR>:!perl %<CR>
     imap <F5> <Esc>:w<CR>:!perl %<CR>
+
+    nmap <leader>ep :e ~/Documents/Repos/Wiki/Temp_Perl.rst<CR>
+
 "}}}
+
+inoremap <C-a> <C-o>$
+" inoremap <C-i> <C-o>0

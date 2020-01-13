@@ -19,12 +19,9 @@ alias du='ncdu'
 alias df='pydf'
 
 # ls aliases
-#alias l='lsd -l --group-dirs first'
-#alias ll='lsd -l --group-dirs first'
-#alias la='lsd -la --group-dirs first'
-alias l='ls -l'
-alias ll='ls -l'
-alias la='ls -la'
+alias l='lsd -l --group-dirs first'
+alias ll='lsd -l --group-dirs first'
+alias la='lsd -la --group-dirs first'
 
 alias grep='grep --color=tty -d skip'
 alias free='free -m'
@@ -39,9 +36,12 @@ alias install='sudo pacman -S '
 alias remove='sudo pacman -Rns '
 alias search='sudo  pacman -Ss '
 # Python
-alias p='python3.8'
-alias i='ipython'
-alias pt='pytest'
+# alias p='python3.8'
+# alias i='ipython'
+# alias pt='pytest'
+# Perl
+alias p='perl'
+alias pl='perl'
 # PipEnv
 alias pe='pipenv'
 alias pes='pipenv shell'
@@ -155,6 +155,9 @@ if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+# powerline ubuntu
+source /usr/share/powerline/bindings/bash/powerline.sh
+
 # autojump
 . /usr/share/autojump/autojump.bash
 
@@ -189,3 +192,6 @@ source <(gopass completion bash)
 
 # Temp
 export PERL5LIB=./lib:$PERL5LIB
+export PERL5LIB=~/perl5/lib/perl5
+export LC_ALL="en_US.UTF-8"
+alias runp='p -MTime::HiRes -I./ regix_info1.pl 122112211221'
