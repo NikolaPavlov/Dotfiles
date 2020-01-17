@@ -194,4 +194,4 @@ source <(gopass completion bash)
 export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
 export LC_ALL="en_US.UTF-8"
-alias runp='p -MTime::HiRes -I./ regix_info1.pl 122112211221'
+alias runp='p -MTime::HiRes -I./ regix_info1.pl 201593304'

@@ -45,7 +45,7 @@ bindsym $mod+Shift+Return exec xfce4-terminal
 bindsym $KILL_KEY kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -193,4 +193,4 @@ bindsym $mod+Shift+z	gaps outer current minus 5
 bindsym $mod+p exec --no-startup-id passmenu
 
 # Albert
-# exec --no-startup-id albert
+exec --no-startup-id albert

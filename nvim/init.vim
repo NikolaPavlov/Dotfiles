@@ -52,6 +52,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('vifm/vifm.vim') " :Vifm :help vifm
     " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
     " call dein#add('nvie/vim-flake8') " flake8
+    call dein#add('Yggdroot/indentLine') " Showing indentation lines
     call dein#end()
     call dein#save_state()
 endif
