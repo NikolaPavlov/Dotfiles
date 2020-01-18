@@ -45,7 +45,7 @@ bindsym $mod+Shift+Return exec xfce4-terminal
 bindsym $KILL_KEY kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -130,6 +130,21 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+# TODO:
+
+# order += "ipv6"
+# order += "disk /"
+# order += "run_watch DHCP"
+# order += "run_watch VPNC"
+# order += "path_exists VPN"
+# order += "wireless wlan0"
+# order += "ethernet eth0"
+# order += "battery 0"
+# order += "cpu_temperature 0"
+# order += "memory"
+# order += "load"
+# order += "tztime local"
+# order += "tztime berlin"
 
 
 # ---> User Settings <---
@@ -142,7 +157,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift -l 42.6977:23.3219
 exec --no-startup-id telegram-desktop
 exec --no-startup-id ./Scripts/phonetic_keys.sh
-# exec_always --no-startup-id ~/Documents/Repos/Dotfiles/Scripts/polybar_start.sh
 
 
 # green
@@ -193,4 +207,4 @@ bindsym $mod+Shift+z	gaps outer current minus 5
 bindsym $mod+p exec --no-startup-id passmenu
 
 # Albert
-# exec --no-startup-id albert
+exec --no-startup-id albert

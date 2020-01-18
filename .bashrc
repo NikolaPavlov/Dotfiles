@@ -139,23 +139,7 @@ man() {
     man "$@"
 }
 
-# powerline-go https://github.com/justjanne/powerline-go
-function _update_ps1() {
-    PS1="$($GOPATH/bin/powerline-go  \
-        -shell bash \
-        -newline \
-        -mode patched \
-        -modules venv,user,host,cwd,git \
-        -modules-right docker,dotenv \
-        -condensed \
-        -error $?)"
-}
-
-if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
-
-# powerline ubuntu
+# powerline
 source /usr/share/powerline/bindings/bash/powerline.sh
 
 # autojump
@@ -182,9 +166,8 @@ export MANPAGER="nvim +set\ filetype=man -"
 
 # virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
-# source /usr/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/npavlov/.local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV=/home/$USER/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 
 # autocomplete for gopass
@@ -194,4 +177,5 @@ source <(gopass completion bash)
 export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
 export LC_ALL="en_US.UTF-8"
+
 alias runp='p -MTime::HiRes -I./ regix_info1.pl 122112211221'

@@ -1,7 +1,7 @@
 "{{{ Virtualenv fixer for neovim
     "let g:python_host_prog = expand('/usr/bin/python')
     " let g:python3_host_prog = expand('/usr/bin/python3')
-    let g:python3_host_prog = expand('/home/npavlov/.virtualenvs/neovim/bin/python')
+    " let g:python3_host_prog = expand('/home/npavlov/.virtualenvs/neovim/bin/python')
 " }}}
 "{{{ Plugins
 if &compatible
