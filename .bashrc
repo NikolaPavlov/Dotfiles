@@ -175,14 +175,8 @@ source ~/.local/bin/virtualenvwrapper.sh
 source <(gopass completion bash)
 
 # Temp
-export PERL5LIB=./lib:$PERL5LIB
+# export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
 export LC_ALL="en_US.UTF-8"
 
 alias runp='p -MTime::HiRes -I./ regix_info1.pl 122112211221'
-
-PATH="/home/gogo/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/gogo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/gogo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/gogo/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/gogo/perl5"; export PERL_MM_OPT;
