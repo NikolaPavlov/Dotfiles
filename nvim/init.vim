@@ -552,3 +552,5 @@ let maplocalleader='\'
 
 inoremap <C-a> <C-o>$
 " inoremap <C-i> <C-o>0
+nnoremap o o<Esc>^Da
+nnoremap O O<Esc>^Da
