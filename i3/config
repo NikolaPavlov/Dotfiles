@@ -130,6 +130,21 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+# TODO:
+
+# order += "ipv6"
+# order += "disk /"
+# order += "run_watch DHCP"
+# order += "run_watch VPNC"
+# order += "path_exists VPN"
+# order += "wireless wlan0"
+# order += "ethernet eth0"
+# order += "battery 0"
+# order += "cpu_temperature 0"
+# order += "memory"
+# order += "load"
+# order += "tztime local"
+# order += "tztime berlin"
 
 
 # ---> User Settings <---
@@ -142,7 +157,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift -l 42.6977:23.3219
 exec --no-startup-id telegram-desktop
 exec --no-startup-id ./Scripts/phonetic_keys.sh
-# exec_always --no-startup-id ~/Documents/Repos/Dotfiles/Scripts/polybar_start.sh
 
 
 # green
