@@ -53,6 +53,7 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
     " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Yggdroot/indentLine') " Showing indentation lines
+    " call dein#add('vim-vdebug/vdebug') " Debugger in Vim
     call dein#end()
     call dein#save_state()
 endif
@@ -555,3 +556,37 @@ inoremap <C-a> <C-o>$
 " inoremap <C-i> <C-o>0
 nnoremap o o<Esc>^Da
 nnoremap O O<Esc>^Da
+
+" color for matching brackets
+hi MatchParen cterm=none ctermbg=green ctermfg=none
+
+" Plugins to check:
+" https://github.com/wolfgangmehner/perl-support
+" https://github.com/vim-perl/vim-perl
+
+function GetPerlFold()
+  if getline(v:lnum) =~ '^\s*sub\s'
+    return ">1"
+  elseif getline(v:lnum) =~ '\}\s*$'
+    let my_perlnum = v:lnum
+    let my_perlmax = line("$")
+    while (1)
+      let my_perlnum = my_perlnum + 1
+      if my_perlnum > my_perlmax
+        return "<1"
+      endif
+      let my_perldata = getline(my_perlnum)
+      if my_perldata =~ '^\s*\(\#.*\)\?$'
+        " do nothing
+      elseif my_perldata =~ '^\s*sub\s'
+        return "<1"
+      else
+        return "="
+      endif
+    endwhile
+  else
+    return "="
+  endif
+endfunction
+setlocal foldexpr=GetPerlFold()
+setlocal foldmethod=expr

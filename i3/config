@@ -208,3 +208,6 @@ bindsym $mod+p exec --no-startup-id passmenu
 
 # Albert
 exec --no-startup-id albert
+
+# Thunderbird
+exec thunderbird --headless
