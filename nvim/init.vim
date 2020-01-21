@@ -53,7 +53,10 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
     " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Yggdroot/indentLine') " Showing indentation lines
-    " call dein#add('vim-vdebug/vdebug') " Debugger in Vim
+    call dein#disable('vim-vdebug/vdebug') " Debugger in Vim
+
+    call map(dein#check_clean(), "delete(v:val, 'rf')")
+
     call dein#end()
     call dein#save_state()
 endif
