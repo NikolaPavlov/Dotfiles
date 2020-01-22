@@ -53,9 +53,10 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
     " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Yggdroot/indentLine') " Showing indentation lines
-    call dein#disable('vim-vdebug/vdebug') " Debugger in Vim
-
-    call map(dein#check_clean(), "delete(v:val, 'rf')")
+    " call dein#disable('vim-vdebug/vdebug') " Debugger in Vim
+    " call dein#add('chrisbra/csv.vim') " csv files formating
+    call dein#disable('chrisbra/csv.vim')
+    call dein#add('godlygeek/tabular') " align text
 
     call dein#end()
     call dein#save_state()
@@ -330,8 +331,10 @@ set wildmode=full "specifies how command line completion works
 "23 running make and jumping to errors
 "24 language specific
 "25 multi-byte characters
-set fileencoding=utf-8
-set encoding=utf-8
+" set fileencoding=utf-8 :TODO
+" set encoding=utf-8 :TODO
+" set fileencoding=iso-8859-1
+" set encoding=iso-8859-1
 "26 various
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
@@ -593,3 +596,21 @@ function GetPerlFold()
 endfunction
 setlocal foldexpr=GetPerlFold()
 setlocal foldmethod=expr
+
+let b:csv_arrange_use_all_rows = 1
+let b:csv_arrange_align = 'r*'
+
+" temp encoding settings
+set fileencodings=utf-8,latin2
+
+
+highlight SpecialKey ctermfg=1
+set list
+" set listchars=tab:T>
+set listchars=tab:▸\ ,eol:¬
+
+function! HiTabs()
+    syntax match TAB /\t/
+    hi TAB ctermbg=magenta ctermfg=red
+endfunction
+au BufEnter,BufRead * call HiTabs()

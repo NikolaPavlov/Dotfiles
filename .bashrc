@@ -1,108 +1,110 @@
 export VISUAL=nvim
 export EDITOR=nvim
 
-alias w='whois'
-alias v='nvim'
-alias e='exit'
-alias c='clear'
-alias cl='clear'
-alias a='alsamixer'
-alias s='startx'
-alias rm='rm -Irv'
-alias off='poweroff'
-alias cp='cp -i'
-alias mv='mv -i'
-alias ps='ps auxf'
-alias mkdir='mkdir -pv'
-alias wget='wget -c'
-alias du='ncdu'
+alias w='whois '
+alias v='nvim '
+alias e='exit '
+alias c='clear '
+alias cl='clear '
+alias a='alsamixer '
+alias s='startx '
+alias rm='rm -Irv '
+alias off='poweroff '
+alias cp='cp -i '
+alias mv='mv -i '
+alias ps='ps auxf '
+alias mkdir='mkdir -pv '
+alias wget='wget -c '
+alias du='ncdu '
 alias df='pydf'
 
 # ls aliases
-alias l='lsd -l --group-dirs first'
-alias ll='lsd -l --group-dirs first'
-alias la='lsd -la --group-dirs first'
+alias l='lsd -l --group-dirs first '
+alias ll='lsd -l --group-dirs first '
+alias la='lsd -la --group-dirs first '
 
-alias grep='grep --color=tty -d skip'
-alias free='free -m'
-alias myip='curl ifconfig.me'
+alias grep='grep --color=tty -d skip '
+alias free='free -m '
+alias myip='curl ifconfig.me '
 
-alias p1='ping 192.168.1.1'
-alias p8='ping 8.8.8.8 -c 100'
-alias pg='ping google.com'
+alias p1='ping 192.168.1.1 '
+alias p8='ping 8.8.8.8 -c 100 '
+alias pg='ping google.com '
+
+alias tsocks='tsocks '
 
 # Pacman
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rns '
 alias search='sudo  pacman -Ss '
 # Python
-# alias p='python3.8'
-# alias i='ipython'
-# alias pt='pytest'
+# alias p='python3.8 '
+# alias i='ipython '
+# alias pt='pytest '
 # Perl
-alias p='perl'
-alias pl='perl'
-alias pd='perldoc'
+alias p='perl '
+alias pl='perl '
+alias pd='perldoc '
 # PipEnv
-alias pe='pipenv'
-alias pes='pipenv shell'
+alias pe='pipenv '
+alias pes='pipenv shell '
 # Git
-alias gs='git status'
-alias gc='git commit'
-alias ga='git add'
-alias gb='git branch'
-alias gpush='git push'
-alias gpull='git pull'
-alias glog='git log --oneline'
-alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull'
+alias gs='git status '
+alias gc='git commit '
+alias ga='git add '
+alias gb='git branch '
+alias gpush='git push '
+alias gpull='git pull '
+alias glog='git log --oneline '
+alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull '
 # git reset to previous commit (hard)
 # git reset --hard <commitId> && git clean -f
-alias push='git add . && git commit -m "up" && git push'
+alias push='git add . && git commit -m "up" && git push '
 
 # Docker
-alias d='docker'
-alias di='docker images'
-alias drmi='docker rmi -f $(docker images -q)' # remove image
-alias drmc='docker rm -f $(docker ps -a -q)' # remove all images
-alias dc='docker-compose'
+alias d='docker '
+alias di='docker images '
+alias drmi='docker rmi -f $(docker images -q) ' # remove image
+alias drmc='docker rm -f $(docker ps -a -q) ' # remove all images
+alias dc='docker-compose '
 # Vagrant
-alias va='vagrant'
-alias vs='vagrant status'
-alias vup='vagrant up'
-alias vgs='vagrant global status'
-alias vssh='vagrant ssh'
+alias va='vagrant '
+alias vs='vagrant status '
+alias vup='vagrant up '
+alias vgs='vagrant global status '
+alias vssh='vagrant ssh '
 # Encryption
-alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/'
+alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/ '
 #TODO: Update secret alias with full parameters
 # YouTube + Spotify
-alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0'
-alias mp3='youtube-dl -i -f bestaudio --extract-audio --audio-format mp3 --no-check-certificate'
-alias dl='~/.local/bin/spotdl --song'
+alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0 '
+alias mp3='youtube-dl -i -f bestaudio --extract-audio --audio-format mp3 --no-check-certificate '
+alias dl='~/.local/bin/spotdl --song '
 # Django
-alias pm='python manage.py'
-alias pmr='python manage.py runserver'
-alias pms='python manage.py shell'
-alias pmmm='python manage.py makemigrations'
-alias pmm='python manage.py migrate'
-alias pmt='python manage.py test'
+alias pm='python manage.py '
+alias pmr='python manage.py runserver '
+alias pms='python manage.py shell '
+alias pmmm='python manage.py makemigrations '
+alias pmm='python manage.py migrate '
+alias pmt='python manage.py test '
 # TaskWarrior
-alias t='task'
-alias tl='task list'
-alias ta='task add $1'
-alias tdel='task $1 delete'
-alias tdone='task $1 done'
-alias te='task $1 edit'
-alias tn='task next'
-alias tannotete='task $1 annotate $2'
+alias t='task '
+alias tl='task list '
+alias ta='task add $1 '
+alias tdel='task $1 delete '
+alias tdone='task $1 done '
+alias te='task $1 edit '
+alias tn='task next '
+alias tannotete='task $1 annotate $2 '
 # Programs
-alias vifm='vifmrun'
-alias f='firefox'
-alias clock='tty-clock -c'
-alias reflect='sudo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
-alias radio='curseradio'
-alias z='zathura'
-alias todo='vit'
-alias cal='calcurse'
+alias vifm='vifmrun '
+alias f='firefox '
+alias clock='tty-clock -c '
+alias reflect='sudo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist '
+alias radio='curseradio '
+alias z='zathura '
+alias todo='vit '
+alias cal='calcurse '
 
 
 # ex - archive extractor
@@ -177,5 +179,5 @@ source <(gopass completion bash)
 # Temp
 # export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
-export LC_ALL="en_US.UTF-8"
-alias runp='p -MTime::HiRes -I./ regix_info1.pl 201593304'
+# export LC_ALL="en_US.UTF-8"
+alias runp='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
