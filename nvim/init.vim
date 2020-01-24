@@ -54,8 +54,8 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Yggdroot/indentLine') " Showing indentation lines
     " call dein#disable('vim-vdebug/vdebug') " Debugger in Vim
-    " call dein#add('chrisbra/csv.vim') " csv files formating
-    call dein#disable('chrisbra/csv.vim')
+    call dein#add('chrisbra/csv.vim') " csv files formating
+    " call dein#disable('chrisbra/csv.vim')
     call dein#add('godlygeek/tabular') " align text
 
     call dein#end()
