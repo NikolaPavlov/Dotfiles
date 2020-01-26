@@ -606,7 +606,6 @@ set fileencodings=utf-8,latin2
 
 highlight SpecialKey ctermfg=1
 set list
-" set listchars=tab:T>
 set listchars=tab:▸\ ,eol:¬
 
 function! HiTabs()
