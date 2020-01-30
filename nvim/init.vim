@@ -604,10 +604,10 @@ let b:csv_arrange_align = 'r*'
 set fileencodings=utf-8,latin2
 
 
-highlight SpecialKey ctermfg=1
-set list
-" set listchars=tab:T>
-set listchars=tab:▸\ ,eol:¬
+" highlight SpecialKey ctermfg=1
+" set list
+" " set listchars=tab:T>
+" set listchars=tab:▸\ ,eol:¬
 
 function! HiTabs()
     syntax match TAB /\t/
