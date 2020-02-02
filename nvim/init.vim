@@ -596,12 +596,6 @@ let b:csv_arrange_align = 'r*'
 " set fileencodings=utf-8,latin2
 
 
-" surround a word in ""
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-" surround visualy selected text with ""
-
-
-
 " statusline
 set statusline=%.40F
 set statusline+=%=
@@ -632,10 +626,3 @@ augroup remember_folds
   au BufWinLeave ?* mkview 1
   au BufWinEnter ?* silent! loadview 1
 augroup END
-
-
-" Free keys to map
-    " <BS> -> fold open/close
-    " <CR> -> enter
-    " <space> ->
-    " -
