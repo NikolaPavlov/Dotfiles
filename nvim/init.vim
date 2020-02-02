@@ -28,7 +28,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('tomtom/tcomment_vim') " comment plugin
     call dein#add('scrooloose/nerdtree')
     call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
-    call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, airline, ctrlP)
+    call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, ctrlP)
     call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
     call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
     call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
@@ -45,18 +45,17 @@ if dein#load_state('~/.cache/dein')
     call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
     call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
     call dein#add('yuttie/comfortable-motion.vim') "scroll effect
-    " call dein#add('gu-fan/riv.vim') " note taking in vim with .rst
-    " call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
-    call dein#add('Rykka/InstantRst')
+    call dein#add('Rykka/riv.vim') " note taking in vim with .rst
+    call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
     call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
     call dein#add('vifm/vifm.vim') " :Vifm :help vifm
     " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
     " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Yggdroot/indentLine') " Showing indentation lines
     " call dein#disable('vim-vdebug/vdebug') " Debugger in Vim
-    " call dein#add('chrisbra/csv.vim') " csv files formating
-    call dein#disable('chrisbra/csv.vim')
+    call dein#add('chrisbra/csv.vim') " csv files formating
     call dein#add('godlygeek/tabular') " align text
+    call dein#add('easymotion/vim-easymotion') " easy motion
 
     call dein#end()
     call dein#save_state()
@@ -148,8 +147,24 @@ syntax enable
 " {{{ Goyo
     let g:goyo_width=120
 " }}}
+"{{{ Easymotion
+    noremap <localleader> <Plug>(easymotion-prefix)
+    " <localleader>f[char]
+    " <localleader>w
+"
+"}}}
 " }}}
 "{{{ Filetype specific
+"{{{ Perl
+    augroup ft_perl
+        au!
+        au FileType perl setlocal foldmethod=manual
+        au BufNewFile,BufRead *.pl setlocal wrap textwidth=120
+        au BufNewFile,BufRead *.pl setlocal colorcolumn=120
+        " au BufWinLeave * mkview
+        " au BufWinEnter * silent loadview
+    augroup END
+"}}}
 "{{{ Python
     augroup ft_python
         au!
@@ -160,7 +175,6 @@ syntax enable
 "{{{ Django
     augroup ft_django
         au!
-
         au BufNewFile,BufRead urls.py           setlocal nowrap
         au BufNewFile,BufRead urls.py           normal! zR
 
@@ -182,24 +196,16 @@ syntax enable
     " no line wrap for html files
     augroup ft_html
         au!
-
-        au BufNewFile,BufRead *.html set nowrap textwidth=120
+        au BufNewFile,BufRead *.html set nowrap
+        au BufNewFile,BufRead *.html set colorcolumn=
         au BufNewFile,BufRead *.html setlocal filetype=htmldjango
-
         au FileType html,jinja,htmldjango setlocal foldmethod=manual
-
         " Use <localleader>f to fold the current tag.
-        au FileType html,jinja,htmldjango nmap <buffer> <localleader>f Vatzf
-
+        au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>f Vatzf
         " Use <localleader>t to fold the current templatetag.
-        au FileType html,jinja,htmldjango nmap <buffer> <localleader>t viikojozf
-
+        au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>t viikojozf
         " Indent tag
-        au FileType html,jinja,htmldjango nmap <buffer> <localleader>= Vat=
-
-        " Django tags
-        au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
-
+        au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>= Vat=
 
         autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -209,6 +215,7 @@ syntax enable
         autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
         autocmd FileType htmldjango inoremap {# {# #}<left><left><left>
 
+        autocmd BufWritePre,BufRead *.html :normal gg=G
     augroup END
 "}}}
 "{{{ Vagrant
@@ -237,11 +244,11 @@ syntax enable
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 "}}}
 "{{{ Vim
-    augroup ft_vim
+    augroup filetype_vim
         au!
         au FileType vim setlocal foldmethod=marker
         au BufNewFile,BufRead *.vim setlocal nowrap
-        au BufNewFile,BufRead *.vim setlocal colorcolumn=120
+        au BufNewFile,BufRead *.vim setlocal colorcolumn=
         au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
     augroup END
 "}}}
@@ -249,6 +256,14 @@ syntax enable
 " https://woile.github.io/gopass-cheat-sheet/
 " https://woile.github.io/gopass-presentation/
     au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+"}}}
+"{{{ CSV
+    augroup ft_csv
+        au!
+        au BufNewFile,BufRead *.csv setlocal nowrap
+        au BufNewFile,BufRead *.csv setlocal list
+        au BufNewFile,BufRead *.csv setlocal listchars=tab:▸\ ,eol:¬
+    augroup END
 "}}}
 "}}}
 "{{{ General :options
@@ -360,68 +375,65 @@ set clipboard+=unnamedplus
 let mapleader=','
 let maplocalleader='\'
 " {{{ Open files
-
-    "edit init.vim in the current window
-    nmap <leader>ev :e $MYVIMRC<CR>
-    "edit bashrc in the current window
-    nmap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
-    " open riv wiki index.rst
-    nmap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
-
+    nnoremap <leader>ev :e $MYVIMRC<CR>
+    nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
+    nnoremap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
 " }}}
 " {{{ Test mappings
-    nmap <silent> <leader>tt :TestSuite<CR>
-    nmap <silent> <leader>tn :TestNearest<CR>
-    nmap <silent> <leader>tf :TestFile<CR>
+    nnoremap <silent> <leader>tt :TestSuite<CR>
+    nnoremap <silent> <leader>tn :TestNearest<CR>
+    nnoremap <silent> <leader>tf :TestFile<CR>
 " }}}
 " {{{ Other
     "Tab for navigating between split screens
-    nmap <tab> <c-w><c-w>
+    nnoremap <tab> <c-w><c-w>
     "better regular expressions searching
-    nmap / /\v
-    nmap ? ?\v
+    nnoremap / /\v
+    nnoremap ? ?\v
     "move currsor with j and k on wrap lines too
-    nmap j gj
-    nmap k gk
+    nnoremap j gj
+    nnoremap k gk
     " no highlight
-    nmap <leader><leader> :noh<cr>
+    nnoremap <leader><leader> :noh<cr>
     " map ; to :
-    nmap ; :
+    nnoremap ; :
     "turn on off spell checking with ,s
-    nmap <silent><leader>s :set spell!<CR>
-    "folding and unfolding with Space
-    nmap <Space> za
-    "jj as Esc alternative
-    inoremap jj <Esc>
+    nnoremap <silent><leader>s :set spell!<CR>
+    "folding and unfolding with Backspace
+    nnoremap <BS> za
+    inoremap jk <Esc>
+    cnoremap jk <C-C>
+    vnoremap nn <Esc>
+    noremap <Esc> <nop>
     "select all text
-    map <leader>a ggVG
+    noremap <leader>a ggVG
     "sort selected text
-    vmap <leader>ss :sort<CR>
+    vnoremap <leader>s :sort<CR>
     "moving code blocks
-    vmap < <gv
-    vmap > >gv
+    vnoremap < <gv
+    vnoremap > >gv
     "substitute with ctrl + s
-    nmap <c-s> :%s/
-    vmap <c-s> :s/
+    nnoremap <c-s> :%s/
+    vnoremap <c-s> :s/
     " replace the name of variable in current file
     nnoremap cv :%s/\<<C-r><C-w>\>/
 
-    nmap n nzzzv
-    nmap N Nzzzv
+    nnoremap n nzzzv
+    nnoremap N Nzzzv
 
     "keep jumping results in the middle of the window
-    nmap g; g;zz
-    nmap g, g,zz
+    nnoremap g; g;zz
+    nnoremap g, g,zz
     "replace visualy selected text with the what is in the paste register
-    vmap pp "+p
+    vnoremap pp "+p
     " close current buffer
-    nmap <leader>d :bd<CR>
+    nnoremap <leader>d :bd<CR>
 
     "Split line (sister to [J]oin lines)
-    nmap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+    nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
     "run python code in vim <F5>
-    nmap <F5> <ESC>:w<CR>:execute "!python %"<CR>
+    nnoremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
 
     "forcing saving files that require root permission with :W
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -433,7 +445,6 @@ let maplocalleader='\'
                 \ endif
 " }}}
 " {{{ Plugin based remaps
-"
     " {{{ Buftabline
         nmap <leader>1 <Plug>BufTabLine.Go(1)
         nmap <leader>2 <Plug>BufTabLine.Go(2)
@@ -445,34 +456,14 @@ let maplocalleader='\'
         nmap <leader>8 <Plug>BufTabLine.Go(8)
         nmap <leader>9 <Plug>BufTabLine.Go(9)
         nmap <leader>0 <Plug>BufTabLine.Go(10)
-
-        " go between buffers
-        nmap <up> <C-^>
-        nmap <left> :bprev<CR>
-        nmap <right> :bnext<CR>
     " }}}
-
-    " rst preview
-    nmap <leader>ir :InstantRst<CR>
-
-    " open/close NerdTree
-    nmap t :NERDTreeToggle<CR>
-
-    "comment <leader>c
-    map <leader>c :TComment<cr>
-
-    "Goyo on/off
-    nmap <leader>g :Goyo<CR>
-
-    "formating the file
-    nmap <leader>nf :Neoformat<cr>
-
-    "ctrl+p to launch fzy search
-    nmap <c-p> :FuzzyOpen<CR>
-
-    " UndoTree on/off
-    nmap <leader>u :UndotreeToggle<CR>
-
+    nnoremap <leader>ir :InstantRst<CR>
+    nnoremap t :NERDTreeToggle<CR>
+    noremap <leader>c :TComment<cr>
+    nnoremap <leader>g :Goyo<CR>
+    nnoremap <leader>nf :Neoformat<cr>
+    nnoremap <c-p> :FuzzyOpen<CR>
+    nnoremap <leader>u :UndotreeToggle<CR>
 " }}}
 " {{{ Windows moving
     nnoremap <C-h> <C-w>h
@@ -489,6 +480,9 @@ let maplocalleader='\'
 "{{{ Abbreviations
     iabbrev todo: TODO:
     iabbrev pritn print
+    iabbrev adn and
+    iabbrev waht wath
+    iabbrev tehn then
 "}}}
 "{{{ Links
 " =============================================================================
@@ -518,14 +512,6 @@ let maplocalleader='\'
     nnoremap <silent> p p`]
 "}}}
 "{{{ Functions
-    function! SortLines() range
-        " visual select the lines which should be sorted
-        " :call SortLines() for sorting lines
-        execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
-        execute a:firstline . "," . a:lastline . 'sort n'
-        execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
-    endfunction
-
 
     " :DiffSaved to see the diff between current buffer and file on disk
     function! s:DiffWithSaved()
@@ -551,15 +537,18 @@ let maplocalleader='\'
     endfunction
 "}}}  
 "{{{ Perl temp
-    map <F5> :w<CR>:!perl %<CR>
-    imap <F5> <Esc>:w<CR>:!perl %<CR>
+    noremap <F5> :w<CR>:!perl %<CR>
+    inoremap <F5> <Esc>:w<CR>:!perl %<CR>
 
-    nmap <leader>ep :e ~/Documents/Repos/Wiki/Temp_Perl.rst<CR>
+    nnoremap <leader>ep :e ~/Documents/Repos/Wiki/Temp_Perl.rst<CR>
 
 "}}}
 
-inoremap <C-a> <C-o>$
-" inoremap <C-i> <C-o>0
+
+" inoremap <C-a> <C-o>$
+
+
+
 nnoremap o o<Esc>^Da
 nnoremap O O<Esc>^Da
 
@@ -569,6 +558,7 @@ hi MatchParen cterm=none ctermbg=green ctermfg=none
 " Plugins to check:
 " https://github.com/wolfgangmehner/perl-support
 " https://github.com/vim-perl/vim-perl
+
 
 function GetPerlFold()
   if getline(v:lnum) =~ '^\s*sub\s'
@@ -597,19 +587,55 @@ endfunction
 setlocal foldexpr=GetPerlFold()
 setlocal foldmethod=expr
 
+
 let b:csv_arrange_use_all_rows = 1
 let b:csv_arrange_align = 'r*'
+" let g:csv_delim_test='/<tab>'; TODO:
 
 " temp encoding settings
-set fileencodings=utf-8,latin2
+" set fileencodings=utf-8,latin2
 
 
-highlight SpecialKey ctermfg=1
-set list
-set listchars=tab:▸\ ,eol:¬
+" surround a word in ""
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+" surround visualy selected text with ""
 
-function! HiTabs()
-    syntax match TAB /\t/
-    hi TAB ctermbg=magenta ctermfg=red
+
+
+" statusline
+set statusline=%.40F
+set statusline+=%=
+set statusline+=%y
+set statusline+=%4l
+set statusline+=\ \|\ 
+set statusline+=%-4L
+
+
+
+" Open/close all folds
+noremap <F9> :call UnrolMe()<CR>
+
+let $unrol=0
+function UnrolMe()
+if $unrol==0
+    :exe "normal zR"
+    let $unrol=1
+else
+    :exe "normal zM"
+    let $unrol=0
+endif
 endfunction
-au BufEnter,BufRead * call HiTabs()
+
+
+augroup remember_folds
+  autocmd!
+  au BufWinLeave ?* mkview 1
+  au BufWinEnter ?* silent! loadview 1
+augroup END
+
+
+" Free keys to map
+    " <BS> -> fold open/close
+    " <CR> -> enter
+    " <space> ->
+    " -
