@@ -294,7 +294,6 @@ set scrolloff=5 "number of screen lines to show around the cursor
 "5 syntax, highlighting and spelling
 syntax on
 set hlsearch "highlight all matches for the last used search pattern
-set background=dark
 set cursorline "highlight the screen line of the cursor
 set colorcolumn=80 "columns to highlight (local to window)
 highlight Comment cterm=italic
@@ -354,9 +353,9 @@ set wildmode=full "specifies how command line completion works
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
 colorscheme badwolf
+" colorscheme goodwolf
 " colorscheme distinguished
 " colorscheme jellybeans
-" colorscheme goodwolf
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
@@ -403,7 +402,7 @@ let maplocalleader='\'
     nnoremap <BS> za
     inoremap jk <Esc>
     cnoremap jk <C-C>
-    vnoremap nn <Esc>
+    vnoremap <leader><leader> <Esc>
     noremap <Esc> <nop>
     "select all text
     noremap <leader>a ggVG
