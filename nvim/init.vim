@@ -401,10 +401,20 @@ let maplocalleader='\'
     nnoremap <silent><leader>s :set spell!<CR>
     "folding and unfolding with Backspace
     nnoremap <BS> za
+
+    inoremap <Esc> <nop>
+    cnoremap <Esc> <nop>
+    vnoremap <Esc> <nop>
     inoremap jk <Esc>
+    inoremap JK <Esc>
+    inoremap kj <Esc>
+    inoremap KJ <Esc>
     cnoremap jk <C-C>
-    vnoremap nn <Esc>
-    noremap <Esc> <nop>
+    cnoremap JK <C-C>
+    cnoremap kj <C-C>
+    cnoremap KJ <C-C>
+    vnoremap <leader><leader> <Esc>
+
     "select all text
     noremap <leader>a ggVG
     "sort selected text
@@ -483,6 +493,8 @@ let maplocalleader='\'
     iabbrev adn and
     iabbrev waht wath
     iabbrev tehn then
+    iabbrev reutnr return
+    iabbrev retunr return
 "}}}
 "{{{ Links
 " =============================================================================
