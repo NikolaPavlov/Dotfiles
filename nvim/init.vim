@@ -385,7 +385,7 @@ let maplocalleader='\'
 " }}}
 " {{{ Other
     "Tab for navigating between split screens
-    nnoremap <tab> <c-w><c-w>
+    " nnoremap <tab> <c-w><c-w>
     "better regular expressions searching
     nnoremap / /\v
     nnoremap ? ?\v
@@ -488,12 +488,15 @@ let maplocalleader='\'
 "}}}
 "{{{ Abbreviations
     iabbrev todo: TODO:
+    iabbrev todo TODO:
+    iabbrev TODO TODO:
     iabbrev pritn print
     iabbrev adn and
     iabbrev waht wath
     iabbrev tehn then
     iabbrev reutnr return
     iabbrev retunr return
+    iabbrev reutrn return
 "}}}
 "{{{ Links
 " =============================================================================
