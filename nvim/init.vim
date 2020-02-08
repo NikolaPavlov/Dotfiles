@@ -656,3 +656,6 @@ set cpoptions+=$
 map <leader>pt <Esc>:%! perltidy<CR>
 map <leader>ptv <Esc>:'<,'>! perltidy<CR>
 map <leader>t <Esc>:!prove -vl %<CR>
+map <leader>T <Esc>:!prove -vl % \\|less<CR>
+
+" TODO: perl debug with comments
