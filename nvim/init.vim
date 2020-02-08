@@ -56,6 +56,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('chrisbra/csv.vim') " csv files formating
     call dein#add('godlygeek/tabular') " align text
     call dein#add('easymotion/vim-easymotion') " easy motion
+    matchit " match html tags
 
     call dein#end()
     call dein#save_state()
@@ -158,11 +159,10 @@ syntax enable
 "{{{ Perl
     augroup ft_perl
         au!
-        au FileType perl setlocal foldmethod=manual
-        au BufNewFile,BufRead *.pl setlocal wrap textwidth=120
-        au BufNewFile,BufRead *.pl setlocal colorcolumn=120
-        " au BufWinLeave * mkview
-        " au BufWinEnter * silent loadview
+        au BufNewFile,BufRead *.pl set wrap textwidth=120
+        au BufNewFile,BufRead *.pl set colorcolumn=120
+        au BufNewFile,BufRead *.t set filetype=perl
+        au FileType perl set foldmethod=manual
     augroup END
 "}}}
 "{{{ Python
@@ -640,3 +640,19 @@ augroup remember_folds
   au BufWinLeave ?* mkview 1
   au BufWinEnter ?* silent! loadview 1
 augroup END
+
+
+
+" :h movement
+" [[ -> for movement
+" ]]
+" '' -> goes to where you were before go to specific mark
+" difference between ' and ` for marks
+" R -> For non stop replacement
+" gv -> repeat last visual selection
+set cpoptions+=$
+" b# -> recent buffer jumpings
+
+map <leader>pt <Esc>:%! perltidy<CR>
+map <leader>ptv <Esc>:'<,'>! perltidy<CR>
+map <leader>t <Esc>:!prove -vl %<CR>
