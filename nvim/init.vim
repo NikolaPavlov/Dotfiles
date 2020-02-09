@@ -1,8 +1,3 @@
-"{{{ Virtualenv fixer for neovim
-    "let g:python_host_prog = expand('/usr/bin/python')
-    " let g:python3_host_prog = expand('/usr/bin/python3')
-    " let g:python3_host_prog = expand('/home/npavlov/.virtualenvs/neovim/bin/python')
-" }}}
 "{{{ Plugins
 if &compatible
   set nocompatible
@@ -14,14 +9,17 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim') " autocomplete engine
-    call dein#add('davidhalter/jedi-vim') "need for go to definitions
-    call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+    " call dein#add('davidhalter/jedi-vim') "need for go to definitions
+    " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+    " call dein#add('w0rp/ale') " linter on the fly (flake8 should be installed locally)
+    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
+    " call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
+    " call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
+    " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('w0rp/ale') " linter on the fly (flake8 should be installed locally)
-    call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
     call dein#add('mhinz/vim-signify') " show git diff in the left bar
-    call dein#add('tpope/vim-fugitive') "git wrapper (integration)
+    call dein#add('tpope/vim-fugitive') "git wrapper
     call dein#add('wellle/targets.vim') " add 'ci(' command
     call dein#add('tpope/vim-surround') " change surroundings
     call dein#add('tpope/vim-repeat') " repeat surround commands
@@ -32,11 +30,11 @@ if dein#load_state('~/.cache/dein')
     call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
     call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
     call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-    call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
-    call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
-    call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
     call dein#add('flazz/vim-colorschemes') "many colorschemes currently using badwolf
-    call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
+    " call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
+    call dein#add('kien/ctrlp.vim') " allow vsp with <C-v>
+        inoremap jk :call PrtExit()<CR>
+        tnoremap jk :call PrtExit()<CR>
     call dein#add('junegunn/goyo.vim') "focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
     call dein#add('kshenoy/vim-signature') "display the marks in the side line
@@ -48,21 +46,20 @@ if dein#load_state('~/.cache/dein')
     call dein#add('gu-fan/InstantRst') " rst instant preview :rivquickstart for help
     call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
     call dein#add('vifm/vifm.vim') " :Vifm :help vifm
-    " call dein#add('Shougo/context_filetype.vim') "completion from other opened files
-    " call dein#add('nvie/vim-flake8') " flake8
     call dein#add('Yggdroot/indentLine') " Showing indentation lines
-    " call dein#disable('vim-vdebug/vdebug') " Debugger in Vim
     call dein#add('chrisbra/csv.vim') " csv files formating
     call dein#add('godlygeek/tabular') " align text
     call dein#add('easymotion/vim-easymotion') " easy motion
     call dein#add('sjl/gundo.vim') " undo history 
-    call dein#add('vim-perl/vim-perl')
     call dein#add('majutsushi/tagbar') " display tags
-    call dein#add('tpope/vim-dispatch')
+    " call dein#add('janko/vim-test')
+    " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
+    " call dein#disable('vim-vdebug/vdebug') " Debugger in Vim
+    " TODO: https://github.com/andymass/vim-matchup
+    " TODO: https://vimawesome.com/plugin/perl-support
+    " TODO: vim-perl
     call dein#end()
     call dein#save_state()
-    " TODO: https://vimawesome.com/plugin/perl-support
-    call dein#add('janko/vim-test')
 endif
 
 " instll plugins on nvim launch
@@ -157,16 +154,20 @@ syntax enable
     " <localleader>w
 "
 "}}}
+"{{{ CtrlP
+    let g:ctrlp_by_filename = 0 " search by filename instead of full path
+    set wildignore+=*/.git/*
+    let g:ctrlp_match_window = 'bottom,order:tbb,min:1,max:10,results:10'
+"}}}
 " }}}
 "{{{ Filetype specific
 "{{{ Perl
     augroup ft_perl
         au!
-        au FileType perl setlocal foldmethod=manual
-        au BufNewFile,BufRead *.pl setlocal wrap textwidth=120
-        au BufNewFile,BufRead *.pl setlocal colorcolumn=120
-        " au BufWinLeave * mkview
-        " au BufWinEnter * silent loadview
+        au BufNewFile,BufRead *.pl set wrap textwidth=120
+        au BufNewFile,BufRead *.pl set colorcolumn=120
+        au BufNewFile,BufRead *.t set filetype=perl
+        au FileType perl set foldmethod=indent
     augroup END
 "}}}
 "{{{ Python
@@ -606,19 +607,26 @@ augroup END
 
 
 inoremap <C-a> <C-o>$
-
 " nnoremap o o<Esc>^Da
 " nnoremap O O<Esc>^Da
 
 set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
 
-nnoremap <C-n> :TestNearest<CR>
-nnoremap <C-f> :TestFile<CR>
-nnoremap <C-s> :TestSuite<CR>
-nnoremap <C-l> :TestLast<CR>
-nnoremap <C-g> :TestVisit<CR>
 
-" let test#strategy = "neovim"
-" let test#perl#minitest#file_pattern = 't\.t'
+set cpoptions+=$
 
-map ,t <Esc>:!prove -vl %<CR>
+map <leader>pt <Esc>:%! perltidy<CR>
+map <leader>ptv <Esc>:'<,'>! perltidy<CR>
+map <leader>t <Esc>:!prove -vl %<CR>
+map <leader>T <Esc>:!prove -vl % \\|less<CR>
+
+" :h movement
+" [[ -> for movement
+" ]]
+" '' -> goes to where you were before go to specific mark
+" difference between ' and ` for marks
+" R -> For non stop replacement
+" gv -> repeat last visual selection
+" b# -> recent buffer jumpings
+onoremap jk <Esc>
+nnoremap <leader><space> <c-w><c-w>
