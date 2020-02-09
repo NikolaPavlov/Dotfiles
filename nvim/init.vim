@@ -38,7 +38,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('flazz/vim-colorschemes') "many colorschemes currently using badwolf
     call dein#add('cloudhead/neovim-fuzzy') "fzy implementation for neovim
     call dein#add('junegunn/goyo.vim') "focus mode :Goyo
-    call dein#add('mbbill/undotree') "undo history :UndotreeShow
     call dein#add('machakann/vim-highlightedyank') "fast highlight yanked test
     call dein#add('kshenoy/vim-signature') "display the marks in the side line
     call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
@@ -56,9 +55,14 @@ if dein#load_state('~/.cache/dein')
     call dein#add('chrisbra/csv.vim') " csv files formating
     call dein#add('godlygeek/tabular') " align text
     call dein#add('easymotion/vim-easymotion') " easy motion
-
+    call dein#add('sjl/gundo.vim') " undo history 
+    call dein#add('vim-perl/vim-perl')
+    call dein#add('majutsushi/tagbar') " display tags
+    call dein#add('tpope/vim-dispatch')
     call dein#end()
     call dein#save_state()
+    " TODO: https://vimawesome.com/plugin/perl-support
+    call dein#add('janko/vim-test')
 endif
 
 " instll plugins on nvim launch
@@ -192,28 +196,18 @@ syntax enable
         au BufNewFile,BufRead prod.py setlocal foldmethod=marker
     augroup END
 " }}}
-"{{{ Html Django
-    " no line wrap for html files
+"{{{ Html
     augroup ft_html
         au!
+        au BufNewFile,BufRead *.html set filetype=html
         au BufNewFile,BufRead *.html set nowrap
         au BufNewFile,BufRead *.html set colorcolumn=
-        au BufNewFile,BufRead *.html setlocal filetype=htmldjango
-        au FileType html,jinja,htmldjango setlocal foldmethod=manual
-        " Use <localleader>f to fold the current tag.
-        au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>f Vatzf
-        " Use <localleader>t to fold the current templatetag.
-        au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>t viikojozf
-        " Indent tag
-        au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>= Vat=
+
 
         autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
-        autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
-        autocmd FileType htmldjango inoremap {# {# #}<left><left><left>
 
         autocmd BufWritePre,BufRead *.html :normal gg=G
     augroup END
@@ -377,6 +371,7 @@ let maplocalleader='\'
     nnoremap <leader>ev :e $MYVIMRC<CR>
     nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
     nnoremap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
+    nnoremap <leader>et :e ~/Temp/temp.pl<CR>
 " }}}
 " {{{ Test mappings
     nnoremap <silent> <leader>tt :TestSuite<CR>
@@ -472,7 +467,8 @@ let maplocalleader='\'
     nnoremap <leader>g :Goyo<CR>
     nnoremap <leader>nf :Neoformat<cr>
     nnoremap <c-p> :FuzzyOpen<CR>
-    nnoremap <leader>u :UndotreeToggle<CR>
+    nnoremap <leader>u :GundoToggle<CR>
+    nnoremap T :TagbarToggle<CR>
 " }}}
 " {{{ Windows moving
     nnoremap <C-h> <C-w>h
@@ -559,12 +555,6 @@ let maplocalleader='\'
 "}}}
 
 
-" inoremap <C-a> <C-o>$
-
-
-
-nnoremap o o<Esc>^Da
-nnoremap O O<Esc>^Da
 
 " color for matching brackets
 hi MatchParen cterm=none ctermbg=green ctermfg=none
@@ -572,34 +562,6 @@ hi MatchParen cterm=none ctermbg=green ctermfg=none
 " Plugins to check:
 " https://github.com/wolfgangmehner/perl-support
 " https://github.com/vim-perl/vim-perl
-
-
-function GetPerlFold()
-  if getline(v:lnum) =~ '^\s*sub\s'
-    return ">1"
-  elseif getline(v:lnum) =~ '\}\s*$'
-    let my_perlnum = v:lnum
-    let my_perlmax = line("$")
-    while (1)
-      let my_perlnum = my_perlnum + 1
-      if my_perlnum > my_perlmax
-        return "<1"
-      endif
-      let my_perldata = getline(my_perlnum)
-      if my_perldata =~ '^\s*\(\#.*\)\?$'
-        " do nothing
-      elseif my_perldata =~ '^\s*sub\s'
-        return "<1"
-      else
-        return "="
-      endif
-    endwhile
-  else
-    return "="
-  endif
-endfunction
-setlocal foldexpr=GetPerlFold()
-setlocal foldmethod=expr
 
 
 let b:csv_arrange_use_all_rows = 1
@@ -640,3 +602,23 @@ augroup remember_folds
   au BufWinLeave ?* mkview 1
   au BufWinEnter ?* silent! loadview 1
 augroup END
+
+
+
+inoremap <C-a> <C-o>$
+
+" nnoremap o o<Esc>^Da
+" nnoremap O O<Esc>^Da
+
+set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
+
+nnoremap <C-n> :TestNearest<CR>
+nnoremap <C-f> :TestFile<CR>
+nnoremap <C-s> :TestSuite<CR>
+nnoremap <C-l> :TestLast<CR>
+nnoremap <C-g> :TestVisit<CR>
+
+" let test#strategy = "neovim"
+" let test#perl#minitest#file_pattern = 't\.t'
+
+map ,t <Esc>:!prove -vl %<CR>
