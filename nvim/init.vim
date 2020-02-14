@@ -313,7 +313,7 @@ set clipboard=unnamed
 "14 editing text
 set undofile " activate persistent undo
 set undodir=~/.config/nvim/undo_dir " dir for saving persistent undo files
-set textwidth=79 "line length above which to break the line
+set textwidth=119 "line length above which to break the line
 "15 tabs and indenting
 set autoindent "automatically set the indent of a new line
 set smartindent "do clever autoindenting for next line (after if for etc.)
