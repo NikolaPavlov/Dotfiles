@@ -33,7 +33,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('tomtom/tcomment_vim')
     call dein#add('scrooloose/nerdtree')
     call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
-    call dein#add('kien/ctrlp.vim') " allow vsp with <C-v>
+    call dein#add('ctrlpvim/ctrlp.vim')
     call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, ctrlP)
     call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
     call dein#add('Valloric/MatchTagAlways') " always highlight html enclosing tags
@@ -51,6 +51,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('godlygeek/tabular') " align text
     call dein#add('sjl/gundo.vim') " undo history
     call dein#add('majutsushi/tagbar') " display tags <T>
+    call dein#add('mileszs/ack.vim')
     call dein#end()
     call dein#save_state()
 endif
@@ -160,6 +161,13 @@ syntax enable
         au BufNewFile,BufRead *.pl set colorcolumn=120
         au BufNewFile,BufRead *.t set filetype=perl
         au FileType perl set foldmethod=indent
+
+        nnoremap <leader>pt <Esc>:%! perltidy<CR>
+        nnoremap <leader>ptv <Esc>:'<,'>! perltidy<CR>
+        nnoremap <leader>t <Esc>:!prove -vl %<CR>
+        nnoremap <leader>T <Esc>:!prove -vl % \\|less<CR>
+
+        set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
     augroup END
 "}}}
 "{{{ Python
@@ -429,9 +437,6 @@ let maplocalleader='\'
     "Split line (sister to [J]oin lines)
     nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
-    "run python code in vim <F5>
-    nnoremap <F5> <ESC>:w<CR>:execute "!python %"<CR>
-
     "forcing saving files that require root permission with :W
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
@@ -552,19 +557,6 @@ let maplocalleader='\'
 " color for matching brackets
 hi MatchParen cterm=none ctermbg=green ctermfg=none
 
-" Plugins to check:
-" https://github.com/wolfgangmehner/perl-support
-" https://github.com/vim-perl/vim-perl
-
-
-let b:csv_arrange_use_all_rows = 1
-let b:csv_arrange_align = 'r*'
-" let g:csv_delim_test='/<tab>'; TODO:
-
-" temp encoding settings
-" set fileencodings=utf-8,latin2
-
-
 " statusline
 set statusline=%.40F
 set statusline+=%=
@@ -572,8 +564,6 @@ set statusline+=%y
 set statusline+=%4l
 set statusline+=\ \|\ 
 set statusline+=%-4L
-
-
 
 " Open/close all folds
 noremap <F9> :call UnrolMe()<CR>
@@ -596,21 +586,10 @@ augroup remember_folds
   au BufWinEnter ?* silent! loadview 1
 augroup END
 
-
-
 inoremap <C-a> <C-o>$
-" nnoremap o o<Esc>^Da
-" nnoremap O O<Esc>^Da
-
-set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
-
 
 set cpoptions+=$
 
-map <leader>pt <Esc>:%! perltidy<CR>
-map <leader>ptv <Esc>:'<,'>! perltidy<CR>
-map <leader>t <Esc>:!prove -vl %<CR>
-map <leader>T <Esc>:!prove -vl % \\|less<CR>
 
 " :h movement
 " [[ -> for movement
@@ -624,3 +603,5 @@ onoremap jk <Esc>
 nnoremap <leader><space> <c-w><c-w>
 
 " set path?
+" TODO: lazy loading dein
+" gd->gotodef.
