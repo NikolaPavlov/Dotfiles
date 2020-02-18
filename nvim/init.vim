@@ -36,7 +36,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('godlygeek/tabular') " align text
     call dein#add('sjl/gundo.vim') " undo history
     call dein#add('majutsushi/tagbar') " display tags <T>
-    call dein#add('mileszs/ack.vim')
+    call dein#add('mileszs/ack.vim') " grep replacement
     " call dein#add('davidhalter/jedi-vim') "need for go to definitions
     " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
     " call dein#add('w0rp/ale') " linter on the fly (flake8 should be installed locally)
@@ -52,6 +52,7 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
     " call dein#add('tpope/vim-fugitive') "git wrapper
     " call dein#add('chrisbra/csv.vim') " csv files formating
+    call dein#add('tpope/vim-unimpaired') " set of usefull mappings
     call dein#end()
     call dein#save_state()
 endif
@@ -101,13 +102,14 @@ syntax enable
     let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
 " }}}
 " {{{ NerdTree
+    let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
     let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
     let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
 
     autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .'
 
     " autoclose vim if only open window is NerdTree
-    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
     autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " }}}
@@ -327,7 +329,7 @@ set foldlevelstart=10 "open most folds by default
 set autoread "auto read file when it was modified outside of vim
 set autowriteall " automatically write file when leaving modified buffer
 "20 the swap file
-set noswapfile
+" set noswapfile
 "21 command line editing
 set wildmenu "comand line completion show a list of matches
 set wildmode=full "specifies how command line completion works
@@ -603,3 +605,6 @@ nnoremap <leader>ptv <Esc>:'<,'>! perltidy<CR>
 nnoremap <leader>t <Esc>:!prove -vl %<CR>
 nnoremap <leader>T <Esc>:!prove -vl % \\|less<CR>
 
+" TODO: prevent nvim from nesting in terminal buffer
+
+set directory=$HOME/.config/nvim/swap//
