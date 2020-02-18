@@ -9,21 +9,6 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim') " autocomplete engine
-    " call dein#add('davidhalter/jedi-vim') "need for go to definitions
-    " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
-    " call dein#add('w0rp/ale') " linter on the fly (flake8 should be installed locally)
-    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
-    " call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
-    " call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
-    " call dein#add('nvie/vim-flake8') " flake8
-    " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-    " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
-    " call dein#add('easymotion/vim-easymotion') " easy motion
-    " call dein#add('janko/vim-test')
-    " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-    " call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
-    " call dein#add('tpope/vim-fugitive') "git wrapper
-    " call dein#add('chrisbra/csv.vim') " csv files formating
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('mhinz/vim-signify') " show git diff in the left bar
@@ -52,6 +37,21 @@ if dein#load_state('~/.cache/dein')
     call dein#add('sjl/gundo.vim') " undo history
     call dein#add('majutsushi/tagbar') " display tags <T>
     call dein#add('mileszs/ack.vim')
+    " call dein#add('davidhalter/jedi-vim') "need for go to definitions
+    " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+    " call dein#add('w0rp/ale') " linter on the fly (flake8 should be installed locally)
+    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
+    " call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
+    " call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
+    " call dein#add('nvie/vim-flake8') " flake8
+    " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
+    " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
+    " call dein#add('easymotion/vim-easymotion') " easy motion
+    " call dein#add('janko/vim-test')
+    " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
+    " call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
+    " call dein#add('tpope/vim-fugitive') "git wrapper
+    " call dein#add('chrisbra/csv.vim') " csv files formating
     call dein#end()
     call dein#save_state()
 endif
@@ -161,11 +161,6 @@ syntax enable
         au BufNewFile,BufRead *.pl set colorcolumn=120
         au BufNewFile,BufRead *.t set filetype=perl
         au FileType perl set foldmethod=indent
-
-        nnoremap <leader>pt <Esc>:%! perltidy<CR>
-        nnoremap <leader>ptv <Esc>:'<,'>! perltidy<CR>
-        nnoremap <leader>t <Esc>:!prove -vl %<CR>
-        nnoremap <leader>T <Esc>:!prove -vl % \\|less<CR>
 
         set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
     augroup END
@@ -373,11 +368,6 @@ let maplocalleader='\'
     nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
     nnoremap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
     nnoremap <leader>et :e ~/Temp/temp.pl<CR>
-" }}}
-" {{{ Test mappings
-    nnoremap <silent> <leader>tt :TestSuite<CR>
-    nnoremap <silent> <leader>tn :TestNearest<CR>
-    nnoremap <silent> <leader>tf :TestFile<CR>
 " }}}
 " {{{ Other
     "Tab for navigating between split screens
@@ -605,3 +595,11 @@ nnoremap <leader><space> <c-w><c-w>
 " set path?
 " TODO: lazy loading dein
 " gd->gotodef.
+nnoremap <leader>V :Vifm<CR>
+
+
+nnoremap <leader>pt <Esc>:%! perltidy<CR>
+nnoremap <leader>ptv <Esc>:'<,'>! perltidy<CR>
+nnoremap <leader>t <Esc>:!prove -vl %<CR>
+nnoremap <leader>T <Esc>:!prove -vl % \\|less<CR>
+
