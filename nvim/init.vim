@@ -605,3 +605,6 @@ nnoremap <leader><space> <c-w><c-w>
 " set path?
 " TODO: lazy loading dein
 " gd->gotodef.
+
+
+" TODO: prevent nvim from nesting in terminal buffer
