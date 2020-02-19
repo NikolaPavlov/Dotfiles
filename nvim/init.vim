@@ -423,6 +423,9 @@ let maplocalleader='\'
     nnoremap g, g,zz
     "replace visualy selected text with the what is in the paste register
     vnoremap pp "+p
+    "paste with indentation
+    nnoremap p p=`]
+    nnoremap P [P
     " close current buffer
     nnoremap <leader>d :bd<CR>
 
@@ -507,9 +510,9 @@ let maplocalleader='\'
     " let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
     " jump to the end of pasted txt
-    vnoremap <silent> y y`]
-    vnoremap <silent> p p`]
-    nnoremap <silent> p p`]
+    " vnoremap <silent> y y`]
+    " vnoremap <silent> p p`]
+    " nnoremap <silent> p p`]
 "}}}
 "{{{ Functions
 
@@ -594,8 +597,6 @@ set cpoptions+=$
 onoremap jk <Esc>
 nnoremap <leader><space> <c-w><c-w>
 
-" set path?
-" TODO: lazy loading dein
 " gd->gotodef.
 nnoremap <leader>V :Vifm<CR>
 
@@ -605,6 +606,11 @@ nnoremap <leader>ptv <Esc>:'<,'>! perltidy<CR>
 nnoremap <leader>t <Esc>:!prove -vl %<CR>
 nnoremap <leader>T <Esc>:!prove -vl % \\|less<CR>
 
+" TODO: lazy loading dein
 " TODO: prevent nvim from nesting in terminal buffer
 
 set directory=$HOME/.config/nvim/swap//
+
+" show whitespaces while typing
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$/
