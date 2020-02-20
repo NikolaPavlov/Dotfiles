@@ -47,7 +47,6 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
     " call dein#add('easymotion/vim-easymotion') " easy motion
-    " call dein#add('janko/vim-test')
     " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
     " call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
     " call dein#add('tpope/vim-fugitive') "git wrapper
