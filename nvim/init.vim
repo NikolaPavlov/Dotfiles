@@ -9,21 +9,6 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim') " autocomplete engine
-    " call dein#add('davidhalter/jedi-vim') "need for go to definitions
-    " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
-    " call dein#add('w0rp/ale') " linter on the fly (flake8 should be installed locally)
-    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
-    " call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
-    " call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
-    " call dein#add('nvie/vim-flake8') " flake8
-    " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-    " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
-    " call dein#add('easymotion/vim-easymotion') " easy motion
-    " call dein#add('janko/vim-test')
-    " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-    " call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
-    " call dein#add('tpope/vim-fugitive') "git wrapper
-    " call dein#add('chrisbra/csv.vim') " csv files formating
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('mhinz/vim-signify') " show git diff in the left bar
@@ -51,7 +36,22 @@ if dein#load_state('~/.cache/dein')
     call dein#add('godlygeek/tabular') " align text
     call dein#add('sjl/gundo.vim') " undo history
     call dein#add('majutsushi/tagbar') " display tags <T>
-    call dein#add('mileszs/ack.vim')
+    call dein#add('mileszs/ack.vim') " grep replacement
+    " call dein#add('davidhalter/jedi-vim') "need for go to definitions
+    " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+    " call dein#add('w0rp/ale') " linter on the fly (flake8 should be installed locally)
+    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
+    " call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
+    " call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
+    " call dein#add('nvie/vim-flake8') " flake8
+    " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
+    " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
+    " call dein#add('easymotion/vim-easymotion') " easy motion
+    " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
+    " call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
+    " call dein#add('tpope/vim-fugitive') "git wrapper
+    " call dein#add('chrisbra/csv.vim') " csv files formating
+    call dein#add('tpope/vim-unimpaired') " set of usefull mappings
     call dein#end()
     call dein#save_state()
 endif
@@ -101,13 +101,14 @@ syntax enable
     let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
 " }}}
 " {{{ NerdTree
+    let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
     let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
     let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
 
     autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .'
 
     " autoclose vim if only open window is NerdTree
-    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
     autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " }}}
@@ -161,7 +162,6 @@ syntax enable
         au BufNewFile,BufRead *.pl set colorcolumn=120
         au BufNewFile,BufRead *.t set filetype=perl
         au FileType perl set foldmethod=indent
-
 
         set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
     augroup END
@@ -328,7 +328,7 @@ set foldlevelstart=10 "open most folds by default
 set autoread "auto read file when it was modified outside of vim
 set autowriteall " automatically write file when leaving modified buffer
 "20 the swap file
-set noswapfile
+" set noswapfile
 "21 command line editing
 set wildmenu "comand line completion show a list of matches
 set wildmode=full "specifies how command line completion works
@@ -420,6 +420,9 @@ let maplocalleader='\'
     nnoremap g, g,zz
     "replace visualy selected text with the what is in the paste register
     vnoremap pp "+p
+    "paste with indentation
+    nnoremap p p=`]
+    nnoremap P [P
     " close current buffer
     nnoremap <leader>d :bd<CR>
 
@@ -506,9 +509,9 @@ let maplocalleader='\'
     " let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
     " jump to the end of pasted txt
-    vnoremap <silent> y y`]
-    vnoremap <silent> p p`]
-    nnoremap <silent> p p`]
+    " vnoremap <silent> y y`]
+    " vnoremap <silent> p p`]
+    " nnoremap <silent> p p`]
 "}}}
 "{{{ Functions
 
@@ -593,9 +596,8 @@ set cpoptions+=$
 onoremap jk <Esc>
 nnoremap <leader><space> <c-w><c-w>
 
-" set path?
-" TODO: lazy loading dein
 " gd->gotodef.
+nnoremap <leader>V :Vifm<CR>
 
 nnoremap <leader>pt <Esc>:%! perltidy<CR>
 nnoremap <leader>ptv <Esc>:'<,'>! perltidy<CR>
@@ -603,3 +605,11 @@ nnoremap <leader>t <Esc>:!prove -vl %<CR>
 nnoremap <leader>T <Esc>:!prove -vl % \\|less<CR>
 
 set path=$PWD/**
+" TODO: lazy loading dein
+" TODO: prevent nvim from nesting in terminal buffer
+
+set directory=$HOME/.config/nvim/swap//
+
+" show whitespaces while typing
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$/
