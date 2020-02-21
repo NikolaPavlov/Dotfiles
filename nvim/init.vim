@@ -162,10 +162,6 @@ syntax enable
         au BufNewFile,BufRead *.t set filetype=perl
         au FileType perl set foldmethod=indent
 
-        nnoremap <leader>pt <Esc>:%! perltidy<CR>
-        nnoremap <leader>ptv <Esc>:'<,'>! perltidy<CR>
-        nnoremap <leader>t <Esc>:!prove -vl %<CR>
-        nnoremap <leader>T <Esc>:!prove -vl % \\|less<CR>
 
         set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
     augroup END
@@ -374,11 +370,6 @@ let maplocalleader='\'
     nnoremap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
     nnoremap <leader>et :e ~/Temp/temp.pl<CR>
 " }}}
-" {{{ Test mappings
-    nnoremap <silent> <leader>tt :TestSuite<CR>
-    nnoremap <silent> <leader>tn :TestNearest<CR>
-    nnoremap <silent> <leader>tf :TestFile<CR>
-" }}}
 " {{{ Other
     "Tab for navigating between split screens
     " nnoremap <tab> <c-w><c-w>
@@ -386,8 +377,10 @@ let maplocalleader='\'
     nnoremap / /\v
     nnoremap ? ?\v
     "move currsor with j and k on wrap lines too
-    nnoremap j gj
-    nnoremap k gk
+    " nnoremap j gj
+    " nnoremap k gk
+    nnoremap j +
+    nnoremap k -
     " no highlight
     nnoremap <leader><leader> :noh<cr>
     " map ; to :
@@ -402,12 +395,8 @@ let maplocalleader='\'
     vnoremap <Esc> <nop>
     inoremap jk <Esc>
     inoremap JK <Esc>
-    inoremap kj <Esc>
-    inoremap KJ <Esc>
     cnoremap jk <C-C>
     cnoremap JK <C-C>
-    cnoremap kj <C-C>
-    cnoremap KJ <C-C>
     vnoremap <leader><leader> <Esc>
 
     "select all text
@@ -485,12 +474,14 @@ let maplocalleader='\'
     iabbrev todo TODO:
     iabbrev TODO TODO:
     iabbrev pritn print
+    iabbrev pirnt print
     iabbrev adn and
     iabbrev waht wath
     iabbrev tehn then
     iabbrev reutnr return
     iabbrev retunr return
     iabbrev reutrn return
+    iabbrev retrun return
 "}}}
 "{{{ Links
 " =============================================================================
@@ -605,3 +596,10 @@ nnoremap <leader><space> <c-w><c-w>
 " set path?
 " TODO: lazy loading dein
 " gd->gotodef.
+
+nnoremap <leader>pt <Esc>:%! perltidy<CR>
+nnoremap <leader>ptv <Esc>:'<,'>! perltidy<CR>
+nnoremap <leader>t <Esc>:!prove -vl %<CR>
+nnoremap <leader>T <Esc>:!prove -vl % \\|less<CR>
+
+set path=$PWD/**

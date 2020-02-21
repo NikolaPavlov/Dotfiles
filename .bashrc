@@ -180,4 +180,18 @@ source <(gopass completion bash)
 # export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
 # export LC_ALL="en_US.UTF-8"
-alias runp='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
+alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
+
+alias sshcore='ssh n.pavlov@demoeasy-core.datamax.bg'
+alias sshweb='ssh n.pavlov@demoeasy-web.datamax.bg'
+alias cdcore='cd /mnt/core/home/n.pavlov'
+alias cdremedy='cd /mnt/core/usr/local/remedy2'
+
+
+if [ -f $HOME/.sensitive ]; then
+    . $HOME/.sensitive
+fi
+alias sshcore=$SSHCORE
+alias sshweb=$SSHWEB
+alias cdcore=$CDCORE
+alias cdremedy=$CDREMEDY
