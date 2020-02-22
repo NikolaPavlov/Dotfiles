@@ -163,6 +163,13 @@ syntax enable
         au BufWinLeave ?* mkview 1
         au BufWinEnter ?* silent! loadview 1
     augroup END
+
+    " augroup auto_save_folds
+    "     autocmd!
+    "     autocmd BufWinLeave * mkview
+    "     autocmd BufWinEnter * silent loadview
+    " augroup
+
 "}}}
 "{{{ Perl
     augroup ft_perl
@@ -322,7 +329,8 @@ set shiftround "round to 'shiftwidth' for '<<' and '>>'
 "16 folding
 set foldmethod=indent
 set foldlevel=99
-set foldlevelstart=10 "open most folds by default
+" set foldlevelstart=10 "open most folds by default
+set foldlevelstart=0 "close most folds by default
 "17 diff mode
 "18 mapping
 "19 reading and writing files
@@ -338,7 +346,7 @@ set wildmode=full "specifies how command line completion works
 "24 language specific
 "25 multi-byte characters
 " set fileencoding=utf-8 :TODO
-set encoding=utf-8 :TODO
+set encoding=utf-8
 "26 various
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
@@ -362,7 +370,7 @@ set clipboard+=unnamedplus
 "                            |_|
 " =============================================================================
 let mapleader=','
-let maplocalleader='\' "TODO:
+" let maplocalleader='\<Space>' "TODO:
 " {{{ Open files
     nnoremap <leader>ev :e $MYVIMRC<CR>
     nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
@@ -376,6 +384,8 @@ let maplocalleader='\' "TODO:
     nnoremap ? ?\v
     nnoremap j gj
     nnoremap k gk
+    " nnoremap j +
+    " nnoremap k -
     nnoremap <leader><leader> :noh<cr>
     nnoremap ; :
     nnoremap <silent><leader>s :set spell!<CR>
@@ -451,12 +461,14 @@ let maplocalleader='\' "TODO:
     iabbrev todo TODO:
     iabbrev TODO TODO:
     iabbrev pritn print
+    iabbrev pirnt print
     iabbrev adn and
     iabbrev waht wath
     iabbrev tehn then
     iabbrev reutnr return
     iabbrev retunr return
     iabbrev reutrn return
+    iabbrev retrun return
 "}}}
 "{{{ Links
 " =============================================================================
@@ -509,26 +521,22 @@ let maplocalleader='\' "TODO:
     hi MatchParen cterm=none ctermbg=green ctermfg=none
 
     " show the whitespaces
-    highlight RedundantSpaces ctermbg=red guibg=red
-    match RedundantSpaces /\s\+$/
+    " highlight RedundantSpaces ctermbg=red guibg=red
+
+    " highlight trailing whitespace
+    match ErrorMsg '\s\+$'
+    " remove trailing whitespaces automatically   " match RedundantSpaces /\s\+$/
+    autocmd BufWritePre * :%s/\s\+$//e
 "}}}
 
 " TODO: add 10j 2k type of movements to the jump list?
 " TODO: lazy loading dein
 " TODO: prevent nvim from nesting in terminal buffer
 " TODO:
+" TODO: better folding experience
 " :h movement
 " [[ -> for movement
 " ]h
 
-
-
-
-
-
-
-
-
-
-
+set path=$PWD/**
 set visualbell
