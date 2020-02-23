@@ -129,7 +129,7 @@ syntax enable
 " {{{ VimSlash
   if has('timers')
     " Blink 2 times with 50ms interval
-   noremap <expr> <plug>(slash-after) slash#blink(2, 50)
+   noremap <expr> <plug>(slash-after) slash#blink(3, 50)
   endif
 " }}}
 " {{{ InstantRst
@@ -370,7 +370,6 @@ set clipboard+=unnamedplus
 "                            |_|
 " =============================================================================
 let mapleader=','
-" let maplocalleader='\<Space>' "TODO:
 " {{{ Open files
     nnoremap <leader>ev :e $MYVIMRC<CR>
     nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
@@ -387,7 +386,7 @@ let mapleader=','
     " nnoremap j +
     " nnoremap k -
     nnoremap <leader><leader> :noh<cr>
-    nnoremap ; :
+    " nnoremap ; :
     nnoremap <silent><leader>s :set spell!<CR>
     nnoremap <BS> za
     vnoremap <leader><leader> <Esc>
@@ -480,6 +479,7 @@ let mapleader=','
 " |______|_|_| |_|_|\_\___/
 " =============================================================================
 " :h nvim
+" :Tutor
 " vim.org
 " http://vimcasts.org/
 " http://vimawesome.com/
@@ -527,16 +527,23 @@ let mapleader=','
     match ErrorMsg '\s\+$'
     " remove trailing whitespaces automatically   " match RedundantSpaces /\s\+$/
     autocmd BufWritePre * :%s/\s\+$//e
+    " allign current paragraph
+    noremap <leader>a =ip
 "}}}
 
 " TODO: add 10j 2k type of movements to the jump list?
 " TODO: lazy loading dein
 " TODO: prevent nvim from nesting in terminal buffer
-" TODO:
 " TODO: better folding experience
+" TODO: map CAPS_LOCK to Esc
 " :h movement
 " [[ -> for movement
 " ]h
 
 set path=$PWD/**
 set visualbell
+
+" map <CR> <Leader>
+" noremap <space> :
+" let g:EasyMotion_leader_key = '<Space>'
+" let g:EasyMotion_mapping_b = '<leader><Space>'
