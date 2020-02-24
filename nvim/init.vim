@@ -15,6 +15,9 @@ if dein#load_state('~/.cache/dein')
     call dein#add('wellle/targets.vim') " add 'ci(' command
     call dein#add('tpope/vim-surround') " change surroundings
     call dein#add('tpope/vim-repeat') " repeat surround commands
+    call dein#add('tpope/vim-unimpaired') " set of usefull mappings
+    " call dein#add('tpope/vim-fugitive') "git wrapper
+    call dein#add('tpope/vim-fugitive', {'on_cmd' : 'Gstatus'})
     call dein#add('tomtom/tcomment_vim')
     call dein#add('scrooloose/nerdtree')
     call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
@@ -39,19 +42,44 @@ if dein#load_state('~/.cache/dein')
     call dein#add('mileszs/ack.vim') " grep replacement
     " call dein#add('davidhalter/jedi-vim') "need for go to definitions
     " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
-    " call dein#add('w0rp/ale') " linter on the fly (flake8 should be installed locally)
+
+    call dein#add('dense-analysis/ale') " linter on the fly (flake8 should be installed locally)
+    	let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
+		let g:ale_perl_perlcritic_showrules = 1
+        let g:ale_type_map = {
+                    \ 'perlcritic': {'ES': 'WS', 'E': 'W'},
+                    \}
+
+		let g:ale_fixers = {
+					\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+					\   'javascript': ['perltidy'],
+					\}
+
+		" {
+		" 			\   'csh': ['shell'],
+		" 			\   'elixir': ['credo', 'dialyxir', 'dogma'],
+		" 			\   'go': ['gofmt', 'golint', 'go vet'],
+		" 			\   'hack': ['hack'],
+		" 			\   'help': [],
+		" 			\   'perl': ['perlcritic'],
+		" 			\   'perl6': [],
+		" 			\   'python': ['flake8', 'mypy', 'pylint'],
+		" 			\   'rust': ['cargo'],
+		" 			\   'spec': [],
+		" 			\   'text': [],
+		" 			\   'vue': ['eslint', 'vls'],
+		" 			\   'zsh': ['shell'],
+		" 			\}
+<
     " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
     " call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
-    " call dein#add('tmhedberg/SimpylFold') "fold manager for python (improve folding)
     " call dein#add('nvie/vim-flake8') " flake8
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
-    " call dein#add('easymotion/vim-easymotion') " easy motion
+    call dein#add('easymotion/vim-easymotion') " easy motion
     " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-    " call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
-    " call dein#add('tpope/vim-fugitive') "git wrapper
+    call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
     " call dein#add('chrisbra/csv.vim') " csv files formating
-    call dein#add('tpope/vim-unimpaired') " set of usefull mappings
     call dein#end()
     call dein#save_state()
 endif
@@ -112,9 +140,6 @@ syntax enable
 
     autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " }}}
-" {{{ SimpylFold
-    let g:SimpylFold_docstring_preview=1 "display docstrings in folds
-" }}}
 " {{{ Fugitive
     " https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
     "
@@ -133,7 +158,7 @@ syntax enable
 " {{{ VimSlash
   if has('timers')
     " Blink 2 times with 50ms interval
-   noremap <expr> <plug>(slash-after) slash#blink(2, 50)
+   noremap <expr> <plug>(slash-after) slash#blink(3, 50)
   endif
 " }}}
 " {{{ InstantRst
@@ -155,15 +180,39 @@ syntax enable
 "}}}
 " }}}
 "{{{ Filetype specific
+"{{{ All Files
+    " When editing a file, always jump to the last known cursor position.
+    autocmd BufReadPost *
+                \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                \   exe "normal! g`\"" |
+                \ endif
+
+    augroup remember_folds
+        autocmd!
+        au BufWinLeave ?* mkview 1
+        au BufWinEnter ?* silent! loadview 1
+    augroup END
+
+    " augroup auto_save_folds
+    "     autocmd!
+    "     autocmd BufWinLeave * mkview
+    "     autocmd BufWinEnter * silent loadview
+    " augroup
+
+"}}}
 "{{{ Perl
     augroup ft_perl
         au!
         au BufNewFile,BufRead *.pl set wrap textwidth=120
         au BufNewFile,BufRead *.pl set colorcolumn=120
         au BufNewFile,BufRead *.t set filetype=perl
+        au BufNewFile,BufRead *.t set set nowrap
         au FileType perl set foldmethod=indent
 
         set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
+
+        noremap <F5> :w<CR>:!perl %<CR>
+        inoremap <F5> <Esc>:w<CR>:!perl %<CR>
     augroup END
 "}}}
 "{{{ Python
@@ -200,34 +249,19 @@ syntax enable
         au BufNewFile,BufRead *.html set nowrap
         au BufNewFile,BufRead *.html set colorcolumn=
 
+        autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-        autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-        autocmd BufWritePre,BufRead *.html :normal gg=G
-    augroup END
-"}}}
-"{{{ Vagrant
-    augroup ft_vagrant
-        au!
-        au BufRead,BufNewFile Vagrantfile set ft=ruby
+        autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
     augroup END
 "}}}
 "{{{ NeoSnippets
     au FileType neosnippet set noexpandtab
 "}}}
 "{{{ Text + rst + md
-    " Line wrap at 120
     augroup text_rst_md
         au!
-        au BufNewFile,BufRead *.txt set wrap textwidth=120
-        au BufNewFile,BufRead *.txt set colorcolumn=120
-        au BufNewFile,BufRead *.rst set wrap textwidth=120
-        au BufNewFile,BufRead *.rst set colorcolumn=120
-        au BufNewFile,BufRead *.md set wrap textwidth=120
-        au BufNewFile,BufRead *.md set colorcolumn=120
+        au BufNewFile,BufRead *.{txt,rst,md} set wrap textwidth=120
+        au BufNewFile,BufRead *.{txt,rst,md} set colorcolumn=120
     augroup END
 "}}}
 "{{{ Yaml
@@ -268,6 +302,7 @@ syntax enable
 " :options options
 "1 important
 set nocompatible "don't behave like vi
+set cpoptions+=$ "$ show at the end of change range
 "2 moving around, searching and patterns
 set incsearch "show match for partly search command
 set showmatch "when inserting a bracket, briefly jump to its match
@@ -282,6 +317,7 @@ set lazyredraw "don't redraw while executing macros
 set number "show current line number
 set relativenumber "show line numbers relative to the current line
 set scrolloff=5 "number of screen lines to show around the cursor
+set sidescrolloff=5 "number of col to show when scroll right
 "5 syntax, highlighting and spelling
 syntax on
 set hlsearch "highlight all matches for the last used search pattern
@@ -290,6 +326,7 @@ set colorcolumn=80 "columns to highlight (local to window)
 highlight Comment cterm=italic
 "6 multiple windows
 set laststatus=2 "when to show status line (2 = always)
+set statusline=%.40F%=%y%4l\ \|\%-4L
 set splitbelow  "a new window is put below the current one
 set splitright "a new window is put right of the current one
 "7 multiple tab pages
@@ -321,14 +358,15 @@ set shiftround "round to 'shiftwidth' for '<<' and '>>'
 "16 folding
 set foldmethod=indent
 set foldlevel=99
-set foldlevelstart=10 "open most folds by default
+" set foldlevelstart=10 "open most folds by default
+set foldlevelstart=0 "close most folds by default
 "17 diff mode
 "18 mapping
 "19 reading and writing files
 set autoread "auto read file when it was modified outside of vim
 set autowriteall " automatically write file when leaving modified buffer
 "20 the swap file
-" set noswapfile
+set directory=$HOME/.config/nvim/swap// "dir for swap files
 "21 command line editing
 set wildmenu "comand line completion show a list of matches
 set wildmode=full "specifies how command line completion works
@@ -337,9 +375,7 @@ set wildmode=full "specifies how command line completion works
 "24 language specific
 "25 multi-byte characters
 " set fileencoding=utf-8 :TODO
-" set encoding=utf-8 :TODO
-" set fileencoding=iso-8859-1
-" set encoding=iso-8859-1
+set encoding=utf-8
 "26 various
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
@@ -363,7 +399,6 @@ set clipboard+=unnamedplus
 "                            |_|
 " =============================================================================
 let mapleader=','
-let maplocalleader='\'
 " {{{ Open files
     nnoremap <leader>ev :e $MYVIMRC<CR>
     nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
@@ -372,43 +407,26 @@ let maplocalleader='\'
 " }}}
 " {{{ Other
     "Tab for navigating between split screens
-    " nnoremap <tab> <c-w><c-w>
-    "better regular expressions searching
+    nnoremap <leader><space> <c-w><c-w> " navigation between vsp
     nnoremap / /\v
     nnoremap ? ?\v
-    "move currsor with j and k on wrap lines too
-    " nnoremap j gj
-    " nnoremap k gk
-    nnoremap j +
-    nnoremap k -
-    " no highlight
+    nnoremap j gj
+    nnoremap k gk
+    " nnoremap j +
+    " nnoremap k -
     nnoremap <leader><leader> :noh<cr>
-    " map ; to :
-    nnoremap ; :
-    "turn on off spell checking with ,s
+    " nnoremap ; :
     nnoremap <silent><leader>s :set spell!<CR>
-    "folding and unfolding with Backspace
     nnoremap <BS> za
-
-    inoremap <Esc> <nop>
-    cnoremap <Esc> <nop>
-    vnoremap <Esc> <nop>
-    inoremap jk <Esc>
-    inoremap JK <Esc>
-    cnoremap jk <C-C>
-    cnoremap JK <C-C>
     vnoremap <leader><leader> <Esc>
-
-    "select all text
     noremap <leader>a ggVG
-    "sort selected text
     vnoremap <leader>s :sort<CR>
-    "moving code blocks
     vnoremap < <gv
     vnoremap > >gv
     "substitute with ctrl + s
-    nnoremap <c-s> :%s/
-    vnoremap <c-s> :s/
+    " nnoremap <c-s> :%s/
+    " vnoremap <c-s> :s/
+
     " replace the name of variable in current file
     nnoremap cv :%s/\<<C-r><C-w>\>/
 
@@ -423,6 +441,7 @@ let maplocalleader='\'
     "paste with indentation
     nnoremap p p=`]
     nnoremap P [P
+    inoremap <C-a> <C-o>$
     " close current buffer
     nnoremap <leader>d :bd<CR>
 
@@ -431,12 +450,6 @@ let maplocalleader='\'
 
     "forcing saving files that require root permission with :W
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-
-    " When editing a file, always jump to the last known cursor position.
-    autocmd BufReadPost *
-                \ if line("'\"") > 1 && line("'\"") <= line("$") |
-                \   exe "normal! g`\"" |
-                \ endif
 " }}}
 " {{{ Plugin based remaps
     " {{{ Buftabline
@@ -456,7 +469,6 @@ let maplocalleader='\'
     noremap <leader>c :TComment<cr>
     nnoremap <leader>g :Goyo<CR>
     nnoremap <leader>nf :Neoformat<cr>
-    nnoremap <c-p> :FuzzyOpen<CR>
     nnoremap <leader>u :GundoToggle<CR>
     nnoremap T :TagbarToggle<CR>
 " }}}
@@ -496,22 +508,13 @@ let maplocalleader='\'
 " |______|_|_| |_|_|\_\___/
 " =============================================================================
 " :h nvim
+" :Tutor
 " vim.org
 " http://vimcasts.org/
 " http://vimawesome.com/
 " http://learnvimscriptthehardway.stevelosh.com/
 " https://vim.fandom.com/wiki/Category:VimTip ---> VimTips
 " =============================================================================
-"}}}
-"{{{ Garbage
-    " let g:SuperTabDefaultCompletionType = "<c-n>"
-    let g:SuperTabDefaultCompletionType = "context"
-    " let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-
-    " jump to the end of pasted txt
-    " vnoremap <silent> y y`]
-    " vnoremap <silent> p p`]
-    " nnoremap <silent> p p`]
 "}}}
 "{{{ Functions
 
@@ -537,79 +540,44 @@ let maplocalleader='\'
         endif
     endif
     endfunction
-"}}}  
-"{{{ Perl temp
-    noremap <F5> :w<CR>:!perl %<CR>
-    inoremap <F5> <Esc>:w<CR>:!perl %<CR>
+"}}}
+"{{{ Garbage
+    " let g:SuperTabDefaultCompletionType = "<c-n>"
+    let g:SuperTabDefaultCompletionType = "context"
+    " let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
-    nnoremap <leader>ep :e ~/Documents/Repos/Wiki/Temp_Perl.rst<CR>
+    " color for matching brackets
+    hi MatchParen cterm=none ctermbg=green ctermfg=none
 
+    " show the whitespaces
+    " highlight RedundantSpaces ctermbg=red guibg=red
+
+
+    " highlight trailing whitespace
+    match ErrorMsg '\s\+$'
+    " remove trailing whitespaces automatically   " match RedundantSpaces /\s\+$/
+    autocmd BufWritePre * :%s/\s\+$//e
+    " allign current paragraph
+    noremap <leader>a =ip
 "}}}
 
-
-
-" color for matching brackets
-hi MatchParen cterm=none ctermbg=green ctermfg=none
-
-" statusline
-set statusline=%.40F
-set statusline+=%=
-set statusline+=%y
-set statusline+=%4l
-set statusline+=\ \|\ 
-set statusline+=%-4L
-
-" Open/close all folds
-noremap <F9> :call UnrolMe()<CR>
-
-let $unrol=0
-function UnrolMe()
-if $unrol==0
-    :exe "normal zR"
-    let $unrol=1
-else
-    :exe "normal zM"
-    let $unrol=0
-endif
-endfunction
-
-
-augroup remember_folds
-  autocmd!
-  au BufWinLeave ?* mkview 1
-  au BufWinEnter ?* silent! loadview 1
-augroup END
-
-inoremap <C-a> <C-o>$
-
-set cpoptions+=$
-set directory=$HOME/.config/nvim/swap//
-
-
-" :h movement
-" [[ -> for movement
-" ]]
-" '' -> goes to where you were before go to specific mark
-" difference between ' and ` for marks
-" R -> For non stop replacement
-" gv -> repeat last visual selection
-" b# -> recent buffer jumpings
-onoremap jk <Esc>
-nnoremap <leader><space> <c-w><c-w>
-
-" gd->gotodef.
-nnoremap <leader>V :Vifm<CR>
-
-nnoremap <leader>pt <Esc>:%! perltidy<CR>
-nnoremap <leader>ptv <Esc>:'<,'>! perltidy<CR>
-nnoremap <leader>t <Esc>:!prove -vl %<CR>
-nnoremap <leader>T <Esc>:!prove -vl % \\|less<CR>
-
-set path=$PWD/**
+" TODO: add 10j 2k type of movements to the jump list?
 " TODO: lazy loading dein
 " TODO: prevent nvim from nesting in terminal buffer
+" TODO: better folding experience
+" TODO: map CAPS_LOCK to Esc
+" :h movement
+" [[ -> for movement
+" ]h
 
+set path=$PWD/**
+set visualbell
 
-" show whitespaces while typing
-highlight RedundantSpaces ctermbg=red guibg=red
-match RedundantSpaces /\s\+$/
+noremap <space> :
+inoremap jk <Esc>
+" let g:EasyMotion_leader_key = '<Space>'
+" let g:EasyMotion_mapping_b = '<leader><Space>'
+nnoremap <leader>w :w<cr>
+
+" free keys for mapping
+" <Tab>
