@@ -583,6 +583,7 @@ augroup END
 inoremap <C-a> <C-o>$
 
 set cpoptions+=$
+set directory=$HOME/.config/nvim/swap//
 
 
 " :h movement
@@ -608,7 +609,6 @@ set path=$PWD/**
 " TODO: lazy loading dein
 " TODO: prevent nvim from nesting in terminal buffer
 
-set directory=$HOME/.config/nvim/swap//
 
 " show whitespaces while typing
 highlight RedundantSpaces ctermbg=red guibg=red
