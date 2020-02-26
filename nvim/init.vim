@@ -38,54 +38,40 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Yggdroot/indentLine') " Showing indentation lines
     call dein#add('godlygeek/tabular') " align text
     call dein#add('sjl/gundo.vim') " undo history
-    call dein#add('majutsushi/tagbar') " display tags <T>
-    call dein#add('mileszs/ack.vim') " grep replacement
-    " call dein#add('davidhalter/jedi-vim') "need for go to definitions
-    " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+call dein#add('majutsushi/tagbar') " display tags <T>
+call dein#add('mileszs/ack.vim') " grep replacement
+" call dein#add('davidhalter/jedi-vim') "need for go to definitions
+" call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
 
-    call dein#add('dense-analysis/ale') " linter on the fly (flake8 should be installed locally)
-    	let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
-		let g:ale_perl_perlcritic_showrules = 1
-        let g:ale_type_map = {
-                    \ 'perlcritic': {'ES': 'WS', 'E': 'W'},
-                    \}
+call dein#add('dense-analysis/ale') " linter on the fly (flake8 should be installed locally)
+let g:ale_perl_perlcritic_showrules = 1
+let g:ale_linters = {'perl': ['perl']}
+let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
+" let g:ale_type_map = {
+" \    'perl': {'ES': 'WS'},
+" \    'perlcritic': {'ES': 'WS', 'E': 'W'},
+" \}
 
-		let g:ale_fixers = {
-					\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-					\   'javascript': ['perltidy'],
-					\}
+let g:ale_fixers = {
+			\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+			\   'perl': ['perltidy'],
+			\}
 
-		" {
-		" 			\   'csh': ['shell'],
-		" 			\   'elixir': ['credo', 'dialyxir', 'dogma'],
-		" 			\   'go': ['gofmt', 'golint', 'go vet'],
-		" 			\   'hack': ['hack'],
-		" 			\   'help': [],
-		" 			\   'perl': ['perlcritic'],
-		" 			\   'perl6': [],
-		" 			\   'python': ['flake8', 'mypy', 'pylint'],
-		" 			\   'rust': ['cargo'],
-		" 			\   'spec': [],
-		" 			\   'text': [],
-		" 			\   'vue': ['eslint', 'vls'],
-		" 			\   'zsh': ['shell'],
-		" 			\}
-<
-    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
-    " call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
-    " call dein#add('nvie/vim-flake8') " flake8
-    " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-    " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
-    call dein#add('easymotion/vim-easymotion') " easy motion
-    " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-    call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
-    " call dein#add('chrisbra/csv.vim') " csv files formating
-    call dein#end()
-    call dein#save_state()
+" call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
+" call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
+" call dein#add('nvie/vim-flake8') " flake8
+" call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
+" call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
+call dein#add('easymotion/vim-easymotion') " easy motion
+" call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
+call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
+" call dein#add('chrisbra/csv.vim') " csv files formating
+call dein#end()
+call dein#save_state()
 endif
 
 if dein#check_install()
- call dein#install()
+call dein#install()
 endif
 
 filetype plugin indent on
@@ -94,201 +80,223 @@ syntax enable
 "}}}
 " {{{ Plugin Options
 " {{{ Deoplete
-    let g:deoplete#enable_at_startup = 1
-    let g:AutoPairsMapCR=0
-    let g:deoplete#auto_complete_start_length = 1
-    let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_at_startup = 1
+let g:AutoPairsMapCR=0
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#enable_smart_case = 1
 
-    imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
-    imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-    imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 " }}}
 " {{{ NeoSnippet-snippets
-    let g:neosnippet#snippets_directory="$HOME/Documents/Repos/Dotfiles/NeoSnippets"
+let g:neosnippet#snippets_directory="$HOME/Documents/Repos/Dotfiles/NeoSnippets"
 
-    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-j>     <Plug>(neosnippet_expand_target)
+imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-j>     <Plug>(neosnippet_expand_target)
 " }}}
 " {{{ Jedi-vim
-    " jedi vim is used for GO TO definitions
-    let g:jedi#completions_enabled = 0 " disable jedi-vim autocompletion, we use deoplete-jedi for that
-    let g:jedi#goto_command = "<leader>G"
-    " let g:jedi#goto_assignments_command = "<leader>g"
-    " let g:jedi#goto_definitions_command = ""
-    let g:jedi#documentation_command = "K"
-    let g:jedi#usages_command = "<leader>n"
-    let g:jedi#rename_command = "<leader>r"
+" jedi vim is used for GO TO definitions
+let g:jedi#completions_enabled = 0 " disable jedi-vim autocompletion, we use deoplete-jedi for that
+let g:jedi#goto_command = "<leader>G"
+" let g:jedi#goto_assignments_command = "<leader>g"
+" let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
 " }}}
 " {{{ Neoformat
-    let g:neoformat_run_all_formatters = 1
-    let g:neoformat_enabled_python = ['black', 'isort']
-    let g:neoformat_enabled_javascript = ['js-beautify']
-    let g:neoformat_basic_format_align = 1 " Enable alignment
-    let g:neoformat_basic_format_retab = 1 " Enable tab to spaces conversion
-    let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
+let g:neoformat_run_all_formatters = 1
+let g:neoformat_enabled_python = ['black', 'isort']
+let g:neoformat_enabled_javascript = ['js-beautify']
+let g:neoformat_basic_format_align = 1 " Enable alignment
+let g:neoformat_basic_format_retab = 1 " Enable tab to spaces conversion
+let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
 " }}}
 " {{{ NerdTree
-    let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
-    let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
-    let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
 
-    autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .'
+let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
+" let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
 
-    " autoclose vim if only open window is NerdTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowLineNumbers = 1
+autocmd FileType nerdtree setlocal relativenumber
+let NERDTreeBookmarksSort = 2
 
-    autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+" :NerdTreeCWD -> anker NerdTree to the current dir
+" :Bookmark[<name>]
+" :OpenBookmark[<name>]
+" :ClearBookmarks [<bookmark>]
+" :EditBookmarks
+
+" ? - help
+" o - open
+" go - open but leave in NerdTree
+" s - open in split
+" gs - open in split and stay in NerdTree
+" <C-J> - Jump down to the next sibling on the current dir
+" <C-K> - Jump up to prev sibling on the current dir
+" C - Change the tree root to the selectes dir
+" m - Display NerdTree menu
+" I - hidden files on/off
+" B - on/off Bookmark table
+" F - on/off File displaying
+
+autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .'
+" autoclose vim if only open window is NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " }}}
 " {{{ Fugitive
-    " https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
-    "
-    "
-    " :Gstatus
-    " :Gpush
-    " :Gpull
-    " :Gcommit
-    " :Gdiff
-    " :Gmerge
-    " :Glog
-    " :Gblame
-    " :Gread (gir reset --hard HEAD)
-    " :Gwrite
+" https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
+"
+"
+" :Gstatus
+" :Gpush
+" :Gpull
+" :Gcommit
+" :Gdiff
+" :Gmerge
+" :Glog
+" :Gblame
+" :Gread (gir reset --hard HEAD)
+" :Gwrite
 " }}}
 " {{{ VimSlash
-  if has('timers')
-    " Blink 2 times with 50ms interval
-   noremap <expr> <plug>(slash-after) slash#blink(3, 50)
-  endif
+if has('timers')
+" Blink 2 times with 50ms interval
+noremap <expr> <plug>(slash-after) slash#blink(3, 50)
+endif
 " }}}
 " {{{ InstantRst
-    let g:instant_rst_localhost_only = 1
+let g:instant_rst_localhost_only = 1
 " }}}
 " {{{ Goyo
-    let g:goyo_width=120
+let g:goyo_width=120
 " }}}
 "{{{ Easymotion
-    noremap <localleader> <Plug>(easymotion-prefix)
-    " <localleader>f[char]
-    " <localleader>w
+noremap <localleader> <Plug>(easymotion-prefix)
+" <localleader>f[char]
+" <localleader>w
 "
 "}}}
 "{{{ CtrlP
-    let g:ctrlp_by_filename = 0 " search by filename instead of full path
-    set wildignore+=*/.git/*
-    let g:ctrlp_match_window = 'bottom,order:tbb,min:1,max:10,results:10'
+let g:ctrlp_by_filename = 0 " search by filename instead of full path
+set wildignore+=*/.git/*
+let g:ctrlp_match_window = 'bottom,order:tbb,min:1,max:10,results:10'
 "}}}
 " }}}
 "{{{ Filetype specific
 "{{{ All Files
-    " When editing a file, always jump to the last known cursor position.
-    autocmd BufReadPost *
-                \ if line("'\"") > 1 && line("'\"") <= line("$") |
-                \   exe "normal! g`\"" |
-                \ endif
+" When editing a file, always jump to the last known cursor position.
+autocmd BufReadPost *
+			\ if line("'\"") > 1 && line("'\"") <= line("$") |
+			\   exe "normal! g`\"" |
+			\ endif
 
-    augroup remember_folds
-        autocmd!
-        au BufWinLeave ?* mkview 1
-        au BufWinEnter ?* silent! loadview 1
-    augroup END
+augroup remember_folds
+	autocmd!
+	au BufWinLeave ?* mkview 1
+	au BufWinEnter ?* silent! loadview 1
+augroup END
 
-    " augroup auto_save_folds
-    "     autocmd!
-    "     autocmd BufWinLeave * mkview
-    "     autocmd BufWinEnter * silent loadview
-    " augroup
+" augroup auto_save_folds
+"     autocmd!
+"     autocmd BufWinLeave * mkview
+"     autocmd BufWinEnter * silent loadview
+" augroup
 
 "}}}
 "{{{ Perl
-    augroup ft_perl
-        au!
-        au BufNewFile,BufRead *.pl set wrap textwidth=120
-        au BufNewFile,BufRead *.pl set colorcolumn=120
-        au BufNewFile,BufRead *.t set filetype=perl
-        au BufNewFile,BufRead *.t set set nowrap
-        au FileType perl set foldmethod=indent
+augroup ft_perl
+	au!
+	au BufNewFile,BufRead *.pl set wrap textwidth=120
+	au BufNewFile,BufRead *.pl set colorcolumn=120
+	au BufNewFile,BufRead *.t set filetype=perl
+	au BufNewFile,BufRead *.t set set nowrap
+	au FileType perl set foldmethod=indent
 
-        set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
+	set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
 
-        noremap <F5> :w<CR>:!perl %<CR>
-        inoremap <F5> <Esc>:w<CR>:!perl %<CR>
-    augroup END
+	noremap <F5> :w<CR>:!perl %<CR>
+	inoremap <F5> <Esc>:w<CR>:!perl %<CR>
+augroup END
 "}}}
 "{{{ Python
-    augroup ft_python
-        au!
-        au BufNewFile,BufRead *.py set wrap textwidth=120
-        au BufNewFile,BufRead *.py set colorcolumn=120
-    augroup END
+augroup ft_python
+	au!
+	au BufNewFile,BufRead *.py set wrap textwidth=120
+	au BufNewFile,BufRead *.py set colorcolumn=120
+augroup END
 " }}}
 "{{{ Django
-    augroup ft_django
-        au!
-        au BufNewFile,BufRead urls.py           setlocal nowrap
-        au BufNewFile,BufRead urls.py           normal! zR
+augroup ft_django
+	au!
+	au BufNewFile,BufRead urls.py           setlocal nowrap
+	au BufNewFile,BufRead urls.py           normal! zR
 
-        au BufNewFile,BufRead admin.py setlocal filetype=python.django
-        au BufNewFile,BufRead urls.py setlocal filetype=python.django
-        au BufNewFile,BufRead models.py setlocal filetype=python.django
-        au BufNewFile,BufRead views.py setlocal filetype=python.django
-        au BufNewFile,BufRead forms.py setlocal filetype=python.django
+	au BufNewFile,BufRead admin.py setlocal filetype=python.django
+	au BufNewFile,BufRead urls.py setlocal filetype=python.django
+	au BufNewFile,BufRead models.py setlocal filetype=python.django
+	au BufNewFile,BufRead views.py setlocal filetype=python.django
+	au BufNewFile,BufRead forms.py setlocal filetype=python.django
 
-        au BufNewFile,BufRead base.py setlocal filetype=python.django
-        au BufNewFile,BufRead base.py setlocal foldmethod=marker
-        au BufNewFile,BufRead dev.py setlocal filetype=python.django
-        au BufNewFile,BufRead dev.py setlocal foldmethod=marker
-        au BufNewFile,BufRead prod.py setlocal filetype=python.django
-        au BufNewFile,BufRead prod.py setlocal foldmethod=marker
-    augroup END
+	au BufNewFile,BufRead base.py setlocal filetype=python.django
+	au BufNewFile,BufRead base.py setlocal foldmethod=marker
+	au BufNewFile,BufRead dev.py setlocal filetype=python.django
+	au BufNewFile,BufRead dev.py setlocal foldmethod=marker
+	au BufNewFile,BufRead prod.py setlocal filetype=python.django
+	au BufNewFile,BufRead prod.py setlocal foldmethod=marker
+augroup END
 " }}}
 "{{{ Html
-    augroup ft_html
-        au!
-        au BufNewFile,BufRead *.html set filetype=html
-        au BufNewFile,BufRead *.html set nowrap
-        au BufNewFile,BufRead *.html set colorcolumn=
+augroup ft_html
+	au!
+	au BufNewFile,BufRead *.html set filetype=html
+	au BufNewFile,BufRead *.html set nowrap
+	au BufNewFile,BufRead *.html set colorcolumn=
 
-        autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
+	autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-        autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
-    augroup END
+	autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
+augroup END
 "}}}
 "{{{ NeoSnippets
-    au FileType neosnippet set noexpandtab
+au FileType neosnippet set noexpandtab
 "}}}
 "{{{ Text + rst + md
-    augroup text_rst_md
-        au!
-        au BufNewFile,BufRead *.{txt,rst,md} set wrap textwidth=120
-        au BufNewFile,BufRead *.{txt,rst,md} set colorcolumn=120
-    augroup END
+augroup text_rst_md
+	au!
+	au BufNewFile,BufRead *.{txt,rst,md} set wrap textwidth=120
+	au BufNewFile,BufRead *.{txt,rst,md} set colorcolumn=120
+augroup END
 "}}}
 "{{{ Yaml
-    au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 "}}}
 "{{{ Vim
-    augroup filetype_vim
-        au!
-        au FileType vim setlocal foldmethod=marker
-        au BufNewFile,BufRead *.vim setlocal nowrap
-        au BufNewFile,BufRead *.vim setlocal colorcolumn=
-        au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
-    augroup END
+augroup filetype_vim
+	au!
+	au FileType vim setlocal foldmethod=marker
+	au BufNewFile,BufRead *.vim setlocal nowrap
+	au BufNewFile,BufRead *.vim setlocal colorcolumn=
+	au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
+augroup END
 "}}}
 "{{{ Gopass Files
 " https://woile.github.io/gopass-cheat-sheet/
 " https://woile.github.io/gopass-presentation/
-    au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
 "}}}
 "{{{ CSV
-    augroup ft_csv
-        au!
-        au BufNewFile,BufRead *.csv setlocal nowrap
-        au BufNewFile,BufRead *.csv setlocal list
-        au BufNewFile,BufRead *.csv setlocal listchars=tab:▸\ ,eol:¬
-    augroup END
+augroup ft_csv
+	au!
+	au BufNewFile,BufRead *.csv setlocal nowrap
+	au BufNewFile,BufRead *.csv setlocal list
+	au BufNewFile,BufRead *.csv setlocal listchars=tab:▸\ ,eol:¬
+augroup END
 "}}}
 "}}}
 "{{{ General :options
@@ -400,88 +408,89 @@ set clipboard+=unnamedplus
 " =============================================================================
 let mapleader=','
 " {{{ Open files
-    nnoremap <leader>ev :e $MYVIMRC<CR>
-    nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
-    nnoremap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
-    nnoremap <leader>et :e ~/Temp/temp.pl<CR>
+nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
+nnoremap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
+nnoremap <leader>et :e ~/Temp/temp.pl<CR>
 " }}}
 " {{{ Other
-    "Tab for navigating between split screens
-    nnoremap <leader><space> <c-w><c-w> " navigation between vsp
-    nnoremap / /\v
-    nnoremap ? ?\v
-    nnoremap j gj
-    nnoremap k gk
-    " nnoremap j +
-    " nnoremap k -
-    nnoremap <leader><leader> :noh<cr>
-    " nnoremap ; :
-    nnoremap <silent><leader>s :set spell!<CR>
-    nnoremap <BS> za
-    vnoremap <leader><leader> <Esc>
-    noremap <leader>a ggVG
-    vnoremap <leader>s :sort<CR>
-    vnoremap < <gv
-    vnoremap > >gv
-    "substitute with ctrl + s
-    " nnoremap <c-s> :%s/
-    " vnoremap <c-s> :s/
+"Tab for navigating between split screens
+nnoremap <leader><space> <c-w><c-w> " navigation between vsp
+nnoremap / /\v
+nnoremap ? ?\v
+nnoremap j gj
+nnoremap k gk
+" nnoremap j +
+" nnoremap k -
+nnoremap <leader><leader> :noh<cr>
+" nnoremap ; :
+nnoremap <silent><leader>s :set spell!<CR>
+nnoremap <BS> za
+vnoremap <leader><leader> <Esc>
+noremap <leader>a ggVG
+vnoremap <leader>s :sort<CR>
+vnoremap < <gv
+vnoremap > >gv
+"substitute with ctrl + s
+" nnoremap <c-s> :%s/
+" vnoremap <c-s> :s/
 
-    " replace the name of variable in current file
-    nnoremap cv :%s/\<<C-r><C-w>\>/
+" replace the name of variable in current file
+nnoremap cv :%s/\<<C-r><C-w>\>/
 
-    nnoremap n nzzzv
-    nnoremap N Nzzzv
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
-    "keep jumping results in the middle of the window
-    nnoremap g; g;zz
-    nnoremap g, g,zz
-    "replace visualy selected text with the what is in the paste register
-    vnoremap pp "+p
-    "paste with indentation
-    nnoremap p p=`]
-    nnoremap P [P
-    inoremap <C-a> <C-o>$
-    " close current buffer
-    nnoremap <leader>d :bd<CR>
+"keep jumping results in the middle of the window
+nnoremap g; g;zz
+nnoremap g, g,zz
+"replace visualy selected text with the what is in the paste register
+vnoremap pp "+p
+"paste with indentation
+nnoremap p p=`]
+nnoremap P [P
+inoremap <C-a> <C-o>$
+" close current buffer
+nnoremap <leader>d :bd<CR>
 
-    "Split line (sister to [J]oin lines)
-    nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+"Split line (sister to [J]oin lines)
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
-    "forcing saving files that require root permission with :W
-    command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+"forcing saving files that require root permission with :W
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 " }}}
 " {{{ Plugin based remaps
-    " {{{ Buftabline
-        nmap <leader>1 <Plug>BufTabLine.Go(1)
-        nmap <leader>2 <Plug>BufTabLine.Go(2)
-        nmap <leader>3 <Plug>BufTabLine.Go(3)
-        nmap <leader>4 <Plug>BufTabLine.Go(4)
-        nmap <leader>5 <Plug>BufTabLine.Go(5)
-        nmap <leader>6 <Plug>BufTabLine.Go(6)
-        nmap <leader>7 <Plug>BufTabLine.Go(7)
-        nmap <leader>8 <Plug>BufTabLine.Go(8)
-        nmap <leader>9 <Plug>BufTabLine.Go(9)
-        nmap <leader>0 <Plug>BufTabLine.Go(10)
-    " }}}
-    nnoremap <leader>ir :InstantRst<CR>
-    nnoremap t :NERDTreeToggle<CR>
-    noremap <leader>c :TComment<cr>
-    nnoremap <leader>g :Goyo<CR>
-    nnoremap <leader>nf :Neoformat<cr>
-    nnoremap <leader>u :GundoToggle<CR>
-    nnoremap T :TagbarToggle<CR>
+" {{{ Buftabline
+	nmap <leader>1 <Plug>BufTabLine.Go(1)
+	nmap <leader>2 <Plug>BufTabLine.Go(2)
+	nmap <leader>3 <Plug>BufTabLine.Go(3)
+	nmap <leader>4 <Plug>BufTabLine.Go(4)
+	nmap <leader>5 <Plug>BufTabLine.Go(5)
+	nmap <leader>6 <Plug>BufTabLine.Go(6)
+	nmap <leader>7 <Plug>BufTabLine.Go(7)
+	nmap <leader>8 <Plug>BufTabLine.Go(8)
+	nmap <leader>9 <Plug>BufTabLine.Go(9)
+	nmap <leader>0 <Plug>BufTabLine.Go(10)
+" }}}
+nnoremap <leader>ir :InstantRst<CR>
+nnoremap <C-t> :NERDTreeToggleVCS<CR>
+nnoremap <Tab> :NERDTreeToggleVCS<CR>
+noremap <leader>c :TComment<cr>
+nnoremap <leader>g :Goyo<CR>
+nnoremap <leader>nf :Neoformat<cr>
+nnoremap <leader>u :GundoToggle<CR>
+nnoremap T :TagbarToggle<CR>
 " }}}
 " {{{ Windows moving
-    nnoremap <C-h> <C-w>h
-    nnoremap <C-j> <C-w>j
-    nnoremap <C-k> <C-w>k
-    nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-    tnoremap <C-h> <C-\><C-n><C-w>h
-    tnoremap <C-j> <C-\><C-n><C-w>j
-    tnoremap <C-k> <C-\><C-n><C-w>k
-    tnoremap <C-l> <C-\><C-n><C-w>l
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
 " }}}
 "}}}
 "{{{ Abbreviations
@@ -558,7 +567,7 @@ let mapleader=','
     " remove trailing whitespaces automatically   " match RedundantSpaces /\s\+$/
     autocmd BufWritePre * :%s/\s\+$//e
     " allign current paragraph
-    noremap <leader>a =ip
+    " noremap <leader>a =ip
 "}}}
 
 " TODO: add 10j 2k type of movements to the jump list?
