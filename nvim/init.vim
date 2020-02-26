@@ -119,8 +119,13 @@ let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
 let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
 " let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
-
+" close NerdTree when open a file
+let NERDTreeQuitOnOpen = 1
+" delete the buffer of the file deleted from NerdTree
+let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowLineNumbers = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 autocmd FileType nerdtree setlocal relativenumber
 let NERDTreeBookmarksSort = 2
 
@@ -342,8 +347,8 @@ set splitright "a new window is put right of the current one
 "9 using the mouse
 set mouse=a " scroll in files and resize windows
 "10 GUI
-" set guifont=Inconsolata\ 13
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+
 "11 printing
 "12 messages and info
 set showcmd "show command keys in the status line
@@ -382,8 +387,9 @@ set wildmode=full "specifies how command line completion works
 "23 running make and jumping to errors
 "24 language specific
 "25 multi-byte characters
-" set fileencoding=utf-8 :TODO
 set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf8,cp1251
 "26 various
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
@@ -475,6 +481,8 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 nnoremap <leader>ir :InstantRst<CR>
 nnoremap <C-t> :NERDTreeToggleVCS<CR>
 nnoremap <Tab> :NERDTreeToggleVCS<CR>
+" open NERDTree on the current file
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 noremap <leader>c :TComment<cr>
 nnoremap <leader>g :Goyo<CR>
 nnoremap <leader>nf :Neoformat<cr>
@@ -590,3 +598,10 @@ nnoremap <leader>w :w<cr>
 
 " free keys for mapping
 " <Tab>
+
+
+
+" :e ++enc=cp1251
+
+" ctags -R -f ./.git/tags .
+
