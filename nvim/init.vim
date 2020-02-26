@@ -116,30 +116,24 @@ let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
 " }}}
 " {{{ NerdTree
 
-let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
-let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
 " let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
-" close NerdTree when open a file
-let NERDTreeQuitOnOpen = 1
-" delete the buffer of the file deleted from NerdTree
-let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeShowLineNumbers = 1
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
 autocmd FileType nerdtree setlocal relativenumber
+let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeBookmarksSort = 2
+let NERDTreeDirArrows = 1
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
+let NERDTreeMinimalUI = 1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
+let NERDTreeShowLineNumbers = 1
 
 " :NerdTreeCWD -> anker NerdTree to the current dir
 " :Bookmark[<name>]
-" :OpenBookmark[<name>]
 " :ClearBookmarks [<bookmark>]
 " :EditBookmarks
 
 " ? - help
-" o - open
-" go - open but leave in NerdTree
 " s - open in split
-" gs - open in split and stay in NerdTree
 " <C-J> - Jump down to the next sibling on the current dir
 " <C-K> - Jump up to prev sibling on the current dir
 " C - Change the tree root to the selectes dir
@@ -596,12 +590,6 @@ inoremap jk <Esc>
 " let g:EasyMotion_mapping_b = '<leader><Space>'
 nnoremap <leader>w :w<cr>
 
-" free keys for mapping
-" <Tab>
-
-
-
-" :e ++enc=cp1251
+nnoremap <Tab> :b#<CR>
 
 " ctags -R -f ./.git/tags .
-
