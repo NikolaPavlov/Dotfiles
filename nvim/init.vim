@@ -19,8 +19,8 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('tpope/vim-fugitive') "git wrapper
     call dein#add('tpope/vim-fugitive', {'on_cmd' : 'Gstatus'})
     call dein#add('tomtom/tcomment_vim')
-    " call dein#add('scrooloose/nerdtree')
-    " call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
+    call dein#add('scrooloose/nerdtree')
+    call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
     call dein#add('ctrlpvim/ctrlp.vim')
     call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree, ctrlP)
     call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
@@ -66,7 +66,7 @@ call dein#add('easymotion/vim-easymotion') " easy motion
 " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
 call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
 " call dein#add('chrisbra/csv.vim') " csv files formating
-call dein#add('Shougo/defx.nvim')
+
 call dein#end()
 call dein#save_state()
 endif
@@ -186,76 +186,6 @@ noremap <localleader> <Plug>(easymotion-prefix)
 let g:ctrlp_by_filename = 0 " search by filename instead of full path
 set wildignore+=*/.git/*
 let g:ctrlp_match_window = 'bottom,order:tbb,min:1,max:10,results:10'
-"}}}
-"{{{DefX
-    autocmd FileType defx call s:defx_my_settings()
-    function! s:defx_my_settings() abort
-        " Define mappings
-        nnoremap <silent><buffer><expr> <CR>
-                    \ defx#do_action('open')
-        nnoremap <silent><buffer><expr> c
-                    \ defx#do_action('copy')
-        nnoremap <silent><buffer><expr> m
-                    \ defx#do_action('move')
-        nnoremap <silent><buffer><expr> p
-                    \ defx#do_action('paste')
-        nnoremap <silent><buffer><expr> l
-                    \ defx#do_action('open')
-        nnoremap <silent><buffer><expr> E
-                    \ defx#do_action('open', 'vsplit')
-        nnoremap <silent><buffer><expr> P
-                    \ defx#do_action('open', 'pedit')
-        nnoremap <silent><buffer><expr> o
-                    \ defx#do_action('open_or_close_tree')
-        nnoremap <silent><buffer><expr> K
-                    \ defx#do_action('new_directory')
-        nnoremap <silent><buffer><expr> N
-                    \ defx#do_action('new_file')
-        nnoremap <silent><buffer><expr> M
-                    \ defx#do_action('new_multiple_files')
-        nnoremap <silent><buffer><expr> C
-                    \ defx#do_action('toggle_columns',
-                    \                'mark:indent:icon:filename:type:size:time')
-        nnoremap <silent><buffer><expr> S
-                    \ defx#do_action('toggle_sort', 'time')
-        nnoremap <silent><buffer><expr> d
-                    \ defx#do_action('remove')
-        nnoremap <silent><buffer><expr> r
-                    \ defx#do_action('rename')
-        nnoremap <silent><buffer><expr> !
-                    \ defx#do_action('execute_command')
-        nnoremap <silent><buffer><expr> x
-                    \ defx#do_action('execute_system')
-        nnoremap <silent><buffer><expr> yy
-                    \ defx#do_action('yank_path')
-        nnoremap <silent><buffer><expr> .
-                    \ defx#do_action('toggle_ignored_files')
-        nnoremap <silent><buffer><expr> ;
-                    \ defx#do_action('repeat')
-        nnoremap <silent><buffer><expr> h
-                    \ defx#do_action('cd', ['..'])
-        nnoremap <silent><buffer><expr> ~
-                    \ defx#do_action('cd')
-        nnoremap <silent><buffer><expr> q
-                    \ defx#do_action('quit')
-        nnoremap <silent><buffer><expr> <Space>
-                    \ defx#do_action('toggle_select') . 'j'
-        nnoremap <silent><buffer><expr> *
-                    \ defx#do_action('toggle_select_all')
-        nnoremap <silent><buffer><expr> j
-                    \ line('.') == line('$') ? 'gg' : 'j'
-        nnoremap <silent><buffer><expr> k
-                    \ line('.') == 1 ? 'G' : 'k'
-        nnoremap <silent><buffer><expr> <C-l>
-                    \ defx#do_action('redraw')
-        nnoremap <silent><buffer><expr> <C-g>
-                    \ defx#do_action('print')
-        nnoremap <silent><buffer><expr> cd
-                    \ defx#do_action('change_vim_cwd')
-    endfunction
-
-
-    nnoremap <C-t> :Defx -split=vertical -winwidth=50 -direction=topleft<CR>
 "}}}
 " }}}
 "{{{ Filetype specific
@@ -480,7 +410,8 @@ set clipboard+=unnamedplus
 " =============================================================================
 let mapleader=','
 " {{{ Open files
-nnoremap <leader>ev :e $MYVIMRC<CR>
+" nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>ev :e ~/Documents/Repos/Dotfiles/nvim/init.vim<CR>
 nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
 nnoremap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
 nnoremap <leader>et :e ~/Temp/temp.pl<CR>
@@ -545,8 +476,8 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 	nmap <leader>0 <Plug>BufTabLine.Go(10)
 " }}}
 nnoremap <leader>ir :InstantRst<CR>
-" nnoremap <C-t> :NERDTreeToggleVCS<CR>
-" nnoremap <Tab> :NERDTreeToggleVCS<CR>
+nnoremap <C-t> :NERDTreeToggleVCS<CR>
+nnoremap <leader>t :NERDTreeToggleVCS<CR>
 " open NERDTree on the current file
 " nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 noremap <leader>c :TComment<cr>
@@ -656,6 +587,7 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 set path=$PWD/**
 set visualbell
 
+nnoremap : <Nop>
 noremap <space> :
 inoremap jk <Esc>
 " let g:EasyMotion_leader_key = '<Space>'
@@ -664,8 +596,12 @@ nnoremap <leader>w :w<cr>
 
 nnoremap <Tab> :b#<CR>
 
+nnoremap <C-n> :Vexplore<CR>
+
 " ctags -R -f ./.git/tags .
 "
-" let g:netrw_banner = 0     " Hide annoying 'help' banner
-" let g:netrw_liststyle = 3  " Use tree view
-" let g:netrw_winsize = '30' " Smaller default window size
+let g:netrw_banner = 0     " Hide annoying 'help' banner
+let g:netrw_liststyle = 3  " Use tree view
+let g:netrw_winsize = '30' " Smaller default window size (30%)
+let g:netrw_browse_split = 2 " Open files in vsplit window
+let g:netrw_browse_split = 4 " Open files in previous window
