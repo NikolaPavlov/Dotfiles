@@ -17,7 +17,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('tpope/vim-repeat') " repeat surround commands
     call dein#add('tpope/vim-unimpaired') " set of usefull mappings
     call dein#add('tpope/vim-fugitive') "git wrapper
-    " call dein#add('tpope/vim-fugitive', {'on_cmd' : 'Gstatus'})
     call dein#add('tomtom/tcomment_vim')
     call dein#add('scrooloose/nerdtree')
     call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
@@ -38,34 +37,34 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Yggdroot/indentLine') " Showing indentation lines
     call dein#add('godlygeek/tabular') " align text
     call dein#add('sjl/gundo.vim') " undo history
-call dein#add('majutsushi/tagbar') " display tags <T>
-call dein#add('mileszs/ack.vim') " grep replacement
-" call dein#add('davidhalter/jedi-vim') "need for go to definitions
-" call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
+    call dein#add('majutsushi/tagbar') " display tags <T>
+    call dein#add('mileszs/ack.vim') " grep replacement
+    " call dein#add('davidhalter/jedi-vim') "need for go to definitions
+    " call dein#add('zchee/deoplete-jedi') "jedi vim completion async with deoplete
 
-call dein#add('dense-analysis/ale') " linter on the fly (flake8 should be installed locally)
-let g:ale_perl_perlcritic_showrules = 1
-let g:ale_linters = {'perl': ['perl']}
-let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
-" let g:ale_type_map = {
-" \    'perl': {'ES': 'WS'},
-" \    'perlcritic': {'ES': 'WS', 'E': 'W'},
-" \}
+    call dein#add('dense-analysis/ale') " linter on the fly (flake8 should be installed locally)
+    let g:ale_perl_perlcritic_showrules = 1
+    let g:ale_linters = {'perl': ['perl']}
+    let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
+    " let g:ale_type_map = {
+    " \    'perl': {'ES': 'WS'},
+    " \    'perlcritic': {'ES': 'WS', 'E': 'W'},
+    " \}
 
-let g:ale_fixers = {
-			\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-			\   'perl': ['perltidy'],
-			\}
+    let g:ale_fixers = {
+                \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+                \   'perl': ['perltidy'],
+                \}
 
-" call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
-" call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
-" call dein#add('nvie/vim-flake8') " flake8
-" call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-" call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
-call dein#add('easymotion/vim-easymotion') " easy motion
-" call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
-" call dein#add('chrisbra/csv.vim') " csv files formating
+    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
+    " call dein#add('Vimjas/vim-python-pep8-indent') " better indent for python
+    " call dein#add('nvie/vim-flake8') " flake8
+    " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
+    " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
+    call dein#add('easymotion/vim-easymotion') " easy motion
+    " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
+    call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
+    " call dein#add('chrisbra/csv.vim') " csv files formating
 
 call dein#end()
 call dein#save_state()
