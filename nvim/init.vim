@@ -16,8 +16,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('tpope/vim-surround') " change surroundings
     call dein#add('tpope/vim-repeat') " repeat surround commands
     call dein#add('tpope/vim-unimpaired') " set of usefull mappings
-    " call dein#add('tpope/vim-fugitive') "git wrapper
-    call dein#add('tpope/vim-fugitive', {'on_cmd' : 'Gstatus'})
+    call dein#add('tpope/vim-fugitive') "git wrapper
+    " call dein#add('tpope/vim-fugitive', {'on_cmd' : 'Gstatus'})
     call dein#add('tomtom/tcomment_vim')
     call dein#add('scrooloose/nerdtree')
     call dein#add('Xuyuanp/nerdtree-git-plugin') " showing git status flags in nerdtree
