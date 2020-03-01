@@ -162,7 +162,6 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 fi
 
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # nvim as a manpage viewr
 export MANPAGER="nvim +set\ filetype=man -"
@@ -190,3 +189,28 @@ alias sshcore=$SSHCORE
 alias sshweb=$SSHWEB
 alias cdcore=$CDCORE
 alias cdremedy=$CDREMEDY
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden -g ""'
+# Ctrl + t --> search in current dir
+# Ctrl + r --> search history
+# Alt + c --> change to dir
+# cd **
+# ssh **
+# fzf -f --> exact match
+
+
+
+
+# When selecting files with fzf, we show file content with syntax highlighting,
+# or without highlighting if it's not a source file. If the file is a directory,
+# we use tree to show the directory's contents.
+# We only load the first 200 lines of the file which enables fast previews
+# of large text files.
+# Requires highlight and tree: pacman -S highlight tree
+
+# export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null ||
+    # cat {} || tree -C {}) 2> /dev/null | head -200'"
