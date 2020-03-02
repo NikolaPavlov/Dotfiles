@@ -210,9 +210,9 @@ syntax enable
 " }}}
 "{{{ Easymotion
 
-    let g:EasyMotion_leader_key = '<Space>'
-    let g:EasyMotion_mapping_b = '<leader><Space>'
-    noremap <localleader> <Plug>(easymotion-prefix)
+    let g:EasyMotion_leader_key = '<Tab>'
+    let g:EasyMotion_mapping_b = '<leader><Tab>'
+    noremap <localleader> <Plug>(easymotion-s2)
 
 " }}}
 "{{{ Netrw
@@ -621,7 +621,7 @@ let maplocalleader='\\'
     " tnoremap <C-j> <C-\><C-n><C-w>j TODO: conflict with fzf
     " tnoremap <C-k> <C-\><C-n><C-w>k
     " tnoremap <C-l> <C-\><C-n><C-w>l
-" }}}
+"}}}
 "}}}
 "{{{ Abbreviations
     iabbrev todo: TODO:
@@ -705,12 +705,12 @@ let maplocalleader='\\'
     set nostartofline
 
     " Movement in insert mode
-    inoremap <C-h> <C-o>h
-    inoremap <C-l> <C-o>a
-    inoremap <C-j> <C-o>j
-    inoremap <C-k> <C-o>k
-    inoremap <C-^> <C-o><C-^>
-"}}}
+"     inoremap <C-h> <C-o>h
+"     inoremap <C-l> <C-o>a
+"     inoremap <C-j> <C-o>j
+"     inoremap <C-k> <C-o>k
+"     inoremap <C-^> <C-o><C-^>
+" "}}}
 
 " TODO: map CAPS_LOCK to Esc
 " :h movement
@@ -722,3 +722,6 @@ set visualbell
 
 
 " ctags -R -f ./.git/tags .
+
+
+set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
