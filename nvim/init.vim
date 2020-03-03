@@ -59,6 +59,10 @@ if dein#load_state('~/.cache/dein')
     call dein#add('dm1try/golden_size') " auto resize splits
     call dein#add('junegunn/fzf')
     call dein#add('junegunn/fzf.vim')
+    call dein#add('yuki-ycino/fzf-preview.vim')
+    call dein#add('vim-airline/vim-airline')
+    call dein#add('vim-airline/vim-airline-themes')
+
     " PYTHON
     call dein#add('davidhalter/jedi-vim',
         \{'on_ft': 'python'}) " need for go to definitions
@@ -278,7 +282,7 @@ syntax enable
         call nvim_open_win(buf, v:true, opts)
     endfunction
 
-    nnoremap <leader>p :GFiles<cr>
+    nnoremap <leader>g :GFiles<cr>
     " nnoremap <c-p> :GFiles<Cr>
     nnoremap <leader>f :Files<cr>
     " nnoremap <c-t> :BTags<CR>
@@ -289,6 +293,30 @@ syntax enable
     nnoremap <leader>r :Rg<cr>
     nnoremap <leader>h :Helptags!<cr>
 
+    function! CreateCenteredFloatingWindow()
+        let width = min([&columns - 4, max([80, &columns - 20])])
+        let height = min([&lines - 4, max([20, &lines - 10])])
+        let top = ((&lines - height) / 2) - 1
+        let left = (&columns - width) / 2
+        let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+
+        let top = "╭" . repeat("─", width - 2) . "╮"
+        let mid = "│" . repeat(" ", width - 2) . "│"
+        let bot = "╰" . repeat("─", width - 2) . "╯"
+        let lines = [top] + repeat([mid], height - 2) + [bot]
+        let s:buf = nvim_create_buf(v:false, v:true)
+        call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+        call nvim_open_win(s:buf, v:true, opts)
+        set winhl=Normal:Floating
+        let opts.row += 1
+        let opts.height -= 2
+        let opts.col += 2
+        let opts.width -= 4
+        call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+        au BufWipeout <buffer> exe 'bw '.s:buf
+    endfunction
+
+    let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 " }}}
 " {{{ ALE
 
@@ -303,6 +331,11 @@ syntax enable
     let g:ale_fixers = {
                 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
                 \   'perl': ['perltidy'],
+                \    'html' : ['prettier'],
+                \   'javascript': ['prettier'],
+                \   'css': ['prettier'],
+                \   'markdown' : ['prettier'],
+                \   'json': ['prettier'],
                 \}
 
 " }}}
@@ -329,6 +362,36 @@ syntax enable
 
     nnoremap <leader>u :GundoToggle<CR>
 
+" }}}
+" {{{ Airline
+
+    let g:airline_theme='minimalist'
+
+    let g:airline_powerline_fonts = 1
+    " remove the filetype part
+    let g:airline_section_x=''
+    " remove separators for empty sections
+    let g:airline_skip_empty_sections = 1
+
+    au User AirlineAfterInit  :let g:airline_section_z = airline#section#create([''])
+
+    " themes:
+    " - hybrid
+    " - minimalist
+    " - zenburn
+
+" Airline TODO:
+let g:airline_powerline_fonts = 0
+let g:airline#themes#clean#palette = 1
+call airline#parts#define_raw('linenr', '%l')
+call airline#parts#define_accent('linenr', 'bold')
+let g:airline_section_z = airline#section#create(['%3p%%  ',
+            \ g:airline_symbols.linenr .' ', 'linenr', ':%c '])
+let g:airline_section_warning = ''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on tabs
+let g:airline#extensions#ale#enabled = 1                " ALE integration
+let airline#extensions#vista#enabled = 1                " vista integration
 " }}}
 " }}}
 "{{{ Filetype specific
@@ -713,6 +776,8 @@ let maplocalleader='\\'
 " "}}}
 
 " TODO: map CAPS_LOCK to Esc
+" TODO: Denite
+" TODO: COC
 " :h movement
 " [[ -> for movement
 " ]h
@@ -725,3 +790,13 @@ set visualbell
 
 
 set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
+
+
+" let g:tagbar_autofocus = 1
+
+
+" use rg by default
+" if executable('rg')
+"     let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+"     set grepprg=rg\ --vimgrep
+" endif

@@ -18,10 +18,9 @@ alias wget='wget -c '
 alias du='ncdu '
 alias df='pydf'
 
-# ls aliases
-alias l='lsd -l --group-dirs first '
-alias ll='lsd -l --group-dirs first '
-alias la='lsd -la --group-dirs first '
+# exa aliases
+alias l='exa -l'
+alias la='exa -l -a'
 
 alias grep='grep --color=tty -d skip '
 alias free='free -m '
