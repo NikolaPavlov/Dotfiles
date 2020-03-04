@@ -167,11 +167,7 @@ syntax enable
     " B - on/off Bookmark table
     " F - on/off File displaying
 
-    autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .'
-    " autoclose vim if only open window is NerdTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-    autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
+    " autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .' TODO: bug with vs | te
     nnoremap <c-t> :NERDTreeToggleVCS<cr>
 
 " }}}
@@ -469,8 +465,10 @@ augroup text_rst_md
 augroup END
 "}}}
 "{{{ Yaml
-au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+    au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 "}}}
 "{{{ Vim
 augroup filetype_vim
@@ -493,6 +491,15 @@ augroup END
         au BufNewFile,BufRead *.csv setlocal nowrap
         au BufNewFile,BufRead *.csv setlocal list
         au BufNewFile,BufRead *.csv setlocal listchars=tab:▸\ ,eol:¬
+    augroup END
+
+"}}}
+"{{{ Def
+
+    augroup ft_def
+        au!
+        au BufNewFile,BufReadPost *.def set filetype=def foldmethod=indent
+        autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
     augroup END
 
 "}}}
@@ -618,7 +625,7 @@ let maplocalleader='\\'
 " {{{ Other
 
     inoremap jk <Esc>
-    xnoremap jk <Esc>
+    " xnoremap jk <Esc>
     cnoremap jk <Esc>
 
     nnoremap <leader><space> <c-w><c-w> " navigation between vsp
@@ -800,3 +807,6 @@ set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
 "     let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
 "     set grepprg=rg\ --vimgrep
 " endif
+
+nnoremap <leader><Cr> :vert te<Cr>
+
