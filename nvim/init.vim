@@ -30,6 +30,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Valloric/MatchTagAlways',
         \{'on_ft': 'html'}) " always highlight html enclosing tags
     call dein#add('sjl/badwolf') " color theme
+    call dein#add('nanotech/jellybeans.vim') " color theme
     call dein#add('junegunn/goyo.vim',
         \{'on_cmd': 'Goyo'}) " focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
@@ -618,7 +619,7 @@ set clipboard+=unnamedplus
 "                            | |
 "                            |_|
 " =============================================================================
-let mapleader=','
+" let mapleader=','
 " TODO: localleader
 let maplocalleader='\\'
 " {{{ Open files
@@ -824,3 +825,5 @@ hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black
     " Make the tab line much lighter than the background.
     let g:badwolf_tabline = 3
 "}}}
+
+":messages -> vim log
