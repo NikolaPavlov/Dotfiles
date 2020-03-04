@@ -816,3 +816,11 @@ set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
 " endif
 
 nnoremap <leader><Cr> :vert te<Cr>
+
+hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
+hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
+
+"{{{ BadWolf Theme
+    " Make the tab line much lighter than the background.
+    let g:badwolf_tabline = 3
+"}}}
