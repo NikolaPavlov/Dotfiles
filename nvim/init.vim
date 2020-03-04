@@ -175,16 +175,23 @@ syntax enable
 
     " https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
     "
-    " :Gstatus
+    " :Gstatus or :G
+    " ---
     " :Gpull
     " :Gpush
-    " :Gwrite
-    " :Gcommit
+    " ---
+    " :Gwrite -> staging the file
+    " :Gread (gir reset --hard HEAD)
+    " :Gread -> (git checkout %) empty the current buffer and revert the last commit ver. of the file
+    " :Gremove -> (git rm %)
+    " ---
+    " :Gcommit -> open buffer to write commit msg
     " :Gdiff
     " :Gmerge
     " :Glog
+    " ---
     " :Gblame
-    " :Gread (gir reset --hard HEAD)
+    " ---
 
 " }}}
 " {{{ VimSlash
@@ -809,4 +816,3 @@ set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
 " endif
 
 nnoremap <leader><Cr> :vert te<Cr>
-

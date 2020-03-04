@@ -161,6 +161,8 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 fi
 
+# add cargo (rust) to $PATH
+PATH="$PATH:$HOME/.cargo/bin"
 
 # nvim as a manpage viewr
 export MANPAGER="nvim +set\ filetype=man -"
