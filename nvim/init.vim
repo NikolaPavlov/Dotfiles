@@ -16,8 +16,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('wellle/targets.vim') " add 'ci(' command
     call dein#add('tpope/vim-surround') " change surroundings
     call dein#add('tpope/vim-repeat') " repeat surround commands
-    call dein#add('tpope/vim-unimpaired') " set of usefull mappings
     call dein#add('tpope/vim-fugitive') " git wrapper
+    call dein#add('tpope/vim-unimpaired') " set of usefull mappings
     call dein#add('tomtom/tcomment_vim')
     call dein#add('scrooloose/nerdtree',
         \{'on_cmd': 'NERDTreeToggleVCS'})
@@ -189,6 +189,8 @@ syntax enable
     " :Gcommit -> open buffer to write commit msg
     " :Gdiff
     " :Gmerge
+    " :Gedit -> Gedit other_branch:filename -> open file from other branch read-only
+    " :Gedit <sha512> -> read only specific git object
     " :Glog
     " ---
     " :Gblame
@@ -224,11 +226,13 @@ syntax enable
 
 " }}}
 "{{{ Netrw
-    let g:netrw_banner = 0     " Hide annoying 'help' banner
-    let g:netrw_liststyle = 3  " Use tree view
-    let g:netrw_winsize = '30' " Smaller default window size (30%)
-    let g:netrw_browse_split = 2 " Open files in vsplit window
-    let g:netrw_browse_split = 4 " Open files in previous window
+
+    " let g:netrw_banner = 0     " Hide annoying 'help' banner
+    " let g:netrw_liststyle = 3  " Use tree view
+    " let g:netrw_winsize = '30' " Smaller default window size (30%)
+    " let g:netrw_browse_split = 2 " Open files in vsplit window
+    " let g:netrw_browse_split = 4 " Open files in previous window
+
 "}}}
 "{{{ FZF
 
@@ -396,6 +400,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on tabs
 let g:airline#extensions#ale#enabled = 1                " ALE integration
 let airline#extensions#vista#enabled = 1                " vista integration
+" }}}
+" {{{ Tagbar
+
+   nnoremap T :TagbarOpenAutoClose<Cr>
+
 " }}}
 " }}}
 "{{{ Filetype specific
@@ -628,6 +637,7 @@ let maplocalleader='\\'
     nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
     nnoremap <leader>ew :e ~/Documents/Repos/Wiki/index.rst<CR>
     nnoremap <leader>et :e ~/Temp/temp.pl<CR>
+    nnoremap <leader>es :e ~/Documents/Repos/Dotfiles/NeoSnippets/<CR>
     " TODO: snippets
 " }}}
 " {{{ Other
@@ -689,7 +699,10 @@ let maplocalleader='\\'
     nnoremap <leader>w :w<cr>
 
 " }}}
-" {{{ Windows moving
+" {{{ Windows moving / opening
+
+    nnoremap <leader><Cr> :vert te<Cr>
+
     nnoremap <C-h> <C-w>h
     nnoremap <C-j> <C-w>j
     nnoremap <C-k> <C-w>k
@@ -699,6 +712,7 @@ let maplocalleader='\\'
     " tnoremap <C-j> <C-\><C-n><C-w>j TODO: conflict with fzf
     " tnoremap <C-k> <C-\><C-n><C-w>k
     " tnoremap <C-l> <C-\><C-n><C-w>l
+
 "}}}
 "}}}
 "{{{ Abbreviations
@@ -790,9 +804,6 @@ let maplocalleader='\\'
 "     inoremap <C-^> <C-o><C-^>
 " "}}}
 
-" TODO: map CAPS_LOCK to Esc
-" TODO: Denite
-" TODO: COC
 " :h movement
 " [[ -> for movement
 " ]h
@@ -801,13 +812,7 @@ set path=$PWD/**
 set visualbell
 
 
-" ctags -R -f ./.git/tags .
-
-
 set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
-
-
-" let g:tagbar_autofocus = 1
 
 
 " use rg by default
@@ -816,7 +821,6 @@ set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
 "     set grepprg=rg\ --vimgrep
 " endif
 
-nnoremap <leader><Cr> :vert te<Cr>
 
 hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
 hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta

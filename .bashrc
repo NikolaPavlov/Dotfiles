@@ -177,10 +177,8 @@ source ~/.local/bin/virtualenvwrapper.sh
 # autocomplete for gopass
 source <(gopass completion bash)
 
-# Temp
-# export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
-# export LC_ALL="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
 
 if [ -f $HOME/.sensitive ]; then
