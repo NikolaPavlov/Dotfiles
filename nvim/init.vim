@@ -381,7 +381,7 @@ syntax enable
     " remove separators for empty sections
     let g:airline_skip_empty_sections = 1
 
-    au User AirlineAfterInit  :let g:airline_section_z = airline#section#create([''])
+    " au User AirlineAfterInit  :let g:airline_section_z = airline#section#create([''])
 
     " themes:
     " - hybrid
@@ -389,17 +389,17 @@ syntax enable
     " - zenburn
 
 " Airline TODO:
-let g:airline_powerline_fonts = 0
-let g:airline#themes#clean#palette = 1
-call airline#parts#define_raw('linenr', '%l')
-call airline#parts#define_accent('linenr', 'bold')
-let g:airline_section_z = airline#section#create(['%3p%%  ',
-            \ g:airline_symbols.linenr .' ', 'linenr', ':%c '])
-let g:airline_section_warning = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on tabs
-let g:airline#extensions#ale#enabled = 1                " ALE integration
-let airline#extensions#vista#enabled = 1                " vista integration
+" let g:airline_powerline_fonts = 0
+" let g:airline#themes#clean#palette = 1
+" call airline#parts#define_raw('linenr', '%l')
+" call airline#parts#define_accent('linenr', 'bold')
+" let g:airline_section_z = airline#section#create(['%3p%%  ',
+"             \ g:airline_symbols.linenr .' ', 'linenr', ':%c '])
+" let g:airline_section_warning = ''
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on tabs
+" let g:airline#extensions#ale#enabled = 1                " ALE integration
+" let airline#extensions#vista#enabled = 1                " vista integration
 " }}}
 " {{{ Tagbar
 
@@ -700,8 +700,6 @@ let maplocalleader='\\'
 
 " }}}
 " {{{ Windows moving / opening
-
-    nnoremap <leader><Cr> :vert te<Cr>
 
     nnoremap <C-h> <C-w>h
     nnoremap <C-j> <C-w>j
