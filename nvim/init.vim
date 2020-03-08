@@ -36,7 +36,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
     call dein#add('kshenoy/vim-signature') " display the marks in the side line
     call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
-    call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
+    " call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
     call dein#add('yuttie/comfortable-motion.vim') "scroll effect
     call dein#add('Rykka/riv.vim',
         \{'on_ft': 'rst'}) " note taking in vim with .rst
@@ -257,49 +257,21 @@ syntax enable
     " [Tags] Command to generate tags file
     let g:fzf_tags_command = 'ctags -R'
 
-
     " Reverse the layout to make the FZF list top-down
     let $FZF_DEFAULT_OPTS='--layout=reverse'
 
-    let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-
-    " Function to create the custom floating window
-    function! FloatingFZF()
-        " creates a scratch, unlisted, new, empty, unnamed buffer
-        " to be used in the floating window
-        let buf = nvim_create_buf(v:false, v:true)
-
-        " 90% of the height
-        let height = float2nr(&lines * 0.9)
-        " 60% of the height
-        let width = float2nr(&columns * 0.6)
-        " horizontal position (centralized)
-        let horizontal = float2nr((&columns - width) / 2)
-        " vertical position (one line down of the top)
-        let vertical = 1
-
-        let opts = {
-                    \ 'relative': 'editor',
-                    \ 'row': vertical,
-                    \ 'col': horizontal,
-                    \ 'width': width,
-                    \ 'height': height
-                    \ }
-
-        " open the new window, floating, and enter to it
-        call nvim_open_win(buf, v:true, opts)
-    endfunction
 
     nnoremap <leader>g :GFiles<cr>
-    " nnoremap <c-p> :GFiles<Cr>
     nnoremap <leader>f :Files<cr>
     " nnoremap <c-t> :BTags<CR>
     nnoremap <leader>t :Tags<cr>
     " nnoremap <c-l> :BLines<CR>
     nnoremap <leader>l :Lines<cr>
     nnoremap <leader>m :Marks<cr>
+    " use :Rg --files to list files searchable by Rg
     nnoremap <leader>r :Rg<cr>
     nnoremap <leader>h :Helptags!<cr>
+    nnoremap <leader>p :FzfPreviewProjectFiles<cr>
 
     function! CreateCenteredFloatingWindow()
         let width = min([&columns - 4, max([80, &columns - 20])])
@@ -373,33 +345,91 @@ syntax enable
 " }}}
 " {{{ Airline
 
+
     let g:airline_theme='minimalist'
-
     let g:airline_powerline_fonts = 1
-    " remove the filetype part
-    let g:airline_section_x=''
-    " remove separators for empty sections
+    let g:airline_section_a = ''
+    let g:airline_section_x = ''
+    let g:airline_section_z = "%l/%L:%p%%"
     let g:airline_skip_empty_sections = 1
+    let g:airline_inactive_collapse=1
 
-    " au User AirlineAfterInit  :let g:airline_section_z = airline#section#create([''])
+    " TODO:
+    " or only load what you want
+    let g:airline_extensions = ['branch', 'tabline']
+    let g:airline#extensions#ale#enabled = 1
+    let airline#extensions#ale#error_symbol = 'E:'
+    let airline#extensions#ale#warning_symbol = 'W:'
+    let airline#extensions#ale#show_line_numbers = 1
+    let airline#extensions#ale#open_lnum_symbol = '(L'
+    let airline#extensions#ale#close_lnum_symbol = ')'
+
+    let g:airline#extensions#branch#enabled = 1
+    let g:airline#extensions#branch#empty_message = ''
+    let g:airline#extensions#branch#displayed_head_limit = 10
+    let g:airline#extensions#branch#format = 1
+
+    let g:airline#extensions#bufferline#enabled = 1
+    let g:airline#extensions#term#enabled = 1
+
+    " Tabline
+    let g:airline#extensions#tabline#enabled = 0
+    let g:airline#extensions#tabline#formatter = 'unique_tail'
+    " * enable/disable displaying open splits per tab (only when tabs are opened) >
+    " let g:airline#extensions#tabline#show_splits = 1
+    " * enable/disable displaying buffers with a single tab. (c) >
+    let g:airline#extensions#tabline#show_buffers = 1
+    " * enable/disable displaying number of tabs in the right side (c) >
+    let g:airline#extensions#tabline#show_tab_count = 0
+    " * enable/disable display preview window buffer in the tabline. >
+    let g:airline#extensions#tabline#exclude_preview = 0
+    " * enable/disable displaying tab number in tabs mode. >
+    let g:airline#extensions#tabline#show_tab_nr = 0
+    " * always show current tabpage/buffer first >
+    let airline#extensions#tabline#current_first = 0
+    " * configure whether buffer numbers should be shown. >
+    let g:airline#extensions#tabline#fnamemod = ':p:.'
+    " * configure truncating non-active buffer names to specified length. >
+    let g:airline#extensions#tabline#fnametruncate = 0
+    let g:airline#extensions#tabline#show_buffers = 1
+    let g:airline#extensions#tabline#buffer_idx_mode = 1
+    nmap <leader>1 <Plug>AirlineSelectTab1
+    nmap <leader>2 <Plug>AirlineSelectTab2
+    nmap <leader>3 <Plug>AirlineSelectTab3
+    nmap <leader>4 <Plug>AirlineSelectTab4
+    nmap <leader>5 <Plug>AirlineSelectTab5
+    nmap <leader>6 <Plug>AirlineSelectTab6
+    nmap <leader>7 <Plug>AirlineSelectTab7
+    nmap <leader>8 <Plug>AirlineSelectTab8
+    nmap <leader>9 <Plug>AirlineSelectTab9
+    let g:airline#extensions#tabline#fnametruncate = 8
+    " * configure separators for the tabline only. >
+    let g:airline#extensions#tabline#alt_sep = 1
+    let g:airline#extensions#tabline#left_sep = ''
+    let g:airline#extensions#tabline#left_alt_sep = ' '
+    let g:airline#extensions#tabline#right_sep = ''
+    let g:airline#extensions#tabline#right_alt_sep = ' '
+
+    " TAGBAR
+    let g:airline#extensions#tagbar#enabled = 1
+    " * change how tags are displayed (:help tagbar-statusline) >
+    let g:airline#extensions#tagbar#flags = ''
+    let g:airline#extensions#tagbar#flags = 'f'
+    let g:airline#extensions#tagbar#flags = 's'
+    let g:airline#extensions#tagbar#flags = 'p'
+
+    let g:airline#extensions#virtualenv#enabled = 1
+
+
+    " TODO:
+    " let g:airline_section_warning = ''
+    " let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on tabs
 
     " themes:
     " - hybrid
     " - minimalist
     " - zenburn
 
-" Airline TODO:
-" let g:airline_powerline_fonts = 0
-" let g:airline#themes#clean#palette = 1
-" call airline#parts#define_raw('linenr', '%l')
-" call airline#parts#define_accent('linenr', 'bold')
-" let g:airline_section_z = airline#section#create(['%3p%%  ',
-"             \ g:airline_symbols.linenr .' ', 'linenr', ':%c '])
-" let g:airline_section_warning = ''
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#fnamemod = ':t'        " show only file name on tabs
-" let g:airline#extensions#ale#enabled = 1                " ALE integration
-" let airline#extensions#vista#enabled = 1                " vista integration
 " }}}
 " {{{ Tagbar
 
@@ -771,6 +801,8 @@ let maplocalleader='\\'
     endfunction
 "}}}
 "{{{ Garbage
+
+    set path=$PWD/**
     " color for matching brackets
     hi MatchParen cterm=none ctermbg=green ctermfg=none
 
@@ -806,19 +838,6 @@ let maplocalleader='\\'
 " [[ -> for movement
 " ]h
 
-set path=$PWD/**
-set visualbell
-
-
-set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
-
-
-" use rg by default
-" if executable('rg')
-"     let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-"     set grepprg=rg\ --vimgrep
-" endif
-
 
 hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
 hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
@@ -828,4 +847,4 @@ hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black
     let g:badwolf_tabline = 3
 "}}}
 
-":messages -> vim log
+set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags

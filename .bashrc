@@ -8,7 +8,6 @@ alias c='clear '
 alias cl='clear '
 alias a='alsamixer '
 alias s='startx '
-alias u='sudo apt update && sudo apt upgrade'
 alias rm='rm -Irv '
 alias off='poweroff '
 alias cp='cp -i '
@@ -54,9 +53,7 @@ alias gc='git commit '
 alias ga='git add '
 alias gb='git branch '
 alias gpush='git push '
-alias tpush='tsocks git push'
 alias gpull='git pull '
-alias tpull='tsocks git pull'
 alias glog='git log --oneline '
 alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull '
 # git reset to previous commit (hard)
@@ -180,8 +177,10 @@ source ~/.local/bin/virtualenvwrapper.sh
 # autocomplete for gopass
 source <(gopass completion bash)
 
+# Temp
+# export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
-export LC_ALL="en_US.UTF-8"
+# export LC_ALL="en_US.UTF-8"
 alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
 
 if [ -f $HOME/.sensitive ]; then
@@ -196,6 +195,7 @@ alias cdremedy=$CDREMEDY
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
+# TODO:
 export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden -g ""'
 # Ctrl + t --> search in current dir
 # Ctrl + r --> search history
