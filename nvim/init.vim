@@ -36,7 +36,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
     call dein#add('kshenoy/vim-signature') " display the marks in the side line
     call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
-    " call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
+    call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
     call dein#add('yuttie/comfortable-motion.vim') "scroll effect
     call dein#add('Rykka/riv.vim',
         \{'on_ft': 'rst'}) " note taking in vim with .rst
@@ -52,7 +52,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('mileszs/ack.vim') " grep replacement
     call dein#add('dense-analysis/ale',
         \{'on_ft': ['perl', 'python', 'html']}) " linter on the fly (flake8 should be installed locally)
-    call dein#add('easymotion/vim-easymotion') " easy motion
     call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
     call dein#add('chrisbra/csv.vim',
         \{'on_ft': 'csv'}) " csv files formating
@@ -216,13 +215,6 @@ syntax enable
 
     let g:goyo_width=120
     nnoremap <leader>g :Goyo<CR>
-
-" }}}
-"{{{ Easymotion
-
-    let g:EasyMotion_leader_key = '<Tab>'
-    let g:EasyMotion_mapping_b = '<leader><Tab>'
-    noremap <localleader> <Plug>(easymotion-s2)
 
 " }}}
 "{{{ Netrw
@@ -393,15 +385,15 @@ syntax enable
     let g:airline#extensions#tabline#fnametruncate = 0
     let g:airline#extensions#tabline#show_buffers = 1
     let g:airline#extensions#tabline#buffer_idx_mode = 1
-    nmap <leader>1 <Plug>AirlineSelectTab1
-    nmap <leader>2 <Plug>AirlineSelectTab2
-    nmap <leader>3 <Plug>AirlineSelectTab3
-    nmap <leader>4 <Plug>AirlineSelectTab4
-    nmap <leader>5 <Plug>AirlineSelectTab5
-    nmap <leader>6 <Plug>AirlineSelectTab6
-    nmap <leader>7 <Plug>AirlineSelectTab7
-    nmap <leader>8 <Plug>AirlineSelectTab8
-    nmap <leader>9 <Plug>AirlineSelectTab9
+    " nmap <leader>1 <Plug>AirlineSelectTab1
+    " nmap <leader>2 <Plug>AirlineSelectTab2
+    " nmap <leader>3 <Plug>AirlineSelectTab3
+    " nmap <leader>4 <Plug>AirlineSelectTab4
+    " nmap <leader>5 <Plug>AirlineSelectTab5
+    " nmap <leader>6 <Plug>AirlineSelectTab6
+    " nmap <leader>7 <Plug>AirlineSelectTab7
+    " nmap <leader>8 <Plug>AirlineSelectTab8
+    " nmap <leader>9 <Plug>AirlineSelectTab9
     let g:airline#extensions#tabline#fnametruncate = 8
     " * configure separators for the tabline only. >
     let g:airline#extensions#tabline#alt_sep = 1
@@ -848,3 +840,4 @@ hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black
 "}}}
 
 set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
+" TODO: regeneration of the tags
