@@ -17,6 +17,8 @@ alias mkdir='mkdir -pv '
 alias wget='wget -c '
 alias du='ncdu '
 alias df='pydf'
+alias u='sudo apt update && sudo apt upgrade'
+
 
 # exa aliases
 alias l='exa -l'

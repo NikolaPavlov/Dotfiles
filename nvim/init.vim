@@ -56,6 +56,10 @@ if dein#load_state('~/.cache/dein')
     call dein#add('chrisbra/csv.vim',
         \{'on_ft': 'csv'}) " csv files formating
     call dein#add('jsfaint/gen_tags.vim') " https://github.com/jsfaint/gen_tags.vim
+    " TODO: vim-gutentags
+    call dein#add('ludovicchabant/vim-gutentags')
+    " TODO: check gutentags_plus
+    " TODO: gutentags
     call dein#add('dm1try/golden_size') " auto resize splits
     call dein#add('junegunn/fzf')
     call dein#add('junegunn/fzf.vim')
@@ -841,3 +845,10 @@ hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black
 
 set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
 " TODO: regeneration of the tags
+
+
+
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+" temp for debug. see the logs with :messages
+g:gutentags_trace = 1
