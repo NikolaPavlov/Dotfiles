@@ -83,6 +83,7 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     " TODO: https://github.com/unfog-io/unfog-vim
     " TODO: https://github.com/tpope/vim-commentary
+    call dein#add('mhinz/vim-startify');
 
 endif
 
@@ -851,4 +852,4 @@ set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " temp for debug. see the logs with :messages
-g:gutentags_trace = 1
+" let g:gutentags_trace = 1
