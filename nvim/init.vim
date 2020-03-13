@@ -83,7 +83,7 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     " TODO: https://github.com/unfog-io/unfog-vim
     " TODO: https://github.com/tpope/vim-commentary
-    call dein#add('mhinz/vim-startify');
+    call dein#add('mhinz/vim-startify')
 
 endif
 
@@ -294,6 +294,8 @@ syntax enable
     endfunction
 
     let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+
+
 " }}}
 " {{{ ALE
 
@@ -853,3 +855,16 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " temp for debug. see the logs with :messages
 " let g:gutentags_trace = 1
+
+
+" call fzf#run({'source': 'find /mnt/core/home/n.pavlov/easypay_core/CORE/lib /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ -type f', 'sink':  'edit'})
+
+
+
+
+
+nnoremap <Leader>f :<C-U>call ABFiles()<CR>
+"" Custom fzf find files in directory of active buffer
+function! ABFiles()
+    execute 'FZF' expand('%:p:h')
+endfunction
