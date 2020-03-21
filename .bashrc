@@ -190,6 +190,7 @@ if [ -f $HOME/.sensitive ]; then
 fi
 alias sshcore=$SSHCORE
 alias sshweb=$SSHWEB
+alias sshwork='ssh npavlov@10.0.7.111'
 alias cdcore=$CDCORE
 alias cdremedy=$CDREMEDY
 

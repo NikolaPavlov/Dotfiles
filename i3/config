@@ -6,7 +6,7 @@
 #
 
 
-set $mod Mod1
+set $mod mod4
 
 set $KILL_KEY F4
 set $BORDER_TICKNES 5
@@ -73,7 +73,7 @@ bindsym $mod+x split v
 bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # switch to workspace
 bindsym $mod+1 workspace 1
