@@ -6,9 +6,9 @@
 #
 
 
-set $mod mod4
+set $mod mod1
 
-set $KILL_KEY F4
+set $KILL_KEY $mod+q
 set $BORDER_TICKNES 5
 set $GAPS_INNER_SIZE 3
 set $GAPS_OUTER_SIZE 10
@@ -38,11 +38,10 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec sakura
-bindsym $mod+Shift+Return exec xfce4-terminal
 
 # kill focused window
 #bindsym $mod+Shift+q kill
-bindsym $KILL_KEY kill
+bindsym $mod+q  kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -70,7 +69,7 @@ bindsym $mod+v split h
 bindsym $mod+x split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+# bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -170,10 +169,15 @@ client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff
 # exec --no-startup-id feh --bg-fill ~/.config/wall.png
 
 # key bindings
-bindcode 67 exec --no-startup-id firefox
-bindcode 68 exec --no-startup-id thunar
-bindcode 69 exec --no-startup-id thunderbird
-bindcode 74 exec --no-startup-id google-chrome-stable
+# bindcode 67 exec --no-startup-id firefox
+# bindcode 68 exec --no-startup-id thunar
+# bindcode 69 exec --no-startup-id thunderbird
+# bindcode 74 exec --no-startup-id google-chrome-stable
+bindsym $mod+f exec --no-startup-id firefox
+bindsym $mod+t exec --no-startup-id telegram
+bindsym $mod+c exec --no-startup-id google-chrome-stable
+
+bindsym $mod+p exec --no-startup-id passmenu
 
 # ALSA
 # bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
@@ -203,11 +207,6 @@ gaps outer $GAPS_OUTER_SIZE
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
 
-# Pass
-bindsym $mod+p exec --no-startup-id passmenu
 
-# Albert
 exec --no-startup-id albert
-
-# RSIBreak
 exec --no-startup-id rsibreak
