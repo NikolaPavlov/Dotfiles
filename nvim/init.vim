@@ -153,7 +153,7 @@ syntax enable
     let NERDTreeDirArrows = 1
     let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
     let NERDTreeMinimalUI = 1
-    let NERDTreeQuitOnOpen = 1
+    let NERDTreeQuitOnOpen = 0
     let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
     let NERDTreeShowLineNumbers = 1
 
@@ -174,6 +174,10 @@ syntax enable
 
     " autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .' TODO: bug with vs | te
     nnoremap <c-t> :NERDTreeToggleVCS<cr>
+
+    "TODO: open NerdTree when open vim with no arguments
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTreeToggle | endif
 
 " }}}
 " {{{ Fugitive
@@ -222,15 +226,6 @@ syntax enable
     nnoremap <leader>g :Goyo<CR>
 
 " }}}
-"{{{ Netrw
-
-    " let g:netrw_banner = 0     " Hide annoying 'help' banner
-    " let g:netrw_liststyle = 3  " Use tree view
-    " let g:netrw_winsize = '30' " Smaller default window size (30%)
-    " let g:netrw_browse_split = 2 " Open files in vsplit window
-    " let g:netrw_browse_split = 4 " Open files in previous window
-
-"}}}
 "{{{ FZF
 
     let g:fzf_colors =
@@ -868,3 +863,8 @@ nnoremap <Leader>f :<C-U>call ABFiles()<CR>
 function! ABFiles()
     execute 'FZF' expand('%:p:h')
 endfunction
+
+
+
+
+

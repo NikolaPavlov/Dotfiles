@@ -36,8 +36,6 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec sakura
 
 # kill focused window
 #bindsym $mod+Shift+q kill
@@ -69,7 +67,7 @@ bindsym $mod+v split h
 bindsym $mod+x split v
 
 # enter fullscreen mode for the focused container
-# bindsym $mod+f fullscreen toggle
+bindsym $mod+w fullscreen toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -152,11 +150,12 @@ bar {
 # new_window pixel 3
 
 # Start programs on startup
-exec --no-startup-id nm-applet
 exec --no-startup-id redshift -l 42.6977:23.3219
 exec --no-startup-id telegram-desktop
-exec --no-startup-id ./Scripts/phonetic_keys.sh
-
+exec --no-startup-id ../Scripts/phonetic_keys.sh
+exec --no-startup-id rsibreak
+exec --no-startup-id albert
+exec --no-startup-id nm-applet
 
 # green
 # client.focused          #006400 #006400 #006400 #006400 #006400
@@ -174,9 +173,9 @@ client.focused_inactive  ##ff4719 #aaaaaa #ffffff #ffffff
 # bindcode 69 exec --no-startup-id thunderbird
 # bindcode 74 exec --no-startup-id google-chrome-stable
 bindsym $mod+f exec --no-startup-id firefox
-bindsym $mod+t exec --no-startup-id telegram
+bindsym $mod+m exec --no-startup-id telegram-desktop
 bindsym $mod+c exec --no-startup-id google-chrome-stable
-
+bindsym $mod+t exec sakura
 bindsym $mod+p exec --no-startup-id passmenu
 
 # ALSA
@@ -206,7 +205,3 @@ gaps outer $GAPS_OUTER_SIZE
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
-
-
-exec --no-startup-id albert
-exec --no-startup-id rsibreak

@@ -22,6 +22,8 @@ alias u='sudo apt update && sudo apt upgrade'
 
 # exa aliases
 alias l='exa -l'
+alias ll='exa -l'
+alias ls='exa -l'
 alias la='exa -l -a'
 
 alias grep='grep --color=tty -d skip '
@@ -106,6 +108,8 @@ alias radio='curseradio '
 alias z='zathura '
 alias todo='vit '
 alias cal='calcurse '
+
+alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json && sudo qmk flash'
 
 
 # ex - archive extractor
