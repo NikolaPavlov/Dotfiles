@@ -149,7 +149,7 @@ syntax enable
     " let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
     autocmd FileType nerdtree setlocal relativenumber
     let NERDTreeAutoDeleteBuffer = 1
-    let NERDTreeBookmarksSort = 2
+    let NERDTreeBookmarksSort = 0
     let NERDTreeDirArrows = 1
     let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
     let NERDTreeMinimalUI = 1
