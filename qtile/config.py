@@ -3,13 +3,16 @@ import subprocess
 
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
-from libqtile import layout, bar, widget
+from libqtile import layout, bar, widget, hook
 
 from typing import List  # noqa: F401
 
 mod = "mod1"
 modkey = "mod4"  # super key
 term = "sakura"
+
+soft_sep = {'linewidth': 2, 'size_percent': 70,
+            'foreground': '393939', 'padding': 7}
 
 keys = [
     # Switch between windows in current stack pane
@@ -34,7 +37,7 @@ keys = [
 
     # APPLICATIONS
     Key([mod], "t", lazy.spawn(term)),
-    Key([mod], "f", lazy.spawn("firefox")),
+    # Key([mod], "f", lazy.spawn("firefox")),
     Key([mod], "m", lazy.spawn("telegram-desktop")),
 
     # Toggle between different layouts as refined below
@@ -46,7 +49,14 @@ keys = [
     # Key([mod], "d", lazy.spawncmd()),
     Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
+    Key([mod], "f", lazy.window.toggle_fullscreen()),
 
+
+
+    # Sound
+    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute")),
 
 
     # TODO: xmonad recommended key bindings
@@ -95,8 +105,12 @@ screens = [
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
-                widget.Systray(),
+                widget.Memory(),
+                widget.Sep(**soft_sep),
+                widget.Volume(),
                 widget.Clock(format='%d | %I:%M'),
+                widget.Sep(**soft_sep),
+                widget.Systray(),
             ],
             24,
         ),
@@ -146,4 +160,9 @@ focus_on_window_activation = "smart"
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
-# TODO: add hook for autostart http://docs.qtile.org/en/latest/manual/config/hooks.html
+
+# TODO: startup script hook
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('/home/gogo/.config/qtile/autostart.sh')
+    subprocess.call([home])
