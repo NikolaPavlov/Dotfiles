@@ -184,9 +184,12 @@ source ~/.local/bin/virtualenvwrapper.sh
 source <(gopass completion bash)
 
 # Temp
+export PATH
 # export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
 # export LC_ALL="en_US.UTF-8"
+export HISTCONTROL=ignoreboth
+PS1="$"
 alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
 
 if [ -f $HOME/.sensitive ]; then
@@ -223,3 +226,4 @@ export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden -g ""'
 
 # export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null ||
     # cat {} || tree -C {}) 2> /dev/null | head -200'"
+
