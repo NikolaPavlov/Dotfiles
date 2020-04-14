@@ -52,7 +52,7 @@ alias pd='perldoc '
 alias pe='pipenv '
 alias pes='pipenv shell '
 # Git
-alias gs='git status '
+alias gs='git status --short '
 alias gc='git commit '
 alias ga='git add '
 alias gb='git branch '
@@ -110,6 +110,7 @@ alias todo='vit '
 alias cal='calcurse '
 
 alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json && sudo qmk flash'
+alias rec='recordmydesktop --device hw:1'
 
 
 # ex - archive extractor
@@ -148,7 +149,7 @@ man() {
 }
 
 # powerline
-source /usr/share/powerline/bindings/bash/powerline.sh
+# source /usr/share/powerline/bindings/bash/powerline.sh
 
 # autojump
 . /usr/share/autojump/autojump.bash
@@ -189,7 +190,7 @@ export PATH
 export PERL5LIB=~/perl5/lib/perl5
 # export LC_ALL="en_US.UTF-8"
 export HISTCONTROL=ignoreboth
-PS1="$"
+PS1="$ > "
 alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
 
 if [ -f $HOME/.sensitive ]; then
