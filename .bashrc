@@ -52,15 +52,8 @@ alias pd='perldoc '
 alias pe='pipenv '
 alias pes='pipenv shell '
 # Git
-alias gs='git status --short '
-alias gc='git commit '
-alias ga='git add '
-alias gb='git branch '
-alias gpush='git push '
-alias gpull='git pull '
-alias glog='git log --oneline '
+alias g='git'
 alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull '
-# git reset to previous commit (hard)
 # git reset --hard <commitId> && git clean -f
 alias push='git add . && git commit -m "up" && git push '
 
@@ -189,8 +182,8 @@ export PATH
 # export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
 # export LC_ALL="en_US.UTF-8"
-export HISTCONTROL=ignoreboth
-PS1="$ > "
+HISTCONTROL=ignoreboth:erasedups
+PS1="$\e[0;35m >\e[m "
 alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
 
 if [ -f $HOME/.sensitive ]; then
