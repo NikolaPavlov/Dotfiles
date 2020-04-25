@@ -51,12 +51,9 @@ keys = [
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
 
-
-
-  # Sound
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 10- unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 10+ unmute")),
-
+    # Volume control
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 1 sset Master 3+ unmute")),
 
     # TODO: xmonad recommended key bindings
     Key([mod], "h", lazy.layout.left()),
