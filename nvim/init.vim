@@ -627,9 +627,11 @@ set wildmode=full "specifies how command line completion works
 "23 running make and jumping to errors
 "24 language specific
 "25 multi-byte characters
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=ucs-bom,utf8,cp1251
+" set encoding=utf-8                   " for internal use, always utf8, there isn't need to specified this
+" set fileencoding=iso-8859-1
+set fileencoding=cp1251
+" set fileencoding=utf-8
+" set fileencodings=ucs-bom,utf-8,cp1251
 "26 various
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
@@ -863,8 +865,3 @@ nnoremap <Leader>f :<C-U>call ABFiles()<CR>
 function! ABFiles()
     execute 'FZF' expand('%:p:h')
 endfunction
-
-
-
-
-
