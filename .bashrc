@@ -52,15 +52,8 @@ alias pd='perldoc '
 alias pe='pipenv '
 alias pes='pipenv shell '
 # Git
-alias gs='git status '
-alias gc='git commit '
-alias ga='git add '
-alias gb='git branch '
-alias gpush='git push '
-alias gpull='git pull '
-alias glog='git log --oneline '
+alias g='git'
 alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull '
-# git reset to previous commit (hard)
 # git reset --hard <commitId> && git clean -f
 alias push='git add . && git commit -m "up" && git push '
 
@@ -110,6 +103,7 @@ alias todo='vit '
 alias cal='calcurse '
 
 alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json && sudo qmk flash'
+alias rec='recordmydesktop --device hw:1'
 
 
 # ex - archive extractor
@@ -148,7 +142,7 @@ man() {
 }
 
 # powerline
-source /usr/share/powerline/bindings/bash/powerline.sh
+# source /usr/share/powerline/bindings/bash/powerline.sh
 
 # autojump
 . /usr/share/autojump/autojump.bash
@@ -184,9 +178,12 @@ source ~/.local/bin/virtualenvwrapper.sh
 source <(gopass completion bash)
 
 # Temp
+export PATH
 # export PERL5LIB=./lib:$PERL5LIB
 export PERL5LIB=~/perl5/lib/perl5
 # export LC_ALL="en_US.UTF-8"
+HISTCONTROL=ignoreboth:erasedups
+PS1="$\e[0;35m >\e[m "
 alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
 
 if [ -f $HOME/.sensitive ]; then
@@ -223,3 +220,10 @@ export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden -g ""'
 
 # export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null ||
     # cat {} || tree -C {}) 2> /dev/null | head -200'"
+
+
+PATH="/home/gogo/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/gogo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/gogo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/gogo/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/gogo/perl5"; export PERL_MM_OPT;

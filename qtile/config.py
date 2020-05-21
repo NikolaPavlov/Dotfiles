@@ -51,13 +51,9 @@ keys = [
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
 
-
-
-    # Sound
-    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute")),
-
+    # Volume control
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 1 sset Master 3+ unmute")),
 
     # TODO: xmonad recommended key bindings
     Key([mod], "h", lazy.layout.left()),
@@ -104,10 +100,12 @@ screens = [
             [
                 widget.GroupBox(),
                 widget.Prompt(),
+                widget.Sep(**soft_sep),
                 widget.WindowName(),
-                widget.Memory(),
+                # widget.Memory(),
                 widget.Sep(**soft_sep),
                 widget.Volume(),
+                widget.Sep(**soft_sep),
                 widget.Clock(format='%d | %I:%M'),
                 widget.Sep(**soft_sep),
                 widget.Systray(),

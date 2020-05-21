@@ -3,3 +3,12 @@
 	name = Nikola Pavlov
 [megetool "nvim"]
     cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[alias]
+    a = add
+    s = status --short
+    br = branch
+    co = checkout
+    cm = commit
+    last = log -1 HEAD
+	log = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    unstage = reset HEAD --
