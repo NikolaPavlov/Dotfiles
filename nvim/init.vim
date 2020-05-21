@@ -865,6 +865,4 @@ function! ABFiles()
 endfunction
 
 
-
-
-
+nnoremap <leader>o :only<CR>
