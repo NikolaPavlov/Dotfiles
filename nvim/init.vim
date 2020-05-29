@@ -631,7 +631,7 @@ set wildmode=full "specifies how command line completion works
 " set fileencoding=iso-8859-1
 set fileencoding=cp1251
 " set fileencoding=utf-8
-" set fileencodings=ucs-bom,utf-8,cp1251
+set fileencodings=ucs-bom,utf-8,cp1251
 "26 various
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
