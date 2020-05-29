@@ -490,9 +490,9 @@ augroup ft_html
 	au BufNewFile,BufRead *.html set nowrap
 	au BufNewFile,BufRead *.html set colorcolumn=
 
-	autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
+	" autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-	autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
+	" autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
 augroup END
 "}}}
 "{{{ NeoSnippets
