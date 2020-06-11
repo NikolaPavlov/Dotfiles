@@ -105,6 +105,7 @@ alias cal='calcurse '
 alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json && sudo qmk flash'
 alias rec='recordmydesktop --device hw:1'
 
+alias weather='curl wttr.in';
 
 # ex - archive extractor
 ex ()
