@@ -31,8 +31,8 @@ if dein#load_state('~/.cache/dein')
         \{'on_ft': 'html'}) " always highlight html enclosing tags
     call dein#add('sjl/badwolf') " color theme
     call dein#add('nanotech/jellybeans.vim') " color theme
-    call dein#add('junegunn/goyo.vim',
-        \{'on_cmd': 'Goyo'}) " focus mode :Goyo
+    " call dein#add('junegunn/goyo.vim',
+    "     \{'on_cmd': 'Goyo'}) " focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
     call dein#add('kshenoy/vim-signature') " display the marks in the side line
     call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
@@ -56,10 +56,10 @@ if dein#load_state('~/.cache/dein')
     call dein#add('chrisbra/csv.vim',
         \{'on_ft': 'csv'}) " csv files formating
     call dein#add('jsfaint/gen_tags.vim') " https://github.com/jsfaint/gen_tags.vim
-    " TODO: vim-gutentags
-    call dein#add('ludovicchabant/vim-gutentags')
-    " TODO: check gutentags_plus
     " TODO: gutentags
+    " TODO: vim-gutentags
+    " TODO: check gutentags_plus
+    call dein#add('ludovicchabant/vim-gutentags')
     call dein#add('dm1try/golden_size') " auto resize splits
     call dein#add('junegunn/fzf')
     call dein#add('junegunn/fzf.vim')
@@ -76,6 +76,9 @@ if dein#load_state('~/.cache/dein')
         \{'on_ft': 'python'}) " better indent for python
     call dein#add('nvie/vim-flake8',
         \{'on_ft': 'python'}) " flake8
+
+    call dein#add('mhinz/vim-startify')
+    "
     " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
     " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
     " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
@@ -83,7 +86,6 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     " TODO: https://github.com/unfog-io/unfog-vim
     " TODO: https://github.com/tpope/vim-commentary
-    call dein#add('mhinz/vim-startify')
 
 endif
 
@@ -490,9 +492,9 @@ augroup ft_html
 	au BufNewFile,BufRead *.html set nowrap
 	au BufNewFile,BufRead *.html set colorcolumn=
 
-	autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
+	" autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-	autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
+	" autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
 augroup END
 "}}}
 "{{{ NeoSnippets

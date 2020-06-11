@@ -1,7 +1,7 @@
 export VISUAL=nvim
 export EDITOR=nvim
 
-alias w='whois '
+alias w='whoami '
 alias v='nvim '
 alias e='exit '
 alias c='clear '
