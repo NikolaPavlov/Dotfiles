@@ -101,10 +101,12 @@ alias radio='curseradio '
 alias z='zathura '
 alias todo='vit '
 alias cal='calcurse '
+alias temp='watch -n 2 sensors'
 
 alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json && sudo qmk flash'
 alias rec='recordmydesktop --device hw:1'
 
+alias weather='curl wttr.in';
 
 # ex - archive extractor
 ex ()
@@ -190,8 +192,10 @@ if [ -f $HOME/.sensitive ]; then
     . $HOME/.sensitive
 fi
 alias sshcore=$SSHCORE
+alias score=$SSHCORE
 alias sshweb=$SSHWEB
-alias sshwork='ssh npavlov@10.0.7.111'
+alias sweb=$SSHWEB
+alias sw='ssh npavlov@10.0.7.111'
 alias cdcore=$CDCORE
 alias cdremedy=$CDREMEDY
 
