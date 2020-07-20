@@ -12,7 +12,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim') " autocomplete engine
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('mhinz/vim-signify') " show git diff in the left bar
+    " call dein#add('mhinz/vim-signify') " show git diff in the left bar
     call dein#add('wellle/targets.vim') " add 'ci(' command
     call dein#add('tpope/vim-surround') " change surroundings
     call dein#add('tpope/vim-repeat') " repeat surround commands
@@ -23,8 +23,8 @@ if dein#load_state('~/.cache/dein')
         \{'on_cmd': 'NERDTreeToggleVCS'})
     call dein#add('Xuyuanp/nerdtree-git-plugin',
         \{'on_cmd': 'NERDTreeToggleVCS'}) " showing git status flags in nerdtree
-    call dein#add('vifm/vifm.vim',
-        \{'on_cmd': 'Vifm'}) " : Vifm :help vifm
+    " call dein#add('vifm/vifm.vim',
+    "     \{'on_cmd': 'Vifm'}) " : Vifm :help vifm
     call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
     call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
     call dein#add('Valloric/MatchTagAlways',
@@ -34,7 +34,7 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('junegunn/goyo.vim',
     "     \{'on_cmd': 'Goyo'}) " focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
-    call dein#add('kshenoy/vim-signature') " display the marks in the side line
+    " call dein#add('kshenoy/vim-signature') " display the marks in the side line
     call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
     call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
     call dein#add('yuttie/comfortable-motion.vim') "scroll effect
@@ -47,19 +47,19 @@ if dein#load_state('~/.cache/dein')
     call dein#add('godlygeek/tabular') " align text
     call dein#add('sjl/gundo.vim',
         \ {'on_ft': 'GundoToggle'}) " undo history
-    call dein#add('majutsushi/tagbar',
-        \{'on_ft': 'perl'}) " display tags <T>
-    call dein#add('mileszs/ack.vim') " grep replacement
+    " call dein#add('mileszs/ack.vim') " grep replacement
     call dein#add('dense-analysis/ale',
         \{'on_ft': ['perl', 'python', 'html']}) " linter on the fly (flake8 should be installed locally)
     call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
     call dein#add('chrisbra/csv.vim',
         \{'on_ft': 'csv'}) " csv files formating
+    call dein#add('majutsushi/tagbar',
+        \{'on_ft': 'perl'}) " display tags <T>
     call dein#add('jsfaint/gen_tags.vim') " https://github.com/jsfaint/gen_tags.vim
     " TODO: gutentags
     " TODO: vim-gutentags
     " TODO: check gutentags_plus
-    call dein#add('ludovicchabant/vim-gutentags')
+    " call dein#add('ludovicchabant/vim-gutentags') " auto re-generation of the tags files while working
     call dein#add('dm1try/golden_size') " auto resize splits
     call dein#add('junegunn/fzf')
     call dein#add('junegunn/fzf.vim')
@@ -68,14 +68,14 @@ if dein#load_state('~/.cache/dein')
     call dein#add('vim-airline/vim-airline-themes')
 
     " PYTHON
-    call dein#add('davidhalter/jedi-vim',
-        \{'on_ft': 'python'}) " need for go to definitions
-    call dein#add('zchee/deoplete-jedi',
-        \{'on_ft': 'python'}) " jedi vim completion async with deoplete
-    call dein#add('Vimjas/vim-python-pep8-indent',
-        \{'on_ft': 'python'}) " better indent for python
-    call dein#add('nvie/vim-flake8',
-        \{'on_ft': 'python'}) " flake8
+    " call dein#add('davidhalter/jedi-vim',
+    "     \{'on_ft': 'python'}) " need for go to definitions
+    " call dein#add('zchee/deoplete-jedi',
+    "     \{'on_ft': 'python'}) " jedi vim completion async with deoplete
+    " call dein#add('Vimjas/vim-python-pep8-indent',
+    "     \{'on_ft': 'python'}) " better indent for python
+    " call dein#add('nvie/vim-flake8',
+    "     \{'on_ft': 'python'}) " flake8
 
     call dein#add('mhinz/vim-startify')
     "
@@ -90,6 +90,7 @@ if dein#load_state('~/.cache/dein')
 endif
 
 " dein#recache_runtimepath() " --> for cleaning plugins
+" dein#check_clean()
 
 if dein#check_install()
     call dein#install()
@@ -104,8 +105,8 @@ syntax enable
 
     let g:deoplete#enable_at_startup = 1
     let g:AutoPairsMapCR=0
-    let g:deoplete#auto_complete_start_length = 1
-    let g:deoplete#enable_smart_case = 1
+    " let g:deoplete#auto_complete_start_length = 1
+    " let g:deoplete#enable_smart_case = 1
 
     imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
     imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
@@ -810,8 +811,16 @@ let maplocalleader='\\'
 
     " highlight trailing whitespace
     match ErrorMsg '\s\+$'
+    "
+    "
+    "
+    "
     " remove trailing whitespaces automatically   " match RedundantSpaces /\s\+$/
-    autocmd BufWritePre * :%s/\s\+$//e
+    " autocmd BufWritePre * :%s/\s\+$//e " TODO: BUG!
+    "
+    "
+    "
+    "
     " allign current paragraph
     " noremap <leader>a =ip
 
@@ -846,21 +855,13 @@ hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black
 "}}}
 
 set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
-" TODO: regeneration of the tags
 
-
-
-nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " temp for debug. see the logs with :messages
 " let g:gutentags_trace = 1
 
 
 " call fzf#run({'source': 'find /mnt/core/home/n.pavlov/easypay_core/CORE/lib /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ -type f', 'sink':  'edit'})
-
-
-
-
 
 nnoremap <Leader>f :<C-U>call ABFiles()<CR>
 "" Custom fzf find files in directory of active buffer
@@ -869,3 +870,4 @@ function! ABFiles()
 endfunction
 
 nnoremap <leader>o :only<CR>
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
