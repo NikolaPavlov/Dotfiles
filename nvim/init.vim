@@ -61,12 +61,8 @@ if dein#load_state('~/.cache/dein')
     " TODO: check gutentags_plus
     " call dein#add('ludovicchabant/vim-gutentags') " auto re-generation of the tags files while working
     call dein#add('dm1try/golden_size') " auto resize splits
-
-
-    call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
+    call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
     call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-
-
     call dein#add('yuki-ycino/fzf-preview.vim')
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
