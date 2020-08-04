@@ -12,7 +12,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim') " autocomplete engine
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
-    " call dein#add('mhinz/vim-signify') " show git diff in the left bar
+    call dein#add('mhinz/vim-signify') " show git diff in the left bar
+    call dein#add('kshenoy/vim-signature') " display the marks in the side line
     call dein#add('wellle/targets.vim') " add 'ci(' command
     call dein#add('tpope/vim-surround') " change surroundings
     call dein#add('tpope/vim-repeat') " repeat surround commands
@@ -34,7 +35,6 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('junegunn/goyo.vim',
     "     \{'on_cmd': 'Goyo'}) " focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
-    " call dein#add('kshenoy/vim-signature') " display the marks in the side line
     call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
     call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
     call dein#add('yuttie/comfortable-motion.vim') "scroll effect
@@ -61,8 +61,12 @@ if dein#load_state('~/.cache/dein')
     " TODO: check gutentags_plus
     " call dein#add('ludovicchabant/vim-gutentags') " auto re-generation of the tags files while working
     call dein#add('dm1try/golden_size') " auto resize splits
-    call dein#add('junegunn/fzf')
-    call dein#add('junegunn/fzf.vim')
+
+
+    call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
+    call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+
+
     call dein#add('yuki-ycino/fzf-preview.vim')
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
