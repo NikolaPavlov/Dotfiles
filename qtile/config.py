@@ -37,8 +37,8 @@ keys = [
 
     # APPLICATIONS
     Key([mod], "t", lazy.spawn(term)),
-    # Key([mod], "f", lazy.spawn("firefox")),
-    Key([mod], "m", lazy.spawn("telegram-desktop")),
+    Key([mod], "f", lazy.spawn("firefox")),
+    # Key([mod], "m", lazy.spawn("telegram-desktop")),
 
     # Toggle between different layouts as refined below
     Key([mod], "Tab", lazy.next_layout()),
@@ -49,7 +49,7 @@ keys = [
     # Key([mod], "d", lazy.spawncmd()),
     Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
-    Key([mod], "f", lazy.window.toggle_fullscreen()),
+    Key([mod], "w", lazy.window.toggle_fullscreen()),
 
     # Volume control
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
