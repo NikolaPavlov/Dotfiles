@@ -855,3 +855,14 @@ endfunction
 
 nnoremap <leader>o :only<CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+
+
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+"https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
+
+
+
+
