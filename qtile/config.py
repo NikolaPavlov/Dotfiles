@@ -47,8 +47,8 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
-    # Key([mod], "d", lazy.spawncmd()),
     Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
+    Key([mod], "j", lazy.spawn("firefox")),
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     Key([mod], "w", lazy.window.toggle_fullscreen()),
 
