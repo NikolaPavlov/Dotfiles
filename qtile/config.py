@@ -37,6 +37,7 @@ keys = [
 
     # APPLICATIONS
     Key([mod], "t", lazy.spawn(term)),
+    Key([mod], "x", lazy.spawn("xfce4-terminal")),
     Key([mod], "f", lazy.spawn("firefox")),
     # Key([mod], "m", lazy.spawn("telegram-desktop")),
 
