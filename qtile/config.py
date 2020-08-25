@@ -68,8 +68,8 @@ keys = [
     Key([mod], "i", lazy.layout.grow()),
     Key([mod], "m", lazy.layout.shrink()),
     Key([mod], "n", lazy.layout.normalize()),
-    Key([mod], "o", lazy.layout.maximize()), #  Toggle window between min ans max size
-    Key([modkey, "shift"], "space", lazy.layout.flip()),]
+    Key([mod], "o", lazy.layout.maximize()),  # Toggle window between min ans max size
+    Key([modkey, "shift"], "space", lazy.layout.flip()), ]
 
 groups = [Group(i) for i in "1234567890"]
 

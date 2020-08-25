@@ -858,11 +858,20 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 
 
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
+
+
+
+
+
+
+" Empty lines above / below the current
+" ======================================================================
 
 "https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
+map <t-Enter> O<Esc>
+nmap <CR> o<Esc>
 
-
-
+" mappings from unimpaired
+" ]<Space> -> above the line
+" [<Space> -> below the line
 
