@@ -597,8 +597,8 @@ set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 set showcmd "show command keys in the status line
 set noshowmode "don't display the current mode in the status line
 "13 selecting text
-set clipboard=unnamed
-"set clipboard=unnamedplus
+" set clipboard=unnamed
+set clipboard=unnamedplus
 "14 editing text
 set undofile " activate persistent undo
 set undodir=~/.config/nvim/undo_dir " dir for saving persistent undo files
