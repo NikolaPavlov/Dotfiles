@@ -37,8 +37,9 @@ keys = [
 
     # APPLICATIONS
     Key([mod], "t", lazy.spawn(term)),
-    # Key([mod], "f", lazy.spawn("firefox")),
-    Key([mod], "m", lazy.spawn("telegram-desktop")),
+    Key([mod], "x", lazy.spawn("xfce4-terminal")),
+    Key([mod], "f", lazy.spawn("firefox")),
+    # Key([mod], "m", lazy.spawn("telegram-desktop")),
 
     # Toggle between different layouts as refined below
     Key([mod], "Tab", lazy.next_layout()),
@@ -46,10 +47,10 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
-    # Key([mod], "d", lazy.spawncmd()),
     Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
+    Key([mod], "j", lazy.spawn("firefox")),
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
-    Key([mod], "f", lazy.window.toggle_fullscreen()),
+    Key([mod], "w", lazy.window.toggle_fullscreen()),
 
     # Volume control
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
@@ -67,8 +68,8 @@ keys = [
     Key([mod], "i", lazy.layout.grow()),
     Key([mod], "m", lazy.layout.shrink()),
     Key([mod], "n", lazy.layout.normalize()),
-    Key([mod], "o", lazy.layout.maximize()), #  Toggle window between min ans max size
-    Key([modkey, "shift"], "space", lazy.layout.flip()),]
+    Key([mod], "o", lazy.layout.maximize()),  # Toggle window between min ans max size
+    Key([modkey, "shift"], "space", lazy.layout.flip()), ]
 
 groups = [Group(i) for i in "1234567890"]
 

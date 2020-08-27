@@ -805,30 +805,14 @@ let maplocalleader='\\'
     " color for matching brackets
     hi MatchParen cterm=none ctermbg=green ctermfg=none
 
-    " show the whitespaces
-    " highlight RedundantSpaces ctermbg=red guibg=red
-
-
-    " highlight trailing whitespace
-    match ErrorMsg '\s\+$'
-    "
-    "
-    "
-    "
-    " remove trailing whitespaces automatically   " match RedundantSpaces /\s\+$/
-    " autocmd BufWritePre * :%s/\s\+$//e " TODO: BUG!
-    "
-    "
-    "
-    "
-    " allign current paragraph
-    " noremap <leader>a =ip
+    " Show trailing whitespace:
+    highlight ExtraWhitespace ctermbg=red guibg=red
+    match ExtraWhitespace /\s\+$/
 
     nnoremap <Cr> :b#<CR>
     nnoremap <C-n> :Vexplore<CR>
     " Last inserted text
     nnoremap g. :normal! `[v`]<cr><left>
-
 
     " Keep the cursor on the same column
     set nostartofline
@@ -871,3 +855,23 @@ endfunction
 
 nnoremap <leader>o :only<CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+
+
+
+
+
+
+
+
+" Empty lines above / below the current
+" ======================================================================
+
+"https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
+map <t-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+" mappings from unimpaired
+" ]<Space> -> above the line
+" [<Space> -> below the line
+
