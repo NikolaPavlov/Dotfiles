@@ -39,6 +39,10 @@ keys = [
     Key([mod], "t", lazy.spawn(term)),
     Key([mod], "x", lazy.spawn("xfce4-terminal")),
     Key([mod], "f", lazy.spawn("firefox")),
+    Key([mod], "c", lazy.spawn("google-chrome-stable")),
+    Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
+    Key([mod], "e", lazy.spawn("thunar")),
+
     # Key([mod], "m", lazy.spawn("telegram-desktop")),
 
     # Toggle between different layouts as refined below
@@ -47,8 +51,6 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
-    Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
-    Key([mod], "j", lazy.spawn("firefox")),
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     Key([mod], "w", lazy.window.toggle_fullscreen()),
 
