@@ -6,7 +6,7 @@
 # exclude_file=./directories_to_exclue_from_backup.txt
 exclude_file=./directories_to_exclue_from_backup.txt
 
-sudo rsync -aAXv --progress --delete --exclude-from=$exclude_file $1 $2
+sudo rsync -aAXv -e "ssh -p 39901" --progress --delete --exclude-from=$exclude_file $1 $2
 
 # -a archive mode (it keeps ownership, timestamp, permissions)
 # -A preserves ACLs
