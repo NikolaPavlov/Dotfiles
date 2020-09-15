@@ -30,7 +30,7 @@ alias grep='grep --color=tty -d skip '
 alias free='free -m '
 alias myip='curl ifconfig.me '
 
-alias p1='ping 192.168.1.1 '
+alias p1='ping 192.168.2.1 '
 alias p8='ping 8.8.8.8 -c 100 '
 alias pg='ping google.com '
 
