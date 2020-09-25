@@ -57,7 +57,7 @@ alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/W
 # git reset --hard <commitId> && git clean -f
 alias push='git add . && git commit -m "up" && git push '
 alias sync='cd ~/Documents/Repos/Dotfiles && git add . && git commit -m "up" && git push && cd ~/Documents/Repos/Wiki
-&& git add . && git commit -m "up" && git push'
+&& git add . && git commit -m "up" && git push && task sync'
 
 # Docker
 alias d='docker '
