@@ -109,6 +109,7 @@ alias rec='recordmydesktop --device hw:1'
 
 alias weather='curl wttr.in';
 
+alias lsblk='lsblk -f'
 # ex - archive extractor
 ex ()
 {
