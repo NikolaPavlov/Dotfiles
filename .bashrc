@@ -57,7 +57,7 @@ alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/W
 # git reset --hard <commitId> && git clean -f
 alias push='git add . && git commit -m "up" && git push '
 DELIM='####################'
-alias sync='echo "$DELIM" && task sync && echo "$DELIM" && cd ~/Documents/Repos/Dotfiles && git add . && git commit -m "up" && git push && echo "$DELIM"  && cd ~/Documents/Repos/Wiki && git add . && git commit -m "up" && git push && echo "$DELIM"'
+alias sync='echo "$DELIM" && task sync && echo "$DELIM" && cd ~/Documents/Repos/Dotfiles && git add . && git commit -m "up" && git push && echo "$DELIM"  && cd ~/Documents/Repos/Wiki && git add . && git commit -m "up" && git push'
 
 # Docker
 alias d='docker '
