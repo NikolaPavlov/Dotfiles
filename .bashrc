@@ -191,11 +191,8 @@ alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
 if [ -f $HOME/.sensitive ]; then
     . $HOME/.sensitive
 fi
-alias sshcore=$SSHCORE
 alias score=$SSHCORE
-alias sshweb=$SSHWEB
 alias sweb=$SSHWEB
-alias sw='ssh npavlov@10.0.7.111'
 alias cdcore=$CDCORE
 alias cdremedy=$CDREMEDY
 
