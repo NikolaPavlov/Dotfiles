@@ -104,6 +104,7 @@ alias z='zathura '
 alias todo='vit '
 alias cal='calcurse '
 alias temp='watch -n 2 sensors'
+alias top='bashtop'
 
 alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json && sudo qmk flash'
 alias rec='recordmydesktop --device hw:1'
