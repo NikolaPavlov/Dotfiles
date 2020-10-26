@@ -598,8 +598,8 @@ set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 set showcmd "show command keys in the status line
 set noshowmode "don't display the current mode in the status line
 "13 selecting text
-set clipboard=unnamed
-"set clipboard=unnamedplus
+" set clipboard=unnamed
+set clipboard=unnamedplus
 "14 editing text
 set undofile " activate persistent undo
 set undodir=~/.config/nvim/undo_dir " dir for saving persistent undo files
@@ -875,4 +875,19 @@ nmap <CR> o<Esc>
 " mappings from unimpaired
 " ]<Space> -> above the line
 " [<Space> -> below the line
+
+function! FormatJson()
+python << EOF
+import vim
+import json
+try:
+    buf = vim.current.buffer
+    json_content = '\n'.join(buf[:])
+    content = json.loads(json_content)
+    sorted_content = json.dumps(content, indent=4, sort_keys=True)
+    buf[:] = sorted_content.split('\n')
+except Exception, e:
+    print e
+EOF
+endfunction
 

@@ -195,6 +195,7 @@ alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
 if [ -f $HOME/.sensitive ]; then
     . $HOME/.sensitive
 fi
+
 alias sw='ssh work'
 alias score=$SSHCORE
 alias sweb=$SSHWEB
