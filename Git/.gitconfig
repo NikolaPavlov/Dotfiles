@@ -1,8 +1,11 @@
 [user]
 	email = nikola.pavlov1955@gmail.com
 	name = Nikola Pavlov
-[megetool "nvim"]
-    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+    tool = splice
+[mergetool "splice"]
+    cmd = "nvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+    trustExitCode = true
 [alias]
     a = add
     s = status --short
