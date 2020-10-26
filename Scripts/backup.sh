@@ -16,3 +16,8 @@ sudo rsync -aAXv -e "ssh -p 39901" --progress --delete --exclude-from=$exclude_f
 # --progress: shows progress
 
 # --fake-user ?
+
+
+
+# rsync over ssh non default port
+# rsync -arvz -e 'ssh -p <port-number>' --progress --delete user@remote-server:/path/to/remote/folder /path/to/local/folder
