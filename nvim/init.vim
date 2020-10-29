@@ -549,6 +549,7 @@ augroup END
 
 "}}}
 "}}}
+"
 "{{{ General :options
 " =============================================================================
 "   ___                          _
@@ -673,6 +674,7 @@ let maplocalleader='\\'
 " {{{ Other
 
     inoremap jk <Esc>
+    inoremap йк <Esc>
     " xnoremap jk <Esc>
     cnoremap jk <Esc>
 
