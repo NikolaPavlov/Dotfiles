@@ -894,6 +894,7 @@ EOF
 endfunction
 
 
+" TODO: prettyfy xml
 function! DoPrettyXML()
   " save the filetype so we can restore it later
   let l:origft = &ft
