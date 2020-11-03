@@ -687,7 +687,8 @@ let maplocalleader='\\'
     " nnoremap k -
     nnoremap <leader><leader> :noh<cr>
     " nnoremap ; :
-    nnoremap <silent><leader>s :set spell!<CR>
+    " nnoremap <silent><leader>s :set spell!<CR>
+    nnoremap <silent><leader>s :Startify
     nnoremap <BS> za
     vnoremap <leader><leader> <Esc>
     noremap <leader>a ggVG
