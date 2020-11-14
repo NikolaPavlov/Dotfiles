@@ -268,6 +268,11 @@ syntax enable
     nnoremap <leader>r :Rg<cr>
     nnoremap <leader>h :Helptags!<cr>
     nnoremap <leader>p :FzfPreviewProjectFiles<cr>
+    " Custom fzf find files in directory of active buffer
+    nnoremap <Leader>f :<C-U>call ABFiles()<CR>
+    function! ABFiles()
+        execute 'FZF' expand('%:p:h')
+    endfunction
 
     function! CreateCenteredFloatingWindow()
         let width = min([&columns - 4, max([80, &columns - 20])])
@@ -293,7 +298,6 @@ syntax enable
     endfunction
 
     let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
-
 
 " }}}
 " {{{ ALE
@@ -675,61 +679,45 @@ let maplocalleader='\\'
 
     inoremap jk <Esc>
     inoremap йк <Esc>
-    " xnoremap jk <Esc>
     cnoremap jk <Esc>
-
-    nnoremap <leader><space> <c-w><c-w> " navigation between vsp
     nnoremap / /\v
     nnoremap ? ?\v
     nnoremap j gj
     nnoremap k gk
-    " nnoremap j +
-    " nnoremap k -
+    nnoremap j +
+    nnoremap k -
     nnoremap <leader><leader> :noh<cr>
-    " nnoremap ; :
-    " nnoremap <silent><leader>s :set spell!<CR>
     nnoremap <silent><leader>s :Startify<CR>
+    " nnoremap <silent><leader>s :set spell!<CR>
     nnoremap <BS> za
     vnoremap <leader><leader> <Esc>
-    noremap <leader>a ggVG
+    nnoremap <leader>a ggVG
     vnoremap <leader>s :sort<CR>
     vnoremap < <gv
     vnoremap > >gv
-    "substitute with ctrl + s
-    " nnoremap <c-s> :%s/
-    " vnoremap <c-s> :s/
-
+    inoremap <C-a> <C-o>$
+    nnoremap <leader>d :bd<CR>
+    nnoremap zf zMzvzz
+    nnoremap <space> :
+    nnoremap <leader>w :w<cr>
+    nnoremap <leader>o :only<CR>
+    nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
     " replace the name of variable in current file
     nnoremap cv :%s/\<<C-r><C-w>\>/
-
     nnoremap n nzzzv
     nnoremap N Nzzzv
-
+    "paste with indentation
+    nnoremap p p=`]
+    nnoremap P [P
     "keep jumping results in the middle of the window
     nnoremap g; g;zz
     nnoremap g, g,zz
     "replace visualy selected text with the what is in the paste register
     vnoremap pp "+p
-    "paste with indentation
-    nnoremap p p=`]
-    nnoremap P [P
-    inoremap <C-a> <C-o>$
-    " close current buffer
-    nnoremap <leader>d :bd<CR>
-
     "Split line (sister to [J]oin lines)
     nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
-
     "forcing saving files that require root permission with :W
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-
-    "use <leader>z to focus the current fold
-    nnoremap zf zMzvzz
-
-    " nnoremap : <Nop>
-    noremap <space> :
-
-    nnoremap <leader>w :w<cr>
 
 " }}}
 " {{{ Windows moving / opening
@@ -738,11 +726,6 @@ let maplocalleader='\\'
     nnoremap <C-j> <C-w>j
     nnoremap <C-k> <C-w>k
     nnoremap <C-l> <C-w>l
-
-    " tnoremap <C-h> <C-\><C-n><C-w>h
-    " tnoremap <C-j> <C-\><C-n><C-w>j TODO: conflict with fzf
-    " tnoremap <C-k> <C-\><C-n><C-w>k
-    " tnoremap <C-l> <C-\><C-n><C-w>l
 
 "}}}
 "}}}
@@ -803,6 +786,37 @@ let maplocalleader='\\'
         endif
     endif
     endfunction
+
+    " Prettyfy xml
+    function! DoPrettyXML()
+        " save the filetype so we can restore it later
+        let l:origft = &ft
+        set ft=
+        " delete the xml header if it exists. This will
+        " permit us to surround the document with fake tags
+        " without creating invalid xml.
+        1s/<?xml .*?>//e
+        " insert fake tags around the entire document.
+        " This will permit us to pretty-format excerpts of
+        " XML that may contain multiple top-level elements.
+        0put ='<PrettyXML>'
+        $put ='</PrettyXML>'
+        silent %!xmllint --format -
+        " xmllint will insert an <?xml?> header. it's easy enough to delete
+        " if you don't want it.
+        " delete the fake tags
+        2d
+        $d
+        " restore the 'normal' indentation, which is one extra level
+        " too deep due to the extra tags we wrapped around the document.
+        silent %<
+        " back to home
+        1
+        " restore the filetype
+        exe "set ft=" . l:origft
+    endfunction
+    command! PrettyXML call DoPrettyXML()
+
 "}}}
 "{{{ Garbage
 
@@ -830,47 +844,16 @@ let maplocalleader='\\'
 "     inoremap <C-^> <C-o><C-^>
 " "}}}
 
-" :h movement
-" [[ -> for movement
-" ]h
-
 
 hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
 hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
 
 "{{{ BadWolf Theme
     " Make the tab line much lighter than the background.
-    let g:badwolf_tabline = 3
+    " let g:badwolf_tabline = 3
 "}}}
 
 set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
-
-
-" temp for debug. see the logs with :messages
-" let g:gutentags_trace = 1
-
-
-" call fzf#run({'source': 'find /mnt/core/home/n.pavlov/easypay_core/CORE/lib /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ -type f', 'sink':  'edit'})
-
-nnoremap <Leader>f :<C-U>call ABFiles()<CR>
-"" Custom fzf find files in directory of active buffer
-function! ABFiles()
-    execute 'FZF' expand('%:p:h')
-endfunction
-
-nnoremap <leader>o :only<CR>
-nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
-
-
-
-
-
-
-
-
-
-" Empty lines above / below the current
-" ======================================================================
 
 "https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
 map <t-Enter> O<Esc>
@@ -879,49 +862,3 @@ nmap <CR> o<Esc>
 " mappings from unimpaired
 " ]<Space> -> above the line
 " [<Space> -> below the line
-
-function! FormatJson()
-python << EOF
-import vim
-import json
-try:
-    buf = vim.current.buffer
-    json_content = '\n'.join(buf[:])
-    content = json.loads(json_content)
-    sorted_content = json.dumps(content, indent=4, sort_keys=True)
-    buf[:] = sorted_content.split('\n')
-except Exception, e:
-    print e
-EOF
-endfunction
-
-
-" TODO: prettyfy xml
-function! DoPrettyXML()
-  " save the filetype so we can restore it later
-  let l:origft = &ft
-  set ft=
-  " delete the xml header if it exists. This will
-  " permit us to surround the document with fake tags
-  " without creating invalid xml.
-  1s/<?xml .*?>//e
-  " insert fake tags around the entire document.
-  " This will permit us to pretty-format excerpts of
-  " XML that may contain multiple top-level elements.
-  0put ='<PrettyXML>'
-  $put ='</PrettyXML>'
-  silent %!xmllint --format -
-  " xmllint will insert an <?xml?> header. it's easy enough to delete
-  " if you don't want it.
-  " delete the fake tags
-  2d
-  $d
-  " restore the 'normal' indentation, which is one extra level
-  " too deep due to the extra tags we wrapped around the document.
-  silent %<
-  " back to home
-  1
-  " restore the filetype
-  exe "set ft=" . l:origft
-endfunction
-command! PrettyXML call DoPrettyXML()
