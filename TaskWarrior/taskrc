@@ -29,8 +29,16 @@ data.location=~/.task
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
-taskd.server=freecinc.com:53589
-taskd.key=\/home\/gogo\/.task\/freecinc_093110d0.key.pem
-taskd.certificate=\/home\/gogo\/.task\/freecinc_093110d0.cert.pem
-taskd.ca=\/home\/gogo\/.task\/freecinc_093110d0.ca.pem
-taskd.credentials=FreeCinc\/freecinc_093110d0\/c8012332-59d5-49ff-9da8-1459d3662470
+# taskd.server=freecinc.com:53589
+# taskd.key=\/home\/gogo\/.task\/freecinc_093110d0.key.pem
+# taskd.certificate=\/home\/gogo\/.task\/freecinc_093110d0.cert.pem
+# taskd.ca=\/home\/gogo\/.task\/freecinc_093110d0.ca.pem
+# taskd.credentials=FreeCinc\/freecinc_093110d0\/c8012332-59d5-49ff-9da8-1459d3662470
+
+# Inthe.AM
+taskd.certificate=/home/gogo/.task/intheam/private.certificate.pem
+taskd.key=/home/gogo/.task/intheam/private.key.pem
+taskd.ca=/home/gogo/.task/intheam/ca.cert.pem
+taskd.server=inthe.am:53589
+taskd.credentials=inthe_am/nikola.pavlov1955/2e2865fb-edc1-4ef8-a895-c687c0284bda
+taskd.trust=ignore hostname
