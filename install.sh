@@ -27,3 +27,4 @@ ln -sfv "$DOTFILES_DIR/vifm" ~/.config/
 ln -sfv "$DOTFILES_DIR/qtile/config.py" ~/.config/qtile
 ln -sfv "$DOTFILES_DIR/qtile/autostart.sh" ~/.config/qtile
 ln -sfv "$DOTFILES_DIR/gnupg/gpg-agent.conf" ~/.gnupg
+ln -sfv "$DOTFILES_DIR/TaskWarrior/taskrc" ~/.taskrc
