@@ -715,7 +715,7 @@ let maplocalleader='\\'
     "replace visualy selected text with the what is in the paste register
     vnoremap pp "+p
     "Split line (sister to [J]oin lines)
-    nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+    nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w"{{{}}}
     "forcing saving files that require root permission with :W
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
@@ -828,7 +828,6 @@ let maplocalleader='\\'
     highlight ExtraWhitespace ctermbg=red guibg=red
     match ExtraWhitespace /\s\+$/
 
-    nnoremap <Cr> :b#<CR>
     nnoremap <C-n> :Vexplore<CR>
     " Last inserted text
     nnoremap g. :normal! `[v`]<cr><left>
@@ -857,8 +856,9 @@ set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
 
 "https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
 map <t-Enter> O<Esc>
-nmap <CR> o<Esc>
 
 " mappings from unimpaired
 " ]<Space> -> above the line
 " [<Space> -> below the line
+
+nnoremap <CR> :b#<cr>
