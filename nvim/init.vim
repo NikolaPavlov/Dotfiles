@@ -32,8 +32,8 @@ if dein#load_state('~/.cache/dein')
         \{'on_ft': 'html'}) " always highlight html enclosing tags
     call dein#add('sjl/badwolf') " color theme
     call dein#add('nanotech/jellybeans.vim') " color theme
-    " call dein#add('junegunn/goyo.vim',
-    "     \{'on_cmd': 'Goyo'}) " focus mode :Goyo
+    call dein#add('junegunn/goyo.vim',
+        \{'on_cmd': 'Goyo'}) " focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
     call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
     call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
