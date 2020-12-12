@@ -9,7 +9,7 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
-    call dein#add('Shougo/deoplete.nvim') " autocomplete engine
+    " call dein#add('Shougo/deoplete.nvim') " autocomplete engine
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('mhinz/vim-signify') " show git diff in the left bar
@@ -87,11 +87,12 @@ if dein#load_state('~/.cache/dein')
     " TODO: https://github.com/unfog-io/unfog-vim
     " TODO: https://github.com/tpope/vim-commentary
     call dein#add('sjl/splice.vim.git')
-
+    call dein#add('neoclide/coc.nvim', { 'merged': 0 })
 endif
 
-" dein#recache_runtimepath() " --> for cleaning plugins
-" dein#check_clean()
+" How to remove plugins?
+    " :call dein#recache_runtimepath() " --> for cleaning plugins
+    " :call dein#check_clean()
 
 if dein#check_install()
     call dein#install()
@@ -113,6 +114,15 @@ syntax enable
     imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
     imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 
+" }}}
+" {{{ COC
+    let g:coc_global_extensions = [
+        \ 'coc-perl',
+        \ 'coc-json',
+        \ 'coc-html',
+        \ 'coc-css',
+        \ 'coc-python',
+    \ ]
 " }}}
 " {{{ NeoSnippet-snippets
 
