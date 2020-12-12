@@ -862,3 +862,10 @@ map <t-Enter> O<Esc>
 " [<Space> -> below the line
 
 nnoremap <CR> :b#<cr>
+
+let NERDTreeHijackNetrw=1
+" same NerdTree through the session 
+function! ToggleNERDTree()
+    NERDTreeToggle
+    silent NERDTreeMirror
+endfunction
