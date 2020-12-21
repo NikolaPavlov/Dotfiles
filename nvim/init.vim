@@ -9,7 +9,7 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
-    " call dein#add('Shougo/deoplete.nvim') " autocomplete engine
+    call dein#add('Shougo/deoplete.nvim') " autocomplete engine
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('mhinz/vim-signify') " show git diff in the left bar
@@ -32,8 +32,8 @@ if dein#load_state('~/.cache/dein')
         \{'on_ft': 'html'}) " always highlight html enclosing tags
     call dein#add('sjl/badwolf') " color theme
     call dein#add('nanotech/jellybeans.vim') " color theme
-    " call dein#add('junegunn/goyo.vim',
-    "     \{'on_cmd': 'Goyo'}) " focus mode :Goyo
+    call dein#add('junegunn/goyo.vim',
+        \{'on_cmd': 'Goyo'}) " focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
     call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
     call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
@@ -87,7 +87,7 @@ if dein#load_state('~/.cache/dein')
     " TODO: https://github.com/unfog-io/unfog-vim
     " TODO: https://github.com/tpope/vim-commentary
     call dein#add('sjl/splice.vim.git')
-    call dein#add('neoclide/coc.nvim', { 'merged': 0 })
+    " call dein#add('neoclide/coc.nvim', { 'merged': 0 })
 endif
 
 " How to remove plugins?
@@ -121,7 +121,6 @@ syntax enable
         \ 'coc-json',
         \ 'coc-html',
         \ 'coc-css',
-        \ 'coc-python',
     \ ]
 " }}}
 " {{{ NeoSnippet-snippets
@@ -879,3 +878,7 @@ function! ToggleNERDTree()
     NERDTreeToggle
     silent NERDTreeMirror
 endfunction
+
+
+" rg search to exclude filenames
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
