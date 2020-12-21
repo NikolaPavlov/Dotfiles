@@ -691,10 +691,10 @@ let maplocalleader='\\'
     cnoremap jk <Esc>
     nnoremap / /\v
     nnoremap ? ?\v
-    nnoremap j gj
-    nnoremap k gk
-    nnoremap j +
-    nnoremap k -
+    " nnoremap j gj
+    " nnoremap k gk
+    " nnoremap j +
+    " nnoremap k -
     nnoremap <leader><leader> :noh<cr>
     nnoremap <silent><leader>s :Startify<CR>
     " nnoremap <silent><leader>s :set spell!<CR>
@@ -873,7 +873,7 @@ map <t-Enter> O<Esc>
 nnoremap <CR> :b#<cr>
 
 let NERDTreeHijackNetrw=1
-" same NerdTree through the session 
+" same NerdTree through the session
 function! ToggleNERDTree()
     NERDTreeToggle
     silent NERDTreeMirror
