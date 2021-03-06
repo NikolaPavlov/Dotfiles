@@ -79,20 +79,14 @@ if dein#load_state('~/.cache/dein')
 
     call dein#add('mhinz/vim-startify')
     "
-    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
+    call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
     " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
     " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
     " call dein#add('pechorin/any-jump.nvim')
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-    " TODO: https://github.com/unfog-io/unfog-vim
-    " TODO: https://github.com/tpope/vim-commentary
     call dein#add('sjl/splice.vim.git')
     " call dein#add('neoclide/coc.nvim', { 'merged': 0 })
 endif
-
-" How to remove plugins?
-    " :call dein#recache_runtimepath() " --> for cleaning plugins
-    " :call dein#check_clean()
 
 if dein#check_install()
     call dein#install()
@@ -107,8 +101,6 @@ syntax enable
 
     let g:deoplete#enable_at_startup = 1
     let g:AutoPairsMapCR=0
-    " let g:deoplete#auto_complete_start_length = 1
-    " let g:deoplete#enable_smart_case = 1
 
     imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
     imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
@@ -152,14 +144,13 @@ syntax enable
     let g:neoformat_enabled_perl= ['perltidy']
     let g:neoformat_basic_format_align = 1 " Enable alignment
     let g:neoformat_basic_format_retab = 1 " Enable tab to spaces conversion
-    let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
+    let g:neoformat_basic_format_trim = 1  " Enable trimmming of trailing whitespace
 
     nnoremap <leader>nf :Neoformat<cr>
 
 " }}}
 " {{{ NerdTree
 
-    " let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
     autocmd FileType nerdtree setlocal relativenumber
     let NERDTreeAutoDeleteBuffer = 1
     let NERDTreeBookmarksSort = 0
@@ -170,52 +161,7 @@ syntax enable
     let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
     let NERDTreeShowLineNumbers = 1
 
-    " :NerdTreeCWD -> anker NerdTree to the current dir
-    " :Bookmark[<name>]
-    " :ClearBookmarks [<bookmark>]
-    " :EditBookmarks
-
-    " ? - help
-    " s - open in split
-    " <C-J> - Jump down to the next sibling on the current dir
-    " <C-K> - Jump up to prev sibling on the current dir
-    " C - Change the tree root to the selectes dir
-    " m - Display NerdTree menu
-    " I - hidden files on/off
-    " B - on/off Bookmark table
-    " F - on/off File displaying
-
-    " autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .' TODO: bug with vs | te
     nnoremap <c-t> :NERDTreeToggleVCS<cr>
-
-    "TODO: open NerdTree when open vim with no arguments
-    " autocmd StdinReadPre * let s:std_in=1
-    " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTreeToggle | endif
-
-" }}}
-" {{{ Fugitive
-
-    " https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
-    "
-    " :Gstatus or :G
-    " ---
-    " :Gpull
-    " :Gpush
-    " ---
-    " :Gwrite -> staging the file
-    " :Gread (gir reset --hard HEAD)
-    " :Gread -> (git checkout %) empty the current buffer and revert the last commit ver. of the file
-    " :Gremove -> (git rm %)
-    " ---
-    " :Gcommit -> open buffer to write commit msg
-    " :Gdiff
-    " :Gmerge
-    " :Gedit -> Gedit other_branch:filename -> open file from other branch read-only
-    " :Gedit <sha512> -> read only specific git object
-    " :Glog
-    " ---
-    " :Gblame
-    " ---
 
 " }}}
 " {{{ VimSlash
@@ -474,53 +420,61 @@ syntax enable
 
 "}}}
 "{{{ Python
-augroup ft_python
-	au!
-	au BufNewFile,BufRead *.py set wrap textwidth=120
-	au BufNewFile,BufRead *.py set colorcolumn=120
-augroup END
+
+    augroup ft_python
+        au!
+        au BufNewFile,BufRead *.py set wrap textwidth=120
+        au BufNewFile,BufRead *.py set colorcolumn=120
+    augroup END
+
 " }}}
 "{{{ Django
-augroup ft_django
-	au!
-	au BufNewFile,BufRead urls.py           setlocal nowrap
-	au BufNewFile,BufRead urls.py           normal! zR
 
-	au BufNewFile,BufRead admin.py setlocal filetype=python.django
-	au BufNewFile,BufRead urls.py setlocal filetype=python.django
-	au BufNewFile,BufRead models.py setlocal filetype=python.django
-	au BufNewFile,BufRead views.py setlocal filetype=python.django
-	au BufNewFile,BufRead forms.py setlocal filetype=python.django
+    augroup ft_django
+        au!
+        au BufNewFile,BufRead urls.py           setlocal nowrap
+        au BufNewFile,BufRead urls.py           normal! zR
 
-	au BufNewFile,BufRead base.py setlocal filetype=python.django
-	au BufNewFile,BufRead base.py setlocal foldmethod=marker
-	au BufNewFile,BufRead dev.py setlocal filetype=python.django
-	au BufNewFile,BufRead dev.py setlocal foldmethod=marker
-	au BufNewFile,BufRead prod.py setlocal filetype=python.django
-	au BufNewFile,BufRead prod.py setlocal foldmethod=marker
-augroup END
+        au BufNewFile,BufRead admin.py setlocal filetype=python.django
+        au BufNewFile,BufRead urls.py setlocal filetype=python.django
+        au BufNewFile,BufRead models.py setlocal filetype=python.django
+        au BufNewFile,BufRead views.py setlocal filetype=python.django
+        au BufNewFile,BufRead forms.py setlocal filetype=python.django
+
+        au BufNewFile,BufRead base.py setlocal filetype=python.django
+        au BufNewFile,BufRead base.py setlocal foldmethod=marker
+        au BufNewFile,BufRead dev.py setlocal filetype=python.django
+        au BufNewFile,BufRead dev.py setlocal foldmethod=marker
+        au BufNewFile,BufRead prod.py setlocal filetype=python.django
+        au BufNewFile,BufRead prod.py setlocal foldmethod=marker
+    augroup END
+
 " }}}
 "{{{ Html
-augroup ft_html
-	au!
-	au BufNewFile,BufRead *.html set filetype=html
-	au BufNewFile,BufRead *.html set nowrap
-	au BufNewFile,BufRead *.html set colorcolumn=
 
-	" autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    augroup ft_html
+        au!
+        au BufNewFile,BufRead *.html set filetype=html
+        au BufNewFile,BufRead *.html set nowrap
+        au BufNewFile,BufRead *.html set colorcolumn=
 
-	" autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
-augroup END
+        " autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+        " autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
+    augroup END
+
 "}}}
 "{{{ NeoSnippets
 au FileType neosnippet set noexpandtab
 "}}}
 "{{{ Text + rst + md
-augroup text_rst_md
-	au!
-	au BufNewFile,BufRead *.{txt,rst,md} set wrap textwidth=120
-	au BufNewFile,BufRead *.{txt,rst,md} set colorcolumn=120
-augroup END
+
+    augroup text_rst_md
+        au!
+        au BufNewFile,BufRead *.{txt,rst,md} set wrap textwidth=120
+        au BufNewFile,BufRead *.{txt,rst,md} set colorcolumn=120
+    augroup END
+
 "}}}
 "{{{ Yaml
 
@@ -529,18 +483,22 @@ augroup END
 
 "}}}
 "{{{ Vim
-augroup filetype_vim
-	au!
-	au FileType vim setlocal foldmethod=marker
-	au BufNewFile,BufRead *.vim setlocal nowrap
-	au BufNewFile,BufRead *.vim setlocal colorcolumn=
-	au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
-augroup END
+
+    augroup filetype_vim
+        au!
+        au FileType vim setlocal foldmethod=marker
+        au BufNewFile,BufRead *.vim setlocal nowrap
+        au BufNewFile,BufRead *.vim setlocal colorcolumn=
+        au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
+    augroup END
+
 "}}}
 "{{{ Gopass Files
+"
     " https://woile.github.io/gopass-cheat-sheet/
     " https://woile.github.io/gopass-presentation/
     au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+
 "}}}
 "{{{ CSV
 
@@ -676,6 +634,7 @@ set clipboard+=unnamedplus
 " TODO: localleader
 let maplocalleader='\\'
 " {{{ Open files
+"
     " nnoremap <leader>ev :e $MYVIMRC<CR>
     nnoremap <leader>ev :e ~/Documents/Repos/Dotfiles/nvim/init.vim<CR>
     nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
@@ -683,6 +642,7 @@ let maplocalleader='\\'
     nnoremap <leader>et :e ~/Temp/temp.pl<CR>
     nnoremap <leader>es :e ~/Documents/Repos/Dotfiles/NeoSnippets/<CR>
     " TODO: snippets
+
 " }}}
 " {{{ Other
 
@@ -691,13 +651,8 @@ let maplocalleader='\\'
     cnoremap jk <Esc>
     nnoremap / /\v
     nnoremap ? ?\v
-    " nnoremap j gj
-    " nnoremap k gk
-    " nnoremap j +
-    " nnoremap k -
     nnoremap <leader><leader> :noh<cr>
     nnoremap <silent><leader>s :Startify<CR>
-    " nnoremap <silent><leader>s :set spell!<CR>
     nnoremap <BS> za
     vnoremap <leader><leader> <Esc>
     nnoremap <leader>a ggVG
@@ -711,6 +666,8 @@ let maplocalleader='\\'
     nnoremap <leader>w :w<cr>
     nnoremap <leader>o :only<CR>
     nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+    " Toggle between buffers
+    nnoremap <CR> :b#<cr>
     " replace the name of variable in current file
     nnoremap cv :%s/\<<C-r><C-w>\>/
     nnoremap n nzzzv
@@ -844,33 +801,17 @@ let maplocalleader='\\'
     " Keep the cursor on the same column
     set nostartofline
 
-    " Movement in insert mode
-"     inoremap <C-h> <C-o>h
-"     inoremap <C-l> <C-o>a
-"     inoremap <C-j> <C-o>j
-"     inoremap <C-k> <C-o>k
-"     inoremap <C-^> <C-o><C-^>
 " "}}}
 
 
 hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
 hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
 
-"{{{ BadWolf Theme
-    " Make the tab line much lighter than the background.
-    " let g:badwolf_tabline = 3
-"}}}
-
 set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
 
 "https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
 map <t-Enter> O<Esc>
 
-" mappings from unimpaired
-" ]<Space> -> above the line
-" [<Space> -> below the line
-
-nnoremap <CR> :b#<cr>
 
 let NERDTreeHijackNetrw=1
 " same NerdTree through the session
