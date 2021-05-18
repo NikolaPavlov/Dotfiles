@@ -562,7 +562,8 @@ set splitright "a new window is put right of the current one
 "7 multiple tab pages
 "8 terminal
 "9 using the mouse
-set mouse=a " scroll in files and resize windows
+" set mouse=a " scroll in files and resize windows
+set mouse= " making copy/paste to work over ssh terminals
 "10 GUI
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 "11 printing
