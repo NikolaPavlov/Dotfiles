@@ -588,8 +588,8 @@ set shiftround "round to 'shiftwidth' for '<<' and '>>'
 "16 folding
 set foldmethod=indent
 set foldlevel=99
-" set foldlevelstart=10 "open most folds by default
-set foldlevelstart=0 "close most folds by default
+set foldlevelstart=10 "open most folds by default
+" set foldlevelstart=0 "close most folds by default
 "17 diff mode
 "18 mapping
 "19 reading and writing files
