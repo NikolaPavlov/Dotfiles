@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from libqtile.config import Key, Screen, Group, Drag, Click
+    from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 
@@ -39,7 +39,6 @@ keys = [
     Key([mod], "t", lazy.spawn(term)),
     Key([mod], "x", lazy.spawn("xfce4-terminal")),
     Key([mod], "f", lazy.spawn("firefox")),
-    Key([mod], "c", lazy.spawn("google-chrome-stable")),
     Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
     Key([mod], "e", lazy.spawn("thunar")),
 
@@ -55,8 +54,8 @@ keys = [
     Key([mod], "w", lazy.window.toggle_fullscreen()),
 
     # Volume control
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 1 sset Master 3+ unmute")),
+    # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
+    # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 1 sset Master 3+ unmute")),
 
     # TODO: xmonad recommended key bindings
     Key([mod], "h", lazy.layout.left()),
@@ -71,7 +70,7 @@ keys = [
     Key([mod], "m", lazy.layout.shrink()),
     Key([mod], "n", lazy.layout.normalize()),
     Key([mod], "o", lazy.layout.maximize()),  # Toggle window between min ans max size
-    Key([modkey, "shift"], "space", lazy.layout.flip()), ]
+    # Key([modkey, "shift"], "space", lazy.layout.flip()), ]
 
 groups = [Group(i) for i in "1234567890"]
 

@@ -7,7 +7,6 @@ alias e='exit '
 alias c='clear '
 alias cl='clear '
 alias a='alsamixer '
-alias s='startx '
 alias rm='rm -Irv '
 alias off='poweroff '
 alias cp='cp -i '
@@ -27,30 +26,21 @@ alias ls='exa -l'
 alias la='exa -l -a'
 
 alias grep='grep --color=tty -d skip '
-alias free='free -m '
 alias myip='curl ifconfig.me '
 
 alias p1='ping 192.168.2.1 '
 alias p8='ping 8.8.8.8 -c 100 '
 alias pg='ping google.com '
 
-alias tsocks='tsocks '
-
 # Pacman
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rns '
 alias search='sudo  pacman -Ss '
 # Python
-# alias p='python3.8 '
-# alias i='ipython '
-# alias pt='pytest '
 # Perl
 alias p='perl '
 alias pl='perl '
 alias pd='perldoc '
-# PipEnv
-alias pe='pipenv '
-alias pes='pipenv shell '
 # Git
 alias g='git'
 alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull '
@@ -175,11 +165,11 @@ PATH="$PATH:$HOME/.cargo/bin"
 export MANPAGER="nvim +set\ filetype=man -"
 
 # virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/$USER/.local/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh
-# source /usr/bin/virtualenvwrapper.sh
+#export WORKON_HOME=~/.virtualenvs
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#export VIRTUALENVWRAPPER_VIRTUALENV=/home/$USER/.local/bin/virtualenv
+# source ~/.local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 # autocomplete for gopass
 source <(gopass completion bash)
