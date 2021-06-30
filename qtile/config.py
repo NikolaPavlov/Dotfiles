@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-    from libqtile.config import Key, Screen, Group, Drag, Click
+from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 
@@ -70,7 +70,7 @@ keys = [
     Key([mod], "m", lazy.layout.shrink()),
     Key([mod], "n", lazy.layout.normalize()),
     Key([mod], "o", lazy.layout.maximize()),  # Toggle window between min ans max size
-    # Key([modkey, "shift"], "space", lazy.layout.flip()), ]
+    Key([modkey, "shift"], "space", lazy.layout.flip()), ]
 
 groups = [Group(i) for i in "1234567890"]
 

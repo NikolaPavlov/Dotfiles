@@ -436,8 +436,8 @@ EOF
 
         set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
 
-        " noremap <F5> :w<CR>:!perl %<CR>
-        " inoremap <F5> <Esc>:w<CR>:!perl %<CR>
+        noremap <F5> :w<CR>:!perl %<CR>
+        inoremap <F5> <Esc>:w<CR>:!perl %<CR>
     augroup END
 
 "}}}
@@ -449,6 +449,8 @@ EOF
         au BufNewFile,BufRead *.py set colorcolumn=120
     augroup END
 
+    noremap <F6> :w<CR>:!python %<CR>
+    inoremap <F6> <Esc>:w<CR>:!python %<CR>
 " }}}
 "{{{ Django
 
@@ -847,5 +849,3 @@ endfunction
 
 " <leader>r rg search to exclude filenames
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
-noremap <F5> :w<CR>:!python %<CR>
-inoremap <F5> <Esc>:w<CR>:!python %<CR>

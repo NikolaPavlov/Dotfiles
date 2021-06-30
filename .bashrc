@@ -44,30 +44,16 @@ alias pd='perldoc '
 # Git
 alias g='git'
 alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/Wiki && git pull '
-# git reset --hard <commitId> && git clean -f
 alias push='git add . && git commit -m "up" && git push '
 DELIM='####################'
 alias syncall='echo "$DELIM" && task sync && echo "$DELIM" && cd ~/Documents/Repos/Dotfiles && git add . && git commit -m "up" && git push && echo "$DELIM"  && cd ~/Documents/Repos/Wiki && git add . && git commit -m "up" && git push'
 
-# Docker
-alias d='docker '
-alias di='docker images '
-alias drmi='docker rmi -f $(docker images -q) ' # remove image
-alias drmc='docker rm -f $(docker ps -a -q) ' # remove all images
-alias dc='docker-compose '
-# Vagrant
-alias va='vagrant '
-alias vs='vagrant status '
-alias vup='vagrant up '
-alias vgs='vagrant global status '
-alias vssh='vagrant ssh '
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/ '
 #TODO: Update secret alias with full parameters
-# YouTube + Spotify
-alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0 '
+# YouTube
 alias mp3='youtube-dl -i -f bestaudio --extract-audio --audio-format mp3 --no-check-certificate '
-alias dl='~/.local/bin/spotdl --song '
+alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0 '
 # Django
 alias pm='python manage.py '
 alias pmr='python manage.py runserver '
@@ -79,30 +65,22 @@ alias pmt='python manage.py test '
 alias t='task '
 alias tl='task list '
 alias ta='task add $1 '
-alias tdel='task $1 delete '
-alias tdone='task $1 done '
-alias te='task $1 edit '
 alias tn='task next '
-alias tannotete='task $1 annotate $2 '
 # Programs
 alias vifm='vifmrun '
-alias f='firefox '
-alias clock='tty-clock -c '
 alias reflect='sudo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist '
 alias radio='com.github.louis77.tuner'
 alias z='zathura '
-alias todo='vit '
-alias cal='calcurse '
+# Other
+alias s='startx'
 alias temp='watch -n 2 sensors'
 # alias top='bashtop'
 alias flac='smloadr'
-
 alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json && sudo qmk flash'
 alias rec='recordmydesktop --device hw:1'
-
 alias weather='curl wttr.in';
-
 alias lsblk='lsblk -f'
+
 # ex - archive extractor
 ex ()
 {
@@ -180,12 +158,8 @@ export PATH
 export PERL5LIB=~/perl5/lib/perl5
 # export LC_ALL="en_US.UTF-8"
 HISTCONTROL=ignoreboth:erasedups
-PS1="$\e[0;35m >\e[m "
-alias runregix='p -MTime::HiRes -I./ regix_info1.pl 201593304 '
 
-if [ -f $HOME/.sensitive ]; then
-    . $HOME/.sensitive
-fi
+# PS1="$\e[0;35m >\e[m "
 
 alias sw='ssh work'
 alias score=$SSHCORE
@@ -193,12 +167,12 @@ alias sweb=$SSHWEB
 alias cdcore=$CDCORE
 alias cdremedy=$CDREMEDY
 
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# source /usr/share/fzf/key-bindings.bash
+# source /usr/share/fzf/completion.bash
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
 # TODO:
-export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden -g ""'
+# export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden -g ""'
 # Ctrl + t --> search in current dir
 # Ctrl + r --> search history
 # Alt + c --> change to dir
