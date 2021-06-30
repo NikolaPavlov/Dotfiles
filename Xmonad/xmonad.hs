@@ -105,18 +105,28 @@ myFocusedBorderColor = "#ff0000"
 myWorkspaces = ["1","2","3","4","5","6","7","8","9","0"]
 
 myScratchPads :: [NamedScratchpad]
-myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm ]
+myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
+                , NS "cmus" spawnCmus findCmus manageCmus
+                ]
 
   where
     spawnTerm  = myTerminal ++ " -t scratchpad"
     findTerm   = title =? "scratchpad"
     manageTerm = customFloating $ W.RationalRect l t w h
-        where
-          h = 0.9
-          w = 0.9
-          t = 0.95 -h
-          l = 0.95 -w
+               where
+                 h = 0.9
+                 w = 0.9
+                 t = 0.95 -h
+                 l = 0.95 -w
 
+    spawnCmus  = myTerminal ++ " -t cmus -e cmus"
+    findCmus   = title =? "cmus"
+    manageCmus = customFloating $ W.RationalRect l t w h
+               where
+                 h = 0.9
+                 w = 0.9
+                 t = 0.95 -h
+                 l = 0.95 -w
 ------------------------------------------------------------------------
 -- Key bindings.
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
@@ -230,11 +240,12 @@ myKeys2 =
     , ("M-l",     sendMessage Expand)
     , ("M-S-q",   io (exitWith ExitSuccess))
     , ("M-S-r",   spawn "xmonad --recompile; xmonad --restart")
-    , ("M-x", namedScratchpadAction myScratchPads "terminal")
+    , ("M-C-t", namedScratchpadAction myScratchPads "terminal")
+    , ("M-c", namedScratchpadAction myScratchPads "cmus")
     ]
 -- The following lines are needed for named scratchpads.
-    where nonNSP          = WSIs (return (\ws -> W.tag ws /= "NSP"))
-          nonEmptyNonNSP  = WSIs (return (\ws -> isJust (W.stack ws) && W.tag ws /= "NSP"))
+      where nonNSP          = WSIs (return (\ws -> W.tag ws /= "NSP"))
+            nonEmptyNonNSP  = WSIs (return (\ws -> isJust (W.stack ws) && W.tag ws /= "NSP"))
 
 ------------------------------------------------------------------------
 -- Mouse bindings:
