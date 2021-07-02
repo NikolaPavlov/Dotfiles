@@ -459,7 +459,8 @@ syntax enable
 
         set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
 
-        noremap <F5> :w<CR>:!perl %<CR>
+        " noremap <F5> :w<CR>:!perl %<CR>
+        noremap <F5> :w<CR>:!python %<CR>
         inoremap <F5> <Esc>:w<CR>:!perl %<CR>
     augroup END
 
