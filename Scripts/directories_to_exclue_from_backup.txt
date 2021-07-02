@@ -1,3 +1,4 @@
+
 /dev/*
 /proc/*
 /sys/*
@@ -5,6 +6,7 @@
 /run/*
 /mnt/*
 /media/*
+/srv/*
 /home/*/.gvfs
 /home/*/VirtualBoxVMs/*
 /home/*/.cache/*

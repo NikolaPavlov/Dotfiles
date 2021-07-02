@@ -39,7 +39,6 @@ keys = [
     Key([mod], "t", lazy.spawn(term)),
     Key([mod], "x", lazy.spawn("xfce4-terminal")),
     Key([mod], "f", lazy.spawn("firefox")),
-    Key([mod], "c", lazy.spawn("google-chrome-stable")),
     Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
     Key([mod], "e", lazy.spawn("thunar")),
 
@@ -55,8 +54,8 @@ keys = [
     Key([mod], "w", lazy.window.toggle_fullscreen()),
 
     # Volume control
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 1 sset Master 3+ unmute")),
+    # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
+    # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 1 sset Master 3+ unmute")),
 
     # TODO: xmonad recommended key bindings
     Key([mod], "h", lazy.layout.left()),

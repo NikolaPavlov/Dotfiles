@@ -32,8 +32,8 @@ if dein#load_state('~/.cache/dein')
         \{'on_ft': 'html'}) " always highlight html enclosing tags
     call dein#add('sjl/badwolf') " color theme
     call dein#add('nanotech/jellybeans.vim') " color theme
-    " call dein#add('junegunn/goyo.vim',
-    "     \{'on_cmd': 'Goyo'}) " focus mode :Goyo
+    call dein#add('junegunn/goyo.vim',
+        \{'on_cmd': 'Goyo'}) " focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
     call dein#add('lfv89/vim-interestingwords') " colorize interesting words with <leader>k
     call dein#add('ap/vim-buftabline') " buffers in the tabline of vim
@@ -79,19 +79,18 @@ if dein#load_state('~/.cache/dein')
 
     call dein#add('mhinz/vim-startify')
     "
-    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
+    call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
     " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
     " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
     " call dein#add('pechorin/any-jump.nvim')
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-    " TODO: https://github.com/unfog-io/unfog-vim
-    " TODO: https://github.com/tpope/vim-commentary
     call dein#add('sjl/splice.vim.git')
-
+    " call dein#add('neoclide/coc.nvim', { 'merged': 0 })
+    "
+    call dein#add('nvim-lua/popup.nvim')
+    call dein#add('nvim-lua/plenary.nvim')
+    call dein#add('nvim-telescope/telescope.nvim')
 endif
-
-" dein#recache_runtimepath() " --> for cleaning plugins
-" dein#check_clean()
 
 if dein#check_install()
     call dein#install()
@@ -106,13 +105,19 @@ syntax enable
 
     let g:deoplete#enable_at_startup = 1
     let g:AutoPairsMapCR=0
-    " let g:deoplete#auto_complete_start_length = 1
-    " let g:deoplete#enable_smart_case = 1
 
     imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
     imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
     imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 
+" }}}
+" {{{ COC
+    let g:coc_global_extensions = [
+        \ 'coc-perl',
+        \ 'coc-json',
+        \ 'coc-html',
+        \ 'coc-css',
+    \ ]
 " }}}
 " {{{ NeoSnippet-snippets
 
@@ -143,14 +148,13 @@ syntax enable
     let g:neoformat_enabled_perl= ['perltidy']
     let g:neoformat_basic_format_align = 1 " Enable alignment
     let g:neoformat_basic_format_retab = 1 " Enable tab to spaces conversion
-    let g:neoformat_basic_format_trim = 1 " Enable trimmming of trailing whitespace
+    let g:neoformat_basic_format_trim = 1  " Enable trimmming of trailing whitespace
 
     nnoremap <leader>nf :Neoformat<cr>
 
 " }}}
 " {{{ NerdTree
 
-    " let NERDTreeMapOpenInTab='<leader>t' "remap 't' because we use it for open/close nerdtree
     autocmd FileType nerdtree setlocal relativenumber
     let NERDTreeAutoDeleteBuffer = 1
     let NERDTreeBookmarksSort = 0
@@ -161,52 +165,7 @@ syntax enable
     let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
     let NERDTreeShowLineNumbers = 1
 
-    " :NerdTreeCWD -> anker NerdTree to the current dir
-    " :Bookmark[<name>]
-    " :ClearBookmarks [<bookmark>]
-    " :EditBookmarks
-
-    " ? - help
-    " s - open in split
-    " <C-J> - Jump down to the next sibling on the current dir
-    " <C-K> - Jump up to prev sibling on the current dir
-    " C - Change the tree root to the selectes dir
-    " m - Display NerdTree menu
-    " I - hidden files on/off
-    " B - on/off Bookmark table
-    " F - on/off File displaying
-
-    " autocmd BufEnter * lcd %:p:h " synchronize NerdTree to the current dir when 'nvim .' TODO: bug with vs | te
     nnoremap <c-t> :NERDTreeToggleVCS<cr>
-
-    "TODO: open NerdTree when open vim with no arguments
-    " autocmd StdinReadPre * let s:std_in=1
-    " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTreeToggle | endif
-
-" }}}
-" {{{ Fugitive
-
-    " https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool/
-    "
-    " :Gstatus or :G
-    " ---
-    " :Gpull
-    " :Gpush
-    " ---
-    " :Gwrite -> staging the file
-    " :Gread (gir reset --hard HEAD)
-    " :Gread -> (git checkout %) empty the current buffer and revert the last commit ver. of the file
-    " :Gremove -> (git rm %)
-    " ---
-    " :Gcommit -> open buffer to write commit msg
-    " :Gdiff
-    " :Gmerge
-    " :Gedit -> Gedit other_branch:filename -> open file from other branch read-only
-    " :Gedit <sha512> -> read only specific git object
-    " :Glog
-    " ---
-    " :Gblame
-    " ---
 
 " }}}
 " {{{ VimSlash
@@ -232,73 +191,73 @@ syntax enable
 " }}}
 "{{{ FZF
 
-    let g:fzf_colors =
-    \ { 'fg':      ['fg', 'Normal'],
-    \ 'bg':      ['bg', 'Normal'],
-    \ 'hl':      ['fg', 'Comment'],
-    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-    \ 'hl+':     ['fg', 'Statement'],
-    \ 'info':    ['fg', 'PreProc'],
-    \ 'border':  ['fg', 'Ignore'],
-    \ 'prompt':  ['fg', 'Conditional'],
-    \ 'pointer': ['fg', 'Exception'],
-    \ 'marker':  ['fg', 'Keyword'],
-    \ 'spinner': ['fg', 'Label'],
-    \ 'header':  ['fg', 'Comment'] }
-
-    " [Buffers] Jump to the existing window if possible
-    let g:fzf_buffers_jump = 1
-
-    " [Tags] Command to generate tags file
-    let g:fzf_tags_command = 'ctags -R'
-
-    " Reverse the layout to make the FZF list top-down
-    let $FZF_DEFAULT_OPTS='--layout=reverse'
-
-
-    nnoremap <leader>g :GFiles<cr>
-    nnoremap <leader>f :Files<cr>
-    " nnoremap <c-t> :BTags<CR>
-    nnoremap <leader>t :Tags<cr>
-    " nnoremap <c-l> :BLines<CR>
-    nnoremap <leader>l :Lines<cr>
-    nnoremap <leader>m :Marks<cr>
-    " use :Rg --files to list files searchable by Rg
-    nnoremap <leader>r :Rg<cr>
-    nnoremap <leader>h :Helptags!<cr>
-    nnoremap <leader>p :FzfPreviewProjectFiles<cr>
-    " Custom fzf find files in directory of active buffer
-    nnoremap <Leader>f :<C-U>call ABFiles()<CR>
-    function! ABFiles()
-        execute 'FZF' expand('%:p:h')
-    endfunction
-
-    function! CreateCenteredFloatingWindow()
-        let width = min([&columns - 4, max([80, &columns - 20])])
-        let height = min([&lines - 4, max([20, &lines - 10])])
-        let top = ((&lines - height) / 2) - 1
-        let left = (&columns - width) / 2
-        let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
-
-        let top = "╭" . repeat("─", width - 2) . "╮"
-        let mid = "│" . repeat(" ", width - 2) . "│"
-        let bot = "╰" . repeat("─", width - 2) . "╯"
-        let lines = [top] + repeat([mid], height - 2) + [bot]
-        let s:buf = nvim_create_buf(v:false, v:true)
-        call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
-        call nvim_open_win(s:buf, v:true, opts)
-        set winhl=Normal:Floating
-        let opts.row += 1
-        let opts.height -= 2
-        let opts.col += 2
-        let opts.width -= 4
-        call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-        au BufWipeout <buffer> exe 'bw '.s:buf
-    endfunction
-
-    let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
-
+    " let g:fzf_colors =
+    " \ { 'fg':      ['fg', 'Normal'],
+    " \ 'bg':      ['bg', 'Normal'],
+    " \ 'hl':      ['fg', 'Comment'],
+    " \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    " \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    " \ 'hl+':     ['fg', 'Statement'],
+    " \ 'info':    ['fg', 'PreProc'],
+    " \ 'border':  ['fg', 'Ignore'],
+    " \ 'prompt':  ['fg', 'Conditional'],
+    " \ 'pointer': ['fg', 'Exception'],
+    " \ 'marker':  ['fg', 'Keyword'],
+    " \ 'spinner': ['fg', 'Label'],
+    " \ 'header':  ['fg', 'Comment'] }
+    "
+    " " [Buffers] Jump to the existing window if possible
+    " let g:fzf_buffers_jump = 1
+    "
+    " " [Tags] Command to generate tags file
+    " let g:fzf_tags_command = 'ctags -R'
+    "
+    " " Reverse the layout to make the FZF list top-down
+    " let $FZF_DEFAULT_OPTS='--layout=reverse'
+    "
+    "
+    " nnoremap <leader>g :GFiles<cr>
+    " nnoremap <leader>f :Files<cr>
+    " " nnoremap <c-t> :BTags<CR>
+    " nnoremap <leader>t :Tags<cr>
+    " " nnoremap <c-l> :BLines<CR>
+    " nnoremap <leader>l :Lines<cr>
+    " nnoremap <leader>m :Marks<cr>
+    " " use :Rg --files to list files searchable by Rg
+    " nnoremap <leader>r :Rg<cr>
+    " nnoremap <leader>h :Helptags!<cr>
+    " nnoremap <leader>p :FzfPreviewProjectFiles<cr>
+    " " Custom fzf find files in directory of active buffer
+    " nnoremap <Leader>f :<C-U>call ABFiles()<CR>
+    " function! ABFiles()
+    "     execute 'FZF' expand('%:p:h')
+    " endfunction
+    "
+    " function! CreateCenteredFloatingWindow()
+    "     let width = min([&columns - 4, max([80, &columns - 20])])
+    "     let height = min([&lines - 4, max([20, &lines - 10])])
+    "     let top = ((&lines - height) / 2) - 1
+    "     let left = (&columns - width) / 2
+    "     let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+    "
+    "     let top = "╭" . repeat("─", width - 2) . "╮"
+    "     let mid = "│" . repeat(" ", width - 2) . "│"
+    "     let bot = "╰" . repeat("─", width - 2) . "╯"
+    "     let lines = [top] + repeat([mid], height - 2) + [bot]
+    "     let s:buf = nvim_create_buf(v:false, v:true)
+    "     call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+    "     call nvim_open_win(s:buf, v:true, opts)
+    "     set winhl=Normal:Floating
+    "     let opts.row += 1
+    "     let opts.height -= 2
+    "     let opts.col += 2
+    "     let opts.width -= 4
+    "     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+    "     au BufWipeout <buffer> exe 'bw '.s:buf
+    " endfunction
+    "
+    " let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+    "
 " }}}
 " {{{ ALE
 
@@ -438,6 +397,24 @@ syntax enable
    nnoremap T :TagbarOpenAutoClose<Cr>
 
 " }}}
+" {{{ Telescope
+    " Find files using Telescope command-line sugar.
+    nnoremap <leader>ff <cmd>Telescope find_files<cr>
+    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+    nnoremap <leader>fb <cmd>Telescope buffers<cr>
+    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+lua << EOF
+    require('telescope').setup{
+        prompt_position = "top",
+    }
+EOF
+    " Using lua functions
+    " nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+    " nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+    " nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+    " nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+" }}}
 " }}}
 "{{{ Filetype specific
 "{{{ All Files
@@ -466,53 +443,63 @@ syntax enable
 
 "}}}
 "{{{ Python
-augroup ft_python
-	au!
-	au BufNewFile,BufRead *.py set wrap textwidth=120
-	au BufNewFile,BufRead *.py set colorcolumn=120
-augroup END
+
+    augroup ft_python
+        au!
+        au BufNewFile,BufRead *.py set wrap textwidth=120
+        au BufNewFile,BufRead *.py set colorcolumn=120
+    augroup END
+
+    noremap <F6> :w<CR>:!python %<CR>
+    inoremap <F6> <Esc>:w<CR>:!python %<CR>
 " }}}
 "{{{ Django
-augroup ft_django
-	au!
-	au BufNewFile,BufRead urls.py           setlocal nowrap
-	au BufNewFile,BufRead urls.py           normal! zR
 
-	au BufNewFile,BufRead admin.py setlocal filetype=python.django
-	au BufNewFile,BufRead urls.py setlocal filetype=python.django
-	au BufNewFile,BufRead models.py setlocal filetype=python.django
-	au BufNewFile,BufRead views.py setlocal filetype=python.django
-	au BufNewFile,BufRead forms.py setlocal filetype=python.django
+    augroup ft_django
+        au!
+        au BufNewFile,BufRead urls.py           setlocal nowrap
+        au BufNewFile,BufRead urls.py           normal! zR
 
-	au BufNewFile,BufRead base.py setlocal filetype=python.django
-	au BufNewFile,BufRead base.py setlocal foldmethod=marker
-	au BufNewFile,BufRead dev.py setlocal filetype=python.django
-	au BufNewFile,BufRead dev.py setlocal foldmethod=marker
-	au BufNewFile,BufRead prod.py setlocal filetype=python.django
-	au BufNewFile,BufRead prod.py setlocal foldmethod=marker
-augroup END
+        au BufNewFile,BufRead admin.py setlocal filetype=python.django
+        au BufNewFile,BufRead urls.py setlocal filetype=python.django
+        au BufNewFile,BufRead models.py setlocal filetype=python.django
+        au BufNewFile,BufRead views.py setlocal filetype=python.django
+        au BufNewFile,BufRead forms.py setlocal filetype=python.django
+
+        au BufNewFile,BufRead base.py setlocal filetype=python.django
+        au BufNewFile,BufRead base.py setlocal foldmethod=marker
+        au BufNewFile,BufRead dev.py setlocal filetype=python.django
+        au BufNewFile,BufRead dev.py setlocal foldmethod=marker
+        au BufNewFile,BufRead prod.py setlocal filetype=python.django
+        au BufNewFile,BufRead prod.py setlocal foldmethod=marker
+    augroup END
+
 " }}}
 "{{{ Html
-augroup ft_html
-	au!
-	au BufNewFile,BufRead *.html set filetype=html
-	au BufNewFile,BufRead *.html set nowrap
-	au BufNewFile,BufRead *.html set colorcolumn=
 
-	" autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    augroup ft_html
+        au!
+        au BufNewFile,BufRead *.html set filetype=html
+        au BufNewFile,BufRead *.html set nowrap
+        au BufNewFile,BufRead *.html set colorcolumn=
 
-	" autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
-augroup END
+        " autocmd FileType {html,css,xml,htmldjango} setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+        " autocmd BufWritePre,BufRead *.{html,css,xml,htmldjango} :normal gg=G
+    augroup END
+
 "}}}
 "{{{ NeoSnippets
 au FileType neosnippet set noexpandtab
 "}}}
 "{{{ Text + rst + md
-augroup text_rst_md
-	au!
-	au BufNewFile,BufRead *.{txt,rst,md} set wrap textwidth=120
-	au BufNewFile,BufRead *.{txt,rst,md} set colorcolumn=120
-augroup END
+
+    augroup text_rst_md
+        au!
+        au BufNewFile,BufRead *.{txt,rst,md} set wrap textwidth=120
+        au BufNewFile,BufRead *.{txt,rst,md} set colorcolumn=120
+    augroup END
+
 "}}}
 "{{{ Yaml
 
@@ -521,18 +508,22 @@ augroup END
 
 "}}}
 "{{{ Vim
-augroup filetype_vim
-	au!
-	au FileType vim setlocal foldmethod=marker
-	au BufNewFile,BufRead *.vim setlocal nowrap
-	au BufNewFile,BufRead *.vim setlocal colorcolumn=
-	au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
-augroup END
+
+    augroup filetype_vim
+        au!
+        au FileType vim setlocal foldmethod=marker
+        au BufNewFile,BufRead *.vim setlocal nowrap
+        au BufNewFile,BufRead *.vim setlocal colorcolumn=
+        au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
+    augroup END
+
 "}}}
 "{{{ Gopass Files
+"
     " https://woile.github.io/gopass-cheat-sheet/
     " https://woile.github.io/gopass-presentation/
     au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+
 "}}}
 "{{{ CSV
 
@@ -596,7 +587,8 @@ set splitright "a new window is put right of the current one
 "7 multiple tab pages
 "8 terminal
 "9 using the mouse
-set mouse=a " scroll in files and resize windows
+" set mouse=a " scroll in files and resize windows
+set mouse= " making copy/paste to work over ssh terminals
 "10 GUI
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 "11 printing
@@ -621,8 +613,8 @@ set shiftround "round to 'shiftwidth' for '<<' and '>>'
 "16 folding
 set foldmethod=indent
 set foldlevel=99
-" set foldlevelstart=10 "open most folds by default
-set foldlevelstart=0 "close most folds by default
+set foldlevelstart=10 "open most folds by default
+" set foldlevelstart=0 "close most folds by default
 "17 diff mode
 "18 mapping
 "19 reading and writing files
@@ -668,6 +660,7 @@ set clipboard+=unnamedplus
 " TODO: localleader
 let maplocalleader='\\'
 " {{{ Open files
+"
     " nnoremap <leader>ev :e $MYVIMRC<CR>
     nnoremap <leader>ev :e ~/Documents/Repos/Dotfiles/nvim/init.vim<CR>
     nnoremap <leader>eb :e ~/Documents/Repos/Dotfiles/.bashrc<CR>
@@ -675,6 +668,7 @@ let maplocalleader='\\'
     nnoremap <leader>et :e ~/Temp/temp.pl<CR>
     nnoremap <leader>es :e ~/Documents/Repos/Dotfiles/NeoSnippets/<CR>
     " TODO: snippets
+
 " }}}
 " {{{ Other
 
@@ -683,13 +677,8 @@ let maplocalleader='\\'
     cnoremap jk <Esc>
     nnoremap / /\v
     nnoremap ? ?\v
-    nnoremap j gj
-    nnoremap k gk
-    nnoremap j +
-    nnoremap k -
     nnoremap <leader><leader> :noh<cr>
     nnoremap <silent><leader>s :Startify<CR>
-    " nnoremap <silent><leader>s :set spell!<CR>
     nnoremap <BS> za
     vnoremap <leader><leader> <Esc>
     nnoremap <leader>a ggVG
@@ -703,6 +692,8 @@ let maplocalleader='\\'
     nnoremap <leader>w :w<cr>
     nnoremap <leader>o :only<CR>
     nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+    " Toggle between buffers
+    nnoremap <CR> :b#<cr>
     " replace the name of variable in current file
     nnoremap cv :%s/\<<C-r><C-w>\>/
     nnoremap n nzzzv
@@ -761,6 +752,7 @@ let maplocalleader='\\'
 " http://vimawesome.com/
 " http://learnvimscriptthehardway.stevelosh.com/
 " https://vim.fandom.com/wiki/Category:VimTip ---> VimTips
+" https://www.chrisatmachine.com/Neovim/27-native-lsp/
 " =============================================================================
 "}}}
 "{{{ Functions
@@ -836,30 +828,25 @@ let maplocalleader='\\'
     " Keep the cursor on the same column
     set nostartofline
 
-    " Movement in insert mode
-"     inoremap <C-h> <C-o>h
-"     inoremap <C-l> <C-o>a
-"     inoremap <C-j> <C-o>j
-"     inoremap <C-k> <C-o>k
-"     inoremap <C-^> <C-o><C-^>
 " "}}}
 
 
 hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
 hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
 
-"{{{ BadWolf Theme
-    " Make the tab line much lighter than the background.
-    " let g:badwolf_tabline = 3
-"}}}
-
 set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
 
 "https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
 map <t-Enter> O<Esc>
 
-" mappings from unimpaired
-" ]<Space> -> above the line
-" [<Space> -> below the line
 
-nnoremap <CR> :b#<cr>
+let NERDTreeHijackNetrw=1
+" same NerdTree through the session
+function! ToggleNERDTree()
+    NERDTreeToggle
+    silent NERDTreeMirror
+endfunction
+
+
+" <leader>r rg search to exclude filenames
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
