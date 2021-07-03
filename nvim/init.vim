@@ -9,9 +9,9 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
-    " call dein#add('Shougo/deoplete.nvim') " autocomplete engine
-    " call dein#add('Shougo/neosnippet.vim')
-    " call dein#add('Shougo/neosnippet-snippets')
+    call dein#add('Shougo/deoplete.nvim') " autocomplete engine
+    call dein#add('Shougo/neosnippet.vim')
+    call dein#add('Shougo/neosnippet-snippets')
     call dein#add('mhinz/vim-signify') " show git diff in the left bar
     call dein#add('kshenoy/vim-signature') " display the marks in the side line
     call dein#add('wellle/targets.vim') " add 'ci(' command
@@ -91,7 +91,7 @@ if dein#load_state('~/.cache/dein')
     "
     call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
     call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
-    call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim
+    " call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim
 endif
 
 if dein#check_install()
@@ -212,73 +212,73 @@ syntax enable
 " }}}
 "{{{ FZF
 
-    " let g:fzf_colors =
-    " \ { 'fg':      ['fg', 'Normal'],
-    " \ 'bg':      ['bg', 'Normal'],
-    " \ 'hl':      ['fg', 'Comment'],
-    " \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-    " \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-    " \ 'hl+':     ['fg', 'Statement'],
-    " \ 'info':    ['fg', 'PreProc'],
-    " \ 'border':  ['fg', 'Ignore'],
-    " \ 'prompt':  ['fg', 'Conditional'],
-    " \ 'pointer': ['fg', 'Exception'],
-    " \ 'marker':  ['fg', 'Keyword'],
-    " \ 'spinner': ['fg', 'Label'],
-    " \ 'header':  ['fg', 'Comment'] }
-    "
-    " " [Buffers] Jump to the existing window if possible
-    " let g:fzf_buffers_jump = 1
-    "
-    " " [Tags] Command to generate tags file
-    " let g:fzf_tags_command = 'ctags -R'
-    "
-    " " Reverse the layout to make the FZF list top-down
-    " let $FZF_DEFAULT_OPTS='--layout=reverse'
-    "
-    "
-    " nnoremap <leader>g :GFiles<cr>
-    " nnoremap <leader>f :Files<cr>
-    " " nnoremap <c-t> :BTags<CR>
-    " nnoremap <leader>t :Tags<cr>
-    " " nnoremap <c-l> :BLines<CR>
-    " nnoremap <leader>l :Lines<cr>
-    " nnoremap <leader>m :Marks<cr>
-    " " use :Rg --files to list files searchable by Rg
-    " nnoremap <leader>r :Rg<cr>
-    " nnoremap <leader>h :Helptags!<cr>
-    " nnoremap <leader>p :FzfPreviewProjectFiles<cr>
-    " " Custom fzf find files in directory of active buffer
-    " nnoremap <Leader>f :<C-U>call ABFiles()<CR>
-    " function! ABFiles()
-    "     execute 'FZF' expand('%:p:h')
-    " endfunction
-    "
-    " function! CreateCenteredFloatingWindow()
-    "     let width = min([&columns - 4, max([80, &columns - 20])])
-    "     let height = min([&lines - 4, max([20, &lines - 10])])
-    "     let top = ((&lines - height) / 2) - 1
-    "     let left = (&columns - width) / 2
-    "     let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
-    "
-    "     let top = "╭" . repeat("─", width - 2) . "╮"
-    "     let mid = "│" . repeat(" ", width - 2) . "│"
-    "     let bot = "╰" . repeat("─", width - 2) . "╯"
-    "     let lines = [top] + repeat([mid], height - 2) + [bot]
-    "     let s:buf = nvim_create_buf(v:false, v:true)
-    "     call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
-    "     call nvim_open_win(s:buf, v:true, opts)
-    "     set winhl=Normal:Floating
-    "     let opts.row += 1
-    "     let opts.height -= 2
-    "     let opts.col += 2
-    "     let opts.width -= 4
-    "     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-    "     au BufWipeout <buffer> exe 'bw '.s:buf
-    " endfunction
-    "
-    " let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
-    "
+    let g:fzf_colors =
+    \ { 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'] }
+
+    " [Buffers] Jump to the existing window if possible
+    let g:fzf_buffers_jump = 1
+
+    " [Tags] Command to generate tags file
+    let g:fzf_tags_command = 'ctags -R'
+
+    " Reverse the layout to make the FZF list top-down
+    let $FZF_DEFAULT_OPTS='--layout=reverse'
+
+
+    nnoremap <leader>g :GFiles<cr>
+    nnoremap <leader>f :Files<cr>
+    " nnoremap <c-t> :BTags<CR>
+    nnoremap <leader>t :Tags<cr>
+    " nnoremap <c-l> :BLines<CR>
+    nnoremap <leader>l :Lines<cr>
+    nnoremap <leader>m :Marks<cr>
+    " use :Rg --files to list files searchable by Rg
+    nnoremap <leader>r :Rg<cr>
+    nnoremap <leader>h :Helptags!<cr>
+    nnoremap <leader>p :FzfPreviewProjectFiles<cr>
+    " Custom fzf find files in directory of active buffer
+    nnoremap <Leader>f :<C-U>call ABFiles()<CR>
+    function! ABFiles()
+        execute 'FZF' expand('%:p:h')
+    endfunction
+
+    function! CreateCenteredFloatingWindow()
+        let width = min([&columns - 4, max([80, &columns - 20])])
+        let height = min([&lines - 4, max([20, &lines - 10])])
+        let top = ((&lines - height) / 2) - 1
+        let left = (&columns - width) / 2
+        let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+
+        let top = "╭" . repeat("─", width - 2) . "╮"
+        let mid = "│" . repeat(" ", width - 2) . "│"
+        let bot = "╰" . repeat("─", width - 2) . "╯"
+        let lines = [top] + repeat([mid], height - 2) + [bot]
+        let s:buf = nvim_create_buf(v:false, v:true)
+        call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+        call nvim_open_win(s:buf, v:true, opts)
+        set winhl=Normal:Floating
+        let opts.row += 1
+        let opts.height -= 2
+        let opts.col += 2
+        let opts.width -= 4
+        call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+        au BufWipeout <buffer> exe 'bw '.s:buf
+    endfunction
+
+    let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+
 " }}}
 " {{{ ALE
 
@@ -450,79 +450,6 @@ EOF
     nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
     nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-lua << EOF
-    vim.o.completeopt = "menuone,noselect"
-
-    require'compe'.setup {
-    enabled = true;
-    autocomplete = true;
-    debug = false;
-    min_length = 1;
-    preselect = 'enable';
-    throttle_time = 80;
-    source_timeout = 200;
-    incomplete_delay = 400;
-    max_abbr_width = 100;
-    max_kind_width = 100;
-    max_menu_width = 100;
-    documentation = false;
-
-    source = {
-        path = true;
-        buffer = true;
-        calc = true;
-        vsnip = true;
-        nvim_lsp = true;
-        nvim_lua = true;
-        spell = true;
-        tags = true;
-        snippets_nvim = true;
-        treesitter = true;
-        };
-    }
-local t = function(str)
-return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local check_back_space = function()
-local col = vim.fn.col('.') - 1
-if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-    return true
-else
-    return false
-end
-end
-
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
-_G.tab_complete = function()
-if vim.fn.pumvisible() == 1 then
-    return t "<C-n>"
-elseif vim.fn.call("vsnip#available", {1}) == 1 then
-    return t "<Plug>(vsnip-expand-or-jump)"
-elseif check_back_space() then
-    return t "<Tab>"
-else
-    return vim.fn['compe#complete']()
-end
-end
-_G.s_tab_complete = function()
-if vim.fn.pumvisible() == 1 then
-    return t "<C-p>"
-elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
-else
-    -- If <S-Tab> is not working in your terminal, change it to <C-h>
-    return t "<S-Tab>"
-end
-end
-
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-EOF
 
 " }}}
 " {{{ LSP perl setup
@@ -530,13 +457,13 @@ EOF
 " no code completion implimented for perl lsp
 
 lua << EOF
-require'lspconfig'.perlls.setup{}
-perl = {
-  fileFilter = { ".pm", ".pl" },
-  ignoreDirs = ".git",
-  perlCmd = "perl",
-  perlInc = " "
-  }
+-- require'lspconfig'.perlls.setup{}
+-- perl = {
+--   fileFilter = { ".pm", ".pl" },
+--   ignoreDirs = ".git",
+--   perlCmd = "perl",
+--   perlInc = " "
+--   }
 EOF
 
 " }}}
@@ -560,6 +487,82 @@ require'lspinstall'.post_install_hook = function ()
 end
 EOF
 
+" }}}
+" {{{ Compe
+"
+lua << EOF
+--vim.o.completeopt = "menuone,noselect"
+--
+--require'compe'.setup {
+--enabled = true;
+--autocomplete = true;
+--debug = false;
+--min_length = 1;
+--preselect = 'enable';
+--throttle_time = 80;
+--source_timeout = 200;
+--incomplete_delay = 400;
+--max_abbr_width = 100;
+--max_kind_width = 100;
+--max_menu_width = 100;
+--documentation = false;
+--
+--source = {
+    --path = true;
+    --buffer = true;
+    --calc = true;
+    --vsnip = true;
+    --nvim_lsp = true;
+    --nvim_lua = true;
+    --spell = true;
+    --tags = true;
+    --snippets_nvim = true;
+    --treesitter = true;
+    --};
+--}
+--local t = function(str)
+--return vim.api.nvim_replace_termcodes(str, true, true, true)
+--end
+--
+--local check_back_space = function()
+--local col = vim.fn.col('.') - 1
+--if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+    --return true
+--else
+    --return false
+--end
+--end
+--
+---- Use (s-)tab to:
+----- move to prev/next item in completion menuone
+----- jump to prev/next snippet's placeholder
+--_G.tab_complete = function()
+--if vim.fn.pumvisible() == 1 then
+    --return t "<C-n>"
+--elseif vim.fn.call("vsnip#available", {1}) == 1 then
+    --return t "<Plug>(vsnip-expand-or-jump)"
+--elseif check_back_space() then
+    --return t "<Tab>"
+--else
+    --return vim.fn['compe#complete']()
+--end
+--end
+--_G.s_tab_complete = function()
+--if vim.fn.pumvisible() == 1 then
+    --return t "<C-p>"
+--elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+    --return t "<Plug>(vsnip-jump-prev)"
+--else
+    ---- If <S-Tab> is not working in your terminal, change it to <C-h>
+    --return t "<S-Tab>"
+--end
+--end
+--
+--vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+--vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+--vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+--vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+EOF
 " }}}
 " }}}
 "{{{ Filetype specific
@@ -970,3 +973,5 @@ let maplocalleader='\\'
     command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
 
 " "}}}
+
+" TODO: check nvim-compe as completion framework
