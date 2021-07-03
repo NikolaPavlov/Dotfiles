@@ -24,14 +24,13 @@ if dein#load_state('~/.cache/dein')
         \{'on_cmd': 'NERDTreeToggleVCS'})
     call dein#add('Xuyuanp/nerdtree-git-plugin',
         \{'on_cmd': 'NERDTreeToggleVCS'}) " showing git status flags in nerdtree
-    " call dein#add('vifm/vifm.vim',
-    "     \{'on_cmd': 'Vifm'}) " : Vifm :help vifm
+    call dein#add('vifm/vifm.vim',
+        \{'on_cmd': 'Vifm'}) " : Vifm :help vifm
     call dein#add('ryanoasis/vim-devicons') " icons in vim (nerdtree)
     call dein#add('jiangmiao/auto-pairs') " match quotes, brackets, parenthesis
     call dein#add('Valloric/MatchTagAlways',
         \{'on_ft': 'html'}) " always highlight html enclosing tags
     call dein#add('sjl/badwolf') " color theme
-    call dein#add('nanotech/jellybeans.vim') " color theme
     call dein#add('junegunn/goyo.vim',
         \{'on_cmd': 'Goyo'}) " focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
@@ -90,8 +89,9 @@ if dein#load_state('~/.cache/dein')
     call dein#add('nvim-lua/plenary.nvim')
     call dein#add('nvim-telescope/telescope.nvim')
     "
-    call dein#add('neovim/nvim-lspconfig')
-    call dein#add('hrsh7th/nvim-compe')
+    call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
+    call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
+    call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim
 endif
 
 if dein#check_install()
@@ -167,6 +167,26 @@ syntax enable
     let NERDTreeShowLineNumbers = 1
 
     nnoremap <c-t> :NERDTreeToggleVCS<cr>
+
+    " Close all open buffers on entering a window if the only
+    " buffer that's left is the NERDTree buffer
+    function! s:CloseIfOnlyNerdTreeLeft()
+        if exists("t:NERDTreeBufName")
+            if bufwinnr(t:NERDTreeBufName) != -1
+                if winnr("$") == 1
+                    q
+                endif
+            endif
+        endif
+    endfunction
+
+
+    let NERDTreeHijackNetrw=1
+    " same NerdTree through the session
+    function! ToggleNERDTree()
+        NERDTreeToggle
+        silent NERDTreeMirror
+    endfunction
 
 " }}}
 " {{{ VimSlash
@@ -398,6 +418,9 @@ syntax enable
    nnoremap T :TagbarOpenAutoClose<Cr>
 
 " }}}
+" {{{ Vifm
+
+" }}}
 " {{{ Telescope
     " Find files using Telescope command-line sugar.
     nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -502,6 +525,42 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 EOF
 
 " }}}
+" {{{ LSP perl setup
+
+" no code completion implimented for perl lsp
+
+lua << EOF
+require'lspconfig'.perlls.setup{}
+perl = {
+  fileFilter = { ".pm", ".pl" },
+  ignoreDirs = ".git",
+  perlCmd = "perl",
+  perlInc = " "
+  }
+EOF
+
+" }}}
+" {{{ lspinstall
+
+lua << EOF
+local function setup_servers()
+  require'lspinstall'.setup()
+  local servers = require'lspinstall'.installed_servers()
+  for _, server in pairs(servers) do
+    require'lspconfig'[server].setup{}
+  end
+end
+
+setup_servers()
+
+-- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+require'lspinstall'.post_install_hook = function ()
+  setup_servers() -- reload installed servers
+  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+end
+EOF
+
+" }}}
 " }}}
 "{{{ Filetype specific
 "{{{ All Files
@@ -523,8 +582,7 @@ EOF
 
         set keywordprg=perldoc\ -f " shift+K for perldocumentation in vim
 
-        " noremap <F5> :w<CR>:!perl %<CR>
-        noremap <F5> :w<CR>:!python %<CR>
+        noremap <F5> :w<CR>:!perl %<CR>
         inoremap <F5> <Esc>:w<CR>:!perl %<CR>
     augroup END
 
@@ -539,6 +597,7 @@ EOF
 
     noremap <F6> :w<CR>:!python %<CR>
     inoremap <F6> <Esc>:w<CR>:!python %<CR>
+
 " }}}
 "{{{ Django
 
@@ -577,7 +636,7 @@ EOF
 
 "}}}
 "{{{ NeoSnippets
-au FileType neosnippet set noexpandtab
+    au FileType neosnippet set noexpandtab
 "}}}
 "{{{ Text + rst + md
 
@@ -632,7 +691,6 @@ au FileType neosnippet set noexpandtab
 
 "}}}
 "}}}
-"
 "{{{ General :options
 " =============================================================================
 "   ___                          _
@@ -726,8 +784,6 @@ set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
 colorscheme badwolf
 " colorscheme goodwolf
-" colorscheme distinguished
-" colorscheme jellybeans
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
@@ -808,7 +864,6 @@ let maplocalleader='\\'
 
 "}}}
 "}}}
-"
 "{{{ Abbreviations
     iabbrev todo: TODO:
     iabbrev todo TODO:
@@ -854,18 +909,6 @@ let maplocalleader='\\'
     endfunction
     com! DiffSaved call s:DiffWithSaved()
 
-
-    " Close all open buffers on entering a window if the only
-    " buffer that's left is the NERDTree buffer
-    function! s:CloseIfOnlyNerdTreeLeft()
-    if exists("t:NERDTreeBufName")
-        if bufwinnr(t:NERDTreeBufName) != -1
-        if winnr("$") == 1
-            q
-        endif
-        endif
-    endif
-    endfunction
 
     " Prettyfy xml
     function! DoPrettyXML()
@@ -915,32 +958,15 @@ let maplocalleader='\\'
     " Keep the cursor on the same column
     set nostartofline
 
+    hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
+    hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
+
+    set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
+
+    "https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
+    map <t-Enter> O<Esc>
+
+    " <leader>r rg search to exclude filenames
+    command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
+
 " "}}}
-
-
-hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
-hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
-
-set tags+=/mnt/core/home/n.pavlov/easypay_core/.git/tags
-
-"https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
-map <t-Enter> O<Esc>
-
-
-let NERDTreeHijackNetrw=1
-" same NerdTree through the session
-function! ToggleNERDTree()
-    NERDTreeToggle
-    silent NERDTreeMirror
-endfunction
-
-
-" <leader>r rg search to exclude filenames
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
-
-" luafile ~/home/gogo/Documents/Repos/Dotfiles/nvim/python-lsp.lua
-lua << EOF
-    require'lspconfig'.pyright.setup{}
-    require'lspconfig'.perlls.setup{}
-    -- require'lspconfig'.bashls.setup{}
-EOF
