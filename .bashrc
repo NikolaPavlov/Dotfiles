@@ -162,8 +162,10 @@ HISTCONTROL=ignoreboth:erasedups
 # PS1="$\e[0;35m >\e[m "
 
 alias sw='ssh work'
-alias score=$SSHCORE
-alias sweb=$SSHWEB
+# alias score=$SSHCORE
+# alias sweb=$SSHWEB
+alias score='ssh core'
+alias sweb='ssh web'
 alias cdcore=$CDCORE
 alias cdremedy=$CDREMEDY
 
