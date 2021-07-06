@@ -491,12 +491,8 @@ nnoremap ; :
 "marks:
 -------
 mark h ~
-mark w /media/400Gb/Wallpapers
-mark l /media/400Gb/la
-mark p ~/Projects
 mark d ~/Documents/Repos/Dotfiles
-mark 1 /media/1Tb
-mark 4 /media/400Gb
+mark t ~/Temp/
 
 "icons:
 "------
