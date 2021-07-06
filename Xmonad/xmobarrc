@@ -1,0 +1,15 @@
+Config { font = "xft:Dina:pixelsize=13"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 100
+       , lowerOnStart = True
+       , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: %"] 10
+                    , Run Swap [] 10
+                    , Run Date "%a %b %_d %H:%M" "date" 10
+                    , Run UnsafeStdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%UnsafeStdinReader% }{ %cpu% | %memory% * %swap%    %date%" 
+       }

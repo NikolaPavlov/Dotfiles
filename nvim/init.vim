@@ -31,6 +31,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Valloric/MatchTagAlways',
         \{'on_ft': 'html'}) " always highlight html enclosing tags
     call dein#add('sjl/badwolf') " color theme
+    call dein#add('morhetz/gruvbox') " color theme
     call dein#add('junegunn/goyo.vim',
         \{'on_cmd': 'Goyo'}) " focus mode :Goyo
     call dein#add('machakann/vim-highlightedyank') " fast highlight yanked test
@@ -455,6 +456,7 @@ EOF
 " {{{ LSP perl setup
 
 " no code completion implimented for perl lsp
+" yay perl-perl-languageserver
 
 lua << EOF
 require'lspconfig'.perlls.setup{}
@@ -712,8 +714,9 @@ set fileencodings=ucs-bom,utf-8,cp1251
 "26 various
 set gdefault "use 'g' flag for ':substitute' ('g' - global)
 set t_Co=256
-colorscheme badwolf
+" colorscheme badwolf
 " colorscheme goodwolf
+colorscheme gruvbox
 " =============================================================================
 " NVIM specific settings
 set clipboard+=unnamedplus
