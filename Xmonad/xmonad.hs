@@ -136,8 +136,7 @@ spawnSelected' lst = gridselect conf lst >>= flip whenJust spawn
 
 myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
-                , NS "mocp" spawnMocp findMocp manageMocp
-                , NS "calculator" spawnCalc findCalc manageCalc
+                , NS "cmus" spawnCmus findCmus manageCmus
                 ]
   where
     spawnTerm  = myTerminal ++ " -t scratchpad"
@@ -148,22 +147,14 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                  w = 0.9
                  t = 0.95 -h
                  l = 0.95 -w
-    spawnMocp  = myTerminal ++ " -t mocp -e mocp"
-    findMocp   = title =? "mocp"
-    manageMocp = customFloating $ W.RationalRect l t w h
+    spawnCmus  = myTerminal ++ " -t cmus 'cmus'"
+    findCmus   = title =? "cmus"
+    manageCmus = customFloating $ W.RationalRect l t w h
                where
                  h = 0.9
                  w = 0.9
                  t = 0.95 -h
                  l = 0.95 -w
-    spawnCalc  = "qalculate-gtk"
-    findCalc   = className =? "Qalculate-gtk"
-    manageCalc = customFloating $ W.RationalRect l t w h
-               where
-                 h = 0.5
-                 w = 0.4
-                 t = 0.75 -h
-                 l = 0.70 -w
 
 --Makes setting the spacingRaw simpler to write. The spacingRaw module adds a configurable amount of space around windows.
 mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
@@ -250,7 +241,7 @@ myTabTheme = def { fontName            = myFont
                  , activeColor         = "#46d9ff"
                  , inactiveColor       = "#313846"
                  , activeBorderColor   = "#46d9ff"
-                 , inactiveBorderColor = "#282c34"
+                 , inactiveBorderColor = "#b8a399"
                  , activeTextColor     = "#282c34"
                  , inactiveTextColor   = "#d0d0d0"
                  }
@@ -333,8 +324,8 @@ myKeys =
     , ("M-l",     sendMessage Expand)
     , ("M-S-q", io exitSuccess)
     , ("M-S-r",   spawn "xmonad --recompile; xmonad --restart")
-    , ("M-C-t", namedScratchpadAction myScratchPads "terminal")
-    , ("M-c", namedScratchpadAction myScratchPads "cmus")
+    , ("M-C-<Return>", namedScratchpadAction myScratchPads "terminal")
+    , ("M-C-c", namedScratchpadAction myScratchPads "cmus")
     -- Increase/decrease spacing (gaps)
     -- , ("C-M1-j", decWindowSpacing 4)         -- Decrease window spacing
     -- , ("C-M1-k", incWindowSpacing 4)         -- Increase window spacing
@@ -347,9 +338,6 @@ myKeys =
     -- Toggle show/hide these programs.  They run on a hidden workspace.
     -- When you toggle them to show, it brings them to your current workspace.
     -- Toggle them to hide and it sends them back to hidden workspace (NSP).
-    , ("C-s t", namedScratchpadAction myScratchPads "terminal")
-    , ("C-s m", namedScratchpadAction myScratchPads "mocp")
-    , ("C-s c", namedScratchpadAction myScratchPads "calculator")
     ]
       where nonNSP          = WSIs (return (\ws -> W.tag ws /= "NSP"))
             nonEmptyNonNSP  = WSIs (return (\ws -> isJust (W.stack ws) && W.tag ws /= "NSP"))

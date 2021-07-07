@@ -93,6 +93,10 @@ if dein#load_state('~/.cache/dein')
     call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
     call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
     " call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim
+    " Telescope
+    call dein#add('nvim-lua/popup.nvim')
+    call dein#add('nvim-lua/plenary.nvim')
+    call dein#add('nvim-telescope/telescope.nvim')
 endif
 
 if dein#check_install()
