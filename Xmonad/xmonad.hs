@@ -73,7 +73,7 @@ myModMask :: KeyMask
 myModMask = mod1Mask        -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "sakura"    -- Sets default terminal
+myTerminal = "xfce4-terminal"    -- Sets default terminal
 
 myBrowser :: String
 myBrowser = "firefox"  -- Sets qutebrowser as browser
@@ -139,7 +139,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 , NS "cmus" spawnCmus findCmus manageCmus
                 ]
   where
-    spawnTerm  = myTerminal ++ " -t scratchpad"
+    spawnTerm  = myTerminal ++ " -T scratchpad "
     findTerm   = title =? "scratchpad"
     manageTerm = customFloating $ W.RationalRect l t w h
                where
@@ -147,7 +147,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                  w = 0.9
                  t = 0.95 -h
                  l = 0.95 -w
-    spawnCmus  = myTerminal ++ " -t cmus 'cmus'"
+    spawnCmus  = myTerminal ++ " -T cmus --execute 'cmus'"
     findCmus   = title =? "cmus"
     manageCmus = customFloating $ W.RationalRect l t w h
                where
@@ -241,7 +241,7 @@ myTabTheme = def { fontName            = myFont
                  , activeColor         = "#46d9ff"
                  , inactiveColor       = "#313846"
                  , activeBorderColor   = "#46d9ff"
-                 , inactiveBorderColor = "#b8a399"
+                 , inactiveBorderColor = "#282c34"
                  , activeTextColor     = "#282c34"
                  , inactiveTextColor   = "#d0d0d0"
                  }
@@ -324,8 +324,8 @@ myKeys =
     , ("M-l",     sendMessage Expand)
     , ("M-S-q", io exitSuccess)
     , ("M-S-r",   spawn "xmonad --recompile; xmonad --restart")
-    , ("M-C-<Return>", namedScratchpadAction myScratchPads "terminal")
-    , ("M-C-c", namedScratchpadAction myScratchPads "cmus")
+    , ("M-s", namedScratchpadAction myScratchPads "terminal")
+    , ("M-c", namedScratchpadAction myScratchPads "cmus")
     -- Increase/decrease spacing (gaps)
     -- , ("C-M1-j", decWindowSpacing 4)         -- Decrease window spacing
     -- , ("C-M1-k", incWindowSpacing 4)         -- Increase window spacing

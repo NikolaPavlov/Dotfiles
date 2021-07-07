@@ -86,10 +86,6 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     call dein#add('sjl/splice.vim.git')
     "
-    call dein#add('nvim-lua/popup.nvim')
-    call dein#add('nvim-lua/plenary.nvim')
-    call dein#add('nvim-telescope/telescope.nvim')
-    "
     call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
     call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
     " call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim
@@ -430,8 +426,6 @@ syntax enable
     " Find files using Telescope command-line sugar.
     nnoremap <leader>ff <cmd>Telescope find_files<cr>
     nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-    nnoremap <leader>fb <cmd>Telescope buffers<cr>
-    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 lua << EOF
     require('telescope').setup{
@@ -905,5 +899,10 @@ let maplocalleader='\\'
 
     " <leader>r rg search to exclude filenames
     command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
+
+    " automatically leave insert mode after 'updatetime' milliseconds of inaction
+    au CursorHoldI * stopinsert
+    au InsertEnter * let updaterestore=&updatetime | set updatetime=4000
+    au InsertLeave * let &updatetime=updaterestore
 
 " "}}}
