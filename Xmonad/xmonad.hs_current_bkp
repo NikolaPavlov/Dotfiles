@@ -254,67 +254,28 @@ myKeys =
     , ("M-e",     spawn "thunar")
     , ("M-q",     kill)
     , ("M-w",     sendMessage NextLayout)
-    -- , ("M-<Tab>", windows W.focusDown)
-    -- , ("M-j",     windows W.focusDown)
-    -- , ("M-k",     windows W.focusUp  )
-    -- , ("M-m",     windows W.focusMaster  )
-    -- , ("M-S-j",   windows W.swapDown  )
-    -- , ("M-S-k",   windows W.swapUp    )
-    -- , ("M-h",     sendMessage Shrink)
-    -- , ("M-l",     sendMessage Expand)
+    , ("M-<Tab>", windows W.focusDown)
+    , ("M-j",     windows W.focusDown)
+    , ("M-k",     windows W.focusUp  )
+    , ("M-m",     windows W.focusMaster  )
+    , ("M-S-j",   windows W.swapDown  )
+    , ("M-S-k",   windows W.swapUp    )
+    , ("M-h",     sendMessage Shrink)
+    , ("M-l",     sendMessage Expand)
     , ("M-S-q", io exitSuccess)
     , ("M-S-r",   spawn "xmonad --recompile; xmonad --restart")
     , ("M-s", namedScratchpadAction myScratchPads "terminal")
     , ("M-c", namedScratchpadAction myScratchPads "cmus")
 
-
-    -- window navigation keybindings.
-    -- , ("C-l", sendMessage $ Go R)                             -- (8)
-    -- , ("C-h", sendMessage $ Go L)                             --  "
-    -- , ("C-k", sendMessage $ Go U)                             --  "
-    -- , ("C-j", sendMessage $ Go D)                             --  "
-    -- , ("S-C-l", sendMessage $ Swap R)                         --  "
-    -- , ("S-C-h", sendMessage $ Swap L)                         --  "
-    -- , ("S-C-k", sendMessage $ Swap U)                         --  "
-    -- , ("S-C-j", sendMessage $ Swap D)                         --  "
-    -- , ("S-M-C-l", sendMessage $ Move R)
-    -- , ("S-M-C-h", sendMessage $ Move L)
-    -- , ("S-M-C-k", sendMessage $ Move U)
-    -- , ("S-M-C-j", sendMessage $ Move D)
-    --
-    -- , ("M-C-<Left>"     , sendMessage Shrink                    ) --Shrink horiz window width
-    -- , ("M-C-<Right>"    , sendMessage Expand                    ) --Expand horiz window width
-    -- , ("M-C-<Down>"     , sendMessage MirrorShrink              ) --Shrink vert window width
-    -- , ("M-C-<Up>"       , sendMessage MirrorExpand              ) --Exoand vert window width
-
-    -- my window navigation
-    , ("M-l", sendMessage $ Go R)                             -- (8)
-    , ("M-h", sendMessage $ Go L)                             --  "
-    , ("M-k", sendMessage $ Go U)                             --  "
-    , ("M-j", sendMessage $ Go D)                             --  "
-    , ("M-S-l", sendMessage $ Swap R)                         --  "
-    , ("M-S-h", sendMessage $ Swap L)                         --  "
-    , ("M-S-k", sendMessage $ Swap U)                         --  "
-    , ("M-S-j", sendMessage $ Swap D)                         --  "
-
-    ----------------------------------
-    -- qtile navigation
-    ----------------------------------
-        -- Key([mod], "h", lazy.layout.left()),
-        -- Key([mod], "l", lazy.layout.right()),
-        -- Key([mod], "j", lazy.layout.down()),
-        -- Key([mod], "k", lazy.layout.up()),
-        -- Key([mod, "shift"], "h", lazy.layout.swap_left()),
-        -- Key([mod, "shift"], "l", lazy.layout.swap_right()),
-        -- Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-        -- Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-        -- Key([mod], "i", lazy.layout.grow()),
-        -- Key([mod], "m", lazy.layout.shrink()),
-        -- Key([mod], "n", lazy.layout.normalize()),
-        -- Key([mod], "o", lazy.layout.maximize()),  # Toggle window between min ans max size
-        -- Key([modkey, "shift"], "space", lazy.layout.flip()), ]
-    ----------------------------------
-
+    -- directional navigation
+    -- , ("M-h", sendMessage $ Go R)
+    -- , ("M-l", sendMessage $ Go L)
+    -- , ("M-k", sendMessage $ Go U)
+    -- , ("M-j", sendMessage $ Go D)
+    -- , ("M-S-h", sendMessage $ Swap R)
+    -- , ("M-S-l", sendMessage $ Swap L)
+    -- , ("M-S-k", sendMessage $ Swap U)
+    -- , ("M-S-j", sendMessage $ Swap D)
 
     -- -- Layouts
     -- , ("M-<Tab>", sendMessage NextLayout)           -- Switch to next layout

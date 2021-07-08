@@ -424,8 +424,8 @@ syntax enable
 " }}}
 " {{{ Telescope
     " Find files using Telescope command-line sugar.
-    nnoremap <leader>ff <cmd>Telescope find_files<cr>
-    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+    nnoremap <leader>tf <cmd>Telescope find_files<cr>
+    nnoremap <leader>tg <cmd>Telescope live_grep<cr>
 
 lua << EOF
     require('telescope').setup{
