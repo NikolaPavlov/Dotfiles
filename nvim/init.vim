@@ -61,9 +61,9 @@ if dein#load_state('~/.cache/dein')
     " TODO: check gutentags_plus
     " call dein#add('ludovicchabant/vim-gutentags') " auto re-generation of the tags files while working
     call dein#add('dm1try/golden_size') " auto resize splits
-    call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
-    call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-    call dein#add('yuki-ycino/fzf-preview.vim')
+    " call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+    " call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+    " call dein#add('yuki-ycino/fzf-preview.vim')
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
 
@@ -213,73 +213,73 @@ syntax enable
 " }}}
 "{{{ FZF
 
-    let g:fzf_colors =
-    \ { 'fg':      ['fg', 'Normal'],
-    \ 'bg':      ['bg', 'Normal'],
-    \ 'hl':      ['fg', 'Comment'],
-    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-    \ 'hl+':     ['fg', 'Statement'],
-    \ 'info':    ['fg', 'PreProc'],
-    \ 'border':  ['fg', 'Ignore'],
-    \ 'prompt':  ['fg', 'Conditional'],
-    \ 'pointer': ['fg', 'Exception'],
-    \ 'marker':  ['fg', 'Keyword'],
-    \ 'spinner': ['fg', 'Label'],
-    \ 'header':  ['fg', 'Comment'] }
-
-    " [Buffers] Jump to the existing window if possible
-    let g:fzf_buffers_jump = 1
-
-    " [Tags] Command to generate tags file
-    let g:fzf_tags_command = 'ctags -R'
-
-    " Reverse the layout to make the FZF list top-down
-    let $FZF_DEFAULT_OPTS='--layout=reverse'
-
-
-    nnoremap <leader>g :GFiles<cr>
-    nnoremap <leader>f :Files<cr>
-    " nnoremap <c-t> :BTags<CR>
-    nnoremap <leader>t :Tags<cr>
-    " nnoremap <c-l> :BLines<CR>
-    nnoremap <leader>l :Lines<cr>
-    nnoremap <leader>m :Marks<cr>
-    " use :Rg --files to list files searchable by Rg
-    nnoremap <leader>r :Rg<cr>
-    nnoremap <leader>h :Helptags!<cr>
-    nnoremap <leader>p :FzfPreviewProjectFiles<cr>
-    " Custom fzf find files in directory of active buffer
-    nnoremap <Leader>f :<C-U>call ABFiles()<CR>
-    function! ABFiles()
-        execute 'FZF' expand('%:p:h')
-    endfunction
-
-    function! CreateCenteredFloatingWindow()
-        let width = min([&columns - 4, max([80, &columns - 20])])
-        let height = min([&lines - 4, max([20, &lines - 10])])
-        let top = ((&lines - height) / 2) - 1
-        let left = (&columns - width) / 2
-        let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
-
-        let top = "╭" . repeat("─", width - 2) . "╮"
-        let mid = "│" . repeat(" ", width - 2) . "│"
-        let bot = "╰" . repeat("─", width - 2) . "╯"
-        let lines = [top] + repeat([mid], height - 2) + [bot]
-        let s:buf = nvim_create_buf(v:false, v:true)
-        call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
-        call nvim_open_win(s:buf, v:true, opts)
-        set winhl=Normal:Floating
-        let opts.row += 1
-        let opts.height -= 2
-        let opts.col += 2
-        let opts.width -= 4
-        call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-        au BufWipeout <buffer> exe 'bw '.s:buf
-    endfunction
-
-    let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
-
+    " let g:fzf_colors =
+    " \ { 'fg':      ['fg', 'Normal'],
+    " \ 'bg':      ['bg', 'Normal'],
+    " \ 'hl':      ['fg', 'Comment'],
+    " \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    " \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    " \ 'hl+':     ['fg', 'Statement'],
+    " \ 'info':    ['fg', 'PreProc'],
+    " \ 'border':  ['fg', 'Ignore'],
+    " \ 'prompt':  ['fg', 'Conditional'],
+    " \ 'pointer': ['fg', 'Exception'],
+    " \ 'marker':  ['fg', 'Keyword'],
+    " \ 'spinner': ['fg', 'Label'],
+    " \ 'header':  ['fg', 'Comment'] }
+    "
+    " " [Buffers] Jump to the existing window if possible
+    " let g:fzf_buffers_jump = 1
+    "
+    " " [Tags] Command to generate tags file
+    " let g:fzf_tags_command = 'ctags -R'
+    "
+    " " Reverse the layout to make the FZF list top-down
+    " let $FZF_DEFAULT_OPTS='--layout=reverse'
+    "
+    "
+    " nnoremap <leader>g :GFiles<cr>
+    " nnoremap <leader>f :Files<cr>
+    " " nnoremap <c-t> :BTags<CR>
+    " nnoremap <leader>t :Tags<cr>
+    " " nnoremap <c-l> :BLines<CR>
+    " nnoremap <leader>l :Lines<cr>
+    " nnoremap <leader>m :Marks<cr>
+    " " use :Rg --files to list files searchable by Rg
+    " nnoremap <leader>r :Rg<cr>
+    " nnoremap <leader>h :Helptags!<cr>
+    " nnoremap <leader>p :FzfPreviewProjectFiles<cr>
+    " " Custom fzf find files in directory of active buffer
+    " nnoremap <Leader>f :<C-U>call ABFiles()<CR>
+    " function! ABFiles()
+    "     execute 'FZF' expand('%:p:h')
+    " endfunction
+    "
+    " function! CreateCenteredFloatingWindow()
+    "     let width = min([&columns - 4, max([80, &columns - 20])])
+    "     let height = min([&lines - 4, max([20, &lines - 10])])
+    "     let top = ((&lines - height) / 2) - 1
+    "     let left = (&columns - width) / 2
+    "     let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+    "
+    "     let top = "╭" . repeat("─", width - 2) . "╮"
+    "     let mid = "│" . repeat(" ", width - 2) . "│"
+    "     let bot = "╰" . repeat("─", width - 2) . "╯"
+    "     let lines = [top] + repeat([mid], height - 2) + [bot]
+    "     let s:buf = nvim_create_buf(v:false, v:true)
+    "     call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+    "     call nvim_open_win(s:buf, v:true, opts)
+    "     set winhl=Normal:Floating
+    "     let opts.row += 1
+    "     let opts.height -= 2
+    "     let opts.col += 2
+    "     let opts.width -= 4
+    "     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+    "     au BufWipeout <buffer> exe 'bw '.s:buf
+    " endfunction
+    "
+    " let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+    "
 " }}}
 " {{{ ALE
 
@@ -424,8 +424,8 @@ syntax enable
 " }}}
 " {{{ Telescope
     " Find files using Telescope command-line sugar.
-    nnoremap <leader>tf <cmd>Telescope find_files<cr>
-    nnoremap <leader>tg <cmd>Telescope live_grep<cr>
+    nnoremap <leader>f <cmd>Telescope find_files<cr>
+    nnoremap <leader>g <cmd>Telescope live_grep<cr>
 
 lua << EOF
     require('telescope').setup{
