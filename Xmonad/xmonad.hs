@@ -297,6 +297,11 @@ myKeys =
     , ("M-S-k", sendMessage $ Swap U)                         --  "
     , ("M-S-j", sendMessage $ Swap D)                         --  "
 
+    , ("M-i"     , sendMessage Shrink                    ) --Shrink horiz window width
+    , ("M-m"    , sendMessage Expand                    ) --Expand horiz window width
+    -- , ("M-C-<Down>"     , sendMessage MirrorShrink              ) --Shrink vert window width
+    -- , ("M-C-<Up>"       , sendMessage MirrorExpand              ) --Exoand vert window width
+
     ----------------------------------
     -- qtile navigation
     ----------------------------------
