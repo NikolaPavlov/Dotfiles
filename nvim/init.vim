@@ -88,11 +88,21 @@ if dein#load_state('~/.cache/dein')
     "
     call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
     call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
-    " call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim
+    " call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim TODO: 
     " Telescope
     call dein#add('nvim-lua/popup.nvim')
     call dein#add('nvim-lua/plenary.nvim')
     call dein#add('nvim-telescope/telescope.nvim')
+
+    call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0})
+
+    " nvim gitsigns
+    call dein#add('nvim-lua/plenary.nvim')
+    call dein#add('lewis6991/gitsigns.nvim')
+    " nvim tree
+    call dein#add('kyazdani42/nvim-web-devicons')
+    call dein#add('kyazdani42/nvim-tree.lua')
+    " https://github.com/caenrique/nvim-toggle-terminal
 endif
 
 if dein#check_install()
@@ -425,7 +435,21 @@ syntax enable
 " {{{ Telescope
     " Find files using Telescope command-line sugar.
     nnoremap <leader>f <cmd>Telescope find_files<cr>
+    " nnoremap <leader>X <cmd>Telescope file_browser<cr>
     nnoremap <leader>g <cmd>Telescope live_grep<cr>
+    " nnoremap <leader>X <cmd>Telescope git_files<cr>
+    nnoremap <leader>h <cmd>Telescope help_tags<cr>
+    nnoremap <leader>t <cmd>Telescope tags<cr>
+    " nnoremap <leader>X <cmd>Telescope live_grep<cr>
+    " nnoremap <leader>X <cmd>Telescope current_buffer_fuzzy_find<cr>
+    " nnoremap <leader>X <cmd>Telescope quickfix<cr>
+    " nnoremap <leader>X <cmd>Telescope command_history<cr>
+    " nnoremap <leader>X <cmd>Telescope marks<cr>
+    " nnoremap <leader>X <cmd>Telescope man_pages<cr>
+    " nnoremap <leader>X <cmd>Telescope colorscheme<cr>
+    " nnoremap <leader>X <cmd>Telescope git_status<cr>
+
+
 
 lua << EOF
     require('telescope').setup{

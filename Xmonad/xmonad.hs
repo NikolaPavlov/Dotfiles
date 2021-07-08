@@ -215,7 +215,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                                  ||| withBorder myBorderWidth grid
 
 -- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
-myWorkspaces = [" dev ", " web+core ", " temp ", " temp ", " vpn ", " temp ", " temp ", " music ", " chat "]
+myWorkspaces = [" 1:dev ", " 2:web+core ", " 3:temp ", " 4:temp ", " 5:vpn ", " 6:temp ", " 7:temp ", " 8:music ", " 9:chat "]
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..] -- (,) == \x y -> (x,y)
 
 clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
@@ -239,7 +239,8 @@ myManageHook = composeAll
      -- , className =? "toolbar"         --> doFloat
      , title =? "Oracle VM VirtualBox Manager"  --> doFloat
      -- , title =? "Mozilla Firefox"     --> doShift ( myWorkspaces !! 1 )
-     , className =? "Gimp"            --> doShift ( myWorkspaces !! 8 )
+     -- , className =? "Gimp"            --> doShift ( myWorkspaces !! 8 )
+     -- TODO: add telegram doShift "chat" window
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 4 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      , isFullscreen -->  doFullFloat
