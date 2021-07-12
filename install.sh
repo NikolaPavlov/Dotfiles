@@ -6,6 +6,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 EXTRA_DIR="$HOME/.extra"
 
 
+mkdir -p $HOME/.config/alacritty
 mkdir -p $HOME/.config/nvim/undo_dir
 mkdir -p $HOME/.config/i3
 mkdir -p $HOME/.config/i3status
@@ -14,6 +15,7 @@ mkdir -p $HOME/.irssi
 mkdir -p $HOME/.config/qtile
 mkdir -p $HOME/.gnupg
 
+ln -sfv "$DOTFILES_DIR/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
 ln -sfv "$DOTFILES_DIR/.bashrc" $HOME
 ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME
 ln -sfv "$DOTFILES_DIR/nvim/init.vim" ~/.config/nvim/init.vim

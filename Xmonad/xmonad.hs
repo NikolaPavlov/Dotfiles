@@ -74,7 +74,7 @@ myModMask :: KeyMask
 myModMask = mod1Mask        -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "xfce4-terminal"    -- Sets default terminal
+myTerminal = "alacritty"    -- Sets default terminal
 
 myBrowser :: String
 myBrowser = "firefox"  -- Sets qutebrowser as browser
@@ -138,7 +138,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 , NS "cmus" spawnCmus findCmus manageCmus
                 ]
   where
-    spawnTerm  = myTerminal ++ " -T scratchpad "
+    spawnTerm  = myTerminal ++ " -t scratchpad "
     findTerm   = title =? "scratchpad"
     manageTerm = customFloating $ W.RationalRect l t w h
                where
@@ -146,7 +146,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                  w = 0.9
                  t = 0.95 -h
                  l = 0.95 -w
-    spawnCmus  = myTerminal ++ " -T cmus --execute 'cmus'"
+    spawnCmus  = myTerminal ++ " -t cmus -e 'cmus'"
     findCmus   = title =? "cmus"
     manageCmus = customFloating $ W.RationalRect l t w h
                where
