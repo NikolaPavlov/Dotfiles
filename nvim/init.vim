@@ -12,7 +12,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim') " autocomplete engine
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('mhinz/vim-signify') " show git diff in the left bar
     call dein#add('kshenoy/vim-signature') " display the marks in the side line
     call dein#add('wellle/targets.vim') " add 'ci(' command
     call dein#add('tpope/vim-surround') " change surroundings
@@ -47,9 +46,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('godlygeek/tabular') " align text
     call dein#add('sjl/gundo.vim',
         \ {'on_ft': 'GundoToggle'}) " undo history
-    " call dein#add('mileszs/ack.vim') " grep replacement
-    call dein#add('dense-analysis/ale',
-        \{'on_ft': ['perl', 'python', 'html']}) " linter on the fly (flake8 should be installed locally)
     call dein#add('junegunn/vim-slash') " improve highlight search (blinking currsor)
     call dein#add('chrisbra/csv.vim',
         \{'on_ft': 'csv'}) " csv files formating
@@ -66,7 +62,25 @@ if dein#load_state('~/.cache/dein')
     call dein#add('yuki-ycino/fzf-preview.vim')
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
+    call dein#add('mhinz/vim-startify')
+    call dein#add('sjl/splice.vim.git')
+    " LSP
+    call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
+    call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
+    call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0})
+    " nvim gitsigns
+    call dein#add('nvim-lua/plenary.nvim')
+    call dein#add('lewis6991/gitsigns.nvim', { 'depends': 'plenary.nvim' })
+    " nvim tree
+    call dein#add('kyazdani42/nvim-web-devicons')
+    call dein#add('kyazdani42/nvim-tree.lua')
 
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " DEPRECATED
+    """"""""""""""""""""""""""""""""""""""""""""""""
+    " call dein#add('mhinz/vim-signify') " show git diff in the left bar
+    " call dein#add('dense-analysis/ale',
+    "     \{'on_ft': ['perl', 'python', 'html']}) " linter on the fly (flake8 should be installed locally)
     " PYTHON
     " call dein#add('davidhalter/jedi-vim',
     "     \{'on_ft': 'python'}) " need for go to definitions
@@ -76,33 +90,13 @@ if dein#load_state('~/.cache/dein')
     "     \{'on_ft': 'python'}) " better indent for python
     " call dein#add('nvie/vim-flake8',
     "     \{'on_ft': 'python'}) " flake8
-
-    call dein#add('mhinz/vim-startify')
-    "
-    call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
-    " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-    " call dein#add('kassio/neoterm') " terminal helper (send lines directly to Repl)
+    " call dein#add('sbdchd/neoformat') " formater (black + isort should be installed locally)
     " call dein#add('pechorin/any-jump.nvim')
+    " call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
-    call dein#add('sjl/splice.vim.git')
-    "
-    call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
-    call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
-    " call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim TODO: 
-    " Telescope
-    " call dein#add('nvim-lua/popup.nvim')
-    " call dein#add('nvim-lua/plenary.nvim')
-    " call dein#add('nvim-telescope/telescope.nvim')
+    " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
+    " call dein#add('akinsho/nvim-toggleterm.lua')
 
-    call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0})
-
-    " nvim gitsigns
-    call dein#add('nvim-lua/plenary.nvim')
-    call dein#add('lewis6991/gitsigns.nvim')
-    " nvim tree
-    call dein#add('kyazdani42/nvim-web-devicons')
-    call dein#add('kyazdani42/nvim-tree.lua')
-    " https://github.com/caenrique/nvim-toggle-terminal
 endif
 
 if dein#check_install()
@@ -930,4 +924,3 @@ let maplocalleader='\\'
     au InsertLeave * let &updatetime=updaterestore
 
 " "}}}
-let g:gruvbox_contrast_dark = 'hard'

@@ -97,10 +97,10 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
+    spawnOnce "/home/gogo/Scripts/phonetic_keys.sh"
+    spawnOnce "redshift -l 42.698334:23.319941"
     spawnOnce "picom &"
-    -- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x282c34  --height 22 &"
     spawnOnce "feh --randomize --bg-fill /media/4Tb/Other/Pictures/Wallpapers/SolidColors/950x350-charleston-green-solid-color-background.jpg"  -- feh set random wallpaper
-    -- TODO: add redshift
     setWMName "LG3D"
 
 -- myColorizer :: Window -> Bool -> X (String, String)
