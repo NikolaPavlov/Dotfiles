@@ -103,36 +103,6 @@ myStartupHook = do
     spawnOnce "feh --randomize --bg-fill /media/4Tb/Other/Pictures/Wallpapers/SolidColors/950x350-charleston-green-solid-color-background.jpg"  -- feh set random wallpaper
     setWMName "LG3D"
 
--- myColorizer :: Window -> Bool -> X (String, String)
--- myColorizer = colorRangeFromClassName
---                   (0x28,0x2c,0x34) -- lowest inactive bg
---                   (0x28,0x2c,0x34) -- highest inactive bg
---                   (0xc7,0x92,0xea) -- active bg
---                   (0xc0,0xa7,0x9a) -- inactive fg
---                   (0x28,0x2c,0x34) -- active fg
-
--- gridSelect menu layout
--- mygridConfig :: p -> GSConfig Window
--- mygridConfig colorizer = (buildDefaultGSConfig myColorizer)
---     { gs_cellheight   = 40
---     , gs_cellwidth    = 200
---     , gs_cellpadding  = 6
---     , gs_originFractX = 0.5
---     , gs_originFractY = 0.5
---     , gs_font         = myFont
---     }
---
--- spawnSelected' :: [(String, String)] -> X ()
--- spawnSelected' lst = gridselect conf lst >>= flip whenJust spawn
---     where conf = def
---                    { gs_cellheight   = 40
---                    , gs_cellwidth    = 200
---                    , gs_cellpadding  = 6
---                    , gs_originFractX = 0.5
---                    , gs_originFractY = 0.5
---                    , gs_font         = myFont
---                    }
-
 myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 , NS "cmus" spawnCmus findCmus manageCmus
@@ -173,7 +143,7 @@ tall     = renamed [Replace "tall"]
            $ addTabs shrinkText myTabTheme
            $ subLayout [] (smartBorders Simplest)
            $ limitWindows 12
-           $ mySpacing 8
+           $ mySpacing 4
            $ ResizableTall 1 (3/100) (1/2) []
 floats   = renamed [Replace "floats"]
            $ smartBorders
@@ -298,10 +268,12 @@ myKeys =
     , ("M-S-k", sendMessage $ Swap U)                         --  "
     , ("M-S-j", sendMessage $ Swap D)                         --  "
 
-    , ("M-i"     , sendMessage Shrink                    ) --Shrink horiz window width
+    , ("M-i"    , sendMessage Shrink                    ) --Shrink horiz window width
     , ("M-m"    , sendMessage Expand                    ) --Expand horiz window width
     -- , ("M-C-<Down>"     , sendMessage MirrorShrink              ) --Shrink vert window width
     -- , ("M-C-<Up>"       , sendMessage MirrorExpand              ) --Exoand vert window width
+
+    , ("M-<Tab>", windows W.focusDown)
 
     ----------------------------------
     -- qtile navigation

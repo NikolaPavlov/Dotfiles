@@ -95,7 +95,7 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-    " call dein#add('akinsho/nvim-toggleterm.lua')
+    call dein#add('akinsho/nvim-toggleterm.lua')
 
 endif
 
@@ -508,6 +508,14 @@ EOF
 " }}}
 " {{{ Compe
 " TODO: check compe
+" }}}
+" {{{ Toggleterm
+lua << EOF
+    require("toggleterm").setup {
+        open_mapping = [[<c-\>]],
+        direction = 'horizontal',
+    }
+EOF
 " }}}
 " }}}
 "{{{ Filetype specific
@@ -924,3 +932,4 @@ let maplocalleader='\\'
     au InsertLeave * let &updatetime=updaterestore
 
 " "}}}
+set hidden " needed for toggleterm
