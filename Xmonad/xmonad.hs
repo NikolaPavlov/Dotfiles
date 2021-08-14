@@ -235,7 +235,7 @@ myKeys =
     -- , ("M-l",     sendMessage Expand)
     , ("M-S-q", io exitSuccess)
     , ("M-S-r",   spawn "xmonad --recompile; xmonad --restart")
-    , ("M-s", namedScratchpadAction myScratchPads "terminal")
+    , ("M-<Return>", namedScratchpadAction myScratchPads "terminal")
     , ("M-c", namedScratchpadAction myScratchPads "cmus")
 
 

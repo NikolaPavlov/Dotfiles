@@ -112,6 +112,8 @@ syntax enable
 
     let g:deoplete#enable_at_startup = 1
     let g:AutoPairsMapCR=0
+    " Use smartcase.
+    call deoplete#custom#source('_', 'smart_case', v:true)
 
     imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
     imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
