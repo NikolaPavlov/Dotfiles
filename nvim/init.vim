@@ -68,6 +68,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
     call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
     call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0})
+    " TODO: lspsaga
     " nvim gitsigns
     call dein#add('nvim-lua/plenary.nvim')
     call dein#add('lewis6991/gitsigns.nvim', { 'depends': 'plenary.nvim' })
