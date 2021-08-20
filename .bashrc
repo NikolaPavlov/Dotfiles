@@ -152,6 +152,9 @@ source /usr/bin/virtualenvwrapper.sh
 # autocomplete for gopass
 source <(gopass completion bash)
 
+# autocomplete git
+source /usr/share/bash-completion/completions/git
+
 # Temp
 export PATH
 # export PERL5LIB=./lib:$PERL5LIB
