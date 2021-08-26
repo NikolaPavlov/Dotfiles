@@ -65,9 +65,9 @@ if dein#load_state('~/.cache/dein')
     call dein#add('mhinz/vim-startify')
     call dein#add('sjl/splice.vim.git')
     " LSP
-    " call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
-    " call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
-    " call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0})
+    call dein#add('neovim/nvim-lspconfig')     " lsp for neovim
+    call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
+    call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0})
     " nvim gitsigns
     " call dein#add('nvim-lua/plenary.nvim')
     " call dein#add('lewis6991/gitsigns.nvim', { 'depends': 'plenary.nvim' })
@@ -113,6 +113,8 @@ syntax enable
 
     let g:deoplete#enable_at_startup = 1
     let g:AutoPairsMapCR=0
+    " Use smartcase.
+    call deoplete#custom#source('_', 'smart_case', v:true)
 
     imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
     imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
