@@ -55,7 +55,7 @@ if dein#load_state('~/.cache/dein')
     " TODO: gutentags
     " TODO: vim-gutentags
     " TODO: check gutentags_plus
-    " call dein#add('ludovicchabant/vim-gutentags') " auto re-generation of the tags files while working
+    call dein#add('ludovicchabant/vim-gutentags') " auto re-generation of the tags files while working
     call dein#add('dm1try/golden_size') " auto resize splits
     call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
     call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
@@ -69,8 +69,9 @@ if dein#load_state('~/.cache/dein')
     call dein#add('kabouzeid/nvim-lspinstall') " install language-servers with :LspInstall (perl is missing)
     call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0})
     " nvim gitsigns
-    call dein#add('nvim-lua/plenary.nvim')
-    call dein#add('lewis6991/gitsigns.nvim', { 'depends': 'plenary.nvim' })
+    " call dein#add('nvim-lua/plenary.nvim')
+    " call dein#add('lewis6991/gitsigns.nvim', { 'depends': 'plenary.nvim' })
+    "
     " nvim tree
     call dein#add('kyazdani42/nvim-web-devicons')
     call dein#add('kyazdani42/nvim-tree.lua')
@@ -78,7 +79,7 @@ if dein#load_state('~/.cache/dein')
     """"""""""""""""""""""""""""""""""""""""""""""""
     " DEPRECATED
     """"""""""""""""""""""""""""""""""""""""""""""""
-    " call dein#add('mhinz/vim-signify') " show git diff in the left bar
+    call dein#add('mhinz/vim-signify') " show git diff in the left bar
     " call dein#add('dense-analysis/ale',
     "     \{'on_ft': ['perl', 'python', 'html']}) " linter on the fly (flake8 should be installed locally)
     " PYTHON
@@ -95,7 +96,7 @@ if dein#load_state('~/.cache/dein')
     " call dein#add('hrsh7th/nvim-compe')        " auto completion for neovim
     " call dein#add('bronson/vim-trailing-whitespace') " colorize red trailing whitspaces
     " call dein#add('gorodinskiy/vim-coloresque') "css,html,sass,less color prewiev
-    call dein#add('akinsho/nvim-toggleterm.lua')
+    " call dein#add('akinsho/nvim-toggleterm.lua')
 
 endif
 
@@ -121,7 +122,11 @@ syntax enable
 
 " }}}
 " {{{ Vim-Signify
-"
+    nmap <leader>gj <plug>(signify-next-hunk)
+    nmap <leader>gk <plug>(signify-prev-hunk)
+    nmap <leader>gJ 9999<leader>gj
+    nmap <leader>gK 9999<leader>gk
+
     set updatetime=100
     " :SignifyToggle --> On/Off
     " :SignifyToggleHighlight --> On/Off highlight
@@ -447,11 +452,11 @@ syntax enable
 
 
 
-lua << EOF
-    -- require('telescope').setup{
-    --     prompt_position = "top",
-    -- }
-EOF
+" lua << EOF
+"     -- require('telescope').setup{
+"     --     prompt_position = "top",
+"     -- }
+" EOF
     " Using lua functions
     " nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
     " nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
@@ -476,48 +481,97 @@ EOF
 " no code completion implimented for perl lsp
 " yay perl-perl-languageserver
 
-lua << EOF
-require'lspconfig'.perlls.setup{}
-perl = {
-  fileFilter = { ".pm", ".pl" },
-  ignoreDirs = ".git",
-  perlCmd = "perl",
-  perlInc = " "
-}
-EOF
+" lua << EOF
+" require'lspconfig'.perlls.setup{}
+" perl = {
+"   fileFilter = { ".pm", ".pl" },
+"   ignoreDirs = ".git",
+"   perlCmd = "perl",
+"   perlInc = " "
+" }
+" EOF
 
 " }}}
 " {{{ lspinstall
 
-lua << EOF
-local function setup_servers()
-  require'lspinstall'.setup()
-  local servers = require'lspinstall'.installed_servers()
-  for _, server in pairs(servers) do
-    require'lspconfig'[server].setup{}
-  end
-end
-
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
-EOF
+" lua << EOF
+" local function setup_servers()
+"   require'lspinstall'.setup()
+"   local servers = require'lspinstall'.installed_servers()
+"   for _, server in pairs(servers) do
+"     require'lspconfig'[server].setup{}
+"   end
+" end
+"
+" setup_servers()
+"
+" -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+" require'lspinstall'.post_install_hook = function ()
+"   setup_servers() -- reload installed servers
+"   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+" end
+" EOF
 
 " }}}
 " {{{ Compe
 " TODO: check compe
 " }}}
 " {{{ Toggleterm
-lua << EOF
-    require("toggleterm").setup {
-        open_mapping = [[<c-\>]],
-        direction = 'horizontal',
-    }
-EOF
+" lua << EOF
+"     require("toggleterm").setup {
+"         open_mapping = [[<c-\>]],
+"         direction = 'horizontal',
+"     }
+" EOF
+" }}}
+" {{{ GitSigns
+" lua << EOF
+"     -- require('gitsigns').setup {
+"     -- signs = {
+"     --     add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+"     --     change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+"     --     delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+"     --     topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+"     --     changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+"     -- },
+"     -- numhl = false,
+"     -- linehl = false,
+"     -- keymaps = {
+"     --     -- Default keymap options
+"     --     noremap = true,
+"     --     buffer = true,
+"     --
+"     --     ['n ]c'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
+"     --     ['n [c'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
+"     --
+"     --     ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+"     --     ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+"     --     ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
+"     --     ['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+"     --     ['v <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+"     --     ['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
+"     --     ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+"     --     ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
+"     --
+"     --     -- Text objects
+"     --     ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
+"     --     ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
+"     -- },
+"     -- watch_index = {
+"     --     interval = 1000,
+"     --     follow_files = true
+"     -- },
+"     -- current_line_blame = false,
+"     -- current_line_blame_delay = 1000,
+"     -- current_line_blame_position = 'eol',
+"     -- sign_priority = 6,
+"     -- update_debounce = 100,
+"     -- status_formatter = nil, -- Use default
+"     -- word_diff = false,
+"     -- use_decoration_api = true,
+"     -- use_internal_diff = true,  -- If luajit is present
+"     -- }
+" EOF
 " }}}
 " }}}
 "{{{ Filetype specific
@@ -643,7 +697,8 @@ EOF
 
     augroup ft_def
         au!
-        au BufNewFile,BufReadPost *.def set filetype=def foldmethod=indent
+        au BufNewFile,BufRead *.def set wrap textwidth=120
+        au BufNewFile,BufRead *.def set colorcolumn=120
         autocmd FileType def setlocal ts=2 sts=2 sw=2 expandtab
     augroup END
 
@@ -672,7 +727,6 @@ set wrap "long lines wrap
 set linebreak "break long lines at char in 'breakat' (local to window)
 let &showbreak = '↳ ' " string to put before wrapped screen lines
 set lazyredraw "don't redraw while executing macros
-set number "show current line number
 set relativenumber "show line numbers relative to the current line
 set scrolloff=5 "number of screen lines to show around the cursor
 set sidescrolloff=5 "number of col to show when scroll right
