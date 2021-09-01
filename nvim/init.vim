@@ -935,3 +935,8 @@ let maplocalleader='\\'
 
 " "}}}
 set hidden " needed for toggleterm
+
+
+
+" set rnu   --> set relativenumber
+" set nornu --> unset relativenumber
