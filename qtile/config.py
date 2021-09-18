@@ -9,7 +9,7 @@ from typing import List  # noqa: F401
 
 mod = "mod1"
 modkey = "mod4"  # super key
-term = "sakura"
+term = "alacritty"
 
 soft_sep = {'linewidth': 2, 'size_percent': 70,
             'foreground': '393939', 'padding': 7}
