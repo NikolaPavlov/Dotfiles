@@ -866,7 +866,15 @@ let maplocalleader='\\'
     nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w"{{{}}}
     "forcing saving files that require root permission with :W
     command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-
+    "Undo break points
+    inoremap , ,<c-g>u
+    inoremap . .<c-g>u
+    inoremap ! !<c-g>u
+    inoremap ? ?<c-g>u
+    inoremap : :<c-g>u
+    "Jumplist mutations ( add to jumplist if move is bigger than 5 lines )
+    nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+    nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 " }}}
 " {{{ Windows moving / opening
 

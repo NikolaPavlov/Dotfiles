@@ -8,7 +8,7 @@ from libqtile import layout, bar, widget, hook
 from typing import List  # noqa: F401
 
 mod = "mod1"
-modkey = "mod4"  # super key
+# modkey = "mod4"  # super key
 term = "alacritty"
 
 soft_sep = {'linewidth': 2, 'size_percent': 70,
@@ -70,7 +70,8 @@ keys = [
     Key([mod], "m", lazy.layout.shrink()),
     Key([mod], "n", lazy.layout.normalize()),
     Key([mod], "o", lazy.layout.maximize()),  # Toggle window between min ans max size
-    Key([modkey, "shift"], "space", lazy.layout.flip()), ]
+    # Key([modkey, "shift"], "space", lazy.layout.flip()),
+    ]
 
 groups = [Group(i) for i in "1234567890"]
 
@@ -84,9 +85,7 @@ for i in groups:
     ])
 
 layouts = [
-    # layout.Max(),
-    layout.MonadTall(),
-    # layout.Stack(num_stacks=2),
+    layout.MonadTall(margin=8)
 ]
 
 widget_defaults = dict(
@@ -108,7 +107,7 @@ screens = [
                 # widget.Sep(**soft_sep),
                 # widget.Volume(),
                 widget.Sep(**soft_sep),
-                widget.Battery(),
+                # widget.Battery(),
                 widget.Sep(**soft_sep),
                 widget.Clock(format='%d | %I:%M'),
                 widget.Sep(**soft_sep),
@@ -120,13 +119,13 @@ screens = [
 ]
 
 # Drag floating layouts.
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front())
-]
+# mouse = [
+#     Drag([mod], "Button1", lazy.window.set_position_floating(),
+#          start=lazy.window.get_position()),
+#     Drag([mod], "Button3", lazy.window.set_size_floating(),
+#          start=lazy.window.get_size()),
+#     Click([mod], "Button2", lazy.window.bring_to_front())
+# ]
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
@@ -134,24 +133,24 @@ main = None
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=[
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
-])
-auto_fullscreen = True
-focus_on_window_activation = "smart"
+# floating_layout = layout.Floating(float_rules=[
+#     {'wmclass': 'confirm'},
+#     {'wmclass': 'dialog'},
+#     {'wmclass': 'download'},
+#     {'wmclass': 'error'},
+#     {'wmclass': 'file_progress'},
+#     {'wmclass': 'notification'},
+#     {'wmclass': 'splash'},
+#     {'wmclass': 'toolbar'},
+#     {'wmclass': 'confirmreset'},  # gitk
+#     {'wmclass': 'makebranch'},  # gitk
+#     {'wmclass': 'maketag'},  # gitk
+#     {'wname': 'branchdialog'},  # gitk
+#     {'wname': 'pinentry'},  # GPG key password entry
+#     {'wmclass': 'ssh-askpass'},  # ssh-askpass
+# ])
+# auto_fullscreen = True
+# focus_on_window_activation = "smart"
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
