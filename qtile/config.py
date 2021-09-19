@@ -1,3 +1,5 @@
+# http://www.qtile.org/
+
 import os
 import subprocess
 
@@ -19,22 +21,6 @@ keys = [
     Key([mod], "k", lazy.layout.down()),
     Key([mod], "j", lazy.layout.up()),
 
-    # Move windows up or down in current stack
-    Key([mod, "control"], "k", lazy.layout.shuffle_down()),
-    Key([mod, "control"], "j", lazy.layout.shuffle_up()),
-
-    # Switch window focus to other pane(s) of stack
-    # Key([mod], "n", lazy.layout.next()),  # TODO: find a keybinding for this
-
-    # Swap panes of split stack
-    Key([mod, "shift"], "n", lazy.layout.rotate()),
-
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-    # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
-
     # APPLICATIONS
     Key([mod], "t", lazy.spawn(term)),
     Key([mod], "x", lazy.spawn("xfce4-terminal")),
@@ -42,10 +28,8 @@ keys = [
     Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
     Key([mod], "e", lazy.spawn("thunar")),
 
-    # Key([mod], "m", lazy.spawn("telegram-desktop")),
-
     # Toggle between different layouts as refined below
-    Key([mod], "Tab", lazy.next_layout()),
+    # Key([mod], "Tab", lazy.next_layout()),
     Key([mod], "q", lazy.window.kill()),
 
     Key([mod, "control"], "r", lazy.restart()),
@@ -57,7 +41,7 @@ keys = [
     # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
     # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 1 sset Master 3+ unmute")),
 
-    # TODO: xmonad recommended key bindings
+    # Keybindings
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
     Key([mod], "j", lazy.layout.down()),
@@ -70,17 +54,13 @@ keys = [
     Key([mod], "m", lazy.layout.shrink()),
     Key([mod], "n", lazy.layout.normalize()),
     Key([mod], "o", lazy.layout.maximize()),  # Toggle window between min ans max size
-    # Key([modkey, "shift"], "space", lazy.layout.flip()),
     ]
 
 groups = [Group(i) for i in "1234567890"]
 
 for i in groups:
     keys.extend([
-        # mod1 + letter of group = switch to group
         Key([mod], i.name, lazy.group[i.name].toscreen()),
-
-        # mod1 + shift + letter of group = switch to & move focused window to group
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
 
@@ -103,12 +83,9 @@ screens = [
                 widget.Prompt(),
                 widget.Sep(**soft_sep),
                 widget.WindowName(),
-                # widget.Memory(),
-                # widget.Sep(**soft_sep),
-                # widget.Volume(),
                 widget.Sep(**soft_sep),
                 # widget.Battery(),
-                widget.Sep(**soft_sep),
+                # widget.Sep(**soft_sep),
                 widget.Clock(format='%d | %I:%M'),
                 widget.Sep(**soft_sep),
                 widget.Systray(),
