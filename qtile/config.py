@@ -64,8 +64,14 @@ for i in groups:
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
 
+layout_theme = {"border_width": 2,
+                "margin": 8,
+                "border_focus": "e1acff",
+                "border_normal": "1D2330"
+}
+
 layouts = [
-    layout.MonadTall(margin=8)
+    layout.MonadTall(**layout_theme)
 ]
 
 widget_defaults = dict(
@@ -126,8 +132,8 @@ cursor_warp = False
 #     {'wname': 'pinentry'},  # GPG key password entry
 #     {'wmclass': 'ssh-askpass'},  # ssh-askpass
 # ])
-# auto_fullscreen = True
-# focus_on_window_activation = "smart"
+auto_fullscreen = True
+focus_on_window_activation = "smart"
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
