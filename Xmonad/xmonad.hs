@@ -74,7 +74,7 @@ myModMask :: KeyMask
 myModMask = mod1Mask        -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "alacritty"    -- Sets default terminal
+myTerminal = "sakura"    -- Sets default terminal
 
 myBrowser :: String
 myBrowser = "firefox"  -- Sets qutebrowser as browser

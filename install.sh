@@ -19,8 +19,6 @@ ln -sfv "$DOTFILES_DIR/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.ym
 ln -sfv "$DOTFILES_DIR/.bashrc" $HOME
 ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME
 ln -sfv "$DOTFILES_DIR/nvim/init.vim" ~/.config/nvim/init.vim
-ln -sfv "$DOTFILES_DIR/i3/config" ~/.config/i3/config
-ln -sfv "$DOTFILES_DIR/i3/i3status.conf" ~/.config/i3status/config
 ln -sfv "$DOTFILES_DIR/Zathura/zathurarc" ~/.config/zathura/zathurarc
 ln -sfv "$DOTFILES_DIR/Git/.gitconfig" $HOME
 ln -sfv "$DOTFILES_DIR/Irssi/config" ~/.irssi/config
