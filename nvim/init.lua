@@ -4,6 +4,7 @@
 
 require('mappings')
 require('plugins')
+require('plugins_conf')
 require('settings')
 
 require('lua-ls')
