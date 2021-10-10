@@ -16,7 +16,12 @@ return require('packer').startup(function(use)
 --use 'shougo/deoplete.nvim'
 --use 'shougo/deoplete-lsp'
 
+
 -- Todo: add FZF
+  use 'junegunn/fzf'
+  use 'junegunn/fzf.vim'
+--------------------------
+
 
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
