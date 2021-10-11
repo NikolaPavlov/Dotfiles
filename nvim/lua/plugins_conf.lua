@@ -19,6 +19,23 @@ vim.cmd [[
 
 
 --
+-- Deoplete
+vim.cmd [[
+  let g:deoplete#enable_at_startup = 1
+  let g:AutoPairsMapCR=0
+  
+  call deoplete#custom#source('_', 'smart_case', v:true)
+
+  imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
+  imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+  imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+]]
+-- vim.api.nvim_set_keymap('i', '<expr><TAB>', 'pumvisible() ? \"\\<C-n>\" : (neosnippet#expandable_or_jumpable() ? \"\\<Plug>(neosnippet_expand_or_jump)\" : \"\\<TAB>"', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('i', '<expr><TAB>', 'pumvisible() ? \"\\<C-p>\" : \"\\<S-TAB>\"', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('i', '<expr><TAB>', 'pumvisible() ? deoplete#mappings#close_popup() : \"\\<CR>\\<Plug>AutoPairsReturn\"', { noremap = true, silent = true })
+
+
+--
 -- FZF
 map('n', '<leader>g', ':GFiles<CR>')
 map('n', '<leader>f', ':Files<CR>')
@@ -33,7 +50,14 @@ vim.cmd [[
   let g:fzf_buffers_jump = 1
 ]]
 
+--
+-- NeoSnippet
+vim.cmd [[
+    let g:neosnippet#snippets_directory="$HOME/Documents/Repos/Dotfiles/NeoSnippets"
+]]
+
 
 --
 -- TComment
 map('n', '<leader>c', ':TComment<CR>')
+ma

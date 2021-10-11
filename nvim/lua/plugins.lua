@@ -11,16 +11,17 @@ return require('packer').startup(function(use)
   use 'mhinz/vim-startify'
 
   use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-compe'
+  -- use 'hrsh7th/nvim-compe'
 
   use 'shougo/deoplete.nvim'
   use 'shougo/deoplete-lsp'
-
+  use 'shougo/neosnippet.vim'
+  use 'Shougo/neosnippet-snippets'
 
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
---------------------------
 
+--------------------------
 
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
@@ -48,5 +49,4 @@ return require('packer').startup(function(use)
   end
 end)
 
--- Todo: add options for aireline
 

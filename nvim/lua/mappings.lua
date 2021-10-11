@@ -11,6 +11,8 @@ map('n', '<C-t>', ':NERDTreeToggleVCS<CR>')
 
 map('i', 'jk', '<Esc>')
 map('c', 'jk', '<Esc>')
+map('i', 'kj', '<Esc>')
+map('c', 'kj', '<Esc>')
 
 map('n', '<leader>s', ':Startify<CR>')
 map('n', '<leader>eb', ':e ~/Documents/Repos/Dotfiles/.bashrc<CR>')
