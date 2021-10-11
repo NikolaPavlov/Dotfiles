@@ -43,8 +43,3 @@ opt.autoread = true     --auto read file when it was modified outside of vim
 opt.autowriteall = true --automatically write file when leaving modified buffer
 -- opt.directory = '/home/gogo/.config/nvim/swap//' --dir for swap files
 vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" --dir for swap files
-
-
-
-
-tester
