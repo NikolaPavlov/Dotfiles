@@ -3,6 +3,7 @@ local function map(mode, lhs, rhs, opts) local options = {noremap = true}
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+
 -- AirLine
 vim.cmd [[
     let g:airline_theme='minimalist'
@@ -16,11 +17,6 @@ vim.cmd [[
     let g:airline_extensions = ['branch', 'tabline']
     let g:airline#extensions#branch#enabled = 1    
 ]]
-
---
--- BufTabline
---require("buftabline").setup {
---}
 
 
 --
@@ -54,6 +50,7 @@ vim.cmd [[
   let $FZF_DEFAULT_OPTS='--layout=reverse'
   let g:fzf_buffers_jump = 1
 ]]
+
 
 --
 -- NeoSnippet

@@ -8,6 +8,3 @@ require('plugins_conf')
 require('settings')
 
 require('lua-ls')
-
-require('compe-config')
-

@@ -29,16 +29,12 @@ return require('packer').startup(function(use)
   use 'mhinz/vim-signify'
   use 'scrooloose/nerdtree'
   use 'Yggdroot/indentLine'
-  -- use 'tomtom/tcomment_vim'
-  -----
   use 'terrortylor/nvim-comment'
   require('nvim_comment').setup({
     create_mappings = false
   })
-  -----
   use 'jiangmiao/auto-pairs'
   use 'dm1try/golden_size'
---  use 'ap/vim-buftabline'
   use 'jose-elias-alvarez/buftabline.nvim'
 
   use 'junegunn/vim-slash'
