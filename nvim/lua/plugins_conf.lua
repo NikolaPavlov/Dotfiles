@@ -17,6 +17,12 @@ vim.cmd [[
     let g:airline#extensions#branch#enabled = 1    
 ]]
 
+--
+-- BufTabline
+require("buftabline").setup {
+
+}
+
 
 --
 -- Deoplete
@@ -60,4 +66,3 @@ vim.cmd [[
 --
 -- TComment
 map('n', '<leader>c', ':TComment<CR>')
-ma

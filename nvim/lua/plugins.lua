@@ -32,16 +32,15 @@ return require('packer').startup(function(use)
   use 'tomtom/tcomment_vim'
   use 'jiangmiao/auto-pairs'
   use 'dm1try/golden_size'
+--  use 'ap/vim-buftabline'
+  use 'jose-elias-alvarez/buftabline.nvim'
 
   use 'junegunn/vim-slash'
   use 'machakann/vim-highlightedyank'
 
   use 'morhetz/gruvbox'
   use 'sjl/badwolf'
-  use {
-      'vim-airline/vim-airline', 
-      --config = function() require'vim-airline'.setup { }
-  }
+  use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
 
   if packer_bootstrap then
