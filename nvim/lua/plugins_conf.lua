@@ -19,9 +19,8 @@ vim.cmd [[
 
 --
 -- BufTabline
-require("buftabline").setup {
-
-}
+--require("buftabline").setup {
+--}
 
 
 --
@@ -64,5 +63,6 @@ vim.cmd [[
 
 
 --
--- TComment
-map('n', '<leader>c', ':TComment<CR>')
+-- nVim-Comment
+map('n', '<leader>c', ':CommentToggle<CR>')
+map('v', '<leader>c', ':CommentToggle<CR>')
