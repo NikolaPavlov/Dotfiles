@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'
   use 'dm1try/golden_size'
   use 'jose-elias-alvarez/buftabline.nvim'
-
+  require("buftabline").setup {}
   use 'junegunn/vim-slash'
   use 'machakann/vim-highlightedyank'
 

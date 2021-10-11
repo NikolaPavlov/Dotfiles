@@ -2,7 +2,7 @@
 -- https://github.com/nanotee/nvim-lua-guide
 
 
-require('mappings')
+require('remaps')
 require('plugins')
 require('plugins_conf')
 require('settings')

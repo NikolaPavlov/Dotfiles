@@ -63,3 +63,8 @@ vim.cmd [[
 -- nVim-Comment
 map('n', '<leader>c', ':CommentToggle<CR>')
 map('v', '<leader>c', ':CommentToggle<CR>')
+
+
+--
+-- Buftabline
+map('n', '<leader>-', ':ToggleBuftabline<CR>') -- remove tabline
