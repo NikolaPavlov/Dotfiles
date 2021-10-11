@@ -29,7 +29,8 @@ opt.splitbelow = true
 opt.splitright = true
 opt.clipboard = 'unnamedplus'
 opt.undofile = true
-opt.undodir = '~/.config/nvim/undo_dir//'
+-- opt.undodir = '/home/gogo/.config/nvim/undo_dir//'
+vim.g.undodir = '$XDG_DATA_HOME/.config/nvim/undo_dir//'
 opt.textwidth=119
 opt.autoindent = true
 opt.smartindent = true
@@ -40,4 +41,10 @@ opt.tabstop=4
 opt.shiftround = true
 opt.autoread = true     --auto read file when it was modified outside of vim
 opt.autowriteall = true --automatically write file when leaving modified buffer
-opt.directory = '~/.config/nvim/swap//' --dir for swap files
+-- opt.directory = '/home/gogo/.config/nvim/swap//' --dir for swap files
+vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" --dir for swap files
+
+
+
+
+tester
