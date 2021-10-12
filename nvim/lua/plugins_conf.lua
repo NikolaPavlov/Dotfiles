@@ -1,3 +1,5 @@
+local cmd = vim.cmd
+
 local function map(mode, lhs, rhs, opts) local options = {noremap = true}
   if opts then options = vim.tbl_extend('force', options, opts) end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
@@ -21,7 +23,7 @@ vim.cmd [[
 
 --
 -- Deoplete
-vim.cmd [[
+cmd [[
   let g:deoplete#enable_at_startup = 1
   let g:AutoPairsMapCR=0
   
@@ -45,7 +47,7 @@ map('n', '<leader>t', ':Tags<CR>')
 map('n', '<leader>r', ':Rg<CR>')
 map('n', '<leader>h', ':Helptags!<CR>')
 
-vim.cmd [[
+cmd [[
   let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
   let $FZF_DEFAULT_OPTS='--layout=reverse'
   let g:fzf_buffers_jump = 1
@@ -54,7 +56,7 @@ vim.cmd [[
 
 --
 -- NeoSnippet
-vim.cmd [[
+cmd [[
     let g:neosnippet#snippets_directory="$HOME/Documents/Repos/Dotfiles/NeoSnippets"
 ]]
 
@@ -68,3 +70,17 @@ map('v', '<leader>c', ':CommentToggle<CR>')
 --
 -- Buftabline
 map('n', '<leader>-', ':ToggleBuftabline<CR>') -- remove tabline
+
+--
+-- NerdTree
+cmd [[
+    autocmd FileType nerdtree setlocal relativenumber
+    let NERDTreeAutoDeleteBuffer = 1
+    let NERDTreeBookmarksSort = 0
+    let NERDTreeDirArrows = 1
+    let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']
+    let NERDTreeMinimalUI = 1
+    let NERDTreeQuitOnOpen = 0
+    let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
+    let NERDTreeShowLineNumbers = 1
+]]

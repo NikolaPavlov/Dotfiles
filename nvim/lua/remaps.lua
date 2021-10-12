@@ -1,5 +1,6 @@
 local cmd = vim.cmd
-
+local default_opts = {noremap = true, silent = true}
+ 
 vim.g.mapleader = ","
 
 local function map(mode, lhs, rhs, opts) local options = {noremap = true}
@@ -9,8 +10,8 @@ end
 
 map('n', '<Space>', ':')
 
---map('n', '<C-t>', ':NERDTreeToggleVCS<CR>')
-map('n', '<C-t>', ':NvimTreeToggle<CR>')
+map('n', '<C-t>', ':NERDTreeToggleVCS<CR>')
+-- map('n', '<C-t>', ':NvimTreeToggle <CR>')
 
 map('i', 'jk', '<Esc>')
 map('c', 'jk', '<Esc>')
@@ -22,6 +23,7 @@ map('v', '<leader><leader>', '<Esc>')
 map('n', '<leader>a', 'ggVG')
 map('n', '<leader>o', ':only<CR>')
 map('n', '<leader>d', ':bd<CR>')
+map('n', '<CR>', ':b#<CR>')
 
 map('v', '<', '<gv')
 map('v', '>', '>gv')

@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
   use 'mhinz/vim-startify'
 
   -- Completion
-  use 'neovim/nvim-lspconfig'
+  -- use 'neovim/nvim-lspconfig'
   -- use 'hrsh7th/nvim-compe'
   use 'shougo/deoplete.nvim'
   use 'shougo/deoplete-lsp'
@@ -22,13 +22,9 @@ return require('packer').startup(function(use)
   -- Navigation
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
-  -- use 'scrooloose/nerdtree'
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require'nvim-tree'.setup {} end
-  } 
 
+  use 'scrooloose/nerdtree'
+  use 'ryanoasis/vim-devicons'              -- icons in nerdtree
 
   -- Git
   use 'tpope/vim-fugitive'
@@ -41,6 +37,7 @@ return require('packer').startup(function(use)
   use 'sjl/badwolf'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
+  use 'nvim-treesitter/nvim-treesitter'
 
   -- Other
   use 'Yggdroot/indentLine'             -- showing indent lines
@@ -60,5 +57,3 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
-
-
