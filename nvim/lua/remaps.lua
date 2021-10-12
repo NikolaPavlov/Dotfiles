@@ -9,7 +9,8 @@ end
 
 map('n', '<Space>', ':')
 
-map('n', '<C-t>', ':NERDTreeToggleVCS<CR>')
+--map('n', '<C-t>', ':NERDTreeToggleVCS<CR>')
+map('n', '<C-t>', ':NvimTreeToggle<CR>')
 
 map('i', 'jk', '<Esc>')
 map('c', 'jk', '<Esc>')
