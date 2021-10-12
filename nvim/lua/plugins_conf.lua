@@ -84,3 +84,16 @@ cmd [[
     let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
    let NERDTreeShowLineNumbers = 1
 ]]
+
+--
+-- Other
+
+-- 
+-- 
+-- When editing a file always jump to the last known location
+cmd [[
+    autocmd BufReadPost *
+                \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                \   exe "normal! g`\"" |
+                \ endif
+]]

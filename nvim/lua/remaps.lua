@@ -11,7 +11,6 @@ end
 map('n', '<Space>', ':')
 
 map('n', '<C-t>', ':NERDTreeToggleVCS<CR>')
--- map('n', '<C-t>', ':NvimTreeToggle <CR>')
 
 map('i', 'jk', '<Esc>')
 map('c', 'jk', '<Esc>')
@@ -44,9 +43,16 @@ map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
+
+-- Folds
+map('n', '<BS>', 'za')
  
 -- Split lines with S
 map('n', 'S', 'i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w"{{{}}}')
+
+-- j k moves inside wrapped lines
+map('n', 'j', 'gj')
+map('n', 'k', 'gk')
 
 -- Abreviations
 cmd[[:iabbrev todo TODO:]]
@@ -58,3 +64,14 @@ cmd[[:iabbrev reutnr return]]
 cmd[[:iabbrev retunr return]]
 cmd[[:iabbrev reutrn return]]
 cmd[[:iabbrev retrun return]]
+
+-- Temp Garbage
+--
+-- Insert empty line before/after line
+map('n', '-', 'mzO<Esc>`z')
+map('n', '=', 'mzo<Esc>`z')
+
+-- Re-centre as we're going along
+ -- noremap j jzz 
+ -- noremap k kzz 
+ -- noremap n nzz 

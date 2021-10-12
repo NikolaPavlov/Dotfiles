@@ -42,6 +42,9 @@ opt.autoread = true                            --auto read file when it was modi
 opt.autowriteall = true                        --automatically write file when leaving modified buffer
 vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" --dir for swap files
 
+opt.foldlevel=99
+opt.foldlevelstart=10
+
 vim.cmd [[
 	augroup filetype_vim
 	    au!
