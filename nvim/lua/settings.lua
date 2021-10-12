@@ -41,3 +41,13 @@ opt.shiftround = true
 opt.autoread = true                            --auto read file when it was modified outside of vim
 opt.autowriteall = true                        --automatically write file when leaving modified buffer
 vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" --dir for swap files
+
+vim.cmd [[
+	augroup filetype_vim
+	    au!
+	    au FileType vim setlocal foldmethod=marker
+	    au BufNewFile,BufRead *.vim setlocal nowrap
+	    au BufNewFile,BufRead *.vim setlocal colorcolumn=
+	    au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
+	augroup END
+]]

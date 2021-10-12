@@ -82,5 +82,5 @@ cmd [[
     let NERDTreeMinimalUI = 1
     let NERDTreeQuitOnOpen = 0
     let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
-    let NERDTreeShowLineNumbers = 1
+   let NERDTreeShowLineNumbers = 1
 ]]

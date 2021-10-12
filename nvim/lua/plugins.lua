@@ -28,9 +28,10 @@ return require('packer').startup(function(use)
 
   -- Git
   use 'tpope/vim-fugitive'
-  use 'tpope/vim-surround'              -- change surroundings
-  use 'tpope/vim-repeat'                -- repeat surround commands
-  use 'mhinz/vim-signify'               -- git diff in left bar
+  use 'tpope/vim-surround'                  -- change surroundings
+  use 'tpope/vim-repeat'                    -- repeat surround commands
+  use 'https://github.com/junegunn/gv.vim'  -- git commit browser
+  use 'mhinz/vim-signify'                   -- git diff in left bar
 
   -- Themes
   use 'morhetz/gruvbox'
