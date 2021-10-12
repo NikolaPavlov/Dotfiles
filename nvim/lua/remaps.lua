@@ -15,6 +15,7 @@ map('i', 'kj', '<Esc>')
 map('c', 'kj', '<Esc>')
 
 map('n', '<leader>s', ':Startify<CR>')
+map('n', '<leader>ev', ':NERDTree ~/Documents/Repos/Dotfiles/nvim/lua<CR>')
 map('n', '<leader>eb', ':e ~/Documents/Repos/Dotfiles/.bashrc<CR>')
 map('n', '<leader>ew', ':e ~/Documents/Repos/Wiki/index.rst<CR>')
 
