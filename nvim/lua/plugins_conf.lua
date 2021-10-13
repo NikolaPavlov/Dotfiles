@@ -92,8 +92,5 @@ cmd [[
 -- 
 -- When editing a file always jump to the last known location
 cmd [[
-    autocmd BufReadPost *
-                \ if line("'\"") > 1 && line("'\"") <= line("$") |
-                \   exe "normal! g`\"" |
-                \ endif
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 ]]
