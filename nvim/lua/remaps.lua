@@ -75,15 +75,3 @@ map('n', '=', 'mzo<Esc>`z')
 
 -- replace visualy selected text with the what is in the paste register
     -- vnoremap pp "+p
-
-
-
-
-
-
-
-
-
-
-
-
