@@ -28,7 +28,7 @@ opt.laststatus=2
 --opt.statusline=%.40F%=%y%4l\ \|\%-4L
 opt.splitbelow = true
 opt.splitright = true
-opt.clipboard = 'unnamedplus'
+opt.clipboard = 'unnamedplus'                 -- auto copy/paste from Vim to system clipboard
 opt.undofile = true
 vim.g.undodir = '$XDG_DATA_HOME/.config/nvim/undo_dir//'
 opt.textwidth=119
@@ -48,7 +48,7 @@ opt.list = true                                -- show some invisible characters
 -- opt.listchars = { 'tab:>', 'trail:-' }         -- TODO: fix
 opt.wildmode = {'list', 'longest'}             -- command-line completion mode
 opt.termguicolors = true                       -- true color support
-opt.mouse = ''                                 -- TODO: making copy/paste to work over ssh terminals
+opt.mouse = 'a'                                 -- TODO: making copy/paste to work over ssh terminals (better select txt for copy)
 
 
 

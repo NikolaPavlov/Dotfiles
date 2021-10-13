@@ -1,3 +1,13 @@
+-----------------------------------------------------------
+-- LINKS
+-----------------------------------------------------------
+-- http://vimcasts.org/
+-- http://vimawesome.com/
+-- http://learnvimscriptthehardway.stevelosh.com/
+-- https://vim.fandom.com/wiki/Category:VimTip ---> VimTips
+-- https://www.chrisatmachine.com/Neovim/27-native-lsp/
+------------------------------------------------------------
+
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
@@ -9,7 +19,7 @@ end
 return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
 
-  use 'mhinz/vim-startify'
+  use 'mhinz/vim-startify'                  -- start screen with bookmarks
 
   -- Completion
   -- use 'neovim/nvim-lspconfig'
@@ -22,7 +32,6 @@ return require('packer').startup({function(use)
   -- Navigation
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
-
   use 'scrooloose/nerdtree'
   use 'ryanoasis/vim-devicons'              -- icons in nerdtree
 
@@ -30,7 +39,7 @@ return require('packer').startup({function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'                  -- change surroundings
   use 'tpope/vim-repeat'                    -- repeat surround commands
-  use 'https://github.com/junegunn/gv.vim'  -- git commit browser
+  use 'junegunn/gv.vim'  -- git commit browser
   use 'mhinz/vim-signify'                   -- git diff in left bar
 
   -- Themes

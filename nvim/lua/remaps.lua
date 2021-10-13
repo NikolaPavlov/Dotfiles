@@ -80,8 +80,11 @@ map('n', '=', 'mzo<Esc>`z')
     -- vnoremap pp "+p
 
 
-
+-- TODO:
 -- Re-centre as we're going along
  -- noremap j jzz 
  -- noremap k kzz 
  -- noremap n nzz 
+
+
+   
