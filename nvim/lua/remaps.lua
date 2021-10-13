@@ -54,19 +54,16 @@ map('n', 'S', 'i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w"{{{}}}')
 map('n', 'j', 'gj')
 map('n', 'k', 'gk')
 
--- Abreviations
-cmd[[:iabbrev todo TODO:]]
-cmd[[:iabbrev todo: TODO:]]
-cmd[[:iabbrev TODO TODO:]]
-cmd[[:iabbrev pritn print]]
-cmd[[:iabbrev pirint print]]
-cmd[[:iabbrev reutnr return]]
-cmd[[:iabbrev retunr return]]
-cmd[[:iabbrev reutrn return]]
-cmd[[:iabbrev retrun return]]
+-- keep the cursor in place when joining lines
+map('n', 'J', 'mzJ`z')
 
--- Temp Garbage
---
+-- Undo break points, prevent undo all line 
+map('i', ',', ',<c-g>u')
+map('i', '.', '.<c-g>u')
+map('i', '!', '!<c-g>u')
+map('i', '?', '?<c-g>u')
+map('i', ':', ':<c-g>u')
+
 -- Insert empty line before/after line
 map('n', '-', 'mzO<Esc>`z')
 map('n', '=', 'mzo<Esc>`z')
@@ -80,11 +77,13 @@ map('n', '=', 'mzo<Esc>`z')
     -- vnoremap pp "+p
 
 
--- TODO:
--- Re-centre as we're going along
- -- noremap j jzz 
- -- noremap k kzz 
- -- noremap n nzz 
 
 
-   
+
+
+
+
+
+
+
+

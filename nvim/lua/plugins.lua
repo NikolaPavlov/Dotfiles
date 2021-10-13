@@ -39,7 +39,7 @@ return require('packer').startup({function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'                  -- change surroundings
   use 'tpope/vim-repeat'                    -- repeat surround commands
-  use 'junegunn/gv.vim'  -- git commit browser
+  use 'junegunn/gv.vim'                     -- git commit browser
   use 'mhinz/vim-signify'                   -- git diff in left bar
 
   -- Themes

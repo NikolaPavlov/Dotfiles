@@ -40,12 +40,12 @@ cmd [[
 
 --
 -- FZF
-map('n', '<leader>g', ':GFiles<CR>')
 map('n', '<leader>f', ':Files<CR>')
-map('n', '<leader>l', ':Lines<CR>')
-map('n', '<leader>t', ':Tags<CR>')
-map('n', '<leader>r', ':Rg<CR>')
+map('n', '<leader>g', ':GFiles<CR>')
 map('n', '<leader>h', ':Helptags!<CR>')
+map('n', '<leader>l', ':Lines<CR>')
+map('n', '<leader>r', ':Rg<CR>')
+map('n', '<leader>t', ':Tags<CR>')
 
 cmd [[
   let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
