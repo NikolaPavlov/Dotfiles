@@ -11,8 +11,9 @@ cmd 'colorscheme gruvbox'
 opt.incsearch = true
 opt.showmatch = true
 opt.ignorecase = true
-opt.smartcase = true
-opt.wrap = false
+opt.smartcase = true                            -- do not ignore case with capitals
+opt.smartindent = true                          -- insert indents automatically
+opt.wrap = false                                -- disable line wraps
 --opt.linebreak = true
 --opt.&showbreak = '↳ '
 opt.lazyredraw = true 
@@ -32,25 +33,19 @@ opt.undofile = true
 vim.g.undodir = '$XDG_DATA_HOME/.config/nvim/undo_dir//'
 opt.textwidth=119
 opt.autoindent = true
-opt.smartindent = true
 opt.expandtab = true
 opt.shiftwidth=4
 opt.softtabstop=4
-opt.tabstop=4
-opt.shiftround = true
-opt.autoread = true                            --auto read file when it was modified outside of vim
-opt.autowriteall = true                        --automatically write file when leaving modified buffer
-vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" --dir for swap files
+opt.tabstop=4                                  -- number of spaces tabs count for
+opt.shiftround = true                          -- round indent
+opt.autoread = true                            -- auto read file when it was modified outside of vim
+opt.autowriteall = true                        -- automatically write file when leaving modified buffer
+vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" -- dir for swap files
 
+opt.hidden = true                              -- enable background buffers
+opt.joinspaces = false                         -- no double spaces with join
+opt.list = true                                -- show some invisible characters
+opt.wildmode = {'list', 'longest'}             -- command-line completion mode
+opt.termguicolors = true                       -- true color support
 opt.foldlevel=99
 opt.foldlevelstart=10
-
-vim.cmd [[
-	augroup filetype_vim
-	    au!
-	    au FileType vim setlocal foldmethod=marker
-	    au BufNewFile,BufRead *.vim setlocal nowrap
-	    au BufNewFile,BufRead *.vim setlocal colorcolumn=
-	    au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
-	augroup END
-]]
