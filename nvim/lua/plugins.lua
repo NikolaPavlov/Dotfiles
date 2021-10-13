@@ -6,7 +6,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
 
   use 'mhinz/vim-startify'
@@ -49,7 +49,6 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'            -- match quotes, brackets, parenthesis
   use 'dm1try/golden_size'              -- auto resize splits
   use 'jose-elias-alvarez/buftabline.nvim'
-  require("buftabline").setup {}
   use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
   use 'machakann/vim-highlightedyank'
   use 'gu-fan/riv.vim'                  -- note taking in .rst
@@ -58,10 +57,12 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 
-  config = {
-      display = {
-          open_fn = require('packer.util').float,
-      }
-  }
+end,
 
-end)
+config = {
+  display = {
+    open_fn = require('packer.util').float,
+  }
+}
+
+})

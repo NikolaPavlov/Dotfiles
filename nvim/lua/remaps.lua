@@ -1,6 +1,6 @@
 local cmd = vim.cmd
 local default_opts = {noremap = true, silent = true}
- 
+
 vim.g.mapleader = ","
 
 local function map(mode, lhs, rhs, opts) local options = {noremap = true}
@@ -46,7 +46,7 @@ map('n', '<C-l>', '<C-w>l')
 
 -- Folds
 map('n', '<BS>', 'za')
- 
+
 -- Split lines with S
 map('n', 'S', 'i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w"{{{}}}')
 
@@ -70,6 +70,16 @@ cmd[[:iabbrev retrun return]]
 -- Insert empty line before/after line
 map('n', '-', 'mzO<Esc>`z')
 map('n', '=', 'mzo<Esc>`z')
+
+-- TODO: fix copy paste
+-- paste with indentation
+    -- nnoremap p p=`]
+    -- nnoremap P [P
+
+-- replace visualy selected text with the what is in the paste register
+    -- vnoremap pp "+p
+
+
 
 -- Re-centre as we're going along
  -- noremap j jzz 

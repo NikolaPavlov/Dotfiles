@@ -86,11 +86,34 @@ cmd [[
 ]]
 
 --
+-- Signify
+cmd [[
+    nmap <leader>gj <plug>(signify-next-hunk)
+    nmap <leader>gk <plug>(signify-prev-hunk)
+    nmap <leader>gJ 9999<leader>gj
+    nmap <leader>gK 9999<leader>gk
+]]
+
+
+
+
+
+
+
+
+--
 -- Other
 
--- 
--- 
+--
 -- When editing a file always jump to the last known location
 cmd [[
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+]]
+
+-- auto recompile packer
+vim.cmd[[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
 ]]

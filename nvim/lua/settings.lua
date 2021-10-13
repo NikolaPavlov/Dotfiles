@@ -45,7 +45,12 @@ vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" -- dir for swap files
 opt.hidden = true                              -- enable background buffers
 opt.joinspaces = false                         -- no double spaces with join
 opt.list = true                                -- show some invisible characters
+-- opt.listchars = { 'tab:>', 'trail:-' }         -- TODO: fix
 opt.wildmode = {'list', 'longest'}             -- command-line completion mode
 opt.termguicolors = true                       -- true color support
+opt.mouse = ''                                 -- TODO: making copy/paste to work over ssh terminals
+
+
+
 opt.foldlevel=99
 opt.foldlevelstart=10
