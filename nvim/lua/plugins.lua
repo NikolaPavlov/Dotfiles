@@ -61,6 +61,7 @@ return require('packer').startup({function(use)
   use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
   use 'machakann/vim-highlightedyank'
   use 'gu-fan/riv.vim'                  -- note taking in .rst
+  -- gu-fan/InstantRst
 
   if packer_bootstrap then
     require('packer').sync()
