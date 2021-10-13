@@ -8,6 +8,19 @@
 -- https://www.chrisatmachine.com/Neovim/27-native-lsp/
 ------------------------------------------------------------
 
+-- norg
+local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+parser_configs.norg = {
+    install_info = {
+        url = "https://github.com/nvim-neorg/tree-sitter-norg",
+        files = { "src/parser.c", "src/scanner.cc" },
+        branch = "main"
+    },
+}
+--
+
+
+
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
@@ -47,7 +60,10 @@ return require('packer').startup({function(use)
   use 'sjl/badwolf'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
-  use 'nvim-treesitter/nvim-treesitter'
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
 
   -- Other
   use 'Yggdroot/indentLine'             -- showing indent lines
@@ -62,6 +78,30 @@ return require('packer').startup({function(use)
   use 'machakann/vim-highlightedyank'
   use 'gu-fan/riv.vim'                  -- note taking in .rst
   -- gu-fan/InstantRst
+
+  -- Shits
+  -------------------------------------------------------------------------
+  use {
+    "nvim-neorg/neorg",
+    config = function()
+        require('neorg').setup {
+            -- Tell Neorg what modules to load
+            load = {
+                ["core.defaults"] = {}, -- Load all the default modules
+                ["core.norg.concealer"] = {}, -- Allows for use of icons
+                ["core.norg.dirman"] = { -- Manage your directories with Neorg
+                    config = {
+                        workspaces = {
+                            my_workspace = "~/neorg"
+                        }
+                    }
+                }
+            },
+        }
+    end,
+    requires = "nvim-lua/plenary.nvim"
+  }
+  -------------------------------------------------------------------------
 
   if packer_bootstrap then
     require('packer').sync()
