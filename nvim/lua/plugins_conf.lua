@@ -16,8 +16,45 @@ vim.cmd [[
     let g:airline_skip_empty_sections = 1
     let g:airline_inactive_collapse=1
 
+
     let g:airline_extensions = ['branch', 'tabline']
     let g:airline#extensions#branch#enabled = 1    
+    let g:airline#extensions#tabline#enabled = 0
+    let g:airline#extensions#tabline#formatter = 'unique_tail'
+    " * enable/disable displaying open splits per tab (only when tabs are opened) >
+    " let g:airline#extensions#tabline#show_splits = 1
+    " * enable/disable displaying buffers with a single tab. (c) >
+    let g:airline#extensions#tabline#show_buffers = 1
+    " * enable/disable displaying number of tabs in the right side (c) >
+    let g:airline#extensions#tabline#show_tab_count = 0
+    " * enable/disable display preview window buffer in the tabline. >
+    let g:airline#extensions#tabline#exclude_preview = 0
+    " * enable/disable displaying tab number in tabs mode. >
+    let g:airline#extensions#tabline#show_tab_nr = 0
+    " * always show current tabpage/buffer first >
+    let airline#extensions#tabline#current_first = 0
+    " * configure whether buffer numbers should be shown. >
+    let g:airline#extensions#tabline#fnamemod = ':p:.'
+    " * configure truncating non-active buffer names to specified length. >
+    let g:airline#extensions#tabline#fnametruncate = 0
+    let g:airline#extensions#tabline#show_buffers = 1
+    let g:airline#extensions#tabline#buffer_idx_mode = 1
+    nmap <leader>1 <Plug>AirlineSelectTab1
+    nmap <leader>2 <Plug>AirlineSelectTab2
+    nmap <leader>3 <Plug>AirlineSelectTab3
+    nmap <leader>4 <Plug>AirlineSelectTab4
+    nmap <leader>5 <Plug>AirlineSelectTab5
+    nmap <leader>6 <Plug>AirlineSelectTab6
+    nmap <leader>7 <Plug>AirlineSelectTab7
+    nmap <leader>8 <Plug>AirlineSelectTab8
+    nmap <leader>9 <Plug>AirlineSelectTab9
+    let g:airline#extensions#tabline#fnametruncate = 8
+    " * configure separators for the tabline only. >
+    let g:airline#extensions#tabline#alt_sep = 1
+    let g:airline#extensions#tabline#left_sep = ''
+    let g:airline#extensions#tabline#left_alt_sep = ' '
+    let g:airline#extensions#tabline#right_sep = ''
+    let g:airline#extensions#tabline#right_alt_sep = ' '
 ]]
 
 
@@ -46,7 +83,10 @@ map('n', '<leader>h', ':Helptags!<CR>')
 map('n', '<leader>l', ':Lines<CR>')
 map('n', '<leader>r', ':Rg<CR>')
 map('n', '<leader>t', ':Tags<CR>')
--- TODO: add keybinding for fzf/
+-- TODO: add keybinding for specific folders
+map('n', '<leader>v', ':Files ~/Documents/Repos/Dotfiles/nvim/lua<CR>')
+map('n', '<leader>p', ':Files /mnt/core/home/n.pavlov/easypay_core/CORE<CR>')
+map('n', '<leader>el', ':Files /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/<CR>')
 
 cmd [[
   let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
@@ -67,10 +107,6 @@ cmd [[
 map('n', '<leader>c', ':CommentToggle<CR>')
 map('v', '<leader>c', ':CommentToggle<CR>')
 
-
---
--- Buftabline
-map('n', '<leader>-', ':ToggleBuftabline<CR>') -- remove tabline
 
 --
 -- NerdTree

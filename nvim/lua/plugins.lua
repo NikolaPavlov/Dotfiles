@@ -56,8 +56,9 @@ return require('packer').startup({function(use)
   use 'tpope/vim-repeat'                    -- repeat surround commands
   use 'junegunn/gv.vim'                     -- git commit browser
   use 'mhinz/vim-signify'                   -- git diff in left bar
+  use 'yuttie/comfortable-motion.vim'       -- scroll effect
 
-  -- Themes
+  -- Themes and color
   use 'morhetz/gruvbox'
   use 'sjl/badwolf'
   use 'vim-airline/vim-airline'
@@ -66,19 +67,21 @@ return require('packer').startup({function(use)
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate'
   }
+  use 'lfv89/vim-interestingwords'      -- colorize interesting words with <leader>k
+  use 'Yggdroot/indentLine'             -- showing indent lines
+
 
   -- Other
-  use 'Yggdroot/indentLine'             -- showing indent lines
   use 'terrortylor/nvim-comment'
   require('nvim_comment').setup({
     create_mappings = false
   })
   use 'jiangmiao/auto-pairs'            -- match quotes, brackets, parenthesis
   use 'dm1try/golden_size'              -- auto resize splits
-  use 'jose-elias-alvarez/buftabline.nvim'
   use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
   use 'machakann/vim-highlightedyank'
-  use 'gu-fan/riv.vim'                  -- note taking in .rst
+
+  -- use 'gu-fan/riv.vim'                  -- note taking in .rst
   -- gu-fan/InstantRst
 
   -- Shits

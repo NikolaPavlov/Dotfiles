@@ -3,8 +3,8 @@ local cmd = vim.cmd
 
 
 ----------------------------
-cmd 'colorscheme gruvbox'
---cmd 'colorscheme badwolf'
+-- cmd 'colorscheme gruvbox'
+cmd 'colorscheme badwolf'
 ----------------------------
 
 
@@ -42,7 +42,7 @@ opt.autoread = true                            -- auto read file when it was mod
 opt.autowriteall = true                        -- automatically write file when leaving modified buffer
 vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" -- dir for swap files
 
-opt.hidden = true                              -- enable background buffers
+opt.hidden = true                              -- enable background buffers (files)
 opt.joinspaces = false                         -- no double spaces with join
 opt.list = true                                -- show some invisible characters
 -- opt.listchars = { 'tab:>', 'trail:-' }         -- TODO: fix

@@ -22,7 +22,7 @@ map('v', '<leader><leader>', '<Esc>')
 map('n', '<leader>a', 'ggVG')
 map('n', '<leader>o', ':only<CR>')
 map('n', '<leader>d', ':bd<CR>')
--- map('n', '<CR>', ':b#<CR>')
+map('n', '<CR>', ':b# <CR>')
 
 map('v', '<', '<gv')
 map('v', '>', '>gv')
@@ -30,7 +30,7 @@ map('v', '>', '>gv')
 -- File navigations
 map('n', '<leader>s', ':Startify<CR>')
 map('n', '<leader>ev', ':NERDTree ~/Documents/Repos/Dotfiles/nvim/lua <CR>')
-map('n', '<leader>el', ':NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>')
+-- map('n', '<leader>el', ':NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>')
 map('n', '<leader>eb', ':e ~/Documents/Repos/Dotfiles/.bashrc <CR>')
 map('n', '<leader>ew', ':e ~/Documents/Repos/Wiki/index.rst <CR>')
 
@@ -57,16 +57,20 @@ map('n', 'k', 'gk')
 -- keep the cursor in place when joining lines
 map('n', 'J', 'mzJ`z')
 
--- Undo break points, prevent undo all line 
+-- Undo break points, prevent undo all line
 map('i', ',', ',<c-g>u')
 map('i', '.', '.<c-g>u')
 map('i', '!', '!<c-g>u')
 map('i', '?', '?<c-g>u')
 map('i', ':', ':<c-g>u')
 
--- Insert empty line before/after line
+-- insert empty line before/after line
 map('n', '-', 'mzO<Esc>`z')
 map('n', '=', 'mzo<Esc>`z')
+
+-- replace the name of variable in current file
+map('n', 'cv', ':%s/\\<<C-r><C-w>\\>/')
+
 
 -- TODO: fix copy paste
 -- paste with indentation
