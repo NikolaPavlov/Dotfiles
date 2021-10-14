@@ -3,6 +3,7 @@ export EDITOR=nvim
 
 alias w='whoami '
 alias v='nvim '
+alias vf='vifm '
 alias e='exit '
 alias c='clear '
 alias cl='clear '
@@ -66,6 +67,8 @@ alias t='task '
 alias tl='task list '
 alias ta='task add $1 '
 alias tn='task next '
+alias tv='task project:nVim'
+
 # Programs
 alias vifm='vifmrun '
 alias reflect='sudo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist '
