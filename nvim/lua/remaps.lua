@@ -22,7 +22,7 @@ map('v', '<leader><leader>', '<Esc>')
 map('n', '<leader>a', 'ggVG')
 map('n', '<leader>o', ':only<CR>')
 map('n', '<leader>d', ':bd<CR>')
-map('n', '<CR>', ':b#<CR>')
+-- map('n', '<CR>', ':b#<CR>')
 
 map('v', '<', '<gv')
 map('v', '>', '>gv')

@@ -6,6 +6,8 @@
 -- http://learnvimscriptthehardway.stevelosh.com/
 -- https://vim.fandom.com/wiki/Category:VimTip ---> VimTips
 -- https://www.chrisatmachine.com/Neovim/27-native-lsp/
+--
+-- https://neovimcraft.com/
 ------------------------------------------------------------
 
 -- norg
@@ -81,18 +83,29 @@ return require('packer').startup({function(use)
 
   -- Shits
   -------------------------------------------------------------------------
+  -- TODO: setup https://alpha2phi.medium.com/new-neovim-plugins-you-should-try-18aac675f595
   use {
     "nvim-neorg/neorg",
     config = function()
         require('neorg').setup {
             -- Tell Neorg what modules to load
             load = {
+                ["core.autocommands"] = {}, --  a module for wrapping events around autocommands
+                ["core.keybinds"] = {}, --  a module for binding events to keybinds
+                ["core.highlights"] = {}, --  manages Neorg highlight groups and their colours
                 ["core.defaults"] = {}, -- Load all the default modules
                 ["core.norg.concealer"] = {}, -- Allows for use of icons
+                -- ["core.norg.completion"] = {
+                --     config = {
+                --         engine = 'nvim-cmp',
+                --     },
+                -- },
                 ["core.norg.dirman"] = { -- Manage your directories with Neorg
                     config = {
                         workspaces = {
-                            my_workspace = "~/neorg"
+                            my_workspace = "~/Documents/Repos/Wiki/NEORG",
+                            autodetect = true,
+                            autochdir = true,
                         }
                     }
                 }
@@ -101,6 +114,10 @@ return require('packer').startup({function(use)
     end,
     requires = "nvim-lua/plenary.nvim"
   }
+
+  use 'plasticboy/vim-markdown'
+
+  -- TODO: https://github.com/michaelb/sniprun
   -------------------------------------------------------------------------
 
   if packer_bootstrap then
