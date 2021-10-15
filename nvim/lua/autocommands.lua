@@ -1,5 +1,20 @@
+local cmd = vim.cmd
+
+-- auto recompile Packer
+cmd[[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]]
+
+-- When editing a file always jump to the last known location
+cmd [[
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+]]
+
 -- FileType Vim
-vim.cmd [[
+cmd [[
 	augroup filetype_vim
 	    au!
 	    au FileType vim setlocal foldmethod=marker
@@ -10,11 +25,19 @@ vim.cmd [[
 ]]
 
 -- FileType Perl
-vim.cmd [[
+cmd [[
     augroup ft_perl
         au!
         au FileType perl set foldmethod=indent
         noremap <F5> :w<CR>:!perl %<CR>
         inoremap <F5> <Esc>:w<CR>:!perl %<CR>
+    augroup END
+]]
+
+-- Lua
+cmd [[
+    augroup ft_lua
+        au!
+        au FileType lua set foldmethod=indent
     augroup END
 ]]

@@ -14,8 +14,6 @@ map('n', '<C-t>', ':NERDTreeToggleVCS<CR>')
 
 map('i', 'jk', '<Esc>')
 map('c', 'jk', '<Esc>')
-map('i', 'kj', '<Esc>')
-map('c', 'kj', '<Esc>')
 
 map('n', '<leader><leader>', ':noh<CR>')
 map('v', '<leader><leader>', '<Esc>')

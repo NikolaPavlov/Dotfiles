@@ -18,7 +18,7 @@ opt.wrap = false                                -- disable line wraps
 --opt.&showbreak = '↳ '
 opt.lazyredraw = true 
 opt.relativenumber = true
-opt.scrolloff = 999                             -- big scrolloff to keep the search results centered
+opt.scrolloff = 99999                             -- big scrolloff to keep the search results centered
 opt.sidescrolloff = 5                         -- big scrolloff to keep the search results centered
 --opt.syntax = on
 opt.hlsearch = true
@@ -48,6 +48,7 @@ opt.list = true                                -- show some invisible characters
 -- opt.listchars = { 'tab:>', 'trail:-' }         -- TODO: fix
 opt.termguicolors = true                       -- true color support
 opt.mouse = 'a'                                 -- TODO: making copy/paste to work over ssh terminals (better select txt for copy)
+
 
 
 opt.foldlevel=99
