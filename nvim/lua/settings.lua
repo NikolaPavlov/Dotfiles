@@ -46,10 +46,8 @@ opt.hidden = true                              -- enable background buffers (fil
 opt.joinspaces = false                         -- no double spaces with join
 opt.list = true                                -- show some invisible characters
 -- opt.listchars = { 'tab:>', 'trail:-' }         -- TODO: fix
-opt.wildmode = {'list', 'longest'}             -- command-line completion mode
 opt.termguicolors = true                       -- true color support
 opt.mouse = 'a'                                 -- TODO: making copy/paste to work over ssh terminals (better select txt for copy)
-
 
 
 opt.foldlevel=99
