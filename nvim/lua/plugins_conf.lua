@@ -61,14 +61,14 @@ vim.cmd [[
 --
 -- Deoplete
 cmd [[
-  let g:deoplete#enable_at_startup = 1
-  let g:AutoPairsMapCR=0
-  
-  call deoplete#custom#source('_', 'smart_case', v:true)
+    let g:deoplete#enable_at_startup = 1
+    let g:AutoPairsMapCR=0
 
-  imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
-  imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-  imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+    call deoplete#custom#source('_', 'smart_case', v:true)
+
+    imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
+    imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+    imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 ]]
 -- vim.api.nvim_set_keymap('i', '<expr><TAB>', 'pumvisible() ? \"\\<C-n>\" : (neosnippet#expandable_or_jumpable() ? \"\\<Plug>(neosnippet_expand_or_jump)\" : \"\\<TAB>"', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('i', '<expr><TAB>', 'pumvisible() ? \"\\<C-p>\" : \"\\<S-TAB>\"', { noremap = true, silent = true })
@@ -77,22 +77,21 @@ cmd [[
 
 --
 -- FZF
-map('n', '<leader>f', ':Files<CR>')
-map('n', '<leader>g', ':GFiles<CR>')
-map('n', '<leader>h', ':Helptags!<CR>')
-map('n', '<leader>l', ':Lines<CR>')
-map('n', '<leader>r', ':Rg<CR>')
-map('n', '<leader>t', ':Tags<CR>')
--- TODO: add keybinding for specific folders
-map('n', '<leader>v', ':Files ~/Documents/Repos/Dotfiles/nvim/lua<CR>')
-map('n', '<leader>p', ':Files /mnt/core/home/n.pavlov/easypay_core/CORE<CR>')
-map('n', '<leader>el', ':Files /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/<CR>')
-
-cmd [[
-  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-  let $FZF_DEFAULT_OPTS='--layout=reverse'
-  let g:fzf_buffers_jump = 1
-]]
+    map('n', '<leader>f', ':Files<CR>')
+    map('n', '<leader>g', ':GFiles<CR>')
+    map('n', '<leader>h', ':Helptags!<CR>')
+    map('n', '<leader>l', ':Lines<CR>')
+    map('n', '<leader>r', ':Rg<CR>')
+    map('n', '<leader>t', ':Tags<CR>')
+    -- TODO: add keybinding for specific folders
+    map('n', '<leader>v', ':Files ~/Documents/Repos/Dotfiles/nvim/lua<CR>')
+    map('n', '<leader>p', ':Files /mnt/core/home/n.pavlov/easypay_core/CORE<CR>')
+    map('n', '<leader>el', ':Files /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/<CR>')
+    cmd [[
+        let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+        let $FZF_DEFAULT_OPTS='--layout=reverse'
+        let g:fzf_buffers_jump = 1
+    ]]
 
 
 --
@@ -119,7 +118,7 @@ cmd [[
     let NERDTreeMinimalUI = 1
     let NERDTreeQuitOnOpen = 0
     let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
-   let NERDTreeShowLineNumbers = 1
+    let NERDTreeShowLineNumbers = 1
 ]]
 
 --
@@ -141,16 +140,3 @@ cmd [[
 --
 -- Other
 
---
--- When editing a file always jump to the last known location
-cmd [[
-    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-]]
-
--- auto recompile packer
-vim.cmd[[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]]
