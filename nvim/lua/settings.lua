@@ -52,3 +52,6 @@ opt.mouse = 'a'                                 -- TODO: making copy/paste to wo
 
 opt.foldlevel=99
 opt.foldlevelstart=10
+
+opt.fileencoding='cp1251'
+opt.fileencodings='ucs-bom, utf-8, cp1251'

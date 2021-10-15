@@ -68,6 +68,7 @@ return require('packer').startup({function(use)
   }
   use 'lfv89/vim-interestingwords'      -- colorize interesting words with <leader>k
   use 'Yggdroot/indentLine'             -- showing indent lines
+  use 'kshenoy/vim-signature'           -- display marks in the left panel
 
 
   -- Other

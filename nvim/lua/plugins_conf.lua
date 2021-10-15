@@ -81,11 +81,13 @@ map('n', '<leader>f', ':Files<CR>')
 map('n', '<leader>g', ':GFiles<CR>')
 map('n', '<leader>h', ':Helptags!<CR>')
 map('n', '<leader>l', ':Lines<CR>')
-map('n', '<leader>r', ':Rg<CR>')
+-- map('n', '<leader>r', ':Rg<CR>')
 map('n', '<leader>t', ':Tags<CR>')
 -- TODO: add keybinding for specific folders
 map('n', '<leader>v', ':Files ~/Documents/Repos/Dotfiles/nvim/lua<CR>')
 map('n', '<leader>p', ':Files /mnt/core/home/n.pavlov/easypay_core/CORE<CR>')
+map('n', '<leader>r', ':PRg<CR>')
+map('n', '<leader>el', ':Files /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/<CR>')
 map('n', '<leader>el', ':Files /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/<CR>')
 
 cmd [[
@@ -94,11 +96,22 @@ cmd [[
   let g:fzf_buffers_jump = 1
 ]]
 
+-- Rg search from the project root of the current buffe
+-- https://github.com/junegunn/fzf.vim/issues/837
+cmd [[
+    command! -bang -nargs=* PRg
+  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'dir': system('git -C '.expand('%:p:h').' rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
+]]
+
 
 --
 -- NeoSnippet
 cmd [[
     let g:neosnippet#snippets_directory="$HOME/Documents/Repos/Dotfiles/NeoSnippets"
+
+    imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-j>     <Plug>(neosnippet_expand_target)
 ]]
 
 
