@@ -4,7 +4,8 @@ local cmd = vim.cmd
 
 ----------------------------
 -- cmd 'colorscheme gruvbox'
-cmd 'colorscheme badwolf'
+-- cmd 'colorscheme badwolf'
+cmd 'colorscheme iceberg'
 ----------------------------
 
 
@@ -20,7 +21,6 @@ opt.lazyredraw = true
 opt.relativenumber = true
 opt.scrolloff = 99999                             -- big scrolloff to keep the search results centered
 opt.sidescrolloff = 5                         -- big scrolloff to keep the search results centered
--- opt.hlsearch = true
 opt.cursorline = true
 --opt.colorcolumn = '80'
 opt.laststatus=2
@@ -47,7 +47,7 @@ opt.list = true                                -- show some invisible characters
 -- opt.listchars = { 'tab:>', 'trail:-' }         -- TODO: fix
 opt.termguicolors = true                       -- true color support
 opt.mouse = 'a'                                 -- TODO: making copy/paste to work over ssh terminals (better select txt for copy)
-
+opt.showmode = false
 
 
 opt.foldlevel=99

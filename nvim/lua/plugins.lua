@@ -36,6 +36,7 @@ return require('packer').startup({function(use)
   -- Themes and color
   use 'morhetz/gruvbox'
   use 'sjl/badwolf'
+  use 'cocopon/iceberg.vim'                 -- TODO: try
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use {
@@ -62,6 +63,7 @@ return require('packer').startup({function(use)
 
   -- Shits
   -------------------------------------------------------------------------
+  use 'ojroques/vim-oscyank'
   -- TODO: use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   -- TODO: setup https://alpha2phi.medium.com/new-neovim-plugins-you-should-try-18aac675f595
   -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } 
