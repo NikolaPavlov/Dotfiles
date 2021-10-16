@@ -77,3 +77,7 @@ map('n', 'cv', ':%s/\\<<C-r><C-w>\\>/')
 
 -- replace visualy selected text with the what is in the paste register
     -- vnoremap pp "+p
+
+
+-- TODO: testing ssh yank (OSC52)
+map('v', '<leader>y', ':OSCYank<CR>')

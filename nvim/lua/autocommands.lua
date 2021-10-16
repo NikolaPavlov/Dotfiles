@@ -44,20 +44,3 @@ cmd [[
 
 
 -- Other
-cmd [[
-nmap <leader>y Osc52Yank()
-    " Allows yanking even though SSH!!!
-    " source:
-    " https://github.com/fortes/dotfiles/blob/master/stowed-files/nvim/.vimrc
-    " copy yank buffer to system clipboard
-    " Use OSC52 to put things into the system clipboard, works over SSH!
-    function! Osc52Yank()
-    let buffer=system('base64 -w0', @0)
-    let buffer=substitute(buffer, "\n$", "", "")
-    let buffer='\e]52;c;'.buffer.'\x07'
-    " Need special escaping if within tmux
-    if $TMUX != ''
-        let buffer='\ePtmux;\e'.buffer.'\e\\'
-    endif
-    endfunction
-]]
