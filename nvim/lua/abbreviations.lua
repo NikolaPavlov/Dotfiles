@@ -12,3 +12,5 @@ cmd 'iabbrev reutnr return'
 cmd 'iabbrev retunr return'
 cmd 'iabbrev reutrn return'
 cmd 'iabbrev retrun return'
+
+cmd 'iabbrev ues use'

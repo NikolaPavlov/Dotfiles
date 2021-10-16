@@ -20,8 +20,7 @@ opt.lazyredraw = true
 opt.relativenumber = true
 opt.scrolloff = 99999                             -- big scrolloff to keep the search results centered
 opt.sidescrolloff = 5                         -- big scrolloff to keep the search results centered
---opt.syntax = on
-opt.hlsearch = true
+-- opt.hlsearch = true
 opt.cursorline = true
 --opt.colorcolumn = '80'
 opt.laststatus=2
@@ -40,7 +39,7 @@ opt.tabstop=4                                  -- number of spaces tabs count fo
 opt.shiftround = true                          -- round indent
 opt.autoread = true                            -- auto read file when it was modified outside of vim
 opt.autowriteall = true                        -- automatically write file when leaving modified buffer
-vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" -- dir for swap files
+-- vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" -- dir for swap files
 
 opt.hidden = true                              -- enable background buffers (files)
 opt.joinspaces = false                         -- no double spaces with join
@@ -56,3 +55,8 @@ opt.foldlevelstart=10
 
 opt.fileencoding='cp1251'
 opt.fileencodings='ucs-bom, utf-8, cp1251'
+
+-- Primagen opt
+opt.guicursor=''                                -- keep cursor as blockls in insert mode
+opt.hlsearch=false                              -- TODO: check this opt 
+opt.signcolumn='yes'                            -- TODO: check this opt

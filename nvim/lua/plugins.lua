@@ -1,28 +1,3 @@
------------------------------------------------------------
--- LINKS
------------------------------------------------------------
--- http://vimcasts.org/
--- http://vimawesome.com/
--- http://learnvimscriptthehardway.stevelosh.com/
--- https://vim.fandom.com/wiki/Category:VimTip ---> VimTips
--- https://www.chrisatmachine.com/Neovim/27-native-lsp/
---
--- https://neovimcraft.com/
--- https://giters.com/rockerBOO/awesome-neovim?amp=1
-------------------------------------------------------------
-
--- norg
--- local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
--- parser_configs.norg = {
---     install_info = {
---         url = "https://github.com/nvim-neorg/tree-sitter-norg",
---         files = { "src/parser.c", "src/scanner.cc" },
---         branch = "main"
---     },
--- }
---
-
-
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
@@ -91,6 +66,7 @@ return require('packer').startup({function(use)
   -- TODO: setup https://alpha2phi.medium.com/new-neovim-plugins-you-should-try-18aac675f595
   -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } 
   -- TODO: ctags
+  -- TODO: https://github.com/michaelb/sniprun
   ------------------------------------------------------
   -- use {
   --   "nvim-neorg/neorg",
@@ -159,7 +135,6 @@ return require('packer').startup({function(use)
 
   use 'plasticboy/vim-markdown'
 
-  -- TODO: https://github.com/michaelb/sniprun
   -------------------------------------------------------------------------
 
   if packer_bootstrap then
