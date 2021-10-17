@@ -83,7 +83,7 @@ cmd [[
     map('n', '<leader>l', ':Lines<CR>')
     map('n', '<leader>r', ':Rg<CR>')
     map('n', '<leader>t', ':Tags<CR>')
-    -- TODO: add keybinding for specific folders
+
     map('n', '<leader>v', ':Files ~/Documents/Repos/Dotfiles/nvim/lua<CR>')
     map('n', '<leader>p', ':Files /mnt/core/home/n.pavlov/easypay_core/CORE<CR>')
     map('n', '<leader>el', ':Files /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/<CR>')
@@ -139,14 +139,3 @@ cmd [[
     nmap <leader>gJ 9999<leader>gj
     nmap <leader>gK 9999<leader>gk
 ]]
-
-
-
-
-
-
-
-
---
--- Other
-

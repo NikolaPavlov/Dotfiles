@@ -3,9 +3,9 @@ local cmd = vim.cmd
 
 
 ----------------------------
+cmd 'colorscheme badwolf'
 -- cmd 'colorscheme gruvbox'
--- cmd 'colorscheme badwolf'
-cmd 'colorscheme iceberg'
+-- cmd 'colorscheme iceberg'
 ----------------------------
 
 
@@ -14,12 +14,12 @@ opt.showmatch = true
 opt.ignorecase = true
 opt.smartcase = true                            -- do not ignore case with capitals
 opt.smartindent = true                          -- insert indents automatically
-opt.wrap = false                                -- disable line wraps
---opt.linebreak = true
---opt.&showbreak = '↳ '
-opt.lazyredraw = true 
-opt.relativenumber = true
-opt.scrolloff = 99999                             -- big scrolloff to keep the search results centered
+opt.wrap = true                                -- disable line wraps
+opt.linebreak = true
+opt.showbreak = '  '
+opt.lazyredraw = true
+-- opt.relativenumber = true
+opt.scrolloff = 999                             -- big scrolloff to keep the search results centered
 opt.sidescrolloff = 5                         -- big scrolloff to keep the search results centered
 opt.cursorline = true
 --opt.colorcolumn = '80'
@@ -40,14 +40,17 @@ opt.shiftround = true                          -- round indent
 opt.autoread = true                            -- auto read file when it was modified outside of vim
 opt.autowriteall = true                        -- automatically write file when leaving modified buffer
 -- vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" -- dir for swap files
+opt.swapfile = false
 
 opt.hidden = true                              -- enable background buffers (files)
 opt.joinspaces = false                         -- no double spaces with join
 opt.list = true                                -- show some invisible characters
--- opt.listchars = { 'tab:>', 'trail:-' }         -- TODO: fix
+opt.listchars = { tab = ':> ', trail = '' }
+
 opt.termguicolors = true                       -- true color support
-opt.mouse = 'a'                                 -- TODO: making copy/paste to work over ssh terminals (better select txt for copy)
+opt.mouse = 'a'                                -- enable mouse (for resize splits)
 opt.showmode = false
+opt.guicursor=''                                -- keep cursor as block in insert mode
 
 
 opt.foldlevel=99
@@ -56,7 +59,7 @@ opt.foldlevelstart=10
 opt.fileencoding='cp1251'
 opt.fileencodings='ucs-bom, utf-8, cp1251'
 
--- Primagen opt
-opt.guicursor=''                                -- keep cursor as blockls in insert mode
-opt.hlsearch=false                              -- TODO: check this opt 
-opt.signcolumn='yes'                            -- TODO: check this opt
+
+-- Theme settings
+vim.g.badwolf_darkgutter = 1                    -- dark background for the relativenumbers
+vim.g.badwolf_html_link_underline = 0

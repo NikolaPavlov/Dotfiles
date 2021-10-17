@@ -42,5 +42,7 @@ cmd [[
     augroup END
 ]]
 
-
--- Other
+-- autosave
+cmd [[
+    autocmd CursorHold,CursorHoldI * update
+]]

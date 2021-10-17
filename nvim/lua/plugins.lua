@@ -28,7 +28,7 @@ return require('packer').startup({function(use)
   -- Git
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'                  -- change surroundings
-  use 'tpope/vim-repeat'                    -- repeat surround commands
+  use 'tpope/vim-repeat'                    -- repeat plugin commands
   use 'junegunn/gv.vim'                     -- git commit browser
   use 'mhinz/vim-signify'                   -- git diff in left bar
   use 'yuttie/comfortable-motion.vim'       -- scroll effect
@@ -36,7 +36,7 @@ return require('packer').startup({function(use)
   -- Themes and color
   use 'morhetz/gruvbox'
   use 'sjl/badwolf'
-  use 'cocopon/iceberg.vim'                 -- TODO: try
+  use 'cocopon/iceberg.vim'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use {
@@ -46,6 +46,7 @@ return require('packer').startup({function(use)
   use 'lfv89/vim-interestingwords'      -- colorize interesting words with <leader>k
   use 'Yggdroot/indentLine'             -- showing indent lines
   use 'kshenoy/vim-signature'           -- display marks in the left panel
+  use 'Valloric/MatchTagAlways'         -- highlight matching html tags
 
 
   -- Other
@@ -57,49 +58,10 @@ return require('packer').startup({function(use)
   use 'dm1try/golden_size'              -- auto resize splits
   use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
   use 'machakann/vim-highlightedyank'
+  use 'ojroques/vim-oscyank'            -- copy through SSH
+  use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
 
-  -- use 'gu-fan/riv.vim'                  -- note taking in .rst
-  -- gu-fan/InstantRst
 
-  -- Shits
-  -------------------------------------------------------------------------
-  use 'ojroques/vim-oscyank'
-  -- TODO: use 'ludovicchabant/vim-gutentags' -- Automatic tags management
-  -- TODO: setup https://alpha2phi.medium.com/new-neovim-plugins-you-should-try-18aac675f595
-  -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } 
-  -- TODO: ctags
-  -- TODO: https://github.com/michaelb/sniprun
-  ------------------------------------------------------
-  -- use {
-  --   "nvim-neorg/neorg",
-  --   config = function()
-  --       require('neorg').setup {
-  --           -- Tell Neorg what modules to load
-  --           load = {
-  --               -- ["core.autocommands"] = {}, --  a module for wrapping events around autocommands
-  --               -- ["core.keybinds"] = {}, --  a module for binding events to keybinds
-  --               ["core.highlights"] = {}, --  manages Neorg highlight groups and their colours
-  --               ["core.defaults"] = {}, -- Load all the default modules
-  --               ["core.norg.concealer"] = {}, -- Allows for use of icons
-  --               -- ["core.norg.completion"] = {
-  --               --     config = {
-  --               --         engine = 'nvim-cmp',
-  --               --     },
-  --               -- },
-  --               ["core.norg.dirman"] = { -- Manage your directories with Neorg
-  --                   config = {
-  --                       workspaces = {
-  --                           my_workspace = "~/Documents/Repos/Wiki/NEORG",
-  --                           -- autodetect = true,
-  --                           -- autochdir = true,
-  --                       }
-  --                   }
-  --               }
-  --           },
-  --       }
-  --   end,
-  --   requires = "nvim-lua/plenary.nvim"
-  -- }
   ------------------------------------------------------
   -- install *.norg format for treesitter with :TSInstall norg
     local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
@@ -132,11 +94,14 @@ return require('packer').startup({function(use)
         end,
         requires = "nvim-lua/plenary.nvim"
     }
-
   ------------------------------------------------------
-
+  -- Shits
+  -------------------------------------------------------------------------
   use 'plasticboy/vim-markdown'
-
+  -- use 'gu-fan/riv.vim'               -- note taking in .rst
+  -- gu-fan/InstantRst
+  -- use { 'michaelb/sniprun', run = 'bash ./install.sh'} TODO: setup doesn't work
+  -- TODO: mbbill/undotree
   -------------------------------------------------------------------------
 
   if packer_bootstrap then
