@@ -27,8 +27,7 @@ map('v', '>', '>gv')
 
 -- File navigations
 map('n', '<leader>s', ':Startify<CR>')
-map('n', '<leader>ev', ':NERDTree ~/Documents/Repos/Dotfiles/nvim/lua <CR>')
--- map('n', '<leader>el', ':NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>')
+map('n', '<leader>el', ':NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>')
 map('n', '<leader>eb', ':e ~/Documents/Repos/Dotfiles/.bashrc <CR>')
 map('n', '<leader>ew', ':e ~/Documents/Repos/Wiki/index.rst <CR>')
 
@@ -69,15 +68,23 @@ map('n', '=', 'mzo<Esc>`z')
 -- replace the name of variable in current file
 map('n', 'cv', ':%s/\\<<C-r><C-w>\\>/')
 
-
--- TODO: fix copy paste
--- paste with indentation
-    -- nnoremap p p=`]
-    -- nnoremap P [P
-
--- replace visualy selected text with the what is in the paste register
-    -- vnoremap pp "+p
-
-
--- TODO: testing ssh yank (OSC52)
+-- SSH copy paste (OSC52)
 map('v', '<leader>y', ':OSCYank<CR>')
+
+-- move visualy selected text up/down
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+
+-- paste to set up indentation
+map('n', 'p', 'p=`]')
+map('n', 'P', '[P')
+
+-- vv select the line without the spaces
+map('n', 'vv', '^vg_')
+
+-- Y to copy unthil the end of line
+map('n', 'Y', 'yg$')
+
+-- TODO: map is already taken (using opt.scrolloff=999 currently)
+map('n', 'n', 'nzzzv')
+map('n', 'N', 'Nzzzv')
