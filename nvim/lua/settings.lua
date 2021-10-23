@@ -3,9 +3,9 @@ local cmd = vim.cmd
 
 
 ----------------------------
-cmd 'colorscheme badwolf'
+-- cmd 'colorscheme badwolf'
 -- cmd 'colorscheme gruvbox'
--- cmd 'colorscheme iceberg'
+cmd 'colorscheme iceberg'
 ----------------------------
 
 
@@ -18,7 +18,7 @@ opt.wrap = true                                -- disable line wraps
 opt.linebreak = true
 opt.showbreak = '  '
 opt.lazyredraw = true
--- opt.relativenumber = true
+opt.relativenumber = true
 opt.scrolloff = 999                             -- big scrolloff to keep the search results centered
 opt.sidescrolloff = 5                         -- big scrolloff to keep the search results centered
 opt.cursorline = true
