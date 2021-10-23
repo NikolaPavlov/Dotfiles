@@ -83,6 +83,7 @@ alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json
 alias rec='recordmydesktop --device hw:1'
 alias weather='curl wttr.in';
 alias lsblk='lsblk -f'
+alias vpn='~/Documents/Repos/Dotfiles/Scripts/vpn.sh'
 
 # ex - archive extractor
 ex ()
