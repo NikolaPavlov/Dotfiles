@@ -100,6 +100,7 @@ return require('packer').startup({function(use)
   use 'plasticboy/vim-markdown'
   use 'majutsushi/tagbar'            -- display tags with <T>
   use 'godlygeek/tabular'            -- text align
+  use 'dbeniamine/cheat.sh-vim'      -- query cht.sh with :Cheat
   -- TODO: ctags
   -- TODO: install tags (T) plugin
   -- TODO: mbbill/undotree

@@ -3,9 +3,13 @@ local cmd = vim.cmd
 
 
 ----------------------------
+vim.o.termguicolors = true
+vim.cmd'colorscheme iceberg'
+
+-- opt.termguicolors = true
 -- cmd 'colorscheme badwolf'
 -- cmd 'colorscheme gruvbox'
-cmd 'colorscheme iceberg'
+-- cmd 'colorscheme iceberg'
 ----------------------------
 
 
