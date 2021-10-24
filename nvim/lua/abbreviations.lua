@@ -4,6 +4,7 @@ local cmd = vim.cmd
 cmd 'iabbrev todo TODO:'
 cmd 'iabbrev todo: TODO:'
 cmd 'iabbrev TODO TODO:'
+cmd 'iabbrev tido TODO:'
 
 cmd 'iabbrev pritn print'
 cmd 'iabbrev pirint print'

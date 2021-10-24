@@ -86,7 +86,6 @@ cmd [[
 
     map('n', '<leader>v', ':Files ~/Documents/Repos/Dotfiles/nvim/lua<CR>')
     map('n', '<leader>p', ':Files /mnt/core/home/n.pavlov/easypay_core/CORE<CR>')
-    map('n', '<leader>el', ':Files /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/<CR>')
     cmd [[
         let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
         let $FZF_DEFAULT_OPTS='--layout=reverse'

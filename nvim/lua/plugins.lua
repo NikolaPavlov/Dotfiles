@@ -100,7 +100,10 @@ return require('packer').startup({function(use)
   -------------------------------------------------------------------------
   use 'plasticboy/vim-markdown'
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+  use 'majutsushi/tagbar'            -- display tags with <T>
+  use 'godlygeek/tabular'            -- text align
   -- TODO: ctags
+  -- TODO: install tags (T) plugin
   -- TODO: https://github.com/michaelb/sniprun
   -- TODO: mbbill/undotree
   -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } 
