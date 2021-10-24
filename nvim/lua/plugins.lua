@@ -59,9 +59,8 @@ return require('packer').startup({function(use)
   use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
   use 'machakann/vim-highlightedyank'
   use 'ojroques/vim-oscyank'            -- copy through SSH
+  use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
 
-  -- use 'gu-fan/riv.vim'                  -- note taking in .rst
-  -- gu-fan/InstantRst
 
   ------------------------------------------------------
   -- install *.norg format for treesitter with :TSInstall norg
@@ -99,14 +98,15 @@ return require('packer').startup({function(use)
   -- Shits
   -------------------------------------------------------------------------
   use 'plasticboy/vim-markdown'
-  use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   use 'majutsushi/tagbar'            -- display tags with <T>
   use 'godlygeek/tabular'            -- text align
   -- TODO: ctags
   -- TODO: install tags (T) plugin
-  -- TODO: https://github.com/michaelb/sniprun
   -- TODO: mbbill/undotree
   -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } 
+  -- use 'gu-fan/riv.vim'               -- note taking in .rst
+  -- gu-fan/InstantRst
+  -- use { 'michaelb/sniprun', run = 'bash ./install.sh'} TODO: setup doesn't work
   -------------------------------------------------------------------------
 
   if packer_bootstrap then

@@ -3,9 +3,9 @@ local cmd = vim.cmd
 
 
 ----------------------------
-cmd 'colorscheme badwolf'
+-- cmd 'colorscheme badwolf'
 -- cmd 'colorscheme gruvbox'
--- cmd 'colorscheme iceberg'
+cmd 'colorscheme iceberg'
 ----------------------------
 
 

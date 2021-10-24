@@ -15,7 +15,6 @@ mkdir -p $HOME/.gnupg
 ln -sfv "$DOTFILES_DIR/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
 ln -sfv "$DOTFILES_DIR/.bashrc" $HOME
 ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME
-# ln -sfv "$DOTFILES_DIR/nvim/init.vim" ~/.config/nvim/init.vim
 ln -sfv "$DOTFILES_DIR/nvim/init.lua" ~/.config/nvim/init.lua
 ln -sfv "$DOTFILES_DIR/nvim/lua" ~/.config/nvim/lua
 ln -sfv "$DOTFILES_DIR/Zathura/zathurarc" ~/.config/zathura/zathurarc
