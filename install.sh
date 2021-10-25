@@ -10,6 +10,7 @@ mkdir -p $HOME/.config/alacritty
 mkdir -p $HOME/.config/nvim/undo_dir
 mkdir -p $HOME/.config/zathura
 mkdir -p $HOME/.config/qtile
+mkdir -p $HOME/.config/tmux
 mkdir -p $HOME/.gnupg
 
 ln -sfv "$DOTFILES_DIR/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
@@ -24,3 +25,4 @@ ln -sfv "$DOTFILES_DIR/qtile/config.py" ~/.config/qtile
 ln -sfv "$DOTFILES_DIR/qtile/autostart.sh" ~/.config/qtile
 ln -sfv "$DOTFILES_DIR/gnupg/gpg-agent.conf" ~/.gnupg
 ln -sfv "$DOTFILES_DIR/TaskWarrior/taskrc" ~/.taskrc
+ln -sfv "$DOTFILES_DIR/tmux/tmux.conf" ~/.config/tmux
