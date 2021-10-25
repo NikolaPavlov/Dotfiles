@@ -59,7 +59,7 @@ return require('packer').startup({function(use)
   use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
   use 'machakann/vim-highlightedyank'
   use 'ojroques/vim-oscyank'            -- copy through SSH
-  use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
+  use 'jsfaint/gen_tags.vim'            -- tags management
 
 
   ------------------------------------------------------
@@ -101,7 +101,7 @@ return require('packer').startup({function(use)
   use 'majutsushi/tagbar'            -- display tags with <T>
   use 'godlygeek/tabular'            -- text align
   use 'dbeniamine/cheat.sh-vim'      -- query cht.sh with :Cheat
-  -- TODO: ctags
+  -- TODO: rm use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
   -- TODO: install tags (T) plugin
   -- TODO: mbbill/undotree
   -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } 
