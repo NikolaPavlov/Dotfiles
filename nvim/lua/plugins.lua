@@ -60,6 +60,7 @@ return require('packer').startup({function(use)
   use 'machakann/vim-highlightedyank'
   use 'ojroques/vim-oscyank'            -- copy through SSH
   use 'jsfaint/gen_tags.vim'            -- tags management
+  use 'ThePrimeagen/harpoon'            -- fetch files for quick navigation
 
 
   ------------------------------------------------------

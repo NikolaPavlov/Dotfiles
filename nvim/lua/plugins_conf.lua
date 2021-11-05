@@ -138,3 +138,8 @@ cmd [[
     nmap <leader>gJ 9999<leader>gj
     nmap <leader>gK 9999<leader>gk
 ]]
+
+--
+-- Harpoon
+map('n', '<leader>A', ':lua require("harpoon.mark").add_file()<CR>')
+map('n', '<leader>H', ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
