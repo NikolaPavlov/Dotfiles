@@ -108,6 +108,7 @@ return require('packer').startup({function(use)
   -- TODO: install tags (T) plugin
   -- TODO: mbbill/undotree
   -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } 
+  -- TODO: https://github.com/folke/zen-mode.nvim
   -- use 'gu-fan/riv.vim'               -- note taking in .rst
   -- gu-fan/InstantRst
   -- use { 'michaelb/sniprun', run = 'bash ./install.sh'} TODO: setup doesn't work

@@ -34,6 +34,16 @@ cmd [[
     augroup END
 ]]
 
+-- FileType Python
+cmd [[
+    augroup ft_python
+        au!
+        au FileType python set foldmethod=indent
+        noremap <F6> :w<CR>:!python %<CR>
+        inoremap <F6> <Esc>:w<CR>:!python %<CR>
+    augroup END
+]]
+
 -- Lua
 cmd [[
     augroup ft_lua

@@ -14,6 +14,8 @@ map('n', '<C-t>', ':NERDTreeToggleVCS<CR>')
 
 map('i', 'jk', '<Esc>')
 map('c', 'jk', '<Esc>')
+map('i', 'йк', '<Esc>')
+map('c', 'йк', '<Esc>')
 
 map('n', '<leader><leader>', ':noh<CR>')
 map('v', '<leader><leader>', '<Esc>')
@@ -68,6 +70,9 @@ map('n', '=', 'mzo<Esc>`z')
 -- replace the name of variable in current file
 map('n', 'cv', ':%s/\\<<C-r><C-w>\\>/')
 
+-- swap splits
+map('n', 's', '<C-w>r')
+
 -- SSH copy paste (OSC52)
 map('v', '<leader>y', ':OSCYank<CR>')
 
@@ -88,3 +93,5 @@ map('n', 'Y', 'yg$')
 -- TODO: map is already taken (using opt.scrolloff=999 currently)
 map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
+
+
