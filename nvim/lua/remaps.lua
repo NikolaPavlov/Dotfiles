@@ -95,4 +95,7 @@ map('n', 'Y', 'yg$')
 map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
 
+-- Go to the end of line in insert mode
+map('i', '<C-a>', '<C-o>$')
+
 map('n', 'T', ':TagbarToggle<CR>')
