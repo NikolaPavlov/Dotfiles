@@ -105,6 +105,9 @@ return require('packer').startup({function(use)
   use 'airblade/vim-rooter'          -- autochange workdir (<leader>G / <leader>f as alternative ?)
   use 'folke/zen-mode.nvim'
 
+-- https://github.com/gyim/vim-boxdraw
+--  use 'gyim/vim-boxdraw'             -- box drawing
+--  use 'vim-scripts/DrawItv'          -- drawing
   -- TODO: rm use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
   -- TODO: install tags (T) plugin
   -- TODO: mbbill/undotree

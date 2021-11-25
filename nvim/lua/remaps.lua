@@ -62,6 +62,7 @@ map('i', '.', '.<c-g>u')
 map('i', '!', '!<c-g>u')
 map('i', '?', '?<c-g>u')
 map('i', ':', ':<c-g>u')
+map('i', '_', '_<c-g>u')
 
 -- insert empty line before/after line
 map('n', '-', 'mzO<Esc>`z')
@@ -94,4 +95,4 @@ map('n', 'Y', 'yg$')
 map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
 
-
+map('n', 'T', ':TagbarToggle<CR>')
