@@ -143,3 +143,9 @@ cmd [[
 -- Harpoon
 map('n', '<leader>A', ':lua require("harpoon.mark").add_file()<CR>')
 map('n', '<leader>H', ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
+
+--
+-- Startify
+vim.cmd [[
+    let g:startify_session_dir='~/.config/nvim/sessions'
+]]

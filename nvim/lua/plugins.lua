@@ -103,6 +103,7 @@ return require('packer').startup({function(use)
   use 'godlygeek/tabular'            -- text align
   use 'dbeniamine/cheat.sh-vim'      -- query cht.sh with :Cheat
   use 'airblade/vim-rooter'          -- autochange workdir (<leader>G / <leader>f as alternative ?)
+  use 'folke/zen-mode.nvim'
 
   -- TODO: rm use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
   -- TODO: install tags (T) plugin
