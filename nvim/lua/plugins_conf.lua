@@ -7,7 +7,7 @@ end
 
 
 -- AirLine
-vim.cmd [[
+cmd [[
     let g:airline_theme='minimalist'
     let g:airline_powerline_fonts = 1
     let g:airline_section_a = ''
@@ -146,11 +146,7 @@ map('n', '<leader>H', ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
 
 --
 -- Startify
-vim.cmd [[
+cmd [[
     let g:startify_session_dir='~/.config/nvim/sessions'
-    let g:startify_bookmarks = [
-        \ { 'b': '~/.bashrc' },
-        \ '~/Documents/Repos/Dotfiles',
-        \ '~/Documents/Repos/Wiki',
-    \ ]
+    let g:startify_bookmarks = [ { 'b': '~/.bashrc' }, '~/Documents/Repos/Dotfiles', '~/Documents/Repos/Wiki', ]
 ]]
