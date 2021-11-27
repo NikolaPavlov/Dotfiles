@@ -152,5 +152,25 @@ vim.cmd [[
         \ { 'b': '~/.bashrc' },
         \ '~/Documents/Repos/Dotfiles',
         \ '~/Documents/Repos/Wiki',
+        \ '~/Documents/Repos/Wiki',
     \ ]
 ]]
+
+--
+-- TreeSitter
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+  indent = {
+    enable = false,
+    disable = {},
+  },
+  ensure_installed = {
+    'python',
+    'perl',
+    'json',
+    'html',
+  },
+}
