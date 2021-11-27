@@ -85,6 +85,7 @@ cmd [[
     map('n', '<leader>t', ':Tags<CR>')
     map('n', '<leader>b', ':GBranches<CR>')
 
+    map('n', '<leader>F', ':Files ~/<CR>')
     map('n', '<leader>v', ':Files ~/Documents/Repos/Dotfiles/nvim/lua<CR>')
     map('n', '<leader>p', ':Files /mnt/core/home/n.pavlov/easypay_core/CORE<CR>')
     cmd [[

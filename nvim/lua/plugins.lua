@@ -104,7 +104,7 @@ return require('packer').startup({function(use)
   use 'dbeniamine/cheat.sh-vim'      -- query cht.sh with :Cheat
   use 'airblade/vim-rooter'          -- autochange workdir (<leader>G / <leader>f as alternative ?)
   use 'folke/zen-mode.nvim'
-  use 'stsewd/fzf-checkout.vim'
+  use 'stsewd/fzf-checkout.vim'      -- change branches with FZF --> <leader>b
 
 -- https://github.com/gyim/vim-boxdraw
 --  use 'gyim/vim-boxdraw'             -- box drawing

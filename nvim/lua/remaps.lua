@@ -99,3 +99,6 @@ map('n', 'N', 'Nzzzv')
 map('i', '<C-a>', '<C-o>$')
 
 map('n', 'T', ':TagbarToggle<CR>')
+
+-- Other
+map('c', 'ps<CR>', ':PackerSync<CR>')
