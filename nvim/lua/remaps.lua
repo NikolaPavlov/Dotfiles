@@ -102,3 +102,4 @@ map('n', 'T', ':TagbarToggle<CR>')
 
 -- OTHER
 map('c', 'zen', ':ZenMode<CR>')
+map('c', 'ps<CR>', ':PackerSync<CR>')
