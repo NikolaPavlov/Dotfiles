@@ -99,3 +99,6 @@ map('n', 'N', 'Nzzzv')
 map('i', '<C-a>', '<C-o>$')
 
 map('n', 'T', ':TagbarToggle<CR>')
+
+-- OTHER
+map('c', 'zen', ':ZenMode<CR>')

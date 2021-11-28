@@ -8,7 +8,12 @@
 --
 -- TODO: better note taking
 -- https://www.edwinwenink.xyz/posts/42-vim_notetaking/
-
+--
+-- TODO:
+-- https://blog.inkdrop.app/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887
+--
+-- TODO:
+-- http://vimcasts.org/
 
 require('remaps')
 require('plugins')
