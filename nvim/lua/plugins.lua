@@ -86,7 +86,7 @@ return require('packer').startup({function(use)
                     ["core.norg.dirman"] = { -- Manage your directories with Neorg
                         config = {
                             workspaces = {
-                                my_workspace = "~/neorg"
+                                my_workspace = "~/Documents/Repos/WikiNeorg"
                             }
                         }
                     }
