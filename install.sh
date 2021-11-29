@@ -26,3 +26,4 @@ ln -sfv "$DOTFILES_DIR/qtile/autostart.sh" ~/.config/qtile
 ln -sfv "$DOTFILES_DIR/gnupg/gpg-agent.conf" ~/.gnupg
 ln -sfv "$DOTFILES_DIR/TaskWarrior/taskrc" ~/.taskrc
 ln -sfv "$DOTFILES_DIR/tmux/tmux.conf" ~/.config/tmux
+ln -sfv "$DOTFILES_DIR/.inputrc" $HOME

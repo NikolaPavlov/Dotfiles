@@ -30,8 +30,6 @@ map('v', '>', '>gv')
 -- File navigations
 map('n', '<leader>s', ':Startify<CR>')
 map('n', '<leader>el', ':NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>')
-map('n', '<leader>eb', ':e ~/Documents/Repos/Dotfiles/.bashrc <CR>')
-map('n', '<leader>ew', ':e ~/Documents/Repos/Wiki/index.rst <CR>')
 
 -- Better searching
 map('n', '/', "/\\v")
