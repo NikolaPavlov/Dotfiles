@@ -34,6 +34,16 @@ cmd [[
     augroup END
 ]]
 
+-- FileType .def
+cmd [[
+    augroup ft_def
+        au!
+        au BufNewFile,BufRead *.def set wrap textwidth=120
+        au BufNewFile,BufRead *.def set colorcolumn=120
+        autocmd FileType def setlocal ts=2 sts=2 sw=2 expandtab
+    augroup END
+]]
+
 -- FileType Python
 cmd [[
     augroup ft_python
