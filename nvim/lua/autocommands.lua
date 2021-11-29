@@ -35,6 +35,8 @@ cmd [[
 ]]
 
 -- FileType .def
+-- TODO: fix commentstring doesn't work
+-- autocmd FileType gf setlocal commentstring=# %s
 cmd [[
     augroup ft_def
         au!
