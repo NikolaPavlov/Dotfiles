@@ -120,6 +120,8 @@ cmd [[
 
 --
 -- Comment
+local comment_ft = require "Comment.ft"
+comment_ft.set("def", { '# %s', "-- [%s]" })
 
 
 --
