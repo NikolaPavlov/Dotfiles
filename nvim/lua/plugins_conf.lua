@@ -114,8 +114,12 @@ cmd [[
 
 --
 -- nVim-Comment
-map('n', '<leader>c', ':CommentToggle<CR>')
-map('v', '<leader>c', ':CommentToggle<CR>')
+-- map('n', '<leader>c', ':CommentToggle<CR>')
+-- map('v', '<leader>c', ':CommentToggle<CR>')
+
+
+--
+-- Comment
 
 
 --

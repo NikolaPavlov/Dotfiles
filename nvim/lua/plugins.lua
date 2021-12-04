@@ -31,6 +31,7 @@ return require('packer').startup({function(use)
   use 'tpope/vim-repeat'                    -- repeat plugin commands
   use 'junegunn/gv.vim'                     -- git commit browser
   use 'mhinz/vim-signify'                   -- git diff in left bar
+  -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }  TODO: check vs vim-signify
   use 'yuttie/comfortable-motion.vim'       -- scroll effect
 
   -- Themes and color
@@ -51,9 +52,20 @@ return require('packer').startup({function(use)
 
   -- Other
   use 'terrortylor/nvim-comment'
-  require('nvim_comment').setup({
-    create_mappings = false
-  })
+  -- require('nvim_comment').setup({
+  --     create_mappings = false
+  -- })
+   -- use 'numToStr/Comment.nvim'           -- TODO: check vs nvim-comment
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }                                      -- TODO: check tpope vim commentary
+  local comment_ft = require "Comment.ft"
+  comment_ft.set("def", { '# %s', "-- [%s]" })
+  -- comment_ft.set("lua", { '# %s', "-- [%s]" })
+
   use 'jiangmiao/auto-pairs'            -- match quotes, brackets, parenthesis
   use 'dm1try/golden_size'              -- auto resize splits
   use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
