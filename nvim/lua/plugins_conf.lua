@@ -111,8 +111,6 @@ cmd [[
     xmap <C-j>     <Plug>(neosnippet_expand_target)
 ]]
 
-
---
 -- nVim-Comment
 -- map('n', '<leader>c', ':CommentToggle<CR>')
 -- map('v', '<leader>c', ':CommentToggle<CR>')
@@ -121,6 +119,7 @@ cmd [[
 --
 -- Comment
 local comment_ft = require "Comment.ft"
+-- .def files comment string to be '#'
 comment_ft.set("def", { '# %s', "-- [%s]" })
 
 

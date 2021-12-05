@@ -1,4 +1,5 @@
 local cmd = vim.cmd
+local exec = vim.api.nvim_exec
 
 -- auto recompile Packer
 cmd[[
@@ -35,8 +36,6 @@ cmd [[
 ]]
 
 -- FileType .def
--- TODO: fix commentstring doesn't work
--- autocmd FileType gf setlocal commentstring=# %s
 cmd [[
     augroup ft_def
         au!
@@ -66,6 +65,7 @@ cmd [[
     augroup ft_lua
         au!
         au FileType lua set foldmethod=indent
+        autocmd FileType lua setlocal ts=2 sts=2 sw=2 expandtab
     augroup END
 ]]
 
@@ -73,3 +73,26 @@ cmd [[
 cmd [[
     autocmd CursorHold,CursorHoldI * update
 ]]
+
+-- don't auto commenting new lines
+cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+
+-- 2 spaces for selected filetypes
+cmd [[
+  autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
+]]
+
+cmd [[
+  autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
+  autocmd TermOpen * startinsert
+  autocmd BufLeave term://* stopinsert
+]]
+
+-- highlight on yank
+exec([[
+  augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+  augroup end
+]], false)
+

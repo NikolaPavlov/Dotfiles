@@ -1,5 +1,8 @@
 local opt = vim.opt
-local cmd = vim.cmd
+local cmd = vim.cmd            -- exec vim commands
+local exec = vim.api.nvim_exec -- exec Vimscript
+local g=vim.g                  -- global variable
+local fn= vim.fn               -- call Vim functions
 
 
 ----------------------------
@@ -68,3 +71,33 @@ opt.fileencodings='ucs-bom, utf-8, cp1251'
 -- Theme settings
 vim.g.badwolf_darkgutter = 1                    -- dark background for the relativenumbers
 vim.g.badwolf_html_link_underline = 0
+
+-- Other
+opt.synmaxcol = 240                             -- max column for syntax highlight
+
+-- disable builtins plugins
+local disabled_built_ins = {
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "gzip",
+  "zip",
+  "zipPlugin",
+  "tar",
+  "tarPlugin",
+  "getscript",
+  "getscriptPlugin",
+  "vimball",
+  "vimballPlugin",
+  "2html_plugin",
+  "logipat",
+  "rrhelper",
+  "spellfile_plugin",
+  "matchit"
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  g["loaded_" .. plugin] = 1
+end
+

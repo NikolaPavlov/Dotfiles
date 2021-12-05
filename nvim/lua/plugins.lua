@@ -30,8 +30,22 @@ return require('packer').startup({function(use)
   use 'tpope/vim-surround'                  -- change surroundings
   use 'tpope/vim-repeat'                    -- repeat plugin commands
   use 'junegunn/gv.vim'                     -- git commit browser
+  --
+  -- TODO: 
+  -- vim-signify VS gitsigns
   use 'mhinz/vim-signify'                   -- git diff in left bar
-  -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }  TODO: check vs vim-signify
+
+  -- use {
+  --   'lewis6991/gitsigns.nvim',
+  --   requires = {
+  --     'nvim-lua/plenary.nvim'
+  --   },
+  --   config = function()
+  --     require('gitsigns').setup()
+  --   end
+  -- }
+  --
+  --
   use 'yuttie/comfortable-motion.vim'       -- scroll effect
 
   -- Themes and color
@@ -41,28 +55,33 @@ return require('packer').startup({function(use)
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
   use 'lfv89/vim-interestingwords'      -- colorize interesting words with <leader>k
   use 'Yggdroot/indentLine'             -- showing indent lines
   use 'kshenoy/vim-signature'           -- display marks in the left panel
   use 'Valloric/MatchTagAlways'         -- highlight matching html tags
-
-
-  -- Other
-  use 'terrortylor/nvim-comment'
   use {
-      'numToStr/Comment.nvim',
-      config = function()
-          require('Comment').setup()
-      end
-  }                                      -- TODO: check tpope vim commentary
-
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup {
+        -- -LHS of toggle mappings in NORMAL + VISUAL mode
+        toggler = {
+          line = '<leader>c',
+          block = 'gbc',
+        },
+        ---LHS of operator-pending mappings in NORMAL + VISUAL mode
+        opleader = {
+          line = '<leader>c',
+          block = 'gb',
+        },
+      }
+    end
+  }
   use 'jiangmiao/auto-pairs'            -- match quotes, brackets, parenthesis
   use 'dm1try/golden_size'              -- auto resize splits
   use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
-  use 'machakann/vim-highlightedyank'
   use 'ojroques/vim-oscyank'            -- copy through SSH
   use 'jsfaint/gen_tags.vim'            -- tags management
   use 'ThePrimeagen/harpoon'            -- fetch files for quick navigation
@@ -108,20 +127,15 @@ return require('packer').startup({function(use)
   use 'godlygeek/tabular'            -- text align
   use 'dbeniamine/cheat.sh-vim'      -- query cht.sh with :Cheat
   use 'airblade/vim-rooter'          -- autochange workdir (<leader>G / <leader>f as alternative ?)
-  use 'folke/zen-mode.nvim'
-  use 'stsewd/fzf-checkout.vim'      -- change branches with FZF --> <leader>b
+  use 'folke/zen-mode.nvim'          -- focus mode
+  use 'stsewd/fzf-checkout.vim'      -- change branches with FZF with <leader>b
 
--- https://github.com/gyim/vim-boxdraw
---  use 'gyim/vim-boxdraw'             -- box drawing
---  use 'vim-scripts/DrawItv'          -- drawing
+  --  use 'gyim/vim-boxdraw'                        -- box drawing
+  --  use 'vim-scripts/DrawItv'                     -- drawing
   -- TODO: rm use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
-  -- TODO: install tags (T) plugin
   -- TODO: mbbill/undotree
-  -- TODO: { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } 
-  -- TODO: https://github.com/folke/zen-mode.nvim
-  -- use 'gu-fan/riv.vim'               -- note taking in .rst
-  -- gu-fan/InstantRst
-  -- use { 'michaelb/sniprun', run = 'bash ./install.sh'} TODO: setup doesn't work
+  -- use { 'michaelb/sniprun', run = 'bash ./install.sh'} -- code runner plugin (TODO: setup doesn't work)
+
   -------------------------------------------------------------------------
 
   if packer_bootstrap then
