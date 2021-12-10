@@ -61,8 +61,9 @@ return require('packer').startup({function(use)
   use 'lfv89/vim-interestingwords'      -- colorize interesting words with <leader>k
   use 'Yggdroot/indentLine'             -- showing indent lines
   use 'kshenoy/vim-signature'           -- display marks in the left panel
+  use 'Valloric/MatchTagAlways'         -- highlight matching html tags
   -----------------------
-  -- use 'Valloric/MatchTagAlways'         -- highlight matching html tags
+  -- use 'jsfaint/gen_tags.vim'            -- tags management
   use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
   -- TODO: READTHEDOCS :h  gutentags
   -- TODO: https://www.reddit.com/r/vim/comments/d77t6j/guide_how_to_setup_ctags_with_gutentags_properly/
@@ -89,7 +90,6 @@ return require('packer').startup({function(use)
   use 'dm1try/golden_size'              -- auto resize splits
   use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
   use 'ojroques/vim-oscyank'            -- copy through SSH
-  use 'jsfaint/gen_tags.vim'            -- tags management
   use 'ThePrimeagen/harpoon'            -- fetch files for quick navigation
 
 
