@@ -31,6 +31,7 @@ return require('packer').startup({function(use)
   use 'tpope/vim-repeat'                    -- repeat plugin commands
   use 'junegunn/gv.vim'                     -- git commit browser
   --
+  -------------------------------
   -- TODO: 
   -- vim-signify VS gitsigns
   use 'mhinz/vim-signify'                   -- git diff in left bar
@@ -45,7 +46,7 @@ return require('packer').startup({function(use)
   --   end
   -- }
   --
-  --
+  -------------------------------
   use 'yuttie/comfortable-motion.vim'       -- scroll effect
 
   -- Themes and color
@@ -70,6 +71,7 @@ return require('packer').startup({function(use)
   -----------------------
 
   use {
+    -- TODO: comment visually selected txt
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup {
@@ -138,7 +140,6 @@ return require('packer').startup({function(use)
 
   --  use 'gyim/vim-boxdraw'                        -- box drawing
   --  use 'vim-scripts/DrawItv'                     -- drawing
-  -- TODO: rm use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
   -- TODO: mbbill/undotree
   -- TODO: try nvim-cmp https://www.youtube.com/watch?v=_DnmphIwnjo&t=12s
   -- use { 'michaelb/sniprun', run = 'bash ./install.sh'} -- code runner plugin (TODO: setup doesn't work)
