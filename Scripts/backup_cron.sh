@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# $1 directory to backup (if=)
-# $2 destination directory of the backup (of=)
+# crontab -e as root to edit cronie
+# crontab -l as root to list cronie cron jobs
 
-exclude_file=./directories_to_exclue_from_backup.txt
-sudo rsync -aAXv --progress --delete --exclude-from=$exclude_file / /media/4Tb/Backups/LinuxBackup/DailyBackupEarth/
+exclude_file=/home/gogo/Scripts/directories_to_exclue_from_backup.txt
+rsync -aAXv --progress --delete --exclude-from=$exclude_file / /media/4Tb/Backups/LinuxBackup/CronDailyBackupEarth/

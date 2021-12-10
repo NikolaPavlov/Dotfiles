@@ -3,7 +3,6 @@
 # $1 directory to backup (if=)
 # $2 destination directory of the backup (of=)
 
-# exclude_file=./directories_to_exclue_from_backup.txt
 exclude_file=./directories_to_exclue_from_backup.txt
 
 sudo rsync -aAXv -e "ssh -p 39901" --progress --delete --exclude-from=$exclude_file $1 $2
@@ -14,10 +13,3 @@ sudo rsync -aAXv -e "ssh -p 39901" --progress --delete --exclude-from=$exclude_f
 # -v verbose
 # --delete: updates remote if files have been deleted from local
 # --progress: shows progress
-
-# --fake-user ?
-
-
-
-# rsync over ssh non default port
-# rsync -arvz -e 'ssh -p <port-number>' --progress --delete user@remote-server:/path/to/remote/folder /path/to/local/folder

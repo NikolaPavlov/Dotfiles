@@ -155,7 +155,7 @@ map('n', '<leader>H', ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
 -- Startify
 cmd [[
     let g:startify_session_dir='~/.config/nvim/sessions'
-    let g:startify_bookmarks = [ { 'b': '~/.bashrc' }, { 'n': '~/Documents/Repos/WikiNeorg/index.norg' },{ 'd': '~/Documents/Repos/Dotfiles' }, {'w': '~/Documents/Repos/Wiki'}, ]
+    let g:startify_bookmarks = [ { 'b': '~/Documents/Repos/Dotfiles/.bashrc' }, { 'w': '~/Documents/Repos/WikiNeorg/index.norg' },{ 'd': '~/Documents/Repos/Dotfiles' }, ]
 ]]
 
 --

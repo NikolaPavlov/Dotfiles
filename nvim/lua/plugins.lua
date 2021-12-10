@@ -73,7 +73,7 @@ return require('packer').startup({function(use)
         },
         ---LHS of operator-pending mappings in NORMAL + VISUAL mode
         opleader = {
-          line = '<leader>c',
+          line = 'gbc',
           block = 'gb',
         },
       }
@@ -134,6 +134,7 @@ return require('packer').startup({function(use)
   --  use 'vim-scripts/DrawItv'                     -- drawing
   -- TODO: rm use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
   -- TODO: mbbill/undotree
+  -- TODO: try nvim-cmp https://www.youtube.com/watch?v=_DnmphIwnjo&t=12s
   -- use { 'michaelb/sniprun', run = 'bash ./install.sh'} -- code runner plugin (TODO: setup doesn't work)
 
   -------------------------------------------------------------------------
