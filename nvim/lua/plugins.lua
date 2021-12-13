@@ -71,19 +71,27 @@ return require('packer').startup({function(use)
   -----------------------
 
   use {
-    -- TODO: comment visually selected txt
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup {
         -- -LHS of toggle mappings in NORMAL + VISUAL mode
         toggler = {
-          line = '<leader>c',
+          line = 'gcc',
           block = 'gbc',
         },
         ---LHS of operator-pending mappings in NORMAL + VISUAL mode
         opleader = {
-          line = 'gbc',
+          line = 'gc',
           block = 'gb',
+        },
+        ---LHS of extra mappings
+        extra = {
+            ---Add comment on the line above
+            above = 'gcO',
+            ---Add comment on the line below
+            below = 'gco',
+            ---Add comment at the end of line
+            eol = 'gcA',
         },
       }
     end
