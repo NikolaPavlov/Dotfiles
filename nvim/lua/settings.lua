@@ -9,10 +9,10 @@ local fn= vim.fn               -- call Vim functions
 vim.o.termguicolors = true
 -- vim.cmd'colorscheme iceberg'
 
--- opt.termguicolors = true
 cmd 'colorscheme badwolf'
 -- cmd 'colorscheme gruvbox'
 -- cmd 'colorscheme iceberg'
+opt.termguicolors = true
 ----------------------------
 
 

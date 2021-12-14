@@ -4,7 +4,7 @@
 export PATH=$PATH:$HOME/Scripts
 
 export EDITOR="nvim"
-export TERMINAL="sakura"
+export TERMINAL="xterm-256color"
 export BROWSER="firefox"
 export READER="zathura"
 export IMAGEVIEWER='sxiv'

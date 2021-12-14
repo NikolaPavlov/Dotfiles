@@ -24,6 +24,7 @@ return require('packer').startup({function(use)
   use 'junegunn/fzf.vim'
   use 'scrooloose/nerdtree'
   use 'ryanoasis/vim-devicons'              -- icons in nerdtree
+  use 'christoomey/vim-tmux-navigator'
 
   -- Git
   use 'tpope/vim-fugitive'

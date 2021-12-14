@@ -2,6 +2,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 alias v='nvim '
+alias p='python'
 alias e='exit '
 alias cl='clear '
 alias a='alsamixer '
@@ -77,6 +78,11 @@ alias tl='task list '
 alias ta='task add $1 '
 alias tn='task next '
 alias tv='task project:nVim'
+
+# FZF
+# https://www.youtube.com/watch?v=QeJkAs_PEQQ&list=WL&index=118&t=6s
+# https://www.youtube.com/watch?v=qgG5Jhi_Els&list=WL&index=118
+# https://github.com/junegunn/fzf/wiki/examples
 
 # ex - archive extractor
 ex ()
