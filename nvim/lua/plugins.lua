@@ -66,7 +66,8 @@ return require('packer').startup({function(use)
   -----------------------
   -- use 'jsfaint/gen_tags.vim'            -- tags management
   use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
-  -- TODO: READTHEDOCS :h  gutentags
+  -- TODO: go to multiple tags g] (chose one)
+  -- TODO: https://vim.fandom.com/wiki/Browsing_programs_with_tags
   -- TODO: https://www.reddit.com/r/vim/comments/d77t6j/guide_how_to_setup_ctags_with_gutentags_properly/
   -----------------------
 
