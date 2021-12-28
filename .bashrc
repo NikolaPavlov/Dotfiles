@@ -21,6 +21,7 @@ alias df='pydf'
 alias u='sudo apt update && sudo apt upgrade'
 alias temp='watch -n 2 sensors'
 alias vifm='vifmrun '
+alias vf='vifmrun '
 alias z='zathura '
 alias flac='smloadr'
 alias rec='recordmydesktop --device hw:1'
@@ -163,6 +164,7 @@ bitrate () {
 export PATH
 export PERL5LIB=~/perl5/lib/perl5
 HISTCONTROL=ignoreboth:erasedups
+HISTTIMEFORMAT="%Y-%m-%d %T "
 
 PATH="/home/gogo/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/gogo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

@@ -61,7 +61,8 @@ return require('packer').startup({function(use)
     run = ':TSUpdate'
   }
   use 'lfv89/vim-interestingwords'      -- colorize interesting words with <leader>k
-  use 'Yggdroot/indentLine'             -- showing indent lines
+  -- TODO: https://github.com/inkarkat/vim-mark
+  use 'Yggdroot/indentLine'             -- showing indent lines TODO: set listchars=tab:| as a replacement of the plugin
   use 'kshenoy/vim-signature'           -- display marks in the left panel
   use 'Valloric/MatchTagAlways'         -- highlight matching html tags
   -----------------------
