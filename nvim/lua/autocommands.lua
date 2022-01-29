@@ -60,7 +60,7 @@ cmd [[
     autocmd FileType norg setlocal shiftwidth=2 softtabstop=2 expandtab
 ]]
 
--- Lua
+-- FileType Lua
 cmd [[
     augroup ft_lua
         au!
