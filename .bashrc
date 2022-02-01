@@ -153,7 +153,7 @@ source /usr/bin/virtualenvwrapper.sh
 # autocomplete for gopass
 source <(gopass completion bash)
 
-# autocomplete git
+# autocomplete for git
 source /usr/share/bash-completion/completions/git
 
 # bitrate of a file
