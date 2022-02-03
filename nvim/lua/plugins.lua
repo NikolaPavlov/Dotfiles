@@ -148,6 +148,7 @@ return require('packer').startup({function(use)
   use 'airblade/vim-rooter'          -- autochange workdir (<leader>G / <leader>f as alternative ?)
   use 'folke/zen-mode.nvim'          -- focus mode
   use 'stsewd/fzf-checkout.vim'      -- change branches with FZF with <leader>b
+  use 'moll/vim-bbye'                -- keep the split when close a buffer
 
   --  use 'gyim/vim-boxdraw'                        -- box drawing
   --  use 'vim-scripts/DrawItv'                     -- drawing

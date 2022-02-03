@@ -21,7 +21,7 @@ map('n', '<leader><leader>', ':noh<CR>')
 map('v', '<leader><leader>', '<Esc>')
 map('n', '<leader>a', 'ggVG')
 map('n', '<leader>o', ':only<CR>')
-map('n', '<leader>d', ':bd<CR>')
+map('n', '<leader>d', ':Bdelete<CR>')
 map('n', '<CR>', ':b# <CR>')
 
 map('v', '<', '<gv')

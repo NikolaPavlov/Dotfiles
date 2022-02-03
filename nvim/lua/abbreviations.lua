@@ -7,6 +7,10 @@ cmd 'iabbrev TODO TODO:'
 cmd 'iabbrev tido TODO:'
 cmd 'iabbrev tdo TODO:'
 
+cmd 'iabbrev note NOTE:'
+cmd 'iabbrev note: NOTE:'
+cmd 'iabbrev NOTE NOTE:'
+
 cmd 'iabbrev pritn print'
 cmd 'iabbrev pirint print'
 
