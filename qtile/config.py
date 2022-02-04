@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from libqtile.config import Key, Screen, Group, Drag, Click
+from libqtile.config import Key, Screen, Group, Drag, Click, ScratchPad, DropDown
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 
@@ -49,7 +49,17 @@ for i in groups:
     keys.extend([
         Key([mod], i.name, lazy.group[i.name].toscreen(toggle=True)),
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
+        Key([mod], "s", lazy.group["scratchpad"].dropdown_toggle("term")),
     ])
+
+# Append ScratchPad to group list
+groups.append(
+    ScratchPad("scratchpad",[
+        DropDown("term", term, y=0.1, height=0.8, width=0.8),
+    ]),
+)
+
+
 
 layout_theme = {"border_width": 2,
                 "margin": 8,
