@@ -55,7 +55,7 @@ for i in groups:
 # Append ScratchPad to group list
 groups.append(
     ScratchPad("scratchpad",[
-        DropDown("term", term, y=0.1, height=0.8, width=0.8),
+        DropDown("term", term, y=0.1, height=0.5, width=0.5),
     ]),
 )
 
