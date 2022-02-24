@@ -52,4 +52,5 @@ context.ideas.read=project:Ideas
 context.ideas.write=project:Ideas
 context.5146.read=project:5146
 context.5146.write=project:5146
-context=crypto
+context.5175.read=project:5175-money_send
+context.5175.write=project:5175-money_send
