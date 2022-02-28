@@ -30,6 +30,7 @@ return require('packer').startup({function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'                  -- change surroundings
   use 'tpope/vim-repeat'                    -- repeat plugin commands
+  use 'tpope/vim-unimpaired'                      -- git mappings
   use 'junegunn/gv.vim'                     -- git commit browser
   --
   -------------------------------
