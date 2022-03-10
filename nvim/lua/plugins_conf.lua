@@ -189,6 +189,13 @@ cmd [[
 ]]
 
 --
+-- Beacon
+cmd [[
+  let g:beacon_minimal_jump = 3
+  let g:beacon_ignore_filetypes = ['fzf']
+]]
+
+--
 -- Lsp
 
 -- -- Mappings.
