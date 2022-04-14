@@ -104,7 +104,7 @@ return require('packer').startup({function(use)
   use 'dm1try/golden_size'              -- auto resize splits
   use 'ojroques/vim-oscyank'            -- copy through SSH
   use 'ThePrimeagen/harpoon'            -- fetch files for quick navigation
-  -- use 'junegunn/vim-slash'              -- improve highlight search (blinking currsor)
+  -- use 'junegunn/vim-slash'              -- improve highlight search (zz when go to next searched)
   use 'DanilaMihailov/beacon.nvim'      -- cursor highlight
 
 
