@@ -109,7 +109,7 @@ focus_on_window_activation = "smart"
 
 wmname = "LG3D"
 
-@hook.subscribe.startup_once
+@hook.subscribe.startup
 def autostart():
     home = os.path.expanduser('/home/gogo/.config/qtile/autostart.sh')
-    subprocess.call([home])
+    subprocess.run([home])

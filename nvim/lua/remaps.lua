@@ -105,3 +105,6 @@ map('c', 'ps<CR>', ':PackerSync<CR>')
 -- Save as sudo
 map('c', 'w!!', ':w !sudo tee "%"<CR>')
 map('c', 'W!', ':w !sudo tee "%"<CR>')
+
+-- Format xml
+map('v', 'x', ':! xmllint --format -<CR>')
