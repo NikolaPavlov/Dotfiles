@@ -26,8 +26,12 @@ keys = [
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     Key([mod], "w", lazy.window.toggle_fullscreen()),
 
-    # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 1 sset Master 3- unmute")),
-    # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 1 sset Master 3+ unmute")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 3- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 3+ unmute")),
+
+    # TODO: backlight 
+    # Key([], "XF86MonBrightnessUp", lazy.spawn("")),
+    # Key([], "XF86MonBrightnessDown", lazy.spawn("")),
 
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),

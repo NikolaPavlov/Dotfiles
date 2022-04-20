@@ -26,4 +26,4 @@ ln -sfv "$DOTFILES_DIR/gnupg/gpg-agent.conf" ~/.gnupg
 ln -sfv "$DOTFILES_DIR/tmux/tmux.conf" ~/.config/tmux
 ln -sfv "$DOTFILES_DIR/.inputrc" $HOME
 
-mkdir -p $HOME/.config/nvim/undo_dir
+# mkdir -p $HOME/.config/nvim/undo_dir

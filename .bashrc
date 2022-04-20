@@ -1,5 +1,4 @@
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=nvim export EDITOR=nvim
 
 alias v='nvim '
 alias p='python'
@@ -137,9 +136,9 @@ shopt -s autocd
 complete -cf sudo
 
 # add ruby to $PATH
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-fi
+# if which ruby >/dev/null && which gem >/dev/null; then
+#     PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+# fi
 
 # add cargo (rust) to $PATH
 PATH="$PATH:$HOME/.cargo/bin"
@@ -148,7 +147,7 @@ PATH="$PATH:$HOME/.cargo/bin"
 export MANPAGER="nvim +set\ filetype=man -"
 
 # virtualenvwrapper
-source /usr/bin/virtualenvwrapper.sh
+# source /usr/bin/virtualenvwrapper.sh
 
 # autocomplete for gopass
 source <(gopass completion bash)
