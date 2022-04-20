@@ -28,10 +28,8 @@ keys = [
 
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 3- unmute")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 3+ unmute")),
-
-    # TODO: backlight 
-    # Key([], "XF86MonBrightnessUp", lazy.spawn("")),
-    # Key([], "XF86MonBrightnessDown", lazy.spawn("")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("light -A 2")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("light -U 2")),
 
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
