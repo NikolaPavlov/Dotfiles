@@ -106,5 +106,5 @@ map('c', 'ps<CR>', ':PackerSync<CR>')
 map('c', 'w!!', ':w !sudo tee "%"<CR>')
 map('c', 'W!', ':w !sudo tee "%"<CR>')
 
--- Format xml
+-- Format xml (visual selectd xml + <leader>x)
 map('v', 'x', ':! xmllint --format -<CR>')
