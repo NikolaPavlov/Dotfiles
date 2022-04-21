@@ -78,7 +78,6 @@ alias t='task '
 alias tl='task list '
 alias ta='task add $1 '
 alias tn='task next '
-alias tv='task project:nVim'
 
 # FZF
 # https://www.youtube.com/watch?v=QeJkAs_PEQQ&list=WL&index=118&t=6s
@@ -147,7 +146,9 @@ PATH="$PATH:$HOME/.cargo/bin"
 export MANPAGER="nvim +set\ filetype=man -"
 
 # virtualenvwrapper
-# source /usr/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/Envs
+mkdir -p $WORKON_HOME
 
 # autocomplete for gopass
 source <(gopass completion bash)

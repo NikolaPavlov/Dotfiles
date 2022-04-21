@@ -16,6 +16,7 @@ soft_sep = {'linewidth': 2, 'size_percent': 70,
 keys = [
     Key([mod], "t", lazy.spawn(term)),
     Key([mod], "f", lazy.spawn("firefox")),
+    Key([mod], "c", lazy.spawn("google-chrome-stable")),
     Key([mod], "d", lazy.spawn("dmenu_run -p 'Run: '")),
     Key([mod], "e", lazy.spawn("thunar")),
 
