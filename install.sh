@@ -25,5 +25,5 @@ ln -sfv "$DOTFILES_DIR/qtile/autostart.sh" ~/.config/qtile
 ln -sfv "$DOTFILES_DIR/gnupg/gpg-agent.conf" ~/.gnupg
 ln -sfv "$DOTFILES_DIR/tmux/tmux.conf" ~/.config/tmux
 ln -sfv "$DOTFILES_DIR/.inputrc" $HOME
-
+ln -sfv "$DOTFILES_DIR/.xinitrc" $HOME
 sudo ln -sfv "$DOTFILES_DIR/pacman.conf" /etc/
