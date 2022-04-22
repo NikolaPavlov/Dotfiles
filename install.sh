@@ -1,4 +1,4 @@
-#!/urs/bin/bash
+#!/bin/bash
 
 
 export DOTFILES_DIR EXTRA_DIR
@@ -26,4 +26,4 @@ ln -sfv "$DOTFILES_DIR/gnupg/gpg-agent.conf" ~/.gnupg
 ln -sfv "$DOTFILES_DIR/tmux/tmux.conf" ~/.config/tmux
 ln -sfv "$DOTFILES_DIR/.inputrc" $HOME
 
-# mkdir -p $HOME/.config/nvim/undo_dir
+sudo ln -sfv "$DOTFILES_DIR/pacman.conf" /etc/
