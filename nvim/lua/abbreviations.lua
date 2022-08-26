@@ -13,6 +13,7 @@ cmd 'iabbrev NOTE NOTE:'
 
 cmd 'iabbrev pritn print'
 cmd 'iabbrev pirint print'
+cmd 'iabbrev pirnt print'
 
 cmd 'iabbrev reutnr return'
 cmd 'iabbrev retunr return'
