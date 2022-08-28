@@ -2,3 +2,6 @@ irssi/saved_colors
 vifm/vifminfo
 vifminfo*
 tags
+Git/*
+Git/.gitconfig
+.gitignore
