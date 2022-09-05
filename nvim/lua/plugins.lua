@@ -158,6 +158,8 @@ return require('packer').startup({function(use)
   -- TODO: try nvim-cmp https://www.youtube.com/watch?v=_DnmphIwnjo&t=12s
   -- use { 'michaelb/sniprun', run = 'bash ./install.sh'} -- code runner plugin (TODO: setup doesn't work)
 
+  use 'folke/tokyonight.nvim'
+
   -------------------------------------------------------------------------
 
   if packer_bootstrap then
