@@ -19,7 +19,7 @@ cmd [[
 	augroup filetype_vim
 	    au!
 	    au FileType vim setlocal foldmethod=marker
-	    au BufNewFile,BufRead *.vim setlocal nowrapjj
+	    au BufNewFile,BufRead *.vim setlocal nowrap
 	    au BufNewFile,BufRead *.vim setlocal colorcolumn=
 	    au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
 	augroup END
@@ -79,7 +79,7 @@ cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- 2 spaces for selected filetypes
 cmd [[
-  autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
+  autocmd FileType ft_def,xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
 ]]
 
 cmd [[
