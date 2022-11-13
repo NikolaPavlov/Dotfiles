@@ -122,6 +122,7 @@ return require('packer').startup({function(use)
 
     use {
         "nvim-neorg/neorg",
+        ft = "norg",
         config = function()
             require('neorg').setup {
                 -- Tell Neorg what modules to load
