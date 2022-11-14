@@ -2,6 +2,7 @@ local cmd = vim.cmd
 local exec = vim.api.nvim_exec
 
 -- auto recompile Packer
+-- TODO: add packerSync
 cmd[[
   augroup packer_user_config
     autocmd!

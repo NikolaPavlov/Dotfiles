@@ -8,6 +8,7 @@ end
 
 return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
+  use 'nvim-lua/plenary.nvim'               -- used by lua plugins
 
   use 'mhinz/vim-startify'                  -- start screen with bookmarks
 
