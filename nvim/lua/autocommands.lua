@@ -70,6 +70,14 @@ cmd [[
     augroup END
 ]]
 
+-- Filetype HTML
+cmd [[
+  augroup ft_html
+    au!
+    au FileType html setlocal nowrap
+  augroup END
+]]
+
 -- autosave
 cmd [[
     autocmd CursorHold,CursorHoldI * update
