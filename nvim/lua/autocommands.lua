@@ -72,7 +72,7 @@ cmd [[
 
 -- Filetype HTML
 cmd [[
-  augroup ft_html
+  augroup ft_htmldjango
     au!
     au FileType html setlocal nowrap
   augroup END

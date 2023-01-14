@@ -124,16 +124,20 @@ return require('packer').startup({function(use)
     use {
         "nvim-neorg/neorg",
         ft = "norg",
+        run = ":Neorg sync-parsers",
         config = function()
             require('neorg').setup {
                 -- Tell Neorg what modules to load
                 load = {
                     ["core.defaults"] = {}, -- Load all the default modules
                     ["core.norg.concealer"] = {}, -- Allows for use of icons
+                    ["core.norg.completion"] = {},
+                    ["core.keybindings"] = {},
                     ["core.norg.dirman"] = { -- Manage your directories with Neorg
                         config = {
                             workspaces = {
-                                my_workspace = "~/Documents/Repos/WikiNeorg"
+                                wiki = "~/Documents/Repos/WikiNeorg",
+                                journal = "~/Documents/Repos/JournalNeorg"
                             }
                         }
                     }
