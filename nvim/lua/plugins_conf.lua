@@ -18,7 +18,7 @@ cmd [[
 
 
     let g:airline_extensions = ['branch', 'tabline']
-    let g:airline#extensions#branch#enabled = 1    
+    let g:airline#extensions#branch#enabled = 1
     let g:airline#extensions#tabline#enabled = 0
     let g:airline#extensions#tabline#formatter = 'unique_tail'
     " * enable/disable displaying open splits per tab (only when tabs are opened) >

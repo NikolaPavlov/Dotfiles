@@ -161,7 +161,7 @@ return require('packer').startup({function(use)
   -- use { 'michaelb/sniprun', run = 'bash ./install.sh'} -- code runner plugin (TODO: setup doesn't work)
 
   use 'folke/tokyonight.nvim'
-  use 'folke/which-key.nvim'
+  -- use 'folke/which-key.nvim'
 
   -------------------------------------------------------------------------
 
