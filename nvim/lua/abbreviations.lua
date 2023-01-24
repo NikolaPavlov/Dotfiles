@@ -1,11 +1,11 @@
 local cmd = vim.cmd
 
 
-cmd 'iabbrev todo TODO:'
-cmd 'iabbrev todo: TODO:'
-cmd 'iabbrev TODO TODO:'
-cmd 'iabbrev tido TODO:'
-cmd 'iabbrev tdo TODO:'
+cmd 'iabbrev todo # TODO:'
+cmd 'iabbrev todo: # TODO:'
+cmd 'iabbrev TODO # TODO:'
+cmd 'iabbrev tido # TODO:'
+cmd 'iabbrev tdo # TODO:'
 
 cmd 'iabbrev note NOTE:'
 cmd 'iabbrev note: NOTE:'
