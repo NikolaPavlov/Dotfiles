@@ -49,6 +49,7 @@ alias pg='ping google.com '
 alias install='sudo pacman -S '
 alias remove='sudo pacman -Rns '
 alias search='sudo  pacman -Ss '
+alias clean='pacman -Qtdq | sudo pacman -Rns -'
 
 # Git
 alias g='git'

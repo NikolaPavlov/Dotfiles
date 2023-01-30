@@ -133,6 +133,7 @@ return require('packer').startup({function(use)
                     ["core.norg.concealer"] = {}, -- Allows for use of icons
                     ["core.norg.completion"] = {},
                     ["core.keybindings"] = {},
+                    ["core.journal"] = {},
                     ["core.norg.dirman"] = { -- Manage your directories with Neorg
                         config = {
                             workspaces = {
