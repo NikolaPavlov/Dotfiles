@@ -101,6 +101,7 @@ map('n', 'T', ':TagbarToggle<CR>')
 -- OTHER
 map('c', 'zen', ':ZenMode<CR>')
 map('c', 'ps<CR>', ':PackerSync<CR>')
+map('c', 'logdel<CR>', ':!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>')
 
 -- Save as sudo
 map('c', 'w!!', ':w !sudo tee "%"<CR>')
@@ -109,3 +110,7 @@ map('c', 'W!', ':w !sudo tee "%"<CR>')
 -- Format xml (visual selectd xml + <leader>x)
 map('v', 'x', ':! xmllint --format -<CR>')
 map('v', 'f', ':! python -m json.tool<CR>')
+
+-- Quick navigation CORE WEB
+map('n', '<leader>c', ':cd /mnt/core/home/n.pavlov/easypay_core<CR>')
+map('n', '<leader>w', ':cd /mnt/web/home/n.pavlov/easypay_web<CR>')
