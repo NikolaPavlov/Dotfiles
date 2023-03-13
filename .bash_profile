@@ -6,7 +6,7 @@ export PATH=$PATH:$HOME/Scripts
 export EDITOR="nvim"
 # export TERMINAL="xterm-256color"
 export TERMINAL="screen-256color"
-export BROWSER="firefox"
+export BROWSER="google-chrome-stable"
 export READER="zathura"
 export IMAGEVIEWER='sxiv'
 
