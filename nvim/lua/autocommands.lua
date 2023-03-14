@@ -55,7 +55,7 @@ cmd [[
         inoremap <F6> <Esc>:w<CR>:!python %<CR>
     augroup END
 ]]
---
+
 -- FileType norg
 cmd [[
     autocmd FileType norg setlocal shiftwidth=2 softtabstop=2 expandtab
