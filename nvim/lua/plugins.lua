@@ -130,11 +130,11 @@ return require('packer').startup({function(use)
                 -- Tell Neorg what modules to load
                 load = {
                     ["core.defaults"] = {}, -- Load all the default modules
-                    ["core.norg.concealer"] = {}, -- Allows for use of icons
-                    ["core.norg.completion"] = {},
-                    ["core.keybindings"] = {},
+                    ["core.concealer"] = {}, -- Allows for use of icons
+                    -- ["core.completion"] = {}, # TODO: add completion engine https://github.com/nvim-neorg/neorg/wiki/Completion
+                    -- ["core.keybindings"] = {},
                     ["core.journal"] = {},
-                    ["core.norg.dirman"] = { -- Manage your directories with Neorg
+                    ["core.dirman"] = { -- Manage your directories with Neorg
                         config = {
                             workspaces = {
                                 wiki = "~/Documents/Repos/WikiNeorg",
