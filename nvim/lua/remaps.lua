@@ -108,7 +108,6 @@ map('c', 'w!!', ':w !sudo tee "%"<CR>')
 map('c', 'W!', ':w !sudo tee "%"<CR>')
 
 -- Format xml (visual selectd xml + <leader>x)
--- map('v', 'x', ':! xmllint --format -<CR>')
 map('v', ':xml', ':! xmllint --format -<CR>')
 map('v', 'f', ':! python -m json.tool<CR>')
 
