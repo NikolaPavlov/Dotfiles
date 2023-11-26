@@ -925,11 +925,15 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: UbuntuMono Nerd Font
-    #
-    # family:  Hack Nerd Font
-    # family:  Iosevka Nerd Font
-    # family:  SourceCodePro
-    family:  JetBrains Mono Nerd Font
+    # family: SourceCodePro
+    # family: JetBrains Mono Nerd Font
+    # family: Hack Nerd Font
+    # family: Hack
+    # family: Firacode
+    # family: MartianMono
+
+    # family: iosevka
+    family: JetBrains Mono
     style: Regular
 
   # Bold font face
@@ -966,4 +970,4 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 8
+  size: 7
