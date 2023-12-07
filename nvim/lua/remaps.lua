@@ -73,7 +73,7 @@ map('n', 'cv', ':%s/\\<<C-r><C-w>\\>/')
 map('n', 's', '<C-w>r')
 
 -- SSH copy paste (OSC52)
-map('v', '<leader>y', ':OSCYank<CR>')
+map('v', '<leader>y', '<Plug>OSCYankVisual<CR>')
 
 -- move visualy selected text up/down
 map("v", "J", ":m '>+1<CR>gv=gv")

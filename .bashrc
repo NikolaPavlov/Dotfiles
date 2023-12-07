@@ -2,6 +2,7 @@ export VISUAL=nvim export EDITOR=nvim
 
 alias v='nvim '
 alias p='python'
+alias python='python3'
 alias e='exit '
 alias cl='clear '
 alias c='clear; tmux clear-history; clear'
