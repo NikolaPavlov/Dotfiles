@@ -114,3 +114,7 @@ map('v', 'f', ':! python -m json.tool<CR>')
 -- Quick navigation CORE WEB
 map('n', '<leader>c', ':cd /mnt/core/home/n.pavlov/easypay_core<CR>')
 map('n', '<leader>w', ':cd /mnt/web/home/n.pavlov/easypay_web<CR>')
+
+
+map('c', 'dt', ':windo diffthis<CR>')
+map('c', 'do', ':windo diffoff<CR>')
