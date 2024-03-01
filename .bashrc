@@ -30,6 +30,7 @@ alias vpn='~/Documents/Repos/Dotfiles/Scripts/vpn.sh'
 alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json && sudo qmk flash'
 alias reflect='sudo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist '
 alias radio='streamtuner2'
+alias screenshot='scrot -s screenshot.png'
 alias sw='ssh work'
 alias score='ssh core'
 alias sweb='ssh web'
@@ -110,16 +111,16 @@ ex ()
 }
 
 # colorfull man pages
-man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-    man "$@"
-}
+# man() {
+#     env LESS_TERMCAP_mb=$'\E[01;31m' \
+#     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+#     LESS_TERMCAP_me=$'\E[0m' \
+#     LESS_TERMCAP_se=$'\E[0m' \
+#     LESS_TERMCAP_so=$'\E[38;5;246m' \
+#     LESS_TERMCAP_ue=$'\E[0m' \
+#     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+#     man "$@"
+# }
 
 # curl cheat.sh/ls
 function cs() { curl -m 7 "http://cheat.sh/$1"; }
