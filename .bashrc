@@ -121,9 +121,6 @@ shopt -s autocd
 # Complete after sudo
 # complete -cf sudo
 
-# add cargo (rust) to $PATH
-# PATH="$PATH:$HOME/.cargo/bin"
-
 # nvim as a manpage viewr
 # export MANPAGER="nvim +set\ filetype=man -"
 
@@ -154,3 +151,8 @@ bitrate () {
 # PERL_LOCAL_LIB_ROOT="/home/gogo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 # PERL_MB_OPT="--install_base \"/home/gogo/perl5\""; export PERL_MB_OPT;
 # PERL_MM_OPT="INSTALL_BASE=/home/gogo/perl5"; export PERL_MM_OPT;
+
+# add cargo (rust) to $PATH
+# PATH="$PATH:$HOME/.cargo/bin"
+
+PATH="$HOME/.local/bin:$PATH"
