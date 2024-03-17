@@ -115,6 +115,9 @@ map('v', 'f', ':! python -m json.tool<CR>')
 map('n', '<leader>c', ':cd /mnt/core/home/n.pavlov/easypay_core<CR>')
 map('n', '<leader>w', ':cd /mnt/web/home/n.pavlov/easypay_web<CR>')
 
-
 map('c', 'dt', ':windo diffthis<CR>')
 map('c', 'do', ':windo diffoff<CR>')
+
+-- check Perl syntax
+map('c', 'prl', ':!perl -I /usr/local/remedy2/COMMON/lib -I /usr/local/remedy2/CORE/lib -I /usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib -c %<CR>')
+

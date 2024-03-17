@@ -30,6 +30,7 @@ alias vpn='~/Documents/Repos/Dotfiles/Scripts/vpn.sh'
 alias runqmk='cd ~/Documents/Repos/qmk_firmware/ && qmk compile ~/Temp/jj50.json && sudo qmk flash'
 alias reflect='sudo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist '
 alias radio='streamtuner2'
+alias screenshot='scrot -s screenshot.png'
 alias sw='ssh work'
 alias score='ssh core'
 alias sweb='ssh web'
@@ -62,10 +63,6 @@ alias syncall='echo "$DELIM" && task sync && echo "$DELIM" && cd ~/Documents/Rep
 # Encryption
 alias secret='sudo mount -t ecryptfs EncFolder/ EncFolder/ '
 #TODO: Update secret alias with full parameters
-
-# YouTube
-alias mp3='youtube-dl -i -f bestaudio --extract-audio --audio-format mp3 --no-check-certificate '
-alias playlist='youtube-dl -ci -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --audio-format mp3 --audio-quality 0 '
 
 # Django
 alias pm='python manage.py '
@@ -109,18 +106,6 @@ ex ()
   fi
 }
 
-# colorfull man pages
-man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-    man "$@"
-}
-
 # curl cheat.sh/ls
 function cs() { curl -m 7 "http://cheat.sh/$1"; }
 
@@ -134,18 +119,10 @@ set -o vi
 shopt -s autocd
 
 # Complete after sudo
-complete -cf sudo
-
-# add ruby to $PATH
-# if which ruby >/dev/null && which gem >/dev/null; then
-#     PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-# fi
-
-# add cargo (rust) to $PATH
-PATH="$PATH:$HOME/.cargo/bin"
+# complete -cf sudo
 
 # nvim as a manpage viewr
-export MANPAGER="nvim +set\ filetype=man -"
+# export MANPAGER="nvim +set\ filetype=man -"
 
 # virtualenvwrapper
 source /usr/bin/virtualenvwrapper.sh
@@ -177,3 +154,19 @@ PERL_MM_OPT="INSTALL_BASE=/home/gogo/perl5"; export PERL_MM_OPT;
 
 # export DENO_INSTALL="/home/npavlov/.deno"
 # export PATH="$DENO_INSTALL/bin:$PATH"
+
+# export PATH
+# export PERL5LIB=~/perl5/lib/perl5
+# HISTCONTROL=ignoreboth:erasedups
+# HISTTIMEFORMAT="%Y-%m-%d %T "
+#
+# PATH="/home/gogo/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# PERL5LIB="/home/gogo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="/home/gogo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"/home/gogo/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=/home/gogo/perl5"; export PERL_MM_OPT;
+
+# add cargo (rust) to $PATH
+# PATH="$PATH:$HOME/.cargo/bin"
+
+PATH="$HOME/.local/bin:$PATH"

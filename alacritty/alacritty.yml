@@ -97,10 +97,10 @@ window:
 #scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  #history: 10000
+  history: 10000
 
   # Scrolling distance multiplier.
-  #multiplier: 3
+  multiplier: 3
 
 # Font configuration
 #font:
@@ -720,7 +720,9 @@ window:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+# TODO: 
+# key_bindings:
+#   - { key: Return, mods: Ctrl, action: SpawnNewInstance}
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -873,19 +875,19 @@ colors:
   vi_mode_cursor:
     text:   CellBackground
     cursor: CellForeground
-  # search:
-  #   matches:
-  #     foreground: '#000000'
-  #     background: '#ffffff'
-  #   focused_match:
-  #    foreground: CellBackground
-  #    background: CellForeground
-  #   bar:
-  #     background: ''
-  #     foreground: ''
-  # line_indicator:
-  #   foreground: None
-  #   background: None
+  search:
+    matches:
+      foreground: '#000000'
+      background: '#ffffff'
+    focused_match:
+     foreground: CellBackground
+     background: CellForeground
+    bar:
+      background: ''
+      foreground: ''
+  line_indicator:
+    foreground: None
+    background: None
   selection:
     text:       CellBackground
     background: CellForeground
@@ -931,43 +933,9 @@ font:
     # family: Hack
     # family: Firacode
     # family: MartianMono
-
     # family: iosevka
     family: JetBrains Mono
     style: Regular
 
-  # Bold font face
-  #bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
-
-  # Italic font face
-  #italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
-
-  # Bold italic font face
-  #bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
-
   # Point size
-  size: 7
+  size: 8
