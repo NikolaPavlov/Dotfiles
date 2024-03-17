@@ -17,6 +17,10 @@ return require('packer').startup({function(use)
   -- use 'hrsh7th/nvim-compe'
   use 'shougo/deoplete.nvim'
   use 'shougo/deoplete-lsp'
+  --
+  -- todo: use 'Shougo/ddc.vim'
+  -- todo: use 'vim-denops/denops.vim'
+  --
   use 'shougo/neosnippet.vim'
   use 'Shougo/neosnippet-snippets'
 
