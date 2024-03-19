@@ -1,3 +1,3 @@
-setxkbmap -option caps:escape
-qtile start
-# exec startxfce4
+# setxkbmap -option caps:escape
+# qtile start
+#exec startxfce4
