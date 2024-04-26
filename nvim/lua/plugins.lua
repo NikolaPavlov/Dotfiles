@@ -7,27 +7,23 @@ end
 
 
 return require('packer').startup({function(use)
+  -- https://github.com/DanilaMihailov/vim-tips-wiki
+  use 'mhinz/vim-startify'                  -- start screen with bookmarks
+
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'               -- used by lua plugins
 
-  use 'mhinz/vim-startify'                  -- start screen with bookmarks
-
   -- Completion
-  -- use 'neovim/nvim-lspconfig'
-  -- use 'hrsh7th/nvim-compe'
   use 'shougo/deoplete.nvim'
   use 'shougo/deoplete-lsp'
-  --
-  -- todo: use 'Shougo/ddc.vim'
-  -- todo: use 'vim-denops/denops.vim'
-  --
+
   use 'shougo/neosnippet.vim'
   use 'Shougo/neosnippet-snippets'
 
   -- Navigation
+  use 'scrooloose/nerdtree'
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
-  use 'scrooloose/nerdtree'
   use 'ryanoasis/vim-devicons'              -- icons in nerdtree
   use 'christoomey/vim-tmux-navigator'
 
@@ -37,23 +33,8 @@ return require('packer').startup({function(use)
   use 'tpope/vim-repeat'                    -- repeat plugin commands
   use 'tpope/vim-unimpaired'                      -- git mappings
   use 'junegunn/gv.vim'                     -- git commit browser
-  --
-  -------------------------------
-  -- TODO: 
-  -- vim-signify VS gitsigns
-  use 'mhinz/vim-signify'                   -- git diff in left bar
 
-  -- use {
-  --   'lewis6991/gitsigns.nvim',
-  --   requires = {
-  --     'nvim-lua/plenary.nvim'
-  --   },
-  --   config = function()
-  --     require('gitsigns').setup()
-  --   end
-  -- }
-  --
-  -------------------------------
+  use 'mhinz/vim-signify'                   -- git diff in left bar
   use 'yuttie/comfortable-motion.vim'       -- scroll effect
 
   -- Themes and color
@@ -62,22 +43,16 @@ return require('packer').startup({function(use)
   use 'cocopon/iceberg.vim'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
   use 'lfv89/vim-interestingwords'      -- colorize interesting words with <leader>k
-  -- TODO: https://github.com/inkarkat/vim-mark
+
   use 'Yggdroot/indentLine'             -- showing indent lines TODO: set listchars=tab:| as a replacement of the plugin
   use 'kshenoy/vim-signature'           -- display marks in the left panel
-  use 'Valloric/MatchTagAlways'         -- highlight matching html tags
-  -----------------------
-  -- use 'jsfaint/gen_tags.vim'            -- tags management
   use 'ludovicchabant/vim-gutentags'    -- Automatic tags management
-  -- TODO: go to multiple tags g] (chose one)
-  -- TODO: https://vim.fandom.com/wiki/Browsing_programs_with_tags
-  -- TODO: https://www.reddit.com/r/vim/comments/d77t6j/guide_how_to_setup_ctags_with_gutentags_properly/
-  -----------------------
 
   use {
     'numToStr/Comment.nvim',
@@ -105,13 +80,11 @@ return require('packer').startup({function(use)
       }
     end
   }
+  use 'Valloric/MatchTagAlways'         -- highlight matching html tags
   use 'jiangmiao/auto-pairs'            -- match quotes, brackets, parenthesis
   use 'dm1try/golden_size'              -- auto resize splits
   use 'ojroques/vim-oscyank'            -- copy through SSH
-  -- use 'ThePrimeagen/harpoon'            -- fetch files for quick navigation
-  -- use 'junegunn/vim-slash'              -- improve highlight search (zz when go to next searched)
   use 'DanilaMihailov/beacon.nvim'      -- cursor highlight
-
 
   ------------------------------------------------------
   -- install *.norg format for treesitter with :TSInstall norg
