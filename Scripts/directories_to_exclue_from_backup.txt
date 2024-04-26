@@ -12,5 +12,6 @@
 /home/*/.cache/*
 /home/*/.local/share/Trash/files/
 /home/Downloads/*
+/home/*/Downloads/*
 /swapfile
 /lost+found
