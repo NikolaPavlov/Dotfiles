@@ -1,29 +1,9 @@
 local cmd = vim.cmd
 local exec = vim.api.nvim_exec
 
--- auto recompile Packer
--- TODO: add packerSync
-cmd[[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]]
-
 -- When editing a file always jump to the last known location
 cmd [[
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-]]
-
--- FileType Vim
-cmd [[
-	augroup filetype_vim
-	    au!
-	    au FileType vim setlocal foldmethod=marker
-	    au BufNewFile,BufRead *.vim setlocal nowrap
-	    au BufNewFile,BufRead *.vim setlocal colorcolumn=
-	    au BufNewFile,BufRead *.vim normal zM " autoclose folds when open .vim file
-	augroup END
 ]]
 
 -- FileType Perl
@@ -79,12 +59,12 @@ cmd [[
 ]]
 
 -- autosave
-cmd [[
-    autocmd CursorHold,CursorHoldI * update
-]]
+-- cmd [[
+--     autocmd CursorHold,CursorHoldI * update
+-- ]]
 
 -- don't auto commenting new lines
-cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+-- cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- 2 spaces for selected filetypes
 cmd [[
@@ -96,12 +76,3 @@ cmd [[
   autocmd TermOpen * startinsert
   autocmd BufLeave term://* stopinsert
 ]]
-
--- highlight on yank
-exec([[
-  augroup YankHighlight
-  autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
-  augroup end
-]], false)
-
