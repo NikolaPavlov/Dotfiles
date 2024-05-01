@@ -41,11 +41,18 @@ return {
 				-- You can put your default mappings / updates / etc. in here
 				--  All the info you're looking for is in `:help telescope.setup()`
 				--
-				-- defaults = {
-				--   mappings = {
-				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-				--   },
-				-- },
+				defaults = {
+					-- mappings = {
+					-- 	i = { ["<c-enter>"] = "to_fuzzy_refine" },
+					-- },
+					layout_strategy = "horizontal",
+					layout_config = {
+						horizontal = {
+							prompt_position = "top",
+						},
+					},
+					sorting_strategy = "ascending",
+				},
 				-- pickers = {}
 				extensions = {
 					["ui-select"] = {
@@ -70,7 +77,7 @@ return {
 			-- vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
 			-- vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 			-- vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-			-- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "[ ] Find existing buffers" })
 			-- TODO: builtin.lsp_document_symbols
 
 			-- Slightly advanced example of overriding default behavior and theme
