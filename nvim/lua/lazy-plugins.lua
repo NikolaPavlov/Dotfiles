@@ -15,14 +15,18 @@ require("lazy").setup({
 	-- require 'kickstart.plugins.lint',
 	require("kickstart.plugins.autopairs"),
 	require("kickstart.plugins.neo-tree"),
+	require("kickstart.plugins.harpoon"),
 	-------------------------------------------------------------------------------
 	-- TODO: undotree
 	-- TODO: 'lazy-git'
 	-- TODO: 'kickstart.plugins.ufo', -- comments plugin
 	-- TODO: 'nvim-spectre' -- search and replace
-	-- TODO: 'vim-tmux-navigator'
 	-- TODO: 'auto-session'
 	-- TODO: 'nvim-lualine/lualine.nvim'
+	-- TODO: setup cheat.sh
+	-- TODO: nvim-telescope/telescope-frecency.nvim
+	-- TODO: harpoon
+	-- TODO: leap.nvim
 	-------------------------------------------------------------------------------
 	"mhinz/vim-startify", -- start screen with bookmarks
 	"ryanoasis/vim-devicons", -- icons in nerdtree
@@ -35,6 +39,7 @@ require("lazy").setup({
 	"tpope/vim-surround", -- change surroundings
 	"tpope/vim-repeat", -- repeat plugin commands
 	"tpope/vim-unimpaired", -- git mappings
+	"christoomey/vim-tmux-navigator",
 	-------------------------------------------------------------------------------
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
