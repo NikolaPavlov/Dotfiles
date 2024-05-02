@@ -1,4 +1,5 @@
 -------------------------------------------------------------------------------
+-- TODO: neogit
 -- TODO: undotree
 -- TODO: 'lazy-git'
 -- TODO: 'kickstart.plugins.ufo', -- comments plugin
