@@ -30,8 +30,13 @@ require("lazy").setup({
 	require("kickstart.plugins.autopairs"),
 	require("kickstart.plugins.neo-tree"),
 	require("kickstart.plugins.harpoon"),
+	require("kickstart.plugins.noice"),
+
+	-- provide :Cheat and :CheaList commmand
+	"RishabhRD/nvim-cheat.sh",
+	"RishabhRD/popfix",
+
 	"mhinz/vim-startify", -- start screen with bookmarks
-	"ryanoasis/vim-devicons", -- icons in nerdtree
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
 	"DanilaMihailov/beacon.nvim", -- cursor highlight
@@ -41,7 +46,7 @@ require("lazy").setup({
 	"tpope/vim-surround", -- change surroundings
 	"tpope/vim-repeat", -- repeat plugin commands
 	"tpope/vim-unimpaired", -- git mappings
-	"christoomey/vim-tmux-navigator",
+	-- "christoomey/vim-tmux-navigator",
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
