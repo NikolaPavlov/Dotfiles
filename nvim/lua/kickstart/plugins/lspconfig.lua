@@ -134,6 +134,7 @@ return {
 							},
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
 							-- diagnostics = { disable = { 'missing-fields' } },
+							-- TODO: autoformat = false,
 						},
 					},
 				},
@@ -152,7 +153,6 @@ return {
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"lua_ls",
-				-- "stylua", -- Used to format Lua code
 				"perlnavigator",
 				"pyright",
 			})
@@ -173,4 +173,3 @@ return {
 		end,
 	},
 }
--- vim: ts=2 sts=2 sw=2 et
