@@ -1,21 +1,21 @@
 -------------------------------------------------------------------------------
--- TODO: neogit
+-- TODO: nvim-neorg
 -- TODO: undotree
+-- TODO: neogit
 -- TODO: 'lazy-git'
--- TODO: 'kickstart.plugins.ufo', -- comments plugin
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: 'auto-session'
 -- TODO: 'nvim-lualine/lualine.nvim'
--- TODO: setup cheat.sh
+-- PERF: setup cheat.sh
 -- TODO: nvim-telescope/telescope-frecency.nvim
--- TODO: harpoon
+-- PERF: harpoon
 -- TODO: leap.nvim
+-- TODO: "lukas-reineke/lsp-format.nvim
 -------------------------------------------------------------------------------
 
 require("lazy").setup({
 	{ "numToStr/Comment.nvim", opts = {} },
 	require("kickstart/plugins/gitsigns"),
-	-- require 'kickstart/plugins/which-key',
 	require("kickstart/plugins/telescope"),
 	require("kickstart/plugins/lspconfig"),
 	require("kickstart/plugins/conform"),
@@ -31,11 +31,6 @@ require("lazy").setup({
 	require("kickstart.plugins.neo-tree"),
 	require("kickstart.plugins.harpoon"),
 	require("kickstart.plugins.noice"),
-
-	-- provide :Cheat and :CheaList commmand
-	"RishabhRD/nvim-cheat.sh",
-	"RishabhRD/popfix",
-
 	"mhinz/vim-startify", -- start screen with bookmarks
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
@@ -46,7 +41,11 @@ require("lazy").setup({
 	"tpope/vim-surround", -- change surroundings
 	"tpope/vim-repeat", -- repeat plugin commands
 	"tpope/vim-unimpaired", -- git mappings
-	-- "christoomey/vim-tmux-navigator",
+	"christoomey/vim-tmux-navigator",
+
+	-- provide :Cheat and :CheaList commmand
+	"RishabhRD/nvim-cheat.sh",
+	"RishabhRD/popfix",
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {

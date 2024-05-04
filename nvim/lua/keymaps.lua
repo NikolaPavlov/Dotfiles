@@ -123,7 +123,7 @@ map("n", "T", ":TagbarToggle<CR>")
 
 -- OTHER
 map("c", "zen", ":ZenMode<CR>")
-map("c", "ps<CR>", ":PackerSync<CR>")
+-- map("c", "ps<CR>", ":PackerSync<CR>")
 map("c", "ls<CR>", ":Lazy sync<CR>")
 map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
 
