@@ -148,6 +148,7 @@ map(
 	"prl",
 	":!perl -I /usr/local/remedy2/COMMON/lib -I /usr/local/remedy2/CORE/lib -I /usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib -c %<CR>"
 )
+map("n", "<C-U>", cmd.UndotreeToggle)
 
 --------------------------------
 cmd("iabbrev todo # TODO:")

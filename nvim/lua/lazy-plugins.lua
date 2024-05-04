@@ -1,14 +1,11 @@
 -------------------------------------------------------------------------------
 -- TODO: nvim-neorg
--- TODO: undotree
 -- TODO: neogit
 -- TODO: 'lazy-git'
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: 'auto-session'
 -- TODO: 'nvim-lualine/lualine.nvim'
--- PERF: setup cheat.sh
 -- TODO: nvim-telescope/telescope-frecency.nvim
--- PERF: harpoon
 -- TODO: leap.nvim
 -- TODO: "lukas-reineke/lsp-format.nvim
 -------------------------------------------------------------------------------
@@ -42,6 +39,7 @@ require("lazy").setup({
 	"tpope/vim-repeat", -- repeat plugin commands
 	"tpope/vim-unimpaired", -- git mappings
 	"christoomey/vim-tmux-navigator",
+	"mbbill/undotree",
 
 	-- provide :Cheat and :CheaList commmand
 	"RishabhRD/nvim-cheat.sh",
