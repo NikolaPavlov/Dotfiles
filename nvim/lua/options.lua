@@ -11,7 +11,7 @@ opt.showbreak = "  "
 opt.breakindent = true
 -- opt.lazyredraw = true
 opt.relativenumber = true
-opt.scrolloff = 10
+opt.scrolloff = 8
 opt.sidescrolloff = 5
 opt.cursorline = true
 opt.laststatus = 2
@@ -29,7 +29,6 @@ opt.tabstop = 4 -- number of spaces tabs count for
 opt.shiftround = true -- round indent
 opt.autoread = true -- auto read file when it was modified outside of vim
 opt.autowriteall = true -- automatically write file when leaving modified buffer
--- vim.g.directory = "$XDG_DATA_HOME/nvim/swap//" -- dir for swap files
 opt.swapfile = false
 
 opt.updatetime = 300
@@ -53,6 +52,8 @@ opt.foldmethod = "indent"
 
 opt.fileencoding = "cp1251"
 opt.fileencodings = "ucs-bom, utf-8, cp1251"
+
+opt.helpheight = 999999
 
 -- Theme settings
 -- vim.g.badwolf_darkgutter = 1 -- dark background for the relativenumbers

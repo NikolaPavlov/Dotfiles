@@ -40,7 +40,7 @@ map("c", "йк", "<Esc>")
 map("n", "<leader><leader>", ":noh<CR>")
 map("v", "<leader><leader>", "<Esc>")
 map("n", "<leader>a", "ggVG")
-map("n", "<leader>o", ":Oil<CR>")
+map("n", "<leader>o", ":Oil --float<CR>")
 -- map("n", "<leader>x", ":Oil CORE <CR>")
 -- map("n", "<leader>x", ":Oil WEB <CR>")
 map("n", "<leader>m", ":MaximizerToggle<CR>")
@@ -102,6 +102,10 @@ map("v", "<leader>y", "<Plug>OSCYankVisual<CR>")
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
+-- centered scrollin
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
 -- paste to set up indentation
 map("n", "p", "p=`]")
 map("n", "P", "[P")
@@ -112,14 +116,13 @@ map("n", "vv", "^vg_")
 -- Y to copy unthil the end of line
 map("n", "Y", "yg$")
 
--- TODO: map is already taken (using opt.scrolloff=999 currently)
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
 -- Go to the end of line in insert mode
 map("i", "<C-a>", "<C-o>$")
 
-map("n", "T", ":TagbarToggle<CR>")
+-- map("n", "T", ":TagbarToggle<CR>")
 
 -- OTHER
 map("c", "zen", ":ZenMode<CR>")
@@ -148,7 +151,8 @@ map(
 	"prl",
 	":!perl -I /usr/local/remedy2/COMMON/lib -I /usr/local/remedy2/CORE/lib -I /usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib -c %<CR>"
 )
-map("n", "<C-U>", cmd.UndotreeToggle)
+
+map("n", "<leader>t", cmd.UndotreeToggle)
 
 --------------------------------
 cmd("iabbrev todo # TODO:")

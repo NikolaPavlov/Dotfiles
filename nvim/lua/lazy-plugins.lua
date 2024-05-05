@@ -1,8 +1,5 @@
 -------------------------------------------------------------------------------
--- TODO: center oil screen
 -- TODO: vim-rest-console
--- TODO: neogit
--- TODO: 'lazy-git'
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: 'auto-session'
 -- TODO: 'nvim-lualine/lualine.nvim'
@@ -19,6 +16,7 @@ require("lazy").setup({
 	require("kickstart/plugins/conform"),
 	require("kickstart/plugins/cmp"),
 	require("kickstart/plugins/tokyonight"),
+	require("kickstart/plugins/badwolf"),
 	require("kickstart/plugins/todo-comments"),
 	require("kickstart/plugins/mini"),
 	require("kickstart/plugins/treesitter"),
