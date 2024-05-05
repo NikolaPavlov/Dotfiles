@@ -1,4 +1,5 @@
 -------------------------------------------------------------------------------
+-- TODO: center oil screen
 -- TODO: nvim-neorg
 -- TODO: neogit
 -- TODO: 'lazy-git'
@@ -28,6 +29,12 @@ require("lazy").setup({
 	require("kickstart.plugins.neo-tree"),
 	require("kickstart.plugins.harpoon"),
 	require("kickstart.plugins.noice"),
+	require("kickstart.plugins.neorg"),
+	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000,
+		config = true,
+	},
 	"mhinz/vim-startify", -- start screen with bookmarks
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
