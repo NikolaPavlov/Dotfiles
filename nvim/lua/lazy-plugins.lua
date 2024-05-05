@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 -- TODO: center oil screen
--- TODO: nvim-neorg
+-- TODO: vim-rest-console
 -- TODO: neogit
 -- TODO: 'lazy-git'
 -- TODO: 'nvim-spectre' -- search and replace
@@ -30,6 +30,8 @@ require("lazy").setup({
 	require("kickstart.plugins.harpoon"),
 	require("kickstart.plugins.noice"),
 	require("kickstart.plugins.neorg"),
+	require("kickstart.plugins.vim-rest-console"),
+	require("kickstart.plugins.oil"),
 	{
 		"vhyrro/luarocks.nvim",
 		priority = 1000,
@@ -39,7 +41,6 @@ require("lazy").setup({
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
 	"DanilaMihailov/beacon.nvim", -- cursor highlight
-	{ "stevearc/oil.nvim", opts = {} },
 	"szw/vim-maximizer",
 	"tpope/vim-fugitive",
 	"tpope/vim-surround", -- change surroundings
