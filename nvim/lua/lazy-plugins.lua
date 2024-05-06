@@ -1,10 +1,11 @@
 -------------------------------------------------------------------------------
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: "lukas-reineke/lsp-format.nvim
+-- TODO: luasnip
+-- TODO: setup perlnavigator
 -------------------------------------------------------------------------------
 
 require("lazy").setup({
-	{ "numToStr/Comment.nvim", opts = {} },
 	require("kickstart/plugins/gitsigns"),
 	require("kickstart/plugins/telescope"),
 	require("kickstart/plugins/lspconfig"),
@@ -14,6 +15,10 @@ require("lazy").setup({
 	require("kickstart/plugins/badwolf"),
 	require("kickstart/plugins/lualine"),
 	require("kickstart/plugins/todo-comments"),
+	{
+		"numToStr/Comment.nvim",
+		opts = {},
+	},
 	require("kickstart/plugins/mini"),
 	require("kickstart/plugins/treesitter"),
 	-- require 'kickstart.plugins.debug',

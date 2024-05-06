@@ -41,8 +41,6 @@ map("n", "<leader><leader>", ":noh<CR>")
 map("v", "<leader><leader>", "<Esc>")
 map("n", "<leader>a", "ggVG")
 map("n", "<leader>o", ":Oil --float<CR>")
--- map("n", "<leader>x", ":Oil CORE <CR>")
--- map("n", "<leader>x", ":Oil WEB <CR>")
 map("n", "<leader>m", ":MaximizerToggle<CR>")
 map("n", "<leader>d", ":bd<CR>")
 map("n", "<CR>", ":b# <CR>")
@@ -139,8 +137,8 @@ map("v", ":xml", ":! xmllint --format -<CR>")
 map("v", "f", ":! python -m json.tool<CR>")
 
 -- Quick navigation CORE WEB
-map("n", "<leader>c", ":cd /mnt/core/home/n.pavlov/easypay_core<CR>")
-map("n", "<leader>w", ":cd /mnt/web/home/n.pavlov/easypay_web<CR>")
+map("n", "<leader>c", ":Oil --float /mnt/core/home/n.pavlov/easypay_core<CR>")
+map("n", "<leader>w", ":Oil --float /mnt/web/home/n.pavlov/easypay_web<CR>")
 
 -- check Perl syntax
 map(
