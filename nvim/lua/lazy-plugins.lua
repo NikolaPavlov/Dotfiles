@@ -1,10 +1,5 @@
 -------------------------------------------------------------------------------
--- TODO: vim-rest-console
 -- TODO: 'nvim-spectre' -- search and replace
--- TODO: 'auto-session'
--- TODO: 'nvim-lualine/lualine.nvim'
--- TODO: nvim-telescope/telescope-frecency.nvim
--- TODO: leap.nvim
 -- TODO: "lukas-reineke/lsp-format.nvim
 -------------------------------------------------------------------------------
 
@@ -17,6 +12,7 @@ require("lazy").setup({
 	require("kickstart/plugins/cmp"),
 	require("kickstart/plugins/tokyonight"),
 	require("kickstart/plugins/badwolf"),
+	require("kickstart/plugins/lualine"),
 	require("kickstart/plugins/todo-comments"),
 	require("kickstart/plugins/mini"),
 	require("kickstart/plugins/treesitter"),
@@ -35,7 +31,7 @@ require("lazy").setup({
 		priority = 1000,
 		config = true,
 	},
-	"mhinz/vim-startify", -- start screen with bookmarks
+	"mhinz/vim-startify",
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
 	"DanilaMihailov/beacon.nvim", -- cursor highlight
