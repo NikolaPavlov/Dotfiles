@@ -6,9 +6,6 @@ return {
 			default_file_explorer = true,
 			columns = {
 				"icon",
-				-- "permissions",
-				-- "size",
-				-- "mtime",
 			},
 			buf_options = {
 				buflisted = false,
@@ -22,6 +19,9 @@ return {
 				win_options = {
 					winblend = 0,
 				},
+			},
+			keymaps = {
+				["<leader>o"] = "actions.close",
 			},
 		})
 	end,
