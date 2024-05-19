@@ -7,10 +7,6 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
---
--- This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -148,28 +144,5 @@ map(
 )
 
 map("n", "<leader>t", cmd.UndotreeToggle)
-
---------------------------------
-cmd("iabbrev todo # TODO:")
-cmd("iabbrev todo: # TODO:")
-cmd("iabbrev TODO # TODO:")
-cmd("iabbrev tido # TODO:")
-cmd("iabbrev tdo # TODO:")
-
-cmd("iabbrev note NOTE:")
-cmd("iabbrev note: NOTE:")
-cmd("iabbrev NOTE NOTE:")
-
-cmd("iabbrev pritn print")
-cmd("iabbrev pirint print")
-cmd("iabbrev pirnt print")
-
-cmd("iabbrev reutnr return")
-cmd("iabbrev retunr return")
-cmd("iabbrev reutrn return")
-cmd("iabbrev retrun return")
-
-cmd("iabbrev ues use")
---------------------------------
 
 -- vim: ts=2 sts=2 sw=2 et

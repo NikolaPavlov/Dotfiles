@@ -1,41 +1,43 @@
 -------------------------------------------------------------------------------
+-- TODO: luasnip / luasnip-snippets
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: "lukas-reineke/lsp-format.nvim
--- TODO: luasnip
 -- TODO: setup perlnavigator
+-- TODO: leap
 -------------------------------------------------------------------------------
 
 require("lazy").setup({
-	require("kickstart/plugins/gitsigns"),
-	require("kickstart/plugins/telescope"),
-	require("kickstart/plugins/lspconfig"),
-	require("kickstart/plugins/conform"),
-	require("kickstart/plugins/cmp"),
-	require("kickstart/plugins/tokyonight"),
-	require("kickstart/plugins/badwolf"),
-	require("kickstart/plugins/lualine"),
-	require("kickstart/plugins/todo-comments"),
+	require("gh/plugins/gitsigns"),
+	require("gh/plugins/telescope"),
+	require("gh/plugins/lspconfig"),
+	require("gh/plugins/conform"),
+	require("gh/plugins/cmp"),
+	require("gh/plugins/tokyonight"),
+	require("gh/plugins/badwolf"),
+	require("gh/plugins/lualine"),
+	require("gh/plugins/todo-comments"),
 	{
 		"numToStr/Comment.nvim",
 		opts = {},
 	},
-	require("kickstart/plugins/mini"),
-	require("kickstart/plugins/treesitter"),
-	-- require 'kickstart.plugins.debug',
-	require("kickstart.plugins.indent_line"),
-	-- require 'kickstart.plugins.lint',
-	require("kickstart.plugins.autopairs"),
-	require("kickstart.plugins.neo-tree"),
-	require("kickstart.plugins.harpoon"),
-	require("kickstart.plugins.noice"),
-	require("kickstart.plugins.neorg"),
-	require("kickstart.plugins.vim-rest-console"),
-	require("kickstart.plugins.oil"),
+	require("gh/plugins/mini"),
+	require("gh/plugins/treesitter"),
+	-- require 'ghr/lugins/debug',
+	-- require("gh/plugins/indent_line"),
+	-- require 'gh/plugins/lint',
+	require("gh/plugins/autopairs"),
+	require("gh/plugins/neo-tree"),
+	require("gh/plugins/harpoon"),
+	require("gh/plugins/noice"),
 	{
 		"vhyrro/luarocks.nvim",
 		priority = 1000,
 		config = true,
 	},
+	require("gh/plugins/neorg"),
+	require("gh/plugins/vim-rest-console"),
+	require("gh/plugins/oil"),
+	require("gh/plugins/luasnip"),
 	"mhinz/vim-startify",
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
@@ -47,6 +49,9 @@ require("lazy").setup({
 	"tpope/vim-unimpaired", -- git mappings
 	"christoomey/vim-tmux-navigator",
 	"mbbill/undotree",
+	"nvim-pack/nvim-spectre",
+
+	"ThePrimeagen/vim-be-good",
 
 	-- provide :Cheat and :CheaList commmand
 	"RishabhRD/nvim-cheat.sh",
