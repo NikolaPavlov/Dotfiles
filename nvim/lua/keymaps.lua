@@ -65,8 +65,8 @@ map("n", "<BS>", "za")
 map("n", "S", 'i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w"{{{}}}')
 
 -- j k moves inside wrapped lines
-map("n", "j", "gj")
-map("n", "k", "gk")
+-- map("n", "j", "gj")
+-- map("n", "k", "gk")
 
 -- keep the cursor in place when joining lines
 map("n", "J", "mzJ`z")

@@ -50,12 +50,10 @@ require("lazy").setup({
 	"christoomey/vim-tmux-navigator",
 	"mbbill/undotree",
 	"nvim-pack/nvim-spectre",
+	"RishabhRD/nvim-cheat.sh", -- provide :Cheat and :CheaList commmand
+	"RishabhRD/popfix",
 
 	"ThePrimeagen/vim-be-good",
-
-	-- provide :Cheat and :CheaList commmand
-	"RishabhRD/nvim-cheat.sh",
-	"RishabhRD/popfix",
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
