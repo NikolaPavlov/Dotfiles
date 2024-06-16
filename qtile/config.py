@@ -2,7 +2,7 @@ import os
 import subprocess
 
 from libqtile.config import Key, Screen, Group, Drag, Click, ScratchPad, DropDown
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from libqtile import layout, bar, widget, hook
 
 from typing import List  # noqa: F401
