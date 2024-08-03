@@ -145,4 +145,14 @@ map(
 
 map("n", "<leader>t", cmd.UndotreeToggle)
 
+-- TODO: leap --------------------------------------------------
+vim.keymap.set({ "n", "x" }, "q", function()
+	local current_window = vim.fn.win_getid()
+	require("leap").leap({ target_windows = { current_window } })
+	-- require("leap").add_default_mappings()
+end)
+-- vim.keymap.set({ "n", "x", "o" }, "ss", "<Plug>(leap-forward)")
+-- vim.keymap.set({ "n", "x", "o" }, "SS", "<Plug>(leap-backward)")
+------------------------------------------------------------------
+
 -- vim: ts=2 sts=2 sw=2 et

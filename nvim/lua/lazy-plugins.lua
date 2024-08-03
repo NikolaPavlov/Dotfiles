@@ -3,7 +3,6 @@
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: "lukas-reineke/lsp-format.nvim
 -- TODO: setup perlnavigator
--- TODO: leap
 -------------------------------------------------------------------------------
 
 require("lazy").setup({
@@ -38,6 +37,8 @@ require("lazy").setup({
 	require("gh/plugins/vim-rest-console"),
 	require("gh/plugins/oil"),
 	require("gh/plugins/luasnip"),
+	require("gh/plugins/leap"),
+
 	"mhinz/vim-startify",
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
