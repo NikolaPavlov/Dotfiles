@@ -3,7 +3,7 @@ return {
 		"mhinz/vim-startify",
 		config = function()
 			vim.cmd([[
-        let g:startify_bookmarks = [ {'key1': '~/.vimrc1'}, {'key2': '~/.vimrc2'} ]
+        let g:startify_bookmarks = [ {'W': '/mnt/web/home/n.pavlov/easypay_web/WEB '}, {'C': '/mnt/core/home/n.pavlov/easypay_core/CORE/ '} ]
       ]])
 		end,
 	},
