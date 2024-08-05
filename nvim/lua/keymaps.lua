@@ -12,11 +12,11 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 --  See `:help lua-guide-autocommands`
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
 --------------------------------------------
@@ -125,8 +125,10 @@ map("c", "ls<CR>", ":Lazy sync<CR>")
 map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
 
 -- Save as sudo
-map("c", "w!!", ':w !sudo tee "%"<CR>')
-map("c", "W!", ':w !sudo tee "%"<CR>')
+-- map("c", "w!!", ':w !sudo tee "%"<CR>')
+-- map("c", "W!", ':w !sudo tee "%"<CR>')
+-- vim.keymap.set('c', 'w!!', 'cmap w!! w !sudo tee > /dev/null %')
+vim.keymap.set('c', 'w!!', ':w ! sudo tee % > /dev/null')
 
 -- Format xml (visual selectd xml + <leader>x)
 map("v", ":xml", ":! xmllint --format -<CR>")
@@ -138,18 +140,18 @@ map("n", "<leader>w", ":Oil --float /mnt/web/home/n.pavlov/easypay_web<CR>")
 
 -- check Perl syntax
 map(
-	"c",
-	"prl",
-	":!perl -I /usr/local/remedy2/COMMON/lib -I /usr/local/remedy2/CORE/lib -I /usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib -c %<CR>"
+  "c",
+  "prl",
+  ":!perl -I /usr/local/remedy2/COMMON/lib -I /usr/local/remedy2/CORE/lib -I /usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib -c %<CR>"
 )
 
 map("n", "<leader>t", cmd.UndotreeToggle)
 
 -- TODO: leap --------------------------------------------------
 vim.keymap.set({ "n", "x" }, "q", function()
-	local current_window = vim.fn.win_getid()
-	require("leap").leap({ target_windows = { current_window } })
-	-- require("leap").add_default_mappings()
+  local current_window = vim.fn.win_getid()
+  require("leap").leap({ target_windows = { current_window } })
+  -- require("leap").add_default_mappings()
 end)
 -- vim.keymap.set({ "n", "x", "o" }, "ss", "<Plug>(leap-forward)")
 -- vim.keymap.set({ "n", "x", "o" }, "SS", "<Plug>(leap-backward)")
