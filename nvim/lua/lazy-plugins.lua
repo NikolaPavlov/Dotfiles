@@ -25,7 +25,8 @@ require("lazy").setup({
 	-- require("gh/plugins/indent_line"),
 	-- require 'gh/plugins/lint',
 	require("gh/plugins/autopairs"),
-	require("gh/plugins/neo-tree"),
+	require("gh/plugins/nerdtree"),
+	-- require("gh/plugins/neo-tree"),
 	require("gh/plugins/harpoon"),
 	require("gh/plugins/noice"),
 	{
@@ -33,7 +34,7 @@ require("lazy").setup({
 		priority = 1000,
 		config = true,
 	},
-	require("gh/plugins/neorg"),
+	-- require("gh/plugins/neorg"),
 	require("gh/plugins/vim-rest-console"),
 	require("gh/plugins/oil"),
 	require("gh/plugins/luasnip"),
@@ -42,7 +43,7 @@ require("lazy").setup({
 	"mhinz/vim-startify",
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
-	"DanilaMihailov/beacon.nvim", -- cursor highlight
+	-- "DanilaMihailov/beacon.nvim", -- cursor highlight
 	"szw/vim-maximizer",
 	"tpope/vim-fugitive",
 	"tpope/vim-surround", -- change surroundings
