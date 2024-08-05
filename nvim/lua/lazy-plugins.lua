@@ -40,7 +40,9 @@ require("lazy").setup({
 	require("gh/plugins/luasnip"),
 	require("gh/plugins/leap"),
 
-	"mhinz/vim-startify",
+	require("gh/plugins/startify"),
+	-- "mhinz/vim-startify"
+
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
 	-- "DanilaMihailov/beacon.nvim", -- cursor highlight
