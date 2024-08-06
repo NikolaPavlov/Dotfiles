@@ -26,7 +26,7 @@ require("lazy").setup({
 	-- require 'gh/plugins/lint',
 	require("gh/plugins/autopairs"),
 	require("gh/plugins/nerdtree"),
-	-- require("gh/plugins/neo-tree"),
+	require("gh/plugins/neo-tree"),
 	require("gh/plugins/harpoon"),
 	require("gh/plugins/noice"),
 	{

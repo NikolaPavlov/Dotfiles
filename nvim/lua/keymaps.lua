@@ -146,7 +146,7 @@ map(
   ":!perl -I /usr/local/remedy2/COMMON/lib -I /usr/local/remedy2/CORE/lib -I /usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib -c %<CR>"
 )
 
-map("n", "<leader>t", cmd.UndotreeToggle)
+map("n", "<leader>u", cmd.UndotreeToggle)
 map("c", "cd %", ":cd %:h")
 
 -- TODO: leap --------------------------------------------------
