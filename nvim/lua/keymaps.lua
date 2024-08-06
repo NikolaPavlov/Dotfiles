@@ -36,8 +36,8 @@ map("c", "йк", "<Esc>")
 map("n", "<leader><leader>", ":noh<CR>")
 map("v", "<leader><leader>", "<Esc>")
 map("n", "<leader>a", "ggVG")
-map("n", "<leader>o", ":Oil --float<CR>")
-map("n", "<leader>m", ":MaximizerToggle<CR>")
+map("n", "<leader><CR>", ":Oil --float<CR>")
+map("n", "<leader>o", ":MaximizerToggle<CR>")
 map("n", "<leader>d", ":bd<CR>")
 map("n", "<CR>", ":b# <CR>")
 
@@ -128,7 +128,8 @@ map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pa
 -- map("c", "w!!", ':w !sudo tee "%"<CR>')
 -- map("c", "W!", ':w !sudo tee "%"<CR>')
 -- vim.keymap.set('c', 'w!!', 'cmap w!! w !sudo tee > /dev/null %')
-vim.keymap.set('c', 'w!!', ':w ! sudo tee % > /dev/null')
+-- # TODO:
+vim.keymap.set("c", "w!!", ":w ! sudo tee % > /dev/null")
 
 -- Format xml (visual selectd xml + <leader>x)
 map("v", ":xml", ":! xmllint --format -<CR>")
@@ -146,6 +147,7 @@ map(
 )
 
 map("n", "<leader>t", cmd.UndotreeToggle)
+map("c", "cd %", ":cd %:h")
 
 -- TODO: leap --------------------------------------------------
 vim.keymap.set({ "n", "x" }, "q", function()
@@ -156,5 +158,3 @@ end)
 -- vim.keymap.set({ "n", "x", "o" }, "ss", "<Plug>(leap-forward)")
 -- vim.keymap.set({ "n", "x", "o" }, "SS", "<Plug>(leap-backward)")
 ------------------------------------------------------------------
-
--- vim: ts=2 sts=2 sw=2 et

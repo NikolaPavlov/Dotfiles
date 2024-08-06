@@ -9,7 +9,7 @@ require("lazy").setup({
 	require("gh/plugins/gitsigns"),
 	require("gh/plugins/telescope"),
 	require("gh/plugins/lspconfig"),
-	require("gh/plugins/conform"),
+	-- require("gh/plugins/conform"),
 	require("gh/plugins/cmp"),
 	require("gh/plugins/tokyonight"),
 	require("gh/plugins/badwolf"),

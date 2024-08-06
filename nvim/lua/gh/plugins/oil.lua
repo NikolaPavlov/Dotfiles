@@ -21,7 +21,7 @@ return {
 				},
 			},
 			keymaps = {
-				["<leader>o"] = "actions.close",
+				["<leader><CR>"] = "actions.close",
 			},
 		})
 	end,
