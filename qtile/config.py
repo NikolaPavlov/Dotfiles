@@ -92,7 +92,7 @@ screens = [
                 widget.Sep(**soft_sep),
                 widget.WindowName(),
                 widget.Sep(**soft_sep),
-                # widget.Battery(),
+                widget.Battery(),
                 widget.Sep(**soft_sep),
                 widget.Clock(format='%d | %I:%M'),
                 widget.Sep(**soft_sep),
