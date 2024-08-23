@@ -3,6 +3,7 @@
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: "lukas-reineke/lsp-format.nvim
 -- TODO: setup perlnavigator
+-- TODO: https://github.com/folke/trouble.nvim
 -------------------------------------------------------------------------------
 
 require("lazy").setup({
@@ -11,7 +12,7 @@ require("lazy").setup({
 	require("gh/plugins/lspconfig"),
 	-- require("gh/plugins/conform"),
 	require("gh/plugins/cmp"),
-	require("gh/plugins/tokyonight"),
+	-- require("gh/plugins/tokyonight"),
 	require("gh/plugins/badwolf"),
 	require("gh/plugins/lualine"),
 	require("gh/plugins/todo-comments"),
@@ -26,7 +27,7 @@ require("lazy").setup({
 	-- require 'gh/plugins/lint',
 	require("gh/plugins/autopairs"),
 	require("gh/plugins/nerdtree"),
-	-- require("gh/plugins/neo-tree"),
+	require("gh/plugins/neo-tree"),
 	require("gh/plugins/harpoon"),
 	require("gh/plugins/noice"),
 	{
