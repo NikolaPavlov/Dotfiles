@@ -125,11 +125,7 @@ map("c", "ls<CR>", ":Lazy sync<CR>")
 map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
 
 -- Save as sudo
--- map("c", "w!!", ':w !sudo tee "%"<CR>')
--- map("c", "W!", ':w !sudo tee "%"<CR>')
--- vim.keymap.set('c', 'w!!', 'cmap w!! w !sudo tee > /dev/null %')
--- # TODO:
-vim.keymap.set("c", "w!!", ":w ! sudo tee % > /dev/null")
+  -- TODO: 
 
 -- Format xml (visual selectd xml + <leader>x)
 map("v", ":xml", ":! xmllint --format -<CR>")
