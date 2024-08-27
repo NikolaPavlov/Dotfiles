@@ -83,6 +83,8 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+hostname = os.uname()[1]
+
 screens = [
     Screen(
         bottom=bar.Bar(
@@ -92,7 +94,7 @@ screens = [
                 widget.Sep(**soft_sep),
                 widget.WindowName(),
                 widget.Sep(**soft_sep),
-                widget.Battery(),
+                widget.Battery() if hostname == 'moon' else widget.Sep(**soft_sep),
                 widget.Sep(**soft_sep),
                 widget.Clock(format='%d | %I:%M'),
                 widget.Sep(**soft_sep),
