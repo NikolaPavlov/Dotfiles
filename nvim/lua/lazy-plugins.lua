@@ -38,7 +38,7 @@ require("lazy").setup({
 	-- require("gh/plugins/neorg"),
 	require("gh/plugins/vim-rest-console"),
 	require("gh/plugins/oil"),
-	require("gh/plugins/luasnip"),
+	-- require("gh/plugins/luasnip"), # TODO: it's loaded as dependency of nvim-cmp
 	require("gh/plugins/leap"),
 
 	require("gh/plugins/startify"),
