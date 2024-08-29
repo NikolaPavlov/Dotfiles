@@ -17,7 +17,7 @@ opt.cursorline = true
 opt.laststatus = 2
 opt.splitbelow = true
 opt.splitright = true
--- opt.clipboard = "unnamedplus" -- auto copy/paste from Vim to system clipboard
+opt.clipboard = "unnamedplus" -- auto copy/paste from Vim to system clipboard
 opt.undofile = true
 vim.g.undodir = "$XDG_DATA_HOME/.config/nvim/undo_dir//"
 opt.textwidth = 119
@@ -91,14 +91,14 @@ end
 
 
 -- force to use OSC52 # TODO: lag when copy/paste 
-vim.g.clipboard = {
-  name = 'OSC 52',
-  copy = {
-    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
-    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
-  },
-  paste = {
-    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
-    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
-  },
-}
+-- vim.g.clipboard = {
+--   name = 'OSC 52',
+--   copy = {
+--     ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+--     ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+--   },
+--   paste = {
+--     ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+--     ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+--   },
+-- }
