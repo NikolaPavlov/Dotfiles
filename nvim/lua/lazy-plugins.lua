@@ -78,4 +78,7 @@ require("lazy").setup({
 	},
 })
 
+local ft = require('Comment.ft')
+ft.set('def', '#%s')
+
 -- vim: ts=2 sts=2 sw=2 et
