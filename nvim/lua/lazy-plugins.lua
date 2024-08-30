@@ -39,8 +39,7 @@ require("lazy").setup({
 	require("gh/plugins/oil"),
 	require("gh/plugins/leap"),
 
-	require("gh/plugins/startify"),
-	-- "mhinz/vim-startify"
+	-- require("gh/plugins/startify"), # TODO: replaced by mini.starter
 
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
@@ -48,7 +47,7 @@ require("lazy").setup({
 	"szw/vim-maximizer",
   require("gh/plugins/gitsigns"),
 	"tpope/vim-fugitive",
-	"tpope/vim-surround", -- change surroundings
+	-- "tpope/vim-surround", -- change surroundings # TODO: disabled to check replacement from mini.nvim
 	"tpope/vim-repeat", -- repeat plugin commands
 	"tpope/vim-unimpaired", -- git mappings
 	"christoomey/vim-tmux-navigator",
