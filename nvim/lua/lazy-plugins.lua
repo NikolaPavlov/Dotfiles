@@ -49,7 +49,7 @@ require("lazy").setup({
 	"szw/vim-maximizer",
   require("gh/plugins/gitsigns"),
 	"tpope/vim-fugitive",
-	-- "tpope/vim-surround", -- change surroundings # TODO: disabled to check replacement from mini.nvim
+	"tpope/vim-surround", -- change surroundings
 	"tpope/vim-repeat", -- repeat plugin commands
 	"tpope/vim-unimpaired", -- git mappings
 	"christoomey/vim-tmux-navigator",
