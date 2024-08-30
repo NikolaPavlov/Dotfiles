@@ -1,5 +1,4 @@
 -------------------------------------------------------------------------------
--- TODO: luasnip / luasnip-snippets
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: "lukas-reineke/lsp-format.nvim
 -- TODO: setup perlnavigator
@@ -13,39 +12,36 @@ require("lazy").setup({
 
 	require("gh/plugins/telescope"),
 	require("gh/plugins/lspconfig"),
-	-- require("gh/plugins/conform"),
-	require("gh/plugins/cmp"),
+	require("gh/plugins/cmp"), -- + luasnip as dependency
 	require("gh/plugins/lualine"),
 	require("gh/plugins/todo-comments"),
+  require("gh/plugins/mini"),
+  require("gh/plugins/treesitter"),
+  require("gh/plugins/autopairs"),
+  require("gh/plugins/nerdtree"),
+  require("gh/plugins/neo-tree"),
+  require("gh/plugins/harpoon"),
+  require("gh/plugins/noice"),
+  require("gh/plugins/vim-rest-console"),
+  require("gh/plugins/oil"),
+  require("gh/plugins/leap"),
+  -- require("gh/plugins/neorg"),
+  -- require 'ghr/lugins/debug',
+  -- require("gh/plugins/conform"),
+  -- require("gh/plugins/indent_line"),
+  -- require 'gh/plugins/lint',
+  -- require("gh/plugins/startify"),
 	{
 		"numToStr/Comment.nvim",
 		opts = {},
 	},
-	require("gh/plugins/mini"),
-	require("gh/plugins/treesitter"),
-	-- require 'ghr/lugins/debug',
-	-- require("gh/plugins/indent_line"),
-	-- require 'gh/plugins/lint',
-	require("gh/plugins/autopairs"),
-	require("gh/plugins/nerdtree"),
-	require("gh/plugins/neo-tree"),
-	require("gh/plugins/harpoon"),
-	require("gh/plugins/noice"),
 	{
 		"vhyrro/luarocks.nvim",
 		priority = 1000,
 		config = true,
 	},
-	-- require("gh/plugins/neorg"),
-	require("gh/plugins/vim-rest-console"),
-	require("gh/plugins/oil"),
-	require("gh/plugins/leap"),
-
-	-- require("gh/plugins/startify"), # TODO: replaced by mini.starter
-
 	"Valloric/MatchTagAlways", -- highlight matching html tags
 	"dm1try/golden_size", -- auto resize splits
-	-- "DanilaMihailov/beacon.nvim", -- cursor highlight
 	"szw/vim-maximizer",
   require("gh/plugins/gitsigns"),
 	"tpope/vim-fugitive",

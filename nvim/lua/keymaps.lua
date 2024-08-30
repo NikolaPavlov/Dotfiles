@@ -124,9 +124,6 @@ map("c", "zen", ":ZenMode<CR>")
 map("c", "ls<CR>", ":Lazy sync<CR>")
 map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
 
--- Save as sudo
-  -- TODO: 
-
 -- Format xml (visual selectd xml + <leader>x)
 map("v", ":xml", ":! xmllint --format -<CR>")
 map("v", "f", ":! python -m json.tool<CR>")
@@ -144,13 +141,3 @@ map(
 
 map("n", "<leader>u", cmd.UndotreeToggle)
 map("c", "cd %", ":cd %:h")
-
--- TODO: leap --------------------------------------------------
-vim.keymap.set({ "n", "x" }, "q", function()
-  local current_window = vim.fn.win_getid()
-  require("leap").leap({ target_windows = { current_window } })
-  -- require("leap").add_default_mappings()
-end)
--- vim.keymap.set({ "n", "x", "o" }, "ss", "<Plug>(leap-forward)")
--- vim.keymap.set({ "n", "x", "o" }, "SS", "<Plug>(leap-backward)")
-------------------------------------------------------------------

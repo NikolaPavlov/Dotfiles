@@ -62,6 +62,7 @@ return {
 			vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 			-- TODO: builtin.lsp_document_symbols
 			-- TODO: code actions
+      -- TODO: buffers
 
       vim.keymap.set("n", "<leader>sc", function()
         builtin.find_files({ cwd = "/mnt/core/home/n.pavlov/easypay_core/CORE/" })
