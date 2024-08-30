@@ -7,12 +7,14 @@
 -------------------------------------------------------------------------------
 
 require("lazy").setup({
+  require("gh/plugins/kanagawa"),
+  -- require("gh/plugins/tokyonight"),
+  -- require("gh/plugins/badwolf"),
+
 	require("gh/plugins/telescope"),
 	require("gh/plugins/lspconfig"),
 	-- require("gh/plugins/conform"),
 	require("gh/plugins/cmp"),
-	require("gh/plugins/tokyonight"),
-	require("gh/plugins/badwolf"),
 	require("gh/plugins/lualine"),
 	require("gh/plugins/todo-comments"),
 	{

@@ -1,9 +1,9 @@
 return {
   {
-    "sjl/badwolf",
+    "rebelot/kanagawa.nvim",
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme("badwolf")
+      vim.cmd.colorscheme("kanagawa")
       -- options
     end,
   },
