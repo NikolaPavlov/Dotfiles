@@ -7,7 +7,6 @@
 -------------------------------------------------------------------------------
 
 require("lazy").setup({
-	require("gh/plugins/gitsigns"),
 	require("gh/plugins/telescope"),
 	require("gh/plugins/lspconfig"),
 	-- require("gh/plugins/conform"),
@@ -47,6 +46,7 @@ require("lazy").setup({
 	"dm1try/golden_size", -- auto resize splits
 	-- "DanilaMihailov/beacon.nvim", -- cursor highlight
 	"szw/vim-maximizer",
+  require("gh/plugins/gitsigns"),
 	"tpope/vim-fugitive",
 	"tpope/vim-surround", -- change surroundings
 	"tpope/vim-repeat", -- repeat plugin commands
