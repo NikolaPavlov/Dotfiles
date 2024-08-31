@@ -3,13 +3,13 @@
 -- TODO: "lukas-reineke/lsp-format.nvim
 -- TODO: setup perlnavigator
 -- TODO: https://github.com/folke/trouble.nvim
+-- TODO: https://github.com/nvim-telescope/telescope-frecency.nvim
 -------------------------------------------------------------------------------
 
 require("lazy").setup({
   require("gh/plugins/kanagawa"),
   require("gh/plugins/tokyonight"),
   require("gh/plugins/badwolf"),
-
   require("gh/plugins/telescope"),
   require("gh/plugins/gitsigns"),
   require("gh/plugins/lspconfig"),
