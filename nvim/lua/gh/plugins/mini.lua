@@ -11,7 +11,7 @@ return {
       require("mini.cursorword").setup()
       require("mini.icons").setup()
       require("mini.jump").setup()
-      require("mini.jump2d").setup() -- # TODO:  <enter> trigger
+      -- require("mini.jump2d").setup()
       -- require("mini.move").setup()
       require("mini.notify").setup()
       require("mini.pairs").setup()

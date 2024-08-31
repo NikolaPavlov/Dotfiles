@@ -1,7 +1,7 @@
 return {
-	"preservim/nerdtree",
-	config = function()
-		vim.cmd([[
+  "preservim/nerdtree",
+  config = function()
+    vim.cmd([[
       autocmd FileType nerdtree setlocal relativenumber
       let NERDTreeAutoDeleteBuffer = 1
       let NERDTreeBookmarksSort = 0
@@ -11,7 +11,7 @@ return {
       let NERDTreeQuitOnOpen = 0
       let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
       let NERDTreeShowLineNumbers = 1
-    ]])
-		vim.keymap.set("n", "<C-t>", ":NERDTreeToggle<CR>", { desc = "Toggle NERDTree" })
-	end,
+      ]])
+    vim.keymap.set("n", "<C-t>", ":NERDTreeToggle<CR>", { desc = "Toggle NERDTree" })
+  end,
 }

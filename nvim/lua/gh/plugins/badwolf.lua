@@ -3,8 +3,7 @@ return {
     "sjl/badwolf",
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme("badwolf")
-      -- options
+      -- vim.cmd.colorscheme("badwolf")
     end,
   },
 }

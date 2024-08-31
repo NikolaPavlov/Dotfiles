@@ -1,4 +1,4 @@
 return {
-	"diepm/vim-rest-console",
-	config = function() end,
+  "diepm/vim-rest-console",
+  config = function() end,
 }
