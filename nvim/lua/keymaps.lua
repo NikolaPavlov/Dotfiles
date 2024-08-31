@@ -132,4 +132,4 @@ map(
 )
 
 map("n", "<leader>u", cmd.UndotreeToggle)
-map("c", "cd %", ":cd %:h") -- # TODO: broken?
+map("c", "cd .", ":cd %:h")

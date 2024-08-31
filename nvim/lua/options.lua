@@ -62,6 +62,7 @@ opt.helpheight = 999999
 
 -- Other
 opt.synmaxcol = 240 -- max column for syntax highlight
+opt.autochdir = true
 
 -- disable builtins plugins
 local disabled_built_ins = {
