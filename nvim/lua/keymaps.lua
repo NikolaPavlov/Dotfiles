@@ -26,7 +26,6 @@ local map = vim.keymap.set
 local cmd = vim.cmd
 
 map("n", "<Space>", ":")
--- map('n', '<C-t>', ':NERDTreeToggleVCS<CR>')
 
 map("i", "jk", "<Esc>")
 map("c", "jk", "<Esc>")
@@ -45,7 +44,7 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- File navigations
-map("n", "<leader>s", ":Startify<CR>")
+-- map("n", "<leader>s", ":Startify<CR>") # TODO: 
 map("n", "<leader>el", ":NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
 
 -- Better searching
@@ -63,10 +62,6 @@ map("n", "<BS>", "za")
 
 -- Split lines with S
 map("n", "S", 'i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w"{{{}}}')
-
--- j k moves inside wrapped lines
--- map("n", "j", "gj")
--- map("n", "k", "gk")
 
 -- keep the cursor in place when joining lines
 map("n", "J", "mzJ`z")
@@ -116,11 +111,8 @@ map("n", "N", "Nzzzv")
 -- Go to the end of line in insert mode
 map("i", "<C-a>", "<C-o>$")
 
--- map("n", "T", ":TagbarToggle<CR>")
-
 -- OTHER
 map("c", "zen", ":ZenMode<CR>")
--- map("c", "ps<CR>", ":PackerSync<CR>")
 map("c", "ls<CR>", ":Lazy sync<CR>")
 map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
 
@@ -140,4 +132,4 @@ map(
 )
 
 map("n", "<leader>u", cmd.UndotreeToggle)
-map("c", "cd %", ":cd %:h")
+map("c", "cd %", ":cd %:h") -- # TODO: broken?
