@@ -1,8 +1,39 @@
+snippet perl
+    #!/usr/bin/perl
+
+    use strict;
+    use warnings;
+
+    use Data::Dumper qw(Dumper);
+
+    ${1}
+
 snippet rcd_log
     rcd_log($1);
+
+snippet rcd_logd
+    rcd_log("${1}".Dumper(${2}));
+
+snippet dbug
+    rcd_log("dbug: $1");
 
 snippet hit
     rcd_log("hit: $1");
 
-snippet dbug
-    rcd_log("dbug: $1");
+snippet hash
+    my $${1} = (
+        ${2}
+    );
+
+snippet dumper
+    print(Dumper( ${1} ));
+
+snippet print
+    print( ${1} );
+
+snippet testhash
+    my %h = ('one' => 1, 'two' => 2, 'three' => 3);
+
+snippet testarr
+    my @arr = ('one', 'two', 'three');
+
