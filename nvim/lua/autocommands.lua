@@ -59,9 +59,9 @@ cmd [[
 ]]
 
 -- autosave
--- cmd [[
---     autocmd CursorHold,CursorHoldI * update
--- ]]
+cmd [[
+    autocmd CursorHold,CursorHoldI * update
+]]
 
 -- don't auto commenting new lines
 -- cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
