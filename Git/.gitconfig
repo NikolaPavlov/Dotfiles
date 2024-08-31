@@ -1,8 +1,24 @@
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    ; # use n and N to move between diff sections
+    ; # delta detects terminal colors automatically; set one of these to disable auto-detection
+    ; # dark = true
+    ; # light = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+
+############################################################
+
 [user]
 	email = nikola.pavlov1955@gmail.com
 	name = Nikola Pavlov
-[merge]
-    tool = splice
+; [merge]
+    ; tool = splice
 [mergetool "splice"]
     cmd = "nvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
     trustExitCode = true
