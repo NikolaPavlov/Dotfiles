@@ -8,8 +8,8 @@
 
 require("lazy").setup({
   require("gh/plugins/kanagawa"),
-  require("gh/plugins/tokyonight"),
-  require("gh/plugins/badwolf"),
+  -- require("gh/plugins/tokyonight"),
+  -- require("gh/plugins/badwolf"),
   --
   require("gh/plugins/telescope"),
   require("gh/plugins/gitsigns"),
@@ -25,7 +25,6 @@ require("lazy").setup({
   require("gh/plugins/oil"),
   -- require("gh/plugins/neo-tree"),
   -- require("gh/plugins/vim-rest-console"),
-  -- require("gh/plugins/leap"),
   -- require("gh/plugins/autopairs"),   # TODO: remove in favore of mini.nvim
   -- require("gh/plugins/neorg"),
   -- require 'gh/plugins/debug',
