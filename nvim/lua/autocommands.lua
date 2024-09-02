@@ -58,10 +58,10 @@ cmd [[
   augroup END
 ]]
 
--- autosave
-cmd [[
-    autocmd CursorHold,CursorHoldI * update
-]]
+-- autosave # TODO: FIX: (errors in the log)
+-- cmd [[
+--     autocmd CursorHold,CursorHoldI * update
+-- ]]
 
 -- don't auto commenting new lines
 -- cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]

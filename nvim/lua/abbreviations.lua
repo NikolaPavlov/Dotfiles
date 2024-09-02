@@ -10,6 +10,10 @@ cmd("iabbrev note NOTE:")
 cmd("iabbrev note: NOTE:")
 cmd("iabbrev NOTE NOTE:")
 
+cmd("iabbrev fix FIX:")
+cmd("iabbrev fix: FIX:")
+cmd("iabbrev FIX FIX:")
+
 cmd("iabbrev pritn print")
 cmd("iabbrev pirint print")
 cmd("iabbrev pirnt print")
