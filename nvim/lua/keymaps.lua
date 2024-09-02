@@ -133,3 +133,4 @@ map(
 
 map("n", "<leader>u", cmd.UndotreeToggle)
 map("c", "cd .", ":cd %:h")
+map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
