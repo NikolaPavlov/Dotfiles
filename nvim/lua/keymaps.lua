@@ -44,7 +44,7 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- File navigations
--- map("n", "<leader>s", ":Startify<CR>") # TODO: 
+map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
 map("n", "<leader>el", ":NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
 
 -- Better searching
@@ -133,4 +133,3 @@ map(
 
 map("n", "<leader>u", cmd.UndotreeToggle)
 map("c", "cd .", ":cd %:h")
-map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
