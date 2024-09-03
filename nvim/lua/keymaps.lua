@@ -132,3 +132,9 @@ map(
   "prl",
   ":!perl -I /usr/local/remedy2/COMMON/lib -I /usr/local/remedy2/CORE/lib -I /usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib -c %<CR>"
 )
+
+map("n", "<leader>u", cmd.UndotreeToggle)
+map("c", "cd .", ":cd %:h")
+map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
+
+vim.api.nvim_create_user_command("Stage", "'<,'>Gitsigns stage_hunk", { range = true })
