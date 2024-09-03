@@ -46,6 +46,11 @@ map("v", ">", ">gv")
 -- File navigations
 map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
 map("n", "<leader>el", ":NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
+-- map("n", "<leader>c", ":Oil --float /mnt/core/home/n.pavlov/easypay_core<CR>")
+-- map("n", "<leader>w", ":Oil --float /mnt/web/home/n.pavlov/easypay_web<CR>")
+-- map("n", "<leader>c", ":NERDTree /mnt/core/home/n.pavlov/easypay_core<CR>")
+-- map("n", "<leader>w", ":NERDTree /mnt/web/home/n.pavlov/easypay_web<CR>")
+map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
 
 -- Better searching
 map("n", "/", "/\\v")
@@ -114,15 +119,12 @@ map("i", "<C-a>", "<C-o>$")
 -- OTHER
 map("c", "zen", ":ZenMode<CR>")
 map("c", "ls<CR>", ":Lazy sync<CR>")
-map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
+map("n", "<leader>u", cmd.UndotreeToggle)
+map("c", "cd .", ":cd %:h")
 
 -- Format xml (visual selectd xml + <leader>x)
 map("v", ":xml", ":! xmllint --format -<CR>")
 map("v", "f", ":! python -m json.tool<CR>")
-
--- Quick navigation CORE WEB
-map("n", "<leader>c", ":Oil --float /mnt/core/home/n.pavlov/easypay_core<CR>")
-map("n", "<leader>w", ":Oil --float /mnt/web/home/n.pavlov/easypay_web<CR>")
 
 -- check Perl syntax
 map(
@@ -130,6 +132,3 @@ map(
   "prl",
   ":!perl -I /usr/local/remedy2/COMMON/lib -I /usr/local/remedy2/CORE/lib -I /usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib -c %<CR>"
 )
-
-map("n", "<leader>u", cmd.UndotreeToggle)
-map("c", "cd .", ":cd %:h")
