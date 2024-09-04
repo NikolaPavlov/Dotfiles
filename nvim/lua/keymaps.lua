@@ -46,11 +46,13 @@ map("v", ">", ">gv")
 -- File navigations
 map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
 map("n", "<leader>el", ":NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
--- map("n", "<leader>c", ":Oil --float /mnt/core/home/n.pavlov/easypay_core<CR>")
--- map("n", "<leader>w", ":Oil --float /mnt/web/home/n.pavlov/easypay_web<CR>")
+-- map("n", "<leader>el", ":Oil --float /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
 -- map("n", "<leader>c", ":NERDTree /mnt/core/home/n.pavlov/easypay_core<CR>")
 -- map("n", "<leader>w", ":NERDTree /mnt/web/home/n.pavlov/easypay_web<CR>")
 map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
+map("n", "<leader>cc", ":cd /mnt/core/home/n.pavlov/easypay_core<CR>")
+map("n", "<leader>cw", ":cd /mnt/web/home/n.pavlov/easypay_web<CR>")
+
 
 -- Better searching
 map("n", "/", "/\\v")
@@ -138,3 +140,4 @@ map("c", "cd .", ":cd %:h")
 map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
 
 vim.api.nvim_create_user_command("Stage", "'<,'>Gitsigns stage_hunk", { range = true })
+map("n", "<leader>gb", ":G blame<CR>")

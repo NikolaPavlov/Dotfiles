@@ -55,7 +55,7 @@ return {
       vim.keymap.set("n", "<leader>f",  builtin.find_files, { desc = "[S]earch [F]iles" })
       vim.keymap.set("n", "<leader>r",  builtin.live_grep, { desc = "[S]earch by [G]rep" })
       vim.keymap.set("n", "<leader>g",  builtin.git_files, { desc = "[S]earch by Git files" })
-      vim.keymap.set("n", "<leader>gb", builtin.git_branches, { desc = "[S]earch by Git files" })
+      vim.keymap.set("c", "gb<CR>", builtin.git_branches, { desc = "[S]earch by Git files" })
       vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
       vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
       vim.keymap.set("n", "<leader>sm", builtin.marks, { desc = "[S]earch [M]arks" })
@@ -64,21 +64,13 @@ return {
       -- TODO: code actions
       -- TODO: buffers
 
-      -- vim.keymap.set("n", "<leader>sc", function()
-      --   builtin.find_files({ cwd = "/mnt/core/home/n.pavlov/easypay_core/CORE/" })
-      -- end, { desc = "[S]earch [N]eovim files" })
-      --
-      -- vim.keymap.set("n", "<leader>sw", function()
-      --   builtin.find_files({ cwd = "/mnt/web/home/n.pavlov/easypay_web/WEB/" })
-      -- end, { desc = "[S]earch [N]eovim files" })
-
       vim.keymap.set("n", "<leader>c", function()
-        builtin.find_files({ search_dirs = {'/mnt/core/home/n.pavlov/easypay_core<CR>'} })
-      end, { desc = "[S]earch [C]ore files" })
+        builtin.find_files({ cwd = "/mnt/core/home/n.pavlov/easypay_core/CORE/" })
+      end, { desc = "[S]earch [N]eovim files" })
 
       vim.keymap.set("n", "<leader>w", function()
-        builtin.find_files({ search_dirs = {'/mnt/web/home/n.pavlov/easypay_web<CR>'} })
-      end, { desc = "[S]earch [W]eb files" })
+        builtin.find_files({ cwd = "/mnt/web/home/n.pavlov/easypay_web/WEB/" })
+      end, { desc = "[S]earch [N]eovim files" })
 
       vim.keymap.set("n", "<leader>v", function()
         builtin.find_files({ cwd = vim.fn.stdpath("config") })
