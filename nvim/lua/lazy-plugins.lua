@@ -23,24 +23,10 @@ require("lazy").setup({
   require("gh/plugins/harpoon"),
   require("gh/plugins/noice"),
   require("gh/plugins/oil"),
-  -- require("gh/plugins/neo-tree"),
-  -- require("gh/plugins/vim-rest-console"),
-  -- require("gh/plugins/neorg"),
-  -- require 'gh/plugins/debug',
-  -- require("gh/plugins/conform"),     # formater
-  -- require("gh/plugins/indent_line"),
-  -- require 'gh/plugins/lint',
-  -- require("gh/plugins/startify"),
   {
     "numToStr/Comment.nvim",
     opts = {},
   },
-  -- {
-  --   "vhyrro/luarocks.nvim",
-  --   priority = 1000,
-  --   config = true,
-  -- },
-  -- "Valloric/MatchTagAlways", -- highlight matching html tags
   "dm1try/golden_size", -- auto resize splits
   "szw/vim-maximizer",
   "tpope/vim-fugitive",
@@ -52,7 +38,11 @@ require("lazy").setup({
   "nvim-pack/nvim-spectre",
   "RishabhRD/nvim-cheat.sh", -- provide :Cheat and :CheaList commmand
   -- "RishabhRD/popfix",
-
+  -- require("gh/plugins/vim-rest-console"),
+  -- require("gh/plugins/neorg"),
+  -- require 'gh/plugins/debug',
+  -- require("gh/plugins/conform"),     # formater
+  -- require 'gh/plugins/lint',
   -- "ThePrimeagen/vim-be-good",
 }, {
     ui = {

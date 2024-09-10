@@ -9,7 +9,6 @@ opt.wrap = true -- disable line wraps
 opt.linebreak = true
 opt.showbreak = "  "
 opt.breakindent = true
--- opt.lazyredraw = true
 opt.relativenumber = true
 opt.scrolloff = 8
 opt.sidescrolloff = 5
@@ -31,38 +30,26 @@ opt.shiftround = true -- round indent
 opt.autoread = true -- auto read file when it was modified outside of vim
 opt.autowriteall = true -- automatically write file when leaving modified buffer
 opt.swapfile = false
-
 opt.updatetime = 300
 opt.timeoutlen = 500
-
 opt.hidden = true -- enable background buffers (files)
 opt.joinspaces = false -- no double spaces with join
 opt.list = true -- show some invisible characters
 opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.inccommand = "split"
-
 opt.termguicolors = true -- true color support
 opt.mouse = "a" -- enable mouse (for resize splits)
 opt.showmode = false
 opt.guicursor = "" -- keep cursor as block in insert mode
 opt.signcolumn = "yes"
-
 opt.foldlevel = 99
 opt.foldlevelstart = 10
 opt.foldmethod = "indent"
-
 opt.fileencoding = "cp1251"
 opt.fileencodings = "ucs-bom, utf-8, cp1251"
-
 opt.helpheight = 999999
-
--- Theme settings
--- vim.g.badwolf_darkgutter = 1 -- dark background for the relativenumbers
--- vim.g.badwolf_html_link_underline = 0
-
--- Other
 opt.synmaxcol = 240 -- max column for syntax highlight
-opt.autochdir = true
+-- opt.autochdir = true
 
 -- disable builtins plugins
 local disabled_built_ins = {
