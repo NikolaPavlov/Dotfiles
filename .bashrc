@@ -35,6 +35,7 @@ alias screenshot='scrot -s screenshot.png'
 alias sw='ssh work'
 alias score='ssh core'
 alias sweb='ssh web'
+alias sleep='systemctl sleep'
 
 # exa aliases
 alias l='exa -l'
