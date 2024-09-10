@@ -1,5 +1,4 @@
 local cmd = vim.cmd
-local exec = vim.api.nvim_exec
 
 -- When editing a file always jump to the last known location
 cmd [[
@@ -7,34 +6,33 @@ cmd [[
 ]]
 
 -- FileType Perl
-cmd [[
-    augroup ft_perl
-        au!
-        au FileType perl set foldmethod=indent
-        noremap <F5> :w<CR>:!perl %<CR>
-        inoremap <F5> <Esc>:w<CR>:!perl %<CR>
-    augroup END
-]]
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.pl"},
+  callback = function()
+      vim.keymap.set("n", "<F5>", ":w<CR>:!perl %<CR>")
+  end
+})
 
 -- FileType .def
-cmd [[
-    augroup ft_def
-        au!
-        au BufNewFile,BufRead *.def set wrap textwidth=120
-        au BufNewFile,BufRead *.def set colorcolumn=120
-        autocmd FileType def setlocal ts=2 sts=2 sw=2 expandtab
-    augroup END
-]]
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.def"},
+  callback = function()
+    vim.opt.textwidth=120
+    vim.opt.colorcolumn="120"
+    -- # TODO: set tabstop=2
+    -- # TODO: set sts=2
+    -- # TODO: set sw=2
+  end
+})
 
 -- FileType Python
-cmd [[
-    augroup ft_python
-        au!
-        au FileType python set foldmethod=indent
-        noremap <F6> :w<CR>:!python %<CR>
-        inoremap <F6> <Esc>:w<CR>:!python %<CR>
-    augroup END
-]]
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.py"},
+  callback = function()
+    vim.keymap.set("n", "<F6>", ":w<CR>:!python %<CR>")
+    vim.keymap.set("i", "<F6>", "<Esc>:w<CR>:!python %<CR>")
+  end
+})
 
 -- FileType norg
 cmd [[
@@ -64,7 +62,7 @@ cmd [[
 -- ]]
 
 -- don't auto commenting new lines
--- cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- 2 spaces for selected filetypes
 cmd [[
