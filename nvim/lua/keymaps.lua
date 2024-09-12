@@ -37,10 +37,10 @@ map("v", "<leader><leader>", "<Esc>")
 map("n", "<leader>a", "ggVG")
 map("n", "<leader><CR>", ":Oil --float<CR>")
 map("n", "<leader>o", ":MaximizerToggle<CR>")
--- map("n", "<leader>d", ":bd<CR>")
+map("n", "<leader>d", ":bd<CR>")
 -- Close the current buffer and move to the previous one
 -- This replicates the idea of closing a tab
-map("n", "<leader>d", ":bp <BAR> bd #<CR>")
+-- map("n", "<leader>d", ":bp <BAR> bd #<CR>")
 
 map("n", "<CR>", ":b# <CR>")
 
@@ -50,7 +50,6 @@ map("v", ">", ">gv")
 -- File navigations
 map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
 map("n", "<leader>el", ":NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
--- map("n", "<leader>el", ":Oil --float /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
 -- map("n", "<leader>c", ":NERDTree /mnt/core/home/n.pavlov/easypay_core<CR>")
 -- map("n", "<leader>w", ":NERDTree /mnt/web/home/n.pavlov/easypay_web<CR>")
 map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")

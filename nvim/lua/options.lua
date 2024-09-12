@@ -49,7 +49,7 @@ opt.fileencoding = "cp1251"
 opt.fileencodings = "ucs-bom, utf-8, cp1251"
 opt.helpheight = 999999
 opt.synmaxcol = 240 -- max column for syntax highlight
--- opt.autochdir = true
+opt.autochdir = true
 
 -- disable builtins plugins
 local disabled_built_ins = {

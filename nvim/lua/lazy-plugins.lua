@@ -23,10 +23,7 @@ require("lazy").setup({
   require("gh/plugins/harpoon"),
   require("gh/plugins/noice"),
   require("gh/plugins/oil"),
-  {
-    "numToStr/Comment.nvim",
-    opts = {},
-  },
+  { "numToStr/Comment.nvim", opts = {}, },
   "dm1try/golden_size", -- auto resize splits
   "szw/vim-maximizer",
   "tpope/vim-fugitive",
@@ -44,6 +41,7 @@ require("lazy").setup({
   -- require("gh/plugins/conform"),     # formater
   -- require 'gh/plugins/lint',
   -- "ThePrimeagen/vim-be-good",
+  -- "Ramilito/winbar.nvim",
 }, {
     ui = {
       icons = vim.g.have_nerd_font and {} or {
