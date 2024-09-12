@@ -54,15 +54,15 @@ return {
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>f",  builtin.find_files, { desc = "[S]earch [F]iles" })
       vim.keymap.set("n", "<leader>r",  builtin.live_grep, { desc = "[S]earch by [G]rep" })
-      vim.keymap.set("n", "<leader>g",  builtin.git_files, { desc = "[S]earch by Git files" })
-      vim.keymap.set("c", "gb<CR>", builtin.git_branches, { desc = "[S]earch by Git files" })
+      -- vim.keymap.set("n", "<leader>g",  builtin.git_files, { desc = "[S]earch by Git files" })
+      vim.keymap.set("c", "gb<CR>",     builtin.git_branches, { desc = "[S]earch by Git files" })
       vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
       vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
       vim.keymap.set("n", "<leader>sm", builtin.marks, { desc = "[S]earch [M]arks" })
       vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set("n", "<leader>bb", builtin.buffers, { desc = 'buffers with telescope' })
       -- TODO: builtin.lsp_document_symbols
       -- TODO: code actions
-      -- TODO: buffers
 
       vim.keymap.set("n", "<leader>c", function()
         builtin.find_files({ cwd = "/mnt/core/home/n.pavlov/easypay_core/CORE/" })
