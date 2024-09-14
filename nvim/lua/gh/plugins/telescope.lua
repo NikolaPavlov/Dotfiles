@@ -49,6 +49,9 @@ return {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown(),
           },
+          persisted = {
+            layout_config = { width = 0.50, height = 0.50 }
+          }
         },
       })
 
@@ -56,6 +59,7 @@ return {
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension, "harpoon")
       pcall(require("telescope").load_extension, "ui-select")
+      require("telescope").load_extension("persisted")
 
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>r",  builtin.live_grep, { desc = "Search by [G]rep" })

@@ -32,8 +32,9 @@ require("lazy").setup({
   "tpope/vim-unimpaired", -- git mappings
   "christoomey/vim-tmux-navigator",
   "mbbill/undotree",
-  "nvim-pack/nvim-spectre",
-  "RishabhRD/nvim-cheat.sh", -- provide :Cheat and :CheaList commmand
+  require("gh/plugins/persisted")
+  -- "nvim-pack/nvim-spectre",
+  -- "RishabhRD/nvim-cheat.sh", -- provide :Cheat and :CheaList commmand
   -- "RishabhRD/popfix",
   -- require("gh/plugins/vim-rest-console"),
   -- require("gh/plugins/neorg"),
