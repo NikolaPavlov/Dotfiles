@@ -26,9 +26,6 @@ return {
 
       require("telescope").setup({
         defaults = {
-          -- mappings = {
-          -- 	i = { ["<c-enter>"] = "to_fuzzy_refine" },
-          -- },
           layout_strategy = "horizontal",
           layout_config = {
             horizontal = {
@@ -44,6 +41,8 @@ return {
               },
               buffers = {
                 previewer = false,
+                layout_config = { width = 0.5, height = 0.6 }
+                -- # TODO: shorten the filenames
               }
         };
         extensions = {
@@ -58,17 +57,16 @@ return {
       pcall(require("telescope").load_extension, "harpoon")
       pcall(require("telescope").load_extension, "ui-select")
 
-      -- See `:help telescope.builtin`
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>f",  builtin.find_files, { desc = "Search [F]iles" })
       vim.keymap.set("n", "<leader>r",  builtin.live_grep, { desc = "Search by [G]rep" })
-      vim.keymap.set("n", "<leader>b", builtin.buffers)
+      vim.keymap.set("n", "<leader>b",  builtin.buffers)
+      vim.keymap.set("n", "<leader>f",  builtin.find_files, { desc = "Search [F]iles" })
+      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search [F]iles" })
       vim.keymap.set("n", "<leader>sb", builtin.git_branches, { desc = "Search [G]it [B]ranches" })
       vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
       vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
       vim.keymap.set("n", "<leader>sm", builtin.marks, { desc = "[S]earch [M]arks" })
       vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      -- vim.keymap.set("n", "<leader>bb", builtin.buffers, { desc = 'buffers with telescope' })
       -- TODO: builtin.lsp_document_symbols
       -- TODO: code actions
 
@@ -84,9 +82,13 @@ return {
         builtin.find_files({ cwd = vim.fn.stdpath("config") })
       end, { desc = "Search Neo[V]im files" })
 
+      vim.keymap.set("n", "<leader>el", function()
+        builtin.find_files({ cwd = "/mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/" })
+      end, { desc = "Search Logs" })
+
       vim.keymap.set("n", "<leader>l", function()
         builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-          winblend = 15,
+          winblend = 10,
           previewer = false,
         }))
       end, { desc = "[l] Fuzzily search in current buffer" })

@@ -49,7 +49,7 @@ map("v", ">", ">gv")
 
 -- File navigations
 map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
-map("n", "<leader>el", ":NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
+-- map("n", "<leader>el", ":NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
 -- map("n", "<leader>c", ":NERDTree /mnt/core/home/n.pavlov/easypay_core<CR>")
 -- map("n", "<leader>w", ":NERDTree /mnt/web/home/n.pavlov/easypay_web<CR>")
 map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
