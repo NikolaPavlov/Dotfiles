@@ -56,5 +56,5 @@ windows:
         - core:
           - ssh work
           - ssh core
-          - cd easypay_core/CORE
+          - cd easypay_core/CORE/bin
           - psql

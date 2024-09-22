@@ -20,7 +20,7 @@ require("lazy").setup({
   require("gh/plugins/mini"),
   require("gh/plugins/treesitter"),
   require("gh/plugins/nerdtree"),
-  require("gh/plugins/harpoon"),
+  -- require("gh/plugins/harpoon"),
   require("gh/plugins/noice"),
   require("gh/plugins/oil"),
   { "numToStr/Comment.nvim", opts = {}, },
