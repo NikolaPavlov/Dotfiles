@@ -144,3 +144,6 @@ map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
 
 vim.api.nvim_create_user_command("Stage", "'<,'>Gitsigns stage_hunk", { range = true })
 map("n", "<leader>gb", ":G blame<CR>")
+
+map("n", "<Left>", ":bnext<CR>")
+map("n", "<Right>", ":bprevious<CR>")
