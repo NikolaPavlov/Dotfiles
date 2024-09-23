@@ -147,3 +147,6 @@ map("n", "<leader>gb", ":G blame<CR>")
 
 map("n", "<Left>", ":bnext<CR>")
 map("n", "<Right>", ":bprevious<CR>")
+
+map("n", "<leader>ss", ":mksession! ~/.config/nvim/sessions/mysession.vim<CR>")
+map("n", "<leader>sl", ":source ~/.config/nvim/sessions/mysession.vim<CR>")
