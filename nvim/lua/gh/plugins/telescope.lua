@@ -62,7 +62,7 @@ return {
       -- require("telescope").load_extension("persisted")
 
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>r",  builtin.live_grep, { desc = "Search by [G]rep" })
+      -- vim.keymap.set("n", "<leader>r",  builtin.live_grep, { desc = "Search by [G]rep" })
       vim.keymap.set("n", "<leader>b",  builtin.buffers)
       vim.keymap.set("n", "<leader>f",  builtin.find_files, { desc = "Search [F]iles" })
       vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search [F]iles" })

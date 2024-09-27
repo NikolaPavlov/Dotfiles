@@ -44,6 +44,7 @@ require("lazy").setup({
   -- require 'gh/plugins/lint',
   -- "ThePrimeagen/vim-be-good",
   -- "Ramilito/winbar.nvim",
+ 'lfv89/vim-interestingwords',
 }, {
     ui = {
       icons = vim.g.have_nerd_font and {} or {
