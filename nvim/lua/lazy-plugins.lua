@@ -1,4 +1,6 @@
 -------------------------------------------------------------------------------
+-- TODO: "AckslD/nvim-neoclip.lua" | add as telescope extension
+-- TODO: "kevinhwang91/nvim-ufo"
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: "lukas-reineke/lsp-format.nvim
 -- TODO: setup perlnavigator
