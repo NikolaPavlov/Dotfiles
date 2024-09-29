@@ -16,7 +16,10 @@ require("lazy").setup({
   require("gh/plugins/gitsigns"),
   require("gh/plugins/lspconfig"),
   require("gh/plugins/nvim-cmp"), -- + luasnip as dependency
-  require("gh/plugins/lualine"),
+  -------------------------------
+  -- require("gh/plugins/lualine"),
+  require("gh/plugins/vim-airline"),
+  -------------------------------
   require("gh/plugins/todo-comments"),
   require("gh/plugins/mini"),
   require("gh/plugins/treesitter"),
