@@ -162,4 +162,4 @@ map("n", "<leader>r", ":lua live_grep_git_dir()<CR>")
 
 -- vim.keys.normal_mode["<leader>gG"] = ":lua live_grep_git_dir()<CR>"
 
-map('c', "so", ":luafile $MYVIMRC")
+map('n', "<leader>so", ":luafile $MYVIMRC")
