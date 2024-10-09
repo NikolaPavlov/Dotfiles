@@ -7,6 +7,7 @@
 -- TODO: https://github.com/folke/trouble.nvim
 -- TODO: https://github.com/nvim-telescope/telescope-frecency.nvim
 -- TODO: https://github.com/kndndrj/nvim-dbee
+-- TODO: "sindrets/diffview.nvim"
 -------------------------------------------------------------------------------
 
 require("lazy").setup({

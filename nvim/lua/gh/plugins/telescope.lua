@@ -91,6 +91,14 @@ return {
         builtin.find_files({ cwd = "/mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/" })
       end, { desc = "Search Logs" })
 
+      vim.keymap.set("n", "<C-w>", function()
+        builtin.find_files({ cwd = "~/Documents/Repos/WikiNeorg/" })
+      end, { desc = "Search [W]iki" })
+
+      vim.keymap.set("n", "<C-h>", function()
+        builtin.find_files({ cwd = "~" })
+      end, { desc = "Search [H]ome" })
+
       vim.keymap.set("n", "<leader>l", function()
         builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
           winblend = 10,
