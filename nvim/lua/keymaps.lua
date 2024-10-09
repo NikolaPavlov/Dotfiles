@@ -37,10 +37,9 @@ map("v", "<leader><leader>", "<Esc>")
 map("n", "<leader>a", "ggVG")
 map("n", "<leader><CR>", ":Oil --float<CR>")
 map("n", "<leader>o", ":MaximizerToggle<CR>")
-map("n", "<leader>d", ":bd<CR>")
--- Close the current buffer and move to the previous one
--- This replicates the idea of closing a tab
--- map("n", "<leader>d", ":bp <BAR> bd #<CR>")
+
+-- map("n", "<leader>d", ":bd<CR>")
+map("n", "<leader>d", ":bp <BAR> bd #<CR>")
 
 map("n", "<CR>", ":b# <CR>")
 

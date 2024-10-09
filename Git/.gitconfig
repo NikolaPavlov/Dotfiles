@@ -34,3 +34,5 @@
 [safe]
 	directory = /mnt/core/home/n.pavlov/easypay_core
 	directory = /mnt/web/home/n.pavlov/easypay_web
+[pull]
+	rebase = true
