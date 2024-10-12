@@ -95,9 +95,10 @@ return {
         builtin.find_files({ cwd = "~/Documents/Repos/WikiNeorg/" })
       end, { desc = "Search [W]iki" })
 
-      vim.keymap.set("n", "<C-h>", function()
-        builtin.find_files({ cwd = "~" })
-      end, { desc = "Search [H]ome" })
+      # TODO 
+      -- vim.keymap.set("n", "<C-h>", function()
+      --   builtin.find_files({ cwd = "~" })
+      -- end, { desc = "Search [H]ome" })
 
       vim.keymap.set("n", "<leader>l", function()
         builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
