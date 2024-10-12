@@ -1,3 +1,5 @@
+-- # TODO filename_first
+
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -33,6 +35,9 @@ return {
             },
           },
           sorting_strategy = "ascending",
+          -- vimgrep_args = {
+          --   "--fixed-strings",
+          -- }
         },
         -- pickers = {}
         pickers = {
@@ -43,28 +48,41 @@ return {
                 previewer = false,
                 layout_config = { width = 0.5, height = 0.6 }
                 -- # TODO: shorten the filenames
+              },
+              -- wrap_results=true,only_sort_text=true,initial_mode="normal",disable_coordinates=true,grep_open_files=true,default_text="something",sorting_strategy="ascending"
+              live_grep = {
+                disable_coordinates = true,
+                -- "--fixed-strings", -- # TODO 
               }
         };
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown(),
           },
-          -- persisted = {
-          --   layout_config = { width = 0.50, height = 0.50 }
-          -- }
         },
       })
 
+
+
+      -- local c = require('telescope.config').values
+      -- require('telescope.builtin').live_grep {
+      --   vimgrep_arguments = table.insert(c.vimgrep_arguments, '--fixed-strings'),
+      -- }
+
+
+
+
+
       -- Enable Telescope extensions if they are installed
-      pcall(require("telescope").load_extension, "fzf")
-      pcall(require("telescope").load_extension, "harpoon")
-      pcall(require("telescope").load_extension, "ui-select")
+      -- pcall(require("telescope").load_extension, "fzf")
+      -- pcall(require("telescope").load_extension, "ui-select")
       -- require("telescope").load_extension("persisted")
 
       local builtin = require("telescope.builtin")
-      -- vim.keymap.set("n", "<leader>r",  builtin.live_grep, { desc = "Search by [G]rep" })
+
+      -- require('telescope.builtin').live_grep({path_display="hidden",wrap_results=true,only_sort_text=true,initial_mode="normal",disable_coordinates=true,grep_open_files=true,default_text="something",sorting_strategy="ascending"})
+      vim.keymap.set("n", "<leader>r",  builtin.live_grep, { desc = "Search by [G]rep" })
       vim.keymap.set("n", "<leader>b",  builtin.buffers)
-      -- vim.keymap.set("n", "<leader>f",  builtin.find_files, { desc = "Search [F]iles" })
       vim.keymap.set("n", "<leader>f",  builtin.git_files, { desc = "Search [F]iles" })
       vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search [F]iles" })
       vim.keymap.set("n", "<leader>sb", builtin.git_branches, { desc = "Search [G]it [B]ranches" })
@@ -95,7 +113,7 @@ return {
         builtin.find_files({ cwd = "~/Documents/Repos/WikiNeorg/" })
       end, { desc = "Search [W]iki" })
 
-      # TODO 
+      -- TODO 
       -- vim.keymap.set("n", "<C-h>", function()
       --   builtin.find_files({ cwd = "~" })
       -- end, { desc = "Search [H]ome" })
