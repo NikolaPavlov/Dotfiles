@@ -150,17 +150,15 @@ map("n", "<Right>", ":bnext<CR>")
 map("n", "<leader>ss", ":mksession! ~/.config/nvim/sessions/mysession.vim<CR>")
 map("n", "<leader>sl", ":source ~/.config/nvim/sessions/mysession.vim<CR>")
 
--- # TODO 
--- function live_grep_git_dir()
---   local git_dir = vim.fn.system(string.format("git -C %s rev-parse --show-toplevel", vim.fn.expand("%:p:h")))
---   git_dir = string.gsub(git_dir, "\n", "") -- remove newline character from git_dir
---   local opts = {
---     cwd = git_dir,
---   }
---   require('telescope.builtin').live_grep(opts)
--- end
--- map("n", "<leader>r", ":lua live_grep_git_dir()<CR>")
+-- # TODO move to telescope.lua
+function live_grep_git_dir()
+  local git_dir = vim.fn.system(string.format("git -C %s rev-parse --show-toplevel", vim.fn.expand("%:p:h")))
+  git_dir = string.gsub(git_dir, "\n", "") -- remove newline character from git_dir
+  local opts = {
+    cwd = git_dir,
+  }
+  require('telescope.builtin').live_grep(opts)
+end
+map("n", "<leader>r", ":lua live_grep_git_dir()<CR>")
 
--- vim.keys.normal_mode["<leader>gG"] = ":lua live_grep_git_dir()<CR>"
-
-map('n', "<leader>so", ":luafile $MYVIMRC")
+map('n', "<leader>so", ":luafile $MYVIMRC<CR>")
