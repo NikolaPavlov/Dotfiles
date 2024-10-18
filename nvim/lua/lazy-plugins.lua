@@ -1,5 +1,4 @@
 -------------------------------------------------------------------------------
--- TODO: "AckslD/nvim-neoclip.lua" | add as telescope extension
 -- TODO: "kevinhwang91/nvim-ufo"
 -- TODO: 'nvim-spectre' -- search and replace
 -- TODO: "lukas-reineke/lsp-format.nvim
@@ -28,9 +27,9 @@ require("lazy").setup({
   require("gh/plugins/mini"),
   require("gh/plugins/treesitter"),
   require("gh/plugins/nerdtree"),
-  -- require("gh/plugins/harpoon"),
   require("gh/plugins/noice"),
   require("gh/plugins/oil"),
+  require("gh/plugins/snipe"),
   { "numToStr/Comment.nvim", opts = {}, },
   "dm1try/golden_size", -- auto resize splits
   "szw/vim-maximizer",

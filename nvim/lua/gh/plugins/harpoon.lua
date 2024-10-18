@@ -1,3 +1,4 @@
+# TODO depreciated
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",

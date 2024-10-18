@@ -1,5 +1,3 @@
--- # TODO filename_first
-
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -43,7 +41,7 @@ return {
               buffers = {
                 previewer = false,
                 layout_config = { width = 0.5, height = 0.6 }
-                -- # TODO: shorten the filenames
+                -- # TODO: shorten the filenames ( only filenames )
               },
               live_grep = {
                 disable_coordinates=true,
@@ -53,22 +51,17 @@ return {
                 }
               }
         };
-        -- extensions = {
-        --   ["ui-select"] = {
-        --     require("telescope.themes").get_dropdown(),
-        --   },
-        -- },
       })
 
       -- Enable Telescope extensions if they are installed
+      -- TODO: "AckslD/nvim-neoclip.lua" | add as telescope extension
       -- pcall(require("telescope").load_extension, "fzf")
       -- pcall(require("telescope").load_extension, "ui-select")
       -- require("telescope").load_extension("persisted")
 
       local builtin = require("telescope.builtin")
 
-      -- vim.keymap.set("n", "<leader>r",  builtin.live_grep, { desc = "Search by [G]rep" })
-      vim.keymap.set("n", "<leader>b",  builtin.buffers)
+      -- vim.keymap.set("n", "<leader>b",  builtin.buffers)
       vim.keymap.set("n", "<leader>f",  builtin.git_files, { desc = "Search [F]iles" })
       vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search [F]iles" })
       vim.keymap.set("n", "<leader>sb", builtin.git_branches, { desc = "Search [G]it [B]ranches" })
