@@ -30,7 +30,9 @@ require("lazy").setup({
   require("gh/plugins/noice"),
   require("gh/plugins/oil"),
   require("gh/plugins/snipe"),
-  { "numToStr/Comment.nvim", opts = {}, },
+  require("gh/plugins/comment"),
+  require("gh/plugins/indent"),
+
   "dm1try/golden_size", -- auto resize splits
   "szw/vim-maximizer",
   "tpope/vim-fugitive",
