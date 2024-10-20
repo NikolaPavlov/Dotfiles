@@ -16,8 +16,7 @@ opt.cursorline = true
 opt.laststatus = 2
 opt.splitbelow = true
 opt.splitright = true
-opt.clipboard = "unnamedplus" -- auto copy/paste from Vim to system clipboard
--- opt.clipboard:append("unnamedplus") -- auto copy/paste from Vim to system clipboard
+opt.clipboard:append("unnamedplus")  -- auto copy/paste from Vim to system clipboard
 opt.undofile = true
 vim.g.undodir = "$XDG_DATA_HOME/.config/nvim/undo_dir//"
 opt.textwidth = 119
@@ -126,8 +125,3 @@ vim.g.clipboard = {
 -- }
 -- end
 -- ######################################################################
-
-
-
-
--- vim: ts=2 sts=2 sw=2 et

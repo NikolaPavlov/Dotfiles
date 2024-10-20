@@ -19,9 +19,9 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   callback = function()
     vim.opt.textwidth=120
     vim.opt.colorcolumn="120"
-    -- # TODO: set tabstop=2
-    -- # TODO: set sts=2
-    -- # TODO: set sw=2
+    vim.opt.tabstop=2
+    vim.opt.sts=2
+    vim.opt.sw=2
   end
 })
 

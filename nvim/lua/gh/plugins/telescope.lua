@@ -104,9 +104,16 @@ return {
           previewer = false,
         }))
       end, { desc = "[l] Fuzzily search in current buffer" })
+
+      function live_grep_git_dir()
+        local git_dir = vim.fn.system(string.format("git -C %s rev-parse --show-toplevel", vim.fn.expand("%:p:h")))
+        git_dir = string.gsub(git_dir, "\n", "") -- remove newline character from git_dir
+        local opts = {
+          cwd = git_dir,
+        }
+        require('telescope.builtin').live_grep(opts)
+      end
+      vim.keymap.set("n", "<leader>r", ":lua live_grep_git_dir()<CR>")
     end,
   },
 }
-
-
--- vim: ts=2 sts=2 sw=2 et

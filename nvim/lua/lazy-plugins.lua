@@ -10,19 +10,13 @@
 -------------------------------------------------------------------------------
 
 require("lazy").setup({
-  require("gh/plugins/kanagawa"),
-  -- require("gh/plugins/tokyonight"),
-  -- require("gh/plugins/badwolf"),
-  --
+  require("gh/plugins/colors/kanagawa"),
   require("gh/plugins/telescope"),
   require("gh/plugins/gitsigns"),
   require("gh/plugins/lspconfig"),
   require("gh/plugins/nvim-cmp"), -- + luasnip as dependency
-  -------------------------------
-  -- TODO 
   require("gh/plugins/lualine"),
   -- require("gh/plugins/vim-airline"),
-  -------------------------------
   require("gh/plugins/todo-comments"),
   require("gh/plugins/mini"),
   require("gh/plugins/treesitter"),
@@ -32,7 +26,6 @@ require("lazy").setup({
   require("gh/plugins/snipe"),
   require("gh/plugins/comment"),
   require("gh/plugins/indent"),
-
   "dm1try/golden_size", -- auto resize splits
   "szw/vim-maximizer",
   "tpope/vim-fugitive",
@@ -75,5 +68,3 @@ require("lazy").setup({
 
 local ft = require('Comment.ft')
 ft.set('def', '#%s')
-
--- vim: ts=2 sts=2 sw=2 et

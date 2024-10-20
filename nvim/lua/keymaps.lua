@@ -1,27 +1,3 @@
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
---------------------------------------------
--- my keymaps
---------------------------------------------
 local map = vim.keymap.set
 local cmd = vim.cmd
 
@@ -48,13 +24,9 @@ map("v", ">", ">gv")
 
 -- File navigations
 map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
--- map("n", "<leader>el", ":NERDTree /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/ <CR>")
--- map("n", "<leader>c", ":NERDTree /mnt/core/home/n.pavlov/easypay_core<CR>")
--- map("n", "<leader>w", ":NERDTree /mnt/web/home/n.pavlov/easypay_web<CR>")
 map("c", "logd<CR>", ":!rm -rf /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/core<CR>")
 map("n", "<leader>cc", ":cd /mnt/core/home/n.pavlov/easypay_core<CR>")
 map("n", "<leader>cw", ":cd /mnt/web/home/n.pavlov/easypay_web<CR>")
-
 
 -- Better searching
 map("n", "/", "/\\v")
@@ -93,6 +65,7 @@ map("n", "cv", ":%s/\\<<C-r><C-w>\\>/")
 -- swap splits
 map("n", "s", "<C-w>r")
 
+-- # TODO
 -- SSH copy paste (OSC52)
 map("v", "<leader>y", "<Plug>OSCYankVisual<CR>")
 
@@ -120,12 +93,6 @@ map("n", "N", "Nzzzv")
 -- Go to the end of line in insert mode
 map("i", "<C-a>", "<C-o>$")
 
--- OTHER
-map("c", "zen", ":ZenMode<CR>")
-map("c", "ls<CR>", ":Lazy sync<CR>")
-map("n", "<leader>u", cmd.UndotreeToggle)
-map("c", "cd .", ":cd %:h")
-
 -- Format xml (visual selectd xml + <leader>x)
 map("v", ":xml", ":! xmllint --format -<CR>")
 map("v", "f", ":! python -m json.tool<CR>")
@@ -137,28 +104,30 @@ map(
   ":!perl -I /usr/local/remedy2/COMMON/lib -I /usr/local/remedy2/CORE/lib -I /usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib -c %<CR>"
 )
 
+-- OTHER
+map("c", "ls<CR>", ":Lazy sync<CR>")
 map("n", "<leader>u", cmd.UndotreeToggle)
-map("c", "cd .", ":cd %:h")
 map("n", "<leader>s", ": lua MiniStarter.open()<CR>")
-
-vim.api.nvim_create_user_command("Stage", "'<,'>Gitsigns stage_hunk", { range = true })
+map("c", "cd .", ":cd %:h")
 map("n", "<leader>gb", ":G blame<CR>")
-
 map("n", "<Left>", ":bprevious<CR>")
 map("n", "<Right>", ":bnext<CR>")
-
 map("n", "<leader>ss", ":mksession! ~/.config/nvim/sessions/mysession.vim<CR>")
 map("n", "<leader>sl", ":source ~/.config/nvim/sessions/mysession.vim<CR>")
+map('n', "<leader>so", ":source %<CR>")
 
--- # TODO move to telescope.lua
-function live_grep_git_dir()
-  local git_dir = vim.fn.system(string.format("git -C %s rev-parse --show-toplevel", vim.fn.expand("%:p:h")))
-  git_dir = string.gsub(git_dir, "\n", "") -- remove newline character from git_dir
-  local opts = {
-    cwd = git_dir,
-  }
-  require('telescope.builtin').live_grep(opts)
-end
-map("n", "<leader>r", ":lua live_grep_git_dir()<CR>")
+-- Diagnostic keymaps
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
+map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
-map('n', "<leader>so", ":luafile $MYVIMRC<CR>")
+-- [[ Basic Autocommands ]]
+--  See `:help lua-guide-autocommands`
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
