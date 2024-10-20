@@ -3,5 +3,10 @@ return {
   keys = {
     {"<leader>b", function () require("snipe").open_buffer_menu() end, desc = "Open Snipe buffer menu"}
   },
-  opts = {}
+  opts = {
+    ui = {
+      position = "center",
+    },
+    sort = "last",
+  }
 }
