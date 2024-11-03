@@ -114,7 +114,8 @@ map("n", "<Left>", ":bprevious<CR>")
 map("n", "<Right>", ":bnext<CR>")
 map("n", "<leader>ss", ":mksession! ~/.config/nvim/sessions/mysession.vim<CR>")
 map("n", "<leader>sl", ":source ~/.config/nvim/sessions/mysession.vim<CR>")
-map('n', "<leader>so", ":source %<CR>")
+-- map('n', "<leader>so", ":source %<CR>")
+map('n', "<leader>p", ":Telescope neoclip<CR>")
 
 -- Diagnostic keymaps
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })

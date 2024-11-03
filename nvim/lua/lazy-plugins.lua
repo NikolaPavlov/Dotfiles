@@ -26,6 +26,7 @@ require("lazy").setup({
   require("gh/plugins/snipe"),
   require("gh/plugins/comment"),
   require("gh/plugins/indent"),
+  require("gh/plugins/nvim-neoclip"),
   "dm1try/golden_size", -- auto resize splits
   "szw/vim-maximizer",
   "tpope/vim-fugitive",
