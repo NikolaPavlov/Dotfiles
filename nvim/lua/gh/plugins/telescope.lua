@@ -1,3 +1,8 @@
+-- # TODO map for only open buffers with telescope with options {sort_mru} or {sort_lastused}
+-- # TODO https://www.reddit.com/r/neovim/comments/17bt08g/how_do_you_guys_navigate_open_buffers/
+-- # TODO https://github.com/danielfalk/smart-open.nvim
+
+
 return {
   {
     "nvim-telescope/telescope.nvim",
