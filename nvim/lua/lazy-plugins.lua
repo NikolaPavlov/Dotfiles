@@ -48,6 +48,7 @@ require("lazy").setup({
   -- "Ramilito/winbar.nvim",
   'lfv89/vim-interestingwords',
   "nvim-telescope/telescope-file-browser.nvim",
+  "jvgrootveld/telescope-zoxide",
 }, {
     ui = {
       icons = vim.g.have_nerd_font and {} or {
