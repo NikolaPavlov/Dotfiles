@@ -24,7 +24,7 @@ alias u='sudo apt update && sudo apt upgrade'
 alias temp='watch -n 2 sensors'
 alias vifm='vifmrun '
 alias vf='vifmrun '
-alias z='zathura '
+# alias z='zathura '
 alias flac='smloadr'
 alias rec='recordmydesktop --device hw:1'
 alias vpn='~/Documents/Repos/Dotfiles/Scripts/vpn.sh'
@@ -176,3 +176,4 @@ export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
 
 PATH="$HOME/.local/bin:$PATH"
+eval "$(zoxide init bash)"
