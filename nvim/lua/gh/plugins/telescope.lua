@@ -40,21 +40,24 @@ return {
           sorting_strategy = "ascending",
         },
         pickers = {
-              current_buffer_fuzzy_find = {
-                previewer = false,
-              },
-              buffers = {
-                previewer = false,
-                layout_config = { width = 0.5, height = 0.6 }
-                -- # TODO: shorten the filenames ( only filenames )
-              },
-              live_grep = {
-                disable_coordinates=true,
-                -- file_encoding = cp1251, -- TODO
-                additional_args = {
-                  "--fixed-strings",
-                }
-              }
+          find_files = {
+            hidden = true,
+          },
+          current_buffer_fuzzy_find = {
+            previewer = false,
+          },
+          buffers = {
+            previewer = false,
+            layout_config = { width = 0.5, height = 0.6 }
+            -- # TODO: shorten the filenames ( only filenames )
+          },
+          live_grep = {
+            disable_coordinates=true,
+            -- file_encoding = cp1251, -- TODO
+            additional_args = {
+              "--fixed-strings",
+            }
+          }
         };
       })
 
