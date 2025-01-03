@@ -926,7 +926,7 @@ font:
   normal:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    # family: UbuntuMono Nerd Font
+    family: UbuntuMono Nerd Font
     # family: SourceCodePro
     # family: JetBrains Mono Nerd Font
     # family: Hack Nerd Font
@@ -934,8 +934,8 @@ font:
     # family: Firacode
     # family: MartianMono
     # family: iosevka
-    family: JetBrains Mono
-    style: Regular
+    # family: JetBrains Mono
+    # style: Regular
 
   # Point size
   size: 5
