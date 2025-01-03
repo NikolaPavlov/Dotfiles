@@ -13,7 +13,7 @@ mkdir -p $HOME/.config/tmux
 mkdir -p $HOME/.config/tmuxinator
 mkdir -p $HOME/.gnupg
 
-ln -sfv "$DOTFILES_DIR/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
+ln -sfv "$DOTFILES_DIR/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
 ln -sfv "$DOTFILES_DIR/alacritty/themes" ~/.config/alacritty/themes
 ln -sfv "$DOTFILES_DIR/.bashrc" $HOME
 ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME

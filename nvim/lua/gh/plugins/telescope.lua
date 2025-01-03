@@ -41,7 +41,7 @@ return {
         },
         pickers = {
           find_files = {
-            hidden = true,
+            hidden = true
           },
           current_buffer_fuzzy_find = {
             previewer = false,
@@ -72,8 +72,8 @@ return {
       local builtin = require("telescope.builtin")
 
       -- vim.keymap.set("n", "<leader>b",  builtin.buffers)
-      vim.keymap.set("n", "<leader>f",  builtin.git_files, { desc = "Search [F]iles" })
-      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search [F]iles" })
+      -- vim.keymap.set("n", "<leader>f",  builtin.git_files, { desc = "Search [F]iles" })
+      vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "Search [F]iles" })
       vim.keymap.set("n", "<leader>sb", builtin.git_branches, { desc = "Search [G]it [B]ranches" })
       vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
       vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
