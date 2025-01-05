@@ -12,6 +12,6 @@ return {
       let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
       let NERDTreeShowLineNumbers = 1
       ]])
-    -- vim.keymap.set("n", "<C-t>", ":NERDTreeToggle<CR>", { desc = "Toggle NERDTree" })
+    vim.keymap.set("n", "<C-t>", ":NERDTreeToggle<CR>", { desc = "Toggle NERDTree" })
   end,
 }
