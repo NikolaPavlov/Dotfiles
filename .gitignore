@@ -6,5 +6,4 @@ Git/*
 Git/.gitconfig
 .gitignore
 nvim/plugin/*
-nvim/sessions
 qtile/config.py
