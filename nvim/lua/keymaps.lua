@@ -95,6 +95,7 @@ map("i", "<C-a>", "<C-o>$")
 
 -- Format xml (visual selectd xml + <leader>x)
 map("v", ":xml", ":! xmllint --format -<CR>")
+map("v", "<leader>x", ":! xmllint --format -<CR>")
 map("v", "f", ":! python -m json.tool<CR>")
 
 -- check Perl syntax
