@@ -53,6 +53,7 @@ require("lazy").setup({
   'lfv89/vim-interestingwords',
   "nvim-telescope/telescope-file-browser.nvim",
   "jvgrootveld/telescope-zoxide",
+  "LunarVim/bigfile.nvim",
 }, {
     ui = {
       icons = vim.g.have_nerd_font and {} or {
