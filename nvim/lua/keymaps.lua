@@ -14,8 +14,10 @@ map("n", "<leader>a", "ggVG")
 map("n", "<leader><CR>", ":Oil --float<CR>")
 map("n", "<leader>o", ":MaximizerToggle<CR>")
 
--- map("n", "<leader>d", ":bd<CR>")
-map("n", "<leader>d", ":bp <BAR> bd #<CR>")
+map("n", "<leader>d", ":bd<CR>")
+-- # TODO <leader>D to close all buffers except current one
+map("n", "<leader>D", ":bufdo bd<CR>")
+-- map("n", "<leader>d", ":bp <BAR> bd #<CR>")
 
 map("n", "<CR>", ":b# <CR>")
 
