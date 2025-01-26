@@ -28,6 +28,7 @@ require("lazy").setup({
   require("gh/plugins/nvim-neoclip"),
   require("gh/plugins/harpoon"),
   require("gh/plugins/faster"),
+  require("gh/plugins/flash"),
   "dm1try/golden_size", -- auto resize splits
   "szw/vim-maximizer",
   "tpope/vim-fugitive",
