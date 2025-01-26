@@ -3,7 +3,13 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
+<<<<<<< HEAD
 cd ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins
+||||||| constructed merge base
+cd /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post
+=======
+cd /mnt/core/home/n.pavlov/easypay_core/CORE/bin
+>>>>>>> up
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,6 +19,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
+<<<<<<< HEAD
 <<<<<<< HEAD
 badd +4 ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins/oil.lua
 badd +1 ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins/bigfile-nvim.lua
@@ -24,8 +31,16 @@ badd +77 ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins/telescope.lua
 badd +595 /mnt/core/home/n.pavlov/easypay_core/CORE/bin/process_imt_export_trans.pl
 badd +485 /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm
 >>>>>>> up
+||||||| constructed merge base
+badd +595 /mnt/core/home/n.pavlov/easypay_core/CORE/bin/process_imt_export_trans.pl
+badd +485 /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm
+=======
+badd +880 /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm
+badd +587 /mnt/core/home/n.pavlov/easypay_core/CORE/bin/process_imt_export_trans.pl
+>>>>>>> up
 argglobal
 %argdel
+<<<<<<< HEAD
 <<<<<<< HEAD
 edit ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins/oil.lua
 ||||||| constructed merge base
@@ -42,6 +57,20 @@ wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
 >>>>>>> up
+||||||| constructed merge base
+edit /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+=======
+edit /mnt/core/home/n.pavlov/easypay_core/CORE/bin/process_imt_export_trans.pl
+>>>>>>> up
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -49,8 +78,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-wincmd =
 argglobal
+balt /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -59,6 +88,7 @@ setlocal fdl=10
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+<<<<<<< HEAD
 <<<<<<< HEAD
 2
 normal! zo
@@ -70,9 +100,27 @@ let s:l = 527 - ((22 * winheight(0) + 22) / 45)
 =======
 let s:l = 485 - ((41 * winheight(0) + 40) / 80)
 >>>>>>> up
+||||||| constructed merge base
+let s:l = 485 - ((41 * winheight(0) + 40) / 80)
+=======
+558
+normal! zo
+590
+normal! zo
+597
+normal! zo
+607
+normal! zo
+607
+normal! zc
+621
+normal! zc
+let s:l = 587 - ((37 * winheight(0) + 40) / 80)
+>>>>>>> up
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
+<<<<<<< HEAD
 <<<<<<< HEAD
 keepjumps 4
 normal! 02|
@@ -81,7 +129,13 @@ keepjumps 527
 normal! 013|
 =======
 keepjumps 485
+||||||| constructed merge base
+keepjumps 485
+=======
+keepjumps 587
+>>>>>>> up
 normal! 0
+<<<<<<< HEAD
 wincmd w
 argglobal
 if bufexists(fnamemodify("/mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm", ":p")) | buffer /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm | else | edit /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm | endif
@@ -105,6 +159,31 @@ normal! 0
 wincmd w
 wincmd =
 >>>>>>> up
+||||||| constructed merge base
+wincmd w
+argglobal
+if bufexists(fnamemodify("/mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm", ":p")) | buffer /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm | else | edit /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm | endif
+if &buftype ==# 'terminal'
+  silent file /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm
+endif
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=10
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 485 - ((41 * winheight(0) + 40) / 80)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 485
+normal! 0
+wincmd w
+wincmd =
+=======
+>>>>>>> up
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -120,7 +199,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

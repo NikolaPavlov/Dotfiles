@@ -10,6 +10,9 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"*.pl"},
   callback = function()
       vim.keymap.set("n", "<F5>", ":w<CR>:!perl %<CR>")
+      vim.opt.tabstop=4
+      vim.opt.sts=4
+      vim.opt.sw=4
   end
 })
 
