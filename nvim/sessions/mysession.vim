@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post
+cd ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,12 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +527 /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm
-badd +295 /mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/process_imt_export_trans/soapcomm.log
-badd +77 ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins/telescope.lua
+badd +4 ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins/oil.lua
+badd +1 ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins/bigfile-nvim.lua
 argglobal
 %argdel
-edit /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libupt.pm
+edit ~/Documents/Repos/Dotfiles/nvim/lua/gh/plugins/oil.lua
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -35,12 +34,16 @@ setlocal fdl=10
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 527 - ((22 * winheight(0) + 22) / 45)
+2
+normal! zo
+4
+normal! zo
+let s:l = 4 - ((3 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 527
-normal! 013|
+keepjumps 4
+normal! 02|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
