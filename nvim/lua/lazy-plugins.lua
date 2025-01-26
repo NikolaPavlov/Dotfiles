@@ -28,6 +28,7 @@ require("lazy").setup({
   require("gh/plugins/nvim-neoclip"),
   -- require("gh/plugins/harpoon"),
   -- require("gh/plugins/faster"),
+  -- require("gh/plugins/harpoon"),
   require("gh/plugins/flash"),
   require("gh/plugins/snacks"),
   "dm1try/golden_size", -- auto resize splits
@@ -37,9 +38,11 @@ require("lazy").setup({
   "tpope/vim-repeat", -- repeat plugin commands
   "tpope/vim-unimpaired", -- git mappings
   "christoomey/vim-tmux-navigator",
-  "mbbill/undotree",
+  -- "mbbill/undotree",
   "ervandew/supertab",
-  "godlygeek/tabular",
+  -- "godlygeek/tabular",
+  -- 'lfv89/vim-interestingwords',
+
   -- "nvim-pack/nvim-spectre",
   -- "RishabhRD/nvim-cheat.sh", -- provide :Cheat and :CheaList commmand
   -- "RishabhRD/popfix",
@@ -50,10 +53,9 @@ require("lazy").setup({
   -- require 'gh/plugins/lint',
   -- "ThePrimeagen/vim-be-good",
   -- "Ramilito/winbar.nvim",
-  'lfv89/vim-interestingwords',
-  "nvim-telescope/telescope-file-browser.nvim",
-  "jvgrootveld/telescope-zoxide",
-  "LunarVim/bigfile.nvim",
+
+  -- "nvim-telescope/telescope-file-browser.nvim",
+  -- "jvgrootveld/telescope-zoxide",
 }, {
     ui = {
       icons = vim.g.have_nerd_font and {} or {
