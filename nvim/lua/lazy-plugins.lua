@@ -16,8 +16,6 @@ require("lazy").setup({
   require("gh/plugins/lspconfig"),
   require("gh/plugins/nvim-cmp"), -- + luasnip as dependency
   require("gh/plugins/lualine"),
-  -- require("gh/plugins/vim-airline"),
-  -- require("gh/plugins/todo-comments"),
   require("gh/plugins/mini"),
   require("gh/plugins/treesitter"),
   require("gh/plugins/nerdtree"),
@@ -41,7 +39,7 @@ require("lazy").setup({
   -- "mbbill/undotree",
   "ervandew/supertab",
   -- "godlygeek/tabular",
-  -- 'lfv89/vim-interestingwords',
+  'lfv89/vim-interestingwords',
 
   -- "nvim-pack/nvim-spectre",
   -- "RishabhRD/nvim-cheat.sh", -- provide :Cheat and :CheaList commmand
