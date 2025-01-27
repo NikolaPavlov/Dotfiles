@@ -7,23 +7,7 @@ return {
     bigfile = { enabled = true },
     -- dashboard = { enabled = true },
     indent = { enabled = true },
-    input = {
-      enabled = true,
-      icon = " ",
-      icon_hl = "SnacksInputIcon",
-      icon_pos = "left",
-      prompt_pos = "title",
-      win = { style = "input" },
-      expand = true,
-
-      -- position = "float",
-      -- border = "rounded",
-      -- title_pos = "center",
-      -- height = 1,
-      -- width = 60,
-      -- relative = "editor",
-      -- noautocmd = true,
-    },
+    input = { enabled = true, },
     notifier = {
       enabled = true,
       timeout = 3000,
@@ -33,6 +17,7 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    scope = { enabled = true },
     styles = {
       notification = {
         -- wo = { wrap = true } -- Wrap notifications

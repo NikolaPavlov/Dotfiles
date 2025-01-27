@@ -34,7 +34,7 @@ require("lazy").setup({
   "dm1try/golden_size", -- auto resize splits
   "szw/vim-maximizer",
   "tpope/vim-fugitive",
-  "tpope/vim-surround", -- change surroundings
+  -- "tpope/vim-surround", -- change surroundings -- # TODO replace with mini
   "tpope/vim-repeat", -- repeat plugin commands
   "tpope/vim-unimpaired", -- git mappings
   "christoomey/vim-tmux-navigator",
