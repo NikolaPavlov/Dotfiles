@@ -22,10 +22,7 @@ require("lazy").setup({
   -- require("gh/plugins/noice"),
   require("gh/plugins/oil"),
   require("gh/plugins/comment"),
-  -- require("gh/plugins/indent"),
   require("gh/plugins/nvim-neoclip"),
-  -- require("gh/plugins/harpoon"),
-  -- require("gh/plugins/faster"),
   -- require("gh/plugins/harpoon"),
   require("gh/plugins/flash"),
   require("gh/plugins/snacks"),
@@ -36,9 +33,9 @@ require("lazy").setup({
   "tpope/vim-repeat", -- repeat plugin commands
   "tpope/vim-unimpaired", -- git mappings
   "christoomey/vim-tmux-navigator",
-  -- "mbbill/undotree",
+  "mbbill/undotree",
   "ervandew/supertab",
-  -- "godlygeek/tabular",
+  "godlygeek/tabular",
   'lfv89/vim-interestingwords',
 
   -- "nvim-pack/nvim-spectre",

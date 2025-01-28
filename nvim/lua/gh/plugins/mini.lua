@@ -4,24 +4,13 @@ return {
     config = function()
       require("mini.ai").setup({ n_lines = 500 })
       require("mini.surround").setup()
-      -- require("mini.animate").setup()
       require("mini.bracketed").setup()
       require("mini.bufremove").setup()
       require("mini.cursorword").setup()
       require("mini.icons").setup()
-      -- require("mini.jump").setup()
-      -- require("mini.notify").setup()
       require("mini.pairs").setup()
       require("mini.tabline").setup()
       require("mini.trailspace").setup()
-      -- require("mini.icons").setup()
-      -- require("mini.completion").setup()
-      -- require("mini.move").setup()
-      -- require("mini.visits").setup()
-      -- require("mini.sessions").setup({
-        -- autoread = true,
-        -- autowrite = true,
-      -- })
 
       local starter = require('mini.starter')
       starter.setup({
@@ -30,8 +19,6 @@ return {
           starter.sections.builtin_actions(),
           starter.sections.recent_files(10, false),
           starter.sections.recent_files(10, true),
-          -- Use this if you set up 'mini.sessions'
-          starter.sections.sessions(5, true)
         },
         content_hooks = {
           starter.gen_hook.adding_bullet(),
@@ -40,12 +27,7 @@ return {
         },
       })
 
-      require('mini.bufremove').setup({
-
-      })
-
-      -- `MiniBufremove.delete`({buf_id}, {force})
-      -- `MiniBufremove.wipeout`({buf_id}, {force})
+      -- require('mini.bufremove').setup({ })
 
       -- MiniHipaterns
       local hipatterns = require("mini.hipatterns")
