@@ -19,7 +19,6 @@ require("lazy").setup({
   require("gh/plugins/mini"),
   require("gh/plugins/treesitter"),
   require("gh/plugins/nerdtree"),
-  -- require("gh/plugins/noice"),
   require("gh/plugins/oil"),
   require("gh/plugins/comment"),
   require("gh/plugins/nvim-neoclip"),
@@ -38,16 +37,8 @@ require("lazy").setup({
   "godlygeek/tabular",
   'lfv89/vim-interestingwords',
 
-  -- "nvim-pack/nvim-spectre",
-  -- "RishabhRD/nvim-cheat.sh", -- provide :Cheat and :CheaList commmand
-  -- "RishabhRD/popfix",
   -- require("gh/plugins/vim-rest-console"),
   -- require("gh/plugins/neorg"),
-  -- require 'gh/plugins/debug',
-  -- require("gh/plugins/conform"),     # formater
-  -- require 'gh/plugins/lint',
-  -- "ThePrimeagen/vim-be-good",
-  -- "Ramilito/winbar.nvim",
 
   -- "nvim-telescope/telescope-file-browser.nvim",
   -- "jvgrootveld/telescope-zoxide",
