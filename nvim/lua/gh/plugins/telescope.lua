@@ -113,6 +113,7 @@ return {
         builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
           winblend = 0,
           previewer = false,
+          layout_config = { height = 0.70, width = 0.70 },
         }))
       end, { desc = "[l] Fuzzily search in current buffer" })
 
