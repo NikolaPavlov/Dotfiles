@@ -12,29 +12,21 @@ return {
       require("mini.tabline").setup()
       require("mini.trailspace").setup()
 
-      -- local starter = require('mini.starter')
-      -- starter.setup({
-      --   evaluate_single = true,
-      --   items = {
-      --     starter.sections.builtin_actions(),
-      --     starter.sections.recent_files(10, false),
-      --     starter.sections.recent_files(10, true),
-      --     -- Use this if you set up 'mini.sessions'
-      --     starter.sections.sessions(5, true)
-      --   },
-      --   content_hooks = {
-      --     starter.gen_hook.adding_bullet(),
-      --     starter.gen_hook.indexing('all', { 'Builtin actions' }),
-      --     starter.gen_hook.padding(3, 2),
-      --   },
-      -- })
+      local starter = require('mini.starter')
+      starter.setup({
+        evaluate_single = true,
+        items = {
+          starter.sections.builtin_actions(),
+          starter.sections.recent_files(10, false),
+          starter.sections.recent_files(10, true),
+        },
+        content_hooks = {
+          starter.gen_hook.adding_bullet(),
+          starter.gen_hook.indexing('all', { 'Builtin actions' }),
+          starter.gen_hook.padding(3, 2),
+        },
+      })
 
-      -- require('mini.bufremove').setup({ })
-
-      -- `MiniBufremove.delete`({buf_id}, {force})
-      -- `MiniBufremove.wipeout`({buf_id}, {force})
-
-      -- MiniHipaterns
       local hipatterns = require("mini.hipatterns")
       hipatterns.setup({
         highlighters = {
@@ -42,8 +34,6 @@ return {
           hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
           todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
           note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
-
-          -- Highlight hex color strings (`#rrggbb`) using that color
           hex_color = hipatterns.gen_highlighter.hex_color(),
         },
       })

@@ -65,7 +65,7 @@ map("n", "=", "mzo<Esc>`z")
 map("n", "cv", ":%s/\\<<C-r><C-w>\\>/")
 
 -- swap splits
-map("n", "s", "<C-w>r")
+map("n", "<C-s>", "<C-w>r")
 
 -- # TODO
 -- SSH copy paste (OSC52)
