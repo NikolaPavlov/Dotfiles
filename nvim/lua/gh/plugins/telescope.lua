@@ -1,5 +1,4 @@
-# TODO use :telescope lsp_document_symbols
--- # TODO map for only open buffers with telescope with options {sort_mru} or {sort_lastused}
+-- # TODO map for only open buffers with telescope with options {sort_mru} or {sort_lastused}jump
 -- # TODO https://www.reddit.com/r/neovim/comments/17bt08g/how_do_you_guys_navigate_open_buffers/
 -- # TODO https://github.com/danielfalk/smart-open.nvim
 
@@ -80,7 +79,8 @@ return {
       vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
       vim.keymap.set("n", "<leader>m", builtin.marks, { desc = "[S]earch [M]arks" })
       vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      -- TODO: builtin.lsp_document_symbols
+      vim.keymap.set("n", "<leader>sf", builtin.lsp_document_symbols, { desc = '[S]earch LSP document symbols' })
+      vim.keymap.set("n", "<leader>sj", builtin.jumplist, { desc = '[S]earch the jumplist' })
       -- TODO: code actions
 
       vim.keymap.set("n", "<leader>c", function()

@@ -35,7 +35,7 @@ require("lazy").setup({
   "mbbill/undotree",
   "ervandew/supertab",
   "godlygeek/tabular",
-  'lfv89/vim-interestingwords',
+  "lfv89/vim-interestingwords",
 
   -- require("gh/plugins/vim-rest-console"),
   -- require("gh/plugins/neorg"),
