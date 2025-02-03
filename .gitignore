@@ -7,4 +7,5 @@ Git/.gitconfig
 .gitignore
 nvim/plugin/*
 nvim/lazy-lock.json
+nvim/sessions/*
 qtile/config.py
