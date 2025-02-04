@@ -26,8 +26,8 @@ require("lazy").setup({
   require("gh/plugins/flash"),
   require("gh/plugins/snacks"),
 
-  require("gh/plugins/hardtime"),
-  require("gh/plugins/precognition"),
+  -- require("gh/plugins/hardtime"),
+  -- require("gh/plugins/precognition"),
 
   "dm1try/golden_size", -- auto resize splits
   "szw/vim-maximizer",
