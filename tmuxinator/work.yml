@@ -52,6 +52,7 @@ windows:
         - web:
           - ssh work
           - ssh web
+          - cd easypay_web
           - systemctl status httpd.npavlov.service
         - core:
           - ssh work
