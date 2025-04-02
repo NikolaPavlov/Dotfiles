@@ -36,6 +36,7 @@ alias sw='ssh work'
 alias score='ssh core'
 alias sweb='ssh web'
 alias sleep='systemctl sleep'
+alias deepseek='ollama run deepseek-r1:7b'
 
 # exa aliases
 alias l='exa -l'
