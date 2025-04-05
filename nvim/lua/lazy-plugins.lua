@@ -42,7 +42,7 @@ require("lazy").setup({
   "lfv89/vim-interestingwords",
 
   -- require("gh/plugins/vim-rest-console"),
-  -- require("gh/plugins/neorg"),
+  require("gh/plugins/neorg"),
 
   -- "nvim-telescope/telescope-file-browser.nvim",
   -- "jvgrootveld/telescope-zoxide",
