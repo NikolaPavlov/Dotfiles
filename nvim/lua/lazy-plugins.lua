@@ -22,30 +22,22 @@ require("lazy").setup({
   require("gh/plugins/oil"),
   require("gh/plugins/comment"),
   require("gh/plugins/nvim-neoclip"),
-  -- require("gh/plugins/harpoon"),
   require("gh/plugins/flash"),
   require("gh/plugins/snacks"),
+  require("gh/plugins/neorg"),
 
-  -- require("gh/plugins/hardtime"),
-  -- require("gh/plugins/precognition"),
 
-  "dm1try/golden_size", -- auto resize splits
+  "dm1try/golden_size",
   "szw/vim-maximizer",
   "tpope/vim-fugitive",
-  -- "tpope/vim-surround", -- change surroundings -- # TODO replace with mini
-  "tpope/vim-repeat", -- repeat plugin commands
-  "tpope/vim-unimpaired", -- git mappings
+  -- "tpope/vim-surround", -- # TODO replace with mini
+  "tpope/vim-repeat",
+  "tpope/vim-unimpaired",
   "christoomey/vim-tmux-navigator",
   "mbbill/undotree",
   "ervandew/supertab",
   "godlygeek/tabular",
   "lfv89/vim-interestingwords",
-
-  -- require("gh/plugins/vim-rest-console"),
-  require("gh/plugins/neorg"),
-
-  -- "nvim-telescope/telescope-file-browser.nvim",
-  -- "jvgrootveld/telescope-zoxide",
 }, {
     ui = {
       icons = vim.g.have_nerd_font and {} or {
