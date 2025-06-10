@@ -32,8 +32,8 @@ map("n", "<leader>cc", ":cd /mnt/core/home/n.pavlov/easypay_core<CR>")
 map("n", "<leader>cw", ":cd /mnt/web/home/n.pavlov/easypay_web<CR>")
 
 -- Better searching
-map("n", "/", "/\\v")
-map("n", "?", "?\\v")
+-- map("n", "/", "/\\v")
+-- map("n", "?", "?\\v")
 
 -- Windows moving
 map("n", "<C-h>", "<C-w>h")
