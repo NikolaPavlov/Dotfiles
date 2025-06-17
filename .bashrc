@@ -174,8 +174,8 @@ PERL_MM_OPT="INSTALL_BASE=/home/gogo/perl5"; export PERL_MM_OPT;
 # PATH="$PATH:$HOME/.cargo/bin"
 
 # ruby
-export GEM_HOME="$(gem env user_gemhome)"
-export PATH="$PATH:$GEM_HOME/bin"
+# export GEM_HOME="$(gem env user_gemhome)"
+# export PATH="$PATH:$GEM_HOME/bin"
 
 PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init bash)"
