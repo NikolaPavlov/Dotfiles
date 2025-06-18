@@ -178,7 +178,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/gogo/perl5"; export PERL_MM_OPT;
 # export PATH="$PATH:$GEM_HOME/bin"
 
 PATH="$HOME/.local/bin:$PATH"
-eval "$(zoxide init bash)"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
