@@ -16,7 +16,7 @@ return {
             workspaces = {
               notes = "~/Documents/Repos/WikiNeorg",
             },
-            default_workspace = "notes",
+            default_workspace = "wiki",
           },
         },
       },
