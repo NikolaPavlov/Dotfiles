@@ -30,3 +30,4 @@ ln -sfv "$DOTFILES_DIR/tmuxinator/work.yml" ~/.config/tmuxinator
 ln -sfv "$DOTFILES_DIR/.inputrc" $HOME
 ln -sfv "$DOTFILES_DIR/.xinitrc" $HOME
 sudo ln -sfv "$DOTFILES_DIR/pacman.conf" /etc/
+sudo ln -sfv "$DOTFILES_DIR/70-synaptics.conf" /etc/X11/xorg.conf.d/
