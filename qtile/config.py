@@ -29,8 +29,8 @@ keys = [
 
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 3- unmute")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 3+ unmute")),
-    Key([], "XF86MonBrightnessUp", lazy.spawn("light -A 2")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("light -U 2")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brillo -q -A 2")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brillo -q -U 2")),
     Key([], "XF86Favorites", lazy.spawn("brightnessctl --device='tpacpi::kbd_backlight' set 1")),
     # Key([], "", lazy.spawn("brightnessctl --device='tpacpi::kbd_backlight' set 0")),
 
