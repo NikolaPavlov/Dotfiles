@@ -58,7 +58,8 @@ alias search='sudo  pacman -Ss '
 alias clean='pacman -Qtdq | sudo pacman -Rns -'
 
 # Git
-alias g='git'
+# alias g='git'
+alias g='gemini'
 alias pull='cd ~/Documents/Repos/Dotfiles/ && git pull && cd ~/Documents/Repos/WikiNeorg && git pull '
 alias push='git add . && git commit -m "up" && git push '
 DELIM='####################'
