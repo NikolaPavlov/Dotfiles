@@ -20,7 +20,7 @@ require("lazy").setup({
   require("gh/plugins/treesitter"),
   require("gh/plugins/nerdtree"),
   require("gh/plugins/oil"),
-  require("gh/plugins/comment"),
+  -- require("gh/plugins/comment"),
   require("gh/plugins/nvim-neoclip"),
   require("gh/plugins/flash"),
   require("gh/plugins/snacks"),
