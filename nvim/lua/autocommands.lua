@@ -1,79 +1,107 @@
-local cmd = vim.cmd
+local function augroup(name)
+  return vim.api.nvim_create_augroup("gh_" .. name, { clear = true })
+end
 
--- When editing a file always jump to the last known location
-cmd [[
-    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-]]
+-- Check if we should restore cursor position
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = augroup("last_loc"),
+  callback = function(event)
+    local exclude = { "gitcommit" }
+    local buf = event.buf
+    if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].gh_last_loc then
+      return
+    end
+    vim.b[buf].gh_last_loc = true
+    local mark = vim.api.nvim_buf_get_mark(buf, '"')
+    local lcount = vim.api.nvim_buf_line_count(buf)
+    if mark[1] > 0 and mark[1] <= lcount then
+      pcall(vim.api.nvim_win_set_cursor, 0, mark)
+    end
+  end,
+})
 
 -- FileType Perl
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.pl"},
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("ft_perl"),
+  pattern = "perl",
   callback = function()
-      vim.keymap.set("n", "<F5>", ":w<CR>:!perl %<CR>")
-      vim.opt.tabstop=4
-      vim.opt.sts=4
-      vim.opt.sw=4
-  end
+    vim.keymap.set("n", "<F5>", ":w<CR>:!perl %<CR>", { buffer = true })
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.shiftwidth = 4
+  end,
 })
 
 -- FileType .def
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.def"},
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("ft_def"),
+  pattern = "def",
   callback = function()
-    vim.opt.textwidth=120
-    vim.opt.colorcolumn="120"
-    vim.opt.tabstop=2
-    vim.opt.sts=2
-    vim.opt.sw=2
-  end
+    vim.opt_local.textwidth = 120
+    vim.opt_local.colorcolumn = "120"
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end,
 })
 
 -- FileType Python
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.py"},
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("ft_python"),
+  pattern = "python",
   callback = function()
-    vim.keymap.set("n", "<F6>", ":w<CR>:!python %<CR>")
-    vim.keymap.set("i", "<F6>", "<Esc>:w<CR>:!python %<CR>")
-  end
+    vim.keymap.set("n", "<F6>", ":w<CR>:!python %<CR>", { buffer = true })
+    vim.keymap.set("i", "<F6>", "<Esc>:w<CR>:!python %<CR>", { buffer = true })
+  end,
 })
 
--- FileType norg
-cmd [[
-    autocmd FileType norg setlocal shiftwidth=2 softtabstop=2 expandtab
-]]
+-- FileType Settings
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("ft_settings"),
+  pattern = { "norg", "lua", "xml", "html", "xhtml", "css", "scss", "javascript", "yaml" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.expandtab = true
+  end,
+})
 
--- FileType Lua
-cmd [[
-    augroup ft_lua
-        au!
-        au FileType lua set foldmethod=indent
-        autocmd FileType lua setlocal ts=2 sts=2 sw=2 expandtab
-    augroup END
-]]
+-- Don't auto-comment new lines
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("no_auto_comment"),
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
+})
 
--- Filetype HTML
-cmd [[
-  augroup ft_htmldjango
-    au!
-    au FileType html setlocal nowrap
-  augroup END
-]]
+-- Terminal settings
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = augroup("term_settings"),
+  callback = function()
+    vim.opt_local.listchars = ""
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.cursorline = false
+    vim.cmd("startinsert")
+  end,
+})
 
--- autosave # TODO: FIX: (errors in the log)
--- cmd [[
---     autocmd CursorHold,CursorHoldI * update
--- ]]
+vim.api.nvim_create_autocmd("BufLeave", {
+  group = augroup("term_leave"),
+  pattern = "term://*",
+  callback = function()
+    vim.cmd("stopinsert")
+  end,
+})
 
--- don't auto commenting new lines
-cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
-
--- 2 spaces for selected filetypes
-cmd [[
-  autocmd FileType ft_def,xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
-]]
-
-cmd [[
-  autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
-  autocmd TermOpen * startinsert
-  autocmd BufLeave term://* stopinsert
-]]
+-- Autosave
+-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--   group = augroup("autosave"),
+--   callback = function()
+--     if vim.bo.modified and vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
+--       vim.cmd("silent! update")
+--     end
+--   end,
+-- })

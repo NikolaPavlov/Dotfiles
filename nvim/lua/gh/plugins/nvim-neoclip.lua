@@ -1,11 +1,9 @@
 return {
   "AckslD/nvim-neoclip.lua",
-  requires = {
-    -- you'll need at least one of these
-    -- {'nvim-telescope/telescope.nvim'},
-    -- {'ibhagwan/fzf-lua'},
+  dependencies = {
+    { "nvim-telescope/telescope.nvim" },
   },
   config = function()
-    require('neoclip').setup()
+    require("neoclip").setup()
   end,
 }

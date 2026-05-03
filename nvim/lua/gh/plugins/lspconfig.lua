@@ -135,6 +135,19 @@ return {
             },
           },
         },
+        perlnavigator = {
+          settings = {
+            perlnavigator = {
+              perlPath = "perl",
+              includePaths = {
+                "/usr/local/remedy2/COMMON/lib",
+                "/usr/local/remedy2/CORE/lib",
+                "/usr/local/remedy2/SYS/easypay_n.pavlov/CORE/lib",
+              },
+            },
+          },
+        },
+        pyright = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -149,9 +162,7 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        "lua_ls",
-        "perlnavigator",
-        "pyright",
+        "stylua", -- Used to format Lua code
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

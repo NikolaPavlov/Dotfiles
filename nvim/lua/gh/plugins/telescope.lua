@@ -62,9 +62,9 @@ return {
       })
 
       -- Enable Telescope extensions if they are installed
-      -- TODO: "AckslD/nvim-neoclip.lua" | add as telescope extension
-      -- pcall(require("telescope").load_extension, "fzf")
-      -- pcall(require("telescope").load_extension, "ui-select")
+      pcall(require("telescope").load_extension, "fzf")
+      pcall(require("telescope").load_extension, "ui-select")
+      pcall(require("telescope").load_extension, "neoclip")
       -- require("telescope").load_extension("persisted")
       -- require("telescope").load_extension("zoxide")
 

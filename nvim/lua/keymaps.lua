@@ -15,9 +15,19 @@ map("n", "<leader><CR>", ":Oil --float<CR>")
 map("n", "<leader>o", ":MaximizerToggle<CR>")
 
 -- map("n", "<leader>d", ":bd<CR>")
-map("n", "<leader>d", ":b#<bar>bd#<CR>")
--- # TODO <leader>D to close all buffers except current one
-map("n", "<leader>D", ":bufdo bd<CR>")
+map("n", "<leader>d", function()
+  Snacks.bufdelete()
+end, { desc = "Close current buffer" })
+
+map("n", "<leader>D", function()
+  local bufs = vim.api.nvim_list_bufs()
+  local current_buf = vim.api.nvim_get_current_buf()
+  for _, buf in ipairs(bufs) do
+    if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
+      require("mini.bufremove").delete(buf, false)
+    end
+  end
+end, { desc = "Close all buffers except current" })
 -- map("n", "<leader>d", ":bp <BAR> bd #<CR>")
 
 map("n", "<CR>", ":b# <CR>")

@@ -18,7 +18,6 @@ require("lazy").setup({
   require("gh/plugins/lualine"),
   require("gh/plugins/mini"),
   require("gh/plugins/treesitter"),
-  require("gh/plugins/nerdtree"),
   require("gh/plugins/oil"),
   -- require("gh/plugins/comment"),
   require("gh/plugins/nvim-neoclip"),
@@ -35,7 +34,6 @@ require("lazy").setup({
   "tpope/vim-unimpaired",
   "christoomey/vim-tmux-navigator",
   "mbbill/undotree",
-  "ervandew/supertab",
   "godlygeek/tabular",
   "lfv89/vim-interestingwords",
 }, {
