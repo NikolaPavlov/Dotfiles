@@ -19,11 +19,11 @@ require("lazy").setup({
   require("gh/plugins/mini"),
   require("gh/plugins/treesitter"),
   require("gh/plugins/oil"),
-  -- require("gh/plugins/comment"),
+  require("gh/plugins/comment"),
   require("gh/plugins/nvim-neoclip"),
   require("gh/plugins/flash"),
   require("gh/plugins/snacks"),
-  require("gh/plugins/neorg"),
+  -- require("gh/plugins/neorg"),
 
 
   "dm1try/golden_size",
