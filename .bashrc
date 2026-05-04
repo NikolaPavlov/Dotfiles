@@ -38,6 +38,7 @@ alias sweb='ssh web'
 alias sleep='systemctl sleep'
 alias deepseek='ollama run deepseek-r1:7b'
 alias activate='eval $(poetry env activate)'
+alias tws='cd ~/apps/tws && sh tws'
 
 # exa aliases
 alias l='exa -l'
