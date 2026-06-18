@@ -10,9 +10,9 @@ cmd("iabbrev note NOTE")
 cmd("iabbrev note: NOTE")
 cmd("iabbrev NOTE NOTE")
 
-cmd("iabbrev fix FIXME")
-cmd("iabbrev fix: FIXME")
-cmd("iabbrev FIX FIXME")
+cmd("iabbrev fix # FIXME")
+cmd("iabbrev fix: # FIXME")
+cmd("iabbrev FIX # FIXME")
 
 cmd("iabbrev pritn print")
 cmd("iabbrev pirint print")
