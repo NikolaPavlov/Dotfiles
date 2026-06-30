@@ -5,6 +5,9 @@ return {
     build = ":TSUpdate",
     lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
     opts_extend = { "ensure_installed" },
     opts = {
       ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc", "python", "perl" },
@@ -85,11 +88,5 @@ return {
       })
     end,
   },
-
-  -- load modules
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    -- "nvim-treesitter/nvim-treesitter-context",
-  }
 }
 -- vim: ts=2 sts=2 sw=2 et

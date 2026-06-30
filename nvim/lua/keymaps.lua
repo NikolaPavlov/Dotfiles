@@ -132,6 +132,101 @@ map('n', "<leader>p", ":Telescope neoclip<CR>")
 -- map("n", "<C-t>", ":Telescope file_browser<CR>")
 map("n", "<leader>z", ":Telescope zoxide list<CR>")
 
+-- Function jumping keymaps using Treesitter (falls back to [m / ]m)
+local function jump_to_function(direction)
+  local bufnr = vim.api.nvim_get_current_buf()
+  local cursor_row, cursor_col = unpack(vim.api.nvim_win_get_cursor(0))
+  local cursor_row_0 = cursor_row - 1
+
+  local success, parser = pcall(vim.treesitter.get_parser, bufnr)
+  if not success or not parser then
+    local cmd = direction == "prev" and "[m" or "]m"
+    vim.cmd("normal " .. cmd)
+    return
+  end
+
+  local tree = parser:parse()[1]
+  if not tree then
+    local cmd = direction == "prev" and "[m" or "]m"
+    vim.cmd("normal " .. cmd)
+    return
+  end
+
+  local root = tree:root()
+  local function_nodes = {}
+
+  local function_types = {
+    function_definition = true,
+    local_function = true,
+    method_definition = true,
+    arrow_function = true,
+    function_declaration = true,
+    func_literal = true,
+    function_item = true,
+    subroutine = true,
+    subroutine_definition = true,
+    method = true,
+    function_block = true,
+  }
+
+  local function traverse(node)
+    if not node then return end
+    local type = node:type()
+    if function_types[type] then
+      local start_row, start_col, _, _ = node:range()
+      table.insert(function_nodes, { row = start_row, col = start_col })
+    end
+    for child in node:iter_children() do
+      traverse(child)
+    end
+  end
+
+  traverse(root)
+
+  if #function_nodes == 0 then
+    local cmd = direction == "prev" and "[m" or "]m"
+    vim.cmd("normal " .. cmd)
+    return
+  end
+
+  table.sort(function_nodes, function(a, b)
+    if a.row == b.row then
+      return a.col < b.col
+    end
+    return a.row < b.row
+  end)
+
+  local target = nil
+  if direction == "prev" then
+    for i = #function_nodes, 1, -1 do
+      local node = function_nodes[i]
+      if node.row < cursor_row_0 then
+        target = node
+        break
+      end
+    end
+  else
+    for i = 1, #function_nodes do
+      local node = function_nodes[i]
+      if node.row > cursor_row_0 then
+        target = node
+        break
+      end
+    end
+  end
+
+  if target then
+    vim.cmd("normal! m`")
+    vim.api.nvim_win_set_cursor(0, { target.row + 1, target.col })
+  else
+    local cmd = direction == "prev" and "[m" or "]m"
+    vim.cmd("normal " .. cmd)
+  end
+end
+
+map("n", "[f", function() jump_to_function("prev") end, { desc = "Go to start of previous function" })
+map("n", "]f", function() jump_to_function("next") end, { desc = "Go to start of next function" })
+
 -- Diagnostic keymaps
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })

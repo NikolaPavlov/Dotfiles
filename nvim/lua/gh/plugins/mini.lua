@@ -21,7 +21,9 @@ return {
         search_method = 'cover_or_next',
       })
 
-      require("mini.bracketed").setup()
+      require("mini.bracketed").setup({
+        file = { suffix = "" },
+      })
       require("mini.bufremove").setup()
       require("mini.cursorword").setup()
       require("mini.icons").setup()
