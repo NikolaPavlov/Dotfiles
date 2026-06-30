@@ -165,6 +165,7 @@ local function jump_to_function(direction)
     function_item = true,
     subroutine = true,
     subroutine_definition = true,
+    subroutine_declaration_statement = true,
     method = true,
     function_block = true,
   }
