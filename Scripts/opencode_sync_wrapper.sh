@@ -12,15 +12,8 @@
 # itself only needs a `git pull` in this repo to update, unlike the shim).
 #
 # Behavior:
-#   - Before launching opencode: for any new/changed session export found in
-#     ~/share/opencode-session/*.json, delete the matching local session
-#     first, then import. `opencode import` upserts messages by id and never
-#     deletes local-only ones, so importing without deleting first merges
-#     rather than replaces - each machine's own edits pile up forever under
-#     the same session id instead of being overwritten, and the two machines
-#     end up showing different content for "the same" session. Delete-then-
-#     import makes it a clean replace (verified: re-importing after deleting
-#     leaves exactly the incoming message set, nothing stale).
+#   - Before launching opencode: import any new/changed session export found
+#     in ~/share/opencode-session/*.json.
 #   - Launch opencode with --session <id> pinned to the most recently active
 #     session (MAX(time_updated) in the db - right after an import, that's
 #     the session that was just imported). This is required: opencode's
@@ -87,17 +80,9 @@ for f in "$SHARE_DIR"/*.json; do
   base=$(basename "$f")
   mtime=$(stat -c %Y "$f" 2>/dev/null || echo 0)
   if [ "${synced[$base]:-}" != "$mtime" ]; then
-    id="${base%.json}"
-    # opencode import upserts by message id - it never deletes local-only
-    # messages that aren't in the incoming file. Without this delete, each
-    # machine's own edits just accumulate forever under the same session id
-    # instead of being replaced, so the two machines end up with visibly
-    # different content in "the same" session. Deleting first makes this a
-    # clean replace instead of a merge.
-    "$REAL_OPENCODE" session delete "$id" >>"$LOG" 2>&1 || true
     if "$REAL_OPENCODE" import "$f" >>"$LOG" 2>&1; then
       synced["$base"]="$mtime"
-      log "imported $base (clean replace)"
+      log "imported $base"
     else
       log "FAILED to import $base"
     fi
