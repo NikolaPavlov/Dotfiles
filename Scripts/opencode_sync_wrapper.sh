@@ -14,15 +14,8 @@
 # Behavior:
 #   - Before launching opencode: import any new/changed session export found
 #     in ~/share/opencode-session/*.json.
-#   - After opencode exits: export whichever session is most recently active
-#     (MAX(time_updated) in the db) to ~/share/opencode-session/<id>.json,
-#     unconditionally - every exit re-exports it, overwriting the file if
-#     unchanged. This is deliberate: an earlier "only export sessions changed
-#     since last marker" approach compared db timestamps against a
-#     last-sync-ms marker file, which silently broke when that marker file
-#     got clobbered (e.g. by a since-removed parallel Syncthing folder that
-#     was also directly mirroring this state dir). Always exporting the
-#     current session avoids that whole class of bug.
+#   - After opencode exits: export any session whose time_updated advanced
+#     since the last sync, to ~/share/opencode-session/<id>.json.
 #   - Non-TUI subcommands (export, import, session, models, ...) pass
 #     straight through untouched - only the default TUI launch is wrapped.
 #
@@ -36,6 +29,7 @@ SHARE_DIR="$HOME/share/opencode-session"
 STATE_DIR="$HOME/.local/share/opencode/session-sync"
 DB="$HOME/.local/share/opencode/opencode.db"
 LOG="$STATE_DIR/sync.log"
+MARKER_FILE="$STATE_DIR/last-sync-ms"
 IMPORTED_STATE="$STATE_DIR/imported.state"
 
 mkdir -p "$SHARE_DIR" "$STATE_DIR"
@@ -87,30 +81,33 @@ for k in "${!synced[@]}"; do
 done
 
 # --- run the real TUI, passing through all args ---
+boot_ms=$(( $(date +%s%N) / 1000000 ))
 "$REAL_OPENCODE" "$@"
 exit_code=$?
 
-# --- export phase: unconditionally export the most recently active session ---
-current_id=$(sqlite3 "$DB" "SELECT id FROM session ORDER BY time_updated DESC LIMIT 1;" 2>>"$LOG")
+# --- export phase: any session touched since the last sync ---
+last_marker=$(cat "$MARKER_FILE" 2>/dev/null || echo "$boot_ms")
+changed_ids=$(sqlite3 "$DB" "SELECT id FROM session WHERE time_updated > $last_marker;" 2>>"$LOG")
 
-if [ -n "$current_id" ]; then
-  tmp="$SHARE_DIR/.$current_id.json.tmp"
-  if "$REAL_OPENCODE" export "$current_id" > "$tmp" 2>>"$LOG"; then
-    mv "$tmp" "$SHARE_DIR/$current_id.json"
-    mtime=$(stat -c %Y "$SHARE_DIR/$current_id.json")
-    synced["$current_id.json"]="$mtime"
-    log "exported $current_id"
+while IFS= read -r id; do
+  [ -z "$id" ] && continue
+  tmp="$SHARE_DIR/.$id.json.tmp"
+  if "$REAL_OPENCODE" export "$id" > "$tmp" 2>>"$LOG"; then
+    mv "$tmp" "$SHARE_DIR/$id.json"
+    mtime=$(stat -c %Y "$SHARE_DIR/$id.json")
+    synced["$id.json"]="$mtime"
+    log "exported $id"
   else
     rm -f "$tmp"
-    log "FAILED to export $current_id"
+    log "FAILED to export $id"
   fi
-else
-  log "no sessions found in db, nothing to export"
-fi
+done <<< "$changed_ids"
 
 : > "$IMPORTED_STATE"
 for k in "${!synced[@]}"; do
   echo "$k:${synced[$k]}" >> "$IMPORTED_STATE"
 done
+
+echo "$(( $(date +%s%N) / 1000000 ))" > "$MARKER_FILE"
 
 exit $exit_code
