@@ -21,15 +21,13 @@
 #     end up showing different content for "the same" session. Delete-then-
 #     import makes it a clean replace (verified: re-importing after deleting
 #     leaves exactly the incoming message set, nothing stale).
-#   - Launch opencode with --session <id> pinned to the most recently active
-#     session (MAX(time_updated) in the db - right after an import, that's
-#     the session that was just imported). This is required: opencode's
-#     default TUI launch (no -c/--session flag) starts a brand-new blank
-#     session rather than resuming anything, so without this the import
-#     landed in the db but the user never actually saw or continued it -
-#     they'd work in an unrelated new session, which then got exported
-#     instead on exit. If the user passes their own -c/--continue/-s/--session
-#     flag, that's respected and nothing is injected.
+#   - Launch opencode with the caller's args, untouched. (A prior version of
+#     this script tried injecting --session <id> to force-resume the latest
+#     session, on the theory that opencode's default launch doesn't resume
+#     anything. That couldn't be verified against the real interactive TUI
+#     from a non-interactive shell, and it made things worse in practice -
+#     plain `opencode import <file>` followed by a normal launch is the
+#     manually-verified-working path, so leave the launch alone.)
 #   - After opencode exits: export whichever session is most recently active
 #     to ~/share/opencode-session/<id>.json, unconditionally - every exit
 #     re-exports it, overwriting the file if unchanged. This is deliberate:
@@ -110,25 +108,8 @@ for k in "${!synced[@]}"; do
   echo "$k:${synced[$k]}" >> "$IMPORTED_STATE"
 done
 
-# --- run the real TUI, pinned to the most recently active session unless ---
-# --- the caller already specified their own session/continue flag        ---
-user_specified_session=false
-for a in "$@"; do
-  case "$a" in
-    -c|--continue|-s|--session) user_specified_session=true; break ;;
-  esac
-done
-
-launch_args=("$@")
-if [ "$user_specified_session" = false ]; then
-  latest_id=$(sqlite3 "$DB" "SELECT id FROM session ORDER BY time_updated DESC LIMIT 1;" 2>>"$LOG")
-  if [ -n "$latest_id" ]; then
-    launch_args+=(--session "$latest_id")
-    log "launching pinned to $latest_id"
-  fi
-fi
-
-"$REAL_OPENCODE" "${launch_args[@]}"
+# --- run the real TUI, passing through all args untouched ---
+"$REAL_OPENCODE" "$@"
 exit_code=$?
 
 # --- export phase: unconditionally export the most recently active session ---
