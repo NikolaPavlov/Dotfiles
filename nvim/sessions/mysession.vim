@@ -4,15 +4,17 @@ let v:this_session=expand("<sfile>:p")
 doautoall SessionLoadPre
 silent only
 silent tabonly
-cd /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post
+cd ~
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +176 /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libwu.pm
+badd +1 /tmp/bash-fc.bCbe7Q
+badd +0 /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libwu.pm
 argglobal
 %argdel
+$argadd /tmp/bash-fc.bCbe7Q
 edit /mnt/core/home/n.pavlov/easypay_core/CORE/lib/post/libwu.pm
 argglobal
 setlocal foldmethod=indent
@@ -23,11 +25,13 @@ setlocal foldlevel=10
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldenable
-let s:l = 176 - ((21 * winheight(0) + 22) / 44)
+144
+sil! normal! zo
+let s:l = 148 - ((35 * winheight(0) + 39) / 79)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 176
+keepjumps 148
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -42,6 +46,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

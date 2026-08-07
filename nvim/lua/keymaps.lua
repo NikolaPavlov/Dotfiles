@@ -131,6 +131,7 @@ map("n", "<leader>sl", ":source ~/.config/nvim/sessions/mysession.vim<CR>")
 map('n', "<leader>p", ":Telescope neoclip<CR>")
 -- map("n", "<C-t>", ":Telescope file_browser<CR>")
 map("n", "<leader>z", ":Telescope zoxide list<CR>")
+map("v", "<leader>t", ":Tabularize /")
 
 -- Function jumping keymaps using Treesitter (falls back to [m / ]m)
 local function jump_to_function(direction)
