@@ -1,5 +1,6 @@
 return {
   "stevearc/oil.nvim",
+  lazy = false, -- must be active from startup to replace netrw for directory buffers
   config = function()
     local oil = require("oil")
     oil.setup({

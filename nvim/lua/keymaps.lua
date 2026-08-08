@@ -78,9 +78,8 @@ map("n", "cv", ":%s/\\<<C-r><C-w>\\>/")
 -- swap splits
 map("n", "<C-s>", "<C-w>r")
 
--- # TODO
--- SSH copy paste (OSC52)
-map("v", "<leader>y", "<Plug>OSCYankVisual<CR>")
+-- SSH copy paste (OSC52) -- explicit clipboard yank, not tied to every delete
+map("v", "<leader>y", '"+y')
 
 -- move visualy selected text up/down
 map("v", "J", ":m '>+1<CR>gv=gv")

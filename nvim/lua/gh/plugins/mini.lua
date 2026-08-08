@@ -1,6 +1,7 @@
 return {
   {
     "echasnovski/mini.nvim",
+    event = "VeryLazy",
     config = function()
       require("mini.ai").setup({ n_lines = 500 })
 
@@ -25,7 +26,8 @@ return {
         file = { suffix = "" },
       })
       require("mini.bufremove").setup()
-      require("mini.cursorword").setup()
+      -- mini.cursorword disabled: redundant with snacks.words (LSP-based reference
+      -- highlighting), and running both on every CursorMoved doubled the cost.
       require("mini.icons").setup()
       require("mini.pairs").setup()
       require("mini.tabline").setup()

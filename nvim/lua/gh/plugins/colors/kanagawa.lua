@@ -2,6 +2,7 @@ return {
   {
     "rebelot/kanagawa.nvim",
     priority = 1000,
+    lazy = false, -- colorscheme must load at startup
     init = function()
       vim.cmd.colorscheme("kanagawa")
     end,

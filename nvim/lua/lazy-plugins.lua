@@ -26,17 +26,18 @@ require("lazy").setup({
   -- require("gh/plugins/neorg"),
 
 
-  "dm1try/golden_size",
-  "szw/vim-maximizer",
-  "tpope/vim-fugitive",
+  { "dm1try/golden_size", event = "VeryLazy" },
+  { "szw/vim-maximizer", event = "VeryLazy" },
+  { "tpope/vim-fugitive", event = "VeryLazy" },
   -- "tpope/vim-surround", -- # TODO replace with mini
-  "tpope/vim-repeat",
-  "tpope/vim-unimpaired",
-  "christoomey/vim-tmux-navigator",
-  "mbbill/undotree",
-  "godlygeek/tabular",
-  "lfv89/vim-interestingwords",
+  { "tpope/vim-repeat", event = "VeryLazy" },
+  { "tpope/vim-unimpaired", event = "VeryLazy" },
+  { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
+  { "mbbill/undotree", event = "VeryLazy" },
+  { "godlygeek/tabular", event = "VeryLazy" },
+  { "lfv89/vim-interestingwords", event = "VeryLazy" },
 }, {
+    defaults = { lazy = true },
     ui = {
       icons = vim.g.have_nerd_font and {} or {
         cmd = "⌘",
