@@ -16,9 +16,7 @@ opt.cursorline = true
 opt.laststatus = 2
 opt.splitbelow = true
 opt.splitright = true
--- NOTE: unnamedplus deliberately NOT set here — it forced every delete/yank
--- through the OSC52 clipboard provider below, which was a source of editing lag.
--- Use "+y / <leader>y (visual) to copy to system clipboard explicitly instead.
+opt.clipboard:append("unnamedplus")  -- auto copy/paste from Vim to system clipboard
 opt.undofile = true
 vim.g.undodir = "$XDG_DATA_HOME/.config/nvim/undo_dir//"
 opt.textwidth = 119
@@ -45,8 +43,7 @@ opt.guicursor = "" -- keep cursor as block in insert mode
 opt.signcolumn = "yes"
 opt.foldlevel = 99
 opt.foldlevelstart = 10
-opt.foldmethod = "expr" -- treesitter-based folding (was "indent", which is expensive to recompute on every edit)
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldmethod = "indent"
 -- opt.fileencoding = "cp1251"
 opt.fileencodings = "ucs-bom, utf-8, cp1251"
 opt.helpheight = 999999
