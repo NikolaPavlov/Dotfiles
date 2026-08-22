@@ -56,5 +56,3 @@ require("lazy").setup({
     },
   })
 
-local ft = require('Comment.ft')
-ft.set('def', '#%s')

@@ -99,7 +99,7 @@ return {
         builtin.find_files({ cwd = "/mnt/core/usr/local/remedy2/VAR/CORE/easypay_n.pavlov_31104/log/" })
       end, { desc = "Search Logs" })
 
-      vim.keymap.set("n", "<C-w>", function()
+      vim.keymap.set("n", "<leader>sw", function()
         builtin.find_files({ cwd = "~/Documents/Repos/WikiNeorg/" })
       end, { desc = "Search [W]iki" })
 
@@ -117,15 +117,15 @@ return {
         }))
       end, { desc = "[l] Fuzzily search in current buffer" })
 
-      function live_grep_git_dir()
+      local function live_grep_git_dir()
         local git_dir = vim.fn.system(string.format("git -C %s rev-parse --show-toplevel", vim.fn.expand("%:p:h")))
         git_dir = string.gsub(git_dir, "\n", "") -- remove newline character from git_dir
         local opts = {
           cwd = git_dir,
         }
-        require('telescope.builtin').live_grep(opts)
+        builtin.live_grep(opts)
       end
-      vim.keymap.set("n", "<leader>r", ":lua live_grep_git_dir()<CR>")
+      vim.keymap.set("n", "<leader>r", live_grep_git_dir, { desc = "Live grep in git directory" })
     end,
   },
 }

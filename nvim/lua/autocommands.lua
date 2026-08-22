@@ -105,3 +105,13 @@ vim.api.nvim_create_autocmd("BufLeave", {
 --     end
 --   end,
 -- })
+
+-- Highlight when yanking text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = augroup("highlight_yank"),
+  desc = "Highlight when yanking text",
+  callback = function()
+    (vim.hl or vim.highlight).on_yank({ higroup = "IncSearch", timeout = 150 })
+  end,
+})
+

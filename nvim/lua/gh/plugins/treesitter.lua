@@ -19,7 +19,7 @@ return {
     config = function(_, opts)
       require("nvim-treesitter.install").prefer_git = true
       ---@diagnostic disable-next-line: missing-fields
-      require("nvim-treesitter.configs").setup({
+      require("nvim-treesitter.configs").setup(vim.tbl_deep_extend("force", opts, {
         -- NOTE: https://www.youtube.com/watch?v=ff0GYrK3nT0
         incremental_selection = {
           enable = true,
@@ -74,8 +74,6 @@ return {
 
               ["ac"] = { query = "@class.outer", desc = "Select outer part of a class" },
               ["ic"] = { query = "@class.inner", desc = "Select inner part of a class" },
-
-
             },
             selection_modes = {
               ['@parameter.outer'] = 'v', -- charwise
@@ -84,8 +82,24 @@ return {
             },
             include_surrounding_whitespace = true,
           },
+          move = {
+            enable = true,
+            set_jumps = true,
+            goto_next_start = {
+              ["]f"] = "@function.outer",
+              ["]m"] = "@function.outer",
+              ["]c"] = "@class.outer",
+              ["]a"] = "@parameter.inner",
+            },
+            goto_previous_start = {
+              ["[f"] = "@function.outer",
+              ["[m"] = "@function.outer",
+              ["[c"] = "@class.outer",
+              ["[a"] = "@parameter.inner",
+            },
+          },
         },
-      })
+      }))
     end,
   },
 }

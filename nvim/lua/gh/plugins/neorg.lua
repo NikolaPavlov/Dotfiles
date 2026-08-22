@@ -11,17 +11,18 @@ return {
         ["core.autocommands"] = {},
         ["core.integrations.treesitter"] = {},
         ["core.syntax"] = {}, -- uses for code blocks
-        ["core.dirman"] = { -- manage Neorg  workspaces
+        ["core.dirman"] = { -- manage Neorg workspaces
           config = {
             workspaces = {
               notes = "~/Documents/Repos/WikiNeorg",
+              wiki = "~/Documents/Repos/WikiNeorg",
             },
-            default_workspace = "wiki",
+            default_workspace = "notes",
           },
         },
       },
     })
   end,
 
-  run = ":Neorg sync-parsers",
+  build = ":Neorg sync-parsers",
 }

@@ -18,7 +18,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.clipboard:append("unnamedplus")  -- auto copy/paste from Vim to system clipboard
 opt.undofile = true
-vim.g.undodir = "$XDG_DATA_HOME/.config/nvim/undo_dir//"
+opt.undodir = vim.fn.stdpath("state") .. "/undo"
 opt.textwidth = 119
 opt.autoindent = true
 opt.expandtab = true
@@ -45,7 +45,7 @@ opt.foldlevel = 99
 opt.foldlevelstart = 10
 opt.foldmethod = "indent"
 -- opt.fileencoding = "cp1251"
-opt.fileencodings = "ucs-bom, utf-8, cp1251"
+opt.fileencodings = "ucs-bom,utf-8,cp1251"
 opt.helpheight = 999999
 opt.synmaxcol = 240 -- max column for syntax highlight
 opt.autochdir = false
