@@ -27,14 +27,14 @@ require("lazy").setup({
 
 
   "dm1try/golden_size",
-  "szw/vim-maximizer",
+  { "szw/vim-maximizer", cmd = "MaximizerToggle" },
   "tpope/vim-fugitive",
   -- "tpope/vim-surround", -- # TODO replace with mini
   "tpope/vim-repeat",
   "tpope/vim-unimpaired",
   "christoomey/vim-tmux-navigator",
-  "mbbill/undotree",
-  "godlygeek/tabular",
+  { "mbbill/undotree", cmd = "UndotreeToggle" },
+  { "godlygeek/tabular", cmd = "Tabularize" },
   "lfv89/vim-interestingwords",
 }, {
     ui = {

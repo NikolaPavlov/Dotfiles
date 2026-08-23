@@ -8,6 +8,9 @@ export VISUAL=nvim
 export FILE_MANAGER=thunar
 export READER=zathura
 
+# Import session environment to systemd and DBus
+dbus-update-activation-environment --systemd --all
+
 # Start notification daemon
 dunst &
 

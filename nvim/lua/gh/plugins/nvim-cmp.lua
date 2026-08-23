@@ -36,6 +36,14 @@ return {
       luasnip.config.setup({})
 
       cmp.setup({
+        performance = {
+          debounce = 60,
+          throttle = 30,
+          fetching_timeout = 200,
+          confirm_resolve_timeout = 80,
+          async_budget = 1,
+          max_view_entries = 15,
+        },
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -69,10 +77,24 @@ return {
           end, { "i", "s" }),
         }),
         sources = {
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "path" },
-          { name = "buffer" },
+          { name = "nvim_lsp", max_item_count = 20 },
+          { name = "luasnip", max_item_count = 10 },
+          { name = "path", max_item_count = 5 },
+          {
+            name = "buffer",
+            keyword_length = 3,
+            max_item_count = 5,
+            option = {
+              get_bufnrs = function()
+                -- Only index visible buffers, not all loaded buffers
+                local bufs = {}
+                for _, win in ipairs(vim.api.nvim_list_wins()) do
+                  bufs[vim.api.nvim_win_get_buf(win)] = true
+                end
+                return vim.tbl_keys(bufs)
+              end,
+            },
+          },
         },
       })
     end,

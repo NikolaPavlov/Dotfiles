@@ -2,6 +2,8 @@ return {
   {
     "echasnovski/mini.nvim",
     config = function()
+      local is_ssh = vim.g.is_ssh
+
       require("mini.ai").setup({ n_lines = 500 })
 
       require('mini.surround').setup({
@@ -25,11 +27,20 @@ return {
         file = { suffix = "" },
       })
       require("mini.bufremove").setup()
-      require("mini.cursorword").setup()
+
+      -- mini.cursorword triggers highlight redraws across the entire buffer on EVERY cursor move.
+      -- Disabled over SSH to eliminate cursor lag.
+      if not is_ssh then
+        require("mini.cursorword").setup()
+      end
+
       require("mini.icons").setup()
       require("mini.pairs").setup()
       require("mini.tabline").setup()
-      require("mini.trailspace").setup()
+
+      if not is_ssh then
+        require("mini.trailspace").setup()
+      end
 
       local starter = require('mini.starter')
       starter.setup({
@@ -47,14 +58,19 @@ return {
       })
 
       local hipatterns = require("mini.hipatterns")
+      local highlighters = {
+        fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+        hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+        todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+        note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+      }
+      -- hex_color searches every character on screen on every redraw
+      if not is_ssh then
+        highlighters.hex_color = hipatterns.gen_highlighter.hex_color()
+      end
+
       hipatterns.setup({
-        highlighters = {
-          fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
-          hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
-          todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
-          note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
-          hex_color = hipatterns.gen_highlighter.hex_color(),
-        },
+        highlighters = highlighters,
       })
     end,
   },

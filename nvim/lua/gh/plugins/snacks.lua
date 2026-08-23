@@ -1,36 +1,21 @@
+local is_ssh = vim.g.is_ssh
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
   ---@type snacks.Config
   opts = {
-      -- bigfile = { enabled = true },
       bigfile = {
         notify = true, -- show notification when big file detected
         size = 1.5 * 1024 * 1024, -- 1.5MB
         line_length = 1000, -- average line length (useful for minified files)
-        -- Enable or disable features when big file detected
-        ---@param ctx {buf: number, ft:string}
         setup = function(ctx)
           if vim.fn.exists(":NoMatchParen") ~= 0 then
             vim.cmd([[NoMatchParen]])
           end
           Snacks.util.wo(0, {
             foldmethod = "manual",
-            -- statuscolumn = "",
-            -- conceallevel = 0,
-            -- smartindent = "false",
-            -- wrap = "false",
-            -- breakindent = "false",
-            -- scrolloff = 0,
-            -- sidescrolloff = 0,
-            -- cursorline = "false",
-            -- undofile = "false",
-            -- autoindent = "false",
-            -- list = "false",
-            -- termguicolors = "false",
-            -- signcolumn = "no",
-            -- synmaxcol = 120,
           })
           vim.b.minianimate_disable = true
           vim.schedule(function()
@@ -40,7 +25,10 @@ return {
           end)
         end,
       },
-      indent = { enabled = true },
+      indent = {
+        enabled = not is_ssh,
+        animate = { enabled = false }, -- disable animations for fast redraw
+      },
       input = { enabled = true, },
       notifier = {
         enabled = true,
@@ -48,33 +36,21 @@ return {
       },
       picker = { enabled = true },
       quickfile = { enabled = true },
-      -- scroll = { enabled = true },
+      scroll = { enabled = false }, -- disable smooth scrolling to eliminate SSH frame lag
       statuscolumn = { enabled = true },
-      words = { enabled = true },
-      scope = { enabled = true },
-      styles = { notification = {
-          -- wo = { wrap = true } -- Wrap notifications
+      words = { enabled = not is_ssh }, -- word references highlight on cursor hold
+      scope = { enabled = not is_ssh }, -- treesitter scope border on cursor move
+      animate = { enabled = false }, -- disable UI animations over SSH/slow terminals
+      styles = {
+        notification = {
+          -- wo = { wrap = true }
         }
-    }
-},
-keys = {
-    -- { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
-    -- { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
-    -- { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
-    -- { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
+      }
+  },
+  keys = {
     { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
-    -- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-    -- { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
-    -- { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
-    -- { "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
-    -- { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-    -- { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-    -- { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
-    -- { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
-    -- { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
-    -- { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
     {
         "<leader>N",
         desc = "Neovim News",
@@ -93,8 +69,8 @@ keys = {
             })
         end,
     }
-},
-init = function()
+  },
+  init = function()
     vim.api.nvim_create_autocmd("User", {
         pattern = "VeryLazy",
         callback = function()
@@ -121,5 +97,5 @@ init = function()
             Snacks.toggle.dim():map("<leader>uD")
         end,
     })
-end,
-  }
+  end,
+}

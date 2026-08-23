@@ -78,8 +78,10 @@ map("n", "cv", ":%s/\\<<C-r><C-w>\\>/")
 -- swap splits
 map("n", "<C-s>", "<C-w>r")
 
--- Clipboard copy
-map("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+-- Clipboard copy & paste (uses OSC 52 over SSH without unnamedplus lag)
+map({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard (OSC 52)" })
+map("n", "<leader>Y", '"+y$', { desc = "Yank line to system clipboard (OSC 52)" })
+map({ "n", "v" }, "<leader>P", '"+p', { desc = "Paste from system clipboard" })
 
 -- move visualy selected text up/down
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -148,4 +150,23 @@ map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic m
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+-- Toggle Fast / SSH Performance Mode
+local fast_mode = vim.g.is_ssh or false
+local function toggle_fast_mode()
+  fast_mode = not fast_mode
+  if fast_mode then
+    vim.opt.relativenumber = false
+    vim.opt.lazyredraw = true
+    vim.opt.synmaxcol = 150
+    vim.notify("Fast SSH Mode: ENABLED (relativenumber off, redraws minimized)", vim.log.levels.INFO)
+  else
+    vim.opt.relativenumber = true
+    vim.opt.lazyredraw = false
+    vim.opt.synmaxcol = 240
+    vim.notify("Fast SSH Mode: DISABLED (visual features restored)", vim.log.levels.INFO)
+  end
+end
+vim.api.nvim_create_user_command("ToggleFastMode", toggle_fast_mode, { desc = "Toggle performance mode for SSH/remote sessions" })
+map("n", "<leader>uF", toggle_fast_mode, { desc = "Toggle Fast SSH Mode" })
 
