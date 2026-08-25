@@ -2,6 +2,11 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     opts = {
+      update_debounce = 1000, -- Default is 100ms; increase to avoid constant stat calls
+      watch_gitdir = {
+        interval = 5000,
+        follow_files = true,
+      },
       signs = {
         add = { text = "+" },
         change = { text = "~" },

@@ -35,9 +35,14 @@ opt.splitright = true
 if not is_ssh then
   opt.clipboard:append("unnamedplus")
 end
+-- Store swap, backup, and undo files locally instead of on the mount
+local state_dir = vim.fn.expand("~/.local/state/nvim/")
+vim.opt.backupdir = state_dir .. "backup//"
+vim.opt.directory = state_dir .. "swap//"
+vim.opt.undodir = state_dir .. "undo//"
+vim.opt.undofile = true
+vim.opt.swapfile = true
 
-opt.undofile = true
-opt.undodir = vim.fn.stdpath("state") .. "/undo"
 opt.textwidth = 119
 opt.autoindent = true
 opt.expandtab = true
@@ -47,7 +52,6 @@ opt.tabstop = 4 -- number of spaces tabs count for
 opt.shiftround = true -- round indent
 opt.autoread = true -- auto read file when it was modified outside of vim
 opt.autowriteall = true -- automatically write file when leaving modified buffer
-opt.swapfile = false
 opt.updatetime = is_ssh and 500 or 300 -- larger debounce on SSH to avoid frequent background triggers
 opt.timeoutlen = 400
 opt.hidden = true -- enable background buffers (files)

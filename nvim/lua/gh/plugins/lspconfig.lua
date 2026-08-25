@@ -105,6 +105,12 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
+      -- Disable file-watching capability to prevent LSP from watching whole directories (especially over NFS/remote /mnt mounts)
+      capabilities.workspace = capabilities.workspace or {}
+      capabilities.workspace.didChangeWatchedFiles = {
+        dynamicRegistration = false,
+      }
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -115,19 +121,6 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -139,6 +132,9 @@ return {
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
+              workspace = {
+                checkThirdParty = false,
+              },
             },
           },
         },
@@ -154,7 +150,62 @@ return {
             },
           },
         },
-        pyright = {},
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = "openFilesOnly", -- Only analyze open files to avoid indexing whole /mnt/* roots
+                typeCheckingMode = "basic",
+              },
+            },
+          },
+        },
+        clangd = {
+          cmd = {
+            "clangd",
+            "--background-index=false", -- Avoid indexing whole remote /mnt/* roots in background
+            "--clang-tidy=false",
+            "--completion-style=bundled",
+            "--header-insertion=never",
+          },
+        },
+        rust_analyzer = {
+          settings = {
+            ["rust-analyzer"] = {
+              checkOnSave = {
+                enable = false,
+              },
+              files = {
+                excludeDirs = { "/mnt" },
+              },
+              procMacro = {
+                enable = false,
+              },
+            },
+          },
+        },
+        ts_ls = {
+          single_file_support = true,
+          settings = {
+            typescript = {
+              tsserver = {
+                maxTsServerMemory = 2048,
+              },
+            },
+          },
+        },
+        tsserver = {
+          single_file_support = true,
+          settings = {
+            typescript = {
+              tsserver = {
+                maxTsServerMemory = 2048,
+              },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -167,11 +218,25 @@ return {
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        "stylua", -- Used to format Lua code
-      })
+      local ensure_installed = { "lua_ls", "perlnavigator", "pyright", "stylua" }
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+      -- Helper to prevent LSP from indexing broad filesystem / remote mount roots
+      local is_broad_root = function(dir)
+        if not dir or dir == "" then
+          return true
+        end
+        local forbidden = { "/", "/mnt", "/mnt/core", "/mnt/web", vim.env.HOME }
+        for _, f in ipairs(forbidden) do
+          if f and dir == f then
+            return true
+          end
+        end
+        if dir:match("^/mnt/[^/]+$") then
+          return true
+        end
+        return false
+      end
 
       require("mason-lspconfig").setup({
         handlers = {
@@ -181,6 +246,25 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+
+            -- Prevent LSP from resolving broad mount roots (like /mnt, /mnt/core, /, $HOME) as root_dir
+            local ok, lsp = pcall(function()
+              return require("lspconfig")[server_name]
+            end)
+            if ok and lsp and lsp.document_config and lsp.document_config.default_config then
+              local default_root_dir = lsp.document_config.default_config.root_dir
+              local custom_root_dir = server.root_dir or default_root_dir
+              if custom_root_dir then
+                server.root_dir = function(fname, bufnr)
+                  local root = custom_root_dir(fname, bufnr)
+                  if is_broad_root(root) then
+                    return vim.fs.dirname(fname)
+                  end
+                  return root
+                end
+              end
+            end
+
             require("lspconfig")[server_name].setup(server)
           end,
         },
