@@ -84,11 +84,11 @@ return {
       -- TODO: code actions
 
       vim.keymap.set("n", "<leader>c", function()
-        builtin.find_files({ cwd = "/mnt/core/home/n.pavlov/easypay_core/CORE/" })
+        builtin.find_files({ cwd = "/mnt/core/home/n.pavlov/easypay_core/CORE/", hidden = true })
       end, { desc = "Search [C]ore" })
 
       vim.keymap.set("n", "<leader>w", function()
-        builtin.find_files({ cwd = "/mnt/web/home/n.pavlov/easypay_web/WEB/" })
+        builtin.find_files({ cwd = "/mnt/web/home/n.pavlov/easypay_web/WEB/", hidden = true })
       end, { desc = "Search [W]eb" })
 
       vim.keymap.set("n", "<leader>v", function()
