@@ -84,7 +84,7 @@ return {
       -- TODO: code actions
 
       vim.keymap.set("n", "<leader>c", function()
-        builtin.find_files({ cwd = "/mnt/core/home/n.pavlov/easypay_core/CORE/", hidden = true })
+        builtin.find_files({ cwd = "/mnt/core/home/n.pavlov/easypay_core/CORE/", hidden = true, no_ignore = true })
       end, { desc = "Search [C]ore" })
 
       vim.keymap.set("n", "<leader>w", function()
