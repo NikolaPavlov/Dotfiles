@@ -27,7 +27,6 @@ opt.lazyredraw = true -- do not redraw while running macros/registers
 
 opt.laststatus = 2
 opt.splitbelow = true
-opt.splitright = true
 
 -- Note: We avoid `unnamedplus` over SSH because syncing on every single `d`/`x`/`c`
 -- floods the SSH socket with OSC 52 sequences. Use `<leader>y` or `"+y` to explicitly sync clipboard.
