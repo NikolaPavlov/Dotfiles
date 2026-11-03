@@ -186,3 +186,12 @@ eval "$(pyenv init - bash)"
 
 
 export LC_ALL="en_US.UTF-8"
+
+syncwork() {
+    rsync -avz --progress \
+        --exclude '.git/' \
+        --exclude 'env.def' \
+        "$@" \
+        work:/mnt/core/home/n.pavlov/easypay_core/ \
+        /home/gogo/AI/claude/0000-MG-update-nomenclatures/
+}
